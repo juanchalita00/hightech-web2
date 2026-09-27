@@ -8,7 +8,7 @@ import { TrustPillars } from "@/components/TrustPillars";
 import { WhatsAppCTA } from "@/components/WhatsAppCTA";
 import { truth } from "@/lib/truth";
 
-export const metadata:Metadata={ alternates: { canonical: "/nosotros/" },title:"Nosotros | HIGHTECH Polarizados",description:"Cómo trabaja HIGHTECH Polarizados: diagnóstico, recomendación técnica, cotización, instalación y comunicación clara de límites y especificaciones."};
+export const metadata:Metadata={ alternates: { canonical: "/nosotros/" },title:{ absolute: "Nosotros | HIGHTECH Polarizados" },description:"Cómo trabaja HIGHTECH Polarizados: diagnóstico, recomendación técnica, cotización, instalación y comunicación clara de límites y especificaciones."};
 
 const process=[
   {number:"01",title:"Entendemos el problema",text:"Calor, UV, deslumbramiento, privacidad, seguridad o una combinación concreta."},

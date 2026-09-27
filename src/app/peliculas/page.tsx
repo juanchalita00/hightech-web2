@@ -5,7 +5,7 @@ import { ProductHero } from "@/components/ProductHero";
 import { TechnologyMatrix } from "@/components/TechnologyMatrix";
 
 export const metadata = { alternates: { canonical: "/peliculas/" },
-  title: "Películas para cristales | HIGHTECH Polarizados",
+  title: { absolute: "Películas para cristales | HIGHTECH Polarizados" },
   description: "Compara nanocerámica, película reflectiva, seguridad y privacidad según el problema, la apariencia y la aplicación.",
 };
 

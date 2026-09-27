@@ -3,7 +3,7 @@ import { GuideCard } from "@/components/GuideCard";
 import { GuideHero } from "@/components/GuideHero";
 
 export const metadata: Metadata = { alternates: { canonical: "/guias/" },
-  title: "Guías de películas para cristales | HIGHTECH Polarizados",
+  title: { absolute: "Guías de películas para cristales | HIGHTECH Polarizados" },
   description: "Guías HIGHTECH para entender VLT, TSER, rechazo infrarrojo, UV, privacidad, estrés térmico y polarizado automotriz en Jalisco.",
 };
 

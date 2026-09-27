@@ -8,7 +8,7 @@ import { NanoSpectrum } from "@/components/NanoSpectrum";
 import { ProcessRail } from "@/components/ProcessRail";
 
 export const metadata = { alternates: { canonical: "/residencial/" },
-  title: "Polarizado residencial | HIGHTECH Polarizados",
+  title: { absolute: "Polarizado residencial | HIGHTECH Polarizados" },
   description: "Soluciones para cristales residenciales orientadas a control solar, UV, deslumbramiento y privacidad, seleccionadas según el vidrio y el espacio.",
 };
 

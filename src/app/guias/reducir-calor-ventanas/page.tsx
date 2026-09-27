@@ -7,7 +7,7 @@ import { MetricRelation } from "@/components/MetricRelation";
 import { NanoTable } from "@/components/NanoTable";
 import { ProductCTA } from "@/components/ProductCTA";
 
-export const metadata:Metadata={ alternates: { canonical: "/guias/reducir-calor-ventanas/" },title:"Cómo reducir el calor que entra por las ventanas | HIGHTECH",description:"Cómo comparar películas de control solar considerando vidrio, orientación, VLT, rechazo infrarrojo a 950 nm y TSER."};
+export const metadata:Metadata={ alternates: { canonical: "/guias/reducir-calor-ventanas/" },title:{ absolute: "Cómo reducir el calor que entra por las ventanas | HIGHTECH" },description:"Cómo comparar películas de control solar considerando vidrio, orientación, VLT, rechazo infrarrojo a 950 nm y TSER."};
 export default function Page(){return <>
   <GuideHero eyebrow="Guía · Control solar" title="Reducir calor no es simplemente poner el cristal más oscuro." description="El resultado depende de la radiación solar, el vidrio, la orientación y la película. Para comparar opciones conviene separar claridad visible de desempeño solar." category="Control solar" ctaHref="/residencial/" ctaLabel="Ver solución residencial" />
   <GuideArticle><GuideBody>

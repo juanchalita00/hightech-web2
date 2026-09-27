@@ -6,7 +6,7 @@ import { GuideHero } from "@/components/GuideHero";
 import { PrivacyLightDemo } from "@/components/PrivacyLightDemo";
 import { ProductCTA } from "@/components/ProductCTA";
 
-export const metadata:Metadata={ alternates: { canonical: "/guias/privacidad-ventanas-noche/" },title:"Privacidad en ventanas de noche | HIGHTECH Polarizados",description:"Por qué la privacidad de una película puede disminuir o invertirse de noche cuando el interior tiene más luz que el exterior."};
+export const metadata:Metadata={ alternates: { canonical: "/guias/privacidad-ventanas-noche/" },title:{ absolute: "Privacidad en ventanas de noche | HIGHTECH Polarizados" },description:"Por qué la privacidad de una película puede disminuir o invertirse de noche cuando el interior tiene más luz que el exterior."};
 export default function Page(){return <>
   <GuideHero eyebrow="Guía · Privacidad" title="De noche, la privacidad puede invertirse." description="Las soluciones basadas en contraste y reflectividad dependen de qué lado está más iluminado. Por eso no prometemos un espejo unidireccional permanente." category="Privacidad" ctaHref="/peliculas/privacidad/" ctaLabel="Ver soluciones de privacidad" />
   <GuideArticle><GuideBody>

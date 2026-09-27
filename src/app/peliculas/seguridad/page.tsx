@@ -8,7 +8,7 @@ import { WarrantySummaryGate } from "@/components/WarrantySummaryGate";
 import { GateNotice } from "@/components/GateNotice";
 
 export const metadata = { alternates: { canonical: "/peliculas/seguridad/" },
-  title: "Película de seguridad para cristal | HIGHTECH Polarizados",
+  title: { absolute: "Película de seguridad para cristal | HIGHTECH Polarizados" },
   description: "Película arquitectónica orientada a retención de fragmentos. Los objetivos de retardo de acceso dependen del sistema completo: película, vidrio, marco y fijación.",
 };
 

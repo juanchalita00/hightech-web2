@@ -6,7 +6,7 @@ import { getPublicProject, getPublicProjects } from "@/lib/projects";
 
 export function generateStaticParams(){return getPublicProjects().map(project=>({slug:project.slug}));}
 
-export async function generateMetadata({params}:{params:Promise<{slug:string}>}):Promise<Metadata>{const {slug}=await params;const project=getPublicProject(slug);if(!project)return {robots:{index:false,follow:false}};return {title:`${project.internalTitle} | Proyectos HIGHTECH`,alternates:{canonical:`/proyectos/${slug}/`},robots:{index:true,follow:true}};}
+export async function generateMetadata({params}:{params:Promise<{slug:string}>}):Promise<Metadata>{const {slug}=await params;const project=getPublicProject(slug);if(!project)return {robots:{index:false,follow:false}};return {title:{ absolute: `${project.internalTitle} | Proyectos HIGHTECH` },alternates:{canonical:`/proyectos/${slug}/`},robots:{index:true,follow:true}};}
 
 export default async function ProjectPage({params}:{params:Promise<{slug:string}>}){const {slug}=await params;const project=getPublicProject(slug);if(!project)notFound();return <>
   <TrustHero eyebrow="Proyecto documentado" title={project.internalTitle} description="Caso publicado después de pasar los gates de contexto, evidencia, privacidad y autorización." points={[project.businessLine,"Evidencia autorizada","Contexto trazable"]}/>

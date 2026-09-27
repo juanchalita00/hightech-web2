@@ -7,7 +7,7 @@ import { WarrantySummaryGate } from "@/components/WarrantySummaryGate";
 import { GateNotice } from "@/components/GateNotice";
 
 export const metadata = { alternates: { canonical: "/peliculas/plata-reflecta/" },
-  title: "Película Plata Reflecta | HIGHTECH Polarizados",
+  title: { absolute: "Película Plata Reflecta | HIGHTECH Polarizados" },
   description: "Solución arquitectónica reflectiva para control solar y privacidad principalmente diurna, evaluada según cristal y proyecto.",
 };
 

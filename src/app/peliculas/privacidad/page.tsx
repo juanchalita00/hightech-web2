@@ -6,7 +6,7 @@ import { ProductCTA } from "@/components/ProductCTA";
 import { ProductHero } from "@/components/ProductHero";
 
 export const metadata = { alternates: { canonical: "/peliculas/privacidad/" },
-  title: "Privacidad para cristales | HIGHTECH Polarizados",
+  title: { absolute: "Privacidad para cristales | HIGHTECH Polarizados" },
   description: "Opciones de privacidad para cristales según iluminación, oscuridad, reflectividad y necesidad de bloquear o difuminar la visión.",
 };
 

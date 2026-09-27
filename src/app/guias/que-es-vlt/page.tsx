@@ -6,7 +6,7 @@ import { GuideHero } from "@/components/GuideHero";
 import { NanoComparison } from "@/components/NanoComparison";
 import { ProductCTA } from "@/components/ProductCTA";
 
-export const metadata:Metadata={ alternates: { canonical: "/guias/que-es-vlt/" },title:"Qué es VLT en una película para cristal | HIGHTECH",description:"Qué significa transmisión de luz visible y cómo interpretar IR75, IR50, IR35, IR15 e IR5 sin confundir el nombre comercial con el VLT técnico."};
+export const metadata:Metadata={ alternates: { canonical: "/guias/que-es-vlt/" },title:{ absolute: "Qué es VLT en una película para cristal | HIGHTECH" },description:"Qué significa transmisión de luz visible y cómo interpretar IR75, IR50, IR35, IR15 e IR5 sin confundir el nombre comercial con el VLT técnico."};
 export default function Page(){return <>
   <GuideHero eyebrow="Guía · Métricas" title="VLT: la forma más directa de entender cuánta luz visible atraviesa." description="Un VLT más alto significa más transmisión visible; uno más bajo, una apariencia más oscura. Eso no lo convierte en una medida única de desempeño térmico." category="Transmisión de luz visible" ctaHref="/peliculas/nanoceramica/" ctaLabel="Comparar la gama" />
   <GuideArticle><GuideBody>

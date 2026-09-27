@@ -6,7 +6,7 @@ import { GuideHero } from "@/components/GuideHero";
 import { ProductCTA } from "@/components/ProductCTA";
 import { truth } from "@/lib/truth";
 
-export const metadata:Metadata={ alternates: { canonical: "/guias/proteccion-uv-ventanas/" },title:"Protección UV en ventanas | HIGHTECH Polarizados",description:"Qué significa el 99% de rechazo UV reportado por las fichas nanocerámicas HIGHTECH y qué límites tiene esa cifra."};
+export const metadata:Metadata={ alternates: { canonical: "/guias/proteccion-uv-ventanas/" },title:{ absolute: "Protección UV en ventanas | HIGHTECH Polarizados" },description:"Qué significa el 99% de rechazo UV reportado por las fichas nanocerámicas HIGHTECH y qué límites tiene esa cifra."};
 export default function Page(){const uv=truth.nano[0]?.uv ?? 99;return <>
   <GuideHero eyebrow="Guía · UV" title="Protección UV: una cifra importante, pero no toda la historia." description={`Las fichas activas de nanocerámica HIGHTECH indican ${uv}% de rechazo UV. Esa métrica puede ayudar a reducir exposición ultravioleta a través del cristal, pero no convierte la película en una solución absoluta contra todo deterioro.`} category="Protección UV" ctaHref="/peliculas/nanoceramica/" ctaLabel="Ver nanocerámica" />
   <GuideArticle><GuideBody>

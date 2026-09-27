@@ -4,7 +4,7 @@ import { FAQList } from "@/components/FAQList";
 import { ProductCTA } from "@/components/ProductCTA";
 import { TrustHero } from "@/components/TrustHero";
 
-export const metadata:Metadata={ alternates: { canonical: "/preguntas-frecuentes/" },title:"Preguntas frecuentes | HIGHTECH Polarizados",description:"Respuestas breves sobre nanocerámica, VLT, IR, TSER, privacidad, cotización, instalación automotriz, garantías y polarizado en Jalisco."};
+export const metadata:Metadata={ alternates: { canonical: "/preguntas-frecuentes/" },title:{ absolute: "Preguntas frecuentes | HIGHTECH Polarizados" },description:"Respuestas breves sobre nanocerámica, VLT, IR, TSER, privacidad, cotización, instalación automotriz, garantías y polarizado en Jalisco."};
 
 const items=[
   {question:"¿Nanocerámica significa más oscuro?",answer:<p>No. El tono se relaciona con la transmisión de luz visible (VLT). La tecnología y la oscuridad son conceptos distintos. <Link href="/guias/que-es-vlt/">Entender VLT</Link>.</p>},

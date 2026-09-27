@@ -5,7 +5,7 @@ import { GuideCallout } from "@/components/GuideCallout";
 import { GuideHero } from "@/components/GuideHero";
 import { ProductCTA } from "@/components/ProductCTA";
 
-export const metadata:Metadata={ alternates: { canonical: "/guias/estres-termico-cristal/" },title:"Estrés térmico y película para cristal | HIGHTECH",description:"Por qué la compatibilidad entre película, vidrio, exposición y sistema debe revisarse antes de instalar control solar."};
+export const metadata:Metadata={ alternates: { canonical: "/guias/estres-termico-cristal/" },title:{ absolute: "Estrés térmico y película para cristal | HIGHTECH" },description:"Por qué la compatibilidad entre película, vidrio, exposición y sistema debe revisarse antes de instalar control solar."};
 export default function Page(){return <>
   <GuideHero eyebrow="Guía · Compatibilidad" title="La película se instala sobre un sistema de vidrio que ya tiene sus propias condiciones." description="Por eso una recomendación profesional considera el tipo de cristal, exposición, bordes, sombras y aplicación antes de asumir compatibilidad." category="Compatibilidad de vidrio" ctaHref="/residencial/" ctaLabel="Revisar mi cristal" />
   <GuideArticle><GuideBody>

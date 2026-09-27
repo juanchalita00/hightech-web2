@@ -7,7 +7,7 @@ import { MetricRelation } from "@/components/MetricRelation";
 import { NanoTable } from "@/components/NanoTable";
 import { ProductCTA } from "@/components/ProductCTA";
 
-export const metadata:Metadata={ alternates: { canonical: "/guias/irr-vs-tser/" },title:"IR vs TSER: cuál es la diferencia | HIGHTECH",description:"Por qué 95% de rechazo infrarrojo a 950 nm y TSER son métricas distintas y cómo leerlas correctamente en una ficha de película."};
+export const metadata:Metadata={ alternates: { canonical: "/guias/irr-vs-tser/" },title:{ absolute: "IR vs TSER: cuál es la diferencia | HIGHTECH" },description:"Por qué 95% de rechazo infrarrojo a 950 nm y TSER son métricas distintas y cómo leerlas correctamente en una ficha de película."};
 export default function Page(){return <>
   <GuideHero eyebrow="Guía · Métricas" title="IR vs TSER: dos cifras que responden preguntas diferentes." description="Nuestras fichas nano reportan 95% de rechazo infrarrojo a 950 nm, mientras el TSER cambia por tono. No son cifras intercambiables." category="Métricas técnicas" ctaHref="/peliculas/nanoceramica/" ctaLabel="Comparar tonos" />
   <GuideArticle><GuideBody>

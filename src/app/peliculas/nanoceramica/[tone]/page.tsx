@@ -21,7 +21,7 @@ export function generateStaticParams() { return truth.nano.map((film) => ({ tone
 
 export async function generateMetadata({ params }: { params: Promise<{ tone: string }> }): Promise<Metadata> {
   const { tone } = await params; const film = getNanoProduct(tone); if (!film) return {};
-  return { title: `${film.id} | Nanocerámica HIGHTECH`, description:`${film.id}: VLT ${film.vlt}%, UV ${film.uv}%, rechazo infrarrojo ${film.infraredRejection}% a ${film.infraredWavelengthNm} nm y TSER ${film.tser}% según ficha.`, alternates:{canonical:`/peliculas/nanoceramica/${tone.toLowerCase()}/`}, robots: release.routes.tonePagesIndexable ? { index:true, follow:true } : { index:false, follow:true } };
+  return { title: { absolute: `${film.id} | Nanocerámica HIGHTECH` }, description:`${film.id}: VLT ${film.vlt}%, UV ${film.uv}%, rechazo infrarrojo ${film.infraredRejection}% a ${film.infraredWavelengthNm} nm y TSER ${film.tser}% según ficha.`, alternates:{canonical:`/peliculas/nanoceramica/${tone.toLowerCase()}/`}, robots: release.routes.tonePagesIndexable ? { index:true, follow:true } : { index:false, follow:true } };
 }
 
 export default async function TonePage({ params }: { params: Promise<{ tone: string }> }) {

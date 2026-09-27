@@ -6,7 +6,7 @@ import { QuotePrep } from "@/components/QuotePrep";
 import { TrustHero } from "@/components/TrustHero";
 import { truth } from "@/lib/truth";
 
-export const metadata:Metadata={ alternates: { canonical: "/contacto/" },title:"Contacto | HIGHTECH Polarizados",description:"Contacta a HIGHTECH Polarizados para revisar un proyecto residencial, comercial o automotriz en Zapopan, Jalisco."};
+export const metadata:Metadata={ alternates: { canonical: "/contacto/" },title:{ absolute: "Contacto | HIGHTECH Polarizados" },description:"Contacta a HIGHTECH Polarizados para revisar un proyecto residencial, comercial o automotriz en Zapopan, Jalisco."};
 
 export default function Page(){return <>
   <TrustHero eyebrow="Contacto" title="Danos contexto. Te ayudamos a aterrizar la solución." description="WhatsApp es el canal principal para cotizar. Si es un proyecto comercial también puedes enviarnos información por correo. La instalación automotriz se realiza en taller." ctaLabel="Abrir WhatsApp" context={{sourcePage:"/contacto/"}} points={[truth.contact.locationLabel,"Residencial · Comercial · Automotriz","Cotización según aplicación"]}/>

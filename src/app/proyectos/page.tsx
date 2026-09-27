@@ -5,7 +5,7 @@ import { TrustHero } from "@/components/TrustHero";
 import { getProjectCandidates, getPublicProjects } from "@/lib/projects";
 import { release } from "@/lib/truth";
 
-export const metadata:Metadata={ alternates: { canonical: "/proyectos/" },title:"Proyectos | HIGHTECH Polarizados",description:"Casos documentados de HIGHTECH Polarizados publicados con contexto, producto y permiso.",robots:release.routes.projectsPublic?{index:true,follow:true}:{index:false,follow:true}};
+export const metadata:Metadata={ alternates: { canonical: "/proyectos/" },title:{ absolute: "Proyectos | HIGHTECH Polarizados" },description:"Casos documentados de HIGHTECH Polarizados publicados con contexto, producto y permiso.",robots:release.routes.projectsPublic?{index:true,follow:true}:{index:false,follow:true}};
 
 export default function Page(){const publicProjects=getPublicProjects();const candidates=getProjectCandidates();return <>
   <TrustHero eyebrow="Evidencia" title="Un proyecto vale más cuando puedes explicar qué se hizo y por qué." description="Esta sección está diseñada para publicar casos reales con producto identificado, contexto, resultado demostrable y autorización. Mientras esos datos no estén completos, el caso permanece fuera de la web pública." points={["Fotos auténticas","Producto y contexto","Permiso antes de publicar"]}/>

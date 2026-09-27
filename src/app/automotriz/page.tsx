@@ -10,7 +10,7 @@ import { NanoTable } from "@/components/NanoTable";
 import { ProcessRail } from "@/components/ProcessRail";
 
 export const metadata = { alternates: { canonical: "/automotriz/" },
-  title: "Polarizado automotriz nanocerámico | HIGHTECH",
+  title: { absolute: "Polarizado automotriz nanocerámico | HIGHTECH" },
   description: "Gama nanocerámica HIGHTECH para vehículos. Compara VLT, UV, rechazo infrarrojo a 950 nm y TSER, con instalación en taller.",
 };
 

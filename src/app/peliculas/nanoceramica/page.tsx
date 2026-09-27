@@ -8,7 +8,7 @@ import { ProductHero } from "@/components/ProductHero";
 import { WarrantySummaryGate } from "@/components/WarrantySummaryGate";
 
 export const metadata = { alternates: { canonical: "/peliculas/nanoceramica/" },
-  title: "Película nanocerámica | HIGHTECH Polarizados",
+  title: { absolute: "Película nanocerámica | HIGHTECH Polarizados" },
   description: "Compara IR75, IR50, IR35, IR15 e IR5 por VLT, UV, rechazo infrarrojo a 950 nm y TSER según ficha técnica.",
 };
 
