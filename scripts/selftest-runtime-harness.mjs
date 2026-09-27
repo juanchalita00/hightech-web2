@@ -10,7 +10,7 @@ const smoke=read('content/smoke-tests.json');
 const fixtures=read(smoke.redirectFixtureFile);
 const truth=read('content/publication-truth.json');
 const canonicalBase=truth.site.canonicalBaseUrl.replace(/\/$/,'');
-const pagePaths=new Set(smoke.pageChecks.map(x=>x.path));
+const pagePaths=new Set([...smoke.pageChecks.map(x=>x.path),...fixtures.map(x=>x.destination)]);
 
 function canonicalFor(p){return new URL(p, `${canonicalBase}/`).toString();}
 function makeServer(mode){
