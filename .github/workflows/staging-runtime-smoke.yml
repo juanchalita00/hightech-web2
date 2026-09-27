@@ -1,0 +1,29 @@
+name: Staging Runtime Smoke
+
+on:
+  workflow_dispatch:
+    inputs:
+      base_url:
+        description: "Staging URL, e.g. https://hightech-web2-git-main.vercel.app"
+        required: true
+        type: string
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      SMOKE_BASE_URL: ${{ inputs.base_url }}
+      SMOKE_DEPLOYMENT_ENV: staging
+      QA_BASE_URL: ${{ inputs.base_url }}
+      QA_DEPLOYMENT_ENV: staging
+      NEXT_PUBLIC_ANALYTICS_ENABLED: "false"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Runtime smoke
+        run: node scripts/smoke-test.mjs
+      - name: HTTP contract
+        run: node scripts/http-contract-test.mjs

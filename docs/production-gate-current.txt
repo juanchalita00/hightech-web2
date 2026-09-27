@@ -1,0 +1,19 @@
+
+PRODUCTION RELEASE BLOCKED
+
+- napApproved
+- termsApproved
+- privacyApproved
+- warrantiesApproved
+- rpcaNomResolved
+- redirectsVerified
+- dnsEmailVerified
+- analyticsPrivacyApproved
+- performanceQaPassed
+- accessibilityQaPassed
+- mobileQaPassed
+- rollbackTested
+- monitoringEnabled
+- smokeTestPassed
+
+Esto es esperado hasta cerrar Legal + Privacy + Warranty + NAP + Migration + QA.

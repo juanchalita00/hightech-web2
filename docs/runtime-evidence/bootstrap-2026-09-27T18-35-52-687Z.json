@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-09-27T18:35:52.685Z",
+  "steps": [
+    {
+      "name": "node>=22",
+      "passed": true,
+      "detail": "22.16.0"
+    },
+    {
+      "name": "dependencies",
+      "passed": false,
+      "detail": "node_modules incomplete; rerun with --install in an environment with npm network access"
+    }
+  ],
+  "notes": []
+}

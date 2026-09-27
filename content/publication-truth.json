@@ -1,0 +1,122 @@
+{
+  "meta": {
+    "source": "HIGHTECH_Web2_System_of_Truth_v0.19",
+    "cutoff": "2026-09-27"
+  },
+  "brand": {
+    "name": "HIGHTECH Polarizados",
+    "director": "Fernando Chalita"
+  },
+  "contact": {
+    "phoneDisplay": "33 2228 9017",
+    "phoneE164": "+523322289017",
+    "emailSales": "ventas@polarizadoshightech.com",
+    "exactAddress": null,
+    "locationLabel": "Zapopan, Jalisco",
+    "napStatus": "NAP_RECONCILIATION_REQUIRED"
+  },
+  "nano": [
+    {
+      "id": "IR75",
+      "sheet": "NANO-70",
+      "vlt": 75,
+      "uv": 99,
+      "infraredRejection": 95,
+      "infraredWavelengthNm": 950,
+      "tser": 59,
+      "status": "APPROVED_WITH_CONTEXT"
+    },
+    {
+      "id": "IR50",
+      "sheet": "NANO-50",
+      "vlt": 48,
+      "uv": 99,
+      "infraredRejection": 95,
+      "infraredWavelengthNm": 950,
+      "tser": 72,
+      "status": "APPROVED_WITH_CONTEXT"
+    },
+    {
+      "id": "IR35",
+      "sheet": "NANO-35",
+      "vlt": 35,
+      "uv": 99,
+      "infraredRejection": 95,
+      "infraredWavelengthNm": 950,
+      "tser": 79,
+      "status": "APPROVED_WITH_CONTEXT"
+    },
+    {
+      "id": "IR15",
+      "sheet": "NANO-15",
+      "vlt": 15,
+      "uv": 99,
+      "infraredRejection": 95,
+      "infraredWavelengthNm": 950,
+      "tser": 87,
+      "status": "APPROVED_WITH_CONTEXT"
+    },
+    {
+      "id": "IR5",
+      "sheet": "NANO-03",
+      "vlt": 3,
+      "uv": 99,
+      "infraredRejection": 95,
+      "infraredWavelengthNm": 950,
+      "tser": 96,
+      "status": "APPROVED_WITH_CONTEXT"
+    }
+  ],
+  "jaliscoAutomotive": {
+    "operationalReference": {
+      "windshield": "70–75%",
+      "frontSide": "35%",
+      "rearSideAndBack": "20%",
+      "status": "ACTIVE_OPERATIONAL_REFERENCE",
+      "sourceType": "AUTHORITY_ORAL_GUIDANCE"
+    },
+    "windshieldLegalConclusion": "UNRESOLVED"
+  },
+  "pricing": {
+    "residential": "CUSTOM_QUOTE",
+    "commercial": "CUSTOM_QUOTE",
+    "automotive": "QUOTE_BY_VEHICLE",
+    "publicNumericPrices": false
+  },
+  "technicalPolicy": {
+    "infrared": {
+      "currentEvidenceScope": "POINT_MEASUREMENT_ONLY",
+      "supportedWavelengthNm": 950,
+      "spectralCurveAvailable": false,
+      "multiWavelengthClaimsAllowed": false,
+      "ownMeasurementProgram": "FUTURE_DOCUMENTED_PROTOCOL"
+    }
+  },
+  "servicePolicy": {
+    "automotive": {
+      "installationMode": "WORKSHOP_ONLY",
+      "status": "APPROVED"
+    },
+    "quoteIntake": {
+      "architecture": [
+        "photos",
+        "approximate_dimensions",
+        "primary_goal"
+      ],
+      "automotive": [
+        "make",
+        "model",
+        "year",
+        "requested_glass_scope"
+      ],
+      "status": "APPROVED_FROM_COMMERCIAL_SOURCE"
+    }
+  },
+  "site": {
+    "canonicalBaseUrl": "https://polarizadoshightech.com",
+    "canonicalHost": "polarizadoshightech.com",
+    "wwwPolicy": "REDIRECT_TO_CANONICAL",
+    "httpPolicy": "REDIRECT_TO_HTTPS",
+    "trailingSlash": "ALWAYS_FOR_CONTENT_ROUTES"
+  }
+}

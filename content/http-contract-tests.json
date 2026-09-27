@@ -1,0 +1,24 @@
+{
+  "baseUrlEnv": "QA_BASE_URL",
+  "deploymentEnvVar": "QA_DEPLOYMENT_ENV",
+  "routes": [
+    "/",
+    "/automotriz/",
+    "/peliculas/nanoceramica/",
+    "/contacto/"
+  ],
+  "requiredHeaders": {
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "SAMEORIGIN",
+    "referrer-policy": "strict-origin-when-cross-origin"
+  },
+  "productionOnlyHeaders": {
+    "strict-transport-security": "max-age=31536000"
+  },
+  "forbiddenHtmlTokensWhenAnalyticsDisabled": [
+    "googletagmanager.com",
+    "connect.facebook.net",
+    "google-analytics.com"
+  ],
+  "canonicalHost": "polarizadoshightech.com"
+}

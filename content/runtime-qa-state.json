@@ -1,0 +1,59 @@
+{
+  "version": "0.1",
+  "runtimeEnvironment": "PENDING_DEPLOYMENT",
+  "checks": {
+    "npmDependenciesInstalled": {
+      "passed": false,
+      "evidence": null
+    },
+    "nextBuildPassed": {
+      "passed": false,
+      "evidence": null
+    },
+    "typecheckPassed": {
+      "passed": false,
+      "evidence": null
+    },
+    "browserChromePassed": {
+      "passed": false,
+      "evidence": null
+    },
+    "browserSafariPassed": {
+      "passed": false,
+      "evidence": null
+    },
+    "androidMobilePassed": {
+      "passed": false,
+      "evidence": null
+    },
+    "iphoneMobilePassed": {
+      "passed": false,
+      "evidence": null
+    },
+    "lighthousePassed": {
+      "passed": false,
+      "evidence": null
+    },
+    "axePassed": {
+      "passed": false,
+      "evidence": null
+    },
+    "runtimeSmokePassed": {
+      "passed": false,
+      "evidence": null
+    },
+    "httpContractPassed": {
+      "passed": false,
+      "evidence": null
+    },
+    "rollbackTested": {
+      "passed": false,
+      "evidence": null
+    },
+    "monitoringVerified": {
+      "passed": false,
+      "evidence": null
+    }
+  },
+  "rule": "A runtime check may only be set to passed=true when evidence is recorded."
+}

@@ -1,0 +1,58 @@
+name: Runtime CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-gates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      NEXT_PUBLIC_SITE_URL: https://polarizadoshightech.com
+      NEXT_PUBLIC_DEPLOYMENT_ENV: staging
+      NEXT_PUBLIC_ANALYTICS_ENABLED: "false"
+      NEXT_PUBLIC_WHATSAPP_NUMBER: "523322289017"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Use Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci --no-audit --no-fund
+          else
+            npm install --no-audit --no-fund
+            echo "::warning::package-lock.json did not exist. Commit the generated lockfile after first successful networked install."
+          fi
+
+      - name: Static gates
+        run: npm run validate:all-static
+
+      - name: Real TypeScript check
+        run: npm run typecheck
+
+      - name: Next production build
+        run: npm run build
+
+      - name: Upload generated lockfile
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hightech-package-lock
+          path: package-lock.json
+          if-no-files-found: warn
+
+      - name: Upload release manifest
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hightech-release-manifest
+          path: docs/RELEASE_MANIFEST.generated.json
+          if-no-files-found: warn

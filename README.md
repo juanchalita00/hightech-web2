@@ -50,6 +50,7 @@ Consulta:
 - `docs/RUNTIME_QA_RELEASE_CANDIDATE_V0.8.md`
 - `docs/source/HIGHTECH_Web2_System_of_Truth_v0.19.md`
 
+
 ## Staging externo
 
 Consulta:

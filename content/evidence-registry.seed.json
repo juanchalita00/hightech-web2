@@ -1,0 +1,11 @@
+{
+  "version": "0.1",
+  "assets": [
+    { "evidenceId": "TECH-NANO-75", "type": "technical_sheet", "product": "IR75", "status": "READY_TECHNICAL_EVIDENCE", "publicationAllowed": true, "sheetImagePublicationAllowed": false },
+    { "evidenceId": "TECH-NANO-50", "type": "technical_sheet", "product": "IR50", "status": "READY_TECHNICAL_EVIDENCE", "publicationAllowed": true, "sheetImagePublicationAllowed": false },
+    { "evidenceId": "TECH-NANO-35", "type": "technical_sheet", "product": "IR35", "status": "READY_TECHNICAL_EVIDENCE", "publicationAllowed": true, "sheetImagePublicationAllowed": false },
+    { "evidenceId": "TECH-NANO-15", "type": "technical_sheet", "product": "IR15", "status": "READY_TECHNICAL_EVIDENCE", "publicationAllowed": true, "sheetImagePublicationAllowed": false },
+    { "evidenceId": "TECH-NANO-03", "type": "technical_sheet", "product": "IR5", "status": "READY_TECHNICAL_EVIDENCE", "publicationAllowed": true, "sheetImagePublicationAllowed": false },
+    { "evidenceId": "PROJ-COM-001", "type": "project_photo", "status": "PROJECT_CANDIDATE", "publicationAllowed": false, "reason": "metadata_and_permission_pending" }
+  ]
+}

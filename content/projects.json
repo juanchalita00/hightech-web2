@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "status": "CANDIDATES_ONLY",
+  "items": [
+    {
+      "projectId": "PROJ-COM-CANDIDATE-001",
+      "slug": "cristaleria-comercial-candidato-001",
+      "internalTitle": "Cristalería comercial — serie candidata 1000015932–5935",
+      "businessLine": "commercial",
+      "problem": null,
+      "productId": null,
+      "tone": null,
+      "locationGeneral": null,
+      "dateApprox": null,
+      "observedResult": null,
+      "assetIds": ["PROJ-COM-001", "PROJ-COM-002", "PROJ-COM-003", "PROJ-COM-004"],
+      "permission": "UNKNOWN",
+      "publicationAllowed": false,
+      "status": "PROJECT_CANDIDATE",
+      "blockers": ["product_metadata", "problem_context", "date", "permission", "public_title", "result_context"]
+    }
+  ]
+}

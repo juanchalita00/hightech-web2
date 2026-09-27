@@ -1,0 +1,79 @@
+{
+  "baseUrlEnv": "SMOKE_BASE_URL",
+  "pageChecks": [
+    {
+      "path": "/",
+      "expectedStatus": 200,
+      "canonical": "/"
+    },
+    {
+      "path": "/residencial/",
+      "expectedStatus": 200,
+      "canonical": "/residencial/"
+    },
+    {
+      "path": "/comercial/",
+      "expectedStatus": 200,
+      "canonical": "/comercial/"
+    },
+    {
+      "path": "/automotriz/",
+      "expectedStatus": 200,
+      "canonical": "/automotriz/"
+    },
+    {
+      "path": "/servicios/",
+      "expectedStatus": 200,
+      "canonical": "/servicios/"
+    },
+    {
+      "path": "/peliculas/",
+      "expectedStatus": 200,
+      "canonical": "/peliculas/"
+    },
+    {
+      "path": "/peliculas/nanoceramica/",
+      "expectedStatus": 200,
+      "canonical": "/peliculas/nanoceramica/"
+    },
+    {
+      "path": "/contacto/",
+      "expectedStatus": 200,
+      "canonical": "/contacto/"
+    },
+    {
+      "path": "/nosotros/",
+      "expectedStatus": 200,
+      "canonical": "/nosotros/"
+    },
+    {
+      "path": "/guias/",
+      "expectedStatus": 200,
+      "canonical": "/guias/"
+    },
+    {
+      "path": "/preguntas-frecuentes/",
+      "expectedStatus": 200,
+      "canonical": "/preguntas-frecuentes/"
+    }
+  ],
+  "endpointChecks": [
+    {
+      "path": "/robots.txt",
+      "expectedStatus": 200,
+      "stagingContains": "disallow: /",
+      "productionContains": "sitemap"
+    },
+    {
+      "path": "/sitemap.xml",
+      "expectedStatus": 200,
+      "contains": "polarizadoshightech.com"
+    }
+  ],
+  "notFoundCheck": {
+    "path": "/__hightech_404_probe__",
+    "expectedStatus": 404
+  },
+  "redirectFixtureFile": "content/redirect-fixtures.json",
+  "deploymentEnvVar": "SMOKE_DEPLOYMENT_ENV"
+}

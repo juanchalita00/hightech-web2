@@ -1,0 +1,62 @@
+[
+  {
+    "source": "/contact-us/",
+    "destination": "/contacto/",
+    "status": "APPROVED",
+    "code": 301
+  },
+  {
+    "source": "/home-residencial/",
+    "destination": "/residencial/",
+    "status": "APPROVED",
+    "code": 301
+  },
+  {
+    "source": "/comercial-office/",
+    "destination": "/comercial/",
+    "status": "APPROVED",
+    "code": 301
+  },
+  {
+    "source": "/seguridad-proteccion/",
+    "destination": "/peliculas/seguridad/",
+    "status": "APPROVED",
+    "code": 301
+  },
+  {
+    "source": "/privacidad-decorativo/",
+    "destination": "/peliculas/privacidad/",
+    "status": "APPROVED",
+    "code": 301
+  },
+  {
+    "source": "/gallery/",
+    "destination": "/proyectos/",
+    "status": "PROJECT_ROUTE_GATE",
+    "code": 301
+  },
+  {
+    "source": "/dano-uv-decoloracion/",
+    "destination": "/guias/proteccion-uv-ventanas/",
+    "status": "PENDING_GSC",
+    "code": 301
+  },
+  {
+    "source": "/destello/",
+    "destination": "/guias/deslumbramiento-ventanas/",
+    "status": "PENDING_GSC",
+    "code": 301
+  },
+  {
+    "source": "/calor-frio-excesivo/",
+    "destination": "/guias/reducir-calor-ventanas/",
+    "status": "PENDING_GSC",
+    "code": 301
+  },
+  {
+    "source": "/ahorro-energia/",
+    "destination": "/guias/control-solar-eficiencia-energetica/",
+    "status": "PENDING_GSC",
+    "code": 301
+  }
+]

@@ -1,0 +1,182 @@
+[
+  {
+    "path": "/",
+    "status": "LAUNCH_CORE",
+    "indexable": true,
+    "canonical": "/"
+  },
+  {
+    "path": "/servicios/",
+    "status": "LAUNCH_CORE",
+    "indexable": true,
+    "canonical": "/servicios/"
+  },
+  {
+    "path": "/residencial/",
+    "status": "LAUNCH_CORE",
+    "indexable": true,
+    "canonical": "/residencial/"
+  },
+  {
+    "path": "/comercial/",
+    "status": "LAUNCH_CORE",
+    "indexable": true,
+    "canonical": "/comercial/"
+  },
+  {
+    "path": "/automotriz/",
+    "status": "LAUNCH_CORE",
+    "indexable": true,
+    "canonical": "/automotriz/"
+  },
+  {
+    "path": "/contacto/",
+    "status": "LAUNCH_CORE_NAP_GATE",
+    "indexable": true,
+    "canonical": "/contacto/"
+  },
+  {
+    "path": "/garantias/",
+    "status": "BUILD_READY_CONTENT_BLOCKED",
+    "indexable": false,
+    "canonical": "/garantias/"
+  },
+  {
+    "path": "/peliculas/",
+    "status": "LAUNCH_CORE",
+    "indexable": true,
+    "canonical": "/peliculas/"
+  },
+  {
+    "path": "/peliculas/nanoceramica/",
+    "status": "LAUNCH_CORE",
+    "indexable": true,
+    "canonical": "/peliculas/nanoceramica/"
+  },
+  {
+    "path": "/peliculas/nanoceramica/ir75/",
+    "status": "INDEX_IF_COMPLETE",
+    "indexable": false,
+    "canonical": "/peliculas/nanoceramica/ir75/"
+  },
+  {
+    "path": "/peliculas/nanoceramica/ir50/",
+    "status": "INDEX_IF_COMPLETE",
+    "indexable": false,
+    "canonical": "/peliculas/nanoceramica/ir50/"
+  },
+  {
+    "path": "/peliculas/nanoceramica/ir35/",
+    "status": "INDEX_IF_COMPLETE",
+    "indexable": false,
+    "canonical": "/peliculas/nanoceramica/ir35/"
+  },
+  {
+    "path": "/peliculas/nanoceramica/ir15/",
+    "status": "INDEX_IF_COMPLETE",
+    "indexable": false,
+    "canonical": "/peliculas/nanoceramica/ir15/"
+  },
+  {
+    "path": "/peliculas/nanoceramica/ir5/",
+    "status": "INDEX_IF_COMPLETE",
+    "indexable": false,
+    "canonical": "/peliculas/nanoceramica/ir5/"
+  },
+  {
+    "path": "/peliculas/plata-reflecta/",
+    "status": "LAUNCH_WITH_CONTEXT",
+    "indexable": true,
+    "canonical": "/peliculas/plata-reflecta/"
+  },
+  {
+    "path": "/peliculas/seguridad/",
+    "status": "LAUNCH_WITH_CONTEXT",
+    "indexable": true,
+    "canonical": "/peliculas/seguridad/"
+  },
+  {
+    "path": "/peliculas/privacidad/",
+    "status": "LAUNCH_WITH_CONTEXT",
+    "indexable": true,
+    "canonical": "/peliculas/privacidad/"
+  },
+  {
+    "path": "/proyectos/",
+    "status": "CONTENT_BLOCKED",
+    "indexable": false,
+    "canonical": "/proyectos/"
+  },
+  {
+    "path": "/guias/",
+    "status": "LAUNCH",
+    "indexable": true,
+    "canonical": "/guias/"
+  },
+  {
+    "path": "/guias/reducir-calor-ventanas/",
+    "status": "LAUNCH",
+    "indexable": true,
+    "canonical": "/guias/reducir-calor-ventanas/"
+  },
+  {
+    "path": "/guias/proteccion-uv-ventanas/",
+    "status": "LAUNCH",
+    "indexable": true,
+    "canonical": "/guias/proteccion-uv-ventanas/"
+  },
+  {
+    "path": "/guias/irr-vs-tser/",
+    "status": "LAUNCH",
+    "indexable": true,
+    "canonical": "/guias/irr-vs-tser/"
+  },
+  {
+    "path": "/guias/que-es-vlt/",
+    "status": "LAUNCH",
+    "indexable": true,
+    "canonical": "/guias/que-es-vlt/"
+  },
+  {
+    "path": "/guias/privacidad-ventanas-noche/",
+    "status": "LAUNCH",
+    "indexable": true,
+    "canonical": "/guias/privacidad-ventanas-noche/"
+  },
+  {
+    "path": "/guias/estres-termico-cristal/",
+    "status": "LAUNCH",
+    "indexable": true,
+    "canonical": "/guias/estres-termico-cristal/"
+  },
+  {
+    "path": "/guias/polarizado-automotriz-jalisco/",
+    "status": "LEGAL_CONTENT_REVIEW",
+    "indexable": false,
+    "canonical": "/guias/polarizado-automotriz-jalisco/"
+  },
+  {
+    "path": "/nosotros/",
+    "status": "LAUNCH",
+    "indexable": true,
+    "canonical": "/nosotros/"
+  },
+  {
+    "path": "/preguntas-frecuentes/",
+    "status": "LAUNCH_IF_NON_DUPLICATIVE",
+    "indexable": true,
+    "canonical": "/preguntas-frecuentes/"
+  },
+  {
+    "path": "/legal/terminos-y-condiciones/",
+    "status": "BUILD_READY_CONTENT_BLOCKED",
+    "indexable": false,
+    "canonical": "/legal/terminos-y-condiciones/"
+  },
+  {
+    "path": "/legal/aviso-de-privacidad/",
+    "status": "BUILD_READY_CONTENT_BLOCKED",
+    "indexable": false,
+    "canonical": "/legal/aviso-de-privacidad/"
+  }
+]

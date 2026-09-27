@@ -1,0 +1,33 @@
+{
+  "status": "PENDING_PRIVACY_APPROVAL",
+  "providers": [
+    {
+      "id": "ga4",
+      "name": "Google Analytics 4",
+      "category": "analytics",
+      "enabled": false,
+      "loadMode": "DISABLED",
+      "approval": "PENDING_PRIVACY",
+      "purpose": "Medición de uso y conversión; no cargar hasta aprobación."
+    },
+    {
+      "id": "meta_pixel",
+      "name": "Meta Pixel",
+      "category": "advertising",
+      "enabled": false,
+      "loadMode": "DISABLED",
+      "approval": "PENDING_PRIVACY",
+      "purpose": "Atribución publicitaria; no cargar hasta aprobación."
+    },
+    {
+      "id": "google_ads",
+      "name": "Google Ads",
+      "category": "advertising",
+      "enabled": false,
+      "loadMode": "DISABLED",
+      "approval": "PENDING_PRIVACY",
+      "purpose": "Atribución de campañas; no cargar hasta aprobación."
+    }
+  ],
+  "rule": "No provider may load unless release.production.analyticsPrivacyApproved=true and the provider is explicitly enabled."
+}

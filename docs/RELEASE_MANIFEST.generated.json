@@ -1,0 +1,37 @@
+{
+  "generatedAt": "2026-09-27T18:42:05.170Z",
+  "sourceOfTruthVersion": "0.19",
+  "canonicalBaseUrl": "https://polarizadoshightech.com",
+  "implementationApproved": true,
+  "productionReady": false,
+  "productionBlockers": [
+    "napApproved",
+    "termsApproved",
+    "privacyApproved",
+    "warrantiesApproved",
+    "rpcaNomResolved",
+    "redirectsVerified",
+    "dnsEmailVerified",
+    "analyticsPrivacyApproved",
+    "performanceQaPassed",
+    "accessibilityQaPassed",
+    "mobileQaPassed",
+    "rollbackTested",
+    "monitoringEnabled",
+    "smokeTestPassed"
+  ],
+  "indexableRouteCount": 20,
+  "approvedRedirectCount": 5,
+  "enabledThirdParties": [],
+  "dnsEmailStatus": "UNVERIFIED_PRE_CUTOVER",
+  "infrastructure": {
+    "canonicalPolicyReady": true,
+    "schemaGatesReady": true,
+    "sitemapRobotsReady": true,
+    "redirectFixturesReady": true,
+    "smokeManifestReady": true,
+    "thirdPartyRegistryReady": true,
+    "dnsEmailChecklistReady": true,
+    "runtimeBrowserQa": false
+  }
+}
