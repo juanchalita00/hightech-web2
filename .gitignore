@@ -4,6 +4,9 @@ out
 .env
 .env.*
 !.env.example
+!.env.staging.example
 .vercel
 *.log
 .DS_Store
+*.tsbuildinfo
+next-env.d.ts
