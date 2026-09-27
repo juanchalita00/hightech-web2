@@ -1,0 +1,37 @@
+[
+  {
+    "source": "/contact-us/",
+    "expectedStatus": 301,
+    "destination": "/contacto/",
+    "expectedFinalStatus": 200,
+    "expectedCanonical": "/contacto/"
+  },
+  {
+    "source": "/home-residencial/",
+    "expectedStatus": 301,
+    "destination": "/residencial/",
+    "expectedFinalStatus": 200,
+    "expectedCanonical": "/residencial/"
+  },
+  {
+    "source": "/comercial-office/",
+    "expectedStatus": 301,
+    "destination": "/comercial/",
+    "expectedFinalStatus": 200,
+    "expectedCanonical": "/comercial/"
+  },
+  {
+    "source": "/seguridad-proteccion/",
+    "expectedStatus": 301,
+    "destination": "/peliculas/seguridad/",
+    "expectedFinalStatus": 200,
+    "expectedCanonical": "/peliculas/seguridad/"
+  },
+  {
+    "source": "/privacidad-decorativo/",
+    "expectedStatus": 301,
+    "destination": "/peliculas/privacidad/",
+    "expectedFinalStatus": 200,
+    "expectedCanonical": "/peliculas/privacidad/"
+  }
+]

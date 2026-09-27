@@ -1,0 +1,32 @@
+{
+  "version": "0.1",
+  "source": "HIGHTECH_Web2_Performance_Accessibility_Release_Gates_v0.1",
+  "coreWebVitals": {
+    "lcpMsMax": 2500,
+    "inpMsMax": 200,
+    "clsMax": 0.1
+  },
+  "labTargets": {
+    "lighthousePerformanceMin": 90,
+    "accessibilityMin": 95,
+    "tbtMsMax": 200,
+    "clsMax": 0.05
+  },
+  "transferBudgetsKb": {
+    "initialJsGzipMax": 160,
+    "initialCssGzipMax": 60,
+    "fontsMax": 120,
+    "heroMobileMax": 250,
+    "heroDesktopMax": 450,
+    "initialMobileTransferMax": 1024
+  },
+  "criticalPathThirdPartiesMax": 0,
+  "routes": [
+    "/",
+    "/residencial/",
+    "/comercial/",
+    "/automotriz/",
+    "/peliculas/nanoceramica/",
+    "/contacto/"
+  ]
+}

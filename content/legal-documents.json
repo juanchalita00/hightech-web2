@@ -1,0 +1,20 @@
+[
+  {
+    "documentId": "TERMS-B2C",
+    "title": "Términos y Condiciones",
+    "status": "LEGAL_BLOCKED",
+    "version": null,
+    "effectiveFrom": null,
+    "provider": null,
+    "immutableFile": null
+  },
+  {
+    "documentId": "PRIVACY-INTEGRAL",
+    "title": "Aviso de Privacidad Integral",
+    "status": "PRIVACY_BLOCKED",
+    "version": null,
+    "effectiveFrom": null,
+    "provider": null,
+    "immutableFile": null
+  }
+]

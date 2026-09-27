@@ -1,0 +1,39 @@
+{
+  "sourceOfTruthVersion": "0.19",
+  "implementationApproved": true,
+  "production": {
+    "napApproved": false,
+    "termsApproved": false,
+    "privacyApproved": false,
+    "warrantiesApproved": false,
+    "rpcaNomResolved": false,
+    "redirectsVerified": false,
+    "dnsEmailVerified": false,
+    "analyticsPrivacyApproved": false,
+    "performanceQaPassed": false,
+    "accessibilityQaPassed": false,
+    "mobileQaPassed": false,
+    "rollbackTested": false,
+    "monitoringEnabled": false,
+    "smokeTestPassed": false
+  },
+  "routes": {
+    "projectsPublic": false,
+    "reviewsPublic": false,
+    "tonePagesIndexable": false,
+    "reflectiveStrongClaims": false,
+    "securityStrongClaims": false,
+    "jaliscoGuideIndexable": false,
+    "warrantyPageIndexable": false
+  },
+  "infrastructure": {
+    "canonicalPolicyReady": true,
+    "schemaGatesReady": true,
+    "sitemapRobotsReady": true,
+    "redirectFixturesReady": true,
+    "smokeManifestReady": true,
+    "thirdPartyRegistryReady": true,
+    "dnsEmailChecklistReady": true,
+    "runtimeBrowserQa": false
+  }
+}

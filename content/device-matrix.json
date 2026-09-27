@@ -1,0 +1,71 @@
+{
+  "version": "0.1",
+  "minimumMatrix": [
+    {
+      "id": "android_chrome_midrange",
+      "platform": "Android",
+      "browser": "Chrome",
+      "required": true,
+      "checks": [
+        "menu",
+        "whatsapp",
+        "tone_comparator",
+        "faq",
+        "contact",
+        "reflow",
+        "focus"
+      ]
+    },
+    {
+      "id": "iphone_safari",
+      "platform": "iOS",
+      "browser": "Safari",
+      "required": true,
+      "checks": [
+        "menu",
+        "whatsapp",
+        "tone_comparator",
+        "faq",
+        "contact",
+        "safe_area",
+        "focus"
+      ]
+    },
+    {
+      "id": "windows_chrome",
+      "platform": "Windows",
+      "browser": "Chrome",
+      "required": true,
+      "checks": [
+        "navigation",
+        "keyboard",
+        "forms",
+        "canonical",
+        "links"
+      ]
+    },
+    {
+      "id": "windows_edge",
+      "platform": "Windows",
+      "browser": "Edge",
+      "required": true,
+      "checks": [
+        "navigation",
+        "keyboard",
+        "forms"
+      ]
+    },
+    {
+      "id": "macos_safari",
+      "platform": "macOS",
+      "browser": "Safari",
+      "required": true,
+      "checks": [
+        "navigation",
+        "keyboard",
+        "layout",
+        "forms"
+      ]
+    }
+  ]
+}

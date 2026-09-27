@@ -1,0 +1,15 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import url from 'node:url';
+const root=path.resolve(path.dirname(url.fileURLToPath(import.meta.url)),'..');
+const read=p=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
+const release=read('content/release-state.json');
+const truth=read('content/publication-truth.json');
+const routes=read('content/routes.json');
+const redirects=read('content/redirects.json');
+const third=read('content/third-party-registry.json');
+const dns=read('content/dns-email-state.json');
+const blockers=Object.entries(release.production).filter(([,v])=>v!==true).map(([k])=>k);
+const out={generatedAt:new Date().toISOString(),sourceOfTruthVersion:release.sourceOfTruthVersion,canonicalBaseUrl:truth.site.canonicalBaseUrl,implementationApproved:release.implementationApproved,productionReady:blockers.length===0,productionBlockers:blockers,indexableRouteCount:routes.filter(r=>r.indexable).length,approvedRedirectCount:redirects.filter(r=>r.status==='APPROVED').length,enabledThirdParties:third.providers.filter(p=>p.enabled).map(p=>p.id),dnsEmailStatus:dns.status,infrastructure:release.infrastructure};
+fs.writeFileSync(path.join(root,'docs/RELEASE_MANIFEST.generated.json'),JSON.stringify(out,null,2)+'\n');
+console.log(`Release manifest generado. Production blockers: ${blockers.length}.`);

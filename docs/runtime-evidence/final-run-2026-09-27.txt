@@ -1,0 +1,415 @@
+HIGHTECH Web 2.0 — pasada final de verificación runtime (2026-09-27)
+Rama: claude/runtime-v0.8.2-pnr256 · código verificado en el commit indicado en la cabecera del resumen
+Entorno: contenedor Linux efímero con acceso al registry npm (no CI, no Vercel). Variables de build = las de .github/workflows/runtime-ci.yml.
+Informe: docs/RUNTIME_VERIFICATION_V0.8.2.md · Evidencia del bootstrap: docs/runtime-evidence/bootstrap-2026-09-27T20-19-24-992Z.json
+
+================================================================ RESUMEN (exit real vs esperado)
+HEAD 15103aa | node v22.22.2 | npm 10.9.7
+npm ci                             exit=0   expected=0   OK           10s
+npm audit                          exit=0   expected=0   OK            1s
+runtime:probe                      exit=0   expected=0   OK            0s
+validate:all-static                exit=0   expected=0   OK            5s
+release:check:production           exit=1   expected=1   OK            0s
+runtime:harness:selftest           exit=0   expected=0   OK            1s
+typecheck                          exit=0   expected=0   OK            4s
+build                              exit=0   expected=0   OK           18s
+smoke:runtime (staging)            exit=0   expected=0   OK            1s
+qa:http-contract (staging)         exit=0   expected=0   OK            0s
+independent verifier               exit=0   expected=0   OK            1s
+chromium console check             exit=0   expected=0   OK           66s
+runtime:bootstrap                  exit=0   expected=0   OK           18s
+build warnings/errors lines: 0
+
+================================================================ npm_ci
+
+added 54 packages in 10s
+
+================================================================ npm_audit
+found 0 vulnerabilities
+
+================================================================ runtime_probe
+
+> hightech-web2@0.8.2 runtime:probe
+> node scripts/probe-runtime-env.mjs
+
+{
+  "timestamp": "2026-09-27T20:17:29.681Z",
+  "node": {
+    "version": "22.22.2",
+    "requiredMajor": 22,
+    "ok": true
+  },
+  "npm": {
+    "userAgent": "npm/10.9.7 node/v22.22.2 linux x64 workspaces/false"
+  },
+  "packageLockPresent": true,
+  "nodeModulesPresent": true,
+  "packages": {
+    "next": true,
+    "react": true,
+    "react-dom": true,
+    "typescript": true,
+    "tailwindcss": true
+  },
+  "registryDns": {
+    "ok": true,
+    "detail": [
+      "104.16.4.34",
+      "104.16.0.34",
+      "104.16.2.34",
+      "104.16.5.34",
+      "104.16.3.34",
+      "104.16.11.34",
+      "104.16.10.34",
+      "104.16.1.34",
+      "104.16.8.34",
+      "104.16.9.34",
+      "104.16.6.34",
+      "104.16.7.34",
+      "2606:4700::6810:322",
+      "2606:4700::6810:222",
+      "2606:4700::6810:a22",
+      "2606:4700::6810:522",
+      "2606:4700::6810:922",
+      "2606:4700::6810:822",
+      "2606:4700::6810:622",
+      "2606:4700::6810:422",
+      "2606:4700::6810:722",
+      "2606:4700::6810:22",
+      "2606:4700::6810:b22",
+      "2606:4700::6810:122"
+    ]
+  },
+  "canAttemptInstall": true,
+  "note": "A successful environment probe does not equal a verified Next build."
+}
+
+================================================================ validate_all-static
+
+> hightech-web2@0.8.2 validate:all-static
+> npm run validate:content && npm run validate:redirects && npm run validate:links && npm run validate:seo && npm run validate:smoke-manifest && npm run validate:runtime-qa-state && npm run validate:performance-budget && npm run validate:internal-types && npm run release:check:staging && npm run release:manifest && npm run release:preflight
+
+
+> hightech-web2@0.8.2 validate:content
+> node scripts/validate-content.mjs
+
+Content gate OK: 5 productos nano, 30 rutas registradas.
+
+> hightech-web2@0.8.2 validate:redirects
+> node scripts/validate-redirects.mjs
+
+Redirect gate OK: 5 activos, 10 registrados.
+
+> hightech-web2@0.8.2 validate:links
+> node scripts/validate-links.mjs
+
+Link gate OK: 76 rutas internas literales comprobadas.
+
+> hightech-web2@0.8.2 validate:seo
+> node scripts/validate-seo.mjs
+
+SEO gate OK: 30 rutas con canonical registry + schema gates.
+
+> hightech-web2@0.8.2 validate:smoke-manifest
+> node scripts/validate-smoke-manifest.mjs
+
+Smoke manifest OK: 11 páginas, 2 endpoints, 5 redirects.
+
+> hightech-web2@0.8.2 validate:runtime-qa-state
+> node scripts/validate-runtime-qa-state.mjs
+
+Runtime QA state OK: 13 checks controlados; PASS requiere evidencia.
+
+> hightech-web2@0.8.2 validate:performance-budget
+> node scripts/validate-performance-budget.mjs
+
+Performance budget OK: 6 rutas, CWV y transfer budgets definidos.
+
+> hightech-web2@0.8.2 validate:internal-types
+> node scripts/validate-internal-types.mjs
+
+Structural typecheck OK: 85 TS/TSX files. External Next/React types were stubbed; real npm typecheck remains required.
+
+> hightech-web2@0.8.2 release:check:staging
+> node scripts/release-check.mjs staging
+
+Staging gate OK: plumbing base listo; blockers de producción permanecen aislados.
+
+> hightech-web2@0.8.2 release:manifest
+> node scripts/generate-release-manifest.mjs
+
+Release manifest generado. Production blockers: 14.
+
+> hightech-web2@0.8.2 release:preflight
+> node scripts/release-preflight.mjs
+
+Release preflight: 14 production blockers + 10 runtime checks pending.
+Production: napApproved, termsApproved, privacyApproved, warrantiesApproved, rpcaNomResolved, redirectsVerified, dnsEmailVerified, analyticsPrivacyApproved, performanceQaPassed, accessibilityQaPassed, mobileQaPassed, rollbackTested, monitoringEnabled, smokeTestPassed
+Runtime: browserChromePassed, browserSafariPassed, androidMobilePassed, iphoneMobilePassed, lighthousePassed, axePassed, runtimeSmokePassed, httpContractPassed, rollbackTested, monitoringVerified
+Estado: NOT_RELEASE_CANDIDATE (esperado).
+
+================================================================ release_check_production
+
+> hightech-web2@0.8.2 release:check:production
+> node scripts/release-check.mjs production
+
+
+PRODUCTION RELEASE BLOCKED
+
+- napApproved
+- termsApproved
+- privacyApproved
+- warrantiesApproved
+- rpcaNomResolved
+- redirectsVerified
+- dnsEmailVerified
+- analyticsPrivacyApproved
+- performanceQaPassed
+- accessibilityQaPassed
+- mobileQaPassed
+- rollbackTested
+- monitoringEnabled
+- smokeTestPassed
+
+Esto es esperado hasta cerrar Legal + Privacy + Warranty + NAP + Migration + QA.
+
+================================================================ runtime_harness_selftest
+
+> hightech-web2@0.8.2 runtime:harness:selftest
+> node scripts/selftest-runtime-harness.mjs
+
+Runtime smoke OK contra http://127.0.0.1:35423.
+HTTP contract OK contra http://127.0.0.1:35423.
+Runtime smoke OK contra http://127.0.0.1:37557.
+HTTP contract OK contra http://127.0.0.1:37557.
+Runtime QA harness self-test OK in staging and production fixture modes. This validates the test harness, not the Next application runtime.
+
+================================================================ typecheck
+
+> hightech-web2@0.8.2 typecheck
+> next typegen && tsc --noEmit
+
+Generating route types...
+✓ Types generated successfully
+
+================================================================ build
+
+> hightech-web2@0.8.2 build
+> npm run validate:all-static && next build
+
+
+> hightech-web2@0.8.2 validate:all-static
+> npm run validate:content && npm run validate:redirects && npm run validate:links && npm run validate:seo && npm run validate:smoke-manifest && npm run validate:runtime-qa-state && npm run validate:performance-budget && npm run validate:internal-types && npm run release:check:staging && npm run release:manifest && npm run release:preflight
+
+
+> hightech-web2@0.8.2 validate:content
+> node scripts/validate-content.mjs
+
+Content gate OK: 5 productos nano, 30 rutas registradas.
+
+> hightech-web2@0.8.2 validate:redirects
+> node scripts/validate-redirects.mjs
+
+Redirect gate OK: 5 activos, 10 registrados.
+
+> hightech-web2@0.8.2 validate:links
+> node scripts/validate-links.mjs
+
+Link gate OK: 76 rutas internas literales comprobadas.
+
+> hightech-web2@0.8.2 validate:seo
+> node scripts/validate-seo.mjs
+
+SEO gate OK: 30 rutas con canonical registry + schema gates.
+
+> hightech-web2@0.8.2 validate:smoke-manifest
+> node scripts/validate-smoke-manifest.mjs
+
+Smoke manifest OK: 11 páginas, 2 endpoints, 5 redirects.
+
+> hightech-web2@0.8.2 validate:runtime-qa-state
+> node scripts/validate-runtime-qa-state.mjs
+
+Runtime QA state OK: 13 checks controlados; PASS requiere evidencia.
+
+> hightech-web2@0.8.2 validate:performance-budget
+> node scripts/validate-performance-budget.mjs
+
+Performance budget OK: 6 rutas, CWV y transfer budgets definidos.
+
+> hightech-web2@0.8.2 validate:internal-types
+> node scripts/validate-internal-types.mjs
+
+Structural typecheck OK: 85 TS/TSX files. External Next/React types were stubbed; real npm typecheck remains required.
+
+> hightech-web2@0.8.2 release:check:staging
+> node scripts/release-check.mjs staging
+
+Staging gate OK: plumbing base listo; blockers de producción permanecen aislados.
+
+> hightech-web2@0.8.2 release:manifest
+> node scripts/generate-release-manifest.mjs
+
+Release manifest generado. Production blockers: 14.
+
+> hightech-web2@0.8.2 release:preflight
+> node scripts/release-preflight.mjs
+
+Release preflight: 14 production blockers + 10 runtime checks pending.
+Production: napApproved, termsApproved, privacyApproved, warrantiesApproved, rpcaNomResolved, redirectsVerified, dnsEmailVerified, analyticsPrivacyApproved, performanceQaPassed, accessibilityQaPassed, mobileQaPassed, rollbackTested, monitoringEnabled, smokeTestPassed
+Runtime: browserChromePassed, browserSafariPassed, androidMobilePassed, iphoneMobilePassed, lighthousePassed, axePassed, runtimeSmokePassed, httpContractPassed, rollbackTested, monitoringVerified
+Estado: NOT_RELEASE_CANDIDATE (esperado).
+▲ Next.js 16.3.6 (Turbopack)
+✓ Running next.config.ts took 40ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 6.5s
+  Running TypeScript ...
+  Finished TypeScript in 4.3s ...
+  Collecting page data using 3 workers ...
+  Generating static pages using 3 workers (0/34) ...
+  Generating static pages using 3 workers (8/34) 
+  Generating static pages using 3 workers (16/34) 
+  Generating static pages using 3 workers (25/34) 
+✓ Generating static pages using 3 workers (34/34) in 676ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /automotriz
+├ ○ /comercial
+├ ○ /contacto
+├ ○ /garantias
+├ ○ /guias
+├ ○ /guias/estres-termico-cristal
+├ ○ /guias/irr-vs-tser
+├ ○ /guias/polarizado-automotriz-jalisco
+├ ○ /guias/privacidad-ventanas-noche
+├ ○ /guias/proteccion-uv-ventanas
+├ ○ /guias/que-es-vlt
+├ ○ /guias/reducir-calor-ventanas
+├ ○ /legal/aviso-de-privacidad
+├ ○ /legal/terminos-y-condiciones
+├ ○ /nosotros
+├ ○ /peliculas
+├ ○ /peliculas/nanoceramica
+├   /peliculas/nanoceramica/[tone]
+│ ├ ● /peliculas/nanoceramica/ir75
+│ ├ ● /peliculas/nanoceramica/ir50
+│ ├ ● /peliculas/nanoceramica/ir35
+│ └ ● [+2 more paths]
+├ ○ /peliculas/plata-reflecta
+├ ○ /peliculas/privacidad
+├ ○ /peliculas/seguridad
+├ ○ /preguntas-frecuentes
+├ ○ /proyectos
+├ ● /proyectos/[slug]
+├ ○ /residencial
+├ ○ /robots.txt
+├ ○ /servicios
+└ ○ /sitemap.xml
+
+
+○  (Static)  prerendered as static content
+●  (SSG)     prerendered as static HTML (uses generateStaticParams)
+
+
+================================================================ smoke_runtime_(staging)
+
+> hightech-web2@0.8.2 smoke:runtime
+> node scripts/smoke-test.mjs
+
+Runtime smoke OK contra http://127.0.0.1:3100.
+
+================================================================ qa_http-contract_(staging)
+
+> hightech-web2@0.8.2 qa:http-contract
+> node scripts/http-contract-test.mjs
+
+HTTP contract OK contra http://127.0.0.1:3100.
+
+================================================================ verificador independiente (script ad hoc fuera del repo; ver informe §4)
+ROUTE TABLE
+/                                            200                          robots=-                  ld=Organization+WebSite   title=HIGHTECH Polarizados
+/servicios/                                  200                          robots=-                  ld=Organization+WebSite   title=Servicios | HIGHTECH Polarizados
+/residencial/                                200                          robots=-                  ld=Organization+WebSite   title=Polarizado residencial | HIGHTECH Polarizados
+/comercial/                                  200                          robots=-                  ld=Organization+WebSite   title=Películas para cristales comerciales | HIGHTECH
+/automotriz/                                 200                          robots=-                  ld=Organization+WebSite   title=Polarizado automotriz nanocerámico | HIGHTECH
+/contacto/                                   200                          robots=-                  ld=Organization+WebSite   title=Contacto | HIGHTECH Polarizados
+/garantias/                                  200                          robots=noindex, follow    ld=Organization+WebSite   title=Garantías | HIGHTECH Polarizados
+/peliculas/                                  200                          robots=-                  ld=Organization+WebSite   title=Películas para cristales | HIGHTECH Polarizados
+/peliculas/nanoceramica/                     200                          robots=-                  ld=Organization+WebSite   title=Película nanocerámica | HIGHTECH Polarizados
+/peliculas/nanoceramica/ir75/                200                          robots=noindex, follow    ld=Organization+WebSite   title=IR75 | Nanocerámica HIGHTECH
+/peliculas/nanoceramica/ir50/                200                          robots=noindex, follow    ld=Organization+WebSite   title=IR50 | Nanocerámica HIGHTECH
+/peliculas/nanoceramica/ir35/                200                          robots=noindex, follow    ld=Organization+WebSite   title=IR35 | Nanocerámica HIGHTECH
+/peliculas/nanoceramica/ir15/                200                          robots=noindex, follow    ld=Organization+WebSite   title=IR15 | Nanocerámica HIGHTECH
+/peliculas/nanoceramica/ir5/                 200                          robots=noindex, follow    ld=Organization+WebSite   title=IR5 | Nanocerámica HIGHTECH
+/peliculas/plata-reflecta/                   200                          robots=-                  ld=Organization+WebSite   title=Película Plata Reflecta | HIGHTECH Polarizados
+/peliculas/seguridad/                        200                          robots=-                  ld=Organization+WebSite   title=Película de seguridad para cristal | HIGHTECH Polarizados
+/peliculas/privacidad/                       200                          robots=-                  ld=Organization+WebSite   title=Privacidad para cristales | HIGHTECH Polarizados
+/proyectos/                                  200                          robots=noindex, follow    ld=Organization+WebSite   title=Proyectos | HIGHTECH Polarizados
+/guias/                                      200                          robots=-                  ld=Organization+WebSite   title=Guías de películas para cristales | HIGHTECH Polarizados
+/guias/reducir-calor-ventanas/               200                          robots=-                  ld=Organization+WebSite   title=Cómo reducir el calor que entra por las ventanas | HIGHTECH
+/guias/proteccion-uv-ventanas/               200                          robots=-                  ld=Organization+WebSite   title=Protección UV en ventanas | HIGHTECH Polarizados
+/guias/irr-vs-tser/                          200                          robots=-                  ld=Organization+WebSite   title=IR vs TSER: cuál es la diferencia | HIGHTECH
+/guias/que-es-vlt/                           200                          robots=-                  ld=Organization+WebSite   title=Qué es VLT en una película para cristal | HIGHTECH
+/guias/privacidad-ventanas-noche/            200                          robots=-                  ld=Organization+WebSite   title=Privacidad en ventanas de noche | HIGHTECH Polarizados
+/guias/estres-termico-cristal/               200                          robots=-                  ld=Organization+WebSite   title=Estrés térmico y película para cristal | HIGHTECH
+/guias/polarizado-automotriz-jalisco/        200                          robots=noindex, follow    ld=Organization+WebSite   title=Polarizado automotriz en Jalisco: norma y referencia práctica | HIGHTECH Polarizados
+/nosotros/                                   200                          robots=-                  ld=Organization+WebSite   title=Nosotros | HIGHTECH Polarizados
+/preguntas-frecuentes/                       200                          robots=-                  ld=Organization+WebSite   title=Preguntas frecuentes | HIGHTECH Polarizados
+/legal/terminos-y-condiciones/               200                          robots=noindex, follow    ld=Organization+WebSite   title=Términos y Condiciones | HIGHTECH Polarizados
+/legal/aviso-de-privacidad/                  200                          robots=noindex, follow    ld=Organization+WebSite   title=Aviso de Privacidad | HIGHTECH Polarizados
+
+sitemap: 20 URLs; esperadas 20
+robots.txt:
+User-Agent: *
+Disallow: /
+
+
+
+NOTES
+- /: frase bloqueada "95% menos calor" aparece en contexto: «…exto antes que slogans 95% de rechazo IR a 950 nm no se convierte en “95% menos calor”. 03 Limitaciones visibles Pr…»
+- /automotriz/: frase bloqueada "95% menos calor" aparece en contexto: «…Los valores son especificaciones de ficha. 95% a 950 nm no significa 95% menos calor interior. Referencia práctica…»
+- /peliculas/nanoceramica/: frase bloqueada "95% menos calor" aparece en contexto: «…de rechazo infrarrojo medido específicamente a 950 nm. No equivale a 95% menos calor ni a rechazo de toda la banda…»
+- /peliculas/seguridad/: frase bloqueada "irrompible" aparece en contexto: «…fragmentación o una estrategia de retardo de acceso. × No significa “irrompible” No usamos blindaje, antibala…»
+- /peliculas/seguridad/: frase bloqueada "antibalas" aparece en contexto: «…de retardo de acceso. × No significa “irrompible” No usamos blindaje, antibalas, impide robo ni otros absolut…»
+- /guias/: frase bloqueada "95% menos calor" aparece en contexto: «…misma métrica Por qué 95% de rechazo infrarrojo a 950 nm no significa 95% menos calor y cómo leer ambas cifras. Lee…»
+- /guias/reducir-calor-ventanas/: frase bloqueada "95% menos calor" aparece en contexto: «…Los valores son especificaciones de ficha. 95% a 950 nm no significa 95% menos calor interior. 95% a 950 nm no sig…»
+- /guias/irr-vs-tser/: frase bloqueada "95% menos calor" aparece en contexto: «…Los valores son especificaciones de ficha. 95% a 950 nm no significa 95% menos calor interior. ¿Por qué pueden coe…»
+- /preguntas-frecuentes/: frase bloqueada "95% menos calor" aparece en contexto: «…rada de luz visible. Ver guía completa . ¿95% de rechazo IR significa 95% menos calor? + No. Nuestras fichas actual…»
+- redirect /gallery/ (PROJECT_ROUTE_GATE) inactivo como se espera: 404
+- redirect /dano-uv-decoloracion/ (PENDING_GSC) inactivo como se espera: 404
+- redirect /destello/ (PENDING_GSC) inactivo como se espera: 404
+- redirect /calor-frio-excesivo/ (PENDING_GSC) inactivo como se espera: 404
+- redirect /ahorro-energia/ (PENDING_GSC) inactivo como se espera: 404
+- /__hightech_404_probe__: 308->404@/__hightech_404_probe__/
+- /__hightech_404_probe__/: 404
+- /peliculas/nanoceramica/ir20/: 404
+- /peliculas/nanoceramica/nano-plus-70/: 404
+- /proyectos/cristaleria-comercial-candidato-001/: 404
+- /gallery/: 404
+
+WARNINGS (8)
+- /__hightech_404_probe__: header x-content-type-options=null (respuesta 308 sin cuerpo)
+- /__hightech_404_probe__: header x-frame-options=null (respuesta 308 sin cuerpo)
+- /__hightech_404_probe__: header referrer-policy=null (respuesta 308 sin cuerpo)
+- /__hightech_404_probe__: header permissions-policy=null (respuesta 308 sin cuerpo)
+- /contact-us/: header x-content-type-options=null (respuesta 301 sin cuerpo)
+- /contact-us/: header x-frame-options=null (respuesta 301 sin cuerpo)
+- /contact-us/: header referrer-policy=null (respuesta 301 sin cuerpo)
+- /contact-us/: header permissions-policy=null (respuesta 301 sin cuerpo)
+
+PROBLEMS (0)
+
+================================================================ Chromium headless (Playwright global del entorno, fuera del repo; ver informe §4)
+Chromium 141.0.7390.37: checked 60 page loads (30 routes x desktop+mobile360) + 404 + nav + WhatsApp flow
+
+NOTES
+- 404 desktop: consola esperada en 404 -> error: Failed to load resource: the server responded with a status of 404 (Not Found)
+- navegación cliente / -> /peliculas/nanoceramica/ OK, title="Película nanocerámica | HIGHTECH Polarizados", canonical=https://polarizadoshightech.com/peliculas/nanoceramica/
+- whatsapp: https://wa.me/523322289017 mensaje="Hola, estoy revisando la web de HIGHTECH Polarizados.\nReferencia web: HT-W2-G4DSY2"
+- analytics local (CustomEvent, sin proveedor): {"name":"whatsapp_started","payload":{"source_page":"/contacto/","cta_position":"HERO","lead_ref":"HT-W2-G4DSY2"}}
+
+PROBLEMS (0)

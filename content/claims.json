@@ -1,0 +1,46 @@
+{
+  "approved": [
+    {
+      "id": "nano_uv_99",
+      "text": "99% de rechazo UV según ficha técnica.",
+      "products": ["IR75", "IR50", "IR35", "IR15", "IR5"],
+      "status": "APPROVED_WITH_CONTEXT"
+    },
+    {
+      "id": "nano_ir_950",
+      "text": "95% de rechazo infrarrojo medido a 950 nm, según ficha técnica.",
+      "products": ["IR75", "IR50", "IR35", "IR15", "IR5"],
+      "status": "APPROVED_WITH_CONTEXT"
+    },
+    {
+      "id": "security_fragments",
+      "text": "Ayuda a mantener unidos los fragmentos cuando el cristal se rompe.",
+      "products": ["SECURITY_ARCH"],
+      "status": "APPROVED_WITH_CONTEXT"
+    },
+    {
+      "id": "privacy_lighting",
+      "text": "La privacidad depende del contraste de iluminación y puede invertirse de noche.",
+      "products": ["PRIVACY", "REFLECTIVE"],
+      "status": "APPROVED_WITH_CONTEXT"
+    }
+  ],
+  "blockedPhrases": [
+    "la mejor opción",
+    "líder de la industria",
+    "más confiable",
+    "95% menos calor",
+    "30% de ahorro",
+    "se amortiza rápidamente",
+    "cubrimos toda la República",
+    "funciona en todo tipo de vidrio",
+    "impide robos",
+    "antirrobo",
+    "irrompible",
+    "antibalas",
+    "privacidad total",
+    "garantía de por vida",
+    "100% legal",
+    "no te pueden multar"
+  ]
+}

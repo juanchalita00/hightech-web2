@@ -1,0 +1,46 @@
+{
+  "name": "hightech-web2",
+  "version": "0.8.2",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "npm run validate:all-static && next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "next typegen && tsc --noEmit",
+    "validate:content": "node scripts/validate-content.mjs",
+    "validate:redirects": "node scripts/validate-redirects.mjs",
+    "validate:links": "node scripts/validate-links.mjs",
+    "release:check:staging": "node scripts/release-check.mjs staging",
+    "release:check:production": "node scripts/release-check.mjs production",
+    "validate:seo": "node scripts/validate-seo.mjs",
+    "validate:smoke-manifest": "node scripts/validate-smoke-manifest.mjs",
+    "release:manifest": "node scripts/generate-release-manifest.mjs",
+    "smoke:runtime": "node scripts/smoke-test.mjs",
+    "validate:runtime-qa-state": "node scripts/validate-runtime-qa-state.mjs",
+    "validate:performance-budget": "node scripts/validate-performance-budget.mjs",
+    "release:preflight": "node scripts/release-preflight.mjs",
+    "qa:http-contract": "node scripts/http-contract-test.mjs",
+    "validate:all-static": "npm run validate:content && npm run validate:redirects && npm run validate:links && npm run validate:seo && npm run validate:smoke-manifest && npm run validate:runtime-qa-state && npm run validate:performance-budget && npm run validate:internal-types && npm run release:check:staging && npm run release:manifest && npm run release:preflight",
+    "runtime:probe": "node scripts/probe-runtime-env.mjs",
+    "validate:internal-types": "node scripts/validate-internal-types.mjs",
+    "runtime:harness:selftest": "node scripts/selftest-runtime-harness.mjs",
+    "runtime:bootstrap": "node scripts/runtime-bootstrap.mjs"
+  },
+  "dependencies": {
+    "next": "^16.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.0.0",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.8.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

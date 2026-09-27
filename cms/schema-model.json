@@ -1,0 +1,35 @@
+{
+  "documents": {
+    "corporateProfile": {
+      "singleton": true,
+      "fields": ["brandName","phone","email","locationPrimary","businessHours","napStatus","publicationStatus","lastVerifiedAt","reviewDue"]
+    },
+    "product": {
+      "fields": ["productId","commercialName","technicalSourceName","status","applications","specs","claimIds","warrantyId","publicationStatus","lastVerifiedAt","reviewDue"]
+    },
+    "claim": {
+      "fields": ["claimId","text","domain","productIds","applications","requiredContext","status","sourceIds","approvedBy","effectiveFrom","reviewDue"]
+    },
+    "warranty": {
+      "fields": ["warrantyId","version","status","productId","sku","application","interiorExterior","providerObligated","materialTerm","installationTerm","startEvent","coveredDefects","excludedCauses","remedies","removalCovered","reinstallationCovered","claimChannel","careInstructions","approvedBy","effectiveFrom","immutableFile"]
+    },
+    "legalDocument": {
+      "fields": ["documentId","version","status","providerId","effectiveFrom","effectiveTo","approvedBy","approvalDate","immutableFile","checksum","supersedes"]
+    },
+    "evidence": {
+      "fields": ["evidenceId","type","source","date","projectId","productIds","claimIds","originalAsset","authenticity","measurementMethod","conditions","limitations","containsPerson","containsPlate","containsPrivateAddress","permissionScope","permissionDate","permissionExpiry","publicationAllowed","reviewDue","owner"]
+    },
+    "project": {
+      "fields": ["projectId","title","type","dateApprox","locationPrecision","problem","productIds","glassContext","whyThisSolution","assetIds","observedResult","limitations","publicationStatus"]
+    },
+    "page": {
+      "fields": ["briefId","url","pageType","status","indexability","canonical","primaryIntent","keywordFamily","answerFirst5Seconds","claimIds","evidenceIds","primaryCta","whatsappContext","schemaTypes","publicationDependencies"]
+    }
+  },
+  "publishRules": {
+    "legalDocument": "status == APPROVED_FOR_PRODUCTION && version && effectiveFrom && providerId && approvedBy && immutableFile",
+    "warranty": "status == APPROVED_FOR_PRODUCTION && productId && application && materialTerm && providerObligated && version && approvedBy",
+    "evidence": "publicationAllowed == true",
+    "claim": "status in [APPROVED, APPROVED_WITH_CONTEXT]"
+  }
+}

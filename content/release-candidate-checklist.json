@@ -1,0 +1,46 @@
+{
+  "version": "0.1",
+  "status": "NOT_RELEASE_CANDIDATE",
+  "groups": {
+    "truth": [
+      "system_of_truth_current",
+      "claims_approved",
+      "nap_approved",
+      "legal_approved",
+      "warranties_approved"
+    ],
+    "build": [
+      "dependencies_installed",
+      "next_build_passed",
+      "typecheck_passed",
+      "static_gates_passed"
+    ],
+    "seo": [
+      "canonicals_verified",
+      "redirects_runtime_verified",
+      "sitemap_verified",
+      "robots_verified",
+      "schema_verified",
+      "gsc_ready"
+    ],
+    "privacy": [
+      "privacy_approved",
+      "consent_behavior_verified",
+      "third_party_registry_approved",
+      "no_pii_in_analytics"
+    ],
+    "quality": [
+      "performance_qa",
+      "accessibility_qa",
+      "mobile_qa",
+      "runtime_smoke",
+      "http_contract"
+    ],
+    "operations": [
+      "dns_email_verified",
+      "rollback_tested",
+      "monitoring_enabled",
+      "backup_snapshot_ready"
+    ]
+  }
+}

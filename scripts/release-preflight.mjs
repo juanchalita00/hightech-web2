@@ -1,0 +1,10 @@
+import fs from 'node:fs'; import path from 'node:path'; import url from 'node:url';
+const root=path.resolve(path.dirname(url.fileURLToPath(import.meta.url)),'..');
+const read=f=>JSON.parse(fs.readFileSync(path.join(root,f),'utf8'));
+const release=read('content/release-state.json'); const runtime=read('content/runtime-qa-state.json');
+const prod=Object.entries(release.production).filter(([,v])=>v!==true).map(([k])=>k);
+const rt=Object.entries(runtime.checks).filter(([,v])=>v.passed!==true).map(([k])=>k);
+console.log(`Release preflight: ${prod.length} production blockers + ${rt.length} runtime checks pending.`);
+if(prod.length) console.log('Production:',prod.join(', '));
+if(rt.length) console.log('Runtime:',rt.join(', '));
+console.log('Estado: NOT_RELEASE_CANDIDATE (esperado).');

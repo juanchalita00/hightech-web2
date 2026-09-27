@@ -1,0 +1,22 @@
+{
+  "status": "UNVERIFIED_PRE_CUTOVER",
+  "domains": [
+    "polarizadoshightech.com",
+    "www.polarizadoshightech.com",
+    "htpolarizados.com"
+  ],
+  "snapshotCaptured": false,
+  "checks": {
+    "apexWebRecord": false,
+    "wwwRecord": false,
+    "mxPreserved": false,
+    "spfPreserved": false,
+    "dkimPreserved": false,
+    "dmarcPreserved": false,
+    "googleVerificationPreserved": false,
+    "metaVerificationPreserved": false,
+    "tlsCertificateReady": false,
+    "oldHostRollbackKnown": false
+  },
+  "rule": "Do not change nameservers or destructive DNS records until a verified snapshot exists and mail records are preserved."
+}
