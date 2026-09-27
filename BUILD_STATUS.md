@@ -5,6 +5,26 @@
 **System of Truth:** v0.19  
 **Fecha:** 27 de septiembre de 2026
 
+## Actualización — verificación runtime real (rama `claude/runtime-v0.8.2-pnr256`)
+
+Primer install y build con red. Detalle, hallazgos y correcciones en `docs/RUNTIME_VERIFICATION_V0.8.2.md`.
+
+```yaml
+npm_install: PASS           # package-lock.json versionado; npm ci OK; 0 vulnerabilidades
+static_validation: PASS
+typecheck_real: PASS        # next typegen && tsc --noEmit (TypeScript 5.9.3)
+next_build: PASS            # Next 16.3.6, 34 páginas estáticas, 0 warnings
+local_runtime_smoke: PASS   # next start (staging); no sustituye el smoke contra Vercel
+local_http_contract: PASS
+vercel_preview: PENDING
+browser_device_matrix: PENDING
+production_ready: false
+```
+
+Correcciones de implementación: `trailingSlash: true` (SoT §28C), títulos sin marca duplicada, typecheck estructural compatible con TypeScript 6+, smoke test endurecido, lockfile y archivos generados fuera de git.
+
+Las secciones siguientes describen el estado original de v0.8.2 en el entorno sin acceso a npm y se conservan como historial.
+
 ## Resultado
 
 Se preparó el proyecto para el primer build real en un entorno externo con red npm funcional.

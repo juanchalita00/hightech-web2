@@ -3,16 +3,16 @@
   "runtimeEnvironment": "PENDING_DEPLOYMENT",
   "checks": {
     "npmDependenciesInstalled": {
-      "passed": false,
-      "evidence": null
+      "passed": true,
+      "evidence": "2026-09-27 · docs/RUNTIME_VERIFICATION_V0.8.2.md · npm install inicial y npm ci desde package-lock.json (Node 22.22.2, npm 10.9.7, contenedor Linux efímero; no CI) · npm audit: 0 vulnerabilidades"
     },
     "nextBuildPassed": {
-      "passed": false,
-      "evidence": null
+      "passed": true,
+      "evidence": "2026-09-27 · docs/RUNTIME_VERIFICATION_V0.8.2.md · npm run build (gates estáticos + next build 16.3.6 Turbopack, 34 páginas estáticas, sin warnings) exit 0"
     },
     "typecheckPassed": {
-      "passed": false,
-      "evidence": null
+      "passed": true,
+      "evidence": "2026-09-27 · docs/RUNTIME_VERIFICATION_V0.8.2.md · npm run typecheck (next typegen && tsc --noEmit, TypeScript 5.9.3, tipos reales de Next 16.3.6/React 19.3.0) exit 0"
     },
     "browserChromePassed": {
       "passed": false,

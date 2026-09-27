@@ -1,0 +1,46 @@
+{
+  "timestamp": "2026-09-27T20:19:07.826Z",
+  "steps": [
+    {
+      "name": "node>=22",
+      "passed": true,
+      "detail": "22.22.2"
+    },
+    {
+      "name": "dependencies",
+      "passed": true,
+      "detail": "Next/React node_modules present"
+    },
+    {
+      "name": "static gates",
+      "passed": true,
+      "detail": "exit 0"
+    },
+    {
+      "name": "typecheck",
+      "passed": true,
+      "detail": "exit 0"
+    },
+    {
+      "name": "next build",
+      "passed": true,
+      "detail": "exit 0"
+    },
+    {
+      "name": "server start",
+      "passed": true,
+      "detail": "http://127.0.0.1:3100"
+    },
+    {
+      "name": "runtime smoke",
+      "passed": true,
+      "detail": "exit 0"
+    },
+    {
+      "name": "http contract",
+      "passed": true,
+      "detail": "exit 0"
+    }
+  ],
+  "notes": []
+}

@@ -1,18 +1,18 @@
 # First Staging Checklist
 
 ## Repository
-- [ ] Repository created
-- [ ] Project files pushed at repository root
-- [ ] No secrets committed
+- [x] Repository created
+- [x] Project files pushed at repository root
+- [x] No secrets committed
 - [ ] GitHub Actions enabled
 
 ## First install/build
-- [ ] `npm install` succeeded
-- [ ] `package-lock.json` generated
-- [ ] lockfile committed
-- [ ] static gates pass
-- [ ] real typecheck passes
-- [ ] `next build` passes
+- [x] `npm install` succeeded
+- [x] `package-lock.json` generated
+- [x] lockfile committed
+- [x] static gates pass
+- [x] real typecheck passes
+- [x] `next build` passes
 
 ## Vercel preview
 - [ ] repository connected
@@ -23,6 +23,8 @@
 - [ ] WhatsApp number configured
 
 ## Runtime
+_Verificado sólo en local contra `next start` (ver `docs/RUNTIME_VERIFICATION_V0.8.2.md`). Pendiente contra el Vercel Preview._
+
 - [ ] `/` returns 200
 - [ ] `/residencial/` returns 200
 - [ ] `/comercial/` returns 200
