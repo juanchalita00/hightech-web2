@@ -14,6 +14,7 @@ const securityHeaders = [
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  trailingSlash: true,
   images: { formats: ["image/avif", "image/webp"], remotePatterns: [] },
   async redirects() {
     return redirects
