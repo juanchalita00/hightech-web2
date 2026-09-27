@@ -1026,3 +1026,97 @@
     transition: none;
   }
 }
+
+
+/* v0.9.1 Signature — photography leads, technology stays quiet.
+   Preview photography is temporary editorial art direction and must be replaced
+   by an approved HIGHTECH-owned/licensed asset before Production. */
+.architecturePhoto {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(90deg, rgba(6, 14, 33, .08), rgba(6, 14, 33, 0) 52%),
+    url("https://images.unsplash.com/photo-1758957530781-4ff54e09bee2?auto=format&fit=crop&w=1800&q=82");
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.015);
+  filter: saturate(.86) contrast(1.035);
+}
+
+.photoShade {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(4, 10, 24, 0) 50%, rgba(4, 10, 24, .47) 100%),
+    linear-gradient(90deg, rgba(4, 10, 24, .20) 0%, transparent 38%);
+  pointer-events: none;
+}
+
+.filmReveal {
+  position: absolute;
+  z-index: 4;
+  inset: 0 auto 0 0;
+  width: 37%;
+  background: rgba(18, 36, 77, .20);
+  border-right: 1px solid rgba(255,255,255,.72);
+  backdrop-filter: saturate(.82) contrast(1.045);
+  box-shadow: 18px 0 42px rgba(7, 15, 35, .05);
+  pointer-events: none;
+}
+
+.filmReveal::after {
+  content: "PELÍCULA";
+  position: absolute;
+  right: .7rem;
+  top: 50%;
+  transform: translate(50%, -50%) rotate(-90deg);
+  color: rgba(255,255,255,.74);
+  font-size: .58rem;
+  font-weight: 760;
+  letter-spacing: .18em;
+}
+
+.filmEdge {
+  position: absolute;
+  z-index: 5;
+  top: 9%;
+  bottom: 22%;
+  left: 37%;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, rgba(255,255,255,.9) 18%, rgba(255,255,255,.9) 82%, transparent);
+  box-shadow: 0 0 16px rgba(255,255,255,.32);
+  pointer-events: none;
+}
+
+.visualLabel {
+  top: 1.35rem;
+  left: 1.35rem;
+  padding: .48rem .66rem;
+  border: 1px solid rgba(255,255,255,.22);
+  background: rgba(5, 12, 29, .28);
+  backdrop-filter: blur(12px);
+  text-shadow: none;
+}
+
+.specBand {
+  background: rgba(6, 14, 33, .84);
+}
+
+@media (max-width: 720px) {
+  .architecturePhoto {
+    background-position: 59% center;
+  }
+
+  .filmReveal {
+    width: 42%;
+  }
+
+  .filmEdge {
+    left: 42%;
+  }
+
+  .filmReveal::after {
+    display: none;
+  }
+}

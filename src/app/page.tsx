@@ -94,14 +94,11 @@ export default function HomePage() {
 
             <div className={styles.visualWrap} aria-label="Vista conceptual de cristal arquitectónico con película nanocerámica">
               <div className={styles.architectureFrame}>
-                <div className={styles.architectureScene} aria-hidden="true" />
-                <div className={styles.sunGlow} aria-hidden="true" />
-                <div className={styles.glassLayer} aria-hidden="true" />
-                <div className={styles.mullionOne} aria-hidden="true" />
-                <div className={styles.mullionTwo} aria-hidden="true" />
-                <div className={styles.mullionThree} aria-hidden="true" />
-                <div className={styles.horizon} aria-hidden="true" />
-                <span className={styles.visualLabel}>Cristal · luz · control solar</span>
+                <div className={styles.architecturePhoto} aria-hidden="true" />
+                <div className={styles.photoShade} aria-hidden="true" />
+                <div className={styles.filmReveal} aria-hidden="true" />
+                <div className={styles.filmEdge} aria-hidden="true" />
+                <span className={styles.visualLabel}>Arquitectura · cristal · control solar</span>
 
                 <div className={styles.specBand}>
                   <div className={styles.specIntro}>
