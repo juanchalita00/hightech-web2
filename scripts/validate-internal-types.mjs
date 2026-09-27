@@ -38,7 +38,7 @@ fs.writeFileSync(cfg, JSON.stringify({
   compilerOptions:{
     target:'ES2022', lib:['dom','dom.iterable','esnext'], allowJs:false, skipLibCheck:true,
     strict:true, noEmit:true, esModuleInterop:true, module:'esnext', moduleResolution:'bundler',
-    resolveJsonModule:true, isolatedModules:true, jsx:'preserve', baseUrl:root, paths:{'@/*':['src/*']}
+    resolveJsonModule:true, isolatedModules:true, jsx:'preserve', paths:{'@/*':[`${root}/src/*`]}
   },
   include:[stubs,`${root}/**/*.ts`,`${root}/**/*.tsx`],
   exclude:[`${root}/node_modules`]
