@@ -7,7 +7,7 @@
     "build": "npm run validate:all-static && next build",
     "start": "next start",
     "lint": "next lint",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "next typegen && tsc --noEmit",
     "validate:content": "node scripts/validate-content.mjs",
     "validate:redirects": "node scripts/validate-redirects.mjs",
     "validate:links": "node scripts/validate-links.mjs",
