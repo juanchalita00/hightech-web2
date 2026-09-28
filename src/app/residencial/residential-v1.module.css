@@ -8,7 +8,7 @@
 
 /* Hero — same HIGHTECH language as Home, tuned for residential. */
 .page :global(.application-hero-residential) {
-  padding: clamp(4.4rem, 7.6vw, 7.4rem) 0 clamp(3.8rem, 7vw, 6.4rem);
+  padding: clamp(3rem, 5.5vw, 5.4rem) 0 clamp(3rem, 5vw, 4.5rem);
   background:
     radial-gradient(circle at 82% 8%, rgba(84,112,195,.12), transparent 29rem),
     linear-gradient(180deg, #f7f6f2 0%, #fff 88%);
@@ -19,8 +19,8 @@
 }
 
 .page :global(.application-hero-residential .application-hero-grid) {
-  grid-template-columns: minmax(0,.9fr) minmax(29rem,1.1fr);
-  gap: clamp(2.8rem, 6.5vw, 6.8rem);
+  grid-template-columns: minmax(0,1fr) minmax(0,1.12fr);
+  gap: clamp(2rem, 4.5vw, 4.5rem);
 }
 
 .page :global(.application-hero-residential .eyebrow) {
@@ -41,9 +41,9 @@
 }
 
 .page :global(.application-hero-residential .application-hero-copy h1) {
-  max-width: 10.3ch;
-  font-size: clamp(3.35rem, 6.5vw, 6.15rem);
-  line-height: .92;
+  max-width: 12ch;
+  font-size: clamp(3.15rem, 5.2vw, 5rem);
+  line-height: 1;
   letter-spacing: -.065em;
   font-weight: 720;
 }
@@ -55,48 +55,43 @@
   line-height: 1.62;
 }
 
-.page :global(.application-hero-residential .application-proof-list) {
-  color: #747d8f;
+.heroAccent { color: var(--res-blue); }
+
+.heroHelp {
+  margin: 1.1rem 0 0;
+  color: #5f687a;
+  font-size: .95rem;
+  line-height: 1.5;
 }
 
-.page :global(.application-visual-residential) {
-  min-height: 35rem;
+.heroScene {
+  position: relative;
+  margin: 0;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
   border-radius: .35rem 2.4rem .35rem 2.4rem;
-  border: 1px solid rgba(11,18,36,.08);
-  box-shadow: 0 30px 80px rgba(17,27,53,.14);
-  background: #cbd8df;
+  background: #d8dde2;
+  box-shadow: 0 24px 64px rgba(17,27,53,.14);
 }
 
-.page :global(.application-visual-residential::after) {
-  content: "";
+.heroPhoto {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 58% center;
+}
+
+.heroCaption {
   position: absolute;
-  z-index: 7;
-  inset: -20% -25% -20% 42%;
-  pointer-events: none;
-  transform: rotate(11deg);
-  background: linear-gradient(
-    108deg,
-    transparent 0 38%,
-    rgba(255,255,255,.03) 42%,
-    rgba(255,255,255,.18) 49%,
-    rgba(205,225,242,.08) 56%,
-    transparent 63%
-  );
-  filter: blur(1.2px);
+  inset: auto 0 0;
+  padding: 3.5rem 1.5rem 1.5rem;
+  color: #fff;
+  background: linear-gradient(transparent, rgba(6,14,33,.94));
 }
 
-.page :global(.application-visual-residential .application-visual-badge) {
-  border-radius: .25rem;
-  background: rgba(6,14,33,.70);
-}
-
-.page :global(.application-visual-residential .application-visual-caption) {
-  left: 1.2rem;
-  right: 1.2rem;
-  bottom: 1.2rem;
-  border-radius: 0;
-  background: rgba(6,14,33,.84);
-}
+.heroCaption strong { display: block; font-size: 1.2rem; line-height: 1.35; }
+.heroCaption span { display: block; margin-top: .5rem; font-size: .8rem; line-height: 1.5; color: #e0e5ef; }
 
 .page :global(.application-strip) {
   border-color: var(--res-line);
@@ -108,29 +103,31 @@
 
 /* Decision factors — editorial grid instead of four rounded cards. */
 .page :global(.application-section) {
-  padding-top: clamp(5.4rem, 8.5vw, 8.2rem);
-  padding-bottom: clamp(5.4rem, 8.5vw, 8.2rem);
+  padding-top: clamp(3rem, 5vw, 5rem);
+  padding-bottom: clamp(3rem, 5vw, 5rem);
   background: #fff;
 }
 
 .page :global(.application-section .section-heading) {
-  margin-bottom: 3.4rem;
+  margin-bottom: 2rem;
 }
 
 .page :global(.application-section .section-heading h2) {
-  max-width: 12.5ch;
+  max-width: 18ch;
+  font-size: clamp(2rem, 3.4vw, 3.2rem);
+  line-height: 1.08;
 }
 
 .page :global(.decision-grid) {
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0;
   border-top: 1px solid var(--res-line);
   border-left: 1px solid var(--res-line);
 }
 
 .page :global(.decision-card) {
-  min-height: 18rem;
-  padding: 1.8rem 1.7rem;
+  min-height: 0;
+  padding: 1.5rem 1.2rem;
   border: 0;
   border-right: 1px solid var(--res-line);
   border-bottom: 1px solid var(--res-line);
@@ -151,15 +148,16 @@
 }
 
 .page :global(.decision-card h3) {
-  margin-top: 3.4rem;
-  font-size: 1.55rem;
+  margin-top: 1.35rem;
+  font-size: 1.25rem;
   letter-spacing: -.035em;
 }
 
 .page :global(.decision-card p) {
   max-width: 31rem;
-  color: #6f7785;
-  line-height: 1.65;
+  color: #5f687a;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 /* Solution selector — warmer architecture, darker technical compatibility panel. */
@@ -397,9 +395,8 @@
     grid-template-columns: 1fr;
   }
 
-  .page :global(.application-visual-residential) {
-    min-height: 31rem;
-  }
+  .heroScene { max-width: 42rem; width: 100%; }
+  .page :global(.decision-grid) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
   .page :global(.compatibility-card) {
     position: relative;
@@ -413,31 +410,24 @@
   }
 
   .page :global(.application-hero-residential .application-hero-copy h1) {
-    font-size: clamp(3rem, 14.5vw, 4.8rem);
+    font-size: clamp(2.65rem, 10.5vw, 4rem);
   }
 
-  .page :global(.application-visual-residential) {
-    min-height: 27rem;
-    border-radius: .25rem 1.55rem .25rem 1.55rem;
-  }
-
-  .page :global(.application-visual-residential .application-visual-caption) {
-    left: .75rem;
-    right: .75rem;
-    bottom: .75rem;
-  }
+  .heroScene { border-radius: .25rem 1.55rem .25rem 1.55rem; }
+  .heroCaption { padding: 3rem 1rem 1rem; }
+  .heroCaption strong { font-size: 1.05rem; }
 
   .page :global(.decision-grid) {
     grid-template-columns: 1fr;
   }
 
   .page :global(.decision-card) {
-    min-height: 15.5rem;
+    min-height: 0;
     padding: 1.5rem 1.25rem;
   }
 
   .page :global(.decision-card h3) {
-    margin-top: 2.5rem;
+    margin-top: 1rem;
   }
 
   .page :global(.compatibility-card) {

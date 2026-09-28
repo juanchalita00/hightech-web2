@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ApplicationFinalCTA } from "@/components/ApplicationFinalCTA";
-import { ApplicationHero } from "@/components/ApplicationHero";
+import { WhatsAppCTA } from "@/components/WhatsAppCTA";
 import { DecisionCards } from "@/components/DecisionCards";
 import { FAQList } from "@/components/FAQList";
 import { Icon } from "@/components/Icon";
@@ -14,10 +14,10 @@ export const metadata = { alternates: { canonical: "/residencial/" },
 };
 
 const decisions = [
-  { icon: "sun" as const, title: "Orientación y sol", text: "No recibe la misma carga solar una ventana al poniente que una zona con luz indirecta. La recomendación debe partir del espacio real." },
-  { icon: "glass" as const, title: "Tipo de cristal", text: "La compatibilidad importa. Algunas configuraciones requieren revisar vidrio, sistema, aplicación interior/exterior y condiciones existentes." },
-  { icon: "privacy" as const, title: "Luz y privacidad", text: "Oscurecer no es el único camino. Primero definimos cuánta luz quieres conservar y qué nivel de privacidad esperas." },
-  { icon: "glare" as const, title: "Uso del espacio", text: "Recámara, sala, estudio u oficina en casa pueden necesitar balances diferentes entre claridad y deslumbramiento." },
+  { icon: "sun" as const, title: "Orientación y sol", text: "La orientación y las horas de sol directo ayudan a definir el control solar que necesitas." },
+  { icon: "glass" as const, title: "Tipo de cristal", text: "Revisamos el vidrio y su configuración para elegir una aplicación compatible." },
+  { icon: "privacy" as const, title: "Luz y privacidad", text: "Buscamos el balance entre luz natural, vista al exterior y privacidad de día y de noche." },
+  { icon: "glare" as const, title: "Uso del espacio", text: "Una sala, una recámara y un estudio necesitan distintos niveles de claridad y control del deslumbramiento." },
 ] as const;
 
 const steps = [
@@ -38,16 +38,34 @@ export default function ResidentialPage() {
   const wa = { sourcePage: "/residencial/", businessLine: "residential" };
   return (
     <div className={styles.page}>
-      <ApplicationHero
-        variant="residential"
-        eyebrow="Residencial"
-        title="Menos carga solar. Más confort. La luz que sí quieres conservar."
-        description="Seleccionamos la película según orientación, tipo de cristal, entrada de luz, privacidad y el objetivo real de cada espacio."
-        ctaLabel="Cotizar mis cristales"
-        context={wa}
-        secondary={<Link href="/peliculas/" className="button button-secondary">Ver tipos de película <Icon name="arrow" size={18}/></Link>}
-        proofItems={["Cotización según proyecto", "Opciones claras y oscuras", "Compatibilidad antes de prometer"]}
-      />
+      <section className="application-hero application-hero-residential">
+        <div className="container application-hero-grid">
+          <div className="application-hero-copy">
+            <p className="eyebrow">Polarizado residencial</p>
+            <h1>Menos calor.<br/><span className={styles.heroAccent}>Más comodidad en casa.</span></h1>
+            <p className="application-hero-lede">Controla el calor y el deslumbramiento con una película elegida para tus ventanas y la luz que quieres conservar.</p>
+            <div className="hero-actions">
+              <WhatsAppCTA label="Cotizar mis cristales" context={wa} position="HERO" />
+              <Link href="/peliculas/" className="button button-secondary">Ver tipos de película <Icon name="arrow" size={18}/></Link>
+            </div>
+            <p className={styles.heroHelp}>Podemos empezar con fotos y medidas aproximadas.</p>
+          </div>
+          <figure className={styles.heroScene}>
+            <img
+              src="https://images.unsplash.com/photo-1758957530781-4ff54e09bee2?auto=format&fit=crop&w=1800&q=82"
+              alt="Sala y comedor con ventanales amplios y luz natural."
+              width={1200}
+              height={1200}
+              fetchPriority="high"
+              className={styles.heroPhoto}
+            />
+            <figcaption className={styles.heroCaption}>
+              <strong>Disfruta tu espacio. Conserva la luz.</strong>
+              <span>Imagen de referencia, no corresponde a una instalación HIGHTECH.</span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
 
       <section className="application-strip" aria-label="Objetivos residenciales frecuentes">
         <div className="container application-strip-inner">
@@ -61,8 +79,8 @@ export default function ResidentialPage() {
       <section className="section application-section">
         <div className="container">
           <div className="section-heading section-heading-split">
-            <div><p className="eyebrow">Antes de elegir tono</p><h2>La ventana no se decide sólo por qué tan oscuro se ve.</h2></div>
-            <p>Una recomendación residencial cambia con el sol que recibe el cristal, la iluminación interior, el tipo de vidrio y lo que quieres seguir viendo desde adentro.</p>
+            <div><p className="eyebrow">Antes de elegir tono</p><h2>Una solución para tus ventanas.</h2></div>
+            <p>Para recomendarte una película, revisamos cuatro aspectos de tu espacio.</p>
           </div>
           <DecisionCards items={decisions} />
         </div>
