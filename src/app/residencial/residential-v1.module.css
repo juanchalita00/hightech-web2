@@ -1,0 +1,426 @@
+.page {
+  --res-ink: #0b1224;
+  --res-navy: #0b1634;
+  --res-blue: #30458f;
+  --res-warm: #f3f1ec;
+  --res-line: rgba(11, 18, 36, .13);
+}
+
+/* Hero — same HIGHTECH language as Home, tuned for residential. */
+.page :global(.application-hero-residential) {
+  padding: clamp(4.4rem, 7.6vw, 7.4rem) 0 clamp(3.8rem, 7vw, 6.4rem);
+  background:
+    radial-gradient(circle at 82% 8%, rgba(84,112,195,.12), transparent 29rem),
+    linear-gradient(180deg, #f7f6f2 0%, #fff 88%);
+}
+
+.page :global(.application-hero-residential::before) {
+  display: none;
+}
+
+.page :global(.application-hero-residential .application-hero-grid) {
+  grid-template-columns: minmax(0,.9fr) minmax(29rem,1.1fr);
+  gap: clamp(2.8rem, 6.5vw, 6.8rem);
+}
+
+.page :global(.application-hero-residential .eyebrow) {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  color: #4f5b70;
+  font-size: .74rem;
+  letter-spacing: .1em;
+}
+
+.page :global(.application-hero-residential .eyebrow::before) {
+  content: "";
+  width: 2.1rem;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #fff80a, #feb139 48%, #d61c4e);
+}
+
+.page :global(.application-hero-residential .application-hero-copy h1) {
+  max-width: 10.3ch;
+  font-size: clamp(3.35rem, 6.5vw, 6.15rem);
+  line-height: .92;
+  letter-spacing: -.065em;
+  font-weight: 720;
+}
+
+.page :global(.application-hero-residential .application-hero-lede) {
+  max-width: 39rem;
+  margin-top: 1.65rem;
+  color: #5f687a;
+  line-height: 1.62;
+}
+
+.page :global(.application-hero-residential .application-proof-list) {
+  color: #747d8f;
+}
+
+.page :global(.application-visual-residential) {
+  min-height: 35rem;
+  border-radius: .35rem 2.4rem .35rem 2.4rem;
+  border: 1px solid rgba(11,18,36,.08);
+  box-shadow: 0 30px 80px rgba(17,27,53,.14);
+  background: #cbd8df;
+}
+
+.page :global(.application-visual-residential::after) {
+  content: "";
+  position: absolute;
+  z-index: 7;
+  inset: -20% -25% -20% 42%;
+  pointer-events: none;
+  transform: rotate(11deg);
+  background: linear-gradient(
+    108deg,
+    transparent 0 38%,
+    rgba(255,255,255,.03) 42%,
+    rgba(255,255,255,.18) 49%,
+    rgba(205,225,242,.08) 56%,
+    transparent 63%
+  );
+  filter: blur(1.2px);
+}
+
+.page :global(.application-visual-residential .application-visual-badge) {
+  border-radius: .25rem;
+  background: rgba(6,14,33,.70);
+}
+
+.page :global(.application-visual-residential .application-visual-caption) {
+  left: 1.2rem;
+  right: 1.2rem;
+  bottom: 1.2rem;
+  border-radius: 0;
+  background: rgba(6,14,33,.84);
+}
+
+.page :global(.application-strip) {
+  border-color: var(--res-line);
+}
+
+.page :global(.application-strip-inner) {
+  color: #626c7d;
+}
+
+/* Decision factors — editorial grid instead of four rounded cards. */
+.page :global(.application-section) {
+  padding-top: clamp(5.4rem, 8.5vw, 8.2rem);
+  padding-bottom: clamp(5.4rem, 8.5vw, 8.2rem);
+  background: #fff;
+}
+
+.page :global(.application-section .section-heading) {
+  margin-bottom: 3.4rem;
+}
+
+.page :global(.application-section .section-heading h2) {
+  max-width: 12.5ch;
+}
+
+.page :global(.decision-grid) {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--res-line);
+  border-left: 1px solid var(--res-line);
+}
+
+.page :global(.decision-card) {
+  min-height: 18rem;
+  padding: 1.8rem 1.7rem;
+  border: 0;
+  border-right: 1px solid var(--res-line);
+  border-bottom: 1px solid var(--res-line);
+  border-radius: 0;
+  background: #fff;
+}
+
+.page :global(.decision-icon) {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  color: var(--res-blue);
+  background: #f0f3f8;
+}
+
+.page :global(.decision-index) {
+  color: #9aa3b2;
+}
+
+.page :global(.decision-card h3) {
+  margin-top: 3.4rem;
+  font-size: 1.55rem;
+  letter-spacing: -.035em;
+}
+
+.page :global(.decision-card p) {
+  max-width: 31rem;
+  color: #6f7785;
+  line-height: 1.65;
+}
+
+/* Solution selector — warmer architecture, darker technical compatibility panel. */
+.page :global(.residential-solutions-section) {
+  padding-top: clamp(5.5rem, 9vw, 8.5rem);
+  padding-bottom: clamp(5.5rem, 9vw, 8.5rem);
+  background: var(--res-warm);
+}
+
+.page :global(.residential-solutions-grid) {
+  grid-template-columns: minmax(0,1.08fr) minmax(21rem,.92fr);
+  gap: clamp(3rem, 8vw, 7.5rem);
+}
+
+.page :global(.residential-solution-copy h2) {
+  max-width: 11.5ch;
+  font-size: clamp(2.65rem, 5vw, 4.7rem);
+  line-height: .97;
+  letter-spacing: -.055em;
+  font-weight: 690;
+}
+
+.page :global(.solution-link-list) {
+  margin-top: 2.7rem;
+  border-top-color: rgba(11,18,36,.15);
+}
+
+.page :global(.solution-link-list > a) {
+  min-height: 5.65rem;
+  padding: 1.2rem .15rem;
+  border-bottom-color: rgba(11,18,36,.15);
+}
+
+.page :global(.solution-link-list strong) {
+  font-size: 1.06rem;
+}
+
+.page :global(.solution-link-list small) {
+  max-width: 35rem;
+  margin-top: .12rem;
+  color: #6d737b;
+  font-size: .8rem;
+  line-height: 1.5;
+}
+
+.page :global(.compatibility-card) {
+  top: 6.5rem;
+  overflow: hidden;
+  padding: 2rem;
+  border-radius: .3rem 1.9rem .3rem 1.9rem;
+  background:
+    radial-gradient(circle at 85% 14%, rgba(86,119,214,.22), transparent 42%),
+    linear-gradient(145deg, #17264f, #0b1634);
+  box-shadow: 0 28px 70px rgba(17,27,53,.18);
+}
+
+.page :global(.compatibility-card::after) {
+  content: "";
+  position: absolute;
+  right: -20%;
+  top: -22%;
+  width: 58%;
+  height: 145%;
+  transform: rotate(17deg);
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    transparent 0 35%,
+    rgba(210,226,255,.05) 42%,
+    rgba(255,255,255,.16) 50%,
+    rgba(177,205,255,.06) 56%,
+    transparent 64%
+  );
+}
+
+.page :global(.compatibility-icon) {
+  border-radius: 50%;
+}
+
+.page :global(.compatibility-card h3) {
+  max-width: 12ch;
+  font-size: 2rem;
+  letter-spacing: -.04em;
+}
+
+.page :global(.compatibility-card > * ) {
+  position: relative;
+  z-index: 1;
+}
+
+/* Nanoceramic section — technical table feel, not another floating card. */
+.page :global(.residential-nano-section) {
+  padding-top: clamp(5.5rem, 9vw, 8.6rem);
+  padding-bottom: clamp(5.5rem, 9vw, 8.6rem);
+  background: #fff;
+}
+
+.page :global(.residential-nano-section .nano-layout) {
+  align-items: start;
+}
+
+.page :global(.residential-nano-section .nano-copy h2) {
+  max-width: 10ch;
+  font-size: clamp(2.6rem, 5vw, 4.6rem);
+  line-height: .97;
+  letter-spacing: -.055em;
+  font-weight: 690;
+}
+
+.page :global(.residential-nano-section .context-note) {
+  border-left-color: var(--res-blue);
+  border-radius: 0;
+  background: #f4f6fa;
+}
+
+.page :global(.residential-nano-section .nano-spectrum) {
+  padding: 0;
+  border: 0;
+  border-top: 1px solid var(--res-line);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.page :global(.residential-nano-section .nano-spectrum-head) {
+  padding: .75rem 0 1rem;
+}
+
+.page :global(.residential-nano-section .nano-spectrum-line) {
+  height: 2px;
+  border-radius: 0;
+  background: linear-gradient(90deg, #c7d6df, #8f969b 31%, #60666a 55%, #292e31 79%, #050607);
+}
+
+.page :global(.residential-nano-section .nano-spectrum-line span) {
+  display: none;
+}
+
+.page :global(.residential-nano-section .nano-tone-grid) {
+  gap: 0;
+}
+
+.page :global(.residential-nano-section .nano-tone-card) {
+  grid-template-columns: 5.1rem 1fr auto;
+  min-height: 5.25rem;
+  padding: .75rem 0;
+  border: 0;
+  border-bottom: 1px solid var(--res-line);
+  border-radius: 0;
+}
+
+.page :global(.residential-nano-section .nano-tone-card:hover) {
+  padding-left: .35rem;
+  background: transparent;
+  border-color: var(--res-line);
+}
+
+.page :global(.residential-nano-section .nano-tone-swatch) {
+  height: 2.2rem;
+  border-radius: 0;
+  border: 1px solid rgba(11,18,36,.10);
+}
+
+.page :global(.residential-nano-section .nano-spectrum-footnote) {
+  margin: .9rem 0 0;
+}
+
+/* Process + FAQ — quieter, editorial rhythm. */
+.page :global(.residential-process-section) {
+  padding-top: clamp(5.5rem, 9vw, 8.5rem);
+  padding-bottom: clamp(5.5rem, 9vw, 8.5rem);
+  background: #f7f6f2;
+}
+
+.page :global(.residential-process-section .process-rail) {
+  border-top-color: rgba(11,18,36,.14);
+}
+
+.page :global(.residential-process-section .process-rail article:not(:last-child)) {
+  border-right-color: rgba(11,18,36,.14);
+}
+
+.page :global(.application-faq-section) {
+  background: #fff;
+}
+
+/* Final CTA — same dark HIGHTECH ending as Home, less pill/card-like. */
+.page :global(.application-final-section) {
+  padding: 1.5rem 0 clamp(5rem, 8vw, 8rem);
+  background: #fff;
+}
+
+.page :global(.application-final-card) {
+  border-radius: .3rem 2rem .3rem 2rem;
+  background:
+    radial-gradient(circle at 88% 12%, rgba(65,92,176,.24), transparent 30rem),
+    #0b1634;
+}
+
+.page :global(.application-final-card::after) {
+  opacity: .45;
+}
+
+@media (max-width: 980px) {
+  .page :global(.application-hero-residential .application-hero-grid),
+  .page :global(.residential-solutions-grid) {
+    grid-template-columns: 1fr;
+  }
+
+  .page :global(.application-visual-residential) {
+    min-height: 31rem;
+  }
+
+  .page :global(.compatibility-card) {
+    position: relative;
+    top: auto;
+  }
+}
+
+@media (max-width: 720px) {
+  .page :global(.application-hero-residential) {
+    padding-top: 3.2rem;
+  }
+
+  .page :global(.application-hero-residential .application-hero-copy h1) {
+    font-size: clamp(3rem, 14.5vw, 4.8rem);
+  }
+
+  .page :global(.application-visual-residential) {
+    min-height: 27rem;
+    border-radius: .25rem 1.55rem .25rem 1.55rem;
+  }
+
+  .page :global(.application-visual-residential .application-visual-caption) {
+    left: .75rem;
+    right: .75rem;
+    bottom: .75rem;
+  }
+
+  .page :global(.decision-grid) {
+    grid-template-columns: 1fr;
+  }
+
+  .page :global(.decision-card) {
+    min-height: 15.5rem;
+    padding: 1.5rem 1.25rem;
+  }
+
+  .page :global(.decision-card h3) {
+    margin-top: 2.5rem;
+  }
+
+  .page :global(.compatibility-card) {
+    border-radius: .25rem 1.5rem .25rem 1.5rem;
+  }
+
+  .page :global(.residential-nano-section .nano-tone-card) {
+    grid-template-columns: 4.5rem 1fr auto;
+  }
+
+  .page :global(.application-final-card) {
+    border-radius: .25rem 1.55rem .25rem 1.55rem;
+  }
+}
