@@ -62,6 +62,14 @@ const proof = [
   ["03", "Limitaciones visibles", "Privacidad, compatibilidad y legalidad se explican donde realmente afectan la decisión."],
 ] as const;
 
+const toneSamples: Record<string, string> = {
+  IR75: "linear-gradient(90deg, #b7cbd7 0%, #8ea9bb 100%)",
+  IR50: "linear-gradient(90deg, #818a91 0%, #626b72 100%)",
+  IR35: "linear-gradient(90deg, #555d62 0%, #3f464a 100%)",
+  IR15: "linear-gradient(90deg, #242a2e 0%, #171c20 100%)",
+  IR5: "linear-gradient(90deg, #0b0d0f 0%, #030405 100%)",
+};
+
 export default function HomePage() {
   return (
     <main className={styles.page}>
@@ -183,20 +191,27 @@ export default function HomePage() {
           </div>
 
           <div>
-            <div className={styles.toneAxis}><span>Más claridad</span><span>Más oscuridad</span></div>
-            <div className={styles.toneTable}>
-              {truth.nano.map((film, index) => {
-                const toneOpacity = 0.04 + ((75 - film.vlt) / 72) * 0.64;
-                return (
-                  <Link className={styles.toneRow} href={"/peliculas/nanoceramica/" + film.id.toLowerCase() + "/"} key={film.id}>
-                    <span className={styles.toneName}><strong>{film.id}</strong><span>VLT {film.vlt}%</span></span>
-                    <span className={styles.toneSwatch} style={{ "--tone": toneOpacity } as CSSProperties} aria-hidden="true" />
-                    <span className={styles.toneMeta}><strong>TSER {film.tser}%</strong><span>según ficha</span></span>
-                  </Link>
-                );
-              })}
+            <div className={styles.toneAxis}>
+              <span>Más claridad</span>
+              <span className={styles.toneAxisLabel}>Tono aproximado</span>
+              <span>Más oscuridad</span>
             </div>
-            <p className={styles.toneNote}>IR50 e IR5 son nombres comerciales; sus VLT de ficha son 48% y 3%, respectivamente.</p>
+            <div className={styles.toneTable}>
+              {truth.nano.map((film) => (
+                <Link className={styles.toneRow} href={"/peliculas/nanoceramica/" + film.id.toLowerCase() + "/"} key={film.id}>
+                  <span className={styles.toneName}><strong>{film.id}</strong><span>VLT {film.vlt}%</span></span>
+                  <span
+                    className={styles.toneSwatch}
+                    style={{ "--tone-bg": toneSamples[film.id] } as CSSProperties}
+                    aria-hidden="true"
+                  />
+                  <span className={styles.toneMeta}><strong>TSER {film.tser}%</strong><span>según ficha</span></span>
+                </Link>
+              ))}
+            </div>
+            <p className={styles.toneNote}>
+              Muestra visual orientativa del tono; la apariencia final depende también del cristal y de la iluminación. IR50 e IR5 son nombres comerciales; sus VLT de ficha son 48% y 3%, respectivamente.
+            </p>
           </div>
         </div>
       </section>
