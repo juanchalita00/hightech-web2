@@ -1,8 +1,11 @@
 .page {
   --premium-ink: #0b1224;
   --premium-navy: #0b1634;
-  --premium-blue: #2f4aa0;
-  --premium-blue-soft: #dce5fb;
+  --premium-blue: #30458f;
+  --premium-blue-soft: #e0e5f3;
+  --solar-yellow: #fff80a;
+  --solar-orange: #feb139;
+  --solar-magenta: #d61c4e;
   --premium-warm: #f3f1ec;
   --premium-warm-2: #ebe8e1;
   --premium-line: rgba(11, 18, 36, .13);
@@ -46,9 +49,10 @@
 
 .kicker::before {
   content: "";
-  width: 2.1rem;
-  height: 1px;
-  background: var(--premium-blue);
+  width: 2.15rem;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--solar-yellow), var(--solar-orange) 48%, var(--solar-magenta));
 }
 
 .heroCopy h1 {
