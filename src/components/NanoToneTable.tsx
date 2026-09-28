@@ -1,7 +1,4 @@
-"use client";
-
 import type { CSSProperties } from "react";
-import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { truth } from "@/lib/truth";
 import styles from "@/app/home-v09.module.css";
@@ -15,60 +12,8 @@ const toneSamples: Record<string, string> = {
 };
 
 export function NanoToneTable() {
-  const rootRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const root = rootRef.current;
-    if (!root) return;
-
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (reducedMotion.matches) {
-      root.style.setProperty("--shine-shift", "0px");
-      return;
-    }
-
-    let frame = 0;
-    let active = false;
-
-    const update = () => {
-      frame = 0;
-      if (!active) return;
-
-      const rect = root.getBoundingClientRect();
-      const viewport = window.innerHeight || document.documentElement.clientHeight;
-      const center = rect.top + rect.height / 2;
-      const normalized = Math.max(-1, Math.min(1, (viewport / 2 - center) / (viewport * 0.72)));
-      const shift = normalized * 24;
-      root.style.setProperty("--shine-shift", shift.toFixed(2) + "px");
-    };
-
-    const requestUpdate = () => {
-      if (frame) return;
-      frame = window.requestAnimationFrame(update);
-    };
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        active = entry.isIntersecting;
-        if (active) requestUpdate();
-      },
-      { rootMargin: "18% 0px 18% 0px" },
-    );
-
-    observer.observe(root);
-    window.addEventListener("scroll", requestUpdate, { passive: true });
-    window.addEventListener("resize", requestUpdate);
-
-    return () => {
-      observer.disconnect();
-      window.removeEventListener("scroll", requestUpdate);
-      window.removeEventListener("resize", requestUpdate);
-      if (frame) window.cancelAnimationFrame(frame);
-    };
-  }, []);
-
   return (
-    <div ref={rootRef} className={styles.toneExperience}>
+    <div className={styles.toneExperience}>
       <div className={styles.toneAxis}>
         <span>Más claridad</span>
         <span className={styles.toneAxisLabel}>Tono aproximado</span>
