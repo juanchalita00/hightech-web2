@@ -5,12 +5,14 @@ import { useMemo, useState } from "react";
 import { truth } from "@/lib/truth";
 import styles from "@/app/home-v09.module.css";
 
-const toneVisuals: Record<string, { opacity: number; brightness: number; saturation: number }> = {
-  IR75: { opacity: 0.035, brightness: 0.98, saturation: 0.98 },
-  IR50: { opacity: 0.12, brightness: 0.90, saturation: 0.94 },
-  IR35: { opacity: 0.21, brightness: 0.82, saturation: 0.90 },
-  IR15: { opacity: 0.38, brightness: 0.67, saturation: 0.84 },
-  IR5: { opacity: 0.56, brightness: 0.50, saturation: 0.78 },
+const toneVisuals: Record<string, { overlay: string; brightness: number; saturation: number; contrast: number }> = {
+  // Calibración visual orientativa: cada tono se trata de forma individual.
+  // IR75 conserva mucha claridad y añade el ligero matiz frío/azulado del material.
+  IR75: { overlay: "rgba(62, 104, 148, 0.10)", brightness: 0.99, saturation: 0.96, contrast: 1.02 },
+  IR50: { overlay: "rgba(18, 23, 30, 0.18)", brightness: 0.88, saturation: 0.92, contrast: 1.04 },
+  IR35: { overlay: "rgba(12, 16, 22, 0.32)", brightness: 0.75, saturation: 0.86, contrast: 1.06 },
+  IR15: { overlay: "rgba(7, 9, 13, 0.58)", brightness: 0.52, saturation: 0.72, contrast: 1.09 },
+  IR5: { overlay: "rgba(3, 4, 6, 0.82)", brightness: 0.28, saturation: 0.58, contrast: 1.12 },
 };
 
 export function SignatureGlass() {
@@ -34,9 +36,10 @@ export function SignatureGlass() {
         aria-hidden="true"
         style={{
           width: split + "%",
-          "--film-opacity": visual.opacity,
+          background: visual.overlay,
           "--film-brightness": visual.brightness,
           "--film-saturation": visual.saturation,
+          "--film-contrast": visual.contrast,
         } as CSSProperties}
       />
 
