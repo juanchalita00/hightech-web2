@@ -63,7 +63,7 @@ const proof = [
 
 export default function HomePage() {
   return (
-    <main className={styles.page}>
+    <div className={styles.page}>
       <section className={styles.hero}>
         <div className={styles.shell}>
           <div className={styles.heroGrid}>
@@ -250,6 +250,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }
