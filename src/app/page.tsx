@@ -63,11 +63,11 @@ const proof = [
 ] as const;
 
 const toneSamples: Record<string, string> = {
-  IR75: "linear-gradient(90deg, #b7cbd7 0%, #8ea9bb 100%)",
-  IR50: "linear-gradient(90deg, #818a91 0%, #626b72 100%)",
-  IR35: "linear-gradient(90deg, #555d62 0%, #3f464a 100%)",
-  IR15: "linear-gradient(90deg, #242a2e 0%, #171c20 100%)",
-  IR5: "linear-gradient(90deg, #0b0d0f 0%, #030405 100%)",
+  IR75: "linear-gradient(90deg, #c7d6df 0%, #a8becb 100%)",
+  IR50: "linear-gradient(90deg, #8f969b 0%, #70777c 100%)",
+  IR35: "linear-gradient(90deg, #60666a 0%, #484e52 100%)",
+  IR15: "linear-gradient(90deg, #292e31 0%, #191d20 100%)",
+  IR5: "linear-gradient(90deg, #0b0d0f 0%, #020304 100%)",
 };
 
 export default function HomePage() {
