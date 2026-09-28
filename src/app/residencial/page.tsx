@@ -41,8 +41,8 @@ export default function ResidentialPage() {
       <section className={styles.hero}>
         <div className={"container " + styles.heroGrid}>
           <div className={styles.heroCopy}>
-            <p className={styles.kicker}>Residencial · arquitectura · confort</p>
-            <h1>Control solar que respeta la luz de tu espacio.</h1>
+            <p className={styles.kicker}>Residencial · control solar</p>
+            <h1>Confort <span>sin renunciar a la luz.</span></h1>
             <p className={styles.heroLede}>
               Seleccionamos la película según orientación, tipo de cristal, entrada de luz, privacidad y el objetivo real de cada ambiente.
             </p>
@@ -60,9 +60,9 @@ export default function ResidentialPage() {
           <div className={styles.heroVisual} aria-label="Referencia visual de aplicación residencial">
             <div className={styles.heroPhoto} aria-hidden="true" />
             <div className={styles.heroGlassPane} aria-hidden="true" />
-            <div className={styles.heroCaption}>
-              <span>Referencia visual</span>
-              <strong>Luz natural · cristal · confort interior</strong>
+            <div className={styles.heroTechnicalTag}>
+              <span>CRISTAL · CONTROL SOLAR</span>
+              <strong>Selección según vidrio, orientación y luz.</strong>
             </div>
           </div>
         </div>
@@ -86,11 +86,7 @@ export default function ResidentialPage() {
             </div>
             <p>Una recomendación residencial cambia con el sol que recibe el cristal, la iluminación interior, el tipo de vidrio y lo que quieres seguir viendo desde adentro.</p>
           </div>
-
           <div className={styles.decisionExperience}>
-            <div className={styles.decisionPhoto} aria-label="Referencia visual de interior residencial con grandes ventanales">
-              <div className={styles.decisionPhotoCaption}><span>La luz importa</span><strong>El objetivo es controlar sin apagar el espacio.</strong></div>
-            </div>
             <DecisionCards items={decisions} />
           </div>
         </div>
@@ -110,7 +106,6 @@ export default function ResidentialPage() {
           </div>
 
           <div className={styles.solutionAside}>
-            <div className={styles.solutionPhoto} aria-hidden="true" />
             <div className="compatibility-card">
               <span className="compatibility-icon"><Icon name="glass" size={25}/></span>
               <p className="eyebrow">Compatibilidad</p>
