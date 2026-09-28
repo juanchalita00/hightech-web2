@@ -6,6 +6,7 @@ import { FAQList } from "@/components/FAQList";
 import { Icon } from "@/components/Icon";
 import { NanoSpectrum } from "@/components/NanoSpectrum";
 import { ProcessRail } from "@/components/ProcessRail";
+import styles from "./residential-v1.module.css";
 
 export const metadata = { alternates: { canonical: "/residencial/" },
   title: { absolute: "Polarizado residencial | HIGHTECH Polarizados" },
@@ -36,7 +37,7 @@ const faqs = [
 export default function ResidentialPage() {
   const wa = { sourcePage: "/residencial/", businessLine: "residential" };
   return (
-    <>
+    <div className={styles.page}>
       <ApplicationHero
         variant="residential"
         eyebrow="Residencial"
@@ -120,6 +121,6 @@ export default function ResidentialPage() {
       </section>
 
       <ApplicationFinalCTA eyebrow="Tu espacio primero" title="Mándanos fotos o medidas aproximadas y te ayudamos a aterrizar la solución." ctaLabel="Cotizar mis cristales" context={wa} secondaryHref="/peliculas/nanoceramica/" secondaryLabel="Comparar nanocerámica" />
-    </>
+    </div>
   );
 }
