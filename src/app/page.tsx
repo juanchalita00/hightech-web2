@@ -2,6 +2,7 @@ import type { CSSProperties } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Icon } from "@/components/Icon";
+import { SignatureGlass } from "@/components/SignatureGlass";
 import { WhatsAppCTA } from "@/components/WhatsAppCTA";
 import { truth } from "@/lib/truth";
 import styles from "./home-v09.module.css";
@@ -92,24 +93,8 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className={styles.visualWrap} aria-label="Vista conceptual de cristal arquitectónico con película nanocerámica">
-              <div className={styles.architectureFrame}>
-                <div className={styles.architecturePhoto} aria-hidden="true" />
-                <div className={styles.photoShade} aria-hidden="true" />
-                <div className={styles.filmReveal} aria-hidden="true" />
-                <div className={styles.filmEdge} aria-hidden="true" />
-                <span className={styles.visualLabel}>Arquitectura · cristal · control solar</span>
-
-                <div className={styles.specBand}>
-                  <div className={styles.specIntro}>
-                    <span>Nanocerámica HIGHTECH</span>
-                    <strong>Especificaciones con contexto</strong>
-                  </div>
-                  <div className={styles.specItem}><strong>99%</strong><span>rechazo UV</span></div>
-                  <div className={styles.specItem}><strong>95%</strong><span>IR a 950 nm</span></div>
-                  <div className={styles.specItem}><strong>59–96%</strong><span>TSER según tono</span></div>
-                </div>
-              </div>
+            <div className={styles.visualWrap}>
+              <SignatureGlass />
             </div>
           </div>
 
@@ -201,7 +186,7 @@ export default function HomePage() {
             <div className={styles.toneAxis}><span>Más claridad</span><span>Más oscuridad</span></div>
             <div className={styles.toneTable}>
               {truth.nano.map((film, index) => {
-                const toneOpacity = 0.08 + index * 0.17;
+                const toneOpacity = 0.04 + ((75 - film.vlt) / 72) * 0.64;
                 return (
                   <Link className={styles.toneRow} href={"/peliculas/nanoceramica/" + film.id.toLowerCase() + "/"} key={film.id}>
                     <span className={styles.toneName}><strong>{film.id}</strong><span>VLT {film.vlt}%</span></span>
