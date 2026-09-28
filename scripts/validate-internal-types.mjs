@@ -12,7 +12,7 @@ fs.writeFileSync(stubs, `
 declare const process: { env: Record<string, string | undefined> };
 declare namespace React {
   type ReactNode = any;
-  interface MouseEvent<T = Element> { preventDefault(): void; currentTarget: T; }
+  interface MouseEvent<T = Element> { preventDefault(): void; currentTarget: T; }\n  interface ChangeEvent<T = Element> { currentTarget: T; target: T; }
 }
 declare namespace JSX {
   interface Element { }
@@ -23,7 +23,7 @@ declare namespace JSX {
 declare module "react" {
   export type ReactNode = any;
   export type CSSProperties = Record<string, string | number | undefined>;
-  export function useMemo<T>(factory: () => T, deps: readonly unknown[]): T;
+  export function useMemo<T>(factory: () => T, deps: readonly unknown[]): T;\n  export function useState<S>(initial: S): [S, (value: S | ((previous: S) => S)) => void];
 }
 declare module "next" {
   export type Metadata = any;
