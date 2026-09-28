@@ -719,13 +719,13 @@
   background: linear-gradient(
     105deg,
     transparent 0 38%,
-    rgba(255,255,255,.04) 44%,
-    rgba(255,255,255,.14) 50%,
-    rgba(220,232,245,.07) 56%,
-    transparent 64%
+    rgba(255,255,255,.045) 43%,
+    rgba(255,255,255,.16) 50%,
+    rgba(220,232,245,.075) 57%,
+    transparent 65%
   );
-  filter: blur(1px);
-  opacity: .75;
+  filter: blur(1.1px);
+  opacity: .82;
 }
 
 .toneSwatch::after {
