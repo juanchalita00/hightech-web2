@@ -38,7 +38,7 @@ export function NanoToneTable() {
       const viewport = window.innerHeight || document.documentElement.clientHeight;
       const center = rect.top + rect.height / 2;
       const normalized = Math.max(-1, Math.min(1, (viewport / 2 - center) / (viewport * 0.72)));
-      const shift = normalized * 10;
+      const shift = normalized * 24;
       root.style.setProperty("--shine-shift", shift.toFixed(2) + "px");
     };
 
