@@ -122,10 +122,10 @@
   inset: 0;
   background:
     linear-gradient(180deg, rgba(8, 12, 18, 0) 54%, rgba(8, 12, 18, .34) 100%),
-    url("https://images.unsplash.com/photo-1771371097061-3befd4b71b59?auto=format&fit=crop&fm=jpg&q=82&w=2400");
+    url("/images/residencial/proyecto-hightech-20230628.webp");
   background-size: cover;
-  background-position: center;
-  filter: saturate(.82) contrast(1.025);
+  background-position: 54% center;
+  filter: saturate(.92) contrast(1.02);
 }
 
 .heroGlassPane {
