@@ -644,6 +644,10 @@
   font-weight: 760;
 }
 
+.toneExperience {
+  --shine-shift: 0px;
+}
+
 .toneTable {
   background: rgba(255,255,255,.45);
   border-top: 1px solid rgba(11,18,36,.14);
@@ -710,7 +714,8 @@
   position: absolute;
   inset: -25% -8%;
   pointer-events: none;
-  transform: rotate(-6deg);
+  transform: translate3d(var(--shine-shift), 0, 0) rotate(-6deg);
+  will-change: transform;
   background: linear-gradient(
     105deg,
     transparent 0 38%,
@@ -1098,6 +1103,15 @@
   .secondaryCta,
   .journeyCard {
     transition: none;
+  }
+
+  .toneExperience {
+    --shine-shift: 0px !important;
+  }
+
+  .toneSwatch::before {
+    transform: rotate(-6deg);
+    will-change: auto;
   }
 }
 
