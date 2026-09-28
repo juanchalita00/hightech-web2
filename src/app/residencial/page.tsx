@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { ApplicationFinalCTA } from "@/components/ApplicationFinalCTA";
-import { ApplicationHero } from "@/components/ApplicationHero";
 import { DecisionCards } from "@/components/DecisionCards";
 import { FAQList } from "@/components/FAQList";
 import { Icon } from "@/components/Icon";
 import { NanoSpectrum } from "@/components/NanoSpectrum";
 import { ProcessRail } from "@/components/ProcessRail";
+import { WhatsAppCTA } from "@/components/WhatsAppCTA";
+import styles from "./residencial-v1.module.css";
 
 export const metadata = { alternates: { canonical: "/residencial/" },
   title: { absolute: "Polarizado residencial | HIGHTECH Polarizados" },
@@ -36,40 +37,68 @@ const faqs = [
 export default function ResidentialPage() {
   const wa = { sourcePage: "/residencial/", businessLine: "residential" };
   return (
-    <>
-      <ApplicationHero
-        variant="residential"
-        eyebrow="Residencial"
-        title="Menos carga solar. Más confort. La luz que sí quieres conservar."
-        description="Seleccionamos la película según orientación, tipo de cristal, entrada de luz, privacidad y el objetivo real de cada espacio."
-        ctaLabel="Cotizar mis cristales"
-        context={wa}
-        secondary={<Link href="/peliculas/" className="button button-secondary">Ver tipos de película <Icon name="arrow" size={18}/></Link>}
-        proofItems={["Cotización según proyecto", "Opciones claras y oscuras", "Compatibilidad antes de prometer"]}
-      />
+    <main className={styles.page}>
+      <section className={styles.hero}>
+        <div className={"container " + styles.heroGrid}>
+          <div className={styles.heroCopy}>
+            <p className={styles.kicker}>Residencial · arquitectura · confort</p>
+            <h1>Control solar que respeta la luz de tu espacio.</h1>
+            <p className={styles.heroLede}>
+              Seleccionamos la película según orientación, tipo de cristal, entrada de luz, privacidad y el objetivo real de cada ambiente.
+            </p>
+            <div className={styles.heroActions}>
+              <WhatsAppCTA label="Cotizar mis cristales" context={wa} position="HERO" className={styles.primaryCta} />
+              <Link href="/peliculas/" className={styles.secondaryCta}>Ver tipos de película <Icon name="arrow" size={18}/></Link>
+            </div>
+            <div className={styles.heroProof} aria-label="Criterios de recomendación residencial">
+              <span><Icon name="check" size={16}/> Cotización según proyecto</span>
+              <span><Icon name="check" size={16}/> Opciones claras y oscuras</span>
+              <span><Icon name="check" size={16}/> Compatibilidad antes de prometer</span>
+            </div>
+          </div>
 
-      <section className="application-strip" aria-label="Objetivos residenciales frecuentes">
-        <div className="container application-strip-inner">
-          <span><Icon name="sun" size={18}/> Control solar</span><i />
-          <span><Icon name="uv" size={18}/> UV</span><i />
-          <span><Icon name="glare" size={18}/> Deslumbramiento</span><i />
+          <div className={styles.heroVisual} aria-label="Referencia visual de aplicación residencial">
+            <div className={styles.heroPhoto} aria-hidden="true" />
+            <div className={styles.heroGlassPane} aria-hidden="true" />
+            <div className={styles.heroCaption}>
+              <span>Referencia visual</span>
+              <strong>Luz natural · cristal · confort interior</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.objectiveStrip} aria-label="Objetivos residenciales frecuentes">
+        <div className={"container " + styles.objectiveStripInner}>
+          <span><Icon name="sun" size={18}/> Control solar</span>
+          <span><Icon name="uv" size={18}/> UV</span>
+          <span><Icon name="glare" size={18}/> Deslumbramiento</span>
           <span><Icon name="privacy" size={18}/> Privacidad</span>
         </div>
       </section>
 
-      <section className="section application-section">
+      <section className={"section " + styles.decisionSection}>
         <div className="container">
-          <div className="section-heading section-heading-split">
-            <div><p className="eyebrow">Antes de elegir tono</p><h2>La ventana no se decide sólo por qué tan oscuro se ve.</h2></div>
+          <div className={styles.editorialHeading}>
+            <div>
+              <p className="eyebrow">Antes de elegir tono</p>
+              <h2>La ventana no se decide sólo por qué tan oscuro se ve.</h2>
+            </div>
             <p>Una recomendación residencial cambia con el sol que recibe el cristal, la iluminación interior, el tipo de vidrio y lo que quieres seguir viendo desde adentro.</p>
           </div>
-          <DecisionCards items={decisions} />
+
+          <div className={styles.decisionExperience}>
+            <div className={styles.decisionPhoto} aria-label="Referencia visual de interior residencial con grandes ventanales">
+              <div className={styles.decisionPhotoCaption}><span>La luz importa</span><strong>El objetivo es controlar sin apagar el espacio.</strong></div>
+            </div>
+            <DecisionCards items={decisions} />
+          </div>
         </div>
       </section>
 
-      <section className="section residential-solutions-section">
-        <div className="container residential-solutions-grid">
-          <div className="residential-solution-copy">
+      <section className={"section " + styles.solutionsSection}>
+        <div className={"container " + styles.solutionsGrid}>
+          <div className={styles.solutionCopy}>
             <p className="eyebrow">Soluciones que podemos evaluar</p>
             <h2>No todo problema residencial pide la misma película.</h2>
             <div className="solution-link-list">
@@ -79,17 +108,21 @@ export default function ResidentialPage() {
               <Link href="/peliculas/seguridad/"><span><strong>Seguridad</strong><small>Para ayudar a mantener fragmentos unidos cuando el cristal se rompe.</small></span><Icon name="arrow" size={18}/></Link>
             </div>
           </div>
-          <div className="compatibility-card">
-            <span className="compatibility-icon"><Icon name="glass" size={25}/></span>
-            <p className="eyebrow">Compatibilidad</p>
-            <h3>No todo cristal admite cualquier configuración.</h3>
-            <p>Vidrios especiales, sistemas aislados, aplicaciones exteriores, dobles capas o condiciones particulares pueden requerir una evaluación adicional. La compatibilidad se revisa antes de generalizar una solución.</p>
-            <Link href="/guias/" className="text-link text-link-strong">Ver guías técnicas <Icon name="arrow" size={17}/></Link>
+
+          <div className={styles.solutionAside}>
+            <div className={styles.solutionPhoto} aria-hidden="true" />
+            <div className="compatibility-card">
+              <span className="compatibility-icon"><Icon name="glass" size={25}/></span>
+              <p className="eyebrow">Compatibilidad</p>
+              <h3>No todo cristal admite cualquier configuración.</h3>
+              <p>Vidrios especiales, sistemas aislados, aplicaciones exteriores, dobles capas o condiciones particulares pueden requerir una evaluación adicional. La compatibilidad se revisa antes de generalizar una solución.</p>
+              <Link href="/guias/" className="text-link text-link-strong">Ver guías técnicas <Icon name="arrow" size={17}/></Link>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="section section-nano residential-nano-section">
+      <section className={"section section-nano " + styles.nanoSection}>
         <div className="container nano-layout">
           <div className="nano-copy">
             <p className="eyebrow">Gama nanocerámica</p>
@@ -102,9 +135,9 @@ export default function ResidentialPage() {
         </div>
       </section>
 
-      <section className="section residential-process-section">
+      <section className={"section " + styles.processSection}>
         <div className="container">
-          <div className="section-heading section-heading-split">
+          <div className={styles.editorialHeading}>
             <div><p className="eyebrow">Cómo cotizamos residencial</p><h2>Con fotos y medidas ya podemos empezar a entender el proyecto.</h2></div>
             <p>No necesitas llegar con una película decidida. La cotización parte del espacio, el problema y las condiciones de instalación.</p>
           </div>
@@ -112,7 +145,7 @@ export default function ResidentialPage() {
         </div>
       </section>
 
-      <section className="section section-alt application-faq-section">
+      <section className={"section section-alt application-faq-section " + styles.faqSection}>
         <div className="container faq-layout">
           <div><p className="eyebrow">Preguntas frecuentes</p><h2>Lo que conviene saber antes de instalar.</h2></div>
           <FAQList items={faqs} />
@@ -120,6 +153,6 @@ export default function ResidentialPage() {
       </section>
 
       <ApplicationFinalCTA eyebrow="Tu espacio primero" title="Mándanos fotos o medidas aproximadas y te ayudamos a aterrizar la solución." ctaLabel="Cotizar mis cristales" context={wa} secondaryHref="/peliculas/nanoceramica/" secondaryLabel="Comparar nanocerámica" />
-    </>
+    </main>
   );
 }
