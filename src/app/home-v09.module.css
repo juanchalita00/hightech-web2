@@ -482,31 +482,53 @@
   content: "";
   position: absolute;
   z-index: -1;
-  inset: 0;
+  right: -7%;
+  top: 17%;
+  width: 58%;
+  height: 50%;
   pointer-events: none;
-  opacity: .78;
+  opacity: .15;
+  border: 1px solid rgba(207,218,255,.62);
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.025),
+    0 0 42px rgba(89,120,210,.08);
 }
 
-/* Tres variaciones del mismo lenguaje de cristal: sutiles, no ilustrativas. */
+/* Marcas de agua de cristal: propias de cada aplicación, visibles sólo al mirar con atención. */
 .journeyCard:nth-child(1)::before {
+  border-radius: .35rem;
   background:
-    linear-gradient(121deg, transparent 0 66%, rgba(255,255,255,.055) 66.2% 66.8%, transparent 67%),
-    linear-gradient(121deg, transparent 0 78%, rgba(255,255,255,.032) 78.2% 78.55%, transparent 78.8%),
-    radial-gradient(circle at 87% 22%, rgba(116,148,231,.13), transparent 34%);
+    linear-gradient(90deg, transparent 49.6%, rgba(213,224,255,.62) 49.8% 50.2%, transparent 50.4%),
+    linear-gradient(120deg, transparent 0 61%, rgba(255,255,255,.52) 61.2% 61.8%, transparent 62%),
+    linear-gradient(120deg, transparent 0 71%, rgba(255,255,255,.30) 71.2% 71.6%, transparent 71.8%);
 }
 
 .journeyCard:nth-child(2)::before {
+  top: 15%;
+  width: 61%;
+  height: 54%;
+  border-radius: .08rem;
   background:
-    linear-gradient(90deg, transparent 0 72%, rgba(255,255,255,.045) 72.2% 72.55%, transparent 72.8%),
-    linear-gradient(0deg, transparent 0 61%, rgba(255,255,255,.028) 61.2% 61.5%, transparent 61.8%),
-    radial-gradient(circle at 84% 18%, rgba(102,137,225,.12), transparent 33%);
+    linear-gradient(90deg,
+      transparent 0 32.7%, rgba(213,224,255,.48) 33% 33.4%, transparent 33.7% 65.8%,
+      rgba(213,224,255,.48) 66.1% 66.5%, transparent 66.8%),
+    linear-gradient(0deg,
+      transparent 0 32.7%, rgba(213,224,255,.44) 33% 33.4%, transparent 33.7% 65.8%,
+      rgba(213,224,255,.44) 66.1% 66.5%, transparent 66.8%),
+    linear-gradient(118deg, transparent 0 72%, rgba(255,255,255,.25) 72.2% 72.7%, transparent 73%);
 }
 
 .journeyCard:nth-child(3)::before {
+  right: -6%;
+  top: 20%;
+  width: 63%;
+  height: 43%;
+  border-radius: 1.1rem .3rem .65rem 1.5rem;
+  transform: skewX(-8deg);
   background:
-    linear-gradient(112deg, transparent 0 63%, rgba(255,255,255,.06) 63.2% 63.7%, transparent 64%),
-    linear-gradient(112deg, transparent 0 76%, rgba(255,255,255,.03) 76.2% 76.5%, transparent 76.8%),
-    radial-gradient(circle at 88% 20%, rgba(105,140,226,.14), transparent 35%);
+    linear-gradient(90deg, transparent 57%, rgba(213,224,255,.46) 57.3% 57.7%, transparent 58%),
+    linear-gradient(112deg, transparent 0 60%, rgba(255,255,255,.48) 60.2% 60.8%, transparent 61%),
+    linear-gradient(112deg, transparent 0 72%, rgba(255,255,255,.26) 72.2% 72.6%, transparent 72.8%);
 }
 
 .journeyCard:not(:last-child) {
@@ -695,33 +717,12 @@
 }
 
 .toneSwatch {
-  position: relative;
-  height: 2rem;
-  overflow: hidden;
+  height: 2.18rem;
   border: 1px solid rgba(11,18,36,.10);
   background: var(--tone-bg);
-  box-shadow: inset 0 1px rgba(255,255,255,.12);
-}
-
-.toneSwatch::before,
-.toneSwatch::after {
-  content: "";
-  position: absolute;
-  top: -18%;
-  bottom: -18%;
-  width: 1px;
-  background: rgba(255,255,255,.18);
-  transform: rotate(8deg);
-  pointer-events: none;
-}
-
-.toneSwatch::before {
-  left: 67%;
-}
-
-.toneSwatch::after {
-  left: 73%;
-  opacity: .48;
+  box-shadow:
+    inset 0 1px rgba(255,255,255,.16),
+    inset 0 -1px rgba(0,0,0,.08);
 }
 
 .toneMeta {
