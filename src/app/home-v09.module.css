@@ -701,26 +701,26 @@
   border: 1px solid rgba(11,18,36,.10);
   background: var(--tone-bg);
   box-shadow:
-    inset 0 1px rgba(255,255,255,.18),
-    inset 0 -1px rgba(0,0,0,.09);
+    inset 0 1px rgba(255,255,255,.12),
+    inset 0 -1px rgba(0,0,0,.06);
 }
 
 .toneSwatch::before {
   content: "";
   position: absolute;
-  inset: -35% -10%;
+  inset: -25% -8%;
   pointer-events: none;
-  transform: rotate(-7deg);
+  transform: rotate(-6deg);
   background: linear-gradient(
     105deg,
-    transparent 0 34%,
-    rgba(255,255,255,.03) 39%,
-    rgba(255,255,255,.22) 47%,
-    rgba(205,225,242,.11) 54%,
-    transparent 62%
+    transparent 0 38%,
+    rgba(255,255,255,.04) 44%,
+    rgba(255,255,255,.14) 50%,
+    rgba(220,232,245,.07) 56%,
+    transparent 64%
   );
-  filter: blur(.7px);
-  opacity: .9;
+  filter: blur(1px);
+  opacity: .75;
 }
 
 .toneSwatch::after {
@@ -729,8 +729,8 @@
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(ellipse at 18% 15%, rgba(255,255,255,.13), transparent 40%),
-    linear-gradient(180deg, rgba(255,255,255,.045), transparent 38%, rgba(0,0,0,.035));
+    linear-gradient(180deg, rgba(255,255,255,.035), transparent 40%, rgba(0,0,0,.025)),
+    radial-gradient(ellipse at 18% 14%, rgba(255,255,255,.08), transparent 42%);
 }
 
 .toneMeta {
