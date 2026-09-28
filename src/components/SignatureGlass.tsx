@@ -6,13 +6,14 @@ import { truth } from "@/lib/truth";
 import styles from "@/app/home-v09.module.css";
 
 const toneVisuals: Record<string, { overlay: string; brightness: number; saturation: number; contrast: number }> = {
-  // Calibración visual orientativa: cada tono se trata de forma individual.
-  // IR75 conserva mucha claridad y añade el ligero matiz frío/azulado del material.
-  IR75: { overlay: "rgba(62, 104, 148, 0.10)", brightness: 0.99, saturation: 0.96, contrast: 1.02 },
-  IR50: { overlay: "rgba(18, 23, 30, 0.18)", brightness: 0.88, saturation: 0.92, contrast: 1.04 },
-  IR35: { overlay: "rgba(12, 16, 22, 0.32)", brightness: 0.75, saturation: 0.86, contrast: 1.06 },
-  IR15: { overlay: "rgba(7, 9, 13, 0.58)", brightness: 0.52, saturation: 0.72, contrast: 1.09 },
-  IR5: { overlay: "rgba(3, 4, 6, 0.82)", brightness: 0.28, saturation: 0.58, contrast: 1.12 },
+  // Calibración visual orientativa v0.9.3 final:
+  // la escala completa se desplaza un nivel hacia mayor oscuridad.
+  // IR75 conserva el carácter claro de la gama, pero con el ligero matiz frío/azulado del material.
+  IR75: { overlay: "rgba(52, 96, 142, 0.18)", brightness: 0.88, saturation: 0.92, contrast: 1.04 },
+  IR50: { overlay: "rgba(12, 16, 22, 0.32)", brightness: 0.75, saturation: 0.86, contrast: 1.06 },
+  IR35: { overlay: "rgba(7, 9, 13, 0.58)", brightness: 0.52, saturation: 0.72, contrast: 1.09 },
+  IR15: { overlay: "rgba(3, 4, 6, 0.82)", brightness: 0.28, saturation: 0.58, contrast: 1.12 },
+  IR5: { overlay: "rgba(2, 3, 5, 0.90)", brightness: 0.18, saturation: 0.44, contrast: 1.14 },
 };
 
 export function SignatureGlass() {
