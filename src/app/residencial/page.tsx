@@ -57,12 +57,11 @@ export default function ResidentialPage() {
             </div>
           </div>
 
-          <div className={styles.heroVisual} aria-label="Referencia visual de aplicación residencial">
+          <div className={styles.heroVisual} aria-label="Proyecto residencial real de HIGHTECH">
             <div className={styles.heroPhoto} aria-hidden="true" />
-            <div className={styles.heroGlassPane} aria-hidden="true" />
             <div className={styles.heroTechnicalTag}>
-              <span>CRISTAL · CONTROL SOLAR</span>
-              <strong>Selección según vidrio, orientación y luz.</strong>
+              <span>PROYECTO HIGHTECH · RESIDENCIAL</span>
+              <strong>Aplicación real en cristales arquitectónicos.</strong>
             </div>
           </div>
         </div>
