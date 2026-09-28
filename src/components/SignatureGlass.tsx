@@ -55,7 +55,7 @@ export function SignatureGlass() {
         min="18"
         max="82"
         value={split}
-        onChange={(event) => setSplit(Number(event.target.value))}
+        onChange={(event: React.ChangeEvent<HTMLInputElement>) => setSplit(Number(event.currentTarget.value))}
         aria-label="Comparar cristal sin película y con película"
       />
 
