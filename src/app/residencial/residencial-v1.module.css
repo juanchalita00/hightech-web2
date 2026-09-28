@@ -33,12 +33,17 @@
 }
 
 .heroCopy h1 {
-  max-width: 9.5ch;
+  max-width: 9.6ch;
   margin: 0;
   font-size: clamp(3.5rem, 6.6vw, 6.4rem);
   line-height: .93;
   letter-spacing: -.062em;
   font-weight: 700;
+}
+
+.heroCopy h1 span {
+  display: block;
+  color: var(--res-blue);
 }
 
 .heroLede {
@@ -133,31 +138,32 @@
   pointer-events: none;
 }
 
-.heroCaption {
+.heroTechnicalTag {
   position: absolute;
-  left: 1.25rem;
-  right: 1.25rem;
-  bottom: 1.2rem;
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: 1rem;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  display: grid;
+  gap: .22rem;
+  padding: .9rem 1rem;
   color: white;
+  background: rgba(8, 18, 43, .84);
+  border: 1px solid rgba(255,255,255,.16);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 
-.heroCaption span {
-  font-size: .62rem;
-  font-weight: 760;
+.heroTechnicalTag span {
+  font-size: .58rem;
+  font-weight: 780;
   letter-spacing: .12em;
   text-transform: uppercase;
-  color: rgba(255,255,255,.70);
+  color: #aeb8d2;
 }
 
-.heroCaption strong {
-  max-width: 19rem;
-  text-align: right;
-  font-size: .92rem;
-  font-weight: 680;
+.heroTechnicalTag strong {
+  font-size: .88rem;
+  font-weight: 670;
 }
 
 .objectiveStrip {
@@ -213,64 +219,31 @@
 }
 
 .decisionExperience {
-  display: grid;
-  grid-template-columns: minmax(0, .96fr) minmax(25rem, 1.04fr);
-  gap: clamp(1.5rem, 4vw, 4rem);
-  align-items: stretch;
-}
-
-.decisionPhoto {
-  position: relative;
-  min-height: 38rem;
-  overflow: hidden;
-  background:
-    linear-gradient(180deg, rgba(8, 12, 18, 0) 55%, rgba(8, 12, 18, .40) 100%),
-    url("https://images.unsplash.com/photo-1758957701419-2c6e266f7988?auto=format&fit=crop&fm=jpg&q=82&w=2200");
-  background-size: cover;
-  background-position: center;
-}
-
-.decisionPhotoCaption {
-  position: absolute;
-  left: 1.2rem;
-  right: 1.2rem;
-  bottom: 1.2rem;
-  color: white;
-}
-
-.decisionPhotoCaption span {
-  display: block;
-  margin-bottom: .3rem;
-  font-size: .62rem;
-  font-weight: 760;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,.68);
-}
-
-.decisionPhotoCaption strong {
-  display: block;
-  max-width: 24rem;
-  font-size: 1.25rem;
-  line-height: 1.2;
-  letter-spacing: -.025em;
+  border-top: 1px solid var(--res-line);
 }
 
 .decisionExperience :global(.decision-grid) {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 0;
-  border-top: 1px solid var(--res-line);
 }
 
 .decisionExperience :global(.decision-card) {
-  min-height: auto;
-  padding: 1.35rem 0;
+  min-height: 13rem;
+  padding: 1.45rem 1.5rem 1.5rem 0;
   border: 0;
   border-bottom: 1px solid var(--res-line);
   border-radius: 0;
   background: transparent;
   box-shadow: none;
+}
+
+.decisionExperience :global(.decision-card:nth-child(odd)) {
+  border-right: 1px solid var(--res-line);
+}
+
+.decisionExperience :global(.decision-card:nth-child(even)) {
+  padding-left: 1.5rem;
 }
 
 .decisionExperience :global(.decision-card-head) {
@@ -329,28 +302,37 @@
 
 .solutionAside {
   display: grid;
-  gap: 1rem;
-}
-
-.solutionPhoto {
-  min-height: 22rem;
-  background:
-    linear-gradient(180deg, rgba(8,12,18,.02), rgba(8,12,18,.18)),
-    url("https://images.unsplash.com/photo-1771371097061-3befd4b71b59?auto=format&fit=crop&fm=jpg&q=78&w=1800");
-  background-size: cover;
-  background-position: 62% center;
 }
 
 .solutionAside :global(.compatibility-card) {
-  border-radius: 0;
-  border: 1px solid rgba(17,20,26,.10);
-  background: rgba(255,255,255,.56);
-  box-shadow: none;
+  position: sticky;
+  top: 7rem;
+  border-radius: 1.4rem;
+  color: white;
+  background: linear-gradient(150deg, #24366f 0%, #111b42 62%, #0a1027 100%);
+  border: 1px solid rgba(255,255,255,.08);
+  box-shadow: 0 24px 60px rgba(21, 30, 65, .18);
 }
 
 .solutionAside :global(.compatibility-icon) {
-  background: #eef1f7;
-  color: var(--res-blue);
+  color: #c7d1ff;
+  background: rgba(255,255,255,.08);
+}
+
+.solutionAside :global(.compatibility-card .eyebrow) {
+  color: #afbcf4;
+}
+
+.solutionAside :global(.compatibility-card h3) {
+  color: white;
+}
+
+.solutionAside :global(.compatibility-card > p:not(.eyebrow)) {
+  color: #b9c4db;
+}
+
+.solutionAside :global(.compatibility-card .text-link) {
+  color: white;
 }
 
 .nanoSection {
@@ -381,13 +363,6 @@
     min-height: 33rem;
   }
 
-  .decisionPhoto {
-    min-height: 30rem;
-  }
-
-  .solutionPhoto {
-    min-height: 19rem;
-  }
 }
 
 @media (max-width: 720px) {
@@ -414,15 +389,10 @@
     border-radius: .25rem 1.6rem .25rem 1.6rem;
   }
 
-  .heroCaption {
-    display: block;
-  }
-
-  .heroCaption strong {
-    display: block;
-    max-width: 18rem;
-    margin-top: .35rem;
-    text-align: left;
+.heroTechnicalTag {
+    left: .72rem;
+    right: .72rem;
+    bottom: .72rem;
   }
 
   .objectiveStripInner {
@@ -447,12 +417,15 @@
     margin-bottom: 2.4rem;
   }
 
-  .decisionPhoto {
-    min-height: 25rem;
+.decisionExperience :global(.decision-grid) {
+    grid-template-columns: 1fr;
   }
 
-  .solutionPhoto {
-    min-height: 16rem;
+  .decisionExperience :global(.decision-card),
+  .decisionExperience :global(.decision-card:nth-child(even)) {
+    min-height: auto;
+    padding: 1.25rem 0;
+    border-right: 0;
   }
 }
 
