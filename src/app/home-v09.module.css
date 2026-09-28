@@ -464,6 +464,8 @@
 
 .journeyCard {
   position: relative;
+  isolation: isolate;
+  overflow: hidden;
   min-height: 27rem;
   display: flex;
   flex-direction: column;
@@ -474,6 +476,37 @@
     radial-gradient(circle at 80% 15%, rgba(90,126,228,.14), transparent 46%),
     linear-gradient(180deg, rgba(255,255,255,.015), rgba(255,255,255,.045));
   transition: background .2s ease;
+}
+
+.journeyCard::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+  opacity: .78;
+}
+
+/* Tres variaciones del mismo lenguaje de cristal: sutiles, no ilustrativas. */
+.journeyCard:nth-child(1)::before {
+  background:
+    linear-gradient(121deg, transparent 0 66%, rgba(255,255,255,.055) 66.2% 66.8%, transparent 67%),
+    linear-gradient(121deg, transparent 0 78%, rgba(255,255,255,.032) 78.2% 78.55%, transparent 78.8%),
+    radial-gradient(circle at 87% 22%, rgba(116,148,231,.13), transparent 34%);
+}
+
+.journeyCard:nth-child(2)::before {
+  background:
+    linear-gradient(90deg, transparent 0 72%, rgba(255,255,255,.045) 72.2% 72.55%, transparent 72.8%),
+    linear-gradient(0deg, transparent 0 61%, rgba(255,255,255,.028) 61.2% 61.5%, transparent 61.8%),
+    radial-gradient(circle at 84% 18%, rgba(102,137,225,.12), transparent 33%);
+}
+
+.journeyCard:nth-child(3)::before {
+  background:
+    linear-gradient(112deg, transparent 0 63%, rgba(255,255,255,.06) 63.2% 63.7%, transparent 64%),
+    linear-gradient(112deg, transparent 0 76%, rgba(255,255,255,.03) 76.2% 76.5%, transparent 76.8%),
+    radial-gradient(circle at 88% 20%, rgba(105,140,226,.14), transparent 35%);
 }
 
 .journeyCard:not(:last-child) {
@@ -617,12 +650,25 @@
 }
 
 .toneAxis {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
   padding: 0 0 .75rem;
   color: #7a7e85;
   font-size: .7rem;
   font-weight: 710;
+}
+
+.toneAxis > span:last-child {
+  text-align: right;
+}
+
+.toneAxisLabel {
+  color: #59606a;
+  font-size: .66rem;
+  font-weight: 760;
+  letter-spacing: .04em;
+  text-transform: uppercase;
 }
 
 .toneRow {
@@ -652,15 +698,30 @@
   position: relative;
   height: 2rem;
   overflow: hidden;
-  background: linear-gradient(90deg, #e2eef4, #9dc2d3);
+  border: 1px solid rgba(11,18,36,.10);
+  background: var(--tone-bg);
+  box-shadow: inset 0 1px rgba(255,255,255,.12);
 }
 
+.toneSwatch::before,
 .toneSwatch::after {
   content: "";
   position: absolute;
-  inset: 0;
-  background: #101d3e;
-  opacity: var(--tone);
+  top: -18%;
+  bottom: -18%;
+  width: 1px;
+  background: rgba(255,255,255,.18);
+  transform: rotate(8deg);
+  pointer-events: none;
+}
+
+.toneSwatch::before {
+  left: 67%;
+}
+
+.toneSwatch::after {
+  left: 73%;
+  opacity: .48;
 }
 
 .toneMeta {
