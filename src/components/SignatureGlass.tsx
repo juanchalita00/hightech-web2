@@ -1,5 +1,6 @@
 "use client";
 
+import type { CSSProperties } from "react";
 import { useMemo, useState } from "react";
 import { truth } from "@/lib/truth";
 import styles from "@/app/home-v09.module.css";
@@ -36,7 +37,7 @@ export function SignatureGlass() {
           "--film-opacity": visual.opacity,
           "--film-brightness": visual.brightness,
           "--film-saturation": visual.saturation,
-        } as React.CSSProperties}
+        } as CSSProperties}
       />
 
       <div className={styles.revealEdge} aria-hidden="true" style={{ left: split + "%" }}>
