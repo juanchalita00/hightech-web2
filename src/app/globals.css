@@ -430,7 +430,7 @@ thead th { background: var(--surface-alt); }
 .footer-brand p { max-width: 24rem; margin: 1.25rem 0 .6rem; color: #9ea9c4; }
 .footer-brand > span { color: #6f7c9a; font-size: .82rem; }
 .brand-logo-footer { padding: 0; background: transparent; border-radius: 0; width: fit-content; }
-.brand-logo-footer img { width: 165px; }
+.brand-logo-footer img { width: 240px; }
 .footer-links { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
 .footer-links > div { display: grid; align-content: start; gap: .58rem; }
 .footer-links strong { margin-bottom: .35rem; color: #cbd4ea; font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; }
@@ -459,6 +459,7 @@ thead th { background: var(--surface-alt); }
   .section { padding: 4.2rem 0; }
   .header-inner { min-height: 4.45rem; gap: 1rem; }
   .brand-logo img { width: 150px; }
+  .brand-logo-footer img { width: 210px; }
   .header-cta { display: none; }
   .home-hero { padding-top: 3.35rem; }
   .home-hero-grid { grid-template-columns: 1fr; gap: 2.6rem; }
