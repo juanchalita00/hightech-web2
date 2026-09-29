@@ -70,7 +70,7 @@ export default function ResidentialPage() {
       <section className="application-strip" aria-label="Objetivos residenciales frecuentes">
         <div className="container application-strip-inner">
           <span><Icon name="sun" size={18}/> Control solar</span><i />
-          <span><Icon name="uv" size={18}/> Protección ultravioleta</span><i />
+          <span><Icon name="uv" size={19}/> Protección ultravioleta</span><i />
           <span><Icon name="glare" size={18}/> Deslumbramiento</span><i />
           <span><Icon name="privacy" size={18}/> Privacidad</span>
         </div>
