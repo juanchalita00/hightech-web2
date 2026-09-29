@@ -7,7 +7,7 @@ export function SiteFooter() {
     <footer className="site-footer">
       <div className="container footer-main">
         <div className="footer-brand">
-          <BrandLogo className="brand-logo-footer" />
+          <BrandLogo className="brand-logo-footer" variant="white" />
           <p>Soluciones profesionales para cristales residenciales, comerciales y automotrices.</p>
           <span>{truth.contact.locationLabel}</span>
         </div>
