@@ -4,11 +4,11 @@ import { Icon } from "@/components/Icon";
 import { truth } from "@/lib/truth";
 
 const useCopy: Record<string, string> = {
-  IR75: "Máxima claridad de la gama activa.",
-  IR50: "Claridad alta con mayor TSER de ficha que IR75.",
-  IR35: "Balance entre entrada de luz, apariencia y deslumbramiento.",
-  IR15: "Privacidad visual más marcada y menor entrada de luz.",
-  IR5: "Máxima oscuridad de la gama activa; VLT real de ficha 3%.",
+  IR75: "Para conservar la mayor cantidad de luz de la gama.",
+  IR50: "Alta claridad con mayor control solar que IR75, según ficha.",
+  IR35: "Punto medio entre luz, apariencia y deslumbramiento.",
+  IR15: "Más oscuridad y privacidad visual durante el día.",
+  IR5: "La opción más oscura de la gama; VLT de ficha 3%.",
 };
 
 export function NanoComparison() {
