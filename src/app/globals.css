@@ -313,8 +313,8 @@ thead th { background: var(--surface-alt); }
   flex:0 0 20px;
   color:var(--brand);
 }
-.application-strip-inner > span > svg { display:block; transform:translateY(-1.5px); }
-.application-strip-inner > span > .icon-uv { transform:translateY(-1.5px); }
+.application-strip-inner > span > svg { display:block; transform:translateY(-2.5px); }
+.application-strip-inner > span > .icon-uv { transform:translateY(-0.5px); }
 .application-strip-inner i { width:1px; height:1.3rem; background:var(--line); }
 .application-section { background:linear-gradient(180deg,#fff,#fbfcff); }
 .decision-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:.8rem; }
