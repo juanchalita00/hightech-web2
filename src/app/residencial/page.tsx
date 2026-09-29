@@ -21,10 +21,10 @@ const decisions = [
 ] as const;
 
 const steps = [
-  { number: "01", title: "Cuéntanos qué quieres resolver", text: "Calor, UV, deslumbramiento, privacidad o una combinación de varios objetivos." },
-  { number: "02", title: "Comparte fotos y medidas", text: "Con medidas aproximadas y fotografías podemos entender mejor el espacio antes de cotizar." },
-  { number: "03", title: "Revisamos la solución", text: "Seleccionamos tecnología y tono considerando cristal, iluminación y expectativas visuales." },
-  { number: "04", title: "Cotizamos el proyecto", text: "Cotizamos según película, medidas y condiciones reales de instalación." },
+  { number: "01", title: "Cuéntanos qué quieres resolver", text: "Calor, deslumbramiento, privacidad, protección UV o una combinación de varios objetivos." },
+  { number: "02", title: "Envíanos fotos y medidas aproximadas", text: "Para una primera revisión no tienen que ser perfectas. Si necesitamos validar alguna medida antes de cerrar el proyecto, te lo indicamos." },
+  { number: "03", title: "Revisamos tu cristal y las opciones", text: "Validamos compatibilidad, tecnología y tono según el espacio, la luz y el resultado que buscas." },
+  { number: "04", title: "Recibes tu cotización", text: "Te enviamos la solución propuesta, el alcance del trabajo y el precio correspondiente." },
 ] as const;
 
 const faqs = [
@@ -124,8 +124,8 @@ export default function ResidentialPage() {
       <section className="section residential-process-section">
         <div className="container">
           <div className="section-heading section-heading-split">
-            <div><p className="eyebrow">Cómo cotizamos residencial</p><h2>Con fotos y medidas ya podemos empezar a entender el proyecto.</h2></div>
-            <p>No necesitas llegar con una película decidida. La cotización parte del espacio, el problema y las condiciones de instalación.</p>
+            <div><p className="eyebrow">Cómo cotizamos residencial</p><h2>Con fotos y medidas aproximadas podemos empezar.</h2></div>
+            <p>No necesitas saber qué película elegir. Primero entendemos qué quieres resolver, revisamos tus cristales y después te proponemos una solución.</p>
           </div>
           <ProcessRail steps={steps} />
         </div>
