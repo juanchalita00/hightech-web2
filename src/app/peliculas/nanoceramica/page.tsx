@@ -4,12 +4,18 @@ import { LimitationNotice } from "@/components/LimitationNotice";
 import { MetricExplainer } from "@/components/MetricExplainer";
 import { NanoComparison } from "@/components/NanoComparison";
 import { ProductCTA } from "@/components/ProductCTA";
+import nanoHero1 from "./nanoHeroData1";
+import nanoHero2 from "./nanoHeroData2";
+import nanoHero3 from "./nanoHeroData3";
+import nanoHero4 from "./nanoHeroData4";
 import { ProductHero } from "@/components/ProductHero";
 
 export const metadata = { alternates: { canonical: "/peliculas/nanoceramica/" },
   title: { absolute: "Película nanocerámica | HIGHTECH Polarizados" },
   description: "Compara IR75, IR50, IR35, IR15 e IR5 por VLT, UV, rechazo infrarrojo a 950 nm y TSER según ficha técnica.",
 };
+
+const nanoHeroImage = "data:image/webp;base64," + nanoHero1 + nanoHero2 + nanoHero3 + nanoHero4;
 
 const metrics = [
   { metric:"VLT", label:"Transmisión de luz visible", meaning:"Indica cuánta luz visible atraviesa la película en la medición de ficha. Es la métrica más útil para entender claridad u oscuridad.", caution:"El VLT de la película no es necesariamente el VLT final del conjunto vidrio + película." },
@@ -27,7 +33,7 @@ export default function NanoPage() {
       description="Hay opciones muy claras y otras más oscuras. La diferencia está en cuánta luz quieres conservar, la privacidad que buscas y las condiciones de tu espacio."
       ctaLabel="Ayúdame a elegir"
       context={{sourcePage:"/peliculas/nanoceramica/", product:"Nanocerámica HIGHTECH"}}
-      image={{src:"/images/nanoceramica-tonos-exterior-preview.webp", alt:"Comparación visual exterior de los tonos nanocerámicos IR75, IR50, IR35, IR15 e IR5 instalados en un ventanal.", caption:"Vista exterior · referencia visual. La apariencia puede variar según el cristal, la iluminación y las condiciones del entorno."}}
+      image={{src:nanoHeroImage, alt:"Comparación visual exterior de los tonos nanocerámicos IR75, IR50, IR35, IR15 e IR5 instalados en un ventanal.", caption:"Vista exterior · referencia visual. La apariencia puede variar según el cristal, la iluminación y las condiciones del entorno."}}
       secondary={<Link href="#comparar" className="button button-secondary">Comparar tonos <Icon name="arrow" size={18}/></Link>}
     />
 
