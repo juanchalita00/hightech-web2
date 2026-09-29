@@ -30,6 +30,7 @@ const steps = [
 const faqs = [
   { question: "¿Tengo que saber qué película quiero?", answer: <p>No. Puedes empezar contándonos qué quieres resolver. Revisamos claridad, privacidad, control solar y las condiciones del cristal antes de recomendar una opción.</p> },
   { question: "¿El polarizado va a oscurecer mucho mis ventanas?", answer: <p>No necesariamente. Hay opciones nanocerámicas muy claras y otras más oscuras. Elegimos el nivel de luz y privacidad según el espacio y el resultado que buscas.</p> },
+  { question: "¿Cómo puede una película clara ayudar con el calor?", answer: <p>Porque la luz que vemos y la energía solar que entra por una ventana no son lo mismo. Una película nanocerámica puede dejar pasar mucha luz visible y, al mismo tiempo, reducir parte de la energía solar que atraviesa el cristal. Por eso no necesita verse muy oscura para ofrecer control solar.</p> },
   { question: "¿La privacidad funciona igual de noche?", answer: <p>No siempre. En películas reflectivas o que dependen del contraste de luz, el efecto puede disminuir o invertirse cuando hay más iluminación dentro que fuera. Por eso conviene definir desde el inicio qué nivel de privacidad esperas de día y de noche.</p> },
   { question: "¿Cómo se calcula la cotización?", answer: <p>Consideramos la película recomendada, las medidas, el tipo de cristal, el acceso y las condiciones de instalación. Si existe película previa que deba retirarse u otra condición especial, también se contempla antes de cerrar el proyecto.</p> },
 ] as const;
@@ -113,8 +114,8 @@ export default function ResidentialPage() {
           <div className="nano-copy">
             <p className="eyebrow">Gama nanocerámica</p>
             <h2>Elige cuánta luz quieres conservar.</h2>
-            <p className="lede-small">El tono cambia principalmente cuánta luz visible atraviesa el cristal y el rechazo solar total de la película. Toda la gama nanocerámica mantiene, según ficha, 99% de rechazo UV y 95% de rechazo infrarrojo medido a 950 nm.</p>
-            <div className="context-note"><strong>Importante:</strong> el 95% de rechazo IR está medido a 950 nm y no significa 95% menos calor dentro de una habitación. Para comparar el desempeño frente a la energía solar total, revisa el <strong>TSER</strong>.</div>
+            <p className="lede-small">No necesitas oscurecer tu casa para obtener control solar. Hay películas muy claras y otras más oscuras. El tono define principalmente cuánta luz quieres conservar; el desempeño solar se compara por separado.</p>
+            <div className="context-note"><strong>Para comparar:</strong> el <strong>VLT</strong> indica cuánta luz visible atraviesa el cristal y el <strong>TSER</strong> ayuda a comparar cuánta energía solar total se rechaza. En la gama nanocerámica, las fichas indican 99% de rechazo UV y 95% de rechazo IR medido a 950 nm; ese 95% IR no significa 95% menos calor dentro de una habitación.</div>
             <Link href="/peliculas/nanoceramica/" className="text-link text-link-strong">Entender VLT y TSER <Icon name="arrow" size={17}/></Link>
           </div>
           <NanoSpectrum />
