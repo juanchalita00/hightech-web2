@@ -306,7 +306,15 @@ thead th { background: var(--surface-alt); }
 .application-strip { border-block:1px solid var(--line); background:white; }
 .application-strip-inner { min-height:4.35rem; display:flex; align-items:center; justify-content:center; gap:clamp(1rem,4vw,3.4rem); color:#556077; font-size:.82rem; font-weight:730; }
 .application-strip-inner span { display:inline-flex; align-items:center; gap:.45rem; white-space:nowrap; }
-.application-strip-inner svg { color:var(--brand); }
+.application-strip-inner > span > svg,
+.application-strip-inner > span > .icon-uv {
+  width:20px;
+  height:20px;
+  flex:0 0 20px;
+  color:var(--brand);
+}
+.application-strip-inner > span > svg { display:block; transform:translateY(-.5px); }
+.application-strip-inner > span > .icon-uv { transform:translateY(-.5px); }
 .application-strip-inner i { width:1px; height:1.3rem; background:var(--line); }
 .application-section { background:linear-gradient(180deg,#fff,#fbfcff); }
 .decision-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:.8rem; }

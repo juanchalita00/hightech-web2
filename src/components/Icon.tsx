@@ -39,7 +39,7 @@ export function Icon({ name, size = 22, className = "" }: Props) {
       return (
         <span
           aria-hidden="true"
-          className={className}
+          className={`icon-uv ${className}`.trim()}
           style={{
             width: size,
             height: size,
@@ -48,10 +48,10 @@ export function Icon({ name, size = 22, className = "" }: Props) {
             justifyContent: "center",
             flex: "0 0 auto",
             color: "currentColor",
-            fontSize: Math.max(10, Math.round(size * 0.62)),
-            fontWeight: 700,
+            fontSize: Math.max(12, Math.round(size * 0.74)),
+            fontWeight: 760,
             lineHeight: 1,
-            letterSpacing: "-0.06em",
+            letterSpacing: "-0.04em",
           }}
         >
           UV
