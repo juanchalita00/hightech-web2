@@ -47,7 +47,6 @@ export function Icon({ name, size = 22, className = "" }: Props) {
             alignItems: "center",
             justifyContent: "center",
             flex: "0 0 auto",
-            color: "currentColor",
             fontSize: Math.max(12, Math.round(size * 0.74)),
             fontWeight: 760,
             lineHeight: 1,
