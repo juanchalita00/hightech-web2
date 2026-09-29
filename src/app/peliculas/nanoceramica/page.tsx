@@ -96,6 +96,6 @@ export default function NanoPage() {
       </div>
     </section>
 
-    <ProductCTA title="Cuéntanos qué quieres mejorar y qué quieres conservar." text="Puede ser menos calor, menos reflejo o más privacidad, conservando la luz, visibilidad o apariencia que te importan. A partir de eso te orientamos entre los tonos disponibles." cta="Quiero una recomendación" context={{sourcePage:"/peliculas/nanoceramica/", product:"Nanocerámica HIGHTECH"}} secondaryHref="/peliculas/" secondaryLabel="Ver todas las películas" />
+    <ProductCTA title="Dinos qué quieres resolver. Nosotros te ayudamos a elegir." text="Puede ser calor, reflejo o privacidad. También tomamos en cuenta cuánta luz y visibilidad quieres mantener para recomendarte el tono más adecuado." cta="Quiero una recomendación" context={{sourcePage:"/peliculas/nanoceramica/", product:"Nanocerámica HIGHTECH"}} secondaryHref="/peliculas/" secondaryLabel="Ver todas las películas" />
   </>;
 }
