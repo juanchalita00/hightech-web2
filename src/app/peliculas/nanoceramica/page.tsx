@@ -12,10 +12,10 @@ export const metadata = { alternates: { canonical: "/peliculas/nanoceramica/" },
 };
 
 const metrics = [
-  { metric:"VLT", label:"Transmisión de luz visible", meaning:"Indica cuánta luz visible atraviesa la película en la medición de ficha. Es la métrica más útil para entender claridad u oscuridad.", caution:"El VLT de la película no es necesariamente el VLT final del conjunto vidrio + película." },
-  { metric:"UV", label:"Rechazo ultravioleta", meaning:"Las fichas activas de la gama nano indican 99% de rechazo UV en los cinco tonos.", caution:"UV no es la única causa de decoloración de interiores." },
-  { metric:"IR 950", label:"Rechazo infrarrojo a 950 nm", meaning:"Las fichas indican 95% de rechazo infrarrojo medido específicamente a 950 nm.", caution:"No equivale a 95% menos calor ni a rechazo de toda la banda infrarroja." },
-  { metric:"TSER", label:"Rechazo de energía solar total", meaning:"Es una métrica distinta al rechazo IR y cambia por tono en la ficha: 59% a 96% en la gama mapeada.", caution:"No es una promesa universal de temperatura del espacio instalado." },
+  { metric:"VLT", label:"Cuánta luz visible deja pasar", meaning:"Te ayuda a entender qué tan claro u oscuro se percibe un tono. Un VLT más alto deja pasar más luz visible.", caution:"El VLT de la película no es necesariamente el VLT final del conjunto vidrio + película." },
+  { metric:"UV", label:"Protección frente a radiación UV", meaning:"Las fichas activas de la gama nanocerámica indican 99% de rechazo UV en los cinco tonos.", caution:"La radiación UV no es la única causa de decoloración de interiores." },
+  { metric:"IR 950", label:"Medición infrarroja a 950 nm", meaning:"Las fichas indican 95% de rechazo infrarrojo medido específicamente a una longitud de onda de 950 nm.", caution:"No significa 95% menos calor ni representa toda la banda infrarroja." },
+  { metric:"TSER", label:"Energía solar total rechazada", meaning:"Sirve para comparar cuánto de la energía solar total rechaza cada película. En la ficha de esta gama cambia de 59% a 96% según el tono.", caution:"No es una promesa de cuántos grados bajará un espacio." },
 ] as const;
 
 export default function NanoPage() {
@@ -78,8 +78,8 @@ export default function NanoPage() {
     <section className="section nano-metrics-section">
       <div className="container">
         <div className="section-heading section-heading-split">
-          <div><p className="eyebrow">Si quieres profundizar</p><h2>VLT, UV, IR y TSER miden cosas diferentes.</h2></div>
-          <p>No necesitas memorizar estas siglas para elegir. Las mostramos porque permiten comparar con datos qué hace cada película y evitar confundir oscuridad con desempeño.</p>
+          <div><p className="eyebrow">Cómo leer los datos</p><h2>Qué significa cada dato y para qué te sirve.</h2></div>
+          <p>No necesitas memorizar las siglas. VLT habla de luz visible; UV e IR miden partes distintas de la radiación; y TSER ayuda a comparar el rechazo de energía solar total.</p>
         </div>
         <MetricExplainer items={metrics}/>
       </div>
