@@ -27,7 +27,7 @@ export default function NanoPage() {
       description="Hay opciones muy claras y otras más oscuras. La diferencia está en cuánta luz quieres conservar, la privacidad que buscas y las condiciones de tu espacio."
       ctaLabel="Ayúdame a elegir"
       context={{sourcePage:"/peliculas/nanoceramica/", product:"Nanocerámica HIGHTECH"}}
-      facts={[{label:"VLT",value:"75 → 3%"},{label:"UV",value:"99%"},{label:"IR a 950 nm",value:"95%"},{label:"TSER",value:"59 → 96%"}]}
+      image={{src:"/images/nanoceramica-tonos-exterior-preview.webp", alt:"Comparación visual exterior de los tonos nanocerámicos IR75, IR50, IR35, IR15 e IR5 instalados en un ventanal.", caption:"Vista exterior · referencia visual. La apariencia puede variar según el cristal, la iluminación y las condiciones del entorno."}}
       secondary={<Link href="#comparar" className="button button-secondary">Comparar tonos <Icon name="arrow" size={18}/></Link>}
     />
 
