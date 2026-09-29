@@ -50,17 +50,17 @@ export default function NanoPage() {
     <section className="section nano-choice-section">
       <div className="container nano-choice-grid">
         <div>
-          <p className="eyebrow">Cómo elegir</p>
-          <h2>La pregunta no es “¿cuál es mejor?”, sino “¿qué balance quieres?”.</h2>
-          <p>Más claridad puede ser prioridad si quieres conservar luz y vista. Un tono más oscuro puede ayudar con el deslumbramiento y dar una apariencia de mayor privacidad durante el día, pero también deja entrar menos luz.</p>
+          <p className="eyebrow">Tu espacio, primero</p>
+          <h2>Antes del tono, dinos qué te está molestando.</h2>
+          <p>Puede ser el calor de la tarde, el reflejo en una pantalla, falta de privacidad o simplemente que no quieres oscurecer de más una habitación. Partimos de eso y después buscamos el tono que mejor encaje con tu cristal, la luz del espacio y lo que quieres conservar.</p>
           <LimitationNotice title="La privacidad cambia con la iluminación"><p>Cuando depende del contraste o la reflectividad, puede disminuir o invertirse si el interior está más iluminado que el exterior.</p></LimitationNotice>
         </div>
         <div className="nano-choice-links">
-          <Link href="/peliculas/nanoceramica/ir75/"><strong>IR75</strong><span>Para conservar la mayor cantidad de luz</span><Icon name="arrow" size={18}/></Link>
-          <Link href="/peliculas/nanoceramica/ir50/"><strong>IR50</strong><span>Alta claridad con mayor control solar que IR75 según ficha</span><Icon name="arrow" size={18}/></Link>
-          <Link href="/peliculas/nanoceramica/ir35/"><strong>IR35</strong><span>Punto medio entre luz, apariencia y deslumbramiento</span><Icon name="arrow" size={18}/></Link>
-          <Link href="/peliculas/nanoceramica/ir15/"><strong>IR15</strong><span>Más oscuridad y privacidad visual durante el día</span><Icon name="arrow" size={18}/></Link>
-          <Link href="/peliculas/nanoceramica/ir5/"><strong>IR5</strong><span>La opción más oscura de la gama</span><Icon name="arrow" size={18}/></Link>
+          <Link href="/peliculas/nanoceramica/ir75/"><strong>IR75</strong><span>Quiero conservar la mayor cantidad de luz</span><Icon name="arrow" size={18}/></Link>
+          <Link href="/peliculas/nanoceramica/ir50/"><strong>IR50</strong><span>Quiero mucha claridad con mayor control solar que IR75 según ficha</span><Icon name="arrow" size={18}/></Link>
+          <Link href="/peliculas/nanoceramica/ir35/"><strong>IR35</strong><span>Busco un punto medio entre luz, apariencia y deslumbramiento</span><Icon name="arrow" size={18}/></Link>
+          <Link href="/peliculas/nanoceramica/ir15/"><strong>IR15</strong><span>Quiero una apariencia más oscura y mayor privacidad visual durante el día</span><Icon name="arrow" size={18}/></Link>
+          <Link href="/peliculas/nanoceramica/ir5/"><strong>IR5</strong><span>Quiero la opción más oscura de la gama</span><Icon name="arrow" size={18}/></Link>
         </div>
       </div>
     </section>
