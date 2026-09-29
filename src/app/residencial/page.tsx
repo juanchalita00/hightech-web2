@@ -90,11 +90,11 @@ export default function ResidentialPage() {
         <div className="container residential-solutions-grid">
           <div className="residential-solution-copy">
             <p className="eyebrow">Soluciones según tu necesidad</p>
-            <h2>La película correcta depende de lo que quieres resolver.</h2>
+            <h2>No empezamos por el tono. Empezamos por lo que quieres resolver.</h2>
             <div className="solution-link-list">
-              <Link href="/peliculas/nanoceramica/"><span><strong>Nanocerámica</strong><small>Control solar y alta claridad para conservar la luz natural.</small></span><Icon name="arrow" size={18}/></Link>
-              <Link href="/peliculas/plata-reflecta/"><span><strong>Plata Reflecta</strong><small>Mayor apariencia reflectiva y privacidad durante el día.</small></span><Icon name="arrow" size={18}/></Link>
-              <Link href="/peliculas/privacidad/"><span><strong>Privacidad</strong><small>Para controlar la visibilidad según las condiciones de luz del espacio.</small></span><Icon name="arrow" size={18}/></Link>
+              <Link href="/peliculas/nanoceramica/"><span><strong>Nanocerámica</strong><small>Control solar con distintos niveles de luz, desde opciones muy claras hasta más oscuras.</small></span><Icon name="arrow" size={18}/></Link>
+              <Link href="/peliculas/plata-reflecta/"><span><strong>Plata Reflecta</strong><small>Control solar y privacidad durante el día con una apariencia más reflectiva.</small></span><Icon name="arrow" size={18}/></Link>
+              <Link href="/peliculas/privacidad/"><span><strong>Privacidad</strong><small>Para limitar la visibilidad hacia el interior, considerando que el efecto cambia entre día y noche.</small></span><Icon name="arrow" size={18}/></Link>
               <Link href="/peliculas/seguridad/"><span><strong>Seguridad</strong><small>Ayuda a mantener unidos los fragmentos del cristal en caso de rotura.</small></span><Icon name="arrow" size={18}/></Link>
             </div>
           </div>
@@ -102,8 +102,8 @@ export default function ResidentialPage() {
             <span className="compatibility-icon"><Icon name="glass" size={25}/></span>
             <p className="eyebrow">Compatibilidad</p>
             <h3>Primero revisamos tu cristal.</h3>
-            <p>El tipo de vidrio y sus condiciones determinan qué películas podemos instalar de forma adecuada. En cristales especiales, sistemas aislados o aplicaciones exteriores puede ser necesaria una revisión adicional antes de recomendar una opción.</p>
-            <Link href="/guias/" className="text-link text-link-strong">Conocer cómo evaluamos el cristal <Icon name="arrow" size={17}/></Link>
+            <p>No todas las películas son adecuadas para todos los vidrios. Revisamos el tipo de cristal y las condiciones de instalación antes de recomendar una solución, especialmente en vidrios especiales, sistemas aislados o aplicaciones exteriores.</p>
+            <Link href="/guias/" className="text-link text-link-strong">Cómo revisamos tu cristal <Icon name="arrow" size={17}/></Link>
           </div>
         </div>
       </section>
