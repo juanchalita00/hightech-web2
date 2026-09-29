@@ -30,8 +30,9 @@ const steps = [
 const faqs = [
   { question: "¿Tengo que saber qué película quiero?", answer: <p>No. Puedes empezar contándonos qué quieres resolver. Revisamos claridad, privacidad, control solar y las condiciones del cristal antes de recomendar una opción.</p> },
   { question: "¿El polarizado va a oscurecer mucho mis ventanas?", answer: <p>No necesariamente. Hay opciones nanocerámicas muy claras y otras más oscuras. Elegimos el nivel de luz y privacidad según el espacio y el resultado que buscas.</p> },
-  { question: "¿Cómo puede una película clara ayudar con el calor?", answer: <p>Porque la luz que vemos y la energía solar que entra por una ventana no son lo mismo. Una película nanocerámica puede dejar pasar mucha luz visible y, al mismo tiempo, reducir parte de la energía solar que atraviesa el cristal. Por eso no necesita verse muy oscura para ofrecer control solar.</p> },
+  { question: "¿Cómo puede una película clara ayudar con el calor?", answer: <p>Porque que una protección sea transparente no significa que no esté funcionando. Piensa en el protector solar: puede quedar prácticamente invisible sobre la piel y aun así protegerla contra rayos UV. Con una película pasa algo parecido: puede verse muy clara y seguir ofreciendo protección. En el cristal, la protección UV y el control solar son características distintas, por eso no elegimos una película solamente por qué tan oscura se ve.</p> },
   { question: "¿La privacidad funciona igual de noche?", answer: <p>No siempre. En películas reflectivas o que dependen del contraste de luz, el efecto puede disminuir o invertirse cuando hay más iluminación dentro que fuera. Por eso conviene definir desde el inicio qué nivel de privacidad esperas de día y de noche.</p> },
+  { question: "¿Cuántos grados puede bajar la temperatura?", answer: <p>No existe una cantidad fija de grados que podamos garantizar para todas las casas. El resultado depende del tipo de cristal, cuánto sol recibe, el tamaño y la ventilación del espacio, entre otras condiciones. Por eso comparamos el desempeño de las películas y elegimos una opción adecuada para cada proyecto.</p> },
   { question: "¿Cómo se calcula la cotización?", answer: <p>Consideramos la película recomendada, las medidas, el tipo de cristal, el acceso y las condiciones de instalación. Si existe película previa que deba retirarse u otra condición especial, también se contempla antes de cerrar el proyecto.</p> },
 ] as const;
 
@@ -80,8 +81,8 @@ export default function ResidentialPage() {
       <section className="section application-section">
         <div className="container">
           <div className="section-heading section-heading-split">
-            <div><p className="eyebrow">Antes de elegir tono</p><h2>Una solución para tus ventanas.</h2></div>
-            <p>Para recomendarte una película, revisamos cuatro aspectos de tu espacio.</p>
+            <div><p className="eyebrow">Antes de recomendar una solución</p><h2>No todas las habitaciones necesitan lo mismo.</h2></div>
+            <p>Una sala con sol de tarde, una recámara y un estudio pueden necesitar soluciones distintas. Por eso revisamos cómo entra el sol, el cristal, la luz que quieres conservar y el uso que le das al espacio.</p>
           </div>
           <DecisionCards items={decisions} />
         </div>
@@ -103,7 +104,7 @@ export default function ResidentialPage() {
             <span className="compatibility-icon"><Icon name="glass" size={25}/></span>
             <p className="eyebrow">Compatibilidad</p>
             <h3>Primero revisamos tu cristal.</h3>
-            <p>No todas las películas son adecuadas para todos los vidrios. Revisamos el tipo de cristal y las condiciones de instalación antes de recomendar una solución, especialmente en vidrios especiales, sistemas aislados o aplicaciones exteriores.</p>
+            <p>No todas las películas son adecuadas para todos los vidrios. Revisamos el tipo de cristal y las condiciones de instalación antes de recomendar una solución. Algunos cristales especiales o aplicaciones particulares requieren una revisión adicional.</p>
             <Link href="/guias/" className="text-link text-link-strong">Cómo revisamos tu cristal <Icon name="arrow" size={17}/></Link>
           </div>
         </div>
