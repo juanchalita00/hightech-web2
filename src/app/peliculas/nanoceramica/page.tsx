@@ -23,7 +23,7 @@ export default function NanoPage() {
     <ProductHero
       variant="nano"
       eyebrow="Nanocerámica HIGHTECH"
-      title="Control solar sin elegir únicamente por qué tan oscuro se ve."
+      title="Control solar con la luz que quieres conservar."
       description="Hay opciones muy claras y otras más oscuras. La diferencia está en cuánta luz quieres conservar, la privacidad que buscas y las condiciones de tu espacio."
       ctaLabel="Ayúdame a elegir"
       context={{sourcePage:"/peliculas/nanoceramica/", product:"Nanocerámica HIGHTECH"}}
