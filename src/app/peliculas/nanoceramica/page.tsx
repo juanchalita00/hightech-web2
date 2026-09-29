@@ -87,15 +87,15 @@ export default function NanoPage() {
 
     <section className="section section-alt nano-applications-section">
       <div className="container">
-        <div className="section-heading"><p className="eyebrow">Aplicación</p><h2>La misma tecnología se elige distinto según dónde la necesitas.</h2></div>
+        <div className="section-heading"><p className="eyebrow">Según dónde la necesitas</p><h2>La tecnología es la misma. La decisión cambia con el espacio.</h2></div>
         <div className="nano-application-grid">
-          <Link href="/residencial/"><span><Icon name="home" size={22}/></span><h3>Residencial</h3><p>Conservar luz, reducir deslumbramiento y ajustar privacidad según cada espacio.</p></Link>
-          <Link href="/comercial/"><span><Icon name="building" size={22}/></span><h3>Comercial</h3><p>Fachadas, oficinas y proyectos donde confort, especificación y operación importan.</p></Link>
-          <Link href="/automotriz/"><span><Icon name="car" size={22}/></span><h3>Automotriz</h3><p>Elegir tono considerando visibilidad, uso nocturno y las condiciones del vehículo.</p></Link>
+          <Link href="/residencial/"><span><Icon name="home" size={22}/></span><h3>Residencial</h3><p>Si quieres reducir deslumbramiento o ganar confort sin oscurecer de más, importa mucho la luz que quieres conservar.</p></Link>
+          <Link href="/comercial/"><span><Icon name="building" size={22}/></span><h3>Comercial</h3><p>En oficinas y fachadas también pesan la imagen del edificio, la operación y una especificación consistente.</p></Link>
+          <Link href="/automotriz/"><span><Icon name="car" size={22}/></span><h3>Automotriz</h3><p>En vehículo, además del control solar, importan la visibilidad, el uso nocturno y el tono que quieres manejar.</p></Link>
         </div>
       </div>
     </section>
 
-    <ProductCTA title="Dinos qué quieres resolver. Nosotros te ayudamos a encontrar el balance." text="Cuéntanos dónde quieres instalarla y qué quieres conservar o cambiar: luz, privacidad, visibilidad o control solar." cta="Ayúdame a elegir tono" context={{sourcePage:"/peliculas/nanoceramica/", product:"Nanocerámica HIGHTECH"}} secondaryHref="/peliculas/" secondaryLabel="Comparar tecnologías" />
+    <ProductCTA title="Cuéntanos qué quieres mejorar y qué quieres conservar." text="Puede ser menos calor, menos reflejo o más privacidad, conservando la luz, visibilidad o apariencia que te importan. A partir de eso te orientamos entre los tonos disponibles." cta="Quiero una recomendación" context={{sourcePage:"/peliculas/nanoceramica/", product:"Nanocerámica HIGHTECH"}} secondaryHref="/peliculas/" secondaryLabel="Ver todas las películas" />
   </>;
 }
