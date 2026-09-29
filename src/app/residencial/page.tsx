@@ -24,7 +24,7 @@ const steps = [
   { number: "01", title: "Cuéntanos qué quieres resolver", text: "Calor, UV, deslumbramiento, privacidad o una combinación de varios objetivos." },
   { number: "02", title: "Comparte fotos y medidas", text: "Con medidas aproximadas y fotografías podemos entender mejor el espacio antes de cotizar." },
   { number: "03", title: "Revisamos la solución", text: "Seleccionamos tecnología y tono considerando cristal, iluminación y expectativas visuales." },
-  { number: "04", title: "Cotizamos el proyecto", text: "El precio se define por el alcance real, no por una tarifa pública genérica por metro cuadrado." },
+  { number: "04", title: "Cotizamos el proyecto", text: "Cotizamos según película, medidas y condiciones reales de instalación." },
 ] as const;
 
 const faqs = [
@@ -70,7 +70,7 @@ export default function ResidentialPage() {
       <section className="application-strip" aria-label="Objetivos residenciales frecuentes">
         <div className="container application-strip-inner">
           <span><Icon name="sun" size={18}/> Control solar</span><i />
-          <span><Icon name="uv" size={18}/> UV</span><i />
+          <span><Icon name="uv" size={18}/> Protección ultravioleta</span><i />
           <span><Icon name="glare" size={18}/> Deslumbramiento</span><i />
           <span><Icon name="privacy" size={18}/> Privacidad</span>
         </div>
@@ -89,21 +89,21 @@ export default function ResidentialPage() {
       <section className="section residential-solutions-section">
         <div className="container residential-solutions-grid">
           <div className="residential-solution-copy">
-            <p className="eyebrow">Soluciones que podemos evaluar</p>
-            <h2>No todo problema residencial pide la misma película.</h2>
+            <p className="eyebrow">Soluciones según tu necesidad</p>
+            <h2>La película correcta depende de lo que quieres resolver.</h2>
             <div className="solution-link-list">
-              <Link href="/peliculas/nanoceramica/"><span><strong>Nanocerámica</strong><small>Cuando claridad y control solar son prioridad.</small></span><Icon name="arrow" size={18}/></Link>
-              <Link href="/peliculas/plata-reflecta/"><span><strong>Plata Reflecta</strong><small>Para arquitectura donde se busca una apariencia reflectiva y privacidad diurna.</small></span><Icon name="arrow" size={18}/></Link>
-              <Link href="/peliculas/privacidad/"><span><strong>Privacidad</strong><small>Cuando lo principal es controlar visibilidad, entendiendo condiciones de día y noche.</small></span><Icon name="arrow" size={18}/></Link>
-              <Link href="/peliculas/seguridad/"><span><strong>Seguridad</strong><small>Para ayudar a mantener fragmentos unidos cuando el cristal se rompe.</small></span><Icon name="arrow" size={18}/></Link>
+              <Link href="/peliculas/nanoceramica/"><span><strong>Nanocerámica</strong><small>Control solar y alta claridad para conservar la luz natural.</small></span><Icon name="arrow" size={18}/></Link>
+              <Link href="/peliculas/plata-reflecta/"><span><strong>Plata Reflecta</strong><small>Mayor apariencia reflectiva y privacidad durante el día.</small></span><Icon name="arrow" size={18}/></Link>
+              <Link href="/peliculas/privacidad/"><span><strong>Privacidad</strong><small>Para controlar la visibilidad según las condiciones de luz del espacio.</small></span><Icon name="arrow" size={18}/></Link>
+              <Link href="/peliculas/seguridad/"><span><strong>Seguridad</strong><small>Ayuda a mantener unidos los fragmentos del cristal en caso de rotura.</small></span><Icon name="arrow" size={18}/></Link>
             </div>
           </div>
           <div className="compatibility-card">
             <span className="compatibility-icon"><Icon name="glass" size={25}/></span>
             <p className="eyebrow">Compatibilidad</p>
-            <h3>No todo cristal admite cualquier configuración.</h3>
-            <p>Vidrios especiales, sistemas aislados, aplicaciones exteriores, dobles capas o condiciones particulares pueden requerir una evaluación adicional. La compatibilidad se revisa antes de generalizar una solución.</p>
-            <Link href="/guias/" className="text-link text-link-strong">Ver guías técnicas <Icon name="arrow" size={17}/></Link>
+            <h3>Primero revisamos tu cristal.</h3>
+            <p>El tipo de vidrio y sus condiciones determinan qué películas podemos instalar de forma adecuada. En cristales especiales, sistemas aislados o aplicaciones exteriores puede ser necesaria una revisión adicional antes de recomendar una opción.</p>
+            <Link href="/guias/" className="text-link text-link-strong">Conocer cómo evaluamos el cristal <Icon name="arrow" size={17}/></Link>
           </div>
         </div>
       </section>
@@ -112,8 +112,8 @@ export default function ResidentialPage() {
         <div className="container nano-layout">
           <div className="nano-copy">
             <p className="eyebrow">Gama nanocerámica</p>
-            <h2>Desde mucha claridad hasta privacidad más marcada.</h2>
-            <p className="lede-small">Los cinco tonos activos comparten 99% de rechazo UV y 95% de rechazo infrarrojo medido a 950 nm según ficha. Lo que cambia de forma importante es la entrada de luz y el TSER indicado para cada tono.</p>
+            <h2>Elige cuánta luz quieres conservar.</h2>
+            <p className="lede-small">De IR75 a IR5 cambia principalmente la cantidad de luz visible que atraviesa el cristal y el TSER indicado para cada tono. Los cinco tonos comparten, según ficha, 99% de rechazo UV y 95% de rechazo infrarrojo medido a 950 nm.</p>
             <div className="context-note"><strong>Importante:</strong> 95% a 950 nm no equivale a reducir en 95% el calor total dentro de una habitación.</div>
             <Link href="/peliculas/nanoceramica/" className="text-link text-link-strong">Entender VLT y TSER <Icon name="arrow" size={17}/></Link>
           </div>

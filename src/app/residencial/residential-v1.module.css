@@ -315,6 +315,37 @@
   border-color: var(--res-line);
 }
 
+@media (min-width: 721px) {
+  .page :global(.residential-nano-section .nano-tone-copy) {
+    display: grid;
+    grid-template-columns: minmax(7rem, 1fr) minmax(7rem, .8fr);
+    grid-template-rows: auto auto;
+    align-items: center;
+    column-gap: clamp(1.75rem, 4vw, 4.5rem);
+    width: 100%;
+  }
+
+  .page :global(.residential-nano-section .nano-tone-copy strong) {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .page :global(.residential-nano-section .nano-tone-copy span) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .page :global(.residential-nano-section .nano-tone-copy small) {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    justify-self: start;
+    font-size: .82rem;
+    font-weight: 650;
+    color: #56627a;
+    letter-spacing: .01em;
+  }
+}
+
 .page :global(.residential-nano-section .nano-tone-swatch) {
   position: relative;
   height: 2.2rem;
