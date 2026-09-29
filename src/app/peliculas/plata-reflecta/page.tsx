@@ -15,7 +15,37 @@ export default function ReflectivePage() {
 
     <section className="section reflecta-fit-section"><div className="container"><div className="section-heading section-heading-split"><div><p className="eyebrow">Cuándo tiene sentido</p><h2>No es sólo hacer el cristal más oscuro.</h2></div><p>Plata Reflecta cambia cómo se ve el vidrio desde afuera. Tiene más sentido cuando buscas privacidad durante el día y estás de acuerdo con una apariencia más espejada.</p></div><div className="reflecta-fit-grid"><article><span>01</span><h3>Privacidad durante el día</h3><p>Con el exterior más iluminado, puede dificultar la vista hacia el interior.</p></article><article><span>02</span><h3>Apariencia más espejada</h3><p>El acabado se nota desde afuera, así que también forma parte de cómo quieres que se vea la fachada.</p></article><article><span>03</span><h3>Control solar</h3><p>También puede aportar control solar. El desempeño exacto depende del producto y de la aplicación elegida.</p></article></div></div></section>
 
-    <section className="section section-dark reflecta-light-section"><div className="container reflecta-light-grid"><div><p className="eyebrow eyebrow-light">Lo más importante que debes saber</p><h2>La privacidad depende de qué lado tiene más luz.</h2><p>Durante el día, normalmente hay más luz afuera y la película puede dificultar la vista hacia el interior. De noche, si enciendes las luces y afuera está oscuro, esa relación puede invertirse y el interior quedar más visible.</p><p><strong>No es un espejo de un solo lado permanente.</strong> Si necesitas privacidad también de noche, conviene revisar otra solución o combinar estrategias.</p><Link className="text-link text-link-on-dark" href="/peliculas/privacidad/">Ver opciones de privacidad <Icon name="arrow" size={17}/></Link></div><div className="reflecta-day-night" aria-hidden="true"><div><small>Día</small><span className="reflecta-window day"/><strong>Más luz afuera</strong></div><div><small>Noche</small><span className="reflecta-window night"/><strong>Más luz adentro</strong></div></div></div></section>
+    <section className="section section-dark reflecta-light-section"><div className="container reflecta-light-grid"><div><p className="eyebrow eyebrow-light">Lo más importante que debes saber</p><h2>La privacidad depende del contraste de luz entre adentro y afuera.</h2><p>Durante el día, normalmente hay más luz afuera y la película puede dificultar la vista hacia el interior. De noche, si el interior queda más iluminado que el exterior, ese efecto puede reducirse o incluso invertirse.</p><p><strong>No es un espejo de un solo lado permanente.</strong> Si necesitas privacidad también de noche, conviene revisar la iluminación y, según el caso, otra solución o una combinación distinta.</p><Link className="text-link text-link-on-dark" href="/peliculas/privacidad/">Ver opciones de privacidad <Icon name="arrow" size={17}/></Link></div><div className="reflecta-day-night" aria-hidden="true"><div><small>Día</small><span className="reflecta-window day"/><strong>Más luz afuera</strong></div><div><small>Noche</small><span className="reflecta-window night"/><strong>Más luz adentro</strong></div></div></div></section>
+
+    <section className="section reflecta-night-section">
+      <div className="container">
+        <div className="section-heading section-heading-split">
+          <div><p className="eyebrow">Privacidad nocturna</p><h2>Cómo influye la iluminación dentro de tu espacio.</h2></div>
+          <p>La película no trabaja sola. La intensidad y la ubicación de las luces interiores pueden cambiar cuánto se alcanza a ver desde afuera cuando ya está oscuro.</p>
+        </div>
+        <div className="reflecta-night-grid">
+          <article className="reflecta-night-card reflecta-night-better">
+            <div className="reflecta-night-diagram" aria-hidden="true"><span className="reflecta-night-glass"/><span className="reflecta-night-person"/><span className="reflecta-night-lamp"/><span className="reflecta-night-glow"/></div>
+            <span className="reflecta-night-index">01</span>
+            <h3>Mejor privacidad</h3>
+            <p>La luz interior es moderada, está alejada del cristal y no apunta directamente hacia la ventana.</p>
+          </article>
+          <article className="reflecta-night-card reflecta-night-middle">
+            <div className="reflecta-night-diagram" aria-hidden="true"><span className="reflecta-night-glass"/><span className="reflecta-night-person"/><span className="reflecta-night-lamp"/><span className="reflecta-night-glow"/></div>
+            <span className="reflecta-night-index">02</span>
+            <h3>Privacidad intermedia</h3>
+            <p>Hay iluminación interior normal y parte de esa luz llega al cristal. La visibilidad dependerá del contraste con el exterior.</p>
+          </article>
+          <article className="reflecta-night-card reflecta-night-lower">
+            <div className="reflecta-night-diagram" aria-hidden="true"><span className="reflecta-night-glass"/><span className="reflecta-night-person"/><span className="reflecta-night-lamp"/><span className="reflecta-night-glow"/></div>
+            <span className="reflecta-night-index">03</span>
+            <h3>Menor privacidad</h3>
+            <p>El interior está muy iluminado o hay una fuente de luz intensa cerca del cristal mientras afuera está oscuro.</p>
+          </article>
+        </div>
+        <p className="reflecta-night-note"><strong>Referencia orientativa:</strong> el resultado también cambia según la película, el tipo de cristal, la intensidad de la iluminación y las condiciones del exterior.</p>
+      </div>
+    </section>
 
     <section className="section"><div className="container reflecta-check-grid"><div><p className="eyebrow">Antes de recomendarla</p><h2>Primero revisamos dónde y sobre qué cristal se va a instalar.</h2><p>No es lo mismo una ventana vertical que un domo, ni una instalación interior que una exterior. Revisamos el tipo de cristal y las condiciones del proyecto antes de definir la película y la forma de aplicación.</p></div><LimitationNotice title="El desempeño depende de la película y la aplicación"><p>Los valores técnicos, la compatibilidad de uso y la garantía deben corresponder al producto específico que se vaya a instalar; no los generalizamos para toda la familia reflectiva.</p></LimitationNotice></div></section>
 
