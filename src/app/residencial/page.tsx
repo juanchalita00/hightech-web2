@@ -28,10 +28,10 @@ const steps = [
 ] as const;
 
 const faqs = [
-  { question: "¿Tengo que saber qué película quiero?", answer: <p>No. Puedes empezar por el problema. HIGHTECH compara claridad, privacidad, control solar y condiciones del cristal antes de recomendar una opción.</p> },
-  { question: "¿Una película más oscura protege más contra UV?", answer: <p>En la gama nanocerámica activa, las fichas de los cinco tonos indican 99% de rechazo UV. El tono cambia principalmente la transmisión visible y también cambia el TSER indicado por ficha.</p> },
-  { question: "¿La privacidad funciona igual de noche?", answer: <p>No necesariamente. En soluciones reflectivas o basadas en contraste, la privacidad puede invertirse cuando hay más luz dentro que fuera. Por eso la expectativa nocturna debe definirse antes de elegir.</p> },
-  { question: "¿Por qué no publican un precio fijo por m²?", answer: <p>Porque dos proyectos con el mismo metraje pueden requerir distinta película, acceso, retiro, aplicación o evaluación de compatibilidad. Preferimos cotizar el sistema que corresponde a tus cristales.</p> },
+  { question: "¿Tengo que saber qué película quiero?", answer: <p>No. Puedes empezar contándonos qué quieres resolver. Revisamos claridad, privacidad, control solar y las condiciones del cristal antes de recomendar una opción.</p> },
+  { question: "¿El polarizado va a oscurecer mucho mis ventanas?", answer: <p>No necesariamente. Hay opciones nanocerámicas muy claras y otras más oscuras. Elegimos el nivel de luz y privacidad según el espacio y el resultado que buscas.</p> },
+  { question: "¿La privacidad funciona igual de noche?", answer: <p>No siempre. En películas reflectivas o que dependen del contraste de luz, el efecto puede disminuir o invertirse cuando hay más iluminación dentro que fuera. Por eso conviene definir desde el inicio qué nivel de privacidad esperas de día y de noche.</p> },
+  { question: "¿Cómo se calcula la cotización?", answer: <p>Consideramos la película recomendada, las medidas, el tipo de cristal, el acceso y las condiciones de instalación. Si existe película previa que deba retirarse u otra condición especial, también se contempla antes de cerrar el proyecto.</p> },
 ] as const;
 
 export default function ResidentialPage() {
