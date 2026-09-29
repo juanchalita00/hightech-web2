@@ -4,26 +4,48 @@ import { Icon } from "@/components/Icon";
 import { truth } from "@/lib/truth";
 
 const useCopy: Record<string, string> = {
-  IR75: "Para conservar la mayor cantidad de luz de la gama.",
+  IR75: "Conserva la mayor cantidad de luz de la gama.",
   IR50: "Alta claridad con mayor control solar que IR75, según ficha.",
   IR35: "Punto medio entre luz, apariencia y deslumbramiento.",
-  IR15: "Más oscuridad y privacidad visual durante el día.",
+  IR15: "Apariencia más oscura y mayor privacidad visual durante el día.",
   IR5: "La opción más oscura de la gama; VLT de ficha 3%.",
+};
+
+const toneOpacity: Record<string, number> = {
+  IR75: .08,
+  IR50: .2,
+  IR35: .35,
+  IR15: .6,
+  IR5: .88,
 };
 
 export function NanoComparison() {
   return (
     <div className="nano-comparison">
-      <div className="nano-comparison-mobile" aria-label="Comparación de tonos nanocerámicos">
-        {truth.nano.map((film, index) => (
+      <div className="nano-comparison-guide" aria-label="Comparación visual de tonos nanocerámicos">
+        {truth.nano.map((film) => (
           <Link className="nano-comparison-card" href={`/peliculas/nanoceramica/${film.id.toLowerCase()}/`} key={film.id}>
-            <div className="nano-comparison-swatch" style={{ "--tone-opacity": 0.08 + index * 0.17 } as CSSProperties}><span>{film.vlt}%</span></div>
-            <div><strong>{film.id}</strong><p>{useCopy[film.id]}</p></div>
-            <dl><div><dt>VLT</dt><dd>{film.vlt}%</dd></div><div><dt>TSER</dt><dd>{film.tser}%</dd></div></dl>
-            <Icon name="arrow" size={18}/>
+            <div className="nano-comparison-swatch" style={{ "--tone-opacity": toneOpacity[film.id] } as CSSProperties}>
+              <span>VLT {film.vlt}%</span>
+            </div>
+            <div className="nano-comparison-copy">
+              <strong>{film.id}</strong>
+              <p>{useCopy[film.id]}</p>
+            </div>
+            <dl>
+              <div><dt>Luz visible</dt><dd>{film.vlt}%</dd></div>
+              <div><dt>TSER</dt><dd>{film.tser}%</dd></div>
+            </dl>
+            <span className="nano-comparison-arrow" aria-hidden="true"><Icon name="arrow" size={18}/></span>
           </Link>
         ))}
       </div>
+
+      <div className="nano-comparison-tech-intro">
+        <strong>Datos técnicos de ficha</strong>
+        <span>Para comparar desempeño además de apariencia.</span>
+      </div>
+
       <div className="table-wrap nano-comparison-table" tabIndex={0} aria-label="Tabla comparativa de nanocerámica HIGHTECH">
         <table>
           <thead><tr><th>Película</th><th>VLT</th><th>UV</th><th>Rechazo infrarrojo</th><th>TSER</th><th>Orientación de uso</th></tr></thead>

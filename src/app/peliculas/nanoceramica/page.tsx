@@ -68,8 +68,8 @@ export default function NanoPage() {
     <section id="comparar" className="section section-alt nano-compare-section">
       <div className="container">
         <div className="section-heading section-heading-split">
-          <div><p className="eyebrow">Comparador de gama</p><h2>Cinco niveles de luz, con los datos al lado.</h2></div>
-          <p>IR50 e IR5 son nombres comerciales: sus VLT reales de ficha son 48% y 3%. Por eso mostramos el dato técnico junto al nombre del tono.</p>
+          <div><p className="eyebrow">Comparador de gama</p><h2>Primero decide cuánta luz quieres conservar.</h2></div>
+          <p>El VLT te ayuda a entender qué tan claro u oscuro es cada tono. Después puedes comparar el TSER y los demás datos técnicos sin confundir apariencia con desempeño.</p>
         </div>
         <NanoComparison/>
       </div>
