@@ -429,7 +429,7 @@ thead th { background: var(--surface-alt); }
 .footer-main { display: grid; grid-template-columns: 1.05fr 1.45fr; gap: clamp(3rem, 7vw, 7rem); }
 .footer-brand p { max-width: 24rem; margin: 1.25rem 0 .6rem; color: #9ea9c4; }
 .footer-brand > span { color: #6f7c9a; font-size: .82rem; }
-.brand-logo-footer { padding: .2rem .45rem; background: white; border-radius: .8rem; width: fit-content; }
+.brand-logo-footer { padding: 0; background: transparent; border-radius: 0; width: fit-content; }
 .brand-logo-footer img { width: 165px; }
 .footer-links { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
 .footer-links > div { display: grid; align-content: start; gap: .58rem; }
