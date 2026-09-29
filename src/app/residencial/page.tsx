@@ -113,8 +113,8 @@ export default function ResidentialPage() {
           <div className="nano-copy">
             <p className="eyebrow">Gama nanocerámica</p>
             <h2>Elige cuánta luz quieres conservar.</h2>
-            <p className="lede-small">De IR75 a IR5 cambia principalmente la cantidad de luz visible que atraviesa el cristal y el TSER indicado para cada tono. Los cinco tonos comparten, según ficha, 99% de rechazo UV y 95% de rechazo infrarrojo medido a 950 nm.</p>
-            <div className="context-note"><strong>Importante:</strong> 95% a 950 nm no equivale a reducir en 95% el calor total dentro de una habitación.</div>
+            <p className="lede-small">El tono cambia principalmente cuánta luz visible atraviesa el cristal y el rechazo solar total de la película. Toda la gama nanocerámica mantiene, según ficha, 99% de rechazo UV y 95% de rechazo infrarrojo medido a 950 nm.</p>
+            <div className="context-note"><strong>Importante:</strong> el 95% de rechazo IR está medido a 950 nm y no significa 95% menos calor dentro de una habitación. Para comparar el desempeño frente a la energía solar total, revisa el <strong>TSER</strong>.</div>
             <Link href="/peliculas/nanoceramica/" className="text-link text-link-strong">Entender VLT y TSER <Icon name="arrow" size={17}/></Link>
           </div>
           <NanoSpectrum />
