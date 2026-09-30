@@ -419,6 +419,12 @@ thead th { background: var(--surface-alt); }
 .auto-tone-spec strong { margin-top:.12rem; font-size:1rem; }
 .auto-tone-row > svg { color:#9aa5b8; }
 .auto-tone-note { margin:.9rem .8rem .35rem; color:#7c879a; font-size:.7rem; }
+.automotive-diff-section { padding:clamp(3.5rem,6vw,5.5rem) 0; }
+.auto-diff-grid { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(18rem,.9fr); gap:clamp(1.5rem,5vw,5rem); align-items:end; }
+.auto-diff-grid h2 { max-width:16ch; font-size:clamp(2rem,3.6vw,3.1rem); }
+.auto-diff-grid > div:last-child p { margin:0 0 .9rem; max-width:32rem; color:var(--ink-soft); font-size:1.02rem; }
+.auto-diff-grid > div:last-child .auto-diff-note { color:var(--ink); font-weight:650; }
+.auto-table-links { display:flex; flex-wrap:wrap; gap:.6rem 1.6rem; margin:1.2rem 0 0; }
 .jalisco-section { background:#eef3ff; }
 .jalisco-reference { display:grid; grid-template-columns:minmax(0,1.2fr) minmax(18rem,.8fr); overflow:hidden; border-radius:2rem; color:white; background:linear-gradient(135deg,#172553,#0a112b); box-shadow:var(--shadow-soft); }
 .jalisco-reference-copy { padding:clamp(2rem,5vw,4rem); }
@@ -942,7 +948,7 @@ thead th { background: var(--surface-alt); }
   .film-family-grid,.metric-explainer-grid,.film-principles-grid { grid-template-columns:repeat(2,1fr); }
   .technology-row { grid-template-columns:1fr auto; }
   .technology-row dl { grid-column:1 / -1; }
-  .nano-simple-grid,.nano-choice-grid,.reflecta-light-grid,.reflecta-check-grid,.security-process-grid,.privacy-decision-grid,.privacy-night-grid,.security-clear-grid,.tone-detail-grid,.tone-neighbors { grid-template-columns:1fr; }
+  .nano-simple-grid,.nano-choice-grid,.reflecta-light-grid,.reflecta-check-grid,.security-process-grid,.privacy-decision-grid,.privacy-night-grid,.security-clear-grid,.auto-diff-grid,.tone-detail-grid,.tone-neighbors { grid-template-columns:1fr; }
   .product-cta-card { grid-template-columns:1fr; }
   .product-cta-actions { justify-content:flex-start; }
 }

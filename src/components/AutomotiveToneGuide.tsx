@@ -4,11 +4,11 @@ import { Icon } from "@/components/Icon";
 import { truth } from "@/lib/truth";
 
 const descriptions: Record<string, { label: string; use: string }> = {
-  IR75: { label: "Máxima claridad", use: "Para conservar la mayor entrada de luz de la gama." },
-  IR50: { label: "Claridad alta", use: "Una transición más marcada sin ir a un tono medio." },
-  IR35: { label: "Balance", use: "Más control visual manteniendo una lectura clara del exterior." },
-  IR15: { label: "Privacidad marcada", use: "Menor entrada de luz; conviene considerar uso nocturno." },
-  IR5: { label: "Máxima oscuridad", use: "VLT de ficha 3%; cambia de forma importante la visibilidad." },
+  IR75: { label: "Muy claro", use: "Conserva la mayor entrada de luz visible de la gama." },
+  IR50: { label: "Claro", use: "Mantiene buena claridad con una apariencia un poco más marcada." },
+  IR35: { label: "Intermedio", use: "Un punto medio entre claridad y una apariencia más oscura." },
+  IR15: { label: "Oscuro", use: "Reduce bastante la luz visible; conviene considerar especialmente el uso nocturno." },
+  IR5: { label: "Muy oscuro", use: "Su ficha reporta 3% VLT y cambia de forma importante la visibilidad y la apariencia." },
 };
 
 export function AutomotiveToneGuide() {
