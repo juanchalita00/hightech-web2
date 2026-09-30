@@ -3,6 +3,7 @@ import { Icon } from "@/components/Icon";
 import { LimitationNotice } from "@/components/LimitationNotice";
 import { ProductCTA } from "@/components/ProductCTA";
 import { ProductHero } from "@/components/ProductHero";
+import { ReflectiveNightPrivacy } from "@/components/ReflectiveNightPrivacy";
 
 export const metadata = { alternates: { canonical: "/peliculas/plata-reflecta/" },
   title: { absolute: "Película Plata Reflecta | HIGHTECH Polarizados" },
@@ -20,30 +21,11 @@ export default function ReflectivePage() {
     <section className="section reflecta-night-section">
       <div className="container">
         <div className="section-heading section-heading-split">
-          <div><p className="eyebrow">Privacidad nocturna</p><h2>Cómo influye la iluminación dentro de tu espacio.</h2></div>
-          <p>La película no trabaja sola. La intensidad y la ubicación de las luces interiores pueden cambiar cuánto se alcanza a ver desde afuera cuando ya está oscuro.</p>
+          <div><p className="eyebrow">Privacidad nocturna</p><h2>Cómo cambia la privacidad según la luz interior</h2></div>
+          <p>La privacidad no depende sólo de la película. También cambia según cuánta luz haya dentro, cuánta haya afuera y qué tan cerca estén las fuentes de luz del cristal.</p>
         </div>
-        <div className="reflecta-night-grid">
-          <article className="reflecta-night-card reflecta-night-better">
-            <div className="reflecta-night-diagram" aria-hidden="true"><span className="reflecta-night-glass"/><span className="reflecta-night-person"/><span className="reflecta-night-lamp"/><span className="reflecta-night-glow"/></div>
-            <span className="reflecta-night-index">01</span>
-            <h3>Mejor privacidad</h3>
-            <p>La luz interior es moderada, está alejada del cristal y no apunta directamente hacia la ventana.</p>
-          </article>
-          <article className="reflecta-night-card reflecta-night-middle">
-            <div className="reflecta-night-diagram" aria-hidden="true"><span className="reflecta-night-glass"/><span className="reflecta-night-person"/><span className="reflecta-night-lamp"/><span className="reflecta-night-glow"/></div>
-            <span className="reflecta-night-index">02</span>
-            <h3>Privacidad intermedia</h3>
-            <p>Hay iluminación interior normal y parte de esa luz llega al cristal. La visibilidad dependerá del contraste con el exterior.</p>
-          </article>
-          <article className="reflecta-night-card reflecta-night-lower">
-            <div className="reflecta-night-diagram" aria-hidden="true"><span className="reflecta-night-glass"/><span className="reflecta-night-person"/><span className="reflecta-night-lamp"/><span className="reflecta-night-glow"/></div>
-            <span className="reflecta-night-index">03</span>
-            <h3>Menor privacidad</h3>
-            <p>El interior está muy iluminado o hay una fuente de luz intensa cerca del cristal mientras afuera está oscuro.</p>
-          </article>
-        </div>
-        <p className="reflecta-night-note"><strong>Referencia orientativa:</strong> el resultado también cambia según la película, el tipo de cristal, la intensidad de la iluminación y las condiciones del exterior.</p>
+        <ReflectiveNightPrivacy />
+        <p className="reflecta-night-note"><strong>Referencia orientativa:</strong> el resultado puede variar según la película, el tipo de cristal, la intensidad de la iluminación y las condiciones del exterior.</p>
       </div>
     </section>
 
