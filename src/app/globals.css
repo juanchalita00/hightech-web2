@@ -789,6 +789,13 @@ thead th { background: var(--surface-alt); }
 .security-do-grid .security-system > span { color:var(--ink-soft); background:var(--surface-alt); }
 .security-do-grid h3 { margin-top:1.8rem; }
 .security-do-grid p { color:var(--ink-soft); font-size:.86rem; }
+.security-clear-section { padding:clamp(3.5rem,6vw,5.5rem) 0; }
+.security-clear-grid { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(18rem,.9fr); gap:clamp(1.5rem,5vw,5rem); align-items:end; }
+.security-clear-grid h2 { max-width:17ch; font-size:clamp(2rem,3.6vw,3.1rem); }
+.security-clear-grid > div:last-child p { margin:0; max-width:32rem; color:var(--ink-soft); font-size:1.04rem; }
+.security-clear-grid > div:last-child .security-clear-secondary { margin-top:.9rem; font-size:.9rem; color:#6b7588; }
+.security-clear-grid > div:last-child .security-clear-source { margin-top:1rem; padding-top:.8rem; border-top:1px solid var(--line); color:#7a8599; font-size:.74rem; }
+.security-thickness-note { max-width:46rem; margin:1.4rem 0 0; color:var(--ink-soft); font-size:.9rem; }
 .sbd-tabs { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.35rem; max-width:34rem; padding:.35rem; margin-bottom:.85rem; border:1px solid var(--line); border-radius:1.2rem; background:var(--surface-alt); }
 .sbd-tab { position:relative; display:flex; align-items:center; gap:.6rem; min-height:3.2rem; padding:.65rem 1rem; border:1px solid transparent; border-radius:.9rem; background:transparent; color:var(--ink-soft); font:inherit; font-size:.92rem; font-weight:680; line-height:1.2; text-align:left; cursor:pointer; transition:background-color .2s ease, color .2s ease, box-shadow .2s ease; }
 .sbd-tab:hover { color:var(--brand); background:rgba(255,255,255,.6); }
@@ -811,7 +818,7 @@ thead th { background: var(--surface-alt); }
 .sbd-note { margin:1rem 0 0; color:#717d91; font-size:.75rem; }
 /* Escena: mismo cristal antes y después de la rotura */
 .sbd-film, .sbd-sheen, .sbd-cracks, .sbd-lens-intact, .sbd-lens-broken { transition:opacity .4s ease; }
-.sbd-film { opacity:.05; }
+.sbd-film { opacity:.015; }
 .sbd-sheen { opacity:.5; }
 .sbd-cracks, .sbd-lens-broken { opacity:0; }
 .sbd[data-stage="broken"] .sbd-cracks, .sbd[data-stage="broken"] .sbd-lens-broken { opacity:1; }
@@ -936,7 +943,7 @@ thead th { background: var(--surface-alt); }
   .film-family-grid,.metric-explainer-grid,.film-principles-grid { grid-template-columns:repeat(2,1fr); }
   .technology-row { grid-template-columns:1fr auto; }
   .technology-row dl { grid-column:1 / -1; }
-  .nano-simple-grid,.nano-choice-grid,.reflecta-light-grid,.reflecta-check-grid,.security-process-grid,.privacy-decision-grid,.privacy-night-grid,.tone-detail-grid,.tone-neighbors { grid-template-columns:1fr; }
+  .nano-simple-grid,.nano-choice-grid,.reflecta-light-grid,.reflecta-check-grid,.security-process-grid,.privacy-decision-grid,.privacy-night-grid,.security-clear-grid,.tone-detail-grid,.tone-neighbors { grid-template-columns:1fr; }
   .product-cta-card { grid-template-columns:1fr; }
   .product-cta-actions { justify-content:flex-start; }
 }

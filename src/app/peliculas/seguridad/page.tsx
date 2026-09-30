@@ -13,7 +13,18 @@ export const metadata = { alternates: { canonical: "/peliculas/seguridad/" },
 
 export default function SecurityPage() {
   return <>
-    <ProductHero variant="security" eyebrow="Seguridad para cristales" title="Cuando un cristal se rompe, importa lo que pasa después." description="La película de seguridad ayuda a mantener unidos los fragmentos después de una rotura. Si además buscas dificultar el acceso, evaluamos el vidrio, el marco, la fijación y la película como un sistema." ctaLabel="Evaluar mis cristales" context={{sourcePage:"/peliculas/seguridad/", product:"Seguridad", problem:"safety"}} facts={[{label:"Función principal",value:"Retención de fragmentos"},{label:"Si buscas intrusión",value:"Evaluar sistema"},{label:"Aplicación",value:"Arquitectónica"}]} secondary={<Link href="/servicios/" className="button button-secondary">Ver necesidades <Icon name="arrow" size={18}/></Link>} />
+    <ProductHero variant="security" eyebrow="Seguridad para cristales" title="Cuando un cristal se rompe, importa lo que pasa después." description="La película de seguridad transparente ayuda a mantener unidos los fragmentos después de una rotura sin convertir el cristal en una superficie oscura. Además, la ficha técnica reporta menos de 2% de transmisión UV. Si el objetivo incluye dificultar un acceso, evaluamos la película, el vidrio, el marco y la fijación como un sistema." ctaLabel="Evaluar mis cristales" context={{sourcePage:"/peliculas/seguridad/", product:"Seguridad", problem:"safety"}} facts={[{label:"Apariencia",value:"Transparente"},{label:"Protección UV",value:"Más de 98%"},{label:"Función principal",value:"Retención de fragmentos"}]} secondary={<Link href="/servicios/" className="button button-secondary">Ver necesidades <Icon name="arrow" size={18}/></Link>} />
+
+    <section className="section section-alt security-clear-section">
+      <div className="container security-clear-grid">
+        <div><p className="eyebrow">Seguridad sin oscurecer</p><h2>Protección que casi no cambia cómo se ve tu cristal.</h2></div>
+        <div>
+          <p>La opción de seguridad que instalamos con mayor frecuencia es transparente. Mantiene una apariencia clara y añade retención de fragmentos, además de protección frente a radiación UV.</p>
+          <p className="security-clear-secondary">También existen películas de seguridad con tono o acabado reflectivo cuando el proyecto requiere combinar seguridad con otras características visuales.</p>
+          <p className="security-clear-source">Protección UV: más de 98%, según ficha técnica (transmisión UV menor de 2%).</p>
+        </div>
+      </div>
+    </section>
 
     <section className="section security-breakage-section">
       <div className="container">
@@ -33,6 +44,7 @@ export default function SecurityPage() {
           <article className="security-dont"><span aria-hidden="true">×</span><h3>No es blindaje</h3><p>No presentamos una película de seguridad como cristal irrompible, blindaje o una barrera absoluta.</p></article>
           <article className="security-system"><span><Icon name="glass" size={21}/></span><h3>Intrusión es otro objetivo</h3><p>Si buscas dificultar o retardar un acceso, hay que evaluar la película junto con el vidrio, el marco y la fijación.</p></article>
         </div>
+        <p className="security-thickness-note">El espesor de la película se selecciona según el objetivo y la configuración del cristal. En la gama disponible existen distintos espesores y la resistencia mecánica aumenta con el grosor.</p>
       </div>
     </section>
 
