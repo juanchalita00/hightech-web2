@@ -358,6 +358,9 @@ thead th { background: var(--surface-alt); }
 .faq-item[open] summary span { transform:rotate(45deg); }
 .faq-answer { max-width:43rem; padding:0 3.5rem 1.25rem 0; color:var(--ink-soft); font-size:.91rem; }
 .faq-answer p { margin:0; }
+.faq-answer a:not(.button) { color:var(--accent); font-weight:680; text-decoration:underline; text-decoration-thickness:1px; text-decoration-color:color-mix(in srgb, var(--accent) 45%, transparent); text-underline-offset:.22em; transition:color .15s ease, text-decoration-color .15s ease; }
+.faq-answer a:not(.button):hover { color:var(--brand-deep); text-decoration-color:currentColor; }
+.faq-answer a:not(.button):focus-visible { outline:2px solid var(--accent); outline-offset:3px; border-radius:2px; text-decoration-color:currentColor; }
 .application-final-section { padding-top:1.5rem; }
 .application-final-card { position:relative; overflow:hidden; display:grid; grid-template-columns:1.2fr .8fr; gap:3rem; align-items:end; padding:clamp(2.2rem,5vw,4rem); border-radius:2rem; color:white; background:linear-gradient(120deg,#26366f,#111b42 61%,#080e22); }
 .application-final-card::after { content:""; position:absolute; right:-10rem; top:-13rem; width:30rem; height:30rem; border-radius:50%; background:radial-gradient(circle,rgba(255,216,73,.13),rgba(241,45,83,.08) 30%,transparent 66%); }
