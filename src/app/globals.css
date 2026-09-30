@@ -863,6 +863,10 @@ thead th { background: var(--surface-alt); }
 .privacy-night .privacy-window { background:linear-gradient(145deg,#253452,#e5c989); }
 .privacy-night .privacy-window i { opacity:.08; }
 .privacy-arrow { color:#96a0b2; font-size:1.4rem; }
+.privacy-night-section { padding:clamp(3.5rem,6vw,5.5rem) 0; }
+.privacy-night-grid { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(18rem,.9fr); gap:clamp(1.5rem,5vw,5rem); align-items:end; }
+.privacy-night-grid h2 { max-width:17ch; font-size:clamp(2rem,3.6vw,3.1rem); }
+.privacy-night-grid p { margin:0 0 1.1rem; max-width:32rem; color:var(--ink-soft); font-size:1.04rem; }
 .privacy-decision-grid { display:grid; grid-template-columns:.9fr 1.1fr; gap:4rem; align-items:center; }
 .privacy-decision-grid > div:first-child > p:not(.eyebrow) { color:var(--ink-soft); }
 .privacy-photo-check { display:grid; gap:.7rem; }
@@ -897,7 +901,7 @@ thead th { background: var(--surface-alt); }
   .film-family-grid,.metric-explainer-grid,.film-principles-grid { grid-template-columns:repeat(2,1fr); }
   .technology-row { grid-template-columns:1fr auto; }
   .technology-row dl { grid-column:1 / -1; }
-  .nano-simple-grid,.nano-choice-grid,.reflecta-light-grid,.reflecta-check-grid,.security-process-grid,.privacy-decision-grid,.tone-detail-grid,.tone-neighbors { grid-template-columns:1fr; }
+  .nano-simple-grid,.nano-choice-grid,.reflecta-light-grid,.reflecta-check-grid,.security-process-grid,.privacy-decision-grid,.privacy-night-grid,.tone-detail-grid,.tone-neighbors { grid-template-columns:1fr; }
   .product-cta-card { grid-template-columns:1fr; }
   .product-cta-actions { justify-content:flex-start; }
 }

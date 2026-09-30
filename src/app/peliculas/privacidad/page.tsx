@@ -1,8 +1,6 @@
 import Link from "next/link";
 import { Icon } from "@/components/Icon";
-import { LimitationNotice } from "@/components/LimitationNotice";
 import { PrivacyDecisionTool } from "@/components/PrivacyDecisionTool";
-import { PrivacyLightDemo } from "@/components/PrivacyLightDemo";
 import { ProductCTA } from "@/components/ProductCTA";
 import { ProductHero } from "@/components/ProductHero";
 
@@ -13,7 +11,7 @@ export const metadata = { alternates: { canonical: "/peliculas/privacidad/" },
 
 export default function PrivacyPage() {
   return <>
-    <ProductHero variant="privacy" eyebrow="Privacidad" title="La privacidad no depende sólo de qué tan oscura se ve una película." description="La luz interior y exterior puede cambiar completamente el resultado. Por eso distinguimos privacidad por contraste, por oscuridad y privacidad que requiere bloquear o difuminar la visión." ctaLabel="Buscar privacidad" context={{sourcePage:"/peliculas/privacidad/", problem:"privacy"}} facts={[{label:"Reflectiva",value:"Principalmente día"},{label:"Oscuridad",value:"Reduce VLT"},{label:"Noche",value:"Revisar luz"}]} secondary={<Link href="/residencial/" className="button button-secondary">Privacidad residencial <Icon name="arrow" size={18}/></Link>} />
+    <ProductHero variant="privacy" eyebrow="Privacidad" title="La privacidad que necesitas depende de cuándo y qué quieres ocultar." description="No es lo mismo buscar privacidad durante el día, hacer el cristal más oscuro o impedir que se distinga el interior. Te ayudamos a elegir la estrategia según tu espacio, la iluminación y la vista que quieres conservar." ctaLabel="Encontrar mi solución" context={{sourcePage:"/peliculas/privacidad/", problem:"privacy"}} facts={[{label:"Privacidad de día",value:"Reflectividad"},{label:"Más oscuridad",value:"Tono"},{label:"Menos dependencia de la luz",value:"Difusión"}]} secondary={<Link href="/residencial/" className="button button-secondary">Privacidad residencial <Icon name="arrow" size={18}/></Link>} />
 
     <section className="section privacy-strategy-section">
       <div className="container">
@@ -25,10 +23,18 @@ export default function PrivacyPage() {
       </div>
     </section>
 
-    <section className="section section-alt privacy-light-section"><div className="container"><div className="section-heading"><p className="eyebrow">Por qué cambia de noche</p><h2>El contraste trabaja en ambos sentidos.</h2><p className="lede-small">Cuando afuera hay más luz, el reflejo exterior puede dominar. Cuando adentro queda mucho más iluminado, las personas del exterior pueden ver hacia el interior con mayor facilidad.</p></div><PrivacyLightDemo/><LimitationNotice title="Ningún efecto espejo depende sólo de la película"><p>Orientación, iluminación, hora, distancia y condiciones del entorno influyen en la percepción de privacidad.</p></LimitationNotice></div></section>
+    <section className="section section-alt privacy-night-section">
+      <div className="container privacy-night-grid">
+        <div><p className="eyebrow">Un punto que cambia la decisión</p><h2>La privacidad de día no garantiza privacidad de noche.</h2></div>
+        <div>
+          <p>Cuando el interior está más iluminado que el exterior, una película reflectiva puede perder parte de su efecto de privacidad. Si la noche es importante para ti, conviene revisar la iluminación antes de elegir.</p>
+          <Link className="text-link" href="/peliculas/plata-reflecta/">Ver cómo cambia con la iluminación <Icon name="arrow" size={17}/></Link>
+        </div>
+      </div>
+    </section>
 
-    <section className="section privacy-decision-section"><div className="container privacy-decision-grid"><div><p className="eyebrow">Antes de cotizar</p><h2>Enséñanos el espacio de día y, si la noche importa, también de noche.</h2><p>Dos fotografías desde dentro y fuera pueden aclarar mucho más que elegir un tono por nombre. La privacidad es un problema visual y debe diagnosticarse como tal.</p></div><div className="privacy-photo-check"><div><Icon name="sun" size={21}/><strong>Foto de día</strong><span>Interior y exterior</span></div><div><Icon name="privacy" size={21}/><strong>Expectativa</strong><span>Qué quieres que deje de verse</span></div><div><Icon name="glare" size={21}/><strong>Foto nocturna</strong><span>Si la privacidad de noche es crítica</span></div></div></div></section>
+    <section className="section privacy-decision-section"><div className="container privacy-decision-grid"><div><p className="eyebrow">Antes de recomendarte una solución</p><h2>Muéstranos lo que quieres ocultar y desde dónde se ve.</h2><p>Con unas fotos podemos entender el contraste de luz, la vista que quieres conservar y el nivel de privacidad que estás buscando.</p></div><div className="privacy-photo-check"><div><Icon name="privacy" size={21}/><strong>Foto desde afuera</strong><span>Qué se alcanza a ver</span></div><div><Icon name="sun" size={21}/><strong>Foto desde adentro</strong><span>Qué luz y vista quieres conservar</span></div><div><Icon name="glare" size={21}/><strong>Foto de noche</strong><span>Si la privacidad nocturna también importa</span></div></div></div></section>
 
-    <ProductCTA title="La mejor solución de privacidad empieza por entender cuándo y desde dónde quieres ocultar la vista." text="Mándanos fotos del cristal y cuéntanos si la prioridad es día, noche o ambos escenarios." cta="Revisar mi privacidad" context={{sourcePage:"/peliculas/privacidad/", problem:"privacy"}} secondaryHref="/peliculas/" secondaryLabel="Comparar tecnologías" />
+    <ProductCTA title="Cuéntanos qué quieres dejar de ver. Nosotros te ayudamos a elegir cómo." text="Envíanos fotos del cristal y dinos si la privacidad importa de día, de noche o en ambos momentos." cta="Revisar mi caso" context={{sourcePage:"/peliculas/privacidad/", problem:"privacy"}} secondaryHref="/peliculas/" secondaryLabel="Comparar películas" />
   </>;
 }
