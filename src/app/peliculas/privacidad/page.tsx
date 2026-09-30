@@ -33,7 +33,23 @@ export default function PrivacyPage() {
       </div>
     </section>
 
-    <section className="section privacy-decision-section"><div className="container privacy-decision-grid"><div><p className="eyebrow">Antes de recomendarte una solución</p><h2>Muéstranos lo que quieres ocultar y desde dónde se ve.</h2><p>Con unas fotos podemos entender el contraste de luz, la vista que quieres conservar y el nivel de privacidad que estás buscando.</p></div><div className="privacy-photo-check"><div><Icon name="privacy" size={21}/><strong>Foto desde afuera</strong><span>Qué se alcanza a ver</span></div><div><Icon name="sun" size={21}/><strong>Foto desde adentro</strong><span>Qué luz y vista quieres conservar</span></div><div><Icon name="glare" size={21}/><strong>Foto de noche</strong><span>Si la privacidad nocturna también importa</span></div></div></div></section>
+    <section className="section privacy-decision-section">
+      <div className="container privacy-decision-grid">
+        <div>
+          <p className="eyebrow">Antes de elegir una solución</p>
+          <h2>¿Dónde sientes que te hace falta más privacidad?</h2>
+          <p>Puede ser una ventana que da a la calle, un ventanal frente a vecinos o simplemente un espacio donde quieres conservar la luz sin sentirte tan expuesto. A partir de eso revisamos qué solución tiene más sentido.</p>
+        </div>
+        <div>
+          <ul className="privacy-situations">
+            <li><span aria-hidden="true"><Icon name="privacy" size={20}/></span><div><strong>Hacia la calle o áreas comunes</strong><p>Cuando desde afuera se alcanza a ver demasiado hacia tu espacio.</p></div></li>
+            <li><span aria-hidden="true"><Icon name="building" size={20}/></span><div><strong>Frente a vecinos u otros espacios</strong><p>Cuando quieres reducir las vistas directas sin cerrar completamente la ventana.</p></div></li>
+            <li><span aria-hidden="true"><Icon name="sun" size={20}/></span><div><strong>Más privacidad sin perder tanta luz</strong><p>Cuando quieres sentirte más cómodo sin vivir con cortinas o persianas cerradas.</p></div></li>
+          </ul>
+          <p className="privacy-situations-note">Nosotros revisamos la iluminación, la orientación del cristal y la vista que quieres conservar para recomendarte la estrategia adecuada.</p>
+        </div>
+      </div>
+    </section>
 
     <ProductCTA title="Cuéntanos qué quieres dejar de ver. Nosotros te ayudamos a elegir cómo." text="Envíanos fotos del cristal y dinos si la privacidad importa de día, de noche o en ambos momentos." cta="Revisar mi caso" context={{sourcePage:"/peliculas/privacidad/", problem:"privacy"}} secondaryHref="/peliculas/" secondaryLabel="Comparar películas" />
   </>;
