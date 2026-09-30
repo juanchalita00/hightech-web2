@@ -19,6 +19,12 @@
       "status": "APPROVED_WITH_CONTEXT"
     },
     {
+      "id": "security_uv_gt98",
+      "text": "Más de 98% de protección frente a radiación UV, según ficha técnica.",
+      "products": ["SECURITY_ARCH"],
+      "status": "APPROVED_WITH_CONTEXT"
+    },
+    {
       "id": "privacy_lighting",
       "text": "La privacidad depende del contraste de iluminación y puede invertirse de noche.",
       "products": ["PRIVACY", "REFLECTIVE"],

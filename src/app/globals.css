@@ -906,7 +906,7 @@ thead th { background: var(--surface-alt); }
 .privacy-night-section { padding:clamp(3.5rem,6vw,5.5rem) 0; }
 .privacy-night-grid { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(18rem,.9fr); gap:clamp(1.5rem,5vw,5rem); align-items:end; }
 .privacy-night-grid h2 { max-width:17ch; font-size:clamp(2rem,3.6vw,3.1rem); }
-.privacy-night-grid p { margin:0 0 1.1rem; max-width:32rem; color:var(--ink-soft); font-size:1.04rem; }
+.privacy-night-grid p:not(.eyebrow) { margin:0 0 1.1rem; max-width:32rem; color:var(--ink-soft); font-size:1.04rem; }
 .privacy-decision-grid { display:grid; grid-template-columns:.9fr 1.1fr; gap:4rem; align-items:center; }
 .privacy-decision-grid > div:first-child > p:not(.eyebrow) { margin:1.1rem 0 0; color:var(--ink-soft); }
 .privacy-situations { display:grid; margin:0; padding:0; list-style:none; border-top:1px solid var(--line); }
