@@ -16,9 +16,9 @@ export function PageHero({ eyebrow, title, description, children }: Props) {
           {children && <div className="hero-actions">{children}</div>}
         </div>
         <div className="hero-visual" aria-hidden="true">
-          <div className="glass-panel"><span>VLT</span><strong>75 → 3%</strong></div>
-          <div className="glass-panel"><span>UV</span><strong>99%</strong></div>
-          <div className="glass-panel"><span>TSER</span><strong>59 → 96%</strong></div>
+          <div className="glass-panel"><span>Objetivo</span><strong>Qué quieres resolver</strong></div>
+          <div className="glass-panel"><span>Contexto</span><strong>Dónde se va a instalar</strong></div>
+          <div className="glass-panel"><span>Solución</span><strong>Qué aplicación tiene sentido</strong></div>
         </div>
       </div>
     </section>

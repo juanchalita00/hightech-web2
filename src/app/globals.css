@@ -234,9 +234,12 @@ a:hover .text-link svg, .text-link:hover svg, .journey-card:hover .journey-cta s
 .hero-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(18rem, .85fr); gap: clamp(2rem, 6vw, 5rem); align-items: center; }
 .lede { font-size: clamp(1.1rem, 2vw, 1.35rem); color: var(--ink-soft); max-width: 48rem; }
 .hero-visual { display: grid; gap: .85rem; padding: 1rem; }
-.glass-panel { min-height: 8.5rem; border-radius: var(--radius-md); border: 1px solid #cbd5e1; background: linear-gradient(135deg, rgba(255,255,255,.75), rgba(219,234,254,.45)); box-shadow: 0 18px 60px rgba(22, 35, 79, .08); padding: 1.2rem; display: flex; justify-content: space-between; align-items: end; }
-.glass-panel span { color: var(--ink-soft); }
-.glass-panel strong { font-size: 1.5rem; }
+/* PageHero: composición editorial (objetivo → contexto → solución), sin métricas de producto. */
+.glass-panel { min-height: 7.5rem; border-radius: var(--radius-md); border: 1px solid #cbd5e1; background: linear-gradient(135deg, rgba(255,255,255,.75), rgba(219,234,254,.45)); box-shadow: 0 18px 60px rgba(22, 35, 79, .08); padding: 1.2rem 1.3rem; display: flex; flex-direction: column; justify-content: space-between; gap: 1rem; }
+.glass-panel:nth-child(2) { margin-left: 1.2rem; }
+.glass-panel:nth-child(3) { margin-left: 2.4rem; }
+.glass-panel span { color: var(--ink-soft); font-size: .72rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.glass-panel strong { font-size: clamp(1.2rem, 2vw, 1.45rem); line-height: 1.2; letter-spacing: -.02em; }
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
 .card { border: 1px solid var(--line); border-radius: var(--radius-md); padding: 1.35rem; background: white; }
 .card p { color: var(--ink-soft); }
@@ -508,6 +511,9 @@ thead th { background: var(--surface-alt); }
   .final-cta-actions .button { width: 100%; }
   .hero-grid, .grid-3 { grid-template-columns: 1fr; }
   .hero-visual { padding: 0; }
+  .glass-panel { min-height: 0; }
+  .glass-panel:nth-child(2) { margin-left: .7rem; }
+  .glass-panel:nth-child(3) { margin-left: 1.4rem; }
   .footer-main { grid-template-columns: 1fr; gap: 2.5rem; }
   .footer-links { grid-template-columns: 1fr 1fr; }
   .footer-bottom { display: grid; }
