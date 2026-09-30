@@ -13,11 +13,11 @@ type Props = {
 };
 
 export function WhatsAppCTA({ label, context, position = "FINAL_CTA", className = "" }: Props) {
-  const fallbackHref = useMemo(() => whatsappUrl(whatsappMessage(context)), [context]);
+  const href = useMemo(() => whatsappUrl(whatsappMessage(context)), [context]);
 
-  function handleClick(event: React.MouseEvent<HTMLAnchorElement>) {
+  function handleClick() {
+    // Referencia interna para cruzar el clic con la conversación; no se agrega al mensaje de WhatsApp.
     const leadRef = generateLeadRef();
-    const href = whatsappUrl(whatsappMessage(context, leadRef));
     track("whatsapp_started", {
       source_page: context.sourcePage,
       business_line: context.businessLine,
@@ -27,11 +27,10 @@ export function WhatsAppCTA({ label, context, position = "FINAL_CTA", className 
       cta_position: position,
       lead_ref: leadRef,
     });
-    event.currentTarget.href = href;
   }
 
   return (
-    <a className={`button button-primary ${className}`.trim()} href={fallbackHref} onClick={handleClick}>
+    <a className={`button button-primary ${className}`.trim()} href={href} onClick={handleClick}>
       {label}
     </a>
   );

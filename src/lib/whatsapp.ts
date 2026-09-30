@@ -26,14 +26,14 @@ const problemMessages: Record<string, string> = {
 
 const normalize = (value?: string) => value?.trim().toLowerCase() ?? "";
 
-export function whatsappMessage(context: WhatsAppContext, leadRef?: string): string {
+// El mensaje es sólo lenguaje natural del visitante; la referencia interna (lead_ref) vive únicamente en el tracking.
+export function whatsappMessage(context: WhatsAppContext): string {
   const lines = ["Hola, estoy revisando la web de HIGHTECH Polarizados."];
   const businessLine = businessLineMessages[normalize(context.businessLine)];
   if (businessLine) lines.push(businessLine);
   if (context.product) lines.push(`Estoy revisando ${context.product}.`);
   const problem = problemMessages[normalize(context.problem)];
   if (problem) lines.push(problem);
-  if (leadRef) lines.push(`Referencia web: ${leadRef}`);
   return lines.join("\n");
 }
 
