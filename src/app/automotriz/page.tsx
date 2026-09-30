@@ -23,7 +23,7 @@ const decisions = [
 
 const steps = [
   { number: "01", title: "Identificamos el vehículo", text: "Marca, modelo, año cuando haga falta y qué cristales quieres trabajar." },
-  { number: "02", title: "Definimos el tono", text: "Claridad, privacidad, uso nocturno y referencia práctica de Jalisco entran en la conversación." },
+  { number: "02", title: "Definimos el tono", text: "Claridad, privacidad, uso nocturno y el criterio normativo aplicable entran en la conversación." },
   { number: "03", title: "Revisamos película previa", text: "Si existe polarizado instalado, su condición puede cambiar el alcance de retiro y preparación." },
   { number: "04", title: "Instalamos en taller", text: "La línea automotriz HIGHTECH se instala en taller para mantener control sobre el proceso." },
 ] as const;
@@ -31,7 +31,7 @@ const steps = [
 const faqs = [
   { question: "¿Todos los tonos nanocerámicos tienen la misma protección UV?", answer: <p>Las fichas activas de IR75, IR50, IR35, IR15 e IR5 indican 99% de rechazo UV. El VLT y el TSER sí cambian entre tonos.</p> },
   { question: "¿El 95% de rechazo infrarrojo equivale a reducir 95% del calor?", answer: <p>No. La ficha especifica 95% de rechazo infrarrojo medido a 950 nm. TSER es otra métrica y tampoco debe convertirse directamente en una promesa de temperatura dentro del vehículo.</p> },
-  { question: "¿IR75 es legal en parabrisas?", answer: <p>HIGHTECH no lo presenta como una garantía legal absoluta. En consultas directas con personal de Tránsito nos han indicado 70–75% como referencia práctica para parabrisas, mientras la normativa publicada mantiene una redacción específica sobre polarizado. Por eso explicamos ambas capas y no prometemos ausencia de sanción.</p> },
+  { question: "¿Puedo usar IR75 en el parabrisas sólo porque es una película clara?", answer: <p>No la presentamos como automáticamente autorizada por su VLT. IR75 reporta 75% de transmisión de luz visible, pero la normativa estatal revisada no establece un umbral de VLT que convierta una película clara en una excepción expresa para el parabrisas. Separamos la recomendación técnica del criterio normativo.</p> },
   { question: "¿Instalan a domicilio?", answer: <p>La instalación automotriz se realiza en taller. Es la modalidad operativa definida para esta línea.</p> },
   { question: "¿Y si ya tengo polarizado?", answer: <p>Primero se revisa su estado. El retiro forma parte del alcance cuando es necesario y no se presupone igual en todos los casos.</p> },
 ] as const;
