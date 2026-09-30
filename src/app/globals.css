@@ -1037,10 +1037,13 @@ thead th { background: var(--surface-alt); }
 .guide-options > div { display:grid; grid-template-columns:minmax(9rem,.38fr) 1fr; gap:.4rem 1.4rem; padding:1rem 0; border-bottom:1px solid var(--line); }
 .guide-options strong { color:var(--ink); font-size:1rem; line-height:1.4; }
 .guide-options p { margin:0; color:var(--ink-soft); font-size:.95rem; line-height:1.6; }
+.guide-options p + p { margin-top:.55rem; }
+.guide-options .guide-option-link .text-link { font-size:.88rem; }
 .guide-body > p.guide-context-link { margin:1.4rem 0 0; }
 .guide-body > p.guide-context-link .text-link { display:inline; }
 .guide-body > p.guide-context-link .text-link svg { display:inline; margin-left:.3rem; vertical-align:-3px; }
 .guide-body > p.guide-bridge { margin-top:1rem; color:var(--ink); font-weight:600; }
+.guide-body > p.guide-followup { margin-top:1rem; }
 .guide-aside { position:sticky; top:7rem; display:grid; gap:.75rem; }
 .guide-aside-card { display:grid; gap:.5rem; padding:1rem; border:1px solid var(--line); border-radius:1rem; background:#fbfcff; }
 .guide-aside-card > span { color:#8a94a7; font-size:.64rem; font-weight:790; text-transform:uppercase; letter-spacing:.08em; }
