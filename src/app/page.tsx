@@ -4,11 +4,12 @@ import { Icon } from "@/components/Icon";
 import { SignatureGlass } from "@/components/SignatureGlass";
 import { NanoToneTable } from "@/components/NanoToneTable";
 import { WhatsAppCTA } from "@/components/WhatsAppCTA";
+import { truth } from "@/lib/truth";
 import styles from "./home-v09.module.css";
 
 export const metadata: Metadata = {
-  title: "HIGHTECH Polarizados",
-  description: "Soluciones profesionales para cristales residenciales, comerciales y automotrices.",
+  title: { absolute: `Películas para cristales en ${truth.contact.locationLabel.split(",")[0]} | HIGHTECH Polarizados` },
+  description: `Control solar, privacidad y seguridad para cristales de casas, negocios y vehículos en ${truth.contact.locationLabel}. Te ayudamos a elegir según lo que quieres resolver.`,
   alternates: { canonical: "/" },
 };
 

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { FAQList } from "@/components/FAQList";
 import { ProductCTA } from "@/components/ProductCTA";
 import { TrustHero } from "@/components/TrustHero";
+import { release } from "@/lib/truth";
 
 export const metadata:Metadata={ alternates: { canonical: "/preguntas-frecuentes/" },title:{ absolute: "Preguntas frecuentes | HIGHTECH Polarizados" },description:"Respuestas breves sobre nanocerámica, VLT, IR, TSER, privacidad, cotización, instalación automotriz, garantías y polarizado en Jalisco."};
 
@@ -13,7 +14,7 @@ const items=[
   {question:"¿La privacidad se mantiene igual de noche?",answer:<p>No necesariamente. Depende del contraste de iluminación; si hay más luz dentro que fuera puede aumentar la visibilidad hacia el interior. <Link href="/guias/privacidad-ventanas-noche/">Privacidad de noche</Link>.</p>},
   {question:"¿Instalan automóviles a domicilio?",answer:<p>No. La instalación automotriz HIGHTECH se realiza en taller para controlar mejor las condiciones de aplicación. <Link href="/automotriz/">Ver servicio automotriz</Link>.</p>},
   {question:"¿Cómo cotizan una casa u oficina?",answer:<p>Podemos empezar con fotos, medidas aproximadas y el problema que quieres resolver. Dependiendo del vidrio, acceso y alcance puede requerirse revisión adicional. <Link href="/contacto/">Preparar mi cotización</Link>.</p>},
-  {question:"¿Qué garantía tiene la película?",answer:<p>La cobertura depende del producto, la aplicación y la versión de la póliza correspondiente. No tratamos un plazo histórico o de ficha como garantía universal. <Link href="/garantias/">Consultar garantías</Link>.</p>},
+  {question:"¿Qué garantía tiene la película?",answer:<p>La cobertura depende del producto, la aplicación y la versión de la póliza correspondiente. No tratamos un plazo histórico o de ficha como garantía universal.{release.production.warrantiesApproved && <> <Link href="/garantias/">Consultar garantías</Link>.</>}</p>},
   {question:"¿Qué dice la norma de Jalisco sobre los tonos permitidos?",answer:<p>La normativa publicada no establece una tabla general de porcentajes VLT por zona del vehículo. Sí contiene una prohibición expresa al polarizado del parabrisas y exige visibilidad hacia el interior en los demás cristales. Para entender la diferencia entre la norma y el VLT de una película, consulta la guía completa. <Link href="/guias/polarizado-automotriz-jalisco/">Ver guía de Jalisco</Link>.</p>},
   {question:"¿Hay que retirar la película anterior?",answer:<p>Si existe una película previa, revisamos su estado y si debe retirarse antes de instalar la nueva. El tiempo adicional puede variar según el adhesivo y el deterioro.</p>},
   {question:"¿Cuánto tarda una instalación?",answer:<p>Depende del alcance, el vehículo o metraje, el acceso y si existe retiro previo. La cotización y la confirmación de agenda deben indicar la referencia aplicable al trabajo concreto.</p>},
