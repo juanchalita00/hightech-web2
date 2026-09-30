@@ -9,7 +9,7 @@ import { NanoTable } from "@/components/NanoTable";
 import { ProductCTA } from "@/components/ProductCTA";
 import { truth } from "@/lib/truth";
 
-export const metadata:Metadata={ alternates: { canonical: "/guias/irr-vs-tser/" },title:{ absolute: "IR vs TSER: cuál es la diferencia | HIGHTECH" },description:"Por qué 95% de rechazo infrarrojo a 950 nm y TSER son métricas distintas y cómo leerlas correctamente en una ficha de película."};
+export const metadata:Metadata={ alternates: { canonical: "/guias/irr-vs-tser/" },title:{ absolute: "IR vs TSER: cuál es la diferencia | HIGHTECH Polarizados" },description:"Por qué 95% de rechazo infrarrojo a 950 nm y TSER son métricas distintas y cómo leerlas correctamente en una ficha de película."};
 export default function Page(){
   const film = (id: string) => truth.nano.find((item) => item.id === id);
   const ir75 = film("IR75"), ir5 = film("IR5");

@@ -7,7 +7,7 @@ import { Icon } from "@/components/Icon";
 import { ProcessRail } from "@/components/ProcessRail";
 
 export const metadata = { alternates: { canonical: "/comercial/" },
-  title: { absolute: "Películas para cristales comerciales | HIGHTECH" },
+  title: { absolute: "Películas para cristales comerciales | HIGHTECH Polarizados" },
   description: "Evaluación de proyectos comerciales e institucionales para control solar, privacidad, deslumbramiento y seguridad en cristales.",
 };
 

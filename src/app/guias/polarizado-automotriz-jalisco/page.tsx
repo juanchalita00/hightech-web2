@@ -5,8 +5,9 @@ import { GuideCallout } from "@/components/GuideCallout";
 import { GuideHero } from "@/components/GuideHero";
 import { Icon } from "@/components/Icon";
 import { ProductCTA } from "@/components/ProductCTA";
+import { release } from "@/lib/truth";
 
-export const metadata:Metadata={ alternates: { canonical: "/guias/polarizado-automotriz-jalisco/" },title:"Polarizado automotriz en Jalisco: qué dice la norma publicada",description:"Qué establece la normativa publicada de Jalisco sobre el polarizado del parabrisas y la visibilidad hacia el interior en los demás cristales, y por qué el VLT de una película se explica por separado.",robots:{index:false,follow:true}};
+export const metadata:Metadata={ alternates: { canonical: "/guias/polarizado-automotriz-jalisco/" },title:"Polarizado automotriz en Jalisco: qué dice la norma publicada",description:"Qué establece la normativa publicada de Jalisco sobre el polarizado del parabrisas y la visibilidad hacia el interior en los demás cristales, y por qué el VLT de una película se explica por separado.",robots:{index:release.routes.jaliscoGuideIndexable,follow:true}};
 export default function Page(){return <>
   <GuideHero eyebrow="Guía · Automotriz · Jalisco" title="¿Qué dice la norma de Jalisco sobre el polarizado de un auto?" description="La normativa publicada no establece una tabla general de porcentajes como 75 / 35 / 20. Sí contiene reglas específicas sobre el parabrisas y sobre la visibilidad hacia el interior en los demás cristales." category="Normativa automotriz" ctaHref="/automotriz/" ctaLabel="Ver polarizado automotriz" />
   <GuideArticle><GuideBody>
