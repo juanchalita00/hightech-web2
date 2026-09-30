@@ -11,7 +11,7 @@ export const metadata = { alternates: { canonical: "/peliculas/privacidad/" },
 
 export default function PrivacyPage() {
   return <>
-    <ProductHero variant="privacy" eyebrow="Privacidad" title="Más privacidad, cuidando la luz y la vista que quieres conservar." description="No es lo mismo buscar privacidad durante el día, hacer el cristal más oscuro o impedir que se distinga el interior. Te ayudamos a elegir la estrategia según tu espacio, la iluminación y la vista que quieres conservar." ctaLabel="Encontrar mi solución" context={{sourcePage:"/peliculas/privacidad/", problem:"privacy"}} facts={[{label:"Privacidad de día",value:"Reflectividad"},{label:"Más oscuridad",value:"Tono"},{label:"Menos dependencia de la luz",value:"Difusión"}]} secondary={<Link href="/residencial/" className="button button-secondary">Privacidad residencial <Icon name="arrow" size={18}/></Link>} />
+    <ProductHero variant="privacy" eyebrow="Privacidad" title="Que se vea menos hacia adentro, sin perder más luz de la necesaria." description="Si una ventana da a la calle, a vecinos o a un área común, podemos ayudarte a ganar privacidad cuidando la luz y la vista que quieres conservar." ctaLabel="Encontrar mi solución" context={{sourcePage:"/peliculas/privacidad/", problem:"privacy"}} facts={[{label:"Privacidad de día",value:"Reflectividad"},{label:"Más oscuridad",value:"Tono"},{label:"Menos dependencia de la luz",value:"Difusión"}]} secondary={<Link href="/residencial/" className="button button-secondary">Privacidad residencial <Icon name="arrow" size={18}/></Link>} />
 
     <section className="section privacy-strategy-section">
       <div className="container">
