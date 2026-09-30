@@ -26,7 +26,7 @@ const goals: Goal[] = [
     caveat: "Por la noche, el resultado cambia con el contraste de iluminación.",
     cta: "Ver Plata Reflecta",
     href: "/peliculas/plata-reflecta/",
-    sceneLabel: "Desde afuera, de día, el cristal refleja el cielo y el interior apenas se distingue. Desde adentro, el espacio conserva buena parte de la luz y la vista hacia el exterior.",
+    sceneLabel: "Desde afuera, de día, el cristal refleja sobre todo el cielo, los árboles y el edificio de enfrente; detrás apenas se insinúa el interior. Desde adentro, la vista hacia el exterior se conserva con un ligero cambio de tono.",
   },
   {
     key: "dark",
@@ -37,58 +37,94 @@ const goals: Goal[] = [
     caveat: "El tono no convierte el cristal en un espejo permanente.",
     cta: "Comparar tonos",
     href: "/peliculas/nanoceramica/",
-    sceneLabel: "Desde afuera, el cristal se ve más oscuro pero todavía transparente: el interior se percibe con menos claridad. Desde adentro, entra menos luz y la vista hacia afuera se oscurece.",
+    sceneLabel: "Desde afuera, el mismo cristal se ve más oscuro pero sigue siendo transparente: el interior se percibe con menos luz. Desde adentro, el exterior conserva formas y definición, pero se ve más oscuro.",
   },
   {
     key: "diffuse",
     title: "Que no se distinga el interior",
     intent: "Necesito privacidad menos dependiente de la iluminación.",
-    strategy: "Difuminar o bloquear visión",
+    strategy: "Difuminar la visión",
     text: "Si la prioridad es impedir que se distinga claramente lo que hay detrás del cristal, puede ser necesaria una solución que difumine o limite la visión en lugar de depender únicamente de oscuridad o reflectividad.",
-    caveat: "La solución correcta depende de cuánto quieres ocultar y de cuánta luz o visibilidad deseas conservar.",
+    caveat: "La solución correcta depende de cuánto quieres ocultar y de cuánta luz o visibilidad deseas conservar. Si necesitas bloquear la vista por completo, se evalúa una solución opaca distinta.",
     cta: "Revisar mi caso",
     href: "/contacto/",
-    sceneLabel: "Desde afuera, las personas y objetos detrás del cristal se ven difuminados y no se identifican. Desde adentro, entra luz pero la vista hacia el exterior también queda difuminada.",
+    sceneLabel: "Desde afuera, el cristal se ve translúcido y luminoso: la persona cercana al vidrio es sólo una silueta suave y los objetos se vuelven manchas difusas. Desde adentro, entra luz pero el exterior pierde definición.",
   },
 ];
 
 // El módulo aparece una sola vez por página, así que un prefijo fijo basta para los ids.
 const id = "privacy-goal";
 
-function Room() {
+// Vista desde afuera: el cristal ocupa x 44–376, y 64–346.
+function RoomBack() {
   return <>
-    <rect x="56" y="66" width="358" height="288" fill="#f4efe4" />
-    <rect x="56" y="294" width="358" height="60" fill="#e2d6bf" />
-    <rect x="88" y="104" width="74" height="52" rx="3" fill="#c7b596" />
-    <rect x="95" y="111" width="60" height="38" rx="2" fill="#e9e0cd" />
-    <line x1="190" y1="66" x2="190" y2="112" stroke="#8e9ab2" strokeWidth="2" />
-    <path d="M174 128 L180 112 L200 112 L206 128 Z" fill="#6f7fa6" />
-    <rect x="96" y="246" width="150" height="46" rx="10" fill="#6f7fa6" />
-    <rect x="96" y="222" width="22" height="70" rx="8" fill="#6f7fa6" />
-    <rect x="104" y="292" width="7" height="20" fill="#56648a" />
-    <rect x="232" y="292" width="7" height="20" fill="#56648a" />
-    <circle cx="300" cy="170" r="17" fill="#2f3b61" />
-    <path d="M280 318 L282 214 Q284 194 300 192 Q316 194 318 214 L320 318 Z" fill="#2f3b61" />
-    <rect x="286" y="318" width="11" height="22" rx="3" fill="#2f3b61" />
-    <rect x="303" y="318" width="11" height="22" rx="3" fill="#2f3b61" />
-    <rect x="360" y="286" width="30" height="34" rx="4" fill="#b98f6b" />
-    <ellipse cx="366" cy="262" rx="10" ry="24" fill="#5f7f63" transform="rotate(-18 366 262)" />
-    <ellipse cx="384" cy="258" rx="10" ry="26" fill="#6f9072" transform="rotate(16 384 258)" />
-    <ellipse cx="375" cy="250" rx="8" ry="28" fill="#56745a" />
+    <rect x="44" y="64" width="332" height="282" fill="#f4efe4" />
+    <rect x="44" y="292" width="332" height="54" fill="#e2d6bf" />
+    <polygon points="210,292 330,292 360,346 170,346" fill="#fbf3dc" opacity=".8" />
+    <rect x="72" y="98" width="72" height="50" rx="3" fill="#c7b596" />
+    <rect x="79" y="105" width="58" height="36" rx="2" fill="#e9e0cd" />
+    <line x1="176" y1="64" x2="176" y2="104" stroke="#8e9ab2" strokeWidth="2" />
+    <path d="M160 120 L166 104 L186 104 L192 120 Z" fill="#6f7fa6" />
+    <rect x="76" y="244" width="140" height="46" rx="10" fill="#6f7fa6" />
+    <rect x="76" y="220" width="22" height="70" rx="8" fill="#6f7fa6" />
+    <rect x="84" y="290" width="7" height="18" fill="#56648a" />
+    <rect x="202" y="290" width="7" height="18" fill="#56648a" />
+    <rect x="326" y="284" width="28" height="32" rx="4" fill="#b98f6b" />
+    <ellipse cx="332" cy="262" rx="9" ry="22" fill="#5f7f63" transform="rotate(-18 332 262)" />
+    <ellipse cx="348" cy="258" rx="9" ry="24" fill="#6f9072" transform="rotate(16 348 258)" />
+    <ellipse cx="340" cy="250" rx="7" ry="26" fill="#56745a" />
   </>;
 }
 
+function Person() {
+  return <>
+    <circle cx="272" cy="166" r="17" fill="#2f3b61" />
+    <path d="M252 316 L254 210 Q256 190 272 188 Q288 190 290 210 L292 316 Z" fill="#2f3b61" />
+    <rect x="258" y="316" width="11" height="22" rx="3" fill="#2f3b61" />
+    <rect x="275" y="316" width="11" height="22" rx="3" fill="#2f3b61" />
+  </>;
+}
+
+// Lo que el cristal refleja: el cielo, los árboles y el edificio que están detrás del observador.
+function Reflection() {
+  return <>
+    <rect x="44" y="64" width="332" height="282" fill={`url(#${id}-refl-sky)`} />
+    <g fill="#dfeaf4" opacity=".4">
+      <ellipse cx="190" cy="112" rx="60" ry="11" /><ellipse cx="224" cy="104" rx="30" ry="10" /><ellipse cx="330" cy="130" rx="44" ry="8" />
+    </g>
+    <rect x="44" y="150" width="96" height="196" fill="#7e8ca3" />
+    <g fill="#a3b1c4">
+      <rect x="56" y="166" width="16" height="20" /><rect x="84" y="166" width="16" height="20" /><rect x="112" y="166" width="16" height="20" />
+      <rect x="56" y="200" width="16" height="20" /><rect x="84" y="200" width="16" height="20" /><rect x="112" y="200" width="16" height="20" />
+      <rect x="56" y="234" width="16" height="20" /><rect x="84" y="234" width="16" height="20" /><rect x="112" y="234" width="16" height="20" />
+    </g>
+    <g fill="#48675a">
+      <circle cx="238" cy="214" r="34" /><circle cx="274" cy="198" r="38" /><circle cx="312" cy="220" r="30" />
+      <circle cx="352" cy="206" r="32" />
+    </g>
+    <rect x="270" y="236" width="8" height="40" fill="#4a4540" />
+    <rect x="44" y="272" width="332" height="74" fill="#687588" />
+    <rect x="44" y="272" width="332" height="3" fill="#8e9aab" />
+  </>;
+}
+
+// Vista desde adentro: el cristal ocupa x 464–728, y 62–320.
 function Outdoors() {
   return <>
-    <rect x="522" y="82" width="166" height="236" fill={`url(#${id}-sky)`} />
-    <circle cx="650" cy="118" r="14" fill="#fff6d6" />
-    <path d="M522 250 L570 214 L618 250 Z" fill="#b8c4d8" />
-    <rect x="530" y="250" width="80" height="68" fill="#d5dcea" />
-    <rect x="548" y="266" width="18" height="18" fill="#9fb0c9" />
-    <rect x="626" y="232" width="8" height="86" fill="#7c6a58" />
-    <circle cx="630" cy="214" r="34" fill="#7fa38a" />
-    <circle cx="652" cy="236" r="24" fill="#6d937a" />
-    <rect x="522" y="304" width="166" height="14" fill="#a9b7a0" />
+    <rect x="464" y="62" width="264" height="258" fill={`url(#${id}-sky)`} />
+    <circle cx="690" cy="100" r="14" fill="#fff4cc" />
+    <g fill="#ffffff" opacity=".6">
+      <ellipse cx="530" cy="120" rx="40" ry="9" /><ellipse cx="552" cy="112" rx="22" ry="9" /><ellipse cx="640" cy="150" rx="30" ry="6" />
+    </g>
+    <path d="M482 232 L540 190 L598 232 Z" fill="#a9b6cc" />
+    <rect x="490" y="232" width="100" height="72" fill="#d3dbe8" />
+    <rect x="506" y="248" width="20" height="20" fill="#8fa2bf" />
+    <rect x="546" y="248" width="20" height="20" fill="#8fa2bf" />
+    <rect x="652" y="220" width="9" height="84" fill="#7c6a58" />
+    <circle cx="656" cy="200" r="36" fill="#6f9a7d" />
+    <circle cx="684" cy="224" r="26" fill="#5f8a6e" />
+    <circle cx="630" cy="222" r="22" fill="#7aa588" />
+    <rect x="464" y="296" width="264" height="24" fill="#9fb293" />
   </>;
 }
 
@@ -141,56 +177,77 @@ export function PrivacyDecisionTool() {
         <div className="pdt-scene">
           <span className="pdt-tag pdt-tag-out" aria-hidden="true">Desde afuera</span>
           <span className="pdt-tag pdt-tag-in" aria-hidden="true">Desde adentro</span>
-          <svg viewBox="0 0 720 420" role="img" aria-label={current.sceneLabel}>
+          <svg viewBox="0 0 760 420" role="img" aria-label={current.sceneLabel}>
             <defs>
               <linearGradient id={`${id}-sky`} x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stopColor="#b9dcf3" />
-                <stop offset="1" stopColor="#eaf5fb" />
+                <stop offset="0" stopColor="#9fcbeb" />
+                <stop offset="1" stopColor="#e6f2fa" />
               </linearGradient>
-              <linearGradient id={`${id}-mirror`} x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stopColor="#e7edf6" />
-                <stop offset=".5" stopColor="#a4b2c8" />
-                <stop offset="1" stopColor="#d3dbe7" />
+              <linearGradient id={`${id}-refl-sky`} x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stopColor="#4f7fb0" />
+                <stop offset=".55" stopColor="#9dbfdc" />
+                <stop offset="1" stopColor="#c9dbea" />
               </linearGradient>
-              <clipPath id={`${id}-out-glass`}><rect x="56" y="66" width="358" height="288" /></clipPath>
-              <clipPath id={`${id}-in-glass`}><rect x="522" y="82" width="166" height="236" /></clipPath>
-              <filter id={`${id}-blur`} x="-5%" y="-5%" width="110%" height="110%"><feGaussianBlur stdDeviation="11" /></filter>
+              <linearGradient id={`${id}-sheen`} x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stopColor="#ffffff" stopOpacity="0" />
+                <stop offset=".42" stopColor="#ffffff" stopOpacity="0" />
+                <stop offset=".5" stopColor="#ffffff" stopOpacity=".8" />
+                <stop offset=".6" stopColor="#ffffff" stopOpacity="0" />
+                <stop offset="1" stopColor="#ffffff" stopOpacity="0" />
+              </linearGradient>
+              <linearGradient id={`${id}-tint`} x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stopColor="#1a2436" />
+                <stop offset="1" stopColor="#0b1120" />
+              </linearGradient>
+              <linearGradient id={`${id}-frost`} x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stopColor="#f3f5f8" />
+                <stop offset="1" stopColor="#e2e7ee" />
+              </linearGradient>
+              <clipPath id={`${id}-out-glass`}><rect x="44" y="64" width="332" height="282" /></clipPath>
+              <clipPath id={`${id}-in-glass`}><rect x="464" y="62" width="264" height="258" /></clipPath>
+              {/* El esmerilado dispersa más lo que está lejos del vidrio que lo que está pegado a él. */}
+              <filter id={`${id}-scatter-far`} x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="16" /></filter>
+              <filter id={`${id}-scatter-near`} x="-20%" y="-10%" width="140%" height="120%"><feGaussianBlur stdDeviation="7" /></filter>
+              <filter id={`${id}-grain`} x="0" y="0" width="100%" height="100%">
+                <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="4" stitchTiles="stitch" />
+                <feColorMatrix type="matrix" values="0 0 0 0 .55  0 0 0 0 .6  0 0 0 0 .66  0 0 0 .6 -.12" />
+              </filter>
             </defs>
 
             {/* Vista desde afuera: fachada y ventana */}
-            <rect x="0" y="0" width="470" height="420" fill="#e9edf4" />
-            <rect x="0" y="384" width="470" height="36" fill="#d6dce7" />
-            <rect x="40" y="50" width="390" height="320" rx="6" fill="#c9d1df" />
+            <rect x="0" y="0" width="420" height="420" fill="#e9edf4" />
+            <rect x="0" y="384" width="420" height="36" fill="#d6dce7" />
+            <rect x="30" y="50" width="360" height="310" rx="6" fill="#c9d1df" />
             <g clipPath={`url(#${id}-out-glass)`}>
-              <g className="pdt-sharp"><Room /></g>
-              <g className="pdt-blurred" filter={`url(#${id}-blur)`}><Room /></g>
-              <rect className="pdt-o-tint" x="56" y="66" width="358" height="288" fill="#0e1633" />
-              <rect className="pdt-o-mirror" x="56" y="66" width="358" height="288" fill={`url(#${id}-mirror)`} />
-              <g className="pdt-o-reflection" fill="#ffffff">
-                <ellipse cx="120" cy="104" rx="42" ry="13" opacity=".75" />
-                <ellipse cx="150" cy="96" rx="26" ry="12" opacity=".75" />
-                <ellipse cx="330" cy="130" rx="36" ry="10" opacity=".6" />
-                <path d="M56 354 L56 300 Q90 260 120 290 Q150 250 190 286 Q220 262 250 300 L250 354 Z" fill="#8d9fb8" opacity=".55" />
+              <g className="pdt-clear"><RoomBack /><Person /></g>
+              <g className="pdt-diffused">
+                <g filter={`url(#${id}-scatter-far)`}><RoomBack /></g>
+                <g filter={`url(#${id}-scatter-near)`} opacity=".7"><Person /></g>
               </g>
-              <rect className="pdt-o-frost" x="56" y="66" width="358" height="288" fill="#f5f7fb" />
-              <path className="pdt-sheen" d="M90 354 L230 66 L262 66 L122 354 Z M300 354 L414 120 L414 170 L324 354 Z" fill="#ffffff" />
+              <rect className="pdt-o-tint" x="44" y="64" width="332" height="282" fill={`url(#${id}-tint)`} />
+              <g className="pdt-o-reflection"><Reflection /></g>
+              <rect className="pdt-o-frost" x="44" y="64" width="332" height="282" fill={`url(#${id}-frost)`} />
+              <rect className="pdt-o-grain" x="44" y="64" width="332" height="282" filter={`url(#${id}-grain)`} />
+              <rect className="pdt-o-sheen" x="44" y="64" width="332" height="282" fill={`url(#${id}-sheen)`} />
             </g>
-            <rect x="232" y="66" width="6" height="288" fill="#c9d1df" />
-            <rect x="32" y="366" width="406" height="10" rx="3" fill="#bcc5d5" />
+            <rect x="207" y="64" width="6" height="282" fill="#c9d1df" />
+            <rect x="22" y="356" width="376" height="10" rx="3" fill="#bcc5d5" />
 
             {/* Vista desde adentro */}
-            <rect x="490" y="0" width="230" height="420" fill="#f4efe4" />
-            <rect x="490" y="352" width="230" height="68" fill="#e2d6bf" />
-            <polygon className="pdt-i-light" points="522,352 688,352 720,420 500,420" fill="#fff4cf" />
-            <rect x="510" y="70" width="190" height="260" rx="5" fill="#d9d2c3" />
+            <rect x="432" y="0" width="328" height="420" fill="#f4efe4" />
+            <rect x="432" y="352" width="328" height="68" fill="#e2d6bf" />
+            <polygon className="pdt-i-light" points="464,352 728,352 760,420 440,420" fill="#fff2c6" />
+            <rect x="452" y="50" width="288" height="282" rx="5" fill="#d9d2c3" />
             <g clipPath={`url(#${id}-in-glass)`}>
-              <g className="pdt-sharp"><Outdoors /></g>
-              <g className="pdt-blurred" filter={`url(#${id}-blur)`}><Outdoors /></g>
-              <rect className="pdt-i-tint" x="522" y="82" width="166" height="236" fill="#1b2442" />
-              <rect className="pdt-i-frost" x="522" y="82" width="166" height="236" fill="#f7f9fc" />
+              <g className="pdt-clear"><Outdoors /></g>
+              <g className="pdt-diffused" filter={`url(#${id}-scatter-far)`}><Outdoors /></g>
+              <rect className="pdt-i-film" x="464" y="62" width="264" height="258" fill="#44526a" />
+              <rect className="pdt-i-tint" x="464" y="62" width="264" height="258" fill={`url(#${id}-tint)`} />
+              <rect className="pdt-i-frost" x="464" y="62" width="264" height="258" fill={`url(#${id}-frost)`} />
+              <rect className="pdt-i-grain" x="464" y="62" width="264" height="258" filter={`url(#${id}-grain)`} />
             </g>
-            <rect x="602" y="82" width="6" height="236" fill="#d9d2c3" />
-            <rect x="480" y="0" width="10" height="420" fill="#ffffff" />
+            <rect x="593" y="62" width="6" height="258" fill="#d9d2c3" />
+            <rect x="420" y="0" width="12" height="420" fill="#ffffff" />
           </svg>
         </div>
 
