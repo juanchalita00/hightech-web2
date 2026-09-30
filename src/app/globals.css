@@ -840,7 +840,7 @@ thead th { background: var(--surface-alt); }
 .pdt[data-goal="dark"] .pdt-o-tint { opacity:.86; }
 .pdt[data-goal="dark"] .pdt-o-reflection { opacity:.05; }
 .pdt[data-goal="dark"] .pdt-o-sheen { opacity:.12; }
-.pdt[data-goal="dark"] .pdt-i-tint { opacity:.66; }
+.pdt[data-goal="dark"] .pdt-i-tint { opacity:.57; }
 .pdt[data-goal="dark"] .pdt-i-light { opacity:.1; }
 /* Esmerilado: pasa la luz, pero se dispersa la imagen. */
 .pdt[data-goal="diffuse"] .pdt-clear { opacity:0; }
