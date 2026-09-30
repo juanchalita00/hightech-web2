@@ -837,7 +837,7 @@ thead th { background: var(--surface-alt); }
 .pdt[data-goal="reflect"] .pdt-i-film { opacity:.22; }
 .pdt[data-goal="reflect"] .pdt-i-light { opacity:.65; }
 /* Tono oscuro: pasa menos luz, pero la imagen se conserva nítida. */
-.pdt[data-goal="dark"] .pdt-o-tint { opacity:.86; }
+.pdt[data-goal="dark"] .pdt-o-tint { opacity:.93; }
 .pdt[data-goal="dark"] .pdt-o-reflection { opacity:.05; }
 .pdt[data-goal="dark"] .pdt-o-sheen { opacity:.12; }
 .pdt[data-goal="dark"] .pdt-i-tint { opacity:.35; }
