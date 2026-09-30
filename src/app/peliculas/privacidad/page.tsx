@@ -11,7 +11,7 @@ export const metadata = { alternates: { canonical: "/peliculas/privacidad/" },
 
 export default function PrivacyPage() {
   return <>
-    <ProductHero variant="privacy" eyebrow="Privacidad" title="La privacidad que necesitas depende de cuándo y qué quieres ocultar." description="No es lo mismo buscar privacidad durante el día, hacer el cristal más oscuro o impedir que se distinga el interior. Te ayudamos a elegir la estrategia según tu espacio, la iluminación y la vista que quieres conservar." ctaLabel="Encontrar mi solución" context={{sourcePage:"/peliculas/privacidad/", problem:"privacy"}} facts={[{label:"Privacidad de día",value:"Reflectividad"},{label:"Más oscuridad",value:"Tono"},{label:"Menos dependencia de la luz",value:"Difusión"}]} secondary={<Link href="/residencial/" className="button button-secondary">Privacidad residencial <Icon name="arrow" size={18}/></Link>} />
+    <ProductHero variant="privacy" eyebrow="Privacidad" title="Más privacidad, cuidando la luz y la vista que quieres conservar." description="No es lo mismo buscar privacidad durante el día, hacer el cristal más oscuro o impedir que se distinga el interior. Te ayudamos a elegir la estrategia según tu espacio, la iluminación y la vista que quieres conservar." ctaLabel="Encontrar mi solución" context={{sourcePage:"/peliculas/privacidad/", problem:"privacy"}} facts={[{label:"Privacidad de día",value:"Reflectividad"},{label:"Más oscuridad",value:"Tono"},{label:"Menos dependencia de la luz",value:"Difusión"}]} secondary={<Link href="/residencial/" className="button button-secondary">Privacidad residencial <Icon name="arrow" size={18}/></Link>} />
 
     <section className="section privacy-strategy-section">
       <div className="container">
@@ -51,6 +51,6 @@ export default function PrivacyPage() {
       </div>
     </section>
 
-    <ProductCTA title="Cuéntanos qué quieres dejar de ver. Nosotros te ayudamos a elegir cómo." text="Envíanos fotos del cristal y dinos si la privacidad importa de día, de noche o en ambos momentos." cta="Revisar mi caso" context={{sourcePage:"/peliculas/privacidad/", problem:"privacy"}} secondaryHref="/peliculas/" secondaryLabel="Comparar películas" />
+    <ProductCTA title="Cuéntanos dónde necesitas más privacidad. Nosotros te ayudamos a elegir." text="Revisamos tu espacio, la iluminación y la vista que quieres conservar para recomendarte la solución que tenga más sentido." cta="Quiero una recomendación" context={{sourcePage:"/peliculas/privacidad/", problem:"privacy"}} secondaryHref="/peliculas/" secondaryLabel="Comparar películas" />
   </>;
 }
