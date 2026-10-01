@@ -141,7 +141,7 @@
 
 .needHead { display: flex; align-items: center; justify-content: space-between; }
 .needIcon { display: grid; place-items: center; width: 2.8rem; height: 2.8rem; border-radius: .9rem; color: var(--brand); background: var(--surface-blue); }
-.needIndex { color: #a4adbd; font-size: .72rem; font-weight: 830; letter-spacing: .1em; }
+.needIndex { color: #606d84; font-size: .72rem; font-weight: 830; letter-spacing: .1em; }
 .needCard h3 { margin-top: 1.8rem; font-size: 1.28rem; letter-spacing: -.02em; }
 .needCard p { margin: .65rem 0 1.4rem; color: var(--ink-soft); font-size: .92rem; line-height: 1.6; }
 .needCta { display: inline-flex; align-items: center; gap: .4rem; margin-top: auto; color: var(--brand); font-size: .88rem; font-weight: 760; }

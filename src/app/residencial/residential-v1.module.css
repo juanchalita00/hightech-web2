@@ -102,7 +102,7 @@
 .evidencePhoto { object-fit: cover; object-position: center; }
 .evidenceCopy h3 { margin: 0; font-size: clamp(1.45rem, 2.4vw, 2rem); line-height: 1.12; letter-spacing: -.03em; }
 .evidenceCopy p:not(:global(.eyebrow)) { margin: .9rem 0 0; color: var(--ink-soft); }
-.evidenceCaption { display: block; margin-top: 1.2rem; color: #7a8394; font-size: .8rem; }
+.evidenceCaption { display: block; margin-top: 1.2rem; color: #646c7c; font-size: .8rem; }
 
 .heroCaption {
   position: absolute;
@@ -166,7 +166,7 @@
 }
 
 .page :global(.decision-index) {
-  color: #9aa3b2;
+  color: #616d80;
 }
 
 .page :global(.decision-card h3) {
@@ -220,7 +220,7 @@
 .page :global(.solution-link-list small) {
   max-width: 35rem;
   margin-top: .12rem;
-  color: #6d737b;
+  color: #676d74;
   font-size: .8rem;
   line-height: 1.5;
 }
@@ -349,7 +349,7 @@
     align-items: end;
     padding: .25rem 0 .55rem;
     border-bottom: 1px solid var(--res-line);
-    color: #7b8599;
+    color: #636d80;
     font-size: .62rem;
     font-weight: 760;
     letter-spacing: .035em;

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-01T08:40:14.770Z",
+  "generatedAt": "2026-10-01T19:27:35.378Z",
   "manifestVersion": 2,
   "sourceOfTruthVersion": "0.19",
   "canonicalBaseUrl": "https://polarizadoshightech.com",
@@ -13,8 +13,6 @@
     "redirectsVerified",
     "dnsEmailVerified",
     "analyticsPrivacyApproved",
-    "performanceQaPassed",
-    "accessibilityQaPassed",
     "mobileQaPassed",
     "rollbackTested",
     "monitoringEnabled",
@@ -36,8 +34,6 @@
   "publicSiteTechnicalBlockers": [
     "redirectsVerified",
     "dnsEmailVerified",
-    "performanceQaPassed",
-    "accessibilityQaPassed",
     "mobileQaPassed",
     "rollbackTested",
     "monitoringEnabled",
