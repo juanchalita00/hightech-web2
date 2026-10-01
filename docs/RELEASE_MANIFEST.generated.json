@@ -1,5 +1,6 @@
 {
-  "generatedAt": "2026-10-01T02:37:29.756Z",
+  "generatedAt": "2026-10-01T08:40:14.770Z",
+  "manifestVersion": 2,
   "sourceOfTruthVersion": "0.19",
   "canonicalBaseUrl": "https://polarizadoshightech.com",
   "implementationApproved": true,
@@ -18,6 +19,74 @@
     "rollbackTested",
     "monitoringEnabled",
     "smokeTestPassed"
+  ],
+  "publicSiteTechnicalReady": false,
+  "publicSiteTechnicalNote": "Indicador técnico/informativo de la web pública activa. No implica cumplimiento legal aprobado.",
+  "publicSiteTechnicalRequirements": [
+    "napApproved",
+    "redirectsVerified",
+    "dnsEmailVerified",
+    "performanceQaPassed",
+    "accessibilityQaPassed",
+    "mobileQaPassed",
+    "rollbackTested",
+    "monitoringEnabled",
+    "smokeTestPassed"
+  ],
+  "publicSiteTechnicalBlockers": [
+    "redirectsVerified",
+    "dnsEmailVerified",
+    "performanceQaPassed",
+    "accessibilityQaPassed",
+    "mobileQaPassed",
+    "rollbackTested",
+    "monitoringEnabled",
+    "smokeTestPassed"
+  ],
+  "commercialLegalReady": false,
+  "commercialLegalRequirements": [
+    "termsApproved",
+    "privacyApproved",
+    "warrantiesApproved",
+    "rpcaNomResolved"
+  ],
+  "commercialLegalBlockers": [
+    "termsApproved",
+    "privacyApproved",
+    "warrantiesApproved",
+    "rpcaNomResolved"
+  ],
+  "analytics": {
+    "integrationActive": false,
+    "privacyApproved": false,
+    "requiredForPublicSite": false
+  },
+  "hardGatedRoutes": [
+    {
+      "path": "/garantias/",
+      "flag": "production.warrantiesApproved",
+      "enabledInProduction": false
+    },
+    {
+      "path": "/legal/terminos-y-condiciones/",
+      "flag": "production.termsApproved",
+      "enabledInProduction": false
+    },
+    {
+      "path": "/legal/aviso-de-privacidad/",
+      "flag": "production.privacyApproved",
+      "enabledInProduction": false
+    },
+    {
+      "path": "/proyectos/",
+      "flag": "routes.projectsPublic",
+      "enabledInProduction": false
+    },
+    {
+      "path": "/proyectos/[slug]/",
+      "flag": "routes.projectsPublic",
+      "enabledInProduction": false
+    }
   ],
   "indexableRouteCount": 20,
   "approvedRedirectCount": 5,

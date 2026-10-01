@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 import redirects from "./content/redirects.json";
+import { isProductionDeployment } from "./src/lib/deployment-env";
 
-const isProduction = process.env.NEXT_PUBLIC_DEPLOYMENT_ENV === "production";
+// Misma detección que robots y los hard gates (VERCEL_ENV > VERCEL_TARGET_ENV > NEXT_PUBLIC_DEPLOYMENT_ENV).
+const isProduction = isProductionDeployment();
 
 const securityHeaders = [
   { key: "X-Content-Type-Options", value: "nosniff" },
