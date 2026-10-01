@@ -79,8 +79,30 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 58% center;
+  object-position: 52% center;
 }
+
+/* Evidencia: instalación real junto al proceso, sin galería. */
+.evidence {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  align-items: center;
+  margin: clamp(2.5rem, 5vw, 4rem) 0 0;
+}
+
+.evidenceMedia {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: .35rem 1.8rem .35rem 1.8rem;
+  background: #d8dde2;
+}
+
+.evidencePhoto { object-fit: cover; object-position: center; }
+.evidenceCopy h3 { margin: 0; font-size: clamp(1.45rem, 2.4vw, 2rem); line-height: 1.12; letter-spacing: -.03em; }
+.evidenceCopy p:not(:global(.eyebrow)) { margin: .9rem 0 0; color: var(--ink-soft); }
+.evidenceCaption { display: block; margin-top: 1.2rem; color: #7a8394; font-size: .8rem; }
 
 .heroCaption {
   position: absolute;
@@ -468,6 +490,8 @@
   }
 
   .heroScene { border-radius: .25rem 1.55rem .25rem 1.55rem; }
+  .evidence { grid-template-columns: 1fr; }
+  .evidenceMedia { border-radius: .25rem 1.3rem .25rem 1.3rem; }
   .heroCaption { padding: 3rem 1rem 1rem; }
   .heroCaption strong { font-size: 1.05rem; }
 

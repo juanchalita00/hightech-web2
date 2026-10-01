@@ -50,6 +50,10 @@ export default function AutomotivePage() {
         context={wa}
         secondary={<Link href="#tonos" className="button button-secondary">Comparar tonos <Icon name="arrow" size={18}/></Link>}
         proofItems={["5 tonos disponibles", "99% protección UV", "Instalación en taller"]}
+        imageSrc="/images/projects/automotive-audi-q8.webp"
+        imageAlt="SUV durante un trabajo de polarizado automotriz realizado por HIGHTECH."
+        imageCaption="Instalación automotriz HIGHTECH"
+        imagePosition="25% 40%"
       />
 
       <section className="automotive-spec-strip" aria-label="Qué decidir antes de elegir tono">

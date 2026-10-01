@@ -45,6 +45,10 @@ export default function CommercialPage() {
         context={wa}
         secondary={<Link href="/peliculas/" className="button button-secondary">Explorar soluciones <Icon name="arrow" size={18}/></Link>}
         proofItems={["Evaluación por proyecto", "Solución según cada área", "Operación y acceso considerados"]}
+        imageSrc="/images/projects/commercial-office.webp"
+        imageAlt="Oficina con divisiones y ventanales de cristal en un proyecto comercial documentado por HIGHTECH."
+        imageCaption="Proyecto comercial documentado por HIGHTECH"
+        imagePosition="58% center"
       />
 
       <section className="commercial-metric-strip">

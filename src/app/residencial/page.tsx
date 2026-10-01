@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ApplicationFinalCTA } from "@/components/ApplicationFinalCTA";
 import { WhatsAppCTA } from "@/components/WhatsAppCTA";
@@ -53,17 +54,17 @@ export default function ResidentialPage() {
             <p className={styles.heroHelp}>Podemos empezar con fotos y medidas aproximadas.</p>
           </div>
           <figure className={styles.heroScene}>
-            <img
-              src="https://images.unsplash.com/photo-1758957530781-4ff54e09bee2?auto=format&fit=crop&w=1800&q=82"
-              alt="Sala y comedor con ventanales amplios y luz natural."
-              width={1200}
-              height={1200}
-              fetchPriority="high"
+            <Image
+              src="/images/projects/residential-landmark.webp"
+              alt="Interior residencial con ventanal de piso a techo y vista urbana, proyecto documentado por HIGHTECH."
+              fill
+              preload
+              sizes="(max-width: 900px) min(calc(100vw - 2rem), 42rem), 46vw"
               className={styles.heroPhoto}
             />
             <figcaption className={styles.heroCaption}>
               <strong>Disfruta tu espacio. Conserva la luz.</strong>
-              <span>Imagen de referencia, no corresponde a una instalación HIGHTECH.</span>
+              <span>Proyecto residencial documentado por HIGHTECH.</span>
             </figcaption>
           </figure>
         </div>
@@ -130,6 +131,23 @@ export default function ResidentialPage() {
             <p>No necesitas saber qué película elegir. Primero entendemos qué quieres resolver, revisamos tus cristales y después te proponemos una solución.</p>
           </div>
           <ProcessRail steps={steps} />
+          <figure className={styles.evidence}>
+            <div className={styles.evidenceMedia}>
+              <Image
+                src="/images/projects/residential-process.webp"
+                alt="Instalador aplicando película en un ventanal amplio de un proyecto arquitectónico."
+                fill
+                sizes="(max-width: 900px) calc(100vw - 2rem), 38rem"
+                className={styles.evidencePhoto}
+              />
+            </div>
+            <figcaption className={styles.evidenceCopy}>
+              <p className="eyebrow">Instalación real</p>
+              <h3>La aplicación también depende del espacio.</h3>
+              <p>Acceso, dimensiones, exposición y configuración del cristal forman parte del trabajo antes de cerrar una solución.</p>
+              <span className={styles.evidenceCaption}>Instalación HIGHTECH · Proyecto arquitectónico</span>
+            </figcaption>
+          </figure>
         </div>
       </section>
 

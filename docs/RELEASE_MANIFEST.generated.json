@@ -1,11 +1,10 @@
 {
-  "generatedAt": "2026-09-27T20:19:19.008Z",
+  "generatedAt": "2026-10-01T02:37:29.756Z",
   "sourceOfTruthVersion": "0.19",
   "canonicalBaseUrl": "https://polarizadoshightech.com",
   "implementationApproved": true,
   "productionReady": false,
   "productionBlockers": [
-    "napApproved",
     "termsApproved",
     "privacyApproved",
     "warrantiesApproved",

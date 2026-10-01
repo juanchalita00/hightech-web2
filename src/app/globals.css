@@ -280,6 +280,9 @@ thead th { background: var(--surface-alt); }
 .application-visual-badge { position:absolute; left:1.1rem; top:1.1rem; z-index:10; display:inline-flex; align-items:center; gap:.5rem; min-height:40px; padding:.55rem .8rem; border-radius:999px; color:white; background:rgba(9,15,37,.82); border:1px solid rgba(255,255,255,.16); backdrop-filter:blur(15px); font-size:.75rem; font-weight:760; }
 .application-visual-caption { position:absolute; left:1rem; right:1rem; bottom:1rem; z-index:9; padding:1.1rem 1.15rem; border-radius:1.2rem; color:white; background:rgba(9,15,37,.9); border:1px solid rgba(255,255,255,.12); backdrop-filter:blur(15px); }
 .application-visual-caption strong { display:block; font-size:1rem; }
+.application-visual-photo { margin:0; background:#dfe3ea; border:0; }
+.application-visual-image { object-fit:cover; }
+.application-visual-photo-caption { position:absolute; left:1rem; bottom:1rem; z-index:2; max-width:calc(100% - 2rem); padding:.5rem .8rem; border-radius:999px; color:white; background:rgba(9,15,37,.72); font-size:.76rem; font-weight:650; line-height:1.3; backdrop-filter:blur(8px); }
 .application-visual-caption span { display:block; margin-top:.3rem; color:#aeb8cf; font-size:.76rem; line-height:1.45; }
 .application-visual-residential { background:linear-gradient(180deg,#dff3ff 0 58%,#e8e0d5 58% 100%); }
 .residential-window { position:absolute; inset:0; overflow:hidden; }
@@ -1145,6 +1148,8 @@ thead th { background: var(--surface-alt); }
 .contact-method-primary > span { color:white; background:rgba(255,255,255,.12); }
 .contact-method-primary p:not(.eyebrow) { color:#c0cae1; }
 .contact-method-location { grid-column:2/4; min-height:18rem; }
+.contact-address { display:flex; flex-direction:column; gap:.15rem; margin:0 0 .9rem; font-style:normal; color:var(--ink); font-size:1.02rem; line-height:1.5; }
+.contact-address-note { margin:0 0 1.2rem; font-size:.9rem; }
 .contact-method-location .gate-notice { margin-top:auto; width:100%; }
 .quote-prep-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:.8rem; margin-top:2.4rem; }
 .quote-prep-grid article { padding:1.3rem; border:1px solid var(--line); border-radius:1.3rem; background:white; }

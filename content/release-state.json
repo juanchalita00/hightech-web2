@@ -2,7 +2,7 @@
   "sourceOfTruthVersion": "0.19",
   "implementationApproved": true,
   "production": {
-    "napApproved": false,
+    "napApproved": true,
     "termsApproved": false,
     "privacyApproved": false,
     "warrantiesApproved": false,

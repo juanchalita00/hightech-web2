@@ -1,18 +1,19 @@
 import Link from "next/link";
 import { BrandLogo } from "@/components/BrandLogo";
-import { release, truth } from "@/lib/truth";
+import { getPublicAddress, release, truth } from "@/lib/truth";
 
 export function SiteFooter() {
   // Control de navegación: las páginas sin aprobación siguen existiendo (noindex), pero no se enlazan desde el footer público.
   const { warrantiesApproved, termsApproved, privacyApproved } = release.production;
   const hasLegalLinks = termsApproved || privacyApproved;
+  const address = getPublicAddress();
   return (
     <footer className="site-footer">
       <div className="container footer-main">
         <div className="footer-brand">
           <BrandLogo className="brand-logo-footer" variant="white" />
           <p>Soluciones profesionales para cristales residenciales, comerciales y automotrices.</p>
-          <span>{truth.contact.locationLabel}</span>
+          <span>{address ? `${address.streetAddress} · ${address.neighborhood} · ${address.addressLocality}` : truth.contact.locationLabel}</span>
         </div>
         <div className="footer-links">
           <div>
