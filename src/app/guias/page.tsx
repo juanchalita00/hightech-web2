@@ -4,7 +4,7 @@ import { GuideHero } from "@/components/GuideHero";
 
 export const metadata: Metadata = { alternates: { canonical: "/guias/" },
   title: { absolute: "Guías de películas para cristales | HIGHTECH Polarizados" },
-  description: "Guías HIGHTECH para entender VLT, TSER, rechazo infrarrojo, UV, privacidad, estrés térmico y polarizado automotriz en Jalisco.",
+  description: "Guías HIGHTECH para entender VLT, TSER, rechazo infrarrojo, protección UV, privacidad nocturna y estrés térmico antes de elegir una película.",
 };
 
 const guides = [
@@ -14,7 +14,7 @@ const guides = [
   { href:"/guias/que-es-vlt/", category:"Métricas", title:"Qué es VLT y qué significan 75, 50, 35, 15 y 5", description:"La transmisión de luz visible explica claridad y oscuridad; el nombre comercial no siempre coincide exactamente con la ficha." },
   { href:"/guias/privacidad-ventanas-noche/", category:"Privacidad", title:"Privacidad de noche: por qué puede invertirse", description:"La diferencia de iluminación entre interior y exterior cambia lo que se ve a través del cristal." },
   { href:"/guias/estres-termico-cristal/", category:"Compatibilidad", title:"Estrés térmico: por qué el tipo de vidrio importa", description:"Una película se selecciona como parte del sistema vidrio + película, no únicamente por tono o porcentaje." },
-  { href:"/guias/polarizado-automotriz-jalisco/", category:"Automotriz · Jalisco", title:"Qué dice la norma y qué referencia nos han dado en Tránsito", description:"Separamos el texto normativo de la referencia práctica 70–75 / 35 / 20 reportada por HIGHTECH.", badge:"Revisión legal" },
+  { href:"/guias/polarizado-automotriz-jalisco/", category:"Automotriz · Jalisco", title:"Qué dice la norma de Jalisco sobre el polarizado automotriz", description:"Qué establece la normativa publicada sobre parabrisas, visibilidad hacia el interior y porcentajes VLT.", badge:"Revisión legal" },
 ] as const;
 
 export default function GuidesPage(){return <>

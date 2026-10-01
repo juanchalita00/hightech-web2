@@ -19,6 +19,12 @@
       "status": "APPROVED_WITH_CONTEXT"
     },
     {
+      "id": "security_uv_99",
+      "text": "99% de protección frente a radiación UV.",
+      "products": ["SECURITY_ARCH"],
+      "status": "APPROVED_WITH_CONTEXT"
+    },
+    {
       "id": "privacy_lighting",
       "text": "La privacidad depende del contraste de iluminación y puede invertirse de noche.",
       "products": ["PRIVACY", "REFLECTIVE"],

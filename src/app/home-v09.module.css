@@ -329,6 +329,55 @@
   color: var(--premium-blue);
 }
 
+/* Evidencia: proyecto documentado, separado del hero interactivo. */
+.evidenceSection {
+  padding: clamp(4.5rem, 8vw, 7.5rem) 0 0;
+}
+
+.evidenceHead {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
+  gap: clamp(1.5rem, 6vw, 6rem);
+  align-items: end;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.evidenceTitle {
+  max-width: 17ch;
+  margin: 0;
+  font-size: clamp(2.1rem, 4.2vw, 3.6rem);
+  line-height: 1.02;
+  letter-spacing: -.05em;
+  font-weight: 690;
+}
+
+.evidenceText {
+  max-width: 30rem;
+  margin: 0;
+  color: var(--premium-muted);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.evidenceFigure { margin: 0; }
+
+.evidenceMedia {
+  position: relative;
+  aspect-ratio: 1959 / 673;
+  overflow: hidden;
+  border-radius: .4rem 2.2rem .4rem 2.2rem;
+  background: #d9dde6;
+}
+
+.evidencePhoto { object-fit: cover; object-position: 70% center; }
+
+.evidenceCaption {
+  margin-top: .9rem;
+  color: var(--premium-muted);
+  font-size: .8rem;
+  letter-spacing: .01em;
+}
+
 .editorialSection {
   padding: clamp(5.5rem, 9vw, 9rem) 0;
 }
@@ -387,7 +436,7 @@
 }
 
 .problemIndex {
-  color: #a1a8b3;
+  color: #646d7b;
   font-size: .69rem;
   font-weight: 780;
   letter-spacing: .12em;
@@ -413,7 +462,7 @@
 .problemText p {
   max-width: 33rem;
   margin: .35rem 0 0;
-  color: #727a89;
+  color: #656c7a;
   font-size: .88rem;
 }
 
@@ -629,11 +678,12 @@
 .nanoFact span {
   display: block;
   margin-top: .15rem;
-  color: #757b84;
+  color: #686d75;
   font-size: .72rem;
 }
 
 .nanoLink {
+  min-height: 24px;
   display: inline-flex;
   align-items: center;
   gap: .4rem;
@@ -654,7 +704,7 @@
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   padding: 0 0 .75rem;
-  color: #7a7e85;
+  color: #696c72;
   font-size: .7rem;
   font-weight: 710;
 }
@@ -690,7 +740,7 @@
 .toneName span {
   display: block;
   margin-top: .12rem;
-  color: #787e87;
+  color: #676c74;
   font-size: .68rem;
 }
 
@@ -744,13 +794,13 @@
 
 .toneMeta span {
   display: block;
-  color: #858b94;
+  color: #676c75;
   font-size: .66rem;
 }
 
 .toneNote {
   margin: .85rem 0 0;
-  color: #7b8088;
+  color: #696d74;
   font-size: .7rem;
 }
 
@@ -797,7 +847,7 @@
 }
 
 .stepNumber {
-  color: #9ca3af;
+  color: #646d7c;
   font-size: .72rem;
   font-weight: 800;
   letter-spacing: .1em;
@@ -812,7 +862,7 @@
 .step p {
   max-width: 34rem;
   margin: 0;
-  color: #727a89;
+  color: #656c7a;
   font-size: .9rem;
   line-height: 1.6;
 }
@@ -888,6 +938,7 @@
 }
 
 .proofCta {
+  min-height: 24px;
   display: inline-flex;
   align-items: center;
   gap: .45rem;
@@ -966,6 +1017,15 @@
   .finalActions {
     justify-content: flex-start;
   }
+}
+
+@media (max-width: 900px) {
+  .evidenceHead { grid-template-columns: 1fr; align-items: start; }
+  .evidenceMedia { aspect-ratio: 2 / 1; }
+}
+
+@media (max-width: 620px) {
+  .evidenceMedia { aspect-ratio: 4 / 3; border-radius: .3rem 1.4rem .3rem 1.4rem; }
 }
 
 @media (max-width: 720px) {
@@ -1104,18 +1164,25 @@
 
 
 /* v0.9.1 Signature — photography leads, technology stays quiet.
-   Preview photography is temporary editorial art direction and must be replaced
-   by an approved HIGHTECH-owned/licensed asset before Production. */
+   Fondo: fotografía real HIGHTECH servida localmente con next/image
+   (/images/projects/commercial-facade.webp, tamaño responsive); sin dependencias externas. */
 .architecturePhoto {
   position: absolute;
   inset: 0;
-  background-image:
-    linear-gradient(90deg, rgba(6, 14, 33, .08), rgba(6, 14, 33, 0) 52%),
-    url("https://images.unsplash.com/photo-1758957530781-4ff54e09bee2?auto=format&fit=crop&w=1800&q=82");
-  background-size: cover;
-  background-position: center;
   transform: scale(1.015);
   filter: saturate(.86) contrast(1.035);
+}
+
+.architectureImage {
+  object-fit: cover;
+  object-position: 42% 42%;
+}
+
+.architecturePhoto::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(6, 14, 33, .08), rgba(6, 14, 33, 0) 52%);
 }
 
 .photoShade {
@@ -1179,8 +1246,8 @@
 }
 
 @media (max-width: 720px) {
-  .architecturePhoto {
-    background-position: 59% center;
+  .architectureImage {
+    object-position: 40% center;
   }
 
   .filmReveal {
@@ -1232,6 +1299,12 @@
   background: rgba(255,255,255,.9);
   box-shadow: 0 0 18px rgba(255,255,255,.34);
   pointer-events: none;
+}
+
+/* Foco de teclado del slider (input transparente): se refleja en el tirador visible. */
+.signatureGlass:has(.revealRange:focus-visible) .revealEdge span {
+  outline: 3px solid #fff80a;
+  outline-offset: 3px;
 }
 
 .revealEdge span {

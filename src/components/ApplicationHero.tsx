@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Icon } from "@/components/Icon";
 import { WhatsAppCTA } from "@/components/WhatsAppCTA";
 import type { WhatsAppContext } from "@/lib/whatsapp";
@@ -13,6 +14,12 @@ type Props = {
   context: WhatsAppContext;
   secondary?: React.ReactNode;
   proofItems: readonly string[];
+  /** Fotografía real opcional. Sin imagen se conserva el visual conceptual del variant. */
+  imageSrc?: string;
+  imageAlt?: string;
+  imageCaption?: string;
+  /** Punto focal del recorte (CSS object-position), p. ej. "45% 40%". */
+  imagePosition?: string;
 };
 
 const variantIcon = {
@@ -21,7 +28,7 @@ const variantIcon = {
   automotive: "car",
 } as const;
 
-export function ApplicationHero({ variant, eyebrow, title, description, ctaLabel, context, secondary, proofItems }: Props) {
+export function ApplicationHero({ variant, eyebrow, title, description, ctaLabel, context, secondary, proofItems, imageSrc, imageAlt, imageCaption, imagePosition }: Props) {
   return (
     <section className={`application-hero application-hero-${variant}`}>
       <div className="container application-hero-grid">
@@ -38,6 +45,20 @@ export function ApplicationHero({ variant, eyebrow, title, description, ctaLabel
           </div>
         </div>
 
+        {imageSrc ? (
+          <figure className={`application-visual application-visual-photo application-visual-${variant}`}>
+            <Image
+              src={imageSrc}
+              alt={imageAlt ?? ""}
+              fill
+              preload
+              sizes="(max-width: 900px) calc(100vw - 2rem), 46vw"
+              className="application-visual-image"
+              style={imagePosition ? { objectPosition: imagePosition } : undefined}
+            />
+            {imageCaption && <figcaption className="application-visual-photo-caption">{imageCaption}</figcaption>}
+          </figure>
+        ) : (
         <div className={`application-visual application-visual-${variant}`} aria-hidden="true">
           <div className="application-visual-badge">
             <Icon name={variantIcon[variant]} size={18}/>
@@ -69,6 +90,7 @@ export function ApplicationHero({ variant, eyebrow, title, description, ctaLabel
             <span>{variant === "residential" ? "La recomendación cambia por vidrio, orientación y privacidad." : variant === "commercial" ? "El alcance cambia por fachada, acceso y uso del espacio." : "Elige por VLT, uso nocturno, privacidad y desempeño."}</span>
           </div>
         </div>
+        )}
       </div>
     </section>
   );

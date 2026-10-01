@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Icon } from "@/components/Icon";
 import { SignatureGlass } from "@/components/SignatureGlass";
 import { NanoToneTable } from "@/components/NanoToneTable";
 import { WhatsAppCTA } from "@/components/WhatsAppCTA";
+import { truth } from "@/lib/truth";
 import styles from "./home-v09.module.css";
 
 export const metadata: Metadata = {
-  title: "HIGHTECH Polarizados",
-  description: "Soluciones profesionales para cristales residenciales, comerciales y automotrices.",
+  title: { absolute: `Películas para cristales en ${truth.contact.locationLabel.split(",")[0]} | HIGHTECH Polarizados` },
+  description: `Control solar, privacidad y seguridad para cristales de casas, negocios y vehículos en ${truth.contact.locationLabel}. Te ayudamos a elegir según lo que quieres resolver.`,
   alternates: { canonical: "/" },
 };
 
@@ -105,6 +107,32 @@ export default function HomePage() {
               <span><Icon name="shield" size={18} /> Límites explicados</span>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className={styles.evidenceSection} aria-labelledby="proyecto-documentado">
+        <div className={styles.shell}>
+          <div className={styles.evidenceHead}>
+            <div>
+              <p className={styles.eyebrow}>Proyecto documentado</p>
+              <h2 className={styles.evidenceTitle} id="proyecto-documentado">El trabajo real también forma parte de la especificación.</h2>
+            </div>
+            <p className={styles.evidenceText}>
+              Esta instalación en el Aeropuerto de Guadalajara muestra una aplicación HIGHTECH en un entorno operativo de mayor escala. Cada proyecto cambia por cristal, acceso, exposición y condiciones de ejecución.
+            </p>
+          </div>
+          <figure className={styles.evidenceFigure}>
+            <div className={styles.evidenceMedia}>
+              <Image
+                src="/images/projects/airport-authority.webp"
+                alt="Pasillo acristalado junto a la plataforma del Aeropuerto de Guadalajara al atardecer."
+                fill
+                sizes="(max-width: 1248px) calc(100vw - 2rem), 76rem"
+                className={styles.evidencePhoto}
+              />
+            </div>
+            <figcaption className={styles.evidenceCaption}>Aeropuerto de Guadalajara · Proyecto documentado por HIGHTECH</figcaption>
+          </figure>
         </div>
       </section>
 

@@ -36,7 +36,26 @@ export function Icon({ name, size = 22, className = "" }: Props) {
     case "sun":
       return <svg {...common}><circle cx="12" cy="12" r="3.5"/><path d="M12 2v2.2M12 19.8V22M4.93 4.93l1.56 1.56M17.51 17.51l1.56 1.56M2 12h2.2M19.8 12H22M4.93 19.07l1.56-1.56M17.51 6.49l1.56-1.56"/></svg>;
     case "uv":
-      return <svg {...common}><path d="M4 5v8a4 4 0 0 0 8 0V5"/><path d="m14 5 3 14 3-14M15.1 14h3.8"/></svg>;
+      return (
+        <span
+          aria-hidden="true"
+          className={`icon-uv ${className}`.trim()}
+          style={{
+            width: size,
+            height: size,
+            display: "inline-flex",
+            alignItems: "center",
+            justifyContent: "center",
+            flex: "0 0 auto",
+            fontSize: Math.max(12, Math.round(size * 0.74)),
+            fontWeight: 760,
+            lineHeight: 1,
+            letterSpacing: "-0.04em",
+          }}
+        >
+          UV
+        </span>
+      );
     case "glare":
       return <svg {...common}><path d="M3 12h18M12 3v18"/><path d="m5.6 5.6 12.8 12.8M18.4 5.6 5.6 18.4"/><circle cx="12" cy="12" r="3.2"/></svg>;
     case "privacy":

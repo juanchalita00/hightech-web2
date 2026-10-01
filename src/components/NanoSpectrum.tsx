@@ -22,6 +22,16 @@ export function NanoSpectrum() {
         <div className="nano-spectrum-line" aria-hidden="true"><span></span></div>
       </div>
 
+      <div className="nano-column-head" aria-hidden="true">
+        <span></span>
+        <div className="nano-column-head-main">
+          <span>Tono</span>
+          <span>Luz visible (VLT)</span>
+          <span>Rechazo solar total (TSER)</span>
+        </div>
+        <span></span>
+      </div>
+
       <div className="nano-tone-grid">
         {truth.nano.map((film) => {
           return (

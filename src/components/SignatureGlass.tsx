@@ -2,6 +2,7 @@
 
 import type { CSSProperties } from "react";
 import { useMemo, useState } from "react";
+import Image from "next/image";
 import { truth } from "@/lib/truth";
 import styles from "@/app/home-v09.module.css";
 
@@ -29,7 +30,15 @@ export function SignatureGlass() {
 
   return (
     <div className={styles.signatureGlass} aria-label="Visualizador conceptual de la gama nanocerámica HIGHTECH">
-      <div className={styles.architecturePhoto} aria-hidden="true" />
+      <div className={styles.architecturePhoto} aria-hidden="true">
+        <Image
+          src="/images/projects/commercial-facade.webp"
+          alt=""
+          fill
+          sizes="(max-width: 980px) calc(100vw - 2rem), 42rem"
+          className={styles.architectureImage}
+        />
+      </div>
       <div className={styles.photoShade} aria-hidden="true" />
 
       <div

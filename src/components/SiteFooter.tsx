@@ -1,19 +1,24 @@
 import Link from "next/link";
 import { BrandLogo } from "@/components/BrandLogo";
-import { truth } from "@/lib/truth";
+import { getPublicAddress, release, truth } from "@/lib/truth";
 
 export function SiteFooter() {
+  // Control de navegación: las páginas sin aprobación siguen existiendo (noindex), pero no se enlazan desde el footer público.
+  const { warrantiesApproved, termsApproved, privacyApproved } = release.production;
+  const hasLegalLinks = termsApproved || privacyApproved;
+  const address = getPublicAddress();
   return (
     <footer className="site-footer">
       <div className="container footer-main">
         <div className="footer-brand">
-          <BrandLogo className="brand-logo-footer" />
+          <BrandLogo className="brand-logo-footer" variant="white" />
           <p>Soluciones profesionales para cristales residenciales, comerciales y automotrices.</p>
-          <span>{truth.contact.locationLabel}</span>
+          <span>{address ? `${address.streetAddress} · ${address.neighborhood} · ${address.addressLocality}` : truth.contact.locationLabel}</span>
         </div>
         <div className="footer-links">
           <div>
             <strong>Soluciones</strong>
+            <Link href="/servicios/">Servicios</Link>
             <Link href="/residencial/">Residencial</Link>
             <Link href="/comercial/">Comercial</Link>
             <Link href="/automotriz/">Automotriz</Link>
@@ -22,14 +27,15 @@ export function SiteFooter() {
           <div>
             <strong>HIGHTECH</strong>
             <Link href="/nosotros/">Nosotros</Link>
+            <Link href="/guias/">Guías</Link>
             <Link href="/preguntas-frecuentes/">Preguntas frecuentes</Link>
-            <Link href="/garantias/">Garantías</Link>
+            {warrantiesApproved && <Link href="/garantias/">Garantías</Link>}
             <Link href="/contacto/">Contacto</Link>
           </div>
           <div>
-            <strong>Legal</strong>
-            <Link href="/legal/terminos-y-condiciones/">Términos y Condiciones</Link>
-            <Link href="/legal/aviso-de-privacidad/">Aviso de Privacidad</Link>
+            <strong>{hasLegalLinks ? "Legal" : "Contacto directo"}</strong>
+            {termsApproved && <Link href="/legal/terminos-y-condiciones/">Términos y Condiciones</Link>}
+            {privacyApproved && <Link href="/legal/aviso-de-privacidad/">Aviso de Privacidad</Link>}
             <a href={`tel:${truth.contact.phoneE164}`}>{truth.contact.phoneDisplay}</a>
             <a href={`mailto:${truth.contact.emailSales}`}>Correo de ventas</a>
           </div>

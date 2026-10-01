@@ -10,28 +10,29 @@ import { NanoTable } from "@/components/NanoTable";
 import { ProcessRail } from "@/components/ProcessRail";
 
 export const metadata = { alternates: { canonical: "/automotriz/" },
-  title: { absolute: "Polarizado automotriz nanocerámico | HIGHTECH" },
+  title: { absolute: "Polarizado automotriz nanocerámico | HIGHTECH Polarizados" },
   description: "Gama nanocerámica HIGHTECH para vehículos. Compara VLT, UV, rechazo infrarrojo a 950 nm y TSER, con instalación en taller.",
 };
 
 const decisions = [
-  { icon: "sun" as const, title: "Control solar", text: "La ficha de cada tono incluye TSER y rechazo infrarrojo medido a 950 nm. Son métricas distintas y se explican por separado." },
-  { icon: "glass" as const, title: "Entrada de luz", text: "VLT indica cuánta luz visible transmite la película. IR75 deja pasar mucha más luz que IR15 o IR5." },
-  { icon: "privacy" as const, title: "Privacidad", text: "Los tonos más oscuros cambian la visibilidad y apariencia; la privacidad nunca debe tratarse como absoluta." },
-  { icon: "glare" as const, title: "Uso nocturno", text: "Reducir VLT también cambia la visibilidad de noche. El tono debe elegirse considerando cómo usas el vehículo." },
+  { icon: "glass" as const, title: "Claridad", text: "Un VLT más alto conserva más luz visible. Es importante si buscas una apariencia discreta o manejas mucho de noche." },
+  { icon: "privacy" as const, title: "Apariencia y privacidad", text: "Los tonos más oscuros cambian más la apariencia del vehículo y reducen la visibilidad hacia el interior, pero la privacidad no es absoluta." },
+  { icon: "sun" as const, title: "Control solar", text: "En la gama HIGHTECH, los tonos comparten 99% UV y 95% de rechazo IR medido a 950 nm, mientras el TSER cambia entre opciones." },
+  { icon: "glare" as const, title: "Uso nocturno", text: "Un VLT bajo deja pasar menos luz visible. Esa diferencia se vuelve especialmente importante cuando manejas de noche." },
 ] as const;
 
 const steps = [
-  { number: "01", title: "Identificamos el vehículo", text: "Marca, modelo, año cuando haga falta y qué cristales quieres trabajar." },
-  { number: "02", title: "Definimos el tono", text: "Claridad, privacidad, uso nocturno y referencia práctica de Jalisco entran en la conversación." },
-  { number: "03", title: "Revisamos película previa", text: "Si existe polarizado instalado, su condición puede cambiar el alcance de retiro y preparación." },
-  { number: "04", title: "Instalamos en taller", text: "La línea automotriz HIGHTECH se instala en taller para mantener control sobre el proceso." },
+  { number: "01", title: "Vehículo y cristales", text: "Marca, modelo y qué cristales quieres trabajar." },
+  { number: "02", title: "Tono y uso", text: "Definimos claridad, apariencia, privacidad y cuánto manejas de noche." },
+  { number: "03", title: "Película previa", text: "Si ya existe polarizado, revisamos si necesita retiro antes de instalar." },
+  { number: "04", title: "Instalación", text: "La línea automotriz HIGHTECH se instala en taller para mantener control sobre el proceso." },
 ] as const;
 
 const faqs = [
   { question: "¿Todos los tonos nanocerámicos tienen la misma protección UV?", answer: <p>Las fichas activas de IR75, IR50, IR35, IR15 e IR5 indican 99% de rechazo UV. El VLT y el TSER sí cambian entre tonos.</p> },
   { question: "¿El 95% de rechazo infrarrojo equivale a reducir 95% del calor?", answer: <p>No. La ficha especifica 95% de rechazo infrarrojo medido a 950 nm. TSER es otra métrica y tampoco debe convertirse directamente en una promesa de temperatura dentro del vehículo.</p> },
-  { question: "¿IR75 es legal en parabrisas?", answer: <p>HIGHTECH no lo presenta como una garantía legal absoluta. En consultas directas con personal de Tránsito nos han indicado 70–75% como referencia práctica para parabrisas, mientras la normativa publicada mantiene una redacción específica sobre polarizado. Por eso explicamos ambas capas y no prometemos ausencia de sanción.</p> },
+  { question: "¿Puedo usar IR75 en el parabrisas sólo porque es una película clara?", answer: <p>No la presentamos como automáticamente autorizada por su VLT. IR75 reporta 75% de transmisión de luz visible, pero la normativa estatal revisada no establece un umbral de VLT que convierta una película clara en una excepción expresa para el parabrisas. Separamos la recomendación técnica del criterio normativo.</p> },
+  { question: "¿Qué tono conviene si manejo mucho de noche?", answer: <p>No existe un tono universal para todos. Un VLT más alto conserva más luz visible, por lo que la elección debe considerar cuánto manejas de noche y cuánta claridad necesitas conservar. <Link href="/guias/que-es-vlt/">Entender qué es VLT</Link>.</p> },
   { question: "¿Instalan a domicilio?", answer: <p>La instalación automotriz se realiza en taller. Es la modalidad operativa definida para esta línea.</p> },
   { question: "¿Y si ya tengo polarizado?", answer: <p>Primero se revisa su estado. El retiro forma parte del alcance cuando es necesario y no se presupone igual en todos los casos.</p> },
 ] as const;
@@ -43,39 +44,56 @@ export default function AutomotivePage() {
       <ApplicationHero
         variant="automotive"
         eyebrow="Automotriz"
-        title="Elige cuánto quieres ver. No sólo cuánto quieres oscurecer."
-        description="La gama nanocerámica HIGHTECH se compara por VLT, UV, rechazo infrarrojo a 950 nm y TSER. Después aterrizamos el tono a tu vehículo y forma de uso."
+        title="El tono correcto depende de cuánto quieres ver, no sólo de qué tan oscuro se vea."
+        description="Te ayudamos a elegir entre mayor claridad, una apariencia más oscura o más privacidad visual, considerando también cómo usas el vehículo de noche. Después comparamos las prestaciones técnicas de cada tono."
         ctaLabel="Cotizar mi vehículo"
         context={wa}
         secondary={<Link href="#tonos" className="button button-secondary">Comparar tonos <Icon name="arrow" size={18}/></Link>}
-        proofItems={["5 tonos activos", "Instalación en taller", "Datos técnicos por ficha"]}
+        proofItems={["5 tonos disponibles", "99% protección UV", "Instalación en taller"]}
+        imageSrc="/images/projects/automotive-audi-q8.webp"
+        imageAlt="SUV durante un trabajo de polarizado automotriz realizado por HIGHTECH."
+        imageCaption="Instalación automotriz HIGHTECH"
+        imagePosition="25% 40%"
       />
 
-      <section className="automotive-spec-strip" aria-label="Especificaciones de la gama nanocerámica">
+      <section className="automotive-spec-strip" aria-label="Qué decidir antes de elegir tono">
         <div className="container automotive-spec-strip-inner">
-          <div><strong>99%</strong><span>UV</span><small>según ficha</small></div>
-          <div><strong>95%</strong><span>IR a 950 nm</span><small>según ficha</small></div>
-          <div><strong>75→3%</strong><span>VLT</span><small>gama activa</small></div>
-          <div><strong>59→96%</strong><span>TSER</span><small>según tono</small></div>
+          <div><strong>01</strong><span>Claridad</span><small>Cuánta luz quieres conservar.</small></div>
+          <div><strong>02</strong><span>Apariencia</span><small>Qué tan marcado quieres que se vea el tono.</small></div>
+          <div><strong>03</strong><span>Privacidad</span><small>Cuánto quieres reducir la visibilidad hacia el interior.</small></div>
+          <div><strong>04</strong><span>Uso nocturno</span><small>Cuánta visibilidad exterior necesitas cuando hay menos luz.</small></div>
         </div>
       </section>
 
       <section className="section automotive-decision-section">
         <div className="container">
           <div className="section-heading section-heading-split">
-            <div><p className="eyebrow">Antes de escoger tono</p><h2>La película más oscura no es automáticamente la mejor para ti.</h2></div>
-            <p>El equilibrio cambia según cuánto manejas de noche, cuánta claridad quieres conservar, qué privacidad buscas y en qué cristal se aplicará.</p>
+            <div><p className="eyebrow">Antes de escoger tono</p><h2>Más oscuro no significa automáticamente mejor.</h2></div>
+            <p>La oscuridad cambia la entrada de luz, la apariencia y la visibilidad. Pero no debes usarla como sustituto de protección UV, rechazo infrarrojo o desempeño solar.</p>
           </div>
           <DecisionCards items={decisions} />
+        </div>
+      </section>
+
+      <section className="section automotive-diff-section">
+        <div className="container auto-diff-grid">
+          <div><p className="eyebrow">Una diferencia importante</p><h2>No eliges un tono para obtener más protección UV.</h2></div>
+          <div>
+            <p>En las cinco películas nanocerámicas activas, la ficha reporta 99% de protección UV y 95% de rechazo infrarrojo medido a 950 nm.</p>
+            <p>Lo que sí cambia entre tonos es principalmente la cantidad de luz visible que atraviesa, la apariencia del cristal y el TSER reportado.</p>
+            <p className="auto-diff-note">95% IR a 950 nm no significa 95% menos calor.</p>
+            <Link className="text-link" href="/guias/irr-vs-tser/">Entender IR vs TSER <Icon name="arrow" size={17}/></Link>
+          </div>
         </div>
       </section>
 
       <section className="section section-alt automotive-tones-section" id="tonos">
         <div className="container auto-tones-layout">
           <div className="auto-tones-copy">
-            <p className="eyebrow">Gama activa</p>
-            <h2>IR75, IR50, IR35, IR15 e IR5.</h2>
-            <p>Los nombres comerciales ayudan a identificar cada película; cuando el VLT real de ficha es diferente, mostramos el valor técnico. No convertimos el nombre en una medición que no es.</p>
+            <p className="eyebrow">Elige cuánta luz quieres conservar</p>
+            <h2>De muy claro a muy oscuro.</h2>
+            <p>La diferencia principal entre tonos se percibe en cuánta luz visible dejan pasar y cómo cambia la apariencia y la visibilidad.</p>
+            <p>El nombre comercial ayuda a identificar cada tono, pero cuando el VLT real de ficha es distinto mostramos también el dato técnico.</p>
             <div className="context-note"><strong>Ejemplo:</strong> IR50 tiene VLT de ficha 48% e IR5 tiene VLT de ficha 3%.</div>
             <Link href="/peliculas/nanoceramica/" className="text-link text-link-strong">Ver la tecnología completa <Icon name="arrow" size={17}/></Link>
           </div>
@@ -86,10 +104,11 @@ export default function AutomotivePage() {
       <section className="section automotive-table-section">
         <div className="container">
           <div className="section-heading section-heading-split">
-            <div><p className="eyebrow">Comparador técnico</p><h2>Los números sirven cuando sabemos qué miden.</h2></div>
-            <p>VLT describe luz visible. El rechazo infrarrojo mostrado por nuestras fichas está medido a 950 nm. TSER describe otra parte del desempeño de la configuración de prueba.</p>
+            <div><p className="eyebrow">Si quieres comparar a detalle</p><h2>Cada cifra responde una pregunta diferente.</h2></div>
+            <p>VLT habla de luz visible. La protección UV y el rechazo IR se leen por separado, y el TSER describe otra parte del comportamiento solar reportado por la ficha.</p>
           </div>
           <NanoTable />
+          <p className="auto-table-links"><Link className="text-link" href="/guias/que-es-vlt/">Qué es VLT <Icon name="arrow" size={16}/></Link><Link className="text-link" href="/guias/irr-vs-tser/">IR vs TSER <Icon name="arrow" size={16}/></Link></p>
         </div>
       </section>
 
@@ -98,8 +117,8 @@ export default function AutomotivePage() {
       <section className="section automotive-process-section">
         <div className="container">
           <div className="section-heading section-heading-split">
-            <div><p className="eyebrow">Proceso automotriz</p><h2>Primero vehículo y tono. Después instalación.</h2></div>
-            <p>La cotización se prepara según el vehículo y el alcance. No exponemos las categorías internas con las que opera el motor comercial.</p>
+            <div><p className="eyebrow">Cómo cotizamos</p><h2>Primero entendemos tu vehículo y qué cristales quieres trabajar.</h2></div>
+            <p>Con esos datos podemos definir el alcance, revisar si existe película previa y orientarte sobre los tonos disponibles.</p>
           </div>
           <ProcessRail steps={steps} />
         </div>
@@ -112,7 +131,7 @@ export default function AutomotivePage() {
         </div>
       </section>
 
-      <ApplicationFinalCTA eyebrow="Tu vehículo" title="Dinos marca, modelo y qué cristales quieres trabajar. Te damos la cotización correspondiente." ctaLabel="Cotizar mi vehículo" context={wa} secondaryHref="/guias/polarizado-automotriz-jalisco/" secondaryLabel="Ver referencia de Jalisco" />
+      <ApplicationFinalCTA eyebrow="Tu vehículo" title="Dinos qué vehículo tienes y qué cristales quieres trabajar. Te ayudamos a elegir el tono y preparar la cotización." ctaLabel="Cotizar mi vehículo" context={wa} secondaryHref="/guias/polarizado-automotriz-jalisco/" secondaryLabel="Ver normativa de Jalisco" />
     </>
   );
 }

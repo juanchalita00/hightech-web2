@@ -1,7 +1,7 @@
 {
   "meta": {
     "source": "HIGHTECH_Web2_System_of_Truth_v0.19",
-    "cutoff": "2026-09-27"
+    "cutoff": "2026-09-30"
   },
   "brand": {
     "name": "HIGHTECH Polarizados",
@@ -11,9 +11,18 @@
     "phoneDisplay": "33 2228 9017",
     "phoneE164": "+523322289017",
     "emailSales": "ventas@polarizadoshightech.com",
-    "exactAddress": null,
+    "exactAddress": {
+      "streetAddress": "Tomás Mann 5348",
+      "neighborhood": "Jardines Vallarta",
+      "postalCode": "45027",
+      "addressLocality": "Zapopan",
+      "addressRegion": "Jalisco",
+      "addressCountry": "MX",
+      "countryName": "México"
+    },
+    "mapsUrl": "https://maps.app.goo.gl/ZJzR3oAa6FBpijHy5?g_st=ac",
     "locationLabel": "Zapopan, Jalisco",
-    "napStatus": "NAP_RECONCILIATION_REQUIRED"
+    "napStatus": "APPROVED"
   },
   "nano": [
     {

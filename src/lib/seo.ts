@@ -1,4 +1,4 @@
-import { release, truth } from "@/lib/truth";
+import { getPublicAddress, truth } from "@/lib/truth";
 
 export function canonicalUrl(path = "/") {
   const normalized = path === "/" ? "/" : path.endsWith("/") ? path : `${path}/`;
@@ -30,7 +30,8 @@ export function websiteSchema() {
 }
 
 export function localBusinessSchema() {
-  if (!release.production.napApproved || !truth.contact.exactAddress) return null;
+  const address = getPublicAddress();
+  if (!address) return null;
   return {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -39,6 +40,15 @@ export function localBusinessSchema() {
     url: truth.site.canonicalBaseUrl,
     telephone: truth.contact.phoneE164,
     email: truth.contact.emailSales,
-    address: truth.contact.exactAddress,
+    parentOrganization: { "@id": `${truth.site.canonicalBaseUrl}/#organization` },
+    hasMap: truth.contact.mapsUrl,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: address.streetAddress,
+      addressLocality: address.addressLocality,
+      addressRegion: address.addressRegion,
+      postalCode: address.postalCode,
+      addressCountry: address.addressCountry,
+    },
   };
 }

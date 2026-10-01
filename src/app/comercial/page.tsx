@@ -7,29 +7,29 @@ import { Icon } from "@/components/Icon";
 import { ProcessRail } from "@/components/ProcessRail";
 
 export const metadata = { alternates: { canonical: "/comercial/" },
-  title: { absolute: "Películas para cristales comerciales | HIGHTECH" },
+  title: { absolute: "Películas para cristales comerciales | HIGHTECH Polarizados" },
   description: "Evaluación de proyectos comerciales e institucionales para control solar, privacidad, deslumbramiento y seguridad en cristales.",
 };
 
 const decisions = [
-  { icon: "building" as const, title: "Fachada y áreas", text: "Orientación, cantidad de cristal y uso de cada zona cambian la solución. Una fachada puede necesitar más de una respuesta." },
-  { icon: "sun" as const, title: "Desempeño buscado", text: "Control solar, claridad, deslumbramiento y privacidad deben priorizarse antes de elegir tecnología o tono." },
-  { icon: "glass" as const, title: "Sistema de vidrio", text: "Compatibilidad, ubicación de la película y condiciones existentes se revisan cuando el proyecto lo exige." },
-  { icon: "shield" as const, title: "Operación y acceso", text: "Horarios, altura, accesos, continuidad del negocio y seguridad de instalación forman parte del alcance." },
+  { icon: "building" as const, title: "Fachada y exposición", text: "Orientación, cantidad de cristal y horas de sol pueden cambiar lo que necesita cada área." },
+  { icon: "sun" as const, title: "Uso del espacio", text: "Una oficina, una sala de juntas y un escaparate no necesariamente necesitan la misma cantidad de luz o privacidad." },
+  { icon: "glass" as const, title: "Tipo de vidrio", text: "La configuración del cristal forma parte de la selección y de la revisión de compatibilidad." },
+  { icon: "shield" as const, title: "Operación y acceso", text: "Horarios, altura, acceso y continuidad de actividades pueden cambiar la forma de ejecutar el proyecto." },
 ] as const;
 
 const steps = [
-  { number: "01", title: "Definimos objetivo y alcance", text: "Áreas, problema, metraje aproximado, horarios y condiciones operativas." },
-  { number: "02", title: "Revisamos la solución técnica", text: "Película, tono, compatibilidad, instalación y cualquier condición que cambie la especificación." },
-  { number: "03", title: "Coordinamos el proyecto", text: "Accesos, logística, documentación, secuencia de áreas y tiempos de intervención." },
-  { number: "04", title: "Formalizamos la cotización", text: "El proyecto se cotiza por alcance real; no exponemos una tarifa pública genérica de m²." },
+  { number: "01", title: "Entendemos el objetivo", text: "Qué áreas quieres trabajar y qué problema necesitas resolver en cada una." },
+  { number: "02", title: "Revisamos condiciones", text: "Cristal, exposición, acceso y cualquier condición que pueda cambiar la solución." },
+  { number: "03", title: "Definimos alcance y logística", text: "Película, áreas, secuencia de trabajo y condiciones de intervención." },
+  { number: "04", title: "Preparamos la cotización", text: "La propuesta corresponde al alcance real del proyecto, no a una tarifa genérica por metro." },
 ] as const;
 
 const faqs = [
-  { question: "¿Trabajan sólo oficinas?", answer: <p>No. La línea comercial puede aplicarse a oficinas, fachadas, locales e instalaciones institucionales, siempre revisando el tipo de vidrio y el objetivo del proyecto.</p> },
-  { question: "¿Pueden cotizar sólo con planos o medidas?", answer: <p>Podemos empezar con información del proyecto, fotografías, medidas o planos disponibles. Dependiendo del alcance, puede requerirse levantamiento o revisión técnica adicional.</p> },
-  { question: "¿Publican precio por m²?", answer: <p>No como tarifa general. Metraje, película, acceso, retiro, horario, logística y condiciones del vidrio pueden cambiar el alcance. La cotización comercial se prepara por proyecto.</p> },
-  { question: "¿La película reflectiva da privacidad de noche?", answer: <p>No debe prometerse así. La privacidad reflectiva depende del contraste de iluminación y puede invertirse cuando el interior está más iluminado que el exterior.</p> },
+  { question: "¿Trabajan sólo oficinas?", answer: <p>No. La línea comercial puede aplicarse a oficinas, fachadas, locales e instalaciones institucionales, siempre según el vidrio y el objetivo del proyecto.</p> },
+  { question: "¿Pueden cotizar con planos o medidas?", answer: <p>Podemos empezar con la información que ya tengas disponible, como medidas, planos o fotografías del proyecto. Según el alcance, puede hacer falta una revisión adicional antes de cerrar la especificación.</p> },
+  { question: "¿Publican precio por m²?", answer: <p>No como tarifa universal. El material, metraje, acceso, retiro, horarios, logística y condiciones del vidrio pueden cambiar el alcance.</p> },
+  { question: "¿La película reflectiva da privacidad de noche?", answer: <p>No debe prometerse así. La privacidad reflectiva depende del contraste de iluminación y puede invertirse cuando el interior está más iluminado que el exterior. <Link href="/guias/privacidad-ventanas-noche/">Entender privacidad de noche</Link>.</p> },
 ] as const;
 
 export default function CommercialPage() {
@@ -39,28 +39,32 @@ export default function CommercialPage() {
       <ApplicationHero
         variant="commercial"
         eyebrow="Comercial e institucional"
-        title="El cristal forma parte de la operación del edificio."
-        description="Evaluamos fachadas, oficinas y áreas de trabajo considerando desempeño, apariencia, acceso, logística y uso del espacio antes de especificar una solución."
+        title="Control solar, privacidad y seguridad pensados para cómo funciona tu espacio."
+        description="Revisamos oficinas, locales, fachadas y áreas de trabajo para definir qué necesita cada zona, considerando el cristal, la exposición y la operación del inmueble antes de especificar una película."
         ctaLabel="Revisar mi proyecto"
         context={wa}
         secondary={<Link href="/peliculas/" className="button button-secondary">Explorar soluciones <Icon name="arrow" size={18}/></Link>}
-        proofItems={["Cotización por proyecto", "Especificación según aplicación", "Logística incluida en el diagnóstico"]}
+        proofItems={["Evaluación por proyecto", "Solución según cada área", "Operación y acceso considerados"]}
+        imageSrc="/images/projects/commercial-office.webp"
+        imageAlt="Oficina con divisiones y ventanales de cristal en un proyecto comercial documentado por HIGHTECH."
+        imageCaption="Proyecto comercial documentado por HIGHTECH"
+        imagePosition="58% center"
       />
 
       <section className="commercial-metric-strip">
         <div className="container commercial-metric-grid">
-          <div><strong>01</strong><span>Desempeño</span><small>Qué debe resolver el cristal.</small></div>
-          <div><strong>02</strong><span>Compatibilidad</span><small>Qué sistema de vidrio tenemos.</small></div>
-          <div><strong>03</strong><span>Operación</span><small>Cómo intervenir sin ignorar el edificio.</small></div>
-          <div><strong>04</strong><span>Alcance</span><small>Qué se cotiza realmente.</small></div>
+          <div><strong>01</strong><span>Calor</span><small>Reducir la carga solar que recibe el espacio.</small></div>
+          <div><strong>02</strong><span>Deslumbramiento</span><small>Controlar reflejos y exceso de luz en áreas de trabajo.</small></div>
+          <div><strong>03</strong><span>Privacidad</span><small>Definir cuánto debe verse hacia adentro sin asumir privacidad permanente.</small></div>
+          <div><strong>04</strong><span>Seguridad</span><small>Añadir retención de fragmentos cuando ese sea el objetivo.</small></div>
         </div>
       </section>
 
       <section className="section commercial-decision-section">
         <div className="container">
           <div className="section-heading section-heading-split">
-            <div><p className="eyebrow">Especificar antes de instalar</p><h2>No es residencial multiplicado por más metros.</h2></div>
-            <p>Un proyecto comercial agrega variables de fachada, operación, acceso y documentación. Por eso la propuesta debe responder al edificio y no sólo al material.</p>
+            <div><p className="eyebrow">Un mismo inmueble, distintas necesidades</p><h2>No todos los cristales del proyecto tienen que resolver lo mismo.</h2></div>
+            <p>Una fachada puede recibir sol directo, una sala de juntas necesitar más privacidad y un área de atención requerir mayor claridad. La solución se define por zona antes de elegir película o tono.</p>
           </div>
           <DecisionCards items={decisions} />
         </div>
@@ -69,13 +73,13 @@ export default function CommercialPage() {
       <section className="section section-dark commercial-solutions-section">
         <div className="container commercial-solutions-layout">
           <div>
-            <p className="eyebrow eyebrow-light">Soluciones por objetivo</p>
-            <h2>Una misma fachada puede pedir balances diferentes.</h2>
-            <p className="commercial-dark-lede">La tecnología se elige después de definir claridad, control solar, privacidad, deslumbramiento y comportamiento del cristal.</p>
+            <p className="eyebrow eyebrow-light">Soluciones según el objetivo</p>
+            <h2>Primero definimos qué debe cambiar. Después elegimos la película.</h2>
+            <p className="commercial-dark-lede">La tecnología no se selecciona por costumbre. Se compara según lo que necesita cada área y las condiciones del cristal.</p>
           </div>
           <div className="commercial-solution-list">
-            <Link href="/peliculas/nanoceramica/"><span>Control solar con claridad</span><strong>Nanocerámica</strong><Icon name="arrow" size={18}/></Link>
-            <Link href="/peliculas/plata-reflecta/"><span>Privacidad diurna + apariencia reflectiva</span><strong>Plata Reflecta</strong><Icon name="arrow" size={18}/></Link>
+            <Link href="/peliculas/nanoceramica/"><span>Control solar y claridad</span><strong>Nanocerámica</strong><Icon name="arrow" size={18}/></Link>
+            <Link href="/peliculas/plata-reflecta/"><span>Privacidad diurna y apariencia reflectiva</span><strong>Plata Reflecta</strong><Icon name="arrow" size={18}/></Link>
             <Link href="/peliculas/seguridad/"><span>Retención de fragmentos</span><strong>Seguridad</strong><Icon name="arrow" size={18}/></Link>
             <Link href="/peliculas/privacidad/"><span>Control de visibilidad</span><strong>Privacidad</strong><Icon name="arrow" size={18}/></Link>
           </div>
@@ -85,16 +89,16 @@ export default function CommercialPage() {
       <section className="section commercial-spec-section">
         <div className="container commercial-spec-grid">
           <div className="commercial-spec-panel">
-            <p className="eyebrow">Información que sí sirve</p>
-            <h2>Ficha técnica, alcance y limitaciones tienen que hablar entre sí.</h2>
-            <p>Para nanocerámica ya contamos con VLT, rechazo UV, rechazo infrarrojo a 950 nm y TSER mapeados por tono. Para otras líneas evitamos inventar cifras hasta tener la fuente correspondiente.</p>
+            <p className="eyebrow">Antes de especificar</p>
+            <h2>La película correcta depende también del cristal y del proyecto.</h2>
+            <p>Revisamos la información técnica del producto junto con el tipo de vidrio, la exposición y las condiciones de instalación antes de cerrar una recomendación.</p>
             <Link href="/peliculas/nanoceramica/" className="button button-primary">Consultar nanocerámica</Link>
           </div>
           <div className="commercial-spec-checklist">
-            <article><span>01</span><div><h3>Producto correcto</h3><p>La especificación debe corresponder a la película y aplicación reales.</p></div></article>
-            <article><span>02</span><div><h3>Compatibilidad</h3><p>Vidrio, orientación y sistema pueden cambiar la solución.</p></div></article>
-            <article><span>03</span><div><h3>Acceso</h3><p>Altura, horarios y condiciones de intervención forman parte del proyecto.</p></div></article>
-            <article><span>04</span><div><h3>Promesa controlada</h3><p>No convertimos una cifra de ficha en ahorro, temperatura o privacidad universal.</p></div></article>
+            <article><span>01</span><div><h3>Objetivo</h3><p>Qué queremos mejorar en esa zona del inmueble.</p></div></article>
+            <article><span>02</span><div><h3>Vidrio</h3><p>Qué sistema existe y qué condiciones debemos considerar.</p></div></article>
+            <article><span>03</span><div><h3>Ejecución</h3><p>Cómo acceder, intervenir y coordinar el trabajo.</p></div></article>
+            <article><span>04</span><div><h3>Alcance</h3><p>Qué material, áreas y condiciones deben quedar incluidos en la cotización.</p></div></article>
           </div>
         </div>
       </section>
@@ -102,8 +106,8 @@ export default function CommercialPage() {
       <section className="section section-alt commercial-process-section">
         <div className="container">
           <div className="section-heading section-heading-split">
-            <div><p className="eyebrow">Flujo de proyecto</p><h2>De la necesidad a una cotización que sí corresponde al alcance.</h2></div>
-            <p>Podemos empezar con fotos, medidas, planos o información del inmueble y escalar la revisión cuando el proyecto lo requiera.</p>
+            <div><p className="eyebrow">Cómo empieza un proyecto</p><h2>De la necesidad a un alcance claro antes de instalar.</h2></div>
+            <p>Podemos comenzar con la información que ya exista del inmueble y profundizar la revisión cuando el proyecto lo necesite.</p>
           </div>
           <ProcessRail steps={steps} />
         </div>
@@ -116,7 +120,7 @@ export default function CommercialPage() {
         </div>
       </section>
 
-      <ApplicationFinalCTA eyebrow="Proyecto comercial" title="Compártenos el inmueble, las áreas y lo que quieres resolver. Empezamos desde ahí." ctaLabel="Revisar mi proyecto" context={wa} secondaryHref="/peliculas/" secondaryLabel="Comparar tecnologías" />
+      <ApplicationFinalCTA eyebrow="Proyecto comercial" title="Cuéntanos qué necesitas resolver y en qué áreas del inmueble." ctaLabel="Revisar mi proyecto" context={wa} secondaryHref="/peliculas/" secondaryLabel="Comparar tecnologías" />
     </>
   );
 }
