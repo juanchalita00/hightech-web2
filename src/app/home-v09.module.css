@@ -1162,16 +1162,16 @@
 
 
 /* v0.9.1 Signature — photography leads, technology stays quiet.
-   Preview photography is temporary editorial art direction and must be replaced
-   by an approved HIGHTECH-owned/licensed asset before Production. */
+   Fondo: fotografía real HIGHTECH servida localmente
+   (/images/projects/commercial-facade.webp); sin dependencias externas. */
 .architecturePhoto {
   position: absolute;
   inset: 0;
   background-image:
     linear-gradient(90deg, rgba(6, 14, 33, .08), rgba(6, 14, 33, 0) 52%),
-    url("https://images.unsplash.com/photo-1758957530781-4ff54e09bee2?auto=format&fit=crop&w=1800&q=82");
+    url("/images/projects/commercial-facade.webp");
   background-size: cover;
-  background-position: center;
+  background-position: 42% 42%;
   transform: scale(1.015);
   filter: saturate(.86) contrast(1.035);
 }
@@ -1238,7 +1238,7 @@
 
 @media (max-width: 720px) {
   .architecturePhoto {
-    background-position: 59% center;
+    background-position: 40% center;
   }
 
   .filmReveal {
