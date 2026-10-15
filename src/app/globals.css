@@ -504,6 +504,31 @@ thead th { background: var(--surface-alt); }
 .google-review-stars svg.is-on { fill:#e0a106; }
 .google-review-card blockquote { margin:.85rem 0 0; }
 .google-review-card blockquote p { margin:0; white-space:pre-line; font-size:.98rem; line-height:1.55; color:var(--ink); }
+.google-review-more {
+  align-self:flex-start;
+  min-height:44px;
+  margin-top:.15rem;
+  padding:0;
+  border:0;
+  background:none;
+  color:var(--brand);
+  font:inherit;
+  font-size:.9rem;
+  font-weight:750;
+  cursor:pointer;
+}
+.google-review-more:focus-visible { outline:2px solid var(--brand); outline-offset:3px; }
+@media (max-width: 759px) {
+  .google-review-card blockquote p.is-clamped {
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:6;
+    overflow:hidden;
+  }
+}
+@media (min-width: 760px) {
+  .google-review-more { display:none; }
+}
 .google-review-card footer {
   display:flex;
   align-items:center;

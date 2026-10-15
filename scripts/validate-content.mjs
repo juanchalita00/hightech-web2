@@ -30,8 +30,11 @@ const googleReviews = readJson("content/google-reviews.json");
 if (!Array.isArray(googleReviews.items)) errors.push("google-reviews.json: items debe ser un arreglo.");
 if (googleReviews.aggregateRating) errors.push("google-reviews.json no debe traer un promedio.");
 for (const review of googleReviews.items ?? []) {
-  for (const field of ["author", "quote", "publishedAt", "sourceUrl"]) {
+  for (const field of ["author", "quote", "sourceUrl"]) {
     if (!review[field] || typeof review[field] !== "string") errors.push(`google-reviews: falta ${field}.`);
+  }
+  if (review.publishedAt != null && (typeof review.publishedAt !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(review.publishedAt))) {
+    errors.push("google-reviews: publishedAt debe ser YYYY-MM-DD.");
   }
   if (review.sourceUrl && !/^https:\/\/(www\.google\.com\/maps|maps\.google\.com\/)/.test(review.sourceUrl)) {
     errors.push("google-reviews: sourceUrl debe ser una URL de Google Maps.");

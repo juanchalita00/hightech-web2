@@ -1,4 +1,7 @@
-import { getGoogleReviews } from "@/lib/google-reviews";
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import { getGoogleReviews, type GoogleReview } from "@/lib/google-reviews";
 import { truth } from "@/lib/truth";
 
 const profileUrl = truth.contact.social.googleMaps;
@@ -16,6 +19,67 @@ function Stars({ rating }: { rating: number }) {
   );
 }
 
+function ReviewQuote({ quote }: { quote: string }) {
+  const textRef = useRef<HTMLParagraphElement | null>(null);
+  const [expanded, setExpanded] = useState(false);
+  const [overflows, setOverflows] = useState(false);
+
+  useEffect(() => {
+    const element = textRef.current;
+    if (!element) return;
+    const measure = () => {
+      const mobile = window.matchMedia("(max-width: 759px)").matches;
+      if (!mobile) {
+        setOverflows(false);
+        return;
+      }
+      const wasClamped = element.classList.contains("is-clamped");
+      if (!wasClamped) element.classList.add("is-clamped");
+      const overflow = element.scrollHeight > element.clientHeight + 1;
+      if (!wasClamped) element.classList.remove("is-clamped");
+      setOverflows(overflow);
+    };
+    measure();
+    const frame = window.requestAnimationFrame(measure);
+    const fonts = document.fonts?.ready.then(measure);
+    window.addEventListener("resize", measure);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      window.removeEventListener("resize", measure);
+      void fonts;
+    };
+  }, [quote]);
+
+  return (
+    <>
+      <blockquote>
+        <p ref={textRef} className={expanded ? undefined : "is-clamped"}>{quote}</p>
+      </blockquote>
+      {overflows ? (
+        <button type="button" className="google-review-more" aria-expanded={expanded} onClick={() => setExpanded((current) => !current)}>
+          {expanded ? "Leer menos" : "Leer más"}
+        </button>
+      ) : null}
+    </>
+  );
+}
+
+function ReviewCard({ review }: { review: GoogleReview }) {
+  return (
+    <article className="google-review-card">
+      <header>
+        <strong>{review.author}</strong>
+        {typeof review.rating === "number" ? <Stars rating={review.rating} /> : null}
+      </header>
+      <ReviewQuote quote={review.quote} />
+      <footer>
+        <span>Reseña de Google</span>
+        <a href={review.sourceUrl} target="_blank" rel="noopener noreferrer">Ver en Google</a>
+      </footer>
+    </article>
+  );
+}
+
 export function GoogleReviews() {
   const reviews = getGoogleReviews();
   return (
@@ -30,21 +94,7 @@ export function GoogleReviews() {
         </div>
         {reviews.length ? (
           <div className="google-review-grid">
-            {reviews.map((review) => (
-              <article key={`${review.author}-${review.publishedAt}`} className="google-review-card">
-                <header>
-                  <strong>{review.author}</strong>
-                  {typeof review.rating === "number" ? <Stars rating={review.rating} /> : null}
-                </header>
-                <blockquote>
-                  <p>{review.quote}</p>
-                </blockquote>
-                <footer>
-                  <span>Reseña de Google</span>
-                  <a href={review.sourceUrl} target="_blank" rel="noopener noreferrer">Ver en Google</a>
-                </footer>
-              </article>
-            ))}
+            {reviews.map((review) => <ReviewCard key={review.author} review={review} />)}
           </div>
         ) : null}
         <div className="google-reviews-actions">
