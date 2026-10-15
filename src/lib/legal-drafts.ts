@@ -110,7 +110,7 @@ const privacy: LegalDraftDocument = {
       id: "datos",
       heading: "Datos que se recaban",
       paragraphs: [
-        "El formulario de cotización pide nombre, teléfono de WhatsApp, ciudad, tipo de servicio (residencial, comercial o automotriz), metros cuadrados aproximados o modelo del vehículo, y un mensaje. No pide correo.",
+        "El formulario de cotización pide nombre, ciudad, empresa si quieren indicarla, cómo prefieren que los contacten (WhatsApp o correo), el dato de ese medio, tipo de servicio (residencial, comercial o automotriz), metros cuadrados aproximados o modelo del vehículo, y un mensaje.",
         "Si más adelante el cliente pide factura, se solicitan constancia fiscal, correo y uso de CFDI. Esos datos no forman parte del formulario público.",
       ],
     },
@@ -126,7 +126,7 @@ const privacy: LegalDraftDocument = {
       id: "terceros",
       heading: "WhatsApp y otros encargados",
       paragraphs: [
-        "Al enviar la solicitud, el sitio abre WhatsApp con el mensaje armado. La conversación continúa en WhatsApp. La versión vigente deberá identificar esa transferencia y cualquier otra.",
+        "Si no hay un destino configurado, enviar la solicitud abre WhatsApp o el correo de ventas, según el medio elegido. Si hay un destino configurado, la solicitud se envía ahí. La versión vigente deberá identificar esa transferencia y cualquier otra.",
         "Si más adelante se configura un webhook para recibir la misma solicitud, el aviso deberá nombrar a ese encargado antes de activarse.",
       ],
     },

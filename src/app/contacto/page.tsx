@@ -11,19 +11,19 @@ import { truth } from "@/lib/truth";
 export const metadata: Metadata = {
   alternates: { canonical: "/contacto/" },
   title: { absolute: "Cotizar películas para cristales en Zapopan | HIGHTECH Polarizados" },
-  description: "Pide una cotización de polarizado residencial, comercial o automotriz en Zapopan y la zona metropolitana de Guadalajara. Sin correo: la solicitud se abre en WhatsApp.",
+  description: "Pide una cotización de polarizado residencial, comercial o automotriz en Zapopan y la zona metropolitana de Guadalajara. Elige si te contactamos por WhatsApp o por correo.",
 };
 
 export default async function Page({ searchParams }: { searchParams: Promise<{ servicio?: string }> }) {
   const params = await searchParams;
   const service = isQuoteService(params.servicio) ? params.servicio : undefined;
   return <>
-    <TrustHero eyebrow="Contacto" title="Cuéntanos el espacio o el vehículo. Te ayudamos a aterrizar la cotización." description="Puedes llenar el formulario o escribir por WhatsApp. Atendemos desde Zapopan, Jalisco, la zona metropolitana de Guadalajara y proyectos que se evalúan en otros estados." ctaLabel="Ir al formulario" ctaHref="#cotizar" points={[truth.contact.locationLabel,"Residencial · Comercial · Automotriz","Respuesta por WhatsApp"]}/>
+    <TrustHero eyebrow="Contacto" title="Cuéntanos el espacio o el vehículo. Te ayudamos a aterrizar la cotización." description="Puedes llenar el formulario o escribir por WhatsApp. Atendemos desde Zapopan, Jalisco, la zona metropolitana de Guadalajara y proyectos que se evalúan en otros estados." ctaLabel="Ir al formulario" ctaHref="#cotizar" points={[truth.contact.locationLabel,"Residencial · Comercial · Automotriz","WhatsApp o correo"]}/>
     <section className="section" id="cotizar">
       <div className="container">
         <div className="section-heading section-heading-split">
           <div><p className="eyebrow">Solicitud de cotización</p><h2>Los datos que necesitamos para empezar.</h2></div>
-          <p>Nombre, WhatsApp, ciudad y una idea del tamaño o del vehículo. Si falta algo, lo pedimos en la conversación.</p>
+          <p>Nombre, ciudad y cómo prefieres que te contactemos. Si falta algo, lo pedimos en la conversación.</p>
         </div>
         <QuoteForm initialService={service} />
       </div>

@@ -70,9 +70,10 @@ p { margin-top: 0; }
 .header-cta { min-height: 42px; display: inline-flex; align-items: center; gap: .45rem; border-radius: 999px; padding: .66rem 1rem; background: var(--brand); color: white; text-decoration: none; font-weight: 750; font-size: .9rem; }
 .header-cta:hover { background: var(--brand-deep); }
 .mobile-menu { display: none; position: relative; }
-.mobile-menu summary { list-style: none; cursor: pointer; width: 44px; height: 44px; display: grid; place-content: center; gap: 4px; border-radius: 999px; border: 1px solid var(--line); background: white; }
-.mobile-menu summary::-webkit-details-marker { display: none; }
-.mobile-menu summary span { width: 18px; height: 1.5px; background: var(--ink); border-radius: 2px; }
+.mobile-menu > button { cursor: pointer; width: 44px; height: 44px; display: grid; place-content: center; gap: 4px; padding: 0; border-radius: 999px; border: 1px solid var(--line); background: white; color: inherit; }
+.mobile-menu > button:focus-visible { outline: 2px solid var(--brand); outline-offset: 3px; }
+.mobile-menu > button span { width: 18px; height: 1.5px; background: var(--ink); border-radius: 2px; }
+.mobile-nav-panel[hidden] { display: none; }
 .mobile-nav-panel { position: absolute; right: 0; top: calc(100% + .7rem); width: min(86vw, 21rem); padding: .65rem; display: grid; background: white; border: 1px solid var(--line); border-radius: 1.25rem; box-shadow: var(--shadow-soft); max-height: calc(100dvh - 6rem); overflow-y: auto; overscroll-behavior: contain; }
 .mobile-nav-panel a { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .9rem .85rem; text-decoration: none; border-radius: .75rem; font-weight: 690; }
 .mobile-nav-panel a:hover { background: var(--surface-alt); }
@@ -1302,12 +1303,14 @@ thead th { background: var(--surface-alt); }
 
 .quote-form { display:grid; gap:1.25rem; padding:clamp(1.2rem, 3vw, 2rem); border:1px solid var(--line); border-radius:1.5rem; background:white; box-shadow:var(--shadow-card); }
 .quote-form-grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem 1.1rem; }
-.quote-form label, .quote-form fieldset { display:grid; gap:.4rem; margin:0; color:var(--ink); font-size:.86rem; font-weight:750; }
+.quote-form label, .quote-form fieldset { display:grid; gap:.4rem; margin:0; min-width:0; color:var(--ink); font-size:.86rem; font-weight:750; }
+.quote-form fieldset { border:0; padding:0; }
 .quote-form input, .quote-form textarea { width:100%; border:1px solid var(--line); border-radius:.8rem; padding:.85rem .9rem; font:inherit; font-weight:560; color:var(--ink); background:#fff; }
 .quote-form textarea { resize:vertical; }
 .quote-form small { color:#9a2340; font-weight:650; }
 .quote-form-wide, .quote-form fieldset { grid-column:1 / -1; }
 .quote-form legend { margin-bottom:.35rem; }
+.quote-optional { margin-left:.4rem; color:var(--ink-soft); font-size:.75rem; font-weight:650; text-transform:lowercase; }
 .quote-service-options { display:flex; flex-wrap:wrap; gap:.55rem; }
 .quote-service-options label { display:flex; align-items:center; gap:.45rem; min-height:44px; padding:.35rem .8rem; border:1px solid var(--line); border-radius:999px; font-weight:700; }
 .quote-form-actions { display:flex; flex-wrap:wrap; align-items:center; gap:.8rem 1.2rem; }

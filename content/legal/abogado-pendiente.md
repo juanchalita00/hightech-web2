@@ -11,7 +11,7 @@ La cotización ya deja preparada la relación: aceptar la cotización equivaldr�
 ### Aviso de privacidad
 - Responsable del tratamiento: razón social o persona física, RFC y domicilio fiscal. Hoy el sitio solo usa la marca y «Zapopan, Jalisco».
 - Fundamento aplicable y si el aviso es integral, simplificado o ambos.
-- Datos que el formulario recaba: nombre, teléfono de WhatsApp, ciudad, tipo de servicio, metros aproximados o modelo del vehículo, y mensaje. No se pide correo.
+- Datos que el formulario recaba: nombre, ciudad, empresa (opcional), medio de contacto (WhatsApp o correo), teléfono si eligen WhatsApp, correo si eligen correo, tipo de servicio, metros aproximados o modelo del vehículo, y mensaje.
 - Finalidades, transferencias (WhatsApp/Meta y, si se activa, el webhook n8n) y si hace falta consentimiento distinto del envío.
 - Derechos ARCO, plazo de respuesta y canal formal.
 - Conservación, medidas de seguridad y fecha de versión.

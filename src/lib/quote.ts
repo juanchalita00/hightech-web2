@@ -1,16 +1,28 @@
-import { release } from "@/lib/truth";
+import { release, truth } from "@/lib/truth";
 
 export const quoteServices = ["residencial", "comercial", "automotriz"] as const;
 
 export type QuoteService = (typeof quoteServices)[number];
 
+export const quoteChannels = ["whatsapp", "correo"] as const;
+
+export type QuoteChannel = (typeof quoteChannels)[number];
+
+export const channelLabels: Record<QuoteChannel, string> = {
+  whatsapp: "WhatsApp",
+  correo: "Correo",
+};
+
 export type QuotePayload = {
   name: string;
   phone: string;
+  email: string;
+  company: string;
   city: string;
   service: QuoteService;
   detail: string;
   message: string;
+  channel: QuoteChannel;
   source: "web-quote-form";
   page: "/contacto/";
 };
@@ -78,11 +90,30 @@ export function formatQuoteMessage(payload: QuotePayload): string {
   const lines = [
     "Hola, quiero cotizar con HIGHTECH Polarizados.",
     `Nombre: ${payload.name}`,
-    `WhatsApp: ${payload.phone}`,
+    `Prefiero que me contacten por: ${channelLabels[payload.channel]}`,
+  ];
+  if (payload.company.trim()) lines.push(`Empresa: ${payload.company.trim()}`);
+  if (payload.phone.trim()) lines.push(`WhatsApp: ${payload.phone.trim()}`);
+  if (payload.email.trim()) lines.push(`Correo: ${payload.email.trim()}`);
+  lines.push(
     `Ciudad: ${payload.city}`,
     `Servicio: ${serviceLabels[payload.service]}`,
     `${payload.service === "automotriz" ? "Vehículo" : "Superficie aproximada"}: ${payload.detail}`,
-  ];
+  );
   if (payload.message.trim()) lines.push(`Mensaje: ${payload.message.trim()}`);
   return lines.join("\n");
+}
+
+export function quoteMailUrl(payload: QuotePayload): string {
+  const subject = "Cotización HIGHTECH Polarizados";
+  return `mailto:${truth.contact.emailSales}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(formatQuoteMessage(payload))}`;
+}
+
+export function isEmailAddress(value: string): boolean {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+}
+
+export function isWhatsAppNumber(value: string): boolean {
+  const digits = value.replace(/\D/g, "");
+  return digits.length >= 10 && digits.length <= 15;
 }

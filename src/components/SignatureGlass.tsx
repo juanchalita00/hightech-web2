@@ -1,58 +1,79 @@
 "use client";
 
-import { useState } from "react";
-import Image from "next/image";
+import { useId, useState } from "react";
 import styles from "@/app/home-v09.module.css";
 
 /**
- * La referencia exterior muestra IR75 a IR5 en una misma fachada.
- * Cada tono conserva su archivo propio: cuando exista, sustituye a la referencia.
- * La gama nanocerámica activa es 75 / 50 / 35 / 15 / 5.
+ * La fachada base no lleva rótulos y todos los paños parten del mismo cristal.
+ * El tono se pinta encima, hasta que exista la foto de ese tono.
  */
-const reference = {
-  src: "/images/comparador/referencia-fachada-exterior-nanoceramica.webp",
-  alt: "Casa moderna vista desde el exterior. Los cristales muestran, de más claro a más oscuro, la apariencia de la película nanocerámica IR75, IR50, IR35, IR15 e IR5.",
+const base = {
+  src: "/images/comparador/fachada-exterior-base.webp",
+  alt: "Casa moderna vista desde la calle. Todos los cristales parten del mismo tono y cambian al elegir un botón.",
 };
+
+const glassPanels = [
+  { x: 118, y: 218, width: 210, height: 530 },
+  { x: 342, y: 218, width: 226, height: 530 },
+  { x: 588, y: 218, width: 230, height: 530 },
+  { x: 840, y: 218, width: 248, height: 530 },
+  { x: 1112, y: 218, width: 260, height: 530 },
+] as const;
+
 const views = [
   {
     id: "clear",
     label: "Sin película",
+    shade: 0,
+    mirror: false,
     src: "/images/comparador/fachada-exterior-sin-pelicula.webp",
     alt: "Fachada moderna vista desde la calle, con el cristal sin película y aspecto transparente.",
   },
   {
     id: "v75",
     label: "75%",
+    shade: 0.16,
+    mirror: false,
     src: "/images/comparador/fachada-exterior-75.webp",
     alt: "Fachada moderna vista desde la calle, con el cristal al 75% de transmisión de luz visible.",
   },
   {
     id: "v50",
     label: "50%",
+    shade: 0.34,
+    mirror: false,
     src: "/images/comparador/fachada-exterior-50.webp",
     alt: "Fachada moderna vista desde la calle, con el cristal al 50% de transmisión de luz visible.",
   },
   {
     id: "v35",
     label: "35%",
+    shade: 0.5,
+    mirror: false,
     src: "/images/comparador/fachada-exterior-35.webp",
     alt: "Fachada moderna vista desde la calle, con el cristal al 35% de transmisión de luz visible.",
   },
   {
     id: "v15",
     label: "15%",
+    shade: 0.68,
+    mirror: false,
     src: "/images/comparador/fachada-exterior-15.webp",
     alt: "Fachada moderna vista desde la calle, con el cristal al 15% de transmisión de luz visible.",
   },
   {
     id: "v5",
     label: "5%",
+    shade: 0.84,
+    mirror: false,
     src: "/images/comparador/fachada-exterior-5.webp",
     alt: "Fachada moderna vista desde la calle, con el cristal al 5% de transmisión de luz visible.",
   },
   {
     id: "reflecta",
     label: "Reflecta",
+    shade: 0,
+    mirror: true,
     src: "/images/comparador/fachada-exterior-reflecta.webp",
     alt: "Fachada moderna vista desde la calle, con película Plata Reflecta de apariencia espejo en el cristal.",
   },
@@ -61,20 +82,39 @@ const views = [
 export function SignatureGlass() {
   const [index, setIndex] = useState(0);
   const [ready, setReady] = useState<Record<string, boolean>>({});
+  const clipId = useId().replace(/:/g, "");
   const view = views[index];
   const photoReady = ready[view.src] === true;
 
   return (
-    <div className={styles.signatureGlass} aria-label="Fachada vista desde la calle. La referencia muestra IR75 a IR5; cada botón prepara la foto de ese tono.">
+    <div className={styles.signatureGlass} aria-label="Fachada vista desde la calle. Cada botón cambia el tono del cristal.">
       <div className={photoReady ? styles.referenceFrameHidden : styles.referenceFrame}>
-        <Image
-          src={reference.src}
-          alt={reference.alt}
-          fill
-          priority
-          sizes="(max-width: 980px) calc(100vw - 2rem), 42rem"
-          className={styles.referencePhoto}
-        />
+        <img src={base.src} alt={base.alt} className={styles.referencePhoto} />
+        <svg className={styles.glassTint} viewBox="0 0 1440 960" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs>
+            <clipPath id={clipId}>
+              {glassPanels.map((panel) => <rect key={`${panel.x}-${panel.y}`} x={panel.x} y={panel.y} width={panel.width} height={panel.height} />)}
+            </clipPath>
+            <linearGradient id={`${clipId}-silver`} x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stopColor="#f4f8fb" />
+              <stop offset="0.46" stopColor="#c5d4e2" />
+              <stop offset="1" stopColor="#e7eef6" />
+            </linearGradient>
+            <linearGradient id={`${clipId}-sheen`} x1="0" y1="1" x2="1" y2="0">
+              <stop offset="0" stopColor="#ffffff" stopOpacity="0" />
+              <stop offset="0.42" stopColor="#ffffff" stopOpacity="0.15" />
+              <stop offset="0.5" stopColor="#ffffff" stopOpacity="1" />
+              <stop offset="0.58" stopColor="#ffffff" stopOpacity="0.12" />
+              <stop offset="1" stopColor="#ffffff" stopOpacity="0" />
+            </linearGradient>
+          </defs>
+          <g clipPath={`url(#${clipId})`}>
+            <rect className={styles.tintShade} x="0" y="0" width="1440" height="960" fill="#07101c" style={{ opacity: view.mirror ? 0 : view.shade }} />
+            <rect className={styles.tintMirror} x="0" y="0" width="1440" height="960" fill="#d5e1ec" style={{ opacity: view.mirror ? 1 : 0 }} />
+            <rect className={styles.tintMirror} x="0" y="0" width="1440" height="960" fill={`url(#${clipId}-silver)`} style={{ opacity: view.mirror ? 1 : 0 }} />
+            <rect className={styles.tintMirror} x="0" y="0" width="1440" height="960" fill={`url(#${clipId}-sheen)`} style={{ opacity: view.mirror ? 1 : 0 }} />
+          </g>
+        </svg>
       </div>
 
       {views.map((item) => {
@@ -111,12 +151,10 @@ export function SignatureGlass() {
         ))}
       </div>
 
-      <p className={styles.signatureStatus} aria-live="polite">
-        {photoReady ? `Foto de este tono · ${view.label}` : `Referencia exterior · ${view.label}`}
-      </p>
+      <p className={styles.signatureStatus} aria-live="polite">Desde la calle · {view.label}</p>
 
       <p className={styles.signatureFootnote}>
-        La foto muestra, desde la calle, cómo se ve la nanocerámica de IR75 a IR5. Cada botón tiene su propio archivo para esa fachada. Es apariencia, no desempeño ni una regla oficial. Plata Reflecta es la película espejo para arquitectura.
+        Desde la calle, un tono más bajo se ve más oscuro. Reflecta se ve como espejo. Es apariencia, no desempeño.
       </p>
     </div>
   );
