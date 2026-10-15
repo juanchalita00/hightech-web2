@@ -1467,7 +1467,8 @@ thead th { background: var(--surface-alt); }
 .pdlc-frame > span { position:absolute; inset:0; }
 .pdlc-frame > span[hidden] { display:none; }
 .pdlc-frame img.pdlc-shot { position:absolute; inset:0; width:100%; height:100%; max-width:none; max-height:none; object-fit:contain; object-position:center; }
-.pdlc-frost {
+.pdlc-frost,
+.pdlc-haze {
   position:absolute; inset:0; opacity:0; pointer-events:none;
   -webkit-mask-image: var(--pdlc-mask);
   mask-image: var(--pdlc-mask);
@@ -1480,24 +1481,26 @@ thead th { background: var(--surface-alt); }
   mask-mode: alpha;
 }
 /* The blur lives on the inner veil. Chrome drops backdrop-filter on the same element that carries the mask.
-   Oficina uses its own photo and does not get this veil. The other examples stay nearly opaque,
-   in a warm off-white close to that photo, not a flat white. */
+   Oficina apagada keeps its own photo. The other four use this matte frost.
+   Encendida keeps a thin milky haze so the film does not read as bare glass. */
 .pdlc-veil {
   position:absolute; inset:0;
   background:
-    radial-gradient(rgba(110,100,82,.16) 0.5px, transparent 0.7px),
-    linear-gradient(180deg, rgba(242,238,228,.45) 0%, rgba(228,224,214,0) 36%, rgba(176,168,150,.28) 100%),
-    rgba(228,224,214,.95);
+    radial-gradient(rgba(108,110,104,.07) 0.45px, transparent 0.7px),
+    linear-gradient(180deg, rgba(255,255,252,.34) 0%, rgba(228,227,220,0) 32%, rgba(196,194,186,.16) 100%),
+    rgba(228,227,220,.95);
   background-size: 3px 3px, 100% 100%, 100% 100%;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 .pdlc-veil::after {
   content:""; position:absolute; inset:0; pointer-events:none;
-  background: linear-gradient(180deg, rgba(255,248,236,.2), transparent 42%, rgba(140,128,108,.16));
+  background: linear-gradient(180deg, rgba(255,255,252,.22), transparent 38%);
   mix-blend-mode: soft-light;
 }
-.pdlc-frost.is-on { opacity:1; }
+.pdlc-haze { background: rgba(240,240,236,.12); }
+.pdlc-frost.is-on,
+.pdlc-haze.is-on { opacity:1; }
 .pdlc-card figcaption { padding:.7rem .9rem .8rem; background:white; }
 .pdlc-status { margin:0; color:#243049; font-size:.92rem; font-weight:720; }
 .pdlc-examples-label h2 { margin: .35rem 0 0; font-size:1.15rem; }

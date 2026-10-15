@@ -8,6 +8,7 @@ const scenes = [
     label: "Oficina",
     on: "/images/pdlc/oficina-encendida.webp",
     off: "/images/pdlc/oficina-apagada.webp",
+    mask: "/images/pdlc/mask-oficina.webp",
     altOff: "Puerta de oficina con película inteligente apagada: el cristal se ve opaco.",
     altOn: "La misma puerta de oficina con la película encendida: el cristal se ve transparente.",
   },
@@ -84,7 +85,9 @@ export function PdlcExamples() {
           {scenes.map((item, index) => {
             const active = index === sceneIndex;
             const showOff = active && !powered;
-            const photo = "off" in item && showOff ? item.off : item.on;
+            const usesPhotoOff = "off" in item;
+            const photo = usesPhotoOff && showOff ? item.off : item.on;
+            const mask = "mask" in item ? `url("${item.mask}")` : undefined;
             return (
               <span key={item.id} hidden={!active ? true : undefined}>
                 <img
@@ -95,17 +98,24 @@ export function PdlcExamples() {
                   className="pdlc-shot"
                   aria-hidden={active ? undefined : true}
                 />
-                {"mask" in item ? (
+                {mask && !usesPhotoOff ? (
                   <span
                     className={showOff ? "pdlc-frost is-on" : "pdlc-frost"}
-                    style={{ ["--pdlc-mask" as string]: `url("${item.mask}")` }}
+                    style={{ ["--pdlc-mask" as string]: mask }}
                     aria-hidden="true"
                   >
                     <span
                       className="pdlc-veil"
-                      style={{ backdropFilter: "blur(6px)", WebkitBackdropFilter: "blur(6px)" }}
+                      style={{ backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)" }}
                     />
                   </span>
+                ) : null}
+                {mask ? (
+                  <span
+                    className={active && powered ? "pdlc-haze is-on" : "pdlc-haze"}
+                    style={{ ["--pdlc-mask" as string]: mask }}
+                    aria-hidden="true"
+                  />
                 ) : null}
               </span>
             );
