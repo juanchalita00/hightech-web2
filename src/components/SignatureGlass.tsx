@@ -5,29 +5,30 @@ import styles from "@/app/home-v09.module.css";
 
 /**
  * Una sola fachada. El oscurecido se pinta solo dentro de `glassPanels`.
- * Para cambiar la foto: sustituye `src` y, si el encuadre no coincide,
- * `width`, `height` y los rectángulos. Esos rectángulos están en píxeles
- * de la imagen (el mismo espacio que width × height).
+ * Las coordenadas están en el encuadre original de 1280×720 (el viewBox).
+ * La foto servida es el mismo encuadre a 1600×900, con una versión de 800
+ * para pantallas chicas. Si se cambia la foto, hay que volver a medir los
+ * seis polígonos en ese espacio: dos ventanales de tres paños, el de la
+ * planta baja a la derecha de la puerta de madera y el de arriba.
  *
- * Archivo: WebP RGB, sin rótulos, vista desde la calle, cristales todavía
- * claros. Hoy es 1440×960. El recuadro recorta con object-fit: cover y el
- * SVG usa el mismo recorte (slice). Si la nueva foto trae otro tamaño, el
- * viewBox sigue a width/height; los rectángulos se vuelven a medir en
- * píxeles de esa foto.
+ * Archivo: WebP RGB, sin rótulos, vista desde la calle, cristales claros.
+ * El recuadro usa la misma proporción 16:9, así que no recorta los marcos.
  */
 const base = {
   src: "/images/comparador/fachada-exterior-base.webp",
-  width: 1440,
-  height: 960,
-  alt: "Casa moderna vista desde la calle. Todos los cristales parten del mismo tono y cambian al elegir un botón.",
+  mobileSrc: "/images/comparador/fachada-exterior-base-800.webp",
+  width: 1280,
+  height: 720,
+  alt: "Casa moderna de dos pisos vista desde la calle. Los cristales parten claros y cambian al elegir un botón.",
 };
 
 const glassPanels = [
-  { x: 118, y: 218, width: 210, height: 530 },
-  { x: 342, y: 218, width: 226, height: 530 },
-  { x: 588, y: 218, width: 230, height: 530 },
-  { x: 840, y: 218, width: 248, height: 530 },
-  { x: 1112, y: 218, width: 260, height: 530 },
+  { points: "617,170 722,170 722,301 617,301" },
+  { points: "731,170 925,170 925,301 731,301" },
+  { points: "934,170 1038,170 1040,301 934,301" },
+  { points: "617,384 722,384 722,569 617,569" },
+  { points: "731,384 924,384 924,569 731,569" },
+  { points: "935,384 1038,384 1040,569 935,569" },
 ] as const;
 
 const views = [
@@ -42,7 +43,7 @@ const views = [
   {
     id: "v75",
     label: "75%",
-    shade: 0.16,
+    shade: 0.12,
     mirror: false,
     src: "/images/comparador/fachada-exterior-75.webp",
     alt: "Fachada moderna vista desde la calle, con el cristal al 75% de transmisión de luz visible.",
@@ -50,7 +51,7 @@ const views = [
   {
     id: "v50",
     label: "50%",
-    shade: 0.34,
+    shade: 0.3,
     mirror: false,
     src: "/images/comparador/fachada-exterior-50.webp",
     alt: "Fachada moderna vista desde la calle, con el cristal al 50% de transmisión de luz visible.",
@@ -58,7 +59,7 @@ const views = [
   {
     id: "v35",
     label: "35%",
-    shade: 0.5,
+    shade: 0.48,
     mirror: false,
     src: "/images/comparador/fachada-exterior-35.webp",
     alt: "Fachada moderna vista desde la calle, con el cristal al 35% de transmisión de luz visible.",
@@ -66,7 +67,7 @@ const views = [
   {
     id: "v15",
     label: "15%",
-    shade: 0.68,
+    shade: 0.7,
     mirror: false,
     src: "/images/comparador/fachada-exterior-15.webp",
     alt: "Fachada moderna vista desde la calle, con el cristal al 15% de transmisión de luz visible.",
@@ -74,7 +75,7 @@ const views = [
   {
     id: "v5",
     label: "5%",
-    shade: 0.84,
+    shade: 0.92,
     mirror: false,
     src: "/images/comparador/fachada-exterior-5.webp",
     alt: "Fachada moderna vista desde la calle, con el cristal al 5% de transmisión de luz visible.",
@@ -99,11 +100,17 @@ export function SignatureGlass() {
   return (
     <div className={styles.signatureGlass} aria-label="Fachada vista desde la calle. Cada botón cambia el tono del cristal.">
       <div className={photoReady ? styles.referenceFrameHidden : styles.referenceFrame}>
-        <img src={base.src} alt={base.alt} className={styles.referencePhoto} />
-        <svg className={styles.glassTint} viewBox={`0 0 ${base.width} ${base.height}`} preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <img
+          src={base.src}
+          srcSet={`${base.mobileSrc} 800w, ${base.src} 1600w`}
+          sizes="(max-width: 720px) 92vw, 42rem"
+          alt={base.alt}
+          className={styles.referencePhoto}
+        />
+        <svg className={styles.glassTint} viewBox={`0 0 ${base.width} ${base.height}`} preserveAspectRatio="xMidYMid meet" aria-hidden="true">
           <defs>
             <clipPath id={clipId}>
-              {glassPanels.map((panel) => <rect key={`${panel.x}-${panel.y}`} x={panel.x} y={panel.y} width={panel.width} height={panel.height} />)}
+              {glassPanels.map((panel) => <polygon key={panel.points} points={panel.points} />)}
             </clipPath>
             <linearGradient id={`${clipId}-silver`} x1="0" y1="0" x2="0" y2="1">
               <stop offset="0" stopColor="#f4f8fb" />
@@ -117,9 +124,16 @@ export function SignatureGlass() {
               <stop offset="0.58" stopColor="#ffffff" stopOpacity="0.12" />
               <stop offset="1" stopColor="#ffffff" stopOpacity="0" />
             </linearGradient>
+            <linearGradient id={`${clipId}-glass`} x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stopColor="#ffffff" stopOpacity="0.28" />
+              <stop offset="0.18" stopColor="#ffffff" stopOpacity="0.06" />
+              <stop offset="0.62" stopColor="#ffffff" stopOpacity="0" />
+              <stop offset="1" stopColor="#d7e4ee" stopOpacity="0.14" />
+            </linearGradient>
           </defs>
           <g clipPath={`url(#${clipId})`}>
             <rect className={styles.tintShade} x="0" y="0" width={base.width} height={base.height} fill="#07101c" style={{ opacity: view.mirror ? 0 : view.shade }} />
+            <rect x="0" y="0" width={base.width} height={base.height} fill={`url(#${clipId}-glass)`} style={{ opacity: view.mirror || view.shade === 0 ? 0 : 0.45 }} />
             <rect className={styles.tintMirror} x="0" y="0" width={base.width} height={base.height} fill="#d5e1ec" style={{ opacity: view.mirror ? 1 : 0 }} />
             <rect className={styles.tintMirror} x="0" y="0" width={base.width} height={base.height} fill={`url(#${clipId}-silver)`} style={{ opacity: view.mirror ? 1 : 0 }} />
             <rect className={styles.tintMirror} x="0" y="0" width={base.width} height={base.height} fill={`url(#${clipId}-sheen)`} style={{ opacity: view.mirror ? 1 : 0 }} />
