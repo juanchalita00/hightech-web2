@@ -1480,18 +1480,21 @@ thead th { background: var(--surface-alt); }
   mask-mode: alpha;
 }
 /* The blur lives on the inner veil. Chrome drops backdrop-filter on the same element that carries the mask.
-   Oficina uses its own photo and does not get this veil. The other examples stay nearly opaque. */
+   Oficina uses its own photo and does not get this veil. The other examples stay nearly opaque,
+   in a warm off-white close to that photo, not a flat white. */
 .pdlc-veil {
   position:absolute; inset:0;
   background:
-    linear-gradient(180deg, rgba(255,255,255,.5) 0%, rgba(255,255,255,.1) 20%, rgba(232,234,235,0) 48%, rgba(198,202,204,.2) 100%),
-    rgba(232,234,235,.95);
+    radial-gradient(rgba(110,100,82,.16) 0.5px, transparent 0.7px),
+    linear-gradient(180deg, rgba(242,238,228,.45) 0%, rgba(228,224,214,0) 36%, rgba(176,168,150,.28) 100%),
+    rgba(228,224,214,.95);
+  background-size: 3px 3px, 100% 100%, 100% 100%;
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
 }
 .pdlc-veil::after {
   content:""; position:absolute; inset:0; pointer-events:none;
-  background: linear-gradient(180deg, rgba(255,255,255,.34), transparent 34%, rgba(176,180,182,.14));
+  background: linear-gradient(180deg, rgba(255,248,236,.2), transparent 42%, rgba(140,128,108,.16));
   mix-blend-mode: soft-light;
 }
 .pdlc-frost.is-on { opacity:1; }

@@ -5,7 +5,9 @@ import styles from "@/app/home-v09.module.css";
 
 /**
  * Una sola fachada. El oscurecido se pinta solo dentro de `glassPanels`.
- * Las coordenadas están en el encuadre original de 1280×720 (el viewBox).
+ * Las coordenadas están en el encuadre original de 1280×720 (el viewBox)
+ * y entran un par de píxeles bajo el marco negro para que el tono cubra
+ * el cristal de orilla a orilla.
  * La foto servida es el mismo encuadre a 1600×900, con una versión de 800
  * para pantallas chicas. Si se cambia la foto, hay que volver a medir los
  * seis polígonos en ese espacio: dos ventanales de tres paños, el de la
@@ -25,12 +27,12 @@ const base = {
 };
 
 const glassPanels = [
-  { points: "617,170 722,170 722,301 617,301" },
-  { points: "731,170 925,170 925,301 731,301" },
-  { points: "934,170 1038,170 1040,301 934,301" },
-  { points: "617,384 722,384 722,569 617,569" },
-  { points: "731,384 924,384 924,569 731,569" },
-  { points: "935,384 1038,384 1040,569 935,569" },
+  { points: "612,166 727,166 727,303 612,303" },
+  { points: "726,166 930,166 930,303 726,303" },
+  { points: "928,166 1044,166 1044,303 928,303" },
+  { points: "612,378 727,378 727,573 612,573" },
+  { points: "726,378 930,378 930,573 726,573" },
+  { points: "928,378 1044,378 1044,573 928,573" },
 ] as const;
 
 const views = [
@@ -114,14 +116,14 @@ export function SignatureGlass() {
             <clipPath id={clipId}>
               {glassPanels.map((panel) => <polygon key={panel.points} points={panel.points} />)}
             </clipPath>
-            <filter id={`${clipId}-mirror`} x="-2%" y="-2%" width="104%" height="104%">
-              <feGaussianBlur stdDeviation="1.4" />
+            <filter id={`${clipId}-mirror`} x="-4%" y="-4%" width="108%" height="108%">
+              <feGaussianBlur stdDeviation="1.2" />
             </filter>
             <linearGradient id={`${clipId}-sheen`} x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stopColor="#ffffff" stopOpacity="0.28" />
-              <stop offset="0.2" stopColor="#ffffff" stopOpacity="0.05" />
-              <stop offset="0.62" stopColor="#9aa6b4" stopOpacity="0" />
-              <stop offset="1" stopColor="#4e5c6a" stopOpacity="0.22" />
+              <stop offset="0" stopColor="#ffffff" stopOpacity="0.12" />
+              <stop offset="0.22" stopColor="#ffffff" stopOpacity="0.03" />
+              <stop offset="0.7" stopColor="#9aa6b4" stopOpacity="0" />
+              <stop offset="1" stopColor="#5c6a78" stopOpacity="0.16" />
             </linearGradient>
             <linearGradient id={`${clipId}-glass`} x1="0" y1="0" x2="0" y2="1">
               <stop offset="0" stopColor="#ffffff" stopOpacity="0.28" />
