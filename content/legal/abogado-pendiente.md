@@ -1,5 +1,7 @@
 # Pendiente de revisión jurídica
 
+El texto anterior a este PR, recuperado del repositorio para enviarlo al abogado, está en `docs/legal-para-abogado.md`. Este archivo solo lista lo que aún hay que redactar.
+
 Estos puntos no están publicados como contrato ni como póliza. El sitio mantiene aviso de privacidad, términos y garantías fuera del menú, del sitemap y del índice, y responden 404 en Production hasta que `termsApproved`, `privacyApproved` y `warrantiesApproved` pasen a verdadero en `content/release-state.json`.
 
 La cotización ya deja preparada la relación: aceptar la cotización equivaldrá a aceptar los términos, incluidas las obligaciones de pago. El enlace público (`/legal/terminos-y-condiciones/#aceptacion-de-cotizacion`) solo aparece cuando los términos estén aprobados.
