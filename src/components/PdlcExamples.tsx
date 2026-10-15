@@ -7,7 +7,7 @@ const scenes = [
     id: "oficina",
     label: "Oficina",
     on: "/images/pdlc/oficina-encendida.webp",
-    mask: "/images/pdlc/mask-oficina.webp",
+    off: "/images/pdlc/oficina-apagada.webp",
     altOff: "Puerta de oficina con película inteligente apagada: el cristal se ve opaco.",
     altOn: "La misma puerta de oficina con la película encendida: el cristal se ve transparente.",
   },
@@ -84,26 +84,29 @@ export function PdlcExamples() {
           {scenes.map((item, index) => {
             const active = index === sceneIndex;
             const showOff = active && !powered;
+            const photo = "off" in item && showOff ? item.off : item.on;
             return (
               <span key={item.id} hidden={!active ? true : undefined}>
                 <img
-                  src={item.on}
+                  src={photo}
                   width={800}
                   height={800}
                   alt={active ? (powered ? item.altOn : item.altOff) : ""}
                   className="pdlc-shot"
                   aria-hidden={active ? undefined : true}
                 />
-                <span
-                  className={showOff ? "pdlc-frost is-on" : "pdlc-frost"}
-                  style={{ ["--pdlc-mask" as string]: `url("${item.mask}")` }}
-                  aria-hidden="true"
-                >
+                {"mask" in item ? (
                   <span
-                    className="pdlc-veil"
-                    style={{ backdropFilter: "blur(10px) saturate(0.5)", WebkitBackdropFilter: "blur(10px) saturate(0.5)" }}
-                  />
-                </span>
+                    className={showOff ? "pdlc-frost is-on" : "pdlc-frost"}
+                    style={{ ["--pdlc-mask" as string]: `url("${item.mask}")` }}
+                    aria-hidden="true"
+                  >
+                    <span
+                      className="pdlc-veil"
+                      style={{ backdropFilter: "blur(6px)", WebkitBackdropFilter: "blur(6px)" }}
+                    />
+                  </span>
+                ) : null}
               </span>
             );
           })}

@@ -14,6 +14,8 @@ import styles from "@/app/home-v09.module.css";
  * Archivo: WebP RGB, sin rótulos, vista desde la calle, cristales claros.
  * El recuadro usa la misma proporción 16:9, así que no recorta los marcos.
  */
+const reflectionSrc = "/images/comparador/reflecta-reflection.webp";
+
 const base = {
   src: "/images/comparador/fachada-exterior-base.webp",
   mobileSrc: "/images/comparador/fachada-exterior-base-800.webp",
@@ -112,17 +114,14 @@ export function SignatureGlass() {
             <clipPath id={clipId}>
               {glassPanels.map((panel) => <polygon key={panel.points} points={panel.points} />)}
             </clipPath>
-            <linearGradient id={`${clipId}-silver`} x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stopColor="#f4f8fb" />
-              <stop offset="0.46" stopColor="#c5d4e2" />
-              <stop offset="1" stopColor="#e7eef6" />
-            </linearGradient>
-            <linearGradient id={`${clipId}-sheen`} x1="0" y1="1" x2="1" y2="0">
-              <stop offset="0" stopColor="#ffffff" stopOpacity="0" />
-              <stop offset="0.42" stopColor="#ffffff" stopOpacity="0.15" />
-              <stop offset="0.5" stopColor="#ffffff" stopOpacity="1" />
-              <stop offset="0.58" stopColor="#ffffff" stopOpacity="0.12" />
-              <stop offset="1" stopColor="#ffffff" stopOpacity="0" />
+            <filter id={`${clipId}-mirror`} x="-2%" y="-2%" width="104%" height="104%">
+              <feGaussianBlur stdDeviation="1.4" />
+            </filter>
+            <linearGradient id={`${clipId}-sheen`} x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stopColor="#ffffff" stopOpacity="0.28" />
+              <stop offset="0.2" stopColor="#ffffff" stopOpacity="0.05" />
+              <stop offset="0.62" stopColor="#9aa6b4" stopOpacity="0" />
+              <stop offset="1" stopColor="#4e5c6a" stopOpacity="0.22" />
             </linearGradient>
             <linearGradient id={`${clipId}-glass`} x1="0" y1="0" x2="0" y2="1">
               <stop offset="0" stopColor="#ffffff" stopOpacity="0.28" />
@@ -134,9 +133,18 @@ export function SignatureGlass() {
           <g clipPath={`url(#${clipId})`}>
             <rect className={styles.tintShade} x="0" y="0" width={base.width} height={base.height} fill="#07101c" style={{ opacity: view.mirror ? 0 : view.shade }} />
             <rect x="0" y="0" width={base.width} height={base.height} fill={`url(#${clipId}-glass)`} style={{ opacity: view.mirror || view.shade === 0 ? 0 : 0.45 }} />
-            <rect className={styles.tintMirror} x="0" y="0" width={base.width} height={base.height} fill="#d5e1ec" style={{ opacity: view.mirror ? 1 : 0 }} />
-            <rect className={styles.tintMirror} x="0" y="0" width={base.width} height={base.height} fill={`url(#${clipId}-silver)`} style={{ opacity: view.mirror ? 1 : 0 }} />
-            <rect className={styles.tintMirror} x="0" y="0" width={base.width} height={base.height} fill={`url(#${clipId}-sheen)`} style={{ opacity: view.mirror ? 1 : 0 }} />
+            <g className={styles.tintMirror} style={{ opacity: view.mirror ? 1 : 0 }}>
+              <image
+                href={reflectionSrc}
+                x="0"
+                y="0"
+                width={base.width}
+                height={base.height}
+                preserveAspectRatio="none"
+                filter={`url(#${clipId}-mirror)`}
+              />
+              <rect x="0" y="0" width={base.width} height={base.height} fill={`url(#${clipId}-sheen)`} />
+            </g>
           </g>
         </svg>
       </div>
