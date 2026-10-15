@@ -3,8 +3,8 @@ import Link from "next/link";
 import { FAQList } from "@/components/FAQList";
 import { Icon } from "@/components/Icon";
 import { JsonLd } from "@/components/JsonLd";
+import { PdlcExamples } from "@/components/PdlcExamples";
 import { PdlcLayers } from "@/components/PdlcLayers";
-import { PdlcToggle } from "@/components/PdlcToggle";
 import { pdlcQuotePath } from "@/lib/quote";
 
 export const metadata: Metadata = {
@@ -105,61 +105,25 @@ const steps = [
 export default function PdlcPage() {
   return <>
     <JsonLd data={faqSchema} />
-    <section className="product-hero pdlc-hero">
-      <div className="container product-hero-grid">
-        <div className="product-hero-copy">
-          <p className="eyebrow">Privacidad con un botón</p>
-          <h1>Película inteligente PDLC</h1>
-          <p className="lede">Es un smart film, también llamado película eléctrica o película switchable. Se pega por dentro del vidrio y lo vuelve vidrio inteligente: apagada se ve opaca y encendida, transparente.</p>
-          <div className="hero-actions">
-            <Link className="button button-primary" href={pdlcQuotePath}>Cotizar con visita técnica <Icon name="arrow" size={18} /></Link>
-            <Link className="button button-secondary" href="/blog/que-es-la-pelicula-inteligente-pdlc/">Cuándo conviene</Link>
-          </div>
-          <div className="product-hero-facts" aria-label="Datos clave">
-            <div><span>Apagada</span><strong>Opaca</strong></div>
-            <div><span>Encendida</span><strong>Transparente</strong></div>
-            <div><span>Instalación</span><strong>Interior</strong></div>
-            <div><span>Precio</span><strong>Con visita</strong></div>
-          </div>
-        </div>
-        <div className="pdlc-pair" aria-hidden="true">
-          <div className="pdlc-mini pdlc-mini-off"><span className="pdlc-mini-scene" /><strong>Apagada</strong><small>Opaca</small></div>
-          <div className="pdlc-mini pdlc-mini-on"><span className="pdlc-mini-scene" /><strong>Encendida</strong><small>Transparente</small></div>
+    <section className="pdlc-top">
+      <div className="container pdlc-top-inner">
+        <h1>Película inteligente PDLC</h1>
+        <p className="pdlc-oneliner">Con un botón, tu cristal pasa de opaco a transparente.</p>
+        <PdlcExamples />
+        <div className="hero-actions">
+          <Link className="button button-primary" href={pdlcQuotePath}>Cotizar con visita técnica <Icon name="arrow" size={18} /></Link>
         </div>
       </div>
     </section>
 
     <section className="section">
-      <div className="container pdlc-split">
-        <div>
-          <p className="eyebrow">Qué es</p>
-          <h2>Una película sobre el vidrio que ya tienes.</h2>
-          <p>El PDLC es cristal líquido dentro de la película. Sin corriente se dispersa y el vidrio se ve esmerilado. Con corriente se ordena y se ve transparente. El cambio es inmediato.</p>
-          <p>No sustituye el vidrio y no es control solar. Los anchos de rollo, según la ficha del fabricante, llegan hasta 1.8 m. La pieza se fabrica a la medida de tu cristal.</p>
-        </div>
-        <div>
-          <h3 className="pdlc-layers-title">Capas, del vidrio hacia adentro</h3>
-          <PdlcLayers />
-        </div>
-      </div>
-    </section>
-
-    <section className="section section-alt" id="apagada-encendida">
-      <div className="container">
-        <div className="section-heading section-heading-split">
-          <div><p className="eyebrow">Apagada y encendida</p><h2>Opaca no es lo mismo que transparente.</h2></div>
-          <p>Prueba los dos estados. El dibujo es una ilustración: cuando haya fotos de un cristal instalado, ocupan este lugar.</p>
-        </div>
-        <div className="pdlc-demo">
-          <div>
-            <PdlcToggle />
-            <p className="pdlc-caption">Ilustración. Apagada se ve lechosa; encendida deja ver el espacio, con un velo ligero.</p>
-          </div>
-          <ul className="pdlc-states">
-            <li><strong>Apagada · opaca</strong><p>Como un esmerilado. Deja pasar luz y, a contraluz, se notan siluetas. No consume electricidad.</p></li>
-            <li><strong>Encendida · transparente</strong><p>Se ve el otro lado, con un velo ligero. En el grado más claro, la ficha ronda 90% de luz. Ahí sí consume: hasta 5 W/m².</p></li>
-          </ul>
-        </div>
+      <div className="container pdlc-about">
+        <p className="eyebrow">Qué es</p>
+        <h2>Se pega sobre el vidrio que ya tienes.</h2>
+        <p>Es un smart film: también se llama película eléctrica o película switchable. Apagada se ve opaca. Encendida, transparente. Así el vidrio que ya está se usa como vidrio inteligente, sin cambiarlo.</p>
+        <p>No es control solar y no oscurece por completo. El cambio es inmediato.</p>
+        <h3 className="pdlc-layers-title">Capas, del vidrio hacia adentro</h3>
+        <PdlcLayers />
       </div>
     </section>
 
