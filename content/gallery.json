@@ -1,5 +1,5 @@
 {
-  "instructions": "Para agregar una foto: guarda el archivo en public/images/ y añade un objeto en items. category solo puede ser residencial, comercial o automotriz. Deja items vacío en una categoría y la página muestra el estado vacío de ese filtro.",
+  "instructions": "Solo fotos reales de trabajos de HIGHTECH. Nada generado, de stock ni del fabricante. Guarda el archivo en public/images/ y añade un objeto en items. category solo puede ser residencial, comercial o automotriz. Deja items vacío en una categoría y la página muestra el estado vacío de ese filtro.",
   "items": [
     {
       "id": "residencial-ventanal",
@@ -45,15 +45,6 @@
       "caption": "Proyecto documentado por HIGHTECH en el Aeropuerto de Guadalajara.",
       "category": "comercial",
       "location": "Guadalajara, Jalisco"
-    },
-    {
-      "id": "automotriz-suv",
-      "src": "/images/projects/automotive-audi-q8.webp",
-      "alt": "SUV moderno con cristales polarizados, en un taller limpio y bien iluminado.",
-      "title": "SUV en taller",
-      "caption": "Referencia de polarizado automotriz en un taller limpio.",
-      "category": "automotriz",
-      "location": "Zapopan, Jalisco"
     }
   ]
 }

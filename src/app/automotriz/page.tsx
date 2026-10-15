@@ -55,7 +55,7 @@ export default function AutomotivePage() {
         proofItems={["5 tonos disponibles", "99% protección UV", "Taller o a domicilio"]}
         imageSrc="/images/projects/automotive-audi-q8.webp"
         imageAlt="SUV moderno con cristales polarizados, en un taller limpio y bien iluminado."
-        imageCaption="Referencia de polarizado automotriz."
+        imageCaption="Imagen ilustrativa del acabado."
         imagePosition="25% 40%"
       />
 

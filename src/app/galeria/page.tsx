@@ -6,7 +6,7 @@ import { getGalleryItems } from "@/lib/gallery";
 export const metadata: Metadata = {
   alternates: { canonical: "/galeria/" },
   title: { absolute: "Galería de proyectos de polarizado | HIGHTECH Polarizados" },
-  description: "Fotos de instalaciones residenciales, comerciales y automotrices de HIGHTECH Polarizados en Zapopan y la zona metropolitana de Guadalajara.",
+  description: "Fotos reales de instalaciones residenciales y comerciales de HIGHTECH Polarizados en Zapopan y la zona metropolitana de Guadalajara.",
 };
 
 export default function GalleryPage() {
@@ -17,7 +17,7 @@ export default function GalleryPage() {
         <div className="container">
           <p className="eyebrow">Proyectos</p>
           <h1>Galería de instalaciones.</h1>
-          <p className="gallery-lede">Trabajos residenciales, comerciales y automotrices. Cada foto corresponde a un archivo real del sitio; si una categoría todavía no tiene imágenes, lo decimos.</p>
+          <p className="gallery-lede">Solo instalaciones reales de HIGHTECH. Si una categoría todavía no tiene fotos, lo decimos.</p>
         </div>
       </section>
       <section className="section section-alt">
