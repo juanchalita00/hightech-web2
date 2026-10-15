@@ -39,6 +39,6 @@ La cotización ya deja preparada la relación: aceptar la cotización equivaldr�
 - Reclamación: validar al cliente, pedir fotos y datos, y que lo revise una persona. No atribuir la causa ni prometer reposición en el sitio.
 
 ### Coherencia con la referencia automotriz
-- El texto público dice que no hay regulación oficial actualizada, que el uso común es 35% en laterales y medallón y 75% en parabrisas, y que en el parabrisas la ley técnicamente no establece nada.
-- Una guía anterior citaba el Reglamento de Movilidad de Jalisco, artículo 59, y la Ley, artículo 360, fracción IX. Ese texto ya no está en las páginas públicas. Hay que conciliarlo antes de indexar `/guias/polarizado-automotriz-jalisco/`.
-- No publicar un tono como legal ni como permitido.
+- El texto público separa tres partes. «Lo que más se usa» dice que la mayoría suele instalar 35% en laterales y medallón y 75% en el parabrisas. «¿Y qué dice la ley?» cita, en un acordeón, el Reglamento, artículos 59 fracción VIII y 66 fracción X, y la Ley, artículo 360 fracción IX y artículo 385 fracciones XXIV y XXV, con enlace al PDF de la biblioteca del Congreso. El aviso dice que es solo informativo, que no es asesoría legal y que el cliente decide.
+- No se menciona a Tránsito ni una orientación verbal. No se dice que un tono evite una sanción.
+- No publicar un tono como legal ni como permitido. La guía `/guias/polarizado-automotriz-jalisco/` sigue fuera del índice.

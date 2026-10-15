@@ -14,7 +14,7 @@ const guides = [
   { href:"/guias/que-es-vlt/", category:"Métricas", title:"Qué es VLT y qué significan 75, 50, 35, 15 y 5", description:"La transmisión de luz visible explica claridad y oscuridad; el nombre comercial no siempre coincide exactamente con la ficha." },
   { href:"/guias/privacidad-ventanas-noche/", category:"Privacidad", title:"Privacidad de noche: por qué puede invertirse", description:"La diferencia de iluminación entre interior y exterior cambia lo que se ve a través del cristal." },
   { href:"/guias/estres-termico-cristal/", category:"Compatibilidad", title:"Estrés térmico: por qué el tipo de vidrio importa", description:"Una película se selecciona como parte del sistema vidrio + película, no únicamente por tono o porcentaje." },
-  { href:"/guias/polarizado-automotriz-jalisco/", category:"Automotriz · Jalisco", title:"Porcentajes en el auto: una referencia de uso común", description:"35% en laterales y medallón, y 75% en parabrisas, como referencia de uso común. No es información oficial ni asesoría legal." },
+  { href:"/guias/polarizado-automotriz-jalisco/", category:"Automotriz · Jalisco", title:"Porcentajes en el auto: el texto y la práctica", description:"Cita el texto publicado en Jalisco. Aparte, lo que la mayoría suele instalar: 35% en laterales y medallón, y 75% en el parabrisas." },
 ] as const;
 
 export default function GuidesPage(){return <>

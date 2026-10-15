@@ -432,16 +432,36 @@ thead th { background: var(--surface-alt); }
 .auto-diff-grid > div:last-child .auto-diff-note { color:var(--ink); font-weight:650; }
 .auto-table-links { display:flex; flex-wrap:wrap; gap:.6rem 1.6rem; margin:1.2rem 0 0; }
 .jalisco-section { background:#eef3ff; }
-.jalisco-reference { display:grid; grid-template-columns:minmax(0,1.2fr) minmax(18rem,.8fr); overflow:hidden; border-radius:2rem; color:white; background:linear-gradient(135deg,#172553,#0a112b); box-shadow:var(--shadow-soft); }
-.jalisco-reference-copy { padding:clamp(2rem,5vw,4rem); }
-.jalisco-reference-copy h2 { max-width:15ch; }
-.jalisco-reference-copy > p:not(.eyebrow) { max-width:44rem; margin:1.15rem 0 0; color:#b3bfd7; }
-.jalisco-reference-copy .button { margin-top:1.5rem; }
-.jalisco-reference-values { display:grid; align-content:center; padding:clamp(1.5rem,4vw,3rem); background:rgba(255,255,255,.045); border-left:1px solid rgba(255,255,255,.1); }
-.jalisco-reference-values > div { display:grid; gap:.35rem; padding:1.2rem 0; }
-.jalisco-reference-values > div:not(:last-child) { border-bottom:1px solid rgba(255,255,255,.1); }
-.jalisco-reference-values span { color:#9eaac4; font-size:.72rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; }
-.jalisco-reference-values p { margin:0; color:#e4e9f5; font-size:.95rem; line-height:1.5; }
+.auto-law { display:grid; gap:1.6rem; }
+.auto-law-block { display:grid; gap:.75rem; }
+.auto-law h2 { margin:0; font-size:clamp(1.7rem, 3vw, 2.35rem); }
+.auto-law-intro { margin:0; max-width:40rem; color:var(--ink-soft); }
+.auto-law-tones { display:grid; grid-template-columns:1fr 1fr; gap:.8rem; }
+.auto-law-tone { display:grid; gap:.2rem; align-content:start; padding:1.15rem 1.2rem 1.25rem; border:1px solid var(--line); border-radius:1.3rem; background:white; }
+.auto-law-tone strong { margin-top:.85rem; font-size:clamp(2rem, 4vw, 2.7rem); letter-spacing:-.04em; line-height:1; }
+.auto-law-tone h3 { margin:0; font-size:1.05rem; }
+.auto-law-callout { display:grid; grid-template-columns:auto 1fr; gap:.9rem; align-items:start; margin:0; padding:1rem 1.1rem; border:1px solid #ecdcb9; border-radius:1.1rem; background:#fffaf0; }
+.auto-law-callout strong { display:block; color:#8a5a08; }
+.auto-law-callout p { margin:.25rem 0 0; color:#6d5a32; }
+.auto-law-accordion { padding:0 1.1rem; border:1px solid var(--line); border-radius:1.2rem; background:white; }
+.auto-law-accordion .faq-list { border-top:0; }
+.auto-law-summary { display:grid; gap:.12rem; min-width:0; }
+.auto-law-summary strong { font-size:1rem; }
+.auto-law-summary small { color:var(--ink-soft); font-size:.8rem; font-weight:650; }
+.auto-law-accordion .faq-answer { max-width:none; }
+.auto-law-quote { margin:.15rem 0 .85rem; padding:0 0 0 .9rem; border-left:3px solid #2457d6; }
+.auto-law-quote p { margin:0 0 .65rem; }
+.auto-law-quote p:last-child { margin:0; }
+.auto-law-cite { margin:.55rem 0 0; color:var(--ink-soft); font-size:.9rem; }
+.auto-law-cite a { display:inline-flex; align-items:center; gap:.35rem; font-weight:750; }
+.auto-law-links { display:flex; flex-wrap:wrap; gap:.8rem 1.2rem; margin:0; }
+.auto-law-links a { font-weight:750; }
+.auto-law .chips { margin-top:.2rem; }
+.auto-law-notes { display:grid; grid-template-columns:repeat(3, 1fr); gap:.8rem; margin-top:1rem; }
+.auto-law-notes article { display:grid; gap:.4rem; align-content:start; padding:1rem; border:1px solid var(--line); border-radius:1.1rem; background:white; }
+.auto-law-notes h3 { margin:.3rem 0 0; font-size:1.02rem; }
+.auto-law-notes p { margin:0; color:var(--ink-soft); font-size:.9rem; line-height:1.5; }
+.blog-post .auto-law { margin:1.4rem 0 1.8rem; }
 
 
 /* Footer */
@@ -533,13 +553,13 @@ thead th { background: var(--surface-alt); }
   .application-hero-grid { grid-template-columns:1fr 1fr; gap:2rem; }
   .application-visual { min-height:28rem; }
   .decision-grid { grid-template-columns:repeat(2,1fr); }
-  .residential-solutions-grid, .commercial-spec-grid, .commercial-solutions-layout, .auto-tones-layout, .jalisco-reference { grid-template-columns:1fr; }
+  .residential-solutions-grid, .commercial-spec-grid, .commercial-solutions-layout, .auto-tones-layout { grid-template-columns:1fr; }
   .compatibility-card, .auto-tones-copy { position:relative; top:auto; }
   .process-rail { grid-template-columns:repeat(2,1fr); row-gap:2rem; }
   .process-rail article:nth-child(2) { border-right:0; }
   .faq-layout { grid-template-columns:.75fr 1.25fr; gap:3rem; }
   .application-final-card { grid-template-columns:1fr; }
-  .jalisco-reference-values { border-left:0; border-top:1px solid rgba(255,255,255,.1); }
+  .auto-law-notes { grid-template-columns:1fr; }
 }
 
 @media (max-width: 760px) {
@@ -569,8 +589,8 @@ thead th { background: var(--surface-alt); }
   .commercial-spec-panel, .commercial-spec-checklist { border-radius:1.4rem; }
   .auto-tone-row { grid-template-columns:3.8rem 1fr auto; gap:.75rem; }
   .auto-tone-spec { display:none; }
+  .auto-law-tones { grid-template-columns:1fr; }
   .auto-tone-main p { display:none; }
-  .jalisco-reference { border-radius:1.5rem; }
 }
 
 @media (max-width: 460px) {
@@ -1046,6 +1066,7 @@ thead th { background: var(--surface-alt); }
 .guide-body > p.eyebrow { margin:3.4rem 0 .9rem; color:var(--brand); font-size:.74rem; line-height:1.4; }
 .guide-body > p.eyebrow + h2 { margin-top:0; }
 .guide-body > p.eyebrow:first-child { margin-top:0; }
+.guide-body > .chips { margin:.2rem 0 0; }
 .guide-options { display:grid; margin:1.6rem 0 0; border-top:1px solid var(--line); }
 .guide-options > div { display:grid; grid-template-columns:minmax(9rem,.38fr) 1fr; gap:.4rem 1.4rem; padding:1rem 0; border-bottom:1px solid var(--line); }
 .guide-options strong { color:var(--ink); font-size:1rem; line-height:1.4; }
@@ -1292,12 +1313,6 @@ thead th { background: var(--surface-alt); }
 .quote-form-actions { display:flex; flex-wrap:wrap; align-items:center; gap:.8rem 1.2rem; }
 .quote-form-actions p, .quote-form-terms, .quote-form-status { margin:0; color:var(--ink-soft); font-size:.92rem; }
 .quote-form-status a, .quote-form-terms a, .markdown a, .blog-index a, .blog-related a, .gallery-next { font-weight:750; }
-.auto-disclaimer { display:grid; gap:.7rem; margin:0 0 1.5rem; padding:1.2rem 1.3rem; border-radius:1.2rem; background:#f4f7ff; }
-.auto-disclaimer h2 { font-size:clamp(1.5rem, 2.5vw, 2rem); }
-.auto-disclaimer p { margin:0; color:var(--ink-soft); }
-.auto-disclaimer-strong { color:var(--ink); font-weight:700; }
-.auto-disclaimer-links { display:flex; flex-wrap:wrap; gap:.8rem 1.2rem; }
-.auto-disclaimer-compact { margin-top:.4rem; }
 .gallery-lede, .blog-lede { max-width:40rem; color:var(--ink-soft); font-size:1.05rem; }
 .gallery-filters { display:flex; flex-wrap:wrap; gap:.5rem; margin-bottom:1.4rem; }
 .gallery-filters button { min-height:44px; border:1px solid var(--line); border-radius:999px; padding:.45rem .95rem; background:white; color:var(--ink); font:inherit; font-weight:750; cursor:pointer; }

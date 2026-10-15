@@ -1,35 +1,34 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { AutomotiveDisclaimer } from "@/components/AutomotiveDisclaimer";
+import { AutomotiveLawCopy } from "@/components/AutomotiveLawCopy";
+import { Icon } from "@/components/Icon";
 import { GuideArticle, GuideAside, GuideBody } from "@/components/GuideArticle";
 import { GuideHero } from "@/components/GuideHero";
 import { ProductCTA } from "@/components/ProductCTA";
-import { automotiveReference } from "@/lib/automotive-reference";
 import { release } from "@/lib/truth";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/guias/polarizado-automotriz-jalisco/" },
   title: { absolute: "Porcentajes de polarizado automotriz | HIGHTECH Polarizados" },
-  description: "Referencia de uso común para el auto: 35% en laterales y medallón, y 75% en el parabrisas. No es información oficial ni asesoría legal.",
+  description: "Cita el texto publicado en Jalisco y, aparte, lo que la mayoría suele instalar: 35% en laterales y medallón, y 75% en el parabrisas. No es asesoría legal.",
   robots: { index: release.routes.jaliscoGuideIndexable, follow: true },
 };
 
 export default function Page() {
   return <>
-    <GuideHero eyebrow="Guía · Automotriz" title="Qué suele usarse en un auto, y qué no podemos decidir por ti." description={automotiveReference.lead} category="Referencia automotriz" ctaHref="/automotriz/" ctaLabel="Ver polarizado automotriz" />
+    <GuideHero eyebrow="Guía · Automotriz" title="Qué suele usarse en un auto, y qué no podemos decidir por ti." description="Primero, lo que la mayoría suele instalar. Después, la cita del texto publicado. La decisión queda en el cliente." category="Referencia automotriz" ctaHref="/automotriz/" ctaLabel="Ver polarizado automotriz" />
     <GuideArticle>
       <GuideBody>
-        <AutomotiveDisclaimer compact />
-        <p className="eyebrow">La referencia</p>
-        <h2>35% en laterales y medallón. 75% en el parabrisas.</h2>
-        <p>{automotiveReference.reference}</p>
-        <p>{automotiveReference.windshield}</p>
-        <p>{automotiveReference.disclaimer}</p>
+        <AutomotiveLawCopy />
         <p className="eyebrow">El tono de la película</p>
-        <h2>El número describe la luz, no una autorización.</h2>
-        <p>La gama nanocerámica activa es 75, 50, 35, 15 y 5. Esos números ayudan a comparar cuánta luz visible deja pasar cada película. No convierten un tono en una regla oficial.</p>
-        <p>Los nombres 20, 70 y 80 son históricos, o corresponden a una película que el vehículo ya trae. No son la gama que se instala hoy.</p>
-        <p>Un tono más oscuro deja pasar menos luz. Eso importa si manejas de noche. No significa, por sí solo, que el vehículo se caliente menos. Un rechazo infrarrojo de hasta 95% tampoco significa 95% menos calor.</p>
+        <h2>El número describe la luz.</h2>
+        <div className="chips" aria-label="Gama nanocerámica activa">{["75%", "50%", "35%", "15%", "5%"].map((tone) => <span className="chip" key={tone}>{tone}</span>)}</div>
+        <div className="auto-law-notes">
+          <article><span className="decision-icon"><Icon name="glass" size={20} /></span><h3>Gama activa</h3><p>Esos números comparan cuánta luz visible deja pasar cada película. No convierten un tono en una regla oficial.</p></article>
+          <article><span className="decision-icon"><Icon name="sun" size={20} /></span><h3>20, 70 y 80</h3><p>Son nombres históricos, o una película que el vehículo ya trae. No son la gama que se instala hoy.</p></article>
+          <article><span className="decision-icon"><Icon name="glare" size={20} /></span><h3>De noche</h3><p>Un tono más oscuro deja pasar menos luz. No significa, por sí solo, que el vehículo se caliente menos.</p></article>
+        </div>
+        <p className="context-note">Un rechazo infrarrojo de hasta 95% no significa 95% menos calor.</p>
         <p className="guide-context-link"><Link className="text-link" href="/blog/mitos-de-porcentajes-en-el-auto/">Leer los mitos de los porcentajes</Link></p>
       </GuideBody>
       <GuideAside>
