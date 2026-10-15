@@ -2,6 +2,7 @@ import { getGoogleReviews } from "@/lib/google-reviews";
 import { truth } from "@/lib/truth";
 
 const profileUrl = truth.contact.social.googleMaps;
+const reviewUrl = truth.contact.reviewUrl;
 
 function Stars({ rating }: { rating: number }) {
   return (
@@ -48,7 +49,7 @@ export function GoogleReviews() {
         ) : null}
         <div className="google-reviews-actions">
           <a className="button button-primary" href={profileUrl} target="_blank" rel="noopener noreferrer">Ver más opiniones en Google</a>
-          <a className="button button-secondary" href={profileUrl} target="_blank" rel="noopener noreferrer">¿Ya trabajamos juntos? Cuéntanos cómo te fue</a>
+          <a className="button button-secondary" href={reviewUrl} target="_blank" rel="noopener noreferrer">¿Ya trabajamos juntos? Cuéntanos cómo te fue</a>
         </div>
       </div>
     </section>
