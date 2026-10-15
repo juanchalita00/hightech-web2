@@ -6,40 +6,40 @@ const scenes = [
   {
     id: "oficina",
     label: "Oficina",
-    off: "/images/pdlc/oficina-apagada.webp",
     on: "/images/pdlc/oficina-encendida.webp",
+    mask: "/images/pdlc/mask-oficina.webp",
     altOff: "Puerta de oficina con película inteligente apagada: el cristal se ve opaco.",
     altOn: "La misma puerta de oficina con la película encendida: el cristal se ve transparente.",
   },
   {
     id: "bano",
     label: "Baño",
-    off: "/images/pdlc/bano-apagada.webp",
     on: "/images/pdlc/bano-encendida.webp",
+    mask: "/images/pdlc/mask-bano.webp",
     altOff: "Referencia de un cancel de baño con la película apagada, de aspecto opaco.",
     altOn: "La misma referencia de baño con la película encendida.",
   },
   {
     id: "sala",
     label: "Sala de juntas",
-    off: "/images/pdlc/sala-apagada.webp",
     on: "/images/pdlc/sala-encendida.webp",
+    mask: "/images/pdlc/mask-sala.webp",
     altOff: "Puertas de una sala de juntas con la película apagada.",
     altOn: "Las mismas puertas de sala de juntas con la película encendida.",
   },
   {
     id: "clinica",
     label: "Clínica",
-    off: "/images/pdlc/clinica-apagada.webp",
     on: "/images/pdlc/clinica-encendida.webp",
+    mask: "/images/pdlc/mask-clinica.webp",
     altOff: "Consultorio con la película apagada: el vidrio se ve opaco.",
     altOn: "El mismo consultorio con la película encendida.",
   },
   {
     id: "residencial",
     label: "Residencial",
-    off: "/images/pdlc/estudio-apagada.webp",
     on: "/images/pdlc/estudio-encendida.webp",
+    mask: "/images/pdlc/mask-estudio.webp",
     altOff: "Estudio en casa con la película apagada.",
     altOn: "El mismo estudio con la película encendida.",
   },
@@ -84,25 +84,26 @@ export function PdlcExamples() {
           {scenes.map((item, index) => {
             const active = index === sceneIndex;
             const showOff = active && !powered;
-            const showOn = active && powered;
             return (
               <span key={item.id} hidden={!active ? true : undefined}>
-                <img
-                  src={item.off}
-                  width={800}
-                  height={800}
-                  alt={showOff ? item.altOff : ""}
-                  className={showOff ? "pdlc-shot is-on" : "pdlc-shot"}
-                  aria-hidden={showOff ? undefined : true}
-                />
                 <img
                   src={item.on}
                   width={800}
                   height={800}
-                  alt={showOn ? item.altOn : ""}
-                  className={showOn ? "pdlc-shot is-on" : "pdlc-shot"}
-                  aria-hidden={showOn ? undefined : true}
+                  alt={active ? (powered ? item.altOn : item.altOff) : ""}
+                  className="pdlc-shot"
+                  aria-hidden={active ? undefined : true}
                 />
+                <span
+                  className={showOff ? "pdlc-frost is-on" : "pdlc-frost"}
+                  style={{ ["--pdlc-mask" as string]: `url("${item.mask}")` }}
+                  aria-hidden="true"
+                >
+                  <span
+                    className="pdlc-veil"
+                    style={{ backdropFilter: "blur(10px) saturate(0.5)", WebkitBackdropFilter: "blur(10px) saturate(0.5)" }}
+                  />
+                </span>
               </span>
             );
           })}

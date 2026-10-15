@@ -4,11 +4,21 @@ import { useId, useState } from "react";
 import styles from "@/app/home-v09.module.css";
 
 /**
- * La fachada base no lleva rótulos y todos los paños parten del mismo cristal.
- * El tono se pinta encima, hasta que exista la foto de ese tono.
+ * Una sola fachada. El oscurecido se pinta solo dentro de `glassPanels`.
+ * Para cambiar la foto: sustituye `src` y, si el encuadre no coincide,
+ * `width`, `height` y los rectángulos. Esos rectángulos están en píxeles
+ * de la imagen (el mismo espacio que width × height).
+ *
+ * Archivo: WebP RGB, sin rótulos, vista desde la calle, cristales todavía
+ * claros. Hoy es 1440×960. El recuadro recorta con object-fit: cover y el
+ * SVG usa el mismo recorte (slice). Si la nueva foto trae otro tamaño, el
+ * viewBox sigue a width/height; los rectángulos se vuelven a medir en
+ * píxeles de esa foto.
  */
 const base = {
   src: "/images/comparador/fachada-exterior-base.webp",
+  width: 1440,
+  height: 960,
   alt: "Casa moderna vista desde la calle. Todos los cristales parten del mismo tono y cambian al elegir un botón.",
 };
 
@@ -90,7 +100,7 @@ export function SignatureGlass() {
     <div className={styles.signatureGlass} aria-label="Fachada vista desde la calle. Cada botón cambia el tono del cristal.">
       <div className={photoReady ? styles.referenceFrameHidden : styles.referenceFrame}>
         <img src={base.src} alt={base.alt} className={styles.referencePhoto} />
-        <svg className={styles.glassTint} viewBox="0 0 1440 960" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <svg className={styles.glassTint} viewBox={`0 0 ${base.width} ${base.height}`} preserveAspectRatio="xMidYMid slice" aria-hidden="true">
           <defs>
             <clipPath id={clipId}>
               {glassPanels.map((panel) => <rect key={`${panel.x}-${panel.y}`} x={panel.x} y={panel.y} width={panel.width} height={panel.height} />)}
@@ -109,10 +119,10 @@ export function SignatureGlass() {
             </linearGradient>
           </defs>
           <g clipPath={`url(#${clipId})`}>
-            <rect className={styles.tintShade} x="0" y="0" width="1440" height="960" fill="#07101c" style={{ opacity: view.mirror ? 0 : view.shade }} />
-            <rect className={styles.tintMirror} x="0" y="0" width="1440" height="960" fill="#d5e1ec" style={{ opacity: view.mirror ? 1 : 0 }} />
-            <rect className={styles.tintMirror} x="0" y="0" width="1440" height="960" fill={`url(#${clipId}-silver)`} style={{ opacity: view.mirror ? 1 : 0 }} />
-            <rect className={styles.tintMirror} x="0" y="0" width="1440" height="960" fill={`url(#${clipId}-sheen)`} style={{ opacity: view.mirror ? 1 : 0 }} />
+            <rect className={styles.tintShade} x="0" y="0" width={base.width} height={base.height} fill="#07101c" style={{ opacity: view.mirror ? 0 : view.shade }} />
+            <rect className={styles.tintMirror} x="0" y="0" width={base.width} height={base.height} fill="#d5e1ec" style={{ opacity: view.mirror ? 1 : 0 }} />
+            <rect className={styles.tintMirror} x="0" y="0" width={base.width} height={base.height} fill={`url(#${clipId}-silver)`} style={{ opacity: view.mirror ? 1 : 0 }} />
+            <rect className={styles.tintMirror} x="0" y="0" width={base.width} height={base.height} fill={`url(#${clipId}-sheen)`} style={{ opacity: view.mirror ? 1 : 0 }} />
           </g>
         </svg>
       </div>
