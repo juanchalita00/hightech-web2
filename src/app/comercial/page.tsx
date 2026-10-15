@@ -82,6 +82,7 @@ export default function CommercialPage() {
             <Link href="/peliculas/plata-reflecta/"><span>Privacidad diurna y apariencia reflectiva</span><strong>Plata Reflecta</strong><Icon name="arrow" size={18}/></Link>
             <Link href="/peliculas/seguridad/"><span>Retención de fragmentos</span><strong>Seguridad</strong><Icon name="arrow" size={18}/></Link>
             <Link href="/peliculas/privacidad/"><span>Control de visibilidad</span><strong>Privacidad</strong><Icon name="arrow" size={18}/></Link>
+            <Link href="/pelicula-inteligente-pdlc/"><span>Privacidad con un botón, en interior</span><strong>Película inteligente</strong><Icon name="arrow" size={18}/></Link>
           </div>
         </div>
       </section>

@@ -6,6 +6,7 @@ const rows = [
   { href: "/peliculas/plata-reflecta/", title: "Plata Reflecta", icon: "privacy" as const, clarity: "Apariencia reflectiva", privacy: "Principalmente diurna", solar: "Sí, por producto", safety: "No es su función principal", note: "Útil cuando la apariencia espejada forma parte de la solución." },
   { href: "/peliculas/seguridad/", title: "Seguridad", icon: "shield" as const, clarity: "Puede ser visualmente clara", privacy: "No necesariamente", solar: "Depende del producto", safety: "Retención de fragmentos", note: "El desempeño frente a intrusión depende del sistema completo." },
   { href: "/peliculas/privacidad/", title: "Privacidad", icon: "privacy" as const, clarity: "Depende de la estrategia", privacy: "Objetivo principal", solar: "Puede coexistir", safety: "No necesariamente", note: "La luz exterior/interior cambia el resultado de algunas soluciones." },
+  { href: "/pelicula-inteligente-pdlc/", title: "Película inteligente", icon: "glass" as const, clarity: "Opaca o transparente, con un botón", privacy: "Al apagarse, esmerilada (no es blackout)", solar: "No es su función", safety: "No", note: "Requiere visita técnica y conexión eléctrica." },
 ] as const;
 
 export function TechnologyMatrix() {

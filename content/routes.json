@@ -102,6 +102,12 @@
     "canonical": "/peliculas/privacidad/"
   },
   {
+    "path": "/pelicula-inteligente-pdlc/",
+    "status": "LAUNCH_WITH_CONTEXT",
+    "indexable": true,
+    "canonical": "/pelicula-inteligente-pdlc/"
+  },
+  {
     "path": "/proyectos/",
     "status": "CONTENT_BLOCKED",
     "indexable": false,

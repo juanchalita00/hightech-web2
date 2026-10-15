@@ -100,6 +100,7 @@ export default function ResidentialPage() {
               <Link href="/peliculas/plata-reflecta/"><span><strong>Plata Reflecta</strong><small>Control solar y privacidad durante el día con una apariencia más reflectiva.</small></span><Icon name="arrow" size={18}/></Link>
               <Link href="/peliculas/privacidad/"><span><strong>Privacidad</strong><small>Para limitar la visibilidad hacia el interior, considerando que el efecto cambia entre día y noche.</small></span><Icon name="arrow" size={18}/></Link>
               <Link href="/peliculas/seguridad/"><span><strong>Seguridad</strong><small>Ayuda a mantener unidos los fragmentos del cristal en caso de rotura.</small></span><Icon name="arrow" size={18}/></Link>
+              <Link href="/pelicula-inteligente-pdlc/"><span><strong>Película inteligente</strong><small>De opaca a transparente en vidrio interior. En baño, solo lejos del agua.</small></span><Icon name="arrow" size={18}/></Link>
             </div>
           </div>
           <div className="compatibility-card">

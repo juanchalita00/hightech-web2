@@ -22,13 +22,13 @@ import {
   type QuoteService,
 } from "@/lib/quote";
 
-type Props = { initialService?: string };
+type Props = { initialService?: string; initialMessage?: string };
 
 type Status = "idle" | "sending" | "sent" | "opened" | "manual" | "failed";
 
 const emptyErrors = { name: "", phone: "", email: "", city: "", detail: "", channel: "", company: "" };
 
-export function QuoteForm({ initialService }: Props) {
+export function QuoteForm({ initialService, initialMessage = "" }: Props) {
   const starting = isQuoteService(initialService) ? initialService : "residencial";
   const [service, setService] = useState<QuoteService>(starting);
   const [channel, setChannel] = useState<QuoteChannel | "">("");
@@ -38,7 +38,7 @@ export function QuoteForm({ initialService }: Props) {
   const [company, setCompany] = useState("");
   const [city, setCity] = useState("");
   const [detail, setDetail] = useState("");
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState(initialMessage);
   const [errors, setErrors] = useState(emptyErrors);
   const [status, setStatus] = useState<Status>("idle");
   const [fallbackHref, setFallbackHref] = useState("");

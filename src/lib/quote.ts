@@ -73,6 +73,8 @@ export function quotePath(service?: QuoteService): string {
   return `/contacto/?servicio=${service}#cotizar`;
 }
 
+export const pdlcQuotePath = "/contacto/?producto=pdlc#cotizar";
+
 export function detailLabel(service: QuoteService): string {
   return service === "automotriz" ? "Marca y modelo del vehículo" : "Metros cuadrados aproximados";
 }

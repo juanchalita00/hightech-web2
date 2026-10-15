@@ -14,9 +14,10 @@ export const metadata: Metadata = {
   description: "Pide una cotización de polarizado residencial, comercial o automotriz en Zapopan y la zona metropolitana de Guadalajara. Elige si te contactamos por WhatsApp o por correo.",
 };
 
-export default async function Page({ searchParams }: { searchParams: Promise<{ servicio?: string }> }) {
+export default async function Page({ searchParams }: { searchParams: Promise<{ servicio?: string; producto?: string }> }) {
   const params = await searchParams;
   const service = isQuoteService(params.servicio) ? params.servicio : undefined;
+  const initialMessage = params.producto === "pdlc" ? "Quiero cotizar película inteligente PDLC." : "";
   return <>
     <TrustHero eyebrow="Contacto" title="Cuéntanos el espacio o el vehículo. Te ayudamos a aterrizar la cotización." description="Puedes llenar el formulario o escribir por WhatsApp. Atendemos desde Zapopan, Jalisco, la zona metropolitana de Guadalajara y proyectos que se evalúan en otros estados." ctaLabel="Ir al formulario" ctaHref="#cotizar" points={[truth.contact.locationLabel,"Residencial · Comercial · Automotriz","WhatsApp o correo"]}/>
     <section className="section" id="cotizar">
@@ -25,7 +26,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ s
           <div><p className="eyebrow">Solicitud de cotización</p><h2>Los datos que necesitamos para empezar.</h2></div>
           <p>Nombre, ciudad y cómo prefieres que te contactemos. Si falta algo, lo pedimos en la conversación.</p>
         </div>
-        <QuoteForm initialService={service} />
+        <QuoteForm initialService={service} initialMessage={initialMessage} />
       </div>
     </section>
     <section className="section section-alt"><div className="container"><div className="section-heading"><p className="eyebrow">Otras formas de contacto</p><h2>WhatsApp, teléfono y horario.</h2></div><ContactMethods/></div></section>

@@ -23,6 +23,7 @@ export function SiteFooter() {
             <Link href="/comercial/">Comercial</Link>
             <Link href="/automotriz/">Automotriz</Link>
             <Link href="/peliculas/">Películas</Link>
+            <Link href="/pelicula-inteligente-pdlc/">Película inteligente</Link>
             <Link href="/galeria/">Galería</Link>
           </div>
           <div>

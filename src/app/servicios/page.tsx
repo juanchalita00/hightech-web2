@@ -20,6 +20,7 @@ const needs: readonly { icon: IconName; title: string; text: string; cta: string
   { icon: "uv", title: "Quiero proteger interiores del sol", text: "Los rayos UV contribuyen al deterioro de superficies, muebles y materiales. La protección UV se evalúa por separado de qué tan oscura se ve una película.", cta: "Entender protección UV", href: "/guias/proteccion-uv-ventanas/" },
   { icon: "shield", title: "Quiero reforzar el comportamiento del cristal", text: "Una película de seguridad puede ayudar a mantener unidos los fragmentos cuando el cristal se rompe. La solución correcta depende del objetivo y del sistema completo.", cta: "Ver soluciones de seguridad", href: "/peliculas/seguridad/" },
   { icon: "car", title: "Quiero polarizar mi vehículo", text: "Comparamos claridad, apariencia, privacidad y uso nocturno antes de elegir el tono adecuado para los cristales que quieres trabajar.", cta: "Ver línea automotriz", href: "/automotriz/" },
+  { icon: "privacy", title: "Quiero privacidad con un botón", text: "La película inteligente PDLC pasa de opaca a transparente en un vidrio interior. No baja el calor: abre o cierra la vista.", cta: "Ver película inteligente", href: "/pelicula-inteligente-pdlc/" },
 ];
 
 const places: readonly { icon: IconName; label: string; title: string; text: string; cta: string; href: string }[] = [

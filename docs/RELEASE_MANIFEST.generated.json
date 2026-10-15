@@ -84,7 +84,7 @@
       "enabledInProduction": false
     }
   ],
-  "indexableRouteCount": 24,
+  "indexableRouteCount": 25,
   "approvedRedirectCount": 5,
   "enabledThirdParties": [],
   "dnsEmailStatus": "UNVERIFIED_PRE_CUTOVER",
