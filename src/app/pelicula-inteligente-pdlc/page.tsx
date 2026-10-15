@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     question: "¿Encendida se ve como un vidrio nuevo?",
-    answer: "En el grado más claro, la ficha indica alrededor de 90% de transmisión de luz, con un velo ligero. No es un cristal sin película.",
+    answer: "En el grado más claro, la ficha indica 91% de transmisión de luz, con un velo ligero. No es un cristal sin película.",
   },
   {
     question: "¿Apagada oscurece por completo?",

@@ -1482,7 +1482,7 @@ thead th { background: var(--surface-alt); }
 }
 /* The blur lives on the inner veil. Chrome drops backdrop-filter on the same element that carries the mask.
    Oficina apagada keeps its own photo. The other four use this matte frost.
-   Encendida keeps a thin milky haze so the film does not read as bare glass. */
+   Encendida is 91% transparent: a 9% milky haze so the film does not read as bare glass. */
 .pdlc-veil {
   position:absolute; inset:0;
   background:
@@ -1498,7 +1498,7 @@ thead th { background: var(--surface-alt); }
   background: linear-gradient(180deg, rgba(255,255,252,.22), transparent 38%);
   mix-blend-mode: soft-light;
 }
-.pdlc-haze { background: rgba(240,240,236,.12); }
+.pdlc-haze { background: rgba(240,240,236,.09); }
 .pdlc-frost.is-on,
 .pdlc-haze.is-on { opacity:1; }
 .pdlc-card figcaption { padding:.7rem .9rem .8rem; background:white; }
