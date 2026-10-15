@@ -10,7 +10,7 @@ import { pdlcQuotePath } from "@/lib/quote";
 export const metadata: Metadata = {
   alternates: { canonical: "/pelicula-inteligente-pdlc/" },
   title: { absolute: "Película inteligente PDLC | HIGHTECH Polarizados" },
-  description: "Vidrio inteligente con smart film: la película eléctrica PDLC, o película switchable, pasa de opaca a transparente. Cotización con visita técnica en Zapopan y Guadalajara.",
+  description: "Película inteligente PDLC, también llamada vidrio inteligente: el cristal pasa de opaco a transparente. Cotización con visita técnica en Zapopan y Guadalajara.",
 };
 
 const faqs = [
@@ -19,7 +19,7 @@ const faqs = [
     answer: "No. Sin corriente la película se queda opaca. La privacidad no depende de que haya luz eléctrica.",
   },
   {
-    question: "¿Cuánta electricidad usa la película eléctrica?",
+    question: "¿Cuánta electricidad usa la película inteligente?",
     answer: "Según la ficha del fabricante, hasta 5 W/m² y solo cuando está transparente. Apagada no consume.",
   },
   {
@@ -43,8 +43,8 @@ const faqs = [
     answer: "No, si el vidrio que ya tienes es liso y no está dañado o texturizado. La película se adhiere por el interior.",
   },
   {
-    question: "¿Película switchable y vidrio inteligente son lo mismo?",
-    answer: "En esta página, smart film, película switchable y película eléctrica nombran el mismo producto: la película PDLC que se pega al vidrio existente. Vidrio inteligente es como mucha gente lo busca. No sustituye el vidrio por uno nuevo.",
+    question: "¿Película inteligente y vidrio inteligente son lo mismo?",
+    answer: "Sí. Película inteligente y vidrio inteligente nombran el mismo producto: la película PDLC que se pega al vidrio existente. No sustituye el vidrio por uno nuevo.",
   },
   {
     question: "¿Necesita transformador?",
@@ -60,7 +60,7 @@ const faqs = [
   },
   {
     question: "¿Cuánto cuesta?",
-    answer: "Cotización con visita técnica. No publicamos un precio por metro. Una pieza muy pequeña puede no justificar la fabricación a medida y la conexión eléctrica; el mínimo del proyecto se confirma en la visita.",
+    answer: "Cotización con visita técnica. No publicamos un precio por metro. Hacemos desde piezas pequeñas, incluso una ventana de 1 × 1 m. En proyectos chicos aplica un mínimo de proyecto.",
   },
   {
     question: "¿Qué garantía tiene?",
@@ -120,7 +120,7 @@ export default function PdlcPage() {
       <div className="container pdlc-about">
         <p className="eyebrow">Qué es</p>
         <h2>Se pega sobre el vidrio que ya tienes.</h2>
-        <p>Es un smart film: también se llama película eléctrica o película switchable. Apagada se ve opaca. Encendida, transparente. Así el vidrio que ya está se usa como vidrio inteligente, sin cambiarlo.</p>
+        <p>Es película inteligente: también se busca como vidrio inteligente. Apagada se ve opaca. Encendida, transparente. Se pega sobre el vidrio que ya está, sin cambiarlo.</p>
         <p>No es control solar y no oscurece por completo. El cambio es inmediato.</p>
         <h3 className="pdlc-layers-title">Capas, del vidrio hacia adentro</h3>
         <PdlcLayers />
@@ -181,7 +181,7 @@ export default function PdlcPage() {
           <p className="eyebrow">Precio</p>
           <h2>Cotización con visita técnica</h2>
           <p>No publicamos un precio por metro. El alcance depende de los metros, el número de piezas y la conexión eléctrica.</p>
-          <p><strong>Mínimo de proyecto.</strong> Una pieza muy pequeña puede no justificar la fabricación a medida más el trabajo eléctrico. Ese mínimo se confirma en la visita.</p>
+          <p>Hacemos desde piezas pequeñas, incluso una ventana de 1 × 1 m. En proyectos chicos aplica un mínimo de proyecto.</p>
           <Link className="button button-primary" href={pdlcQuotePath}>Cotizar con visita técnica <Icon name="arrow" size={18} /></Link>
         </div>
       </div>

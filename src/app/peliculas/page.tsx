@@ -14,7 +14,7 @@ const families = [
   { href:"/peliculas/plata-reflecta/", icon:"privacy" as const, label:"Arquitectura", title:"Plata Reflecta", text:"Apariencia reflectiva y privacidad principalmente diurna. El efecto depende de la diferencia de iluminación entre ambos lados del cristal." },
   { href:"/peliculas/seguridad/", icon:"shield" as const, label:"Protección del cristal", title:"Seguridad", text:"Ayuda a mantener fragmentos unidos al romperse. Los objetivos de retardo de acceso requieren evaluar el sistema completo." },
   { href:"/peliculas/privacidad/", icon:"glass" as const, label:"Control visual", title:"Privacidad", text:"La estrategia cambia según quieras privacidad diurna, mayor oscuridad o una solución que bloquee/difumine la visión." },
-  { href:"/pelicula-inteligente-pdlc/", icon:"privacy" as const, label:"Con un botón", title:"Película inteligente", text:"Smart film PDLC para vidrio interior: apagada se ve opaca y encendida, transparente. No es control solar." },
+  { href:"/pelicula-inteligente-pdlc/", icon:"privacy" as const, label:"Con un botón", title:"Película inteligente", text:"Vidrio inteligente para interior: apagada se ve opaca y encendida, transparente. No es control solar." },
 ] as const;
 
 export default function FilmsPage() {
