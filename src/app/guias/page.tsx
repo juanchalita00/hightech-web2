@@ -14,13 +14,13 @@ const guides = [
   { href:"/guias/que-es-vlt/", category:"Métricas", title:"Qué es VLT y qué significan 75, 50, 35, 15 y 5", description:"La transmisión de luz visible explica claridad y oscuridad; el nombre comercial no siempre coincide exactamente con la ficha." },
   { href:"/guias/privacidad-ventanas-noche/", category:"Privacidad", title:"Privacidad de noche: por qué puede invertirse", description:"La diferencia de iluminación entre interior y exterior cambia lo que se ve a través del cristal." },
   { href:"/guias/estres-termico-cristal/", category:"Compatibilidad", title:"Estrés térmico: por qué el tipo de vidrio importa", description:"Una película se selecciona como parte del sistema vidrio + película, no únicamente por tono o porcentaje." },
-  { href:"/guias/polarizado-automotriz-jalisco/", category:"Automotriz · Jalisco", title:"Qué dice la norma de Jalisco sobre el polarizado automotriz", description:"Qué establece la normativa publicada sobre parabrisas, visibilidad hacia el interior y porcentajes VLT.", badge:"Revisión legal" },
+  { href:"/guias/polarizado-automotriz-jalisco/", category:"Automotriz · Jalisco", title:"Porcentajes en el auto: una referencia de uso común", description:"35% en laterales y medallón, y 75% en parabrisas, como referencia de uso común. No es información oficial ni asesoría legal." },
 ] as const;
 
 export default function GuidesPage(){return <>
   <GuideHero eyebrow="Centro de conocimiento" title="Entender el cristal antes de elegir la película." description="Guías técnicas para comparar métricas, controlar expectativas y tomar decisiones con contexto. Sin convertir una cifra de ficha en una promesa universal." category="Guías HIGHTECH" readingTime="7 temas prioritarios" />
   <section className="section guide-index-section"><div className="container">
-    <div className="section-heading section-heading-split"><div><p className="eyebrow">Biblioteca inicial</p><h2>Empieza por la duda que quieres resolver.</h2></div><p>Las guías enlazan a las soluciones correspondientes, pero primero explican el problema.</p></div>
+    <div className="section-heading section-heading-split"><div><p className="eyebrow">Biblioteca inicial</p><h2>Empieza por la duda que quieres resolver.</h2></div><p>Las guías enlazan a las soluciones correspondientes, pero primero explican el problema. También hay notas más cortas en el <a href="/blog/">blog</a>.</p></div>
     <div className="guide-card-grid">{guides.map((guide)=><GuideCard key={guide.href} {...guide}/>)}</div>
   </div></section>
 </>}

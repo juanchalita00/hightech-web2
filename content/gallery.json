@@ -1,0 +1,59 @@
+{
+  "instructions": "Para agregar una foto: guarda el archivo en public/images/ y añade un objeto en items. category solo puede ser residencial, comercial o automotriz. Deja items vacío en una categoría y la página muestra el estado vacío de ese filtro.",
+  "items": [
+    {
+      "id": "residencial-ventanal",
+      "src": "/images/projects/residential-landmark.webp",
+      "alt": "Interior de una casa con ventanal de piso a techo y vista urbana, en un proyecto residencial de HIGHTECH.",
+      "title": "Ventanal residencial",
+      "caption": "Proyecto residencial documentado por HIGHTECH.",
+      "category": "residencial",
+      "location": "Zona metropolitana de Guadalajara"
+    },
+    {
+      "id": "residencial-instalacion",
+      "src": "/images/projects/residential-process.webp",
+      "alt": "Instalador aplicando película sobre un ventanal amplio en un proyecto arquitectónico.",
+      "title": "Aplicación en ventanal",
+      "caption": "Instalación HIGHTECH en un proyecto arquitectónico.",
+      "category": "residencial",
+      "location": "Zona metropolitana de Guadalajara"
+    },
+    {
+      "id": "comercial-oficina",
+      "src": "/images/projects/commercial-office.webp",
+      "alt": "Oficina con divisiones de cristal y ventanales en un proyecto comercial documentado por HIGHTECH.",
+      "title": "Oficina con cristal",
+      "caption": "Proyecto comercial documentado por HIGHTECH.",
+      "category": "comercial",
+      "location": "Zona metropolitana de Guadalajara"
+    },
+    {
+      "id": "comercial-fachada",
+      "src": "/images/projects/commercial-facade.webp",
+      "alt": "Fachada de un edificio con cristal de apariencia reflejante.",
+      "title": "Fachada de cristal",
+      "caption": "Fachada con cristal reflejante.",
+      "category": "comercial",
+      "location": "Zona metropolitana de Guadalajara"
+    },
+    {
+      "id": "comercial-aeropuerto",
+      "src": "/images/projects/airport-authority.webp",
+      "alt": "Pasillo acristalado junto a la plataforma del Aeropuerto de Guadalajara al atardecer.",
+      "title": "Aeropuerto de Guadalajara",
+      "caption": "Proyecto documentado por HIGHTECH en el Aeropuerto de Guadalajara.",
+      "category": "comercial",
+      "location": "Guadalajara, Jalisco"
+    },
+    {
+      "id": "automotriz-suv",
+      "src": "/images/projects/automotive-audi-q8.webp",
+      "alt": "SUV en taller durante un trabajo de polarizado automotriz realizado por HIGHTECH.",
+      "title": "SUV en taller",
+      "caption": "Instalación automotriz HIGHTECH en taller.",
+      "category": "automotriz",
+      "location": "Zapopan, Jalisco"
+    }
+  ]
+}

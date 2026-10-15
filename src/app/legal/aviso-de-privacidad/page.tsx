@@ -1,7 +1,17 @@
 import type { Metadata } from "next";
-import { SimplePage } from "@/components/SimplePage";
-import { GateNotice } from "@/components/GateNotice";
+import { LegalDraft } from "@/components/LegalDraft";
 import { requireReleasedInProduction } from "@/lib/deployment";
+import { legalDrafts } from "@/lib/legal-drafts";
 import { release } from "@/lib/truth";
-export const metadata:Metadata={ alternates: { canonical: "/legal/aviso-de-privacidad/" },title:"Aviso de Privacidad",robots:{index:false,follow:true}};
-export default function Page(){requireReleasedInProduction(release.production.privacyApproved);return <SimplePage eyebrow="Privacidad" title="Aviso de Privacidad" description="El aviso integral deberá identificar responsable, finalidades, derechos, canal ARCO, terceros y versión."><section className="section"><div className="container"><GateNotice title="PRIVACY_BLOCKED">No activar trackers publicitarios hasta cerrar el aviso, third-party registry y consentimiento aplicable.</GateNotice></div></section></SimplePage>}
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/legal/aviso-de-privacidad/" },
+  title: { absolute: "Aviso de privacidad | HIGHTECH Polarizados" },
+  description: "Borrador no vigente del aviso de privacidad de HIGHTECH Polarizados en Zapopan. Describe los datos del formulario de cotización, sin publicarse todavía.",
+  robots: { index: false, follow: false },
+};
+
+export default function Page() {
+  requireReleasedInProduction(release.production.privacyApproved);
+  return <LegalDraft document={legalDrafts.privacy} />;
+}

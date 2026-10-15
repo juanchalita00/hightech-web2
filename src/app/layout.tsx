@@ -11,7 +11,7 @@ const overpass = Overpass({ subsets: ["latin"], variable: "--font-overpass", dis
 export const metadata: Metadata = {
   metadataBase: new URL("https://polarizadoshightech.com"),
   title: { default: "HIGHTECH Polarizados", template: "%s | HIGHTECH Polarizados" },
-  description: "Soluciones profesionales para cristales residenciales, comerciales y automotrices.",
+  description: "HIGHTECH Polarizados instala películas para cristales en Zapopan, Jalisco, con servicio en Guadalajara y proyectos que se evalúan en otros estados.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

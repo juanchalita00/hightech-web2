@@ -156,6 +156,30 @@
     "canonical": "/guias/polarizado-automotriz-jalisco/"
   },
   {
+    "path": "/galeria/",
+    "status": "LAUNCH",
+    "indexable": true,
+    "canonical": "/galeria/"
+  },
+  {
+    "path": "/blog/",
+    "status": "LAUNCH",
+    "indexable": true,
+    "canonical": "/blog/"
+  },
+  {
+    "path": "/zapopan/",
+    "status": "LAUNCH",
+    "indexable": true,
+    "canonical": "/zapopan/"
+  },
+  {
+    "path": "/guadalajara/",
+    "status": "LAUNCH",
+    "indexable": true,
+    "canonical": "/guadalajara/"
+  },
+  {
     "path": "/nosotros/",
     "status": "LAUNCH",
     "indexable": true,

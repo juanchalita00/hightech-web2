@@ -1,6 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Icon } from "@/components/Icon";
 import { WhatsAppCTA } from "@/components/WhatsAppCTA";
+import { quotePath, quoteServiceFromContext } from "@/lib/quote";
 import type { WhatsAppContext } from "@/lib/whatsapp";
 
 type Variant = "residential" | "commercial" | "automotive";
@@ -37,8 +39,9 @@ export function ApplicationHero({ variant, eyebrow, title, description, ctaLabel
           <h1>{title}</h1>
           <p className="application-hero-lede">{description}</p>
           <div className="hero-actions">
-            <WhatsAppCTA label={ctaLabel} context={context} position="HERO" />
+            <Link className="button button-primary" href={quotePath(quoteServiceFromContext(context.businessLine))}>{ctaLabel}</Link>
             {secondary}
+            <WhatsAppCTA label="WhatsApp" context={context} position="HERO" className="button-secondary" />
           </div>
           <div className="application-proof-list" aria-label="Puntos clave">
             {proofItems.map((item) => <span key={item}><Icon name="check" size={16}/>{item}</span>)}

@@ -48,8 +48,9 @@ export default function ResidentialPage() {
             <h1>Menos calor.<br/><span className={styles.heroAccent}>Más comodidad en casa.</span></h1>
             <p className="application-hero-lede">Controla el calor y el deslumbramiento con una película elegida para tus ventanas y la luz que quieres conservar.</p>
             <div className="hero-actions">
-              <WhatsAppCTA label="Cotizar mis cristales" context={wa} position="HERO" />
+              <Link className="button button-primary" href="/contacto/?servicio=residencial#cotizar">Cotizar mis cristales</Link>
               <Link href="/peliculas/" className="button button-secondary">Ver tipos de película <Icon name="arrow" size={18}/></Link>
+              <WhatsAppCTA label="WhatsApp" context={wa} position="HERO" className="button-secondary" />
             </div>
             <p className={styles.heroHelp}>Podemos empezar con fotos y medidas aproximadas.</p>
           </div>

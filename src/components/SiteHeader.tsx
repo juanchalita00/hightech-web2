@@ -8,6 +8,7 @@ const links = [
   ["Comercial", "/comercial/"],
   ["Automotriz", "/automotriz/"],
   ["Películas", "/peliculas/"],
+  ["Galería", "/galeria/"],
   ["Contacto", "/contacto/"],
 ] as const;
 
@@ -22,7 +23,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="header-actions">
-          <Link className="header-cta" href="/contacto/">
+          <Link className="header-cta" href="/contacto/#cotizar">
             Cotizar <Icon name="arrow" size={17} />
           </Link>
 

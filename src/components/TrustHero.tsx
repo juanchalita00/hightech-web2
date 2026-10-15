@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Icon } from "@/components/Icon";
 import { WhatsAppCTA } from "@/components/WhatsAppCTA";
 import type { WhatsAppContext } from "@/lib/whatsapp";
@@ -7,14 +8,15 @@ type Props = {
   title: string;
   description: string;
   ctaLabel?: string;
+  ctaHref?: string;
   context?: WhatsAppContext;
   points: readonly string[];
 };
 
-export function TrustHero({ eyebrow, title, description, ctaLabel, context, points }: Props) {
+export function TrustHero({ eyebrow, title, description, ctaLabel, ctaHref, context, points }: Props) {
   return <section className="trust-hero"><div className="container trust-hero-grid">
     <div className="trust-hero-copy"><p className="eyebrow">{eyebrow}</p><h1>{title}</h1><p className="trust-hero-lede">{description}</p>
-      {ctaLabel && context ? <div className="hero-actions"><WhatsAppCTA label={ctaLabel} context={context} position="HERO" /></div> : null}
+      {ctaLabel && ctaHref ? <div className="hero-actions"><Link className="button button-primary" href={ctaHref}>{ctaLabel}</Link></div> : ctaLabel && context ? <div className="hero-actions"><WhatsAppCTA label={ctaLabel} context={context} position="HERO" /></div> : null}
       <div className="trust-hero-points">{points.map((point)=><span key={point}><Icon name="check" size={16}/>{point}</span>)}</div>
     </div>
     <div className="trust-visual" aria-hidden="true">

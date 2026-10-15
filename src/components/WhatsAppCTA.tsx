@@ -10,9 +10,10 @@ type Props = {
   context: WhatsAppContext;
   position?: string;
   className?: string;
+  appearance?: "brand" | "plain";
 };
 
-export function WhatsAppCTA({ label, context, position = "FINAL_CTA", className = "" }: Props) {
+export function WhatsAppCTA({ label, context, position = "FINAL_CTA", className = "", appearance = "brand" }: Props) {
   const href = useMemo(() => whatsappUrl(whatsappMessage(context)), [context]);
 
   function handleClick() {
@@ -30,7 +31,7 @@ export function WhatsAppCTA({ label, context, position = "FINAL_CTA", className 
   }
 
   return (
-    <a className={`button button-primary ${className}`.trim()} href={href} onClick={handleClick}>
+    <a className={appearance === "plain" ? className : `button button-primary ${className}`.trim()} href={href} onClick={handleClick}>
       {label}
     </a>
   );

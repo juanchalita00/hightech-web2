@@ -1,4 +1,4 @@
-import { getPublicAddress, truth } from "@/lib/truth";
+import { truth } from "@/lib/truth";
 
 export function canonicalUrl(path = "/") {
   const normalized = path === "/" ? "/" : path.endsWith("/") ? path : `${path}/`;
@@ -30,25 +30,29 @@ export function websiteSchema() {
 }
 
 export function localBusinessSchema() {
-  const address = getPublicAddress();
-  if (!address) return null;
   return {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "@id": `${truth.site.canonicalBaseUrl}/#localbusiness`,
     name: truth.brand.name,
     url: truth.site.canonicalBaseUrl,
+    image: `${truth.site.canonicalBaseUrl}/brand/hightech-logo.png`,
     telephone: truth.contact.phoneE164,
     email: truth.contact.emailSales,
     parentOrganization: { "@id": `${truth.site.canonicalBaseUrl}/#organization` },
-    hasMap: truth.contact.mapsUrl,
     address: {
       "@type": "PostalAddress",
-      streetAddress: address.streetAddress,
-      addressLocality: address.addressLocality,
-      addressRegion: address.addressRegion,
-      postalCode: address.postalCode,
-      addressCountry: address.addressCountry,
+      addressLocality: "Zapopan",
+      addressRegion: "Jalisco",
+      addressCountry: "MX",
     },
+    areaServed: [
+      { "@type": "City", name: "Zapopan" },
+      { "@type": "City", name: "Guadalajara" },
+    ],
+    openingHoursSpecification: [
+      { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "09:00", closes: "20:00" },
+      { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: "09:00", closes: "15:00" },
+    ],
   };
 }

@@ -31,7 +31,7 @@ const steps = [
 const faqs = [
   { question: "¿Todos los tonos nanocerámicos tienen la misma protección UV?", answer: <p>Las fichas activas de IR75, IR50, IR35, IR15 e IR5 indican 99% de rechazo UV. El VLT y el TSER sí cambian entre tonos.</p> },
   { question: "¿El 95% de rechazo infrarrojo equivale a reducir 95% del calor?", answer: <p>No. La ficha especifica 95% de rechazo infrarrojo medido a 950 nm. TSER es otra métrica y tampoco debe convertirse directamente en una promesa de temperatura dentro del vehículo.</p> },
-  { question: "¿Puedo usar IR75 en el parabrisas sólo porque es una película clara?", answer: <p>No la presentamos como automáticamente autorizada por su VLT. IR75 reporta 75% de transmisión de luz visible, pero la normativa estatal revisada no establece un umbral de VLT que convierta una película clara en una excepción expresa para el parabrisas. Separamos la recomendación técnica del criterio normativo.</p> },
+  { question: "¿IR75 en el parabrisas queda decidido solo porque es una película clara?", answer: <p>No. IR75 reporta 75% de transmisión de luz visible: ese dato describe la película, no una autorización. No hay una regulación oficial actualizada con porcentajes, y en el parabrisas la ley técnicamente no establece nada. Tú decides el tono y asumes la responsabilidad. <Link href="/guias/polarizado-automotriz-jalisco/">Ver la referencia de uso común</Link>.</p> },
   { question: "¿Qué tono conviene si manejo mucho de noche?", answer: <p>No existe un tono universal para todos. Un VLT más alto conserva más luz visible, por lo que la elección debe considerar cuánto manejas de noche y cuánta claridad necesitas conservar. <Link href="/guias/que-es-vlt/">Entender qué es VLT</Link>.</p> },
   { question: "¿Instalan a domicilio?", answer: <p>La instalación automotriz se realiza en taller. Es la modalidad operativa definida para esta línea.</p> },
   { question: "¿Y si ya tengo polarizado?", answer: <p>Primero se revisa su estado. El retiro forma parte del alcance cuando es necesario y no se presupone igual en todos los casos.</p> },
@@ -131,7 +131,7 @@ export default function AutomotivePage() {
         </div>
       </section>
 
-      <ApplicationFinalCTA eyebrow="Tu vehículo" title="Dinos qué vehículo tienes y qué cristales quieres trabajar. Te ayudamos a elegir el tono y preparar la cotización." ctaLabel="Cotizar mi vehículo" context={wa} secondaryHref="/guias/polarizado-automotriz-jalisco/" secondaryLabel="Ver normativa de Jalisco" />
+      <ApplicationFinalCTA eyebrow="Tu vehículo" title="Dinos qué vehículo tienes y qué cristales quieres trabajar. Te ayudamos a elegir el tono y preparar la cotización." ctaLabel="Cotizar mi vehículo" context={wa} secondaryHref="/contacto/?servicio=automotriz#cotizar" secondaryLabel="Formulario de cotización" />
     </>
   );
 }

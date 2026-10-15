@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import routes from "../../content/routes.json";
+import { getBlogPosts } from "@/lib/blog";
 import { getPublicProjects } from "@/lib/projects";
 import { release, truth } from "@/lib/truth";
 
@@ -19,5 +20,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const projects = release.routes.projectsPublic
     ? getPublicProjects().map((project) => ({ url: `${base}/proyectos/${project.slug}/`, changeFrequency: "yearly" as const, priority: 0.6 }))
     : [];
-  return [...staticRoutes, ...projects];
+  const posts = getBlogPosts().map((post) => ({
+    url: `${base}/blog/${post.slug}/`,
+    lastModified: post.updated,
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+  return [...staticRoutes, ...projects, ...posts];
 }

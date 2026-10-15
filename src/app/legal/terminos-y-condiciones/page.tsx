@@ -1,7 +1,17 @@
 import type { Metadata } from "next";
-import { SimplePage } from "@/components/SimplePage";
-import { GateNotice } from "@/components/GateNotice";
+import { LegalDraft } from "@/components/LegalDraft";
 import { requireReleasedInProduction } from "@/lib/deployment";
+import { legalDrafts } from "@/lib/legal-drafts";
 import { release } from "@/lib/truth";
-export const metadata:Metadata={ alternates: { canonical: "/legal/terminos-y-condiciones/" },title:"Términos y Condiciones",robots:{index:false,follow:true}};
-export default function Page(){requireReleasedInProduction(release.production.termsApproved);return <SimplePage eyebrow="Legal" title="Términos y Condiciones" description="La versión pública deberá mostrar proveedor, versión, fecha efectiva y documento inmutable aprobado."><section className="section"><div className="container"><GateNotice title="LEGAL_BLOCKED">El paquete jurídico de trabajo no se publica como contrato B2C hasta liberación final.</GateNotice></div></section></SimplePage>}
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/legal/terminos-y-condiciones/" },
+  title: { absolute: "Términos y condiciones | HIGHTECH Polarizados" },
+  description: "Borrador no vigente de los términos de HIGHTECH Polarizados. Cuando se publique, aceptar la cotización incluirá estas condiciones y las obligaciones de pago.",
+  robots: { index: false, follow: false },
+};
+
+export default function Page() {
+  requireReleasedInProduction(release.production.termsApproved);
+  return <LegalDraft document={legalDrafts.terms} />;
+}

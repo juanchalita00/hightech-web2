@@ -9,7 +9,7 @@ const tmp=fs.mkdtempSync(path.join(os.tmpdir(),'hightech-types-'));
 const stubs=path.join(tmp,'runtime-stubs.d.ts');
 const cfg=path.join(tmp,'tsconfig.json');
 fs.writeFileSync(stubs, `
-declare const process: { env: Record<string, string | undefined> };
+declare const process: { env: Record<string, string | undefined>; cwd(): string };
 declare namespace React {
   type ReactNode = any;
   interface MouseEvent<T = Element> { preventDefault(): void; currentTarget: T; }\n  interface ChangeEvent<T = Element> { currentTarget: T; target: T; }

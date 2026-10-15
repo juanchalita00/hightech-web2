@@ -5,12 +5,11 @@ import { Icon } from "@/components/Icon";
 import { SignatureGlass } from "@/components/SignatureGlass";
 import { NanoToneTable } from "@/components/NanoToneTable";
 import { WhatsAppCTA } from "@/components/WhatsAppCTA";
-import { truth } from "@/lib/truth";
 import styles from "./home-v09.module.css";
 
 export const metadata: Metadata = {
-  title: { absolute: `Películas para cristales en ${truth.contact.locationLabel.split(",")[0]} | HIGHTECH Polarizados` },
-  description: `Control solar, privacidad y seguridad para cristales de casas, negocios y vehículos en ${truth.contact.locationLabel}. Te ayudamos a elegir según lo que quieres resolver.`,
+  title: { absolute: "Películas para cristales en Zapopan y Guadalajara | HIGHTECH Polarizados" },
+  description: "Control solar, privacidad y seguridad para cristales de casas, negocios y vehículos en Zapopan y la zona metropolitana de Guadalajara.",
   alternates: { canonical: "/" },
 };
 
@@ -77,16 +76,20 @@ export default function HomePage() {
               </p>
 
               <div className={styles.heroActions}>
+                <Link className={styles.primaryCta} href="/contacto/#cotizar">
+                  Solicitar cotización
+                </Link>
                 <WhatsAppCTA
-                  label="Cuéntanos qué quieres resolver"
+                  label="WhatsApp"
                   context={{ sourcePage: "/" }}
                   position="HERO"
-                  className={styles.primaryCta}
+                  appearance="plain"
+                  className={styles.secondaryCta}
                 />
-                <Link className={styles.secondaryCta} href="/peliculas/nanoceramica/">
-                  Comparar nanocerámica <Icon name="arrow" size={18} />
-                </Link>
               </div>
+              <p className={styles.heroMore}>
+                <Link href="/peliculas/nanoceramica/">Comparar la gama nanocerámica</Link>
+              </p>
 
               <div className={styles.heroProof} aria-label="Principios de HIGHTECH">
                 <span><Icon name="check" size={17} /> Datos técnicos con contexto</span>
@@ -131,7 +134,7 @@ export default function HomePage() {
                 className={styles.evidencePhoto}
               />
             </div>
-            <figcaption className={styles.evidenceCaption}>Aeropuerto de Guadalajara · Proyecto documentado por HIGHTECH</figcaption>
+            <figcaption className={styles.evidenceCaption}>Aeropuerto de Guadalajara · Proyecto documentado por HIGHTECH · <Link href="/galeria/">Ver galería</Link></figcaption>
           </figure>
         </div>
       </section>
@@ -268,13 +271,14 @@ export default function HomePage() {
             <h2>Cuéntanos el espacio o el vehículo. Nosotros te ayudamos a aterrizar la solución.</h2>
           </div>
           <div className={styles.finalActions}>
+            <Link href="/contacto/#cotizar" className={styles.primaryCta}>Solicitar cotización</Link>
             <WhatsAppCTA
               label="Abrir WhatsApp"
               context={{ sourcePage: "/" }}
               position="FINAL_CTA"
-              className={styles.primaryCta}
+              appearance="plain"
+              className={styles.secondaryCta}
             />
-            <Link href="/contacto/" className={styles.secondaryCta}>Ver formas de contacto</Link>
           </div>
         </div>
       </section>

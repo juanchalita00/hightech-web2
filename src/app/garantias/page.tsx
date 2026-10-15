@@ -1,8 +1,17 @@
 import type { Metadata } from "next";
-import { SimplePage } from "@/components/SimplePage";
-import { GateNotice } from "@/components/GateNotice";
-import { release } from "@/lib/truth";
+import { LegalDraft } from "@/components/LegalDraft";
 import { requireReleasedInProduction } from "@/lib/deployment";
+import { legalDrafts } from "@/lib/legal-drafts";
+import { release } from "@/lib/truth";
 
-export const metadata: Metadata = { alternates: { canonical: "/garantias/" }, title: "Garantías", robots: { index: release.production.warrantiesApproved && release.routes.warrantyPageIndexable, follow: true } };
-export default function Page(){requireReleasedInProduction(release.production.warrantiesApproved);return <SimplePage eyebrow="Garantías" title="La garantía depende del producto, aplicación y versión." description="Esta página sólo publicará pólizas aprobadas y trazables. Una referencia técnica de plazo no se convierte automáticamente en garantía contractual."><section className="section"><div className="container"><GateNotice title="WARRANTY_BLOCKED">No hay pólizas marcadas APPROVED_FOR_PRODUCTION todavía.</GateNotice></div></section></SimplePage>}
+export const metadata: Metadata = {
+  alternates: { canonical: "/garantias/" },
+  title: { absolute: "Garantías de instalación | HIGHTECH Polarizados" },
+  description: "Borrador no vigente de las garantías de HIGHTECH Polarizados. Los plazos se publicarán solo cuando exista una póliza revisada para cada línea.",
+  robots: { index: false, follow: false },
+};
+
+export default function Page() {
+  requireReleasedInProduction(release.production.warrantiesApproved);
+  return <LegalDraft document={legalDrafts.warranty} />;
+}

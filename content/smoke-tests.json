@@ -55,6 +55,26 @@
       "path": "/preguntas-frecuentes/",
       "expectedStatus": 200,
       "canonical": "/preguntas-frecuentes/"
+    },
+    {
+      "path": "/galeria/",
+      "expectedStatus": 200,
+      "canonical": "/galeria/"
+    },
+    {
+      "path": "/blog/",
+      "expectedStatus": 200,
+      "canonical": "/blog/"
+    },
+    {
+      "path": "/zapopan/",
+      "expectedStatus": 200,
+      "canonical": "/zapopan/"
+    },
+    {
+      "path": "/guadalajara/",
+      "expectedStatus": 200,
+      "canonical": "/guadalajara/"
     }
   ],
   "endpointChecks": [
