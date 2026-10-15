@@ -35,6 +35,17 @@ const glassPanels = [
   { points: "928,378 1044,378 1044,573 928,573" },
 ] as const;
 
+/** Reflecta is opaque, so its clip stops at the black frame instead of
+ *  sliding under it. The tint polygons stay a couple of pixels wider. */
+const mirrorPanels = [
+  { points: "617,169 722,169 722,300 617,300" },
+  { points: "730,169 924,169 924,300 730,300" },
+  { points: "933,169 1037,169 1037,300 933,300" },
+  { points: "618,384 723,384 723,568 618,568" },
+  { points: "731,384 925,384 925,568 731,568" },
+  { points: "935,384 1038,384 1038,568 935,568" },
+] as const;
+
 const views = [
   {
     id: "clear",
@@ -47,7 +58,8 @@ const views = [
   {
     id: "v75",
     label: "75%",
-    shade: 0.12,
+    shade: 0,
+    tint: "rgba(170,205,235,0.22)",
     mirror: false,
     src: "/images/comparador/fachada-exterior-75.webp",
     alt: "Fachada moderna vista desde la calle, con el cristal al 75% de transmisión de luz visible.",
@@ -116,6 +128,9 @@ export function SignatureGlass() {
             <clipPath id={clipId}>
               {glassPanels.map((panel) => <polygon key={panel.points} points={panel.points} />)}
             </clipPath>
+            <clipPath id={`${clipId}-mirror-clip`}>
+              {mirrorPanels.map((panel) => <polygon key={panel.points} points={panel.points} />)}
+            </clipPath>
             <filter id={`${clipId}-mirror`} x="-4%" y="-4%" width="108%" height="108%">
               <feGaussianBlur stdDeviation="1.2" />
             </filter>
@@ -133,20 +148,23 @@ export function SignatureGlass() {
             </linearGradient>
           </defs>
           <g clipPath={`url(#${clipId})`}>
-            <rect className={styles.tintShade} x="0" y="0" width={base.width} height={base.height} fill="#07101c" style={{ opacity: view.mirror ? 0 : view.shade }} />
-            <rect x="0" y="0" width={base.width} height={base.height} fill={`url(#${clipId}-glass)`} style={{ opacity: view.mirror || view.shade === 0 ? 0 : 0.45 }} />
-            <g className={styles.tintMirror} style={{ opacity: view.mirror ? 1 : 0 }}>
-              <image
-                href={reflectionSrc}
-                x="0"
-                y="0"
-                width={base.width}
-                height={base.height}
-                preserveAspectRatio="none"
-                filter={`url(#${clipId}-mirror)`}
-              />
-              <rect x="0" y="0" width={base.width} height={base.height} fill={`url(#${clipId}-sheen)`} />
-            </g>
+            <rect className={styles.tintShade} x="0" y="0" width={base.width} height={base.height} fill="#07101c" style={{ opacity: view.mirror || "tint" in view ? 0 : view.shade }} />
+            <rect x="0" y="0" width={base.width} height={base.height} fill={`url(#${clipId}-glass)`} style={{ opacity: view.mirror || (view.shade === 0 && !("tint" in view)) ? 0 : 0.45 }} />
+            {"tint" in view ? (
+              <rect x="0" y="0" width={base.width} height={base.height} fill={view.tint} />
+            ) : null}
+          </g>
+          <g clipPath={`url(#${clipId}-mirror-clip)`} className={styles.tintMirror} style={{ opacity: view.mirror ? 1 : 0 }}>
+            <image
+              href={reflectionSrc}
+              x="0"
+              y="0"
+              width={base.width}
+              height={base.height}
+              preserveAspectRatio="none"
+              filter={`url(#${clipId}-mirror)`}
+            />
+            <rect x="0" y="0" width={base.width} height={base.height} fill={`url(#${clipId}-sheen)`} />
           </g>
         </svg>
       </div>
