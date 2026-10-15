@@ -65,7 +65,7 @@ export function ApplicationHero({ variant, eyebrow, title, description, ctaLabel
         <div className={`application-visual application-visual-${variant}`} aria-hidden="true">
           <div className="application-visual-badge">
             <Icon name={variantIcon[variant]} size={18}/>
-            <span>{variant === "residential" ? "Arquitectura" : variant === "commercial" ? "Proyecto" : "Taller"}</span>
+            <span>{variant === "residential" ? "Arquitectura" : variant === "commercial" ? "Proyecto" : "Automotriz"}</span>
           </div>
           {variant === "residential" && (
             <div className="residential-window">
