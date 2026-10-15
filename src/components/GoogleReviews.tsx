@@ -22,10 +22,10 @@ export function GoogleReviews() {
       <div className="container">
         <div className="section-heading section-heading-split">
           <div>
-            <p className="eyebrow">Reseñas en Google</p>
-            <h2 id="resenas-google-titulo">Lo que escribieron en el perfil de Google.</h2>
+            <p className="eyebrow">Opiniones en Google</p>
+            <h2 id="resenas-google-titulo">Lo que dicen nuestros clientes</h2>
           </div>
-          <p>Cada tarjeta usa el texto original de esa reseña y enlaza al listado del negocio.</p>
+          <p>Muchos de nuestros clientes se han tomado un momento para contar su experiencia en Google Maps, y se los agradecemos de corazón. Estas son algunas de sus opiniones.</p>
         </div>
         {reviews.length ? (
           <div className="google-review-grid">
@@ -47,8 +47,8 @@ export function GoogleReviews() {
           </div>
         ) : null}
         <div className="google-reviews-actions">
-          <a className="button button-primary" href={profileUrl} target="_blank" rel="noopener noreferrer">Déjanos tu reseña</a>
-          <a className="button button-secondary" href={profileUrl} target="_blank" rel="noopener noreferrer">Ver el perfil en Google</a>
+          <a className="button button-primary" href={profileUrl} target="_blank" rel="noopener noreferrer">Ver más opiniones en Google</a>
+          <a className="button button-secondary" href={profileUrl} target="_blank" rel="noopener noreferrer">¿Ya trabajamos juntos? Cuéntanos cómo te fue</a>
         </div>
       </div>
     </section>
