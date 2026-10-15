@@ -480,7 +480,6 @@ thead th { background: var(--surface-alt); }
 .contact-method-social { grid-column:1 / -1; min-height:0; }
 .contact-method-social .social-links { margin-top:1rem; }
 .google-reviews-actions { display:flex; flex-wrap:wrap; gap:.7rem; align-items:center; }
-.google-reviews-actions .button-secondary { font-weight:650; color:#5c677c; background:transparent; }
 .google-review-grid {
   display:grid;
   grid-template-columns:1fr;
