@@ -1,3 +1,4 @@
+import { socialSameAs } from "@/lib/social";
 import { truth } from "@/lib/truth";
 
 export function canonicalUrl(path = "/") {
@@ -14,6 +15,7 @@ export function organizationSchema() {
     url: truth.site.canonicalBaseUrl,
     telephone: truth.contact.phoneE164,
     email: truth.contact.emailSales,
+    sameAs: socialSameAs(),
   };
 }
 
@@ -40,6 +42,7 @@ export function localBusinessSchema() {
     telephone: truth.contact.phoneE164,
     email: truth.contact.emailSales,
     parentOrganization: { "@id": `${truth.site.canonicalBaseUrl}/#organization` },
+    sameAs: socialSameAs(),
     address: {
       "@type": "PostalAddress",
       addressLocality: "Zapopan",

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { GoogleReviews } from "@/components/GoogleReviews";
 import { Icon } from "@/components/Icon";
 import { SignatureGlass } from "@/components/SignatureGlass";
 import { NanoToneTable } from "@/components/NanoToneTable";
@@ -263,6 +264,8 @@ export default function HomePage() {
           </Link>
         </div>
       </section>
+
+      <GoogleReviews />
 
       <section className={styles.finalSection}>
         <div className={styles.shell + " " + styles.finalCard}>

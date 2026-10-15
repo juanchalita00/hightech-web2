@@ -1,0 +1,4 @@
+{
+  "note": "Solo reseñas reales del perfil de Google. Con items vacío, la sección muestra el enlace al perfil y el botón para dejar reseña, sin estrellas ni citas. Cada item pide author, quote, publishedAt (YYYY-MM-DD) y sourceUrl de esa reseña en Google. rating es opcional y solo si esa reseña lo trae (1 a 5). No agregues un promedio.",
+  "items": []
+}

@@ -20,6 +20,26 @@ if (!release.production.analyticsPrivacyApproved && thirdParty.providers.some((p
 if (truth.site?.canonicalBaseUrl !== "https://polarizadoshightech.com") {
   errors.push("Canonical base URL no coincide con la política aprobada.");
 }
+if (truth.site?.canonicalHost !== "polarizadoshightech.com") {
+  errors.push("canonicalHost debe ser polarizadoshightech.com.");
+}
+if (truth.contact?.emailSales !== "ventas@polarizadoshightech.com") {
+  errors.push("El correo público debe ser ventas@polarizadoshightech.com.");
+}
+const googleReviews = readJson("content/google-reviews.json");
+if (!Array.isArray(googleReviews.items)) errors.push("google-reviews.json: items debe ser un arreglo.");
+if (googleReviews.aggregateRating) errors.push("google-reviews.json no debe traer un promedio.");
+for (const review of googleReviews.items ?? []) {
+  for (const field of ["author", "quote", "publishedAt", "sourceUrl"]) {
+    if (!review[field] || typeof review[field] !== "string") errors.push(`google-reviews: falta ${field}.`);
+  }
+  if (review.sourceUrl && !/^https:\/\/(www\.google\.com\/maps|maps\.google\.com\/)/.test(review.sourceUrl)) {
+    errors.push("google-reviews: sourceUrl debe ser una URL de Google Maps.");
+  }
+  if (review.rating != null && (typeof review.rating !== "number" || review.rating < 1 || review.rating > 5)) {
+    errors.push("google-reviews: rating solo puede ser un número de 1 a 5 de esa reseña.");
+  }
+}
 
 if (release.sourceOfTruthVersion !== "0.19") errors.push("release-state no apunta a System of Truth v0.19.");
 if (truth.meta?.source !== "HIGHTECH_Web2_System_of_Truth_v0.19") errors.push("publication-truth no apunta a System of Truth v0.19.");

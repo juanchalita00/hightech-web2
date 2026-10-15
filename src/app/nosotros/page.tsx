@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { GoogleReviews } from "@/components/GoogleReviews";
 import { Icon } from "@/components/Icon";
 import { ProcessRail } from "@/components/ProcessRail";
 import { ReviewShelf } from "@/components/ReviewShelf";
@@ -21,6 +22,7 @@ export default function Page(){return <>
   <section className="section section-dark"><div className="container about-director-grid"><div><p className="eyebrow eyebrow-light">La marca</p><h2>HIGHTECH Polarizados</h2><p>Diagnosticamos el problema del cristal y recomendamos una solución para casa, negocio o vehículo. No competimos por ser la opción más barata.</p></div><div className="about-principle"><span>Principio rector</span><strong>“Primero entendemos qué quieres resolver. Después recomendamos la película.”</strong><p>Esa claridad se mantiene desde la primera consulta hasta la instalación.</p></div></div></section>
   <section className="section"><div className="container"><div className="section-heading"><p className="eyebrow">Proceso</p><h2>Una conversación útil antes de instalar.</h2></div><ProcessRail steps={process}/></div></section>
   <section className="section section-alt"><div className="container about-proof-grid"><div><p className="eyebrow">Qué sí usamos como prueba</p><h2>Fuente, contexto y límites.</h2><p>Una ficha técnica sostiene una especificación. Una fotografía real puede demostrar un proyecto. Una medición demuestra un caso bajo sus condiciones. No mezclamos esos niveles.</p><Link href="/guias/" className="text-link text-link-strong">Leer guías técnicas <Icon name="arrow" size={18}/></Link></div><div className="about-proof-list"><article><b>01</b><h3>Ficha técnica</h3><p>Para datos concretos de producto.</p></article><article><b>02</b><h3>Proyecto documentado</h3><p>Para mostrar una instalación auténtica.</p></article><article><b>03</b><h3>Permiso</h3><p>La foto de un cliente no se convierte automáticamente en publicidad.</p></article></div></div></section>
+  <GoogleReviews/>
   <ReviewShelf/>
   <section className="section final-cta-section"><div className="container final-cta-card"><div><p className="eyebrow eyebrow-light">Hablemos de tu caso</p><h2>No necesitas llegar sabiendo qué película elegir.</h2></div><div className="final-cta-actions"><WhatsAppCTA label="Cuéntanos qué quieres resolver" context={{sourcePage:"/nosotros/"}} position="FINAL_CTA" className="button-light"/><Link href="/servicios/" className="button button-ghost-light">Explorar soluciones</Link></div></div></section>
 </>}

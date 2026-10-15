@@ -470,6 +470,18 @@ thead th { background: var(--surface-alt); }
 .footer-main { display: grid; grid-template-columns: 1.05fr 1.45fr; gap: clamp(3rem, 7vw, 7rem); }
 .footer-brand p { max-width: 24rem; margin: 1.25rem 0 .6rem; color: #9ea9c4; }
 .footer-brand > span { color: #6f7c9a; font-size: .82rem; }
+.social-links { display:flex; flex-wrap:wrap; gap:.45rem; margin-top:1.1rem; }
+.social-links a { width:44px; height:44px; display:inline-flex; align-items:center; justify-content:center; border-radius:999px; border:1px solid rgba(255,255,255,.18); color:white; text-decoration:none; }
+.social-links a:focus-visible { outline:2px solid white; outline-offset:3px; }
+.social-links-on-light a { border-color:var(--line); color:var(--brand); background:white; }
+.social-links-on-light a:focus-visible { outline-color:var(--brand); }
+.social-links-labeled a { width:auto; min-height:44px; padding:0 .9rem 0 .75rem; gap:.4rem; }
+.social-links-labeled span { font-size:.82rem; font-weight:750; }
+.contact-method-social { grid-column:1 / -1; min-height:0; }
+.contact-method-social .social-links { margin-top:1rem; }
+.google-reviews-actions { display:flex; flex-wrap:wrap; gap:.7rem; }
+.google-reviews .review-grid { margin-bottom:1.4rem; }
+.google-reviews .review-grid a { color:var(--brand); }
 .brand-logo-footer { padding: 0; background: transparent; border-radius: 0; width: fit-content; }
 .brand-logo-footer img { width: 240px; }
 .footer-links { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
@@ -1239,6 +1251,8 @@ thead th { background: var(--surface-alt); }
   .trust-pillars,.quote-prep-grid,.contact-methods-grid,.contact-policy-grid,.project-grid,.review-grid,.project-case-facts { grid-template-columns:1fr; }
   .contact-method-location { grid-column:auto; }
   .contact-method { min-height:16rem; }
+  .google-reviews-actions { display:grid; }
+  .google-reviews-actions .button { width:100%; }
   .evidence-gate-steps span { grid-template-columns:1.7rem 1.6rem 1fr; }
 }
 

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { BrandLogo } from "@/components/BrandLogo";
+import { SocialLinks } from "@/components/SocialLinks";
 import { release, truth } from "@/lib/truth";
 
 export function SiteFooter() {
@@ -12,6 +13,7 @@ export function SiteFooter() {
           <BrandLogo className="brand-logo-footer" variant="white" />
           <p>Soluciones profesionales para cristales residenciales, comerciales y automotrices.</p>
           <span>{truth.contact.locationLabel}</span>
+          <SocialLinks />
         </div>
         <div className="footer-links">
           <div>
