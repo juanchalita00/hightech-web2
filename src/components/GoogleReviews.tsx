@@ -3,29 +3,46 @@ import { truth } from "@/lib/truth";
 
 const profileUrl = truth.contact.social.googleMaps;
 
+function Stars({ rating }: { rating: number }) {
+  return (
+    <span className="google-review-stars" role="img" aria-label={`${rating} de 5`}>
+      {Array.from({ length: 5 }, (_, index) => (
+        <svg key={index} viewBox="0 0 20 20" aria-hidden="true" className={index < rating ? "is-on" : undefined}>
+          <path d="M10 1.7 12.35 6.9l5.65.5-4.28 3.72 1.32 5.48L10 13.9l-5.04 2.7 1.32-5.48L2 7.4l5.65-.5L10 1.7Z" />
+        </svg>
+      ))}
+    </span>
+  );
+}
+
 export function GoogleReviews() {
   const reviews = getGoogleReviews();
   return (
-    <section className="section google-reviews" id="resenas-google" aria-labelledby="resenas-google-titulo">
+    <section className="section section-alt google-reviews" id="resenas-google" aria-labelledby="resenas-google-titulo">
       <div className="container">
         <div className="section-heading section-heading-split">
           <div>
             <p className="eyebrow">Reseñas en Google</p>
-            <h2 id="resenas-google-titulo">El perfil de Google reúne las reseñas del negocio.</h2>
+            <h2 id="resenas-google-titulo">Lo que escribieron en el perfil de Google.</h2>
           </div>
-          <p>Si ya trabajaste con HIGHTECH, la reseña se deja en Google. Aquí no publicamos calificaciones ni citas que no estén cargadas desde ese perfil.</p>
+          <p>Cada tarjeta usa el texto original de esa reseña y enlaza al listado del negocio.</p>
         </div>
         {reviews.length ? (
-          <div className="review-grid">
+          <div className="google-review-grid">
             {reviews.map((review) => (
-              <blockquote key={`${review.author}-${review.publishedAt}`}>
-                <p>“{review.quote}”</p>
-                <footer>
+              <article key={`${review.author}-${review.publishedAt}`} className="google-review-card">
+                <header>
                   <strong>{review.author}</strong>
-                  <span>{review.publishedAt}{review.rating ? ` · ${review.rating} de 5` : ""}</span>
+                  {typeof review.rating === "number" ? <Stars rating={review.rating} /> : null}
+                </header>
+                <blockquote>
+                  <p>{review.quote}</p>
+                </blockquote>
+                <footer>
+                  <span>Reseña de Google</span>
                   <a href={review.sourceUrl} target="_blank" rel="noopener noreferrer">Ver en Google</a>
                 </footer>
-              </blockquote>
+              </article>
             ))}
           </div>
         ) : null}

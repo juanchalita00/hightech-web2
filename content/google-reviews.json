@@ -1,4 +1,26 @@
 {
-  "note": "Solo reseñas reales del perfil de Google. Con items vacío, la sección muestra el enlace al perfil y el botón para dejar reseña, sin estrellas ni citas. Cada item pide author, quote, publishedAt (YYYY-MM-DD) y sourceUrl de esa reseña en Google. rating es opcional y solo si esa reseña lo trae (1 a 5). No agregues un promedio.",
-  "items": []
+  "note": "Solo reseñas reales del perfil de Google. Sin promedio ni total del perfil. Cada item trae author, quote verbatim, publishedAt (YYYY-MM-DD), rating de esa reseña y sourceUrl del listado en Google Maps.",
+  "items": [
+    {
+      "author": "Marivi AC",
+      "quote": "Excelente, servicio, todos muy atentos y puntuales.\nOfrecen los productos adecuados para cada ubicación. Los productos de excelente calidad.",
+      "publishedAt": "2026-02-15",
+      "rating": 5,
+      "sourceUrl": "https://www.google.com/maps/place/POLARIZADOS+HIGHTECH+-+Residencial+%2F+Automotriz,+Tomas+Mann+5348,+Jardines+Vallarta,+45027+Zapopan,+Jal./data=!4m2!3m1!1s0x8428af873886e857:0x7dc7c014441b7791"
+    },
+    {
+      "author": "Michael Richards",
+      "quote": "Excellent service and a great product. I hired them to install films on the windows in my apartment because regardless of the outside temperature or the air conditioning, my south facing windows caused my apartment to always be very hot. On some days, it was around 40 degrees by my windows and even in a small closed space with the air conditioning on, the room could be 8 or more degrees higher than what the air conditioning was set to.\n\nAfter installing the films, the area near the windows is at least 10 degrees cooler and if I use the air conditioning in a room, the temperature will be the same or at most 1 degree higher.\n\nI'm very happy with the service and product and highly recommend them to anyone suffering from excessive heat. It is a great investment in your quality of life.",
+      "publishedAt": "2024-12-28",
+      "rating": 5,
+      "sourceUrl": "https://www.google.com/maps/place/POLARIZADOS+HIGHTECH+-+Residencial+%2F+Automotriz,+Tomas+Mann+5348,+Jardines+Vallarta,+45027+Zapopan,+Jal./data=!4m2!3m1!1s0x8428af873886e857:0x7dc7c014441b7791"
+    },
+    {
+      "author": "Adriana Oliva",
+      "quote": "Great service and also the price,I am so happy.",
+      "publishedAt": "2023-06-14",
+      "rating": 5,
+      "sourceUrl": "https://www.google.com/maps/place/POLARIZADOS+HIGHTECH+-+Residencial+%2F+Automotriz,+Tomas+Mann+5348,+Jardines+Vallarta,+45027+Zapopan,+Jal./data=!4m2!3m1!1s0x8428af873886e857:0x7dc7c014441b7791"
+    }
+  ]
 }
