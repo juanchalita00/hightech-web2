@@ -109,7 +109,7 @@
   },
   "servicePolicy": {
     "automotive": {
-      "installationMode": "WORKSHOP_ONLY",
+      "installationMode": "WORKSHOP_OR_REVIEWED_ON_SITE",
       "status": "APPROVED"
     },
     "quoteIntake": {

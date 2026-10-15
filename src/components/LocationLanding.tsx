@@ -8,7 +8,7 @@ const copy: Record<City, { lede: string; points: string[]; sibling: { href: stri
   Zapopan: {
     lede: "La base de HIGHTECH está en Zapopan, Jalisco. Desde aquí atendemos casas, negocios y vehículos, y también proyectos en la zona metropolitana de Guadalajara.",
     points: [
-      "El taller automotriz está en Zapopan y trabaja normalmente con cita.",
+      "El taller automotriz está en Zapopan y trabaja normalmente con cita. A domicilio se revisa en algunos casos.",
       "En casa y en negocio se puede empezar con medidas y fotos, sin visita de entrada.",
       "Un proyecto fuera de la zona metropolitana se evalúa. El traslado no se cotiza con una tarifa inventada.",
     ],
@@ -18,7 +18,7 @@ const copy: Record<City, { lede: string; points: string[]; sibling: { href: stri
     lede: "HIGHTECH atiende la zona metropolitana de Guadalajara desde su base en Zapopan: casas, oficinas, fachadas y vehículos.",
     points: [
       "Hay trabajo documentado en el Aeropuerto de Guadalajara, en un entorno de operación continua.",
-      "La instalación automotriz se hace en el taller de Zapopan, normalmente con cita.",
+      "La instalación automotriz suele hacerse en el taller de Zapopan, con cita. A domicilio se revisa caso por caso.",
       "Si el proyecto está en otro estado, se revisan traslado, logística y viáticos antes de comprometer una fecha.",
     ],
     sibling: { href: "/zapopan/", label: "Conoce la base en Zapopan" },
@@ -51,7 +51,7 @@ export function LocationLanding({ city }: { city: City }) {
           <div className="location-links">
             <Link href="/residencial/"><strong>Residencial</strong><span>Calor, luz, UV y privacidad en casa.</span></Link>
             <Link href="/comercial/"><strong>Comercial</strong><span>Oficinas, locales y fachadas.</span></Link>
-            <Link href="/automotriz/"><strong>Automotriz</strong><span>Nanocerámica en taller, en Zapopan.</span></Link>
+            <Link href="/automotriz/"><strong>Automotriz</strong><span>Nanocerámica en Zapopan. A domicilio, si el equipo lo confirma.</span></Link>
             <Link href="/blog/"><strong>Blog</strong><span>Guías cortas para decidir con contexto.</span></Link>
           </div>
           <p className="location-sibling"><Link className="text-link text-link-strong" href={page.sibling.href}>{page.sibling.label} <Icon name="arrow" size={17} /></Link></p>

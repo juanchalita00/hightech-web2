@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { FAQList } from "@/components/FAQList";
+import { JsonLd } from "@/components/JsonLd";
 import { ProductCTA } from "@/components/ProductCTA";
 import { TrustHero } from "@/components/TrustHero";
+import { automotiveOnSiteAnswer, automotiveOnSiteQuestion, automotiveOnSiteSchema } from "@/lib/automotive-onsite";
 import { release } from "@/lib/truth";
 
 export const metadata:Metadata={ alternates: { canonical: "/preguntas-frecuentes/" },title:{ absolute: "Preguntas frecuentes | HIGHTECH Polarizados" },description:"Respuestas breves sobre nanocerámica, VLT, IR, TSER, privacidad, cotización, instalación automotriz, garantías y polarizado en Jalisco."};
@@ -12,7 +14,7 @@ const items=[
   {question:"¿Qué es VLT?",answer:<p>Es la transmisión de luz visible: cuánto de la luz visible atraviesa la película en la condición de referencia. Un VLT menor implica menos entrada de luz visible. <Link href="/guias/que-es-vlt/">Ver guía completa</Link>.</p>},
   {question:"¿95% de rechazo IR significa 95% menos calor?",answer:<p>No. Nuestras fichas actuales reportan 95% de rechazo infrarrojo medido a 950 nm. TSER es otra métrica y no convertimos ese dato en una promesa universal de temperatura. <Link href="/guias/irr-vs-tser/">IR vs TSER</Link>.</p>},
   {question:"¿La privacidad se mantiene igual de noche?",answer:<p>No necesariamente. Depende del contraste de iluminación; si hay más luz dentro que fuera puede aumentar la visibilidad hacia el interior. <Link href="/guias/privacidad-ventanas-noche/">Privacidad de noche</Link>.</p>},
-  {question:"¿Instalan polarizado automotriz a domicilio?",answer:<p>No. El polarizado automotriz se instala en taller, para cuidar las condiciones de aplicación. <Link href="/automotriz/">Ver servicio automotriz</Link>.</p>},
+  {question:automotiveOnSiteQuestion,answer:<p>{automotiveOnSiteAnswer} <Link href="/automotriz/">Ver servicio automotriz</Link>.</p>},
   {question:"¿Cómo cotizan una casa u oficina?",answer:<p>Podemos empezar con fotos, medidas aproximadas y el problema que quieres resolver. Dependiendo del vidrio, acceso y alcance puede requerirse revisión adicional. <Link href="/contacto/">Preparar mi cotización</Link>.</p>},
   {question:"¿Qué garantía tiene la película?",answer:<p>La cobertura depende del producto, la aplicación y la versión de la póliza correspondiente. No tratamos un plazo histórico o de ficha como garantía universal.{release.production.warrantiesApproved && <> <Link href="/garantias/">Consultar garantías</Link>.</>}</p>},
   {question:"¿Hay una tabla oficial de porcentajes para el auto?",answer:<p>Los artículos citados en la guía no mencionan los porcentajes 35 ni 75. En la práctica, lo que la mayoría suele instalar es 35% en laterales y medallón, y 75% en el parabrisas. Esto es solo informativo, no es asesoría legal. <Link href="/guias/polarizado-automotriz-jalisco/">Ver el texto publicado</Link>.</p>},
@@ -21,6 +23,7 @@ const items=[
 ] as const;
 
 export default function Page(){return <>
+  <JsonLd data={automotiveOnSiteSchema} />
   <TrustHero eyebrow="Preguntas frecuentes" title="Respuestas cortas. Contexto cuando hace falta." description="Esta página resuelve dudas comunes sin duplicar las guías técnicas. Cuando una respuesta necesita más profundidad, enlazamos la explicación correspondiente." points={["Sin promesas absolutas","Datos técnicos con fuente","Sin asesoría legal"]}/>
   <section className="section"><div className="container faq-page-grid"><div><p className="eyebrow">Dudas comunes</p><h2>Lo esencial antes de cotizar.</h2><p>Si tu caso depende del tipo de vidrio, una condición especial o una configuración concreta, la respuesta final se aterriza durante la cotización.</p></div><FAQList items={items}/></div></section>
   <ProductCTA title="¿Tu duda depende de tu cristal o vehículo?" text="Cuéntanos el caso concreto y continuamos desde ahí, sin obligarte a elegir una película por tu cuenta." cta="Preguntar por WhatsApp" context={{sourcePage:"/preguntas-frecuentes/"}} secondaryHref="/guias/" secondaryLabel="Explorar guías" />

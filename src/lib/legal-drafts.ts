@@ -30,7 +30,7 @@ const terms: LegalDraftDocument = {
       id: "servicios",
       heading: "Qué cubre una cotización",
       paragraphs: [
-        "HIGHTECH vende e instala películas para control solar, protección UV, privacidad y refuerzo de cristales, en proyectos residenciales, comerciales e institucionales, y en vehículos en taller.",
+        "HIGHTECH vende e instala películas para control solar, protección UV, privacidad y refuerzo de cristales, en proyectos residenciales, comerciales e institucionales, y en vehículos, en taller o a domicilio cuando el equipo lo confirma.",
         "La cotización describe el alcance: película, zonas o cristales, y las condiciones que se conocen en ese momento. Las medidas y el importe de un proyecto arquitectónico pueden ajustarse al validar en sitio.",
       ],
     },
@@ -55,7 +55,7 @@ const terms: LegalDraftDocument = {
       id: "instalacion",
       heading: "Instalación",
       paragraphs: [
-        "La instalación automotriz de la línea vigente se realiza en taller y normalmente con cita. El horario de atención —lunes a viernes de 9:00 a 20:00 y sábado de 9:00 a 15:00— no es la disponibilidad de instalación.",
+        "La instalación automotriz suele hacerse en taller y normalmente con cita. En algunos casos, como flotillas, maquinaria o autos nuevos de agencia, se puede instalar a domicilio si el equipo lo confirma. El horario de atención —lunes a viernes de 9:00 a 20:00 y sábado de 9:00 a 15:00— no es la disponibilidad de instalación.",
         "En arquitectura, la visita técnica es excepcional. En película eléctrica (PDLC), la visita es obligatoria si el cliente quiere avanzar, porque requiere integración eléctrica.",
       ],
     },

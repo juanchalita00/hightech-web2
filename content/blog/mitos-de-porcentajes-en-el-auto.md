@@ -18,7 +18,7 @@ Elegir el tono de un auto es una decisión de claridad, apariencia y uso, sobre 
 
 ## Cómo se trabaja el vehículo
 
-- La instalación se hace en taller y normalmente con cita.
+- La instalación suele hacerse en taller, con cita. A domicilio se revisa en casos como flotillas, maquinaria o autos nuevos de agencia.
 - Para cotizar hacen falta marca, modelo, año y qué cristales quieres trabajar.
 - Después de instalar, no bajes los cristales durante 48 horas. El secado tarda de 15 a 30 días.
 - La limpieza es con paño suave y sin amoníaco.

@@ -58,9 +58,9 @@ const views = [
   {
     id: "v75",
     label: "75%",
-    // Película instalada: más fría y un poco más oscura que el cristal claro.
+    // Película instalada: azul cielo claro, un poco más oscura que el cristal sin película.
     shade: 0.08,
-    tint: "rgba(95,150,170,0.28)",
+    tint: "rgba(110,160,200,0.26)",
     reflection: 0.16,
     mirror: false,
     src: "/images/comparador/fachada-exterior-75.webp",

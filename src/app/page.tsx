@@ -42,7 +42,7 @@ const journeys = [
   },
   {
     icon: "car" as const,
-    label: "Instalación en taller",
+    label: "Taller o a domicilio",
     title: "Automotriz",
     text: "Nanocerámica, tonos y visibilidad con una recomendación según vehículo y alcance de instalación.",
     href: "/automotriz/",

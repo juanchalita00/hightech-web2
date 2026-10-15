@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ApplicationFinalCTA } from "@/components/ApplicationFinalCTA";
+import { JsonLd } from "@/components/JsonLd";
 import { ApplicationHero } from "@/components/ApplicationHero";
 import { AutomotiveToneGuide } from "@/components/AutomotiveToneGuide";
 import { DecisionCards } from "@/components/DecisionCards";
@@ -8,10 +9,11 @@ import { Icon } from "@/components/Icon";
 import { JaliscoReference } from "@/components/JaliscoReference";
 import { NanoTable } from "@/components/NanoTable";
 import { ProcessRail } from "@/components/ProcessRail";
+import { automotiveOnSiteAnswer, automotiveOnSiteQuestion, automotiveOnSiteSchema } from "@/lib/automotive-onsite";
 
 export const metadata = { alternates: { canonical: "/automotriz/" },
   title: { absolute: "Polarizado automotriz nanocerámico | HIGHTECH Polarizados" },
-  description: "Gama nanocerámica HIGHTECH para vehículos. Compara VLT, UV, rechazo infrarrojo a 950 nm y TSER, con instalación en taller.",
+  description: "Gama nanocerámica HIGHTECH para vehículos. Compara VLT, UV, rechazo infrarrojo a 950 nm y TSER. La instalación puede ser en taller o, si el equipo lo confirma, a domicilio.",
 };
 
 const decisions = [
@@ -25,7 +27,7 @@ const steps = [
   { number: "01", title: "Vehículo y cristales", text: "Marca, modelo y qué cristales quieres trabajar." },
   { number: "02", title: "Tono y uso", text: "Definimos claridad, apariencia, privacidad y cuánto manejas de noche." },
   { number: "03", title: "Película previa", text: "Si ya existe polarizado, revisamos si necesita retiro antes de instalar." },
-  { number: "04", title: "Instalación", text: "La línea automotriz HIGHTECH se instala en taller para mantener control sobre el proceso." },
+  { number: "04", title: "Instalación", text: "Puede ser en taller o, en algunos casos, a domicilio. El equipo lo confirma antes, para cuidar la calidad." },
 ] as const;
 
 const faqs = [
@@ -33,7 +35,7 @@ const faqs = [
   { question: "¿El 95% de rechazo infrarrojo equivale a reducir 95% del calor?", answer: <p>No. La ficha especifica 95% de rechazo infrarrojo medido a 950 nm. TSER es otra métrica y tampoco debe convertirse directamente en una promesa de temperatura dentro del vehículo.</p> },
   { question: "¿IR75 en el parabrisas queda decidido solo porque es una película clara?", answer: <p>No. IR75 reporta 75% de transmisión de luz visible: ese dato describe la película. El texto publicado se cita en esta página y no menciona ese porcentaje. En la práctica, lo que la mayoría suele instalar en el parabrisas es 75%. Esto es solo informativo, no es asesoría legal. <Link href="#lo-que-dice-la-ley">Ver el texto y la práctica</Link>.</p> },
   { question: "¿Qué tono conviene si manejo mucho de noche?", answer: <p>No existe un tono universal para todos. Un VLT más alto conserva más luz visible, por lo que la elección debe considerar cuánto manejas de noche y cuánta claridad necesitas conservar. <Link href="/guias/que-es-vlt/">Entender qué es VLT</Link>.</p> },
-  { question: "¿Instalan polarizado automotriz a domicilio?", answer: <p>No. El polarizado automotriz se instala en taller, para cuidar las condiciones de aplicación.</p> },
+  { question: automotiveOnSiteQuestion, answer: <p>{automotiveOnSiteAnswer}</p> },
   { question: "¿Y si ya tengo polarizado?", answer: <p>Primero se revisa su estado. El retiro forma parte del alcance cuando es necesario y no se presupone igual en todos los casos.</p> },
 ] as const;
 
@@ -41,6 +43,7 @@ export default function AutomotivePage() {
   const wa = { sourcePage: "/automotriz/", businessLine: "automotive" };
   return (
     <>
+      <JsonLd data={automotiveOnSiteSchema} />
       <ApplicationHero
         variant="automotive"
         eyebrow="Automotriz"
@@ -49,10 +52,10 @@ export default function AutomotivePage() {
         ctaLabel="Cotizar mi vehículo"
         context={wa}
         secondary={<Link href="#tonos" className="button button-secondary">Comparar tonos <Icon name="arrow" size={18}/></Link>}
-        proofItems={["5 tonos disponibles", "99% protección UV", "Instalación en taller"]}
+        proofItems={["5 tonos disponibles", "99% protección UV", "Taller o a domicilio"]}
         imageSrc="/images/projects/automotive-audi-q8.webp"
         imageAlt="SUV moderno con cristales polarizados, en un taller limpio y bien iluminado."
-        imageCaption="El polarizado automotriz se instala en taller."
+        imageCaption="Referencia de polarizado automotriz."
         imagePosition="25% 40%"
       />
 

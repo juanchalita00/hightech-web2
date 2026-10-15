@@ -96,8 +96,8 @@ if (truth.technicalPolicy?.infrared?.spectralCurveAvailable !== false || truth.t
 }
 
 
-if (truth.servicePolicy?.automotive?.installationMode !== "WORKSHOP_ONLY") {
-  errors.push("La instalación automotriz debe conservar WORKSHOP_ONLY.");
+if (truth.servicePolicy?.automotive?.installationMode !== "WORKSHOP_OR_REVIEWED_ON_SITE") {
+  errors.push("La instalación automotriz debe conservar WORKSHOP_OR_REVIEWED_ON_SITE.");
 }
 
 const publicProjectRecords = projects.items.filter((project) => project.publicationAllowed === true && project.status === "PUBLISHED");

@@ -22,7 +22,7 @@ La cotización ya deja preparada la relación: aceptar la cotización equivaldr�
 - Anticipos, cancelaciones, reprogramación y trabajos ya iniciados. Hoy no están definidos.
 - Efectivo, transferencia y tarjeta. Con tarjeta se agrega IVA de 16% y no se presenta como comisión. Factura solo si la piden, con constancia fiscal, correo y uso de CFDI. Confirmar si eso queda en el contrato.
 - Qué pasa si las medidas o el importe cambian al validar en sitio.
-- Instalación automotriz en taller. El domicilio automotriz está en contradicción entre fuentes y no debe prometerse.
+- Instalación automotriz: suele ser en taller. A domicilio se puede en algunos casos (flotillas, maquinaria, autos nuevos de agencia) y el equipo lo confirma antes. Falta definir si la garantía de taller aplica igual a domicilio.
 - Responsabilidad del cliente al elegir el tono del vehículo: la referencia de uso común (35% laterales y medallón, 75% parabrisas) no es asesoría legal.
 - Limitación de responsabilidad, casos de fuerza mayor y jurisdicción.
 - Cómo se actualizan los términos y qué versión acepta cada cotización.
