@@ -1281,7 +1281,7 @@
   inset: 0;
   overflow: hidden;
   border-radius: .35rem 2.4rem .35rem 2.4rem;
-  background: #d7d8d5;
+  background: #101820;
   box-shadow: 0 30px 80px rgba(17, 27, 53, .14);
 }
 
@@ -1477,6 +1477,15 @@
     border-radius: .25rem 1.55rem .25rem 1.55rem;
   }
 
+  .referenceFrame,
+  .referenceFrameHidden {
+    height: 56%;
+  }
+
+  .referencePhoto {
+    object-position: center center;
+  }
+
   .signatureTopline {
     top: .85rem;
     left: .85rem;
@@ -1550,9 +1559,32 @@
   .facadeStageHidden,
   .facadeGlassTint,
   .facadePhoto,
-  .facadePhotoOn {
+  .facadePhotoOn,
+  .referenceFrame,
+  .referenceFrameHidden {
     transition: none;
   }
+}
+
+.referenceFrame,
+.referenceFrameHidden {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64%;
+  overflow: hidden;
+  transition: opacity .45s ease;
+}
+
+.referenceFrameHidden {
+  opacity: 0;
+}
+
+.referencePhoto {
+  object-fit: cover;
+  object-position: center 42%;
 }
 
 .facadeStage,
