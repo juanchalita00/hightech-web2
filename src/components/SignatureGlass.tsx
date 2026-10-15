@@ -58,8 +58,10 @@ const views = [
   {
     id: "v75",
     label: "75%",
-    shade: 0,
-    tint: "rgba(170,205,235,0.22)",
+    // Película instalada: más fría y un poco más oscura que el cristal claro.
+    shade: 0.08,
+    tint: "rgba(95,150,170,0.28)",
+    reflection: 0.16,
     mirror: false,
     src: "/images/comparador/fachada-exterior-75.webp",
     alt: "Fachada moderna vista desde la calle, con el cristal al 75% de transmisión de luz visible.",
@@ -148,11 +150,23 @@ export function SignatureGlass() {
             </linearGradient>
           </defs>
           <g clipPath={`url(#${clipId})`}>
-            <rect className={styles.tintShade} x="0" y="0" width={base.width} height={base.height} fill="#07101c" style={{ opacity: view.mirror || "tint" in view ? 0 : view.shade }} />
-            <rect x="0" y="0" width={base.width} height={base.height} fill={`url(#${clipId}-glass)`} style={{ opacity: view.mirror || (view.shade === 0 && !("tint" in view)) ? 0 : 0.45 }} />
+            <rect className={styles.tintShade} x="0" y="0" width={base.width} height={base.height} fill="#07101c" style={{ opacity: view.mirror ? 0 : view.shade }} />
             {"tint" in view ? (
               <rect x="0" y="0" width={base.width} height={base.height} fill={view.tint} />
             ) : null}
+            {"reflection" in view ? (
+              <image
+                href={reflectionSrc}
+                x="0"
+                y="0"
+                width={base.width}
+                height={base.height}
+                preserveAspectRatio="none"
+                opacity={view.reflection}
+                filter={`url(#${clipId}-mirror)`}
+              />
+            ) : null}
+            <rect x="0" y="0" width={base.width} height={base.height} fill={`url(#${clipId}-glass)`} style={{ opacity: view.mirror || (view.shade === 0 && !("tint" in view)) ? 0 : "tint" in view ? 0.22 : 0.45 }} />
           </g>
           <g clipPath={`url(#${clipId}-mirror-clip)`} className={styles.tintMirror} style={{ opacity: view.mirror ? 1 : 0 }}>
             <image
