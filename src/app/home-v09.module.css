@@ -1312,12 +1312,6 @@
   pointer-events: none;
 }
 
-/* Foco de teclado del slider (input transparente): se refleja en el tirador visible. */
-.signatureGlass:has(.revealRange:focus-visible) .revealEdge span {
-  outline: 3px solid #fff80a;
-  outline-offset: 3px;
-}
-
 .revealEdge span {
   position: absolute;
   left: 50%;
@@ -1357,59 +1351,6 @@
   color: rgba(255,255,255,.78);
   letter-spacing: .04em;
   text-transform: none;
-}
-
-.revealRange {
-  position: absolute;
-  z-index: 13;
-  left: 6%;
-  top: 46%;
-  width: 88%;
-  height: 2.8rem;
-  transform: translateY(-50%);
-  appearance: none;
-  -webkit-appearance: none;
-  background: transparent;
-  cursor: ew-resize;
-  touch-action: pan-y;
-}
-
-.revealRange::-webkit-slider-runnable-track {
-  height: 1px;
-  background: transparent;
-}
-
-.revealRange::-moz-range-track {
-  height: 1px;
-  background: transparent;
-}
-
-.revealRange::-webkit-slider-thumb {
-  width: 2.7rem;
-  height: 2.7rem;
-  margin-top: -1.32rem;
-  appearance: none;
-  -webkit-appearance: none;
-  border: 0;
-  border-radius: 50%;
-  background: transparent;
-}
-
-.revealRange::-moz-range-thumb {
-  width: 2.7rem;
-  height: 2.7rem;
-  border: 0;
-  border-radius: 50%;
-  background: transparent;
-}
-
-.revealRange:focus-visible {
-  outline: none;
-}
-
-.revealRange:focus-visible + .toneDock {
-  outline: 2px solid white;
-  outline-offset: 4px;
 }
 
 .toneDock {
@@ -1563,7 +1504,7 @@
   .toneButton,
   .toneButtonActive {
     min-width: 0;
-    flex: 1 1 0;
+    flex: 1 1 3.15rem;
     min-height: 2.45rem;
     padding: .3rem .25rem;
   }
@@ -1604,84 +1545,132 @@
 @media (prefers-reduced-motion: reduce) {
   .interactiveFilm,
   .toneButton,
-  .toneButtonActive {
+  .toneButtonActive,
+  .facadeStage,
+  .facadeStageHidden,
+  .facadeGlassTint,
+  .facadePhoto,
+  .facadePhotoOn {
     transition: none;
   }
 }
 
-.windowScene {
+.facadeStage,
+.facadeStageHidden {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, #9ec8de 0 58%, #d9d3c8 58% 100%);
+  transition: opacity .45s ease;
 }
 
-.windowSky {
+.facadeStageHidden {
+  opacity: 0;
+}
+
+.facadeSky {
   position: absolute;
-  inset: 8% 7% 18% 7%;
+  inset: 0 0 28% 0;
   background:
-    radial-gradient(circle at 72% 28%, rgba(255,255,255,.95) 0 6%, transparent 18%),
-    linear-gradient(180deg, #d7eef8 0%, #8eb6cc 62%, #c5b7a4 100%);
-  box-shadow: inset 0 0 0 10px rgba(244, 247, 252, .88);
+    radial-gradient(circle at 78% 18%, rgba(255,255,255,.95) 0 5%, rgba(255,244,214,.28) 18%, transparent 42%),
+    linear-gradient(180deg, #d7eef8 0%, #8eb4cc 100%);
 }
 
-.windowMullionV,
-.windowMullionH {
-  position: absolute;
-  z-index: 2;
-  background: rgba(255,255,255,.78);
-}
-
-.windowMullionV {
-  top: 8%;
-  bottom: 18%;
-  left: 50%;
-  width: 8px;
-  transform: translateX(-50%);
-}
-
-.windowMullionH {
-  left: 7%;
-  right: 7%;
-  top: 48%;
-  height: 8px;
-}
-
-.windowSill {
+.facadeGround {
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
-  height: 18%;
-  background: linear-gradient(180deg, #efe8df, #d5cdc2);
+  height: 30%;
+  background: linear-gradient(180deg, #d9d2c6, #c4bbb0);
 }
 
-.windowPhoto,
-.windowPhotoPending {
+.facadeBuilding {
   position: absolute;
-  z-index: 3;
-  inset: 8% 7% 18% 7%;
-  width: auto;
-  height: auto;
+  z-index: 2;
+  left: 9%;
+  right: 9%;
+  top: 16%;
+  bottom: 24%;
+  background: linear-gradient(180deg, #f4f1eb, #e4ddd3);
+  box-shadow: 0 18px 40px rgba(28, 36, 48, .16);
+}
+
+.facadeGlass {
+  position: absolute;
+  left: 7%;
+  right: 24%;
+  top: 12%;
+  bottom: 8%;
+  overflow: hidden;
+  background: linear-gradient(180deg, #d5ebf5, #9ec0d2 70%);
+  box-shadow: inset 0 0 0 8px #f7f4ef;
+}
+
+.facadeGlassTint {
+  position: absolute;
+  inset: 0;
+  transition: background .45s ease;
+}
+
+.facadeMullionV,
+.facadeMullionH {
+  position: absolute;
+  z-index: 1;
+  background: rgba(247, 244, 239, .92);
+}
+
+.facadeMullionV {
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 7px;
+  transform: translateX(-50%);
+}
+
+.facadeMullionH {
+  left: 0;
+  right: 0;
+  top: 46%;
+  height: 7px;
+}
+
+.facadeDoor {
+  position: absolute;
+  right: 6%;
+  bottom: 8%;
+  width: 14%;
+  height: 62%;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.35), transparent 30%),
+    linear-gradient(180deg, #c5d5df, #8ea8b8);
+  box-shadow: inset 0 0 0 6px #f7f4ef;
+}
+
+.facadePhoto,
+.facadePhotoOn {
+  position: absolute;
+  z-index: 5;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-}
-
-.windowPhotoPending {
   opacity: 0;
+  transition: opacity .45s ease;
 }
 
-.windowFilm {
+.facadePhotoOn {
+  opacity: 1;
+}
+
+.signatureStatus {
   position: absolute;
-  z-index: 4;
-  inset: 8% 7% 18% 7%;
-  pointer-events: none;
-}
-
-.windowPath {
-  grid-column: 2 / -1;
+  z-index: 14;
+  left: 1.35rem;
+  right: 1.35rem;
+  bottom: 3.15rem;
   margin: 0;
-  align-self: center;
-  color: #d5dced;
+  color: rgba(255,255,255,.86);
   font-size: .72rem;
-  line-height: 1.35;
-  word-break: break-all;
+  font-weight: 720;
+  letter-spacing: .04em;
+  text-shadow: 0 1px 8px rgba(0,0,0,.35);
 }

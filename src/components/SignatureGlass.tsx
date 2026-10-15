@@ -4,63 +4,105 @@ import { useState } from "react";
 import styles from "@/app/home-v09.module.css";
 
 /**
- * Vistas desde el interior. Las fotos se agregan en estas rutas;
- * hasta entonces se muestra el marco con el nombre del archivo.
- * La gama nanocerámica activa sigue siendo 75 / 50 / 35 / 15 / 5.
+ * Misma fachada vista desde la calle. Cada tono tiene su propio archivo
+ * (el cristal cambia; el edificio no). Hasta que exista la foto, el velo
+ * CSS cubre solo el vidrio. La gama nanocerámica activa es 75 / 50 / 35 / 15 / 5.
+ * commercial-facade.webp no entra aquí: sigue en la galería.
  */
 const views = [
-  { id: "clear", label: "Sin película", src: "/images/comparador/ventana-interior-sin-pelicula.webp", film: "transparent" },
-  { id: "v70", label: "70%", src: "/images/comparador/ventana-interior-70.webp", film: "rgba(64, 104, 148, 0.16)" },
-  { id: "v50", label: "50%", src: "/images/comparador/ventana-interior-50.webp", film: "rgba(18, 28, 42, 0.28)" },
-  { id: "v35", label: "35%", src: "/images/comparador/ventana-interior-35.webp", film: "rgba(10, 14, 22, 0.46)" },
-  { id: "v15", label: "15%", src: "/images/comparador/ventana-interior-15.webp", film: "rgba(4, 6, 10, 0.68)" },
-  { id: "reflecta", label: "Reflecta", src: "/images/comparador/ventana-interior-reflecta.webp", film: "rgba(176, 190, 204, 0.42)" },
+  {
+    id: "clear",
+    label: "Sin película",
+    src: "/images/comparador/fachada-exterior-sin-pelicula.webp",
+    alt: "Fachada moderna vista desde la calle, con el cristal sin película y aspecto transparente.",
+    film: "linear-gradient(160deg, rgba(255,255,255,.22), rgba(186,214,228,.08) 46%, rgba(255,255,255,.05))",
+  },
+  {
+    id: "v75",
+    label: "75%",
+    src: "/images/comparador/fachada-exterior-75.webp",
+    alt: "Fachada moderna vista desde la calle, con el cristal al 75% de transmisión de luz visible.",
+    film: "linear-gradient(160deg, rgba(92,132,168,.20), rgba(70,108,146,.10))",
+  },
+  {
+    id: "v50",
+    label: "50%",
+    src: "/images/comparador/fachada-exterior-50.webp",
+    alt: "Fachada moderna vista desde la calle, con el cristal al 50% de transmisión de luz visible.",
+    film: "linear-gradient(160deg, rgba(28,42,62,.38), rgba(16,24,36,.28))",
+  },
+  {
+    id: "v35",
+    label: "35%",
+    src: "/images/comparador/fachada-exterior-35.webp",
+    alt: "Fachada moderna vista desde la calle, con el cristal al 35% de transmisión de luz visible.",
+    film: "linear-gradient(160deg, rgba(12,18,28,.55), rgba(8,12,18,.46))",
+  },
+  {
+    id: "v15",
+    label: "15%",
+    src: "/images/comparador/fachada-exterior-15.webp",
+    alt: "Fachada moderna vista desde la calle, con el cristal al 15% de transmisión de luz visible.",
+    film: "linear-gradient(160deg, rgba(6,8,12,.74), rgba(3,4,8,.66))",
+  },
+  {
+    id: "v5",
+    label: "5%",
+    src: "/images/comparador/fachada-exterior-5.webp",
+    alt: "Fachada moderna vista desde la calle, con el cristal al 5% de transmisión de luz visible.",
+    film: "linear-gradient(160deg, rgba(2,3,6,.88), rgba(1,2,4,.80))",
+  },
+  {
+    id: "reflecta",
+    label: "Reflecta",
+    src: "/images/comparador/fachada-exterior-reflecta.webp",
+    alt: "Fachada moderna vista desde la calle, con película Plata Reflecta de apariencia espejo en el cristal.",
+    film: "linear-gradient(118deg, rgba(236,242,246,.78), rgba(168,186,198,.55) 42%, rgba(92,112,128,.62))",
+  },
 ] as const;
 
 export function SignatureGlass() {
   const [index, setIndex] = useState(0);
-  const [loadedSrc, setLoadedSrc] = useState("");
+  const [ready, setReady] = useState<Record<string, boolean>>({});
   const view = views[index];
-  const photoReady = loadedSrc === view.src;
+  const photoReady = ready[view.src] === true;
 
   return (
-    <div className={styles.signatureGlass} aria-label="Comparador visual de una ventana vista desde el interior">
-      <div className={styles.windowScene} aria-hidden="true">
-        <div className={styles.windowSky} />
-        <div className={styles.windowMullionV} />
-        <div className={styles.windowMullionH} />
-        <div className={styles.windowSill} />
+    <div className={styles.signatureGlass} aria-label="Fachada vista desde la calle. Elige un tono para ver cómo cambia el cristal.">
+      <div className={photoReady ? styles.facadeStageHidden : styles.facadeStage} aria-hidden="true">
+        <div className={styles.facadeSky} />
+        <div className={styles.facadeGround} />
+        <div className={styles.facadeBuilding}>
+          <div className={styles.facadeGlass}>
+            <div className={styles.facadeGlassTint} style={{ background: view.film }} />
+            <span className={styles.facadeMullionV} />
+            <span className={styles.facadeMullionH} />
+          </div>
+          <div className={styles.facadeDoor} />
+        </div>
       </div>
 
-      <img
-        key={view.src}
-        className={photoReady ? styles.windowPhoto : styles.windowPhotoPending}
-        src={view.src}
-        alt=""
-        onLoad={() => setLoadedSrc(view.src)}
-        onError={() => setLoadedSrc("")}
-      />
-
-      {photoReady ? null : <div className={styles.windowFilm} style={{ background: view.film }} aria-hidden="true" />}
+      {views.map((item) => {
+        const visible = item.id === view.id && ready[item.src] === true;
+        return (
+          <img
+            key={item.src}
+            className={visible ? styles.facadePhotoOn : styles.facadePhoto}
+            src={item.src}
+            alt={item.alt}
+            aria-hidden={item.id === view.id ? undefined : true}
+            onLoad={() => setReady((current) => ({ ...current, [item.src]: true }))}
+            onError={() => setReady((current) => ({ ...current, [item.src]: false }))}
+          />
+        );
+      })}
 
       <div className={styles.signatureTopline}>
-        <span>Vista desde el interior</span>
+        <span>Vista desde la calle</span>
         <span className={styles.signatureInstruction}>{view.label}</span>
       </div>
 
-      <input
-        className={styles.revealRange}
-        type="range"
-        min={0}
-        max={views.length - 1}
-        step={1}
-        value={index}
-        onChange={(event: { currentTarget: { value: string } }) => setIndex(Number(event.currentTarget.value))}
-        aria-valuetext={view.label}
-        aria-label="Cambiar la vista de la ventana"
-      />
-
-      <div className={styles.toneDock} role="group" aria-label="Elegir vista">
+      <div className={styles.toneDock} role="group" aria-label="Elegir el tono del cristal">
         {views.map((item, itemIndex) => (
           <button
             key={item.id}
@@ -74,16 +116,12 @@ export function SignatureGlass() {
         ))}
       </div>
 
-      <div className={styles.signatureSpecs}>
-        <div className={styles.signatureSpecIntro}>
-          <span>{photoReady ? "Foto de referencia" : "Foto pendiente"}</span>
-          <strong>{view.label}</strong>
-        </div>
-        <p className={styles.windowPath}>{view.src}</p>
-      </div>
+      <p className={styles.signatureStatus} aria-live="polite">
+        {photoReady ? "Foto de la fachada" : "Fachada de muestra"} · {view.label}
+      </p>
 
       <p className={styles.signatureFootnote}>
-        Referencia visual de apariencia, no de desempeño ni de una regla oficial. La gama nanocerámica activa es 75, 50, 35, 15 y 5. Plata Reflecta es la película espejo para arquitectura.
+        Misma fachada: al elegir un tono cambia el cristal, no el edificio. Es apariencia, no desempeño ni una regla oficial. La gama nanocerámica activa es 75, 50, 35, 15 y 5. Plata Reflecta es la película espejo para arquitectura.
       </p>
     </div>
   );
