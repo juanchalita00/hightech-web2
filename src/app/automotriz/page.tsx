@@ -31,9 +31,9 @@ const steps = [
 const faqs = [
   { question: "¿Todos los tonos nanocerámicos tienen la misma protección UV?", answer: <p>Las fichas activas de IR75, IR50, IR35, IR15 e IR5 indican 99% de rechazo UV. El VLT y el TSER sí cambian entre tonos.</p> },
   { question: "¿El 95% de rechazo infrarrojo equivale a reducir 95% del calor?", answer: <p>No. La ficha especifica 95% de rechazo infrarrojo medido a 950 nm. TSER es otra métrica y tampoco debe convertirse directamente en una promesa de temperatura dentro del vehículo.</p> },
-  { question: "¿IR75 en el parabrisas queda decidido solo porque es una película clara?", answer: <p>No. IR75 reporta 75% de transmisión de luz visible: ese dato describe la película. El texto publicado se cita en esta página y no menciona ese porcentaje. En la práctica, lo que la mayoría suele instalar en el parabrisas es 75%. Esto es solo informativo y no es asesoría legal: tú decides el tono. <Link href="#lo-que-dice-la-ley">Ver el texto y la práctica</Link>.</p> },
+  { question: "¿IR75 en el parabrisas queda decidido solo porque es una película clara?", answer: <p>No. IR75 reporta 75% de transmisión de luz visible: ese dato describe la película. El texto publicado se cita en esta página y no menciona ese porcentaje. En la práctica, lo que la mayoría suele instalar en el parabrisas es 75%. Esto es solo informativo, no es asesoría legal. <Link href="#lo-que-dice-la-ley">Ver el texto y la práctica</Link>.</p> },
   { question: "¿Qué tono conviene si manejo mucho de noche?", answer: <p>No existe un tono universal para todos. Un VLT más alto conserva más luz visible, por lo que la elección debe considerar cuánto manejas de noche y cuánta claridad necesitas conservar. <Link href="/guias/que-es-vlt/">Entender qué es VLT</Link>.</p> },
-  { question: "¿Instalan a domicilio?", answer: <p>La instalación automotriz se realiza en taller. Es la modalidad operativa definida para esta línea.</p> },
+  { question: "¿Instalan polarizado automotriz a domicilio?", answer: <p>No. El polarizado automotriz se instala en taller, para cuidar las condiciones de aplicación.</p> },
   { question: "¿Y si ya tengo polarizado?", answer: <p>Primero se revisa su estado. El retiro forma parte del alcance cuando es necesario y no se presupone igual en todos los casos.</p> },
 ] as const;
 
@@ -51,8 +51,8 @@ export default function AutomotivePage() {
         secondary={<Link href="#tonos" className="button button-secondary">Comparar tonos <Icon name="arrow" size={18}/></Link>}
         proofItems={["5 tonos disponibles", "99% protección UV", "Instalación en taller"]}
         imageSrc="/images/projects/automotive-audi-q8.webp"
-        imageAlt="SUV durante un trabajo de polarizado automotriz realizado por HIGHTECH."
-        imageCaption="Instalación automotriz HIGHTECH"
+        imageAlt="SUV moderno con cristales polarizados, en un taller limpio y bien iluminado."
+        imageCaption="El polarizado automotriz se instala en taller."
         imagePosition="25% 40%"
       />
 

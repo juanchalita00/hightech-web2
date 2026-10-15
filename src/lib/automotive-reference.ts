@@ -21,7 +21,7 @@ export const automotiveLaw = {
   lawTitle: "¿Y qué dice la ley?",
   lawIntro: "Cita textual del PDF del Congreso. Abre el artículo para leerla. El resto de cada artículo no se incluye.",
   disclaimerTitle: "Solo informativo",
-  disclaimer: "Esto es solo informativo. No es asesoría legal. Tú decides el tono.",
+  disclaimer: "Esto es solo informativo, no es asesoría legal.",
 } as const;
 
 export const automotiveQuotes = [

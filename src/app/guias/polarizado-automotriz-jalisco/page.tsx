@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return <>
-    <GuideHero eyebrow="Guía · Automotriz" title="Qué suele usarse en un auto, y qué no podemos decidir por ti." description="Primero, lo que la mayoría suele instalar. Después, la cita del texto publicado. La decisión queda en el cliente." category="Referencia automotriz" ctaHref="/automotriz/" ctaLabel="Ver polarizado automotriz" />
+    <GuideHero eyebrow="Guía · Automotriz" title="Qué suele usarse en un auto, y qué dice el texto." description="Primero, lo que la mayoría suele instalar. Después, la cita del texto publicado. Es solo informativo, no es asesoría legal." category="Referencia automotriz" ctaHref="/automotriz/" ctaLabel="Ver polarizado automotriz" />
     <GuideArticle>
       <GuideBody>
         <AutomotiveLawCopy />
@@ -32,10 +32,10 @@ export default function Page() {
         <p className="guide-context-link"><Link className="text-link" href="/blog/mitos-de-porcentajes-en-el-auto/">Leer los mitos de los porcentajes</Link></p>
       </GuideBody>
       <GuideAside>
-        <div className="guide-aside-card"><span>Idea clave</span><strong>Tú decides el tono.</strong><p>HIGHTECH orienta sobre claridad y uso. No presenta ningún tono como oficial.</p></div>
+        <div className="guide-aside-card"><span>Idea clave</span><strong>Solo informativo.</strong><p>Esto es solo informativo, no es asesoría legal.</p></div>
         <div className="guide-aside-card"><span>Relacionadas</span><Link href="/automotriz/">Automotriz</Link><Link href="/guias/que-es-vlt/">Qué es VLT</Link><Link href="/contacto/?servicio=automotriz#cotizar">Cotizar mi vehículo</Link></div>
       </GuideAside>
     </GuideArticle>
-    <ProductCTA title="Dinos el vehículo y qué cristales quieres trabajar." text="Te orientamos sobre claridad, apariencia y uso nocturno. La elección del tono queda en ti." cta="Escribir por WhatsApp" context={{sourcePage:"/guias/polarizado-automotriz-jalisco/",businessLine:"AUTOMOTIVE"}} secondaryHref="/contacto/?servicio=automotriz#cotizar" secondaryLabel="Formulario de cotización" />
+    <ProductCTA title="Dinos el vehículo y qué cristales quieres trabajar." text="Te orientamos sobre claridad, apariencia y uso nocturno." cta="Escribir por WhatsApp" context={{sourcePage:"/guias/polarizado-automotriz-jalisco/",businessLine:"AUTOMOTIVE"}} secondaryHref="/contacto/?servicio=automotriz#cotizar" secondaryLabel="Formulario de cotización" />
   </>;
 }
