@@ -8,14 +8,13 @@ import { ProductHero } from "@/components/ProductHero";
 
 export const metadata = { alternates: { canonical: "/peliculas/nanoceramica/" },
   title: { absolute: "Película nanocerámica | HIGHTECH Polarizados" },
-  description: "Compara IR75, IR50, IR35, IR15 e IR5 por VLT, UV, rechazo infrarrojo a 950 nm y TSER según ficha técnica.",
+  description: "Cinco tonos de nanocerámica. Todos cortan los rayos UV y el calor del sol. El número es la luz que quieres dejar pasar.",
 };
 
 const metrics = [
-  { metric:"VLT", label:"Cuánta luz visible deja pasar", meaning:"Te ayuda a entender qué tan claro u oscuro se percibe un tono. Un VLT más alto deja pasar más luz visible.", caution:"El VLT de la película no es necesariamente el VLT final del conjunto vidrio + película." },
-  { metric:"UV", label:"Protección frente a radiación UV", meaning:"Las fichas activas de la gama nanocerámica indican 99% de rechazo UV en los cinco tonos.", caution:"La radiación UV no es la única causa de decoloración de interiores." },
-  { metric:"IR 950", label:"Medición infrarroja a 950 nm", meaning:"Las fichas indican 95% de rechazo infrarrojo medido específicamente a una longitud de onda de 950 nm.", caution:"No significa 95% menos calor ni representa toda la banda infrarroja." },
-  { metric:"TSER", label:"Energía solar total rechazada", meaning:"Sirve para comparar cuánto de la energía solar total rechaza cada película. En la ficha de esta gama cambia de 59% a 96% según el tono.", caution:"No es una promesa de cuántos grados bajará un espacio." },
+  { metric:"Luz", label:"Cuánta luz deja pasar", meaning:"75 es claro. 5 es muy oscuro. El número más alto se ve más claro.", caution:"El cristal de abajo también cambia un poco cómo se ve." },
+  { metric:"UV", label:"Rayos que decoloran", meaning:"Los cinco tonos bloquean el 99% de esos rayos, también el más claro.", caution:"El sol no es la única causa de que un piso o una tela envejezcan." },
+  { metric:"Calor", label:"El que se siente en la piel", meaning:"Todos los tonos cortan casi todo ese calor, el del asiento que quema o la ventana al sol.", caution:"Oscurecer suma un poco más de protección total, menos de lo que parece, y mucha más privacidad." },
 ] as const;
 
 export default function NanoPage() {
@@ -69,7 +68,7 @@ export default function NanoPage() {
       <div className="container">
         <div className="section-heading section-heading-split">
           <div><p className="eyebrow">Comparador de gama</p><h2>Primero decide cuánta luz quieres conservar.</h2></div>
-          <p>El VLT te ayuda a entender qué tan claro u oscuro es cada tono. Después puedes comparar el TSER y los demás datos técnicos sin confundir apariencia con desempeño.</p>
+          <p>Elige primero cuánta luz quieres. El calor del sol se corta en todos. El tono más oscuro suma privacidad y un poco más de protección total.</p>
         </div>
         <NanoComparison/>
       </div>
@@ -79,7 +78,7 @@ export default function NanoPage() {
       <div className="container">
         <div className="section-heading section-heading-split">
           <div><p className="eyebrow">Cómo leer los datos</p><h2>Qué significa cada dato y para qué te sirve.</h2></div>
-          <p>No necesitas memorizar las siglas. VLT habla de luz visible; UV e IR miden partes distintas de la radiación; y TSER ayuda a comparar el rechazo de energía solar total.</p>
+          <p>Luz, rayos que decoloran y calor que se siente. Son tres cosas distintas.</p>
         </div>
         <MetricExplainer items={metrics}/>
       </div>
@@ -96,6 +95,6 @@ export default function NanoPage() {
       </div>
     </section>
 
-    <ProductCTA title="Dinos qué quieres resolver. Nosotros te ayudamos a elegir." text="Puede ser calor, reflejo o privacidad. También tomamos en cuenta cuánta luz y visibilidad quieres mantener para recomendarte el tono más adecuado." cta="Quiero una recomendación" context={{sourcePage:"/peliculas/nanoceramica/", product:"Nanocerámica HIGHTECH"}} secondaryHref="/blog/nanoceramica-vs-pelicula-tradicional/" secondaryLabel="Nanocerámica y película tradicional" />
+    <ProductCTA title="Dinos qué quieres resolver. Nosotros te ayudamos a elegir." text="Puede ser calor, reflejo o privacidad. También tomamos en cuenta cuánta luz y visibilidad quieres mantener para recomendarte el tono más adecuado." cta="Quiero una recomendación" context={{sourcePage:"/peliculas/nanoceramica/", product:"Nanocerámica HIGHTECH"}} secondaryHref="/guias/irr-vs-tser/" secondaryLabel="Calor y tono" />
   </>;
 }

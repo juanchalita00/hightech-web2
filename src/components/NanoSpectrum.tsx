@@ -26,7 +26,7 @@ export function NanoSpectrum() {
         <span></span>
         <div className="nano-column-head-main">
           <span>Tono</span>
-          <span>Luz visible (VLT)</span>
+          <span>Luz que deja pasar</span>
           <span>Rechazo solar total (TSER)</span>
         </div>
         <span></span>
@@ -47,7 +47,7 @@ export function NanoSpectrum() {
               </div>
               <div className="nano-tone-copy">
                 <strong>{film.id}</strong>
-                <span>VLT {film.vlt}%</span>
+                <span>Luz {film.vlt}%</span>
                 <small>TSER {film.tser}%</small>
               </div>
               <Icon name="arrow" size={18}/>
@@ -55,7 +55,7 @@ export function NanoSpectrum() {
           );
         })}
       </div>
-      <p className="nano-spectrum-footnote">IR50 e IR5 son nombres comerciales; sus VLT de ficha son 48% y 3%, respectivamente.</p>
+      <p className="nano-spectrum-footnote">El 50 deja pasar cerca de la mitad de la luz. El 5 deja pasar muy poca y, de noche, algunas personas batallan.</p>
     </div>
   );
 }

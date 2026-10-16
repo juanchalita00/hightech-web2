@@ -21,7 +21,7 @@ const journeys = [
   {
     icon: "car" as const,
     title: "Automotriz",
-    label: "Taller o a domicilio",
+    label: "Taller con cita",
     text: "Nanocerámica, tonos y visibilidad con una recomendación según vehículo y alcance de instalación.",
     href: "/automotriz/",
     cta: "Ver línea automotriz",

@@ -1,28 +1,75 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { GoogleReviews } from "@/components/GoogleReviews";
-import { Icon } from "@/components/Icon";
 import { ProcessRail } from "@/components/ProcessRail";
-import { ReviewShelf } from "@/components/ReviewShelf";
 import { TrustHero } from "@/components/TrustHero";
-import { TrustPillars } from "@/components/TrustPillars";
 import { WhatsAppCTA } from "@/components/WhatsAppCTA";
-export const metadata:Metadata={ alternates: { canonical: "/nosotros/" },title:{ absolute: "Nosotros | HIGHTECH Polarizados" },description:"Cómo trabaja HIGHTECH Polarizados en Zapopan: diagnóstico del cristal, recomendación, cotización e instalación para casa, negocio y vehículo."};
+import { addressLine, hoursLabel } from "@/lib/public-facts";
 
-const process=[
-  {number:"01",title:"Entendemos el problema",text:"Calor, UV, deslumbramiento, privacidad, seguridad o una combinación concreta."},
-  {number:"02",title:"Revisamos la aplicación",text:"Cristal, exposición, uso del espacio o vehículo, tono deseado y condiciones de instalación."},
-  {number:"03",title:"Comparamos opciones",text:"La película se recomienda con especificaciones y limitaciones visibles, no sólo por oscuridad."},
-  {number:"04",title:"Cotizamos el alcance",text:"Definimos qué se instalará y qué información adicional necesita el proyecto antes de agendar."},
+export const metadata: Metadata = {
+  alternates: { canonical: "/nosotros/" },
+  title: { absolute: "Nosotros | HIGHTECH Polarizados en Zapopan" },
+  description: "HIGHTECH Polarizados instala en Zapopan desde Tomás Mann 5348. Casa, negocio y auto, con garantía de 10 años en nanocerámica.",
+};
+
+const process = [
+  { number: "01", title: "Entendemos qué te molesta", text: "Calor, luz de más, privacidad o un cristal que quieres proteger." },
+  { number: "02", title: "Vemos el vidrio", text: "Casa, negocio o auto. Medidas, orientación y cuánta luz quieres conservar." },
+  { number: "03", title: "Elegimos la película", text: "El tono cambia la luz y la privacidad. El calor del sol se corta en todos." },
+  { number: "04", title: "Cotizamos e instalamos", text: "Precio del trabajo concreto y una fecha. En auto, con cita en el taller." },
 ] as const;
 
-export default function Page(){return <>
-  <TrustHero eyebrow="HIGHTECH Polarizados" title="La precisión técnica también es parte del servicio." description="HIGHTECH trabaja como proveedor de soluciones para cristales: primero entendemos qué quieres resolver y después aterrizamos una película, un tono y una aplicación coherentes con ese objetivo." points={["Residencial y comercial como prioridad","Automotriz en taller o a domicilio, si el equipo lo confirma","Especificaciones explicadas con contexto"]}/>
-  <section className="section"><div className="container"><div className="section-heading section-heading-split"><div><p className="eyebrow">Cómo pensamos</p><h2>No vendemos oscuridad. Diseñamos una recomendación.</h2></div><p>La apariencia importa, pero no sustituye el análisis de luz, exposición, cristal, privacidad, compatibilidad y uso real.</p></div><TrustPillars/></div></section>
-  <section className="section section-dark"><div className="container about-director-grid"><div><p className="eyebrow eyebrow-light">La marca</p><h2>HIGHTECH Polarizados</h2><p>Diagnosticamos el problema del cristal y recomendamos una solución para casa, negocio o vehículo. No competimos por ser la opción más barata.</p></div><div className="about-principle"><span>Principio rector</span><strong>“Primero entendemos qué quieres resolver. Después recomendamos la película.”</strong><p>Esa claridad se mantiene desde la primera consulta hasta la instalación.</p></div></div></section>
-  <section className="section"><div className="container"><div className="section-heading"><p className="eyebrow">Proceso</p><h2>Una conversación útil antes de instalar.</h2></div><ProcessRail steps={process}/></div></section>
-  <section className="section section-alt"><div className="container about-proof-grid"><div><p className="eyebrow">Qué sí usamos como prueba</p><h2>Fuente, contexto y límites.</h2><p>Una ficha técnica sostiene una especificación. Una fotografía real puede demostrar un proyecto. Una medición demuestra un caso bajo sus condiciones. No mezclamos esos niveles.</p><Link href="/guias/" className="text-link text-link-strong">Leer guías técnicas <Icon name="arrow" size={18}/></Link></div><div className="about-proof-list"><article><b>01</b><h3>Ficha técnica</h3><p>Para datos concretos de producto.</p></article><article><b>02</b><h3>Proyecto documentado</h3><p>Para mostrar una instalación auténtica.</p></article><article><b>03</b><h3>Permiso</h3><p>La foto de un cliente no se convierte automáticamente en publicidad.</p></article></div></div></section>
-  <GoogleReviews/>
-  <ReviewShelf/>
-  <section className="section final-cta-section"><div className="container final-cta-card"><div><p className="eyebrow eyebrow-light">Hablemos de tu caso</p><h2>No necesitas llegar sabiendo qué película elegir.</h2></div><div className="final-cta-actions"><WhatsAppCTA label="Cuéntanos qué quieres resolver" context={{sourcePage:"/nosotros/"}} position="FINAL_CTA" className="button-light"/><Link href="/servicios/" className="button button-ghost-light">Explorar soluciones</Link></div></div></section>
-</>}
+export default function Page() {
+  return (
+    <>
+      <TrustHero
+        eyebrow="HIGHTECH Polarizados"
+        title="Polarizado en Zapopan, con el cristal como punto de partida."
+        description="Primero vemos qué te molesta. Después elegimos la película y el tono."
+        points={["Taller en Jardines Vallarta", "Casa y negocio en la zona", "Auto en taller con cita"]}
+      />
+      <section className="section" id="logo">
+        <div className="container logo-story">
+          <div>
+            <p className="eyebrow">Detrás de nuestro logo</p>
+            <h2>Una línea, un cristal, los rayos.</h2>
+            <p>La frase de la marca es protección para una mejor calidad de vida.</p>
+          </div>
+          <ul>
+            <li>Las dos palabras van juntas, en una sola línea de horizonte.</li>
+            <li>La i no lleva punto: el círculo se quitó a propósito.</li>
+            <li>La letra capital tiene un trazo propio, para que se reconozca de lejos.</li>
+            <li>Los rayos del sol intentan cruzar un cristal ya protegido.</li>
+          </ul>
+        </div>
+      </section>
+      <section className="section section-alt">
+        <div className="container">
+          <div className="section-heading">
+            <p className="eyebrow">El taller</p>
+            <h2>Dónde estamos.</h2>
+          </div>
+          <p>{addressLine}</p>
+          <p>{hoursLabel}</p>
+          <p>La nanocerámica, en casa y en auto, tiene 10 años de garantía. La película de seguridad, 5 o 10 según cuál se instale.</p>
+        </div>
+      </section>
+      <section className="section">
+        <div className="container">
+          <div className="section-heading"><p className="eyebrow">Proceso</p><h2>Una conversación antes de instalar.</h2></div>
+          <ProcessRail steps={process} />
+        </div>
+      </section>
+      <GoogleReviews />
+      <section className="section final-cta-section">
+        <div className="container final-cta-card">
+          <div><p className="eyebrow eyebrow-light">Siguiente paso</p><h2>Cuéntanos el cristal.</h2></div>
+          <div className="final-cta-actions">
+            <Link href="/contacto/#cotizar" className="button button-light">Cotizar</Link>
+            <WhatsAppCTA label="WhatsApp" context={{ sourcePage: "/nosotros/" }} position="FINAL_CTA" className="button-ghost-light" />
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}

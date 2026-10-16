@@ -1,7 +1,7 @@
 export const automotiveOnSiteQuestion = "¿Instalan polarizado automotriz a domicilio?";
 
 export const automotiveOnSiteAnswer =
-  "Sí, en algunos casos podemos instalar a domicilio, como flotillas, maquinaria o autos nuevos de agencia. Cada servicio lo revisa primero nuestro equipo para confirmar que se pueda hacer con la calidad de siempre.";
+  "En taller con cita. A domicilio solo flotillas o autos de agencia.";
 
 export const automotiveOnSiteSchema = {
   "@context": "https://schema.org",

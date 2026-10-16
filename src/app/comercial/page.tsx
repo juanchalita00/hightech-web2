@@ -5,10 +5,12 @@ import { DecisionCards } from "@/components/DecisionCards";
 import { FAQList } from "@/components/FAQList";
 import { Icon } from "@/components/Icon";
 import { ProcessRail } from "@/components/ProcessRail";
+import { SarroService } from "@/components/SarroService";
+import { prices } from "@/lib/public-facts";
 
 export const metadata = { alternates: { canonical: "/comercial/" },
-  title: { absolute: "Películas para cristales comerciales | HIGHTECH Polarizados" },
-  description: "Evaluación de proyectos comerciales e institucionales para control solar, privacidad, deslumbramiento y seguridad en cristales.",
+  title: { absolute: "Polarizado comercial en Guadalajara y Zapopan | HIGHTECH Polarizados" },
+  description: "Polarizado para oficinas, fachadas y plantas en Zapopan y Guadalajara. Desde $600 por metro cuadrado. Seguridad y control solar según el cristal.",
 };
 
 const decisions = [
@@ -121,7 +123,9 @@ export default function CommercialPage() {
         </div>
       </section>
 
-      <ApplicationFinalCTA eyebrow="Proyecto comercial" title="Cuéntanos qué necesitas resolver y en qué áreas del inmueble." ctaLabel="Revisar mi proyecto" context={wa} secondaryHref="/peliculas/" secondaryLabel="Comparar tecnologías" />
+      <SarroService />
+      <p className="container price-line">Desde {new Intl.NumberFormat("es-MX", { style: "currency", currency: "MXN", maximumFractionDigits: 0 }).format(prices.architectureFrom)} por m². Mínimo de proyecto {new Intl.NumberFormat("es-MX", { style: "currency", currency: "MXN", maximumFractionDigits: 0 }).format(prices.projectMinimum)}. Seguridad y película inteligente se cotizan aparte.</p>
+      <ApplicationFinalCTA eyebrow="Proyecto comercial" title="Cuéntanos qué necesitas resolver y en qué áreas del inmueble." ctaLabel="Cotizar" context={wa} secondaryHref="/peliculas/" secondaryLabel="Comparar películas" />
     </>
   );
 }

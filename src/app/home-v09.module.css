@@ -52,7 +52,7 @@
   width: 2.15rem;
   height: 2px;
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--solar-yellow), var(--solar-orange) 48%, var(--solar-magenta));
+  background: #30458f;
 }
 
 .heroCopy h1 {
@@ -1716,6 +1716,36 @@
   opacity: 1;
 }
 
+@media (min-width: 721px) {
+  .visualWrap {
+    min-height: 0;
+    aspect-ratio: 16 / 11;
+  }
+
+  .referenceFrame,
+  .referenceFrameHidden {
+    inset: 0;
+    height: 100%;
+    aspect-ratio: auto;
+  }
+
+  .referencePhoto,
+  .facadePhoto,
+  .facadePhotoOn {
+    object-fit: cover;
+    object-position: center 42%;
+  }
+
+  .toneDock {
+    bottom: .7rem;
+  }
+
+  .signatureFootnote,
+  .signatureStatus {
+    display: none;
+  }
+}
+
 .signatureStatus {
   position: absolute;
   z-index: 14;
@@ -1728,4 +1758,11 @@
   font-weight: 720;
   letter-spacing: .04em;
   text-shadow: 0 1px 8px rgba(0,0,0,.35);
+}
+
+@media (min-width: 721px) {
+  .signatureStatus,
+  .signatureFootnote {
+    display: none;
+  }
 }

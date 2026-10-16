@@ -125,7 +125,7 @@ export function SignatureGlass() {
           alt={base.alt}
           className={styles.referencePhoto}
         />
-        <svg className={styles.glassTint} viewBox={`0 0 ${base.width} ${base.height}`} preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+        <svg className={styles.glassTint} viewBox={`0 0 ${base.width} ${base.height}`} preserveAspectRatio="xMidYMid slice" aria-hidden="true">
           <defs>
             <clipPath id={clipId}>
               {glassPanels.map((panel) => <polygon key={panel.points} points={panel.points} />)}

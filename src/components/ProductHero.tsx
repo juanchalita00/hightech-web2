@@ -1,4 +1,6 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
+import Link from "next/link";
 import { WhatsAppCTA } from "@/components/WhatsAppCTA";
 import type { WhatsAppContext } from "@/lib/whatsapp";
 
@@ -18,7 +20,7 @@ type Props = {
   image?: { src: string; alt: string; caption?: string };
 };
 
-export function ProductHero({ variant, eyebrow, title, description, facts = [], ctaLabel, context, secondary, image }: Props) {
+export function ProductHero({ variant, eyebrow, title, description, facts = [], context, secondary, image }: Props) {
   return (
     <section className={`product-hero product-hero-${variant}`}>
       <div className="container product-hero-grid">
@@ -26,9 +28,10 @@ export function ProductHero({ variant, eyebrow, title, description, facts = [], 
           <p className="eyebrow">{eyebrow}</p>
           <h1>{title}</h1>
           <p className="lede">{description}</p>
-          {(ctaLabel && context) || secondary ? (
+          {context || secondary ? (
             <div className="hero-actions">
-              {ctaLabel && context ? <WhatsAppCTA label={ctaLabel} context={context} position="HERO" /> : null}
+              <Link className="button button-primary" href="/contacto/#cotizar">Cotizar</Link>
+              {context ? <WhatsAppCTA label="WhatsApp" context={context} position="HERO" className="button-secondary" /> : null}
               {secondary}
             </div>
           ) : null}
@@ -40,7 +43,7 @@ export function ProductHero({ variant, eyebrow, title, description, facts = [], 
         </div>
         {image ? (
           <figure className="product-hero-photo">
-            <img src={image.src} alt={image.alt} width={900} height={600} />
+            <Image src={image.src} alt={image.alt} width={900} height={600} />
             {image.caption ? <figcaption>{image.caption}</figcaption> : null}
           </figure>
         ) : (

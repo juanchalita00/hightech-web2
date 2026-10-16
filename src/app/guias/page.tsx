@@ -2,25 +2,38 @@ import type { Metadata } from "next";
 import { GuideCard } from "@/components/GuideCard";
 import { GuideHero } from "@/components/GuideHero";
 
-export const metadata: Metadata = { alternates: { canonical: "/guias/" },
-  title: { absolute: "Guías de películas para cristales | HIGHTECH Polarizados" },
-  description: "Guías HIGHTECH para entender VLT, TSER, rechazo infrarrojo, protección UV, privacidad nocturna y estrés térmico antes de elegir una película.",
+export const metadata: Metadata = {
+  alternates: { canonical: "/guias/" },
+  title: { absolute: "Guías de polarizado | HIGHTECH Polarizados" },
+  description: "Guías en claro sobre calor, rayos UV, luz, privacidad de noche y el tono legal del auto en Jalisco.",
 };
 
 const guides = [
-  { href:"/guias/reducir-calor-ventanas/", category:"Control solar", title:"Cómo reducir el calor que entra por las ventanas", description:"Qué mirar además de la oscuridad: vidrio, orientación, VLT, rechazo infrarrojo a 950 nm y TSER." },
-  { href:"/guias/proteccion-uv-ventanas/", category:"Protección UV", title:"Protección UV en ventanas: qué hace y qué no", description:"Cómo leer el 99% UV de la gama nano sin convertirlo en una promesa exagerada sobre decoloración." },
-  { href:"/guias/irr-vs-tser/", category:"Métricas", title:"IR vs TSER: no son la misma métrica", description:"Por qué 95% de rechazo infrarrojo a 950 nm no significa 95% menos calor y cómo leer ambas cifras." , badge:"Clave técnica"},
-  { href:"/guias/que-es-vlt/", category:"Métricas", title:"Qué es VLT y qué significan 75, 50, 35, 15 y 5", description:"La transmisión de luz visible explica claridad y oscuridad; el nombre comercial no siempre coincide exactamente con la ficha." },
-  { href:"/guias/privacidad-ventanas-noche/", category:"Privacidad", title:"Privacidad de noche: por qué puede invertirse", description:"La diferencia de iluminación entre interior y exterior cambia lo que se ve a través del cristal." },
-  { href:"/guias/estres-termico-cristal/", category:"Compatibilidad", title:"Estrés térmico: por qué el tipo de vidrio importa", description:"Una película se selecciona como parte del sistema vidrio + película, no únicamente por tono o porcentaje." },
-  { href:"/guias/polarizado-automotriz-jalisco/", category:"Automotriz · Jalisco", title:"Porcentajes en el auto: el texto y la práctica", description:"Cita el texto publicado en Jalisco. Aparte, lo que la mayoría suele instalar: 35% en laterales y medallón, y 75% en el parabrisas." },
+  { href: "/guias/reducir-calor-ventanas/", category: "Calor", title: "Cómo bajar el calor que entra por las ventanas", description: "El calor que sientes en la piel junto al cristal, y por qué oscurecer no lo resuelve solo." },
+  { href: "/guias/proteccion-uv-ventanas/", category: "Rayos UV", title: "Qué hacen los rayos UV en una ventana", description: "Los mismos rayos del protector solar, y qué sí puede hacer una película por pisos y muebles." },
+  { href: "/guias/irr-vs-tser/", category: "Calor", title: "El calor del sol y el tono no son la misma cosa", description: "Todos los tonos cortan el calor que se siente. La protección total varía un poco, menos de lo que parece." },
+  { href: "/guias/que-es-vlt/", category: "Luz", title: "Qué significa 75, 50, 35, 15 y 5", description: "El número es la luz que deja pasar. Un número más alto es un cristal más claro." },
+  { href: "/guias/privacidad-ventanas-noche/", category: "Privacidad", title: "Por qué de noche se puede ver hacia adentro", description: "La privacidad sigue a la luz. Si la sala está encendida, el cristal deja de esconder." },
+  { href: "/guias/estres-termico-cristal/", category: "El vidrio", title: "Por qué el tipo de vidrio importa", description: "Un cristal grande al sol se calienta de forma dispareja. La película se elige con eso en cuenta." },
+  { href: "/guias/polarizado-automotriz-jalisco/", category: "Auto · Jalisco", title: "Qué tono va en cada cristal del auto", description: "Delanteras en 75, traseras y medallón en 35 o más claro, parabrisas sin película. Vigente 2026." },
 ] as const;
 
-export default function GuidesPage(){return <>
-  <GuideHero eyebrow="Centro de conocimiento" title="Entender el cristal antes de elegir la película." description="Guías técnicas para comparar métricas, controlar expectativas y tomar decisiones con contexto. Sin convertir una cifra de ficha en una promesa universal." category="Guías HIGHTECH" readingTime="7 temas prioritarios" />
-  <section className="section guide-index-section"><div className="container">
-    <div className="section-heading section-heading-split"><div><p className="eyebrow">Biblioteca inicial</p><h2>Empieza por la duda que quieres resolver.</h2></div><p>Las guías enlazan a las soluciones correspondientes, pero primero explican el problema. También hay notas más cortas en el <a href="/blog/">blog</a>.</p></div>
-    <div className="guide-card-grid">{guides.map((guide)=><GuideCard key={guide.href} {...guide}/>)}</div>
-  </div></section>
-</>}
+export default function GuidesPage() {
+  return (
+    <>
+      <GuideHero
+        eyebrow="Guías"
+        title="Polarizado, explicado antes de elegir."
+        description="Primero la idea. Después, si hace falta, el dato. Sirven para llegar a la cotización sabiendo qué preguntar."
+        category="Casa, negocio y auto"
+        readingTime="Siete guías"
+      />
+      <section className="section guide-index-section">
+        <div className="container">
+          <div className="section-heading"><p className="eyebrow">Empieza por la duda</p><h2>Calor, luz, privacidad o el auto.</h2></div>
+          <div className="guide-card-grid">{guides.map((guide) => <GuideCard key={guide.href} {...guide} />)}</div>
+        </div>
+      </section>
+    </>
+  );
+}

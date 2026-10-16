@@ -20,7 +20,7 @@ const faqs = [
   },
   {
     question: "¿Cuánta electricidad usa la película inteligente?",
-    answer: "Según la ficha del fabricante, hasta 5 W/m² y solo cuando está transparente. Apagada no consume.",
+    answer: "Muy poca, y solo cuando está transparente. Apagada no consume. En la visita vemos el apagador y el cable, sin hablar de watts.",
   },
   {
     question: "¿Encendida se ve como un vidrio nuevo?",
@@ -204,7 +204,7 @@ export default function PdlcPage() {
           </div>
           <div className="product-cta-actions">
             <Link className="button button-primary" href={pdlcQuotePath}>Cotizar con visita técnica <Icon name="arrow" size={18} /></Link>
-            <Link className="button button-secondary" href="/blog/que-es-la-pelicula-inteligente-pdlc/">Cuándo conviene</Link>
+            <Link className="button button-secondary" href="/guias/privacidad-ventanas-noche/">Privacidad de noche</Link>
           </div>
         </div>
       </div>

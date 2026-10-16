@@ -90,7 +90,7 @@ export function ApplicationHero({ variant, eyebrow, title, description, ctaLabel
           )}
           <div className="application-visual-caption">
             <strong>{variant === "residential" ? "Luz + confort" : variant === "commercial" ? "Especificación + operación" : "Claridad + tono"}</strong>
-            <span>{variant === "residential" ? "La recomendación cambia por vidrio, orientación y privacidad." : variant === "commercial" ? "El alcance cambia por fachada, acceso y uso del espacio." : "Elige por VLT, uso nocturno, privacidad y desempeño."}</span>
+            <span>{variant === "residential" ? "La recomendación cambia por vidrio, orientación y privacidad." : variant === "commercial" ? "El alcance cambia por fachada, acceso y uso del espacio." : "Más claro para la noche, más oscuro atrás si quieres privacidad."}</span>
           </div>
         </div>
         )}

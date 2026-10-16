@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useMemo, useState } from "react";
 import { galleryCategories, galleryCategoryLabels, type GalleryCategory, type GalleryItem } from "@/lib/gallery";
 
@@ -29,7 +30,7 @@ export function GalleryBrowser({ items }: { items: readonly GalleryItem[] }) {
             <li key={item.id}>
               <figure>
                 <div className="gallery-media">
-                  <img src={item.src} alt={item.alt} />
+                  <Image src={item.src} alt={item.alt} width={1200} height={800} />
                 </div>
                 <figcaption>
                   <span>{galleryCategoryLabels[item.category]}</span>

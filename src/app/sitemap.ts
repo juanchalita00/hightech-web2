@@ -1,13 +1,12 @@
 import type { MetadataRoute } from "next";
 import routes from "../../content/routes.json";
-import { getBlogPosts } from "@/lib/blog";
 import { getPublicProjects } from "@/lib/projects";
 import { release, truth } from "@/lib/truth";
 
 function routeAllowed(path: string, defaultIndexable: boolean) {
   if (path.startsWith("/peliculas/nanoceramica/ir")) return release.routes.tonePagesIndexable;
   if (path === "/proyectos/") return release.routes.projectsPublic;
-  if (path === "/garantias/") return release.production.warrantiesApproved && release.routes.warrantyPageIndexable;
+  if (path === "/garantias/") return release.routes.warrantyPageIndexable;
   if (path === "/guias/polarizado-automotriz-jalisco/") return release.routes.jaliscoGuideIndexable;
   return defaultIndexable;
 }
@@ -20,11 +19,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const projects = release.routes.projectsPublic
     ? getPublicProjects().map((project) => ({ url: `${base}/proyectos/${project.slug}/`, changeFrequency: "yearly" as const, priority: 0.6 }))
     : [];
-  const posts = getBlogPosts().map((post) => ({
-    url: `${base}/blog/${post.slug}/`,
-    lastModified: post.updated,
-    changeFrequency: "monthly" as const,
-    priority: 0.6,
-  }));
-  return [...staticRoutes, ...projects, ...posts];
+  return [...staticRoutes, ...projects];
 }

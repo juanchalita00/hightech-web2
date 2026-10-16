@@ -7,7 +7,6 @@ export default function robots(): MetadataRoute.Robots {
   const disallow = ["/api/"];
   if (!release.production.termsApproved) disallow.push("/legal/terminos-y-condiciones/");
   if (!release.production.privacyApproved) disallow.push("/legal/aviso-de-privacidad/");
-  if (!release.production.warrantiesApproved) disallow.push("/garantias/");
   return {
     rules: { userAgent: "*", allow: "/", disallow },
     sitemap: `${truth.site.canonicalBaseUrl}/sitemap.xml`,

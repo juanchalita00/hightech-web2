@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { getGoogleReviews, type GoogleReview } from "@/lib/google-reviews";
+import { googleProfile } from "@/lib/public-facts";
 import { truth } from "@/lib/truth";
 
 const profileUrl = truth.contact.social.googleMaps;
@@ -87,9 +88,9 @@ export function GoogleReviews() {
         <div className="section-heading section-heading-split">
           <div>
             <p className="eyebrow">Opiniones en Google</p>
-            <h2 id="resenas-google-titulo">Lo que dicen nuestros clientes</h2>
+            <h2 id="resenas-google-titulo">{googleProfile.rating} de 5 en Google, con {googleProfile.count} reseñas.</h2>
           </div>
-          <p>Muchos de nuestros clientes se han tomado un momento para contar su experiencia en Google Maps, y se los agradecemos de corazón. Estas son algunas de sus opiniones.</p>
+          <p>Opiniones públicas del perfil de Google. Aquí van cinco, con el enlace para leerlas en su sitio.</p>
         </div>
         {reviews.length ? (
           <div className="google-review-grid">

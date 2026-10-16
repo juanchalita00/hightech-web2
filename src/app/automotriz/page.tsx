@@ -1,136 +1,120 @@
+import type { Metadata } from "next";
 import Link from "next/link";
-import { ApplicationFinalCTA } from "@/components/ApplicationFinalCTA";
-import { JsonLd } from "@/components/JsonLd";
 import { ApplicationHero } from "@/components/ApplicationHero";
-import { AutomotiveToneGuide } from "@/components/AutomotiveToneGuide";
-import { DecisionCards } from "@/components/DecisionCards";
 import { FAQList } from "@/components/FAQList";
-import { Icon } from "@/components/Icon";
-import { JaliscoReference } from "@/components/JaliscoReference";
-import { NanoTable } from "@/components/NanoTable";
-import { ProcessRail } from "@/components/ProcessRail";
+import { InstallTimes } from "@/components/InstallTimes";
+import { JaliscoLaw } from "@/components/JaliscoLaw";
+import { JsonLd } from "@/components/JsonLd";
+import { LeadMagnet } from "@/components/LeadMagnet";
+import { ProductCTA } from "@/components/ProductCTA";
+import { SimpleExample } from "@/components/SimpleExample";
 import { automotiveOnSiteAnswer, automotiveOnSiteQuestion, automotiveOnSiteSchema } from "@/lib/automotive-onsite";
+import { onSitePolicy, prices } from "@/lib/public-facts";
 
-export const metadata = { alternates: { canonical: "/automotriz/" },
-  title: { absolute: "Polarizado automotriz nanocerámico | HIGHTECH Polarizados" },
-  description: "Gama nanocerámica HIGHTECH para vehículos. Compara VLT, UV, rechazo infrarrojo a 950 nm y TSER. La instalación puede ser en taller o, si el equipo lo confirma, a domicilio.",
+export const metadata: Metadata = {
+  alternates: { canonical: "/automotriz/" },
+  title: { absolute: "Polarizado para auto en Zapopan | HIGHTECH Polarizados" },
+  description: "Polarizado nanocerámico para auto en Zapopan. Delanteras en 75, traseras y medallón en 35 o más claro, sin película en el parabrisas. Desde $3,500 en auto compacto.",
 };
 
-const decisions = [
-  { icon: "glass" as const, title: "Claridad", text: "Un VLT más alto conserva más luz visible. Es importante si buscas una apariencia discreta o manejas mucho de noche." },
-  { icon: "privacy" as const, title: "Apariencia y privacidad", text: "Los tonos más oscuros cambian más la apariencia del vehículo y reducen la visibilidad hacia el interior, pero la privacidad no es absoluta." },
-  { icon: "sun" as const, title: "Control solar", text: "En la gama HIGHTECH, los tonos comparten 99% UV y 95% de rechazo IR medido a 950 nm, mientras el TSER cambia entre opciones." },
-  { icon: "glare" as const, title: "Uso nocturno", text: "Un VLT bajo deja pasar menos luz visible. Esa diferencia se vuelve especialmente importante cuando manejas de noche." },
-] as const;
-
-const steps = [
-  { number: "01", title: "Vehículo y cristales", text: "Marca, modelo y qué cristales quieres trabajar." },
-  { number: "02", title: "Tono y uso", text: "Definimos claridad, apariencia, privacidad y cuánto manejas de noche." },
-  { number: "03", title: "Película previa", text: "Si ya existe polarizado, revisamos si necesita retiro antes de instalar." },
-  { number: "04", title: "Instalación", text: "Puede ser en taller o, en algunos casos, a domicilio. El equipo lo confirma antes, para cuidar la calidad." },
-] as const;
+const money = new Intl.NumberFormat("es-MX", { style: "currency", currency: "MXN", maximumFractionDigits: 0 }).format(prices.autoFrom);
 
 const faqs = [
-  { question: "¿Todos los tonos nanocerámicos tienen la misma protección UV?", answer: <p>Las fichas activas de IR75, IR50, IR35, IR15 e IR5 indican 99% de rechazo UV. El VLT y el TSER sí cambian entre tonos.</p> },
-  { question: "¿El 95% de rechazo infrarrojo equivale a reducir 95% del calor?", answer: <p>No. La ficha especifica 95% de rechazo infrarrojo medido a 950 nm. TSER es otra métrica y tampoco debe convertirse directamente en una promesa de temperatura dentro del vehículo.</p> },
-  { question: "¿IR75 en el parabrisas queda decidido solo porque es una película clara?", answer: <p>No. IR75 reporta 75% de transmisión de luz visible: ese dato describe la película. El texto publicado se cita en esta página y no menciona ese porcentaje. En la práctica, lo que la mayoría suele instalar en el parabrisas es 75%. Esto es solo informativo, no es asesoría legal. <Link href="#lo-que-dice-la-ley">Ver el texto y la práctica</Link>.</p> },
-  { question: "¿Qué tono conviene si manejo mucho de noche?", answer: <p>No existe un tono universal para todos. Un VLT más alto conserva más luz visible, por lo que la elección debe considerar cuánto manejas de noche y cuánta claridad necesitas conservar. <Link href="/guias/que-es-vlt/">Entender qué es VLT</Link>.</p> },
-  { question: automotiveOnSiteQuestion, answer: <p>{automotiveOnSiteAnswer}</p> },
-  { question: "¿Y si ya tengo polarizado?", answer: <p>Primero se revisa su estado. El retiro forma parte del alcance cuando es necesario y no se presupone igual en todos los casos.</p> },
-] as const;
+  {
+    question: "¿Más oscuro protege más del calor?",
+    answer: (
+      <p>
+        No de la forma en que suele pensarse. Todos los tonos bloquean los rayos UV y el calor que se siente en la piel junto a un cristal con sol.
+        El más oscuro gana un poco más de protección total y mucha más privacidad, y de noche se ve menos. El 5 es el único que a algunas personas les cuesta de noche.
+      </p>
+    ),
+  },
+  {
+    question: "¿Puedo polarizar el parabrisas?",
+    answer: (
+      <p>
+        No. En Jalisco el parabrisas va sin película. Las delanteras llevan el tono 75, el más claro. Traseras y medallón pueden ir en 35, 50 o 75.
+        El 15 y el 5 son para casa y negocio, no para el auto. <Link href="/guias/polarizado-automotriz-jalisco/">Ver la guía de Jalisco</Link>.
+      </p>
+    ),
+  },
+  {
+    question: automotiveOnSiteQuestion,
+    answer: <p>{automotiveOnSiteAnswer}</p>,
+  },
+  {
+    question: "¿Cuánto cuesta?",
+    answer: <p>Desde {money}, laterales y medallón de un auto compacto. Un parcial o un vehículo más grande se cotiza aparte.</p>,
+  },
+  {
+    question: "¿Qué garantía tiene?",
+    answer: <p>La nanocerámica de auto tiene 10 años de garantía. <Link href="/garantias/">Ver garantías</Link>.</p>,
+  },
+];
 
 export default function AutomotivePage() {
-  const wa = { sourcePage: "/automotriz/", businessLine: "automotive" };
   return (
     <>
       <JsonLd data={automotiveOnSiteSchema} />
       <ApplicationHero
         variant="automotive"
-        eyebrow="Automotriz"
-        title="El tono correcto depende de cuánto quieres ver, no sólo de qué tan oscuro se vea."
-        description="Te ayudamos a elegir entre mayor claridad, una apariencia más oscura o más privacidad visual, considerando también cómo usas el vehículo de noche. Después comparamos las prestaciones técnicas de cada tono."
-        ctaLabel="Cotizar mi vehículo"
-        context={wa}
-        secondary={<Link href="#tonos" className="button button-secondary">Comparar tonos <Icon name="arrow" size={18}/></Link>}
-        proofItems={["5 tonos disponibles", "99% protección UV", "Taller o a domicilio"]}
+        eyebrow="Polarizado automotriz · Zapopan"
+        title="Polarizado para tu auto, a tu gusto."
+        description="Te ayudamos a elegir el tono: más claro para ver de noche, o un poco más oscuro atrás para más privacidad. Todos bajan el calor del sol. En el parabrisas no instalamos película."
+        ctaLabel="Cotizar"
+        context={{ sourcePage: "/automotriz/", businessLine: "automotive", product: "Nanocerámica" }}
+        proofItems={["Delanteras en 75", "Garantía de 10 años", onSitePolicy]}
       />
 
-      <section className="automotive-spec-strip" aria-label="Qué decidir antes de elegir tono">
-        <div className="container automotive-spec-strip-inner">
-          <div><strong>01</strong><span>Claridad</span><small>Cuánta luz quieres conservar.</small></div>
-          <div><strong>02</strong><span>Apariencia</span><small>Qué tan marcado quieres que se vea el tono.</small></div>
-          <div><strong>03</strong><span>Privacidad</span><small>Cuánto quieres reducir la visibilidad hacia el interior.</small></div>
-          <div><strong>04</strong><span>Uso nocturno</span><small>Cuánta visibilidad exterior necesitas cuando hay menos luz.</small></div>
-        </div>
-      </section>
-
-      <section className="section automotive-decision-section">
+      <section className="section">
         <div className="container">
           <div className="section-heading section-heading-split">
-            <div><p className="eyebrow">Antes de escoger tono</p><h2>Más oscuro no significa automáticamente mejor.</h2></div>
-            <p>La oscuridad cambia la entrada de luz, la apariencia y la visibilidad. Pero no debes usarla como sustituto de protección UV, rechazo infrarrojo o desempeño solar.</p>
+            <div>
+              <p className="eyebrow">El calor y el tono</p>
+              <h2>Más oscuro no siempre es mejor.</h2>
+            </div>
+            <p>
+              Todos los tonos bloquean el 99% de los rayos UV y casi todo el calor del sol que se siente en la piel.
+              Si lo pones más oscuro, ganas un poco más de protección y mucha más privacidad, pero ves menos hacia afuera.
+            </p>
           </div>
-          <DecisionCards items={decisions} />
+          <SimpleExample>
+            El calor del sol en el auto es el mismo que sientes en la piel junto a una ventana, o el que deja un asiento de piel que quema.
+            La película corta ese calor. El tono cambia sobre todo la luz y la privacidad, no es un interruptor de más o menos calor.
+          </SimpleExample>
+          <p className="price-line">Desde {money}. Incluye laterales y medallón de un auto compacto.</p>
+          <p><Link className="text-link" href="/peliculas/nanoceramica/">¿Cuál tono me conviene?</Link></p>
         </div>
       </section>
 
-      <section className="section automotive-diff-section">
-        <div className="container auto-diff-grid">
-          <div><p className="eyebrow">Una diferencia importante</p><h2>No eliges un tono para obtener más protección UV.</h2></div>
+      <JaliscoLaw />
+
+      <section className="section">
+        <div className="container" style={{ display: "grid", gap: "1.5rem" }}>
+          <LeadMagnet />
+        </div>
+      </section>
+
+      <InstallTimes />
+
+      <section className="section">
+        <div className="container faq-page-grid">
           <div>
-            <p>En las cinco películas nanocerámicas activas, la ficha reporta 99% de protección UV y 95% de rechazo infrarrojo medido a 950 nm.</p>
-            <p>Lo que sí cambia entre tonos es principalmente la cantidad de luz visible que atraviesa, la apariencia del cristal y el TSER reportado.</p>
-            <p className="auto-diff-note">95% IR a 950 nm no significa 95% menos calor.</p>
-            <Link className="text-link" href="/guias/irr-vs-tser/">Entender IR vs TSER <Icon name="arrow" size={17}/></Link>
+            <p className="eyebrow">Antes de agendar</p>
+            <h2>Preguntas de auto.</h2>
           </div>
-        </div>
-      </section>
-
-      <section className="section section-alt automotive-tones-section" id="tonos">
-        <div className="container auto-tones-layout">
-          <div className="auto-tones-copy">
-            <p className="eyebrow">Elige cuánta luz quieres conservar</p>
-            <h2>De muy claro a muy oscuro.</h2>
-            <p>La diferencia principal entre tonos se percibe en cuánta luz visible dejan pasar y cómo cambia la apariencia y la visibilidad.</p>
-            <p>El nombre comercial ayuda a identificar cada tono, pero cuando el VLT real de ficha es distinto mostramos también el dato técnico.</p>
-            <div className="context-note"><strong>Ejemplo:</strong> IR50 tiene VLT de ficha 48% e IR5 tiene VLT de ficha 3%.</div>
-            <Link href="/peliculas/nanoceramica/" className="text-link text-link-strong">Ver la tecnología completa <Icon name="arrow" size={17}/></Link>
-          </div>
-          <AutomotiveToneGuide />
-        </div>
-      </section>
-
-      <section className="section automotive-table-section">
-        <div className="container">
-          <div className="section-heading section-heading-split">
-            <div><p className="eyebrow">Si quieres comparar a detalle</p><h2>Cada cifra responde una pregunta diferente.</h2></div>
-            <p>VLT habla de luz visible. La protección UV y el rechazo IR se leen por separado, y el TSER describe otra parte del comportamiento solar reportado por la ficha.</p>
-          </div>
-          <NanoTable />
-          <p className="auto-table-links"><Link className="text-link" href="/guias/que-es-vlt/">Qué es VLT <Icon name="arrow" size={16}/></Link><Link className="text-link" href="/guias/irr-vs-tser/">IR vs TSER <Icon name="arrow" size={16}/></Link></p>
-        </div>
-      </section>
-
-      <section className="section jalisco-section"><div className="container"><JaliscoReference /></div></section>
-
-      <section className="section automotive-process-section">
-        <div className="container">
-          <div className="section-heading section-heading-split">
-            <div><p className="eyebrow">Cómo cotizamos</p><h2>Primero entendemos tu vehículo y qué cristales quieres trabajar.</h2></div>
-            <p>Con esos datos podemos definir el alcance, revisar si existe película previa y orientarte sobre los tonos disponibles.</p>
-          </div>
-          <ProcessRail steps={steps} />
-        </div>
-      </section>
-
-      <section className="section section-alt application-faq-section">
-        <div className="container faq-layout">
-          <div><p className="eyebrow">Antes de agendar</p><h2>Las preguntas que más cambian la elección.</h2></div>
           <FAQList items={faqs} />
         </div>
       </section>
 
-      <ApplicationFinalCTA eyebrow="Tu vehículo" title="Dinos qué vehículo tienes y qué cristales quieres trabajar. Te ayudamos a elegir el tono y preparar la cotización." ctaLabel="Cotizar mi vehículo" context={wa} secondaryHref="/contacto/?servicio=automotriz#cotizar" secondaryLabel="Formulario de cotización" />
+      <ProductCTA
+        title="Cuéntanos el auto y el tono que te imaginas."
+        text={onSitePolicy}
+        cta="WhatsApp"
+        context={{ sourcePage: "/automotriz/", businessLine: "automotive" }}
+        secondaryHref="/guias/polarizado-automotriz-jalisco/"
+        secondaryLabel="Ver la guía de Jalisco"
+      />
     </>
   );
 }

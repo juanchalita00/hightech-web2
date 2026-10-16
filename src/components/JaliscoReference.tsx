@@ -1,5 +1,5 @@
-import { AutomotiveLawCopy } from "@/components/AutomotiveLawCopy";
+import { JaliscoLaw } from "@/components/JaliscoLaw";
 
 export function JaliscoReference() {
-  return <AutomotiveLawCopy links="site" eyebrow />;
+  return <JaliscoLaw />;
 }

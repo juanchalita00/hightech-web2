@@ -11,17 +11,17 @@ export const leyPdfUrl =
   "https://congresoweb.congresojal.gob.mx/bibliotecavirtual/legislacion/Leyes/Documentos_PDF-Leyes/Ley%20de%20Movilidad,%20Seguridad%20Vial%20y%20Transporte%20del%20Estado%20de%20Jalisco-140823.pdf";
 
 export const automotiveLaw = {
-  practiceTitle: "Lo que más se usa",
+  practiceTitle: "Qué tono va en cada cristal",
   practice:
-    "Lo que la mayoría de las personas suele instalar es 35% en los cristales laterales y en el medallón, y 75% en el parabrisas.",
-  sideLabel: "Laterales y medallón",
-  sideValue: "35%",
+    "En las ventanas delanteras va el 75. En traseras y medallón, 35 o más claro. En el parabrisas no instalamos película.",
+  sideLabel: "Delanteras",
+  sideValue: "75",
   windshieldLabel: "Parabrisas",
-  windshieldValue: "75%",
-  lawTitle: "¿Y qué dice la ley?",
-  lawIntro: "Cita textual del PDF del Congreso. Abre el artículo para leerla. El resto de cada artículo no se incluye.",
-  disclaimerTitle: "Solo informativo",
-  disclaimer: "Esto es solo informativo, no es asesoría legal.",
+  windshieldValue: "Sin película",
+  lawTitle: "Qué publica Movilidad",
+  lawIntro: "La Secretaría de Movilidad de Jalisco mide el polarizado como oscuridad. En el taller el número es la luz que deja pasar.",
+  disclaimerTitle: "Vigente 2026",
+  disclaimer: "Fuente: infografía de la Secretaría de Movilidad de Jalisco, vigente 2026.",
 } as const;
 
 export const automotiveQuotes = [

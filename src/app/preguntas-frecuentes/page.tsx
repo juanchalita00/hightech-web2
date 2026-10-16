@@ -5,26 +5,87 @@ import { JsonLd } from "@/components/JsonLd";
 import { ProductCTA } from "@/components/ProductCTA";
 import { TrustHero } from "@/components/TrustHero";
 import { automotiveOnSiteAnswer, automotiveOnSiteQuestion, automotiveOnSiteSchema } from "@/lib/automotive-onsite";
-import { release } from "@/lib/truth";
+import { hoursLabel, prices } from "@/lib/public-facts";
 
-export const metadata:Metadata={ alternates: { canonical: "/preguntas-frecuentes/" },title:{ absolute: "Preguntas frecuentes | HIGHTECH Polarizados" },description:"Respuestas breves sobre nanocerámica, VLT, IR, TSER, privacidad, cotización, instalación automotriz, garantías y polarizado en Jalisco."};
+export const metadata: Metadata = {
+  alternates: { canonical: "/preguntas-frecuentes/" },
+  title: { absolute: "Preguntas frecuentes de polarizado | HIGHTECH Polarizados" },
+  description: "Respuestas claras sobre polarizado en Zapopan: calor, luz, auto en Jalisco, tiempos, garantía y precios desde.",
+};
 
-const items=[
-  {question:"¿Nanocerámica significa más oscuro?",answer:<p>No. El tono se relaciona con la transmisión de luz visible (VLT). La tecnología y la oscuridad son conceptos distintos. <Link href="/guias/que-es-vlt/">Entender VLT</Link>.</p>},
-  {question:"¿Qué es VLT?",answer:<p>Es la transmisión de luz visible: cuánto de la luz visible atraviesa la película en la condición de referencia. Un VLT menor implica menos entrada de luz visible. <Link href="/guias/que-es-vlt/">Ver guía completa</Link>.</p>},
-  {question:"¿95% de rechazo IR significa 95% menos calor?",answer:<p>No. Nuestras fichas actuales reportan 95% de rechazo infrarrojo medido a 950 nm. TSER es otra métrica y no convertimos ese dato en una promesa universal de temperatura. <Link href="/guias/irr-vs-tser/">IR vs TSER</Link>.</p>},
-  {question:"¿La privacidad se mantiene igual de noche?",answer:<p>No necesariamente. Depende del contraste de iluminación; si hay más luz dentro que fuera puede aumentar la visibilidad hacia el interior. <Link href="/guias/privacidad-ventanas-noche/">Privacidad de noche</Link>.</p>},
-  {question:automotiveOnSiteQuestion,answer:<p>{automotiveOnSiteAnswer} <Link href="/automotriz/">Ver servicio automotriz</Link>.</p>},
-  {question:"¿Cómo cotizan una casa u oficina?",answer:<p>Podemos empezar con fotos, medidas aproximadas y el problema que quieres resolver. Dependiendo del vidrio, acceso y alcance puede requerirse revisión adicional. <Link href="/contacto/">Preparar mi cotización</Link>.</p>},
-  {question:"¿Qué garantía tiene la película?",answer:<p>La cobertura depende del producto, la aplicación y la versión de la póliza correspondiente. No tratamos un plazo histórico o de ficha como garantía universal.{release.production.warrantiesApproved && <> <Link href="/garantias/">Consultar garantías</Link>.</>}</p>},
-  {question:"¿Hay una tabla oficial de porcentajes para el auto?",answer:<p>Los artículos citados en la guía no mencionan los porcentajes 35 ni 75. En la práctica, lo que la mayoría suele instalar es 35% en laterales y medallón, y 75% en el parabrisas. Esto es solo informativo, no es asesoría legal. <Link href="/guias/polarizado-automotriz-jalisco/">Ver el texto publicado</Link>.</p>},
-  {question:"¿Hay que retirar la película anterior?",answer:<p>Si existe una película previa, revisamos su estado y si debe retirarse antes de instalar la nueva. El tiempo adicional puede variar según el adhesivo y el deterioro.</p>},
-  {question:"¿Cuánto tarda una instalación?",answer:<p>Depende del alcance, el vehículo o metraje, el acceso y si existe retiro previo. La cotización y la confirmación de agenda deben indicar la referencia aplicable al trabajo concreto.</p>},
-] as const;
+const autoFrom = new Intl.NumberFormat("es-MX", { style: "currency", currency: "MXN", maximumFractionDigits: 0 }).format(prices.autoFrom);
+const archFrom = new Intl.NumberFormat("es-MX", { style: "currency", currency: "MXN", maximumFractionDigits: 0 }).format(prices.architectureFrom);
 
-export default function Page(){return <>
-  <JsonLd data={automotiveOnSiteSchema} />
-  <TrustHero eyebrow="Preguntas frecuentes" title="Respuestas cortas. Contexto cuando hace falta." description="Esta página resuelve dudas comunes sin duplicar las guías técnicas. Cuando una respuesta necesita más profundidad, enlazamos la explicación correspondiente." points={["Sin promesas absolutas","Datos técnicos con fuente","Sin asesoría legal"]}/>
-  <section className="section"><div className="container faq-page-grid"><div><p className="eyebrow">Dudas comunes</p><h2>Lo esencial antes de cotizar.</h2><p>Si tu caso depende del tipo de vidrio, una condición especial o una configuración concreta, la respuesta final se aterriza durante la cotización.</p></div><FAQList items={items}/></div></section>
-  <ProductCTA title="¿Tu duda depende de tu cristal o vehículo?" text="Cuéntanos el caso concreto y continuamos desde ahí, sin obligarte a elegir una película por tu cuenta." cta="Preguntar por WhatsApp" context={{sourcePage:"/preguntas-frecuentes/"}} secondaryHref="/guias/" secondaryLabel="Explorar guías" />
-</>}
+const items = [
+  {
+    question: "¿Nanocerámica significa más oscuro?",
+    answer: <p>No. Es la tecnología que corta el calor y los rayos UV. El tono, del 75 al 5, es cuánta luz quieres dejar pasar. <Link href="/guias/que-es-vlt/">Ver cómo se lee la luz</Link>.</p>,
+  },
+  {
+    question: "¿Un tono más oscuro quita más calor?",
+    answer: <p>Quita un poco más, menos de lo que la gente espera. Todos los tonos cortan el calor que se siente en la piel junto a la ventana. El oscuro cambia sobre todo la privacidad y la luz. <Link href="/guias/irr-vs-tser/">Calor y tono, en claro</Link>.</p>,
+  },
+  {
+    question: "¿La privacidad se mantiene de noche?",
+    answer: <p>Depende de dónde esté la luz. Si la sala está encendida y afuera está oscuro, se ve más hacia adentro. <Link href="/guias/privacidad-ventanas-noche/">Privacidad de noche</Link>.</p>,
+  },
+  {
+    question: automotiveOnSiteQuestion,
+    answer: <p>{automotiveOnSiteAnswer} <Link href="/automotriz/">Ver polarizado para auto</Link>.</p>,
+  },
+  {
+    question: "¿Qué tono es legal en el auto en Jalisco?",
+    answer: <p>Delanteras, solo 75. Traseras y medallón, 35 o más claro. Parabrisas, sin película. El 15 y el 5 son para casa y negocio. <Link href="/guias/polarizado-automotriz-jalisco/">Ver la guía</Link>.</p>,
+  },
+  {
+    question: "¿Cuánto cuesta?",
+    answer: <p>Auto desde {autoFrom} (laterales y medallón, compacto). Arquitectónico desde {archFrom} por metro cuadrado, con un mínimo de proyecto de $1,500. Película inteligente y seguridad se cotizan sin precio de lista.</p>,
+  },
+  {
+    question: "¿Qué garantía tiene?",
+    answer: <p>Nanocerámica y automotriz, 10 años. Seguridad, 5 o 10 años según la película. <Link href="/garantias/">Ver garantías</Link>.</p>,
+  },
+  {
+    question: "¿Cuánto tarda el auto?",
+    answer: <p>Dos laterales, 40 a 60 minutos. El auto completo, cerca de 3 horas. Calculamos de 20 a 30 minutos por ventana. <Link href="/automotriz/#tiempos">Ver tiempos y espera</Link>.</p>,
+  },
+  {
+    question: "¿Cuál es el horario?",
+    answer: <p>{hoursLabel}</p>,
+  },
+  {
+    question: "¿Hay que quitar una película vieja?",
+    answer: <p>Si ya hay una, revisamos si hay que retirarla. Eso puede alargar el trabajo.</p>,
+  },
+];
+
+export default function Page() {
+  return (
+    <>
+      <JsonLd data={automotiveOnSiteSchema} />
+      <TrustHero
+        eyebrow="Preguntas frecuentes"
+        title="Polarizado, en corto."
+        description="Calor, luz, auto y tiempos. Si tu cristal tiene una condición rara, la respuesta se cierra en la cotización."
+        points={["Casa, negocio y auto", "Tono legal en Jalisco", "Precios desde"]}
+      />
+      <section className="section">
+        <div className="container faq-page-grid">
+          <div>
+            <p className="eyebrow">Dudas comunes</p>
+            <h2>Lo esencial antes de cotizar.</h2>
+          </div>
+          <FAQList items={items} />
+        </div>
+      </section>
+      <ProductCTA
+        title="Si tu caso no está en la lista, lo vemos con el cristal enfrente."
+        text="Mándanos fotos o el modelo del auto."
+        cta="WhatsApp"
+        context={{ sourcePage: "/preguntas-frecuentes/" }}
+        secondaryHref="/guias/"
+        secondaryLabel="Explorar guías"
+      />
+    </>
+  );
+}

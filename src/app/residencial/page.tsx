@@ -7,11 +7,14 @@ import { FAQList } from "@/components/FAQList";
 import { Icon } from "@/components/Icon";
 import { NanoSpectrum } from "@/components/NanoSpectrum";
 import { ProcessRail } from "@/components/ProcessRail";
+import { SarroService } from "@/components/SarroService";
+import { SimpleExample } from "@/components/SimpleExample";
+import { prices } from "@/lib/public-facts";
 import styles from "./residential-v1.module.css";
 
 export const metadata = { alternates: { canonical: "/residencial/" },
-  title: { absolute: "Polarizado residencial | HIGHTECH Polarizados" },
-  description: "Soluciones para cristales residenciales orientadas a control solar, UV, deslumbramiento y privacidad, seleccionadas según el vidrio y el espacio.",
+  title: { absolute: "Polarizado residencial en Zapopan | HIGHTECH Polarizados" },
+  description: "Polarizado para casa en Zapopan y Guadalajara. Desde $600 por metro cuadrado. Menos calor, con la luz que quieres conservar.",
 };
 
 const decisions = [
@@ -119,8 +122,8 @@ export default function ResidentialPage() {
             <p className="eyebrow">Gama nanocerámica</p>
             <h2>Elige cuánta luz quieres conservar.</h2>
             <p className="lede-small">No necesitas oscurecer tu casa para obtener control solar. Hay películas muy claras y otras más oscuras. El tono define principalmente cuánta luz quieres conservar; el desempeño solar se compara por separado.</p>
-            <div className="context-note"><strong>Para comparar:</strong> el <strong>VLT</strong> indica cuánta luz visible atraviesa el cristal y el <strong>TSER</strong> ayuda a comparar cuánta energía solar total se rechaza. En la gama nanocerámica, las fichas indican 99% de rechazo UV y 95% de rechazo IR medido a 950 nm; ese 95% IR no significa 95% menos calor dentro de una habitación.</div>
-            <Link href="/peliculas/nanoceramica/" className="text-link text-link-strong">Entender VLT y TSER <Icon name="arrow" size={17}/></Link>
+            <SimpleExample>El calor que sientes en la piel junto a la ventana es el que la película corta, también en el tono más claro. Oscurecer suma privacidad y un poco más de protección total, no el doble de frescura.</SimpleExample>
+            <Link href="/guias/que-es-vlt/" className="text-link text-link-strong">Qué significan 75, 50 y 35 <Icon name="arrow" size={17}/></Link>
           </div>
           <NanoSpectrum />
         </div>
@@ -160,7 +163,9 @@ export default function ResidentialPage() {
         </div>
       </section>
 
-      <ApplicationFinalCTA eyebrow="Tu espacio primero" title="Mándanos fotos o medidas aproximadas y te ayudamos a aterrizar la solución." ctaLabel="Cotizar mis cristales" context={wa} secondaryHref="/peliculas/nanoceramica/" secondaryLabel="Comparar nanocerámica" />
+      <SarroService />
+      <p className="container price-line">Desde {new Intl.NumberFormat("es-MX", { style: "currency", currency: "MXN", maximumFractionDigits: 0 }).format(prices.architectureFrom)} por m². Mínimo de proyecto {new Intl.NumberFormat("es-MX", { style: "currency", currency: "MXN", maximumFractionDigits: 0 }).format(prices.projectMinimum)}.</p>
+      <ApplicationFinalCTA eyebrow="Tu espacio primero" title="Mándanos fotos o medidas aproximadas." ctaLabel="Cotizar" context={wa} secondaryHref="/peliculas/nanoceramica/" secondaryLabel="Comparar nanocerámica" />
     </div>
   );
 }

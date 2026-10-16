@@ -124,7 +124,7 @@ export default function ServicesPage() {
             <h2>También puedes profundizar en la parte técnica.</h2>
           </div>
           <div>
-            <p>VLT, UV, rechazo infrarrojo, TSER, privacidad de noche y estrés térmico responden preguntas distintas. Las guías están para ayudarte a comparar sin convertir un porcentaje aislado en una promesa.</p>
+            <p>Calor, luz, rayos que decoloran y privacidad de noche son preguntas distintas. Las guías las explican antes de elegir una película.</p>
             <div className={styles.bridgeLinks}>
               <Link className="text-link" href="/guias/">Explorar guías <Icon name="arrow" size={17} /></Link>
               <Link className="text-link" href="/peliculas/">Comparar películas <Icon name="arrow" size={17} /></Link>
