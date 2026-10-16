@@ -45,6 +45,33 @@
       "caption": "Proyecto documentado por HIGHTECH en el Aeropuerto Internacional de Guadalajara.",
       "category": "comercial",
       "location": "Guadalajara, Jalisco"
+    },
+    {
+      "id": "automotriz-sedan-rojo",
+      "src": "/images/fotos/auto-sedan-rojo-lateral-2-1600.webp",
+      "alt": "Sedán rojo con polarizado en laterales y medallón, vista lateral.",
+      "title": "Sedán rojo",
+      "caption": "Polarizado en laterales y medallón.",
+      "category": "automotriz",
+      "location": "Zona metropolitana de Guadalajara"
+    },
+    {
+      "id": "automotriz-suv-azul",
+      "src": "/images/fotos/auto-suv-azul-lateral-1-1600.webp",
+      "alt": "SUV azul con polarizado en ventanas laterales.",
+      "title": "SUV azul",
+      "caption": "Polarizado en laterales.",
+      "category": "automotriz",
+      "location": "Zona metropolitana de Guadalajara"
+    },
+    {
+      "id": "automotriz-suv-negra-taller",
+      "src": "/images/fotos/auto-suv-negra-taller-1600.webp",
+      "alt": "Camioneta negra en el taller de HIGHTECH durante la instalación de polarizado.",
+      "title": "Instalación en taller",
+      "caption": "Camioneta durante la instalación en el taller de HIGHTECH.",
+      "category": "automotriz",
+      "location": "Zapopan, Jalisco"
     }
   ]
 }
