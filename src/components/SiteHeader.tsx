@@ -4,12 +4,11 @@ import { Icon } from "@/components/Icon";
 import { MobileMenu } from "@/components/MobileMenu";
 
 const links = [
-  ["Servicios", "/servicios/"],
-  ["Residencial", "/residencial/"],
-  ["Comercial", "/comercial/"],
-  ["Automotriz", "/automotriz/"],
+  ["Casa", "/residencial/"],
+  ["Negocio", "/comercial/"],
+  ["Auto", "/automotriz/"],
   ["Películas", "/peliculas/"],
-  ["Galería", "/galeria/"],
+  ["Guías", "/guias/"],
   ["Contacto", "/contacto/"],
 ] as const;
 

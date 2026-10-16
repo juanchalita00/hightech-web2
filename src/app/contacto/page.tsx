@@ -10,7 +10,7 @@ import { truth } from "@/lib/truth";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/contacto/" },
-  title: { absolute: "Cotizar películas para cristales en Zapopan | HIGHTECH Polarizados" },
+  title: { absolute: "Cotizar polarizado en Zapopan | HIGHTECH Polarizados" },
   description: "Pide una cotización de polarizado residencial, comercial o automotriz en Zapopan y la zona metropolitana de Guadalajara. Elige si te contactamos por WhatsApp o por correo.",
 };
 
@@ -31,6 +31,6 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ s
     </section>
     <section className="section section-alt"><div className="container"><div className="section-heading"><p className="eyebrow">Otras formas de contacto</p><h2>WhatsApp, teléfono y horario.</h2></div><ContactMethods/></div></section>
     <section className="section"><div className="container"><div className="section-heading section-heading-split"><div><p className="eyebrow">Si ya tienes información</p><h2>Con esto la cotización avanza más rápido.</h2></div><p>No hace falta tenerlo todo antes de escribir. Si ya cuentas con medidas, fotos o el modelo del vehículo, ayúdanos a no preguntarte de nuevo.</p></div><QuotePrep/></div></section>
-    <section className="section contact-policy-section"><div className="container contact-policy-grid"><div><p className="eyebrow">Automotriz</p><h2>Taller, o a domicilio si se confirma.</h2><p>La cita se confirma por WhatsApp. En algunos casos, como flotillas, maquinaria o autos nuevos de agencia, el equipo revisa si se puede instalar a domicilio. El horario de atención no significa que haya un lugar libre ese mismo día.</p><Link href="/automotriz/" className="text-link text-link-strong">Ver servicio automotriz <Icon name="arrow" size={18}/></Link></div><div><p className="eyebrow">Arquitectónico</p><h2>Casa, oficina o proyecto.</h2><p>Revisamos el objetivo, las medidas, la ciudad y las condiciones que puedan cambiar el alcance. Si una foto o una visita ayudan, te lo decimos.</p><Link href="/comercial/" className="text-link text-link-strong">Ver proyectos comerciales <Icon name="arrow" size={18}/></Link></div></div></section>
+    <section className="section contact-policy-section"><div className="container contact-policy-grid"><div><p className="eyebrow">Automotriz</p><h2>En taller con cita.</h2><p>A domicilio solo flotillas o autos de agencia. El horario de atención no significa que haya un lugar libre ese mismo día.</p><Link href="/automotriz/" className="text-link text-link-strong">Ver polarizado para auto <Icon name="arrow" size={18}/></Link></div><div><p className="eyebrow">Casa y negocio</p><h2>Fotos y medidas para empezar.</h2><p>Revisamos el objetivo, el cristal y la ciudad. Si una visita ayuda, te lo decimos. Tomás Mann 5348, Jardines Vallarta, 45027 Zapopan.</p><Link href="/residencial/" className="text-link text-link-strong">Ver polarizado para casa <Icon name="arrow" size={18}/></Link></div></div></section>
   </>;
 }

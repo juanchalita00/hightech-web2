@@ -193,7 +193,7 @@ export function QuoteForm({ initialService, initialMessage = "" }: Props) {
               : `Si eliges WhatsApp, se abre el chat al ${truth.contact.phoneDisplay}.`}
         </p>
       </div>
-      {termsHref ? <p className="quote-form-terms">Al aceptar la cotización aceptas los <a href={termsHref}>términos y condiciones</a>, incluidas las obligaciones de pago.</p> : null}
+      <p className="quote-form-terms">Al enviar, aceptas el <a href="/legal/aviso-de-privacidad/">aviso de privacidad</a>.{termsHref ? <> También aplican los <a href={termsHref}>términos y condiciones</a>.</> : null}</p>
       {status === "sent" ? (
         <p className="quote-form-status" role="status">Recibimos tu solicitud. Te contactamos por {channelName === "Correo" ? "correo" : "WhatsApp"}.</p>
       ) : null}

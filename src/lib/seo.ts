@@ -45,17 +45,30 @@ export function localBusinessSchema() {
     sameAs: socialSameAs(),
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Zapopan",
-      addressRegion: "Jalisco",
-      addressCountry: "MX",
+      streetAddress: truth.contact.exactAddress.streetAddress,
+      addressLocality: truth.contact.exactAddress.addressLocality,
+      addressRegion: truth.contact.exactAddress.addressRegion,
+      postalCode: truth.contact.exactAddress.postalCode,
+      addressCountry: truth.contact.exactAddress.addressCountry,
     },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 20.6839,
+      longitude: -103.4262,
+    },
+    hasMap: truth.contact.mapsUrl,
+    priceRange: "$$",
     areaServed: [
       { "@type": "City", name: "Zapopan" },
       { "@type": "City", name: "Guadalajara" },
     ],
     openingHoursSpecification: [
-      { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "09:00", closes: "20:00" },
-      { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: "09:00", closes: "15:00" },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        opens: "10:00",
+        closes: "21:00",
+      },
     ],
   };
 }

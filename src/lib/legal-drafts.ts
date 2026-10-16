@@ -30,7 +30,7 @@ const terms: LegalDraftDocument = {
       id: "servicios",
       heading: "Qué cubre una cotización",
       paragraphs: [
-        "HIGHTECH vende e instala películas para control solar, protección UV, privacidad y refuerzo de cristales, en proyectos residenciales, comerciales e institucionales, y en vehículos, en taller o a domicilio cuando el equipo lo confirma.",
+        "HIGHTECH vende e instala películas para control solar, protección UV, privacidad y refuerzo de cristales, en proyectos residenciales, comerciales e institucionales, y en vehículos. El auto se instala en taller con cita; a domicilio solo flotillas o autos de agencia.",
         "La cotización describe el alcance: película, zonas o cristales, y las condiciones que se conocen en ese momento. Las medidas y el importe de un proyecto arquitectónico pueden ajustarse al validar en sitio.",
       ],
     },
@@ -55,7 +55,7 @@ const terms: LegalDraftDocument = {
       id: "instalacion",
       heading: "Instalación",
       paragraphs: [
-        "La instalación automotriz suele hacerse en taller y normalmente con cita. En algunos casos, como flotillas, maquinaria o autos nuevos de agencia, se puede instalar a domicilio si el equipo lo confirma. El horario de atención —lunes a viernes de 9:00 a 20:00 y sábado de 9:00 a 15:00— no es la disponibilidad de instalación.",
+        "La instalación automotriz es en taller con cita. A domicilio solo flotillas o autos de agencia. El horario de atención —lunes a sábado de 10:00 a 21:00, domingo cerrado— no es la disponibilidad de instalación.",
         "En arquitectura, la visita técnica es excepcional. En película eléctrica (PDLC), la visita es obligatoria si el cliente quiere avanzar, porque requiere integración eléctrica.",
       ],
     },
@@ -63,8 +63,7 @@ const terms: LegalDraftDocument = {
       id: "tono-automotriz",
       heading: "Elección de tono en el vehículo",
       paragraphs: [
-        "HIGHTECH puede orientar sobre claridad, apariencia y uso del vehículo. No da asesoría legal ni presenta un tono como oficial.",
-        "La referencia de uso común —35% en laterales y medallón, y 75% en parabrisas— no obliga al cliente. La decisión y la responsabilidad de esa elección son del cliente.",
+        "En Jalisco instalamos 75 en las ventanas delanteras, 35 o más claro en traseras y medallón, y nada en el parabrisas. El 15 y el 5 se quedan en casa y negocio.",
       ],
     },
     {
@@ -159,7 +158,7 @@ const warranty: LegalDraftDocument = {
       heading: "Nanocerámica automotriz en taller",
       paragraphs: [
         "La referencia comercial vigente para nanocerámica instalada en taller es de 10 años. Falta precisar si cubre material, instalación o ambos, y cuáles son las exclusiones.",
-        "Una instalación automotriz a domicilio, si llegara a evaluarse, no usa automáticamente esa referencia.",
+        "La misma referencia de 10 años aplica al auto instalado en taller y a flotillas o autos de agencia instalados a domicilio.",
       ],
     },
     {
@@ -176,7 +175,7 @@ const warranty: LegalDraftDocument = {
         "Seguridad incolora interior: referencia de 5 años, sin producto, espesor ni condiciones cerradas. El nombre comercial Ultra Safe 4 mm no confirma un espesor físico de 4 mm. No hay película de seguridad automotriz.",
         "Plata Reflecta: la referencia está entre 3 y 5 años. Falta el plazo exacto.",
         "Domo con reflecta y protección exterior: referencia de 1 año para la capa exterior y una vida útil aproximada de 5 años. Hay que separar qué cubre cada capa. La vida útil no es la garantía.",
-        "3M Crystalline, solo automotriz: hay referencias de 15 años en laterales y medallón y de 7 años en parabrisas. No hay una póliza vigente cargada para publicarlas.",
+        "Otras líneas automotrices distintas de la nanocerámica se confirman en la cotización de ese trabajo.",
       ],
     },
     {
