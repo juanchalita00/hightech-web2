@@ -16,7 +16,7 @@ export default function Page() {
         <p className="eyebrow">Aviso de privacidad</p>
         <h1>Cómo usamos tus datos.</h1>
         <p>
-          {brandName} es el responsable. Estamos en {addressLine}. Teléfono {phoneDisplay}. Correo {truth.contact.emailSales}. {hoursLabel}
+          {brandName} es el responsable. Estamos en {addressLine} Teléfono {phoneDisplay}. Correo {truth.contact.emailSales}. {hoursLabel}
         </p>
         <h2>Qué datos pedimos</h2>
         <p>Nombre, ciudad, teléfono o WhatsApp, correo si lo dejas, y lo que nos cuentes del cristal o del auto para cotizar. No pedimos datos bancarios en el sitio.</p>

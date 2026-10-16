@@ -27,6 +27,7 @@ declare module "react" {
 }
 declare module "next" {
   export type Metadata = any;
+  export type Viewport = any;
   export namespace MetadataRoute { type Robots = any; type Sitemap = any; type Manifest = any; }
   export type NextConfig = any;
 }

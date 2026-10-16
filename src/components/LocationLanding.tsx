@@ -72,7 +72,7 @@ export function LocationLanding({ city }: { city: City }) {
             <Link href="/residencial/"><strong>Casa</strong><span>Calor, luz y privacidad.</span></Link>
             <Link href="/comercial/"><strong>Negocio</strong><span>Oficinas, fachadas y plantas.</span></Link>
             <Link href="/automotriz/"><strong>Auto</strong><span>{onSitePolicy}</span></Link>
-            <Link href="/guias/"><strong>Guías</strong><span>Calor, luz y el tono legal en Jalisco.</span></Link>
+            <Link href="/guias/"><strong>Guías</strong><span>Calor, luz y el tono del auto en Jalisco.</span></Link>
           </div>
         </div>
       </section>

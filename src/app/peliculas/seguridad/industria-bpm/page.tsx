@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ProductCTA } from "@/components/ProductCTA";
-import { SimpleExample } from "@/components/SimpleExample";
+import { HightechTip } from "@/components/HightechTip";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/peliculas/seguridad/industria-bpm/" },
   title: { absolute: "Película de seguridad para plantas y BPM | HIGHTECH Polarizados" },
-  description: "En plantas de alimento, bebida y farma, la película de seguridad ayuda a cumplir el punto de control de vidrio que revisan los auditores. No certifica la planta.",
+  description: "En plantas de alimento, bebida y farmacéutica, la película de seguridad ayuda a cumplir el punto de control de vidrio que revisan los auditores. No certifica la planta.",
 };
 
 const sectors = ["Alimentos", "Bebidas", "Lácteos", "Panificación", "Farmacéutica", "Comedores industriales", "Almacenes"];
@@ -26,10 +26,10 @@ export default function Page() {
             La película de seguridad retiene esos fragmentos. Ayuda a cumplir ese punto de las buenas prácticas de manufactura y de las auditorías GFSI
             —NOM-251, y esquemas como FSSC 22000, SQF, BRCGS o AIB—. No certifica la planta y no garantiza que una auditoría salga aprobada.
           </p>
-          <SimpleExample>
+          <HightechTip>
             Es como la tapa de un vaso junto a la línea: no evita que el vaso exista, evita que un trozo caiga en lo que se está preparando.
-          </SimpleExample>
-          <p>No decimos que el vidrio esté prohibido. Decimos que, donde el cristal se queda, la película es la capa que lo contiene si falla.</p>
+          </HightechTip>
+          <p>No decimos que el vidrio sea un problema. Decimos que, donde el cristal se queda, la película es la capa que lo contiene si falla.</p>
           <ul className="sarro-uses">
             {sectors.map((item) => <li key={item}>{item}</li>)}
           </ul>

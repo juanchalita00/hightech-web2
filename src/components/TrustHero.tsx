@@ -20,9 +20,9 @@ export function TrustHero({ eyebrow, title, description, ctaLabel, ctaHref, cont
       <div className="trust-hero-points">{points.map((point)=><span key={point}><Icon name="check" size={16}/>{point}</span>)}</div>
     </div>
     <div className="trust-visual" aria-hidden="true">
-      <div className="trust-glass trust-glass-a"><span>01</span><strong>Entender</strong><small>problema + cristal</small></div>
-      <div className="trust-glass trust-glass-b"><span>02</span><strong>Comparar</strong><small>luz + desempeño</small></div>
-      <div className="trust-glass trust-glass-c"><span>03</span><strong>Explicar</strong><small>alcance + límites</small></div>
+      <div className="trust-glass trust-glass-a"><span>01</span><strong>Entender</strong><small>Qué quieres resolver y qué vidrio tienes</small></div>
+      <div className="trust-glass trust-glass-b"><span>02</span><strong>Comparar</strong><small>Luz, calor y privacidad</small></div>
+      <div className="trust-glass trust-glass-c"><span>03</span><strong>Explicar</strong><small>Qué incluye y qué no</small></div>
     </div>
   </div></section>;
 }

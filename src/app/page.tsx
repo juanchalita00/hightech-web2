@@ -72,7 +72,7 @@ export default function HomePage() {
               </div>
               <div className={styles.heroProof} aria-label="Referencias">
                 <span><Icon name="check" size={17} /> {airportName}</span>
-                <span><Icon name="check" size={17} /> {googleProfile.rating} en Google · {googleProfile.count} reseñas</span>
+                <span><Icon name="check" size={17} /> ★★★★★ +{googleProfile.count} reseñas en Google</span>
               </div>
             </div>
             <div className={styles.visualWrap}>
@@ -134,25 +134,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className={styles.proofSection}>
-        <div className={styles.shell}>
-          <div className={styles.proofHeader}>
-            <p className={styles.eyebrow}>Por qué así</p>
-            <h2>Claridad primero. Después, el tono.</h2>
-          </div>
-          <div className={styles.proofGrid}>
-            {reasons.map(([number, title, text]) => (
-              <article className={styles.proofItem} key={number}>
-                <span>{number}</span>
-                <h3>{title}</h3>
-                <p>{text}</p>
-              </article>
-            ))}
-          </div>
-          <Link className={styles.proofCta} href="/garantias/">Ver garantías <Icon name="arrow" size={18} /></Link>
-        </div>
-      </section>
-
       <section className={styles.methodSection}>
         <div className={styles.shell}>
           <div className={styles.methodHeading}>
@@ -171,6 +152,25 @@ export default function HomePage() {
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className={styles.proofSection}>
+        <div className={styles.shell}>
+          <div className={styles.proofHeader}>
+            <p className={styles.eyebrow}>Por qué así</p>
+            <h2>Claridad primero. Después, el tono.</h2>
+          </div>
+          <div className={styles.proofGrid}>
+            {reasons.map(([number, title, text]) => (
+              <article className={styles.proofItem} key={number}>
+                <span>{number}</span>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </article>
+            ))}
+          </div>
+          <Link className={styles.proofCta} href="/garantias/">Ver garantías <Icon name="arrow" size={18} /></Link>
         </div>
       </section>
 

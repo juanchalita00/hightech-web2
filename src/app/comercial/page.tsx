@@ -6,11 +6,14 @@ import { FAQList } from "@/components/FAQList";
 import { Icon } from "@/components/Icon";
 import { ProcessRail } from "@/components/ProcessRail";
 import { SarroService } from "@/components/SarroService";
+import { PriceBlock } from "@/components/PriceBlock";
 import { prices } from "@/lib/public-facts";
+
+const peso = new Intl.NumberFormat("es-MX", { style: "currency", currency: "MXN", maximumFractionDigits: 0 });
 
 export const metadata = { alternates: { canonical: "/comercial/" },
   title: { absolute: "Polarizado comercial en Guadalajara y Zapopan | HIGHTECH Polarizados" },
-  description: "Polarizado para oficinas, fachadas y plantas en Zapopan y Guadalajara. Desde $600 por metro cuadrado. Seguridad y control solar según el cristal.",
+  description: "Polarizado para oficinas, fachadas y plantas en Zapopan y Guadalajara. Nanocerámica desde $800 por metro cuadrado. Seguridad y control solar según el cristal.",
 };
 
 const decisions = [
@@ -30,7 +33,7 @@ const steps = [
 const faqs = [
   { question: "¿Trabajan sólo oficinas?", answer: <p>No. La línea comercial puede aplicarse a oficinas, fachadas, locales e instalaciones institucionales, siempre según el vidrio y el objetivo del proyecto.</p> },
   { question: "¿Pueden cotizar con planos o medidas?", answer: <p>Podemos empezar con la información que ya tengas disponible, como medidas, planos o fotografías del proyecto. Según el alcance, puede hacer falta una revisión adicional antes de cerrar la especificación.</p> },
-  { question: "¿Publican precio por m²?", answer: <p>No como tarifa universal. El material, metraje, acceso, retiro, horarios, logística y condiciones del vidrio pueden cambiar el alcance.</p> },
+  { question: "¿Publican precio por m²?", answer: <p>Publicamos precios desde: nanocerámica desde $800 por m² y otras películas desde $600 por m², con mínimo de proyecto de $1,500. El precio final cambia con el material, el metraje, el acceso, el retiro de película previa, los horarios y las condiciones del vidrio.</p> },
   { question: "¿La película reflectiva da privacidad de noche?", answer: <p>No debe prometerse así. La privacidad reflectiva depende del contraste de iluminación y puede invertirse cuando el interior está más iluminado que el exterior. <Link href="/guias/privacidad-ventanas-noche/">Entender privacidad de noche</Link>.</p> },
 ] as const;
 
@@ -41,7 +44,7 @@ export default function CommercialPage() {
       <ApplicationHero
         variant="commercial"
         eyebrow="Comercial e institucional"
-        title="Control solar, privacidad y seguridad pensados para cómo funciona tu espacio."
+        title="Control solar, privacidad y seguridad para tu espacio."
         description="Revisamos oficinas, locales, fachadas y áreas de trabajo para definir qué necesita cada zona, considerando el cristal, la exposición y la operación del inmueble antes de especificar una película."
         ctaLabel="Revisar mi proyecto"
         context={wa}
@@ -124,7 +127,18 @@ export default function CommercialPage() {
       </section>
 
       <SarroService />
-      <p className="container price-line">Desde {new Intl.NumberFormat("es-MX", { style: "currency", currency: "MXN", maximumFractionDigits: 0 }).format(prices.architectureFrom)} por m². Mínimo de proyecto {new Intl.NumberFormat("es-MX", { style: "currency", currency: "MXN", maximumFractionDigits: 0 }).format(prices.projectMinimum)}. Seguridad y película inteligente se cotizan aparte.</p>
+      <section className="price-block-wrap">
+        <div className="container">
+          <PriceBlock
+            title="Precios desde"
+            rows={[
+              { label: "Nanocerámica", price: `${peso.format(prices.nanoFrom)} por m²` },
+              { label: "Otras películas para negocio, incluida plata reflecta", price: `${peso.format(prices.architectureFrom)} por m²` },
+            ]}
+            footnote={`Mínimo de proyecto ${peso.format(prices.projectMinimum)}. Seguridad y película inteligente se cotizan aparte.`}
+          />
+        </div>
+      </section>
       <ApplicationFinalCTA eyebrow="Proyecto comercial" title="Cuéntanos qué necesitas resolver y en qué áreas del inmueble." ctaLabel="Cotizar" context={wa} secondaryHref="/peliculas/" secondaryLabel="Comparar películas" />
     </>
   );

@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ProductCTA } from "@/components/ProductCTA";
 import { ProductHero } from "@/components/ProductHero";
-import { SimpleExample } from "@/components/SimpleExample";
+import { HightechTip } from "@/components/HightechTip";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/peliculas/seguridad/" },
@@ -24,7 +24,6 @@ const uses = [
   ["Fachadas y muro cortina", "Cristal de piso a techo en oficinas y locales."],
   ["Tragaluces y domos", "Donde un fragmento cae desde arriba."],
   ["Escuelas y hospitales", "Pasillos y áreas donde circula gente."],
-  ["Plantas de alimento, bebida y farma", "El punto de control de vidrio que revisan los auditores."],
   ["Vitrinas y mostradores", "Cristal que se toca todo el día."],
 ];
 
@@ -44,8 +43,8 @@ export default function SecurityPage() {
         ]}
         image={{
           src: "/images/projects/commercial-office.webp",
-          alt: "Oficina con divisiones de cristal, referencia de un proyecto HIGHTECH mientras llega la foto de planta.",
-          caption: "Referencia de cristal en oficina. La foto de instalación en planta se publicará cuando esté el original.",
+          alt: "Oficina con divisiones de cristal en un proyecto documentado por HIGHTECH.",
+          caption: "Proyecto documentado por HIGHTECH.",
         }}
       />
 
@@ -58,9 +57,9 @@ export default function SecurityPage() {
           <ul className="sarro-uses">
             {benefits.map((item) => <li key={item}>{item}</li>)}
           </ul>
-          <SimpleExample>
+          <HightechTip>
             Piensa en un parabrisas estrellado: se rompe en mil líneas y, aun así, se queda en el marco. La película de seguridad busca ese efecto en una ventana, un cancel o una fachada.
-          </SimpleExample>
+          </HightechTip>
           <p>No es blindaje y no vuelve el cristal irrompible. El espesor se elige según el vidrio y lo que quieres proteger. El precio se cotiza por proyecto; no hay una tarifa de lista.</p>
         </div>
       </section>
@@ -83,7 +82,7 @@ export default function SecurityPage() {
             ))}
           </div>
           <p style={{ marginTop: "1.5rem" }}>
-            <Link className="text-link" href="/peliculas/seguridad/industria-bpm/">Plantas de alimento, bebida y farma</Link>
+            <Link className="text-link" href="/peliculas/seguridad/industria-bpm/">Plantas de alimento, bebida y farmacéutica</Link>
           </p>
         </div>
       </section>

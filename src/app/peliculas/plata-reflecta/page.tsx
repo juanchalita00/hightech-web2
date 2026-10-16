@@ -4,7 +4,7 @@ import { LimitationNotice } from "@/components/LimitationNotice";
 import { ProductCTA } from "@/components/ProductCTA";
 import { ProductHero } from "@/components/ProductHero";
 import { ReflectaMirror } from "@/components/ReflectaMirror";
-import { SimpleExample } from "@/components/SimpleExample";
+import { HightechTip } from "@/components/HightechTip";
 
 export const metadata = { alternates: { canonical: "/peliculas/plata-reflecta/" },
   title: { absolute: "Película Plata Reflecta | HIGHTECH Polarizados" },
@@ -21,9 +21,9 @@ export default function ReflectivePage() {
 
     <section className="section">
       <div className="container" style={{ maxWidth: "46rem" }}>
-        <SimpleExample>
+        <HightechTip>
           De día, unos lentes de espejo tapan los ojos. De noche, con una lámpara detrás, se alcanza a ver. Plata Reflecta funciona con esa misma regla de luz.
-        </SimpleExample>
+        </HightechTip>
         <p style={{ marginTop: "1rem" }}><Link href="/peliculas/privacidad/">Si también necesitas privacidad de noche, hay otras opciones.</Link></p>
       </div>
     </section>

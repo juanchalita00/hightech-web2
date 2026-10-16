@@ -1,22 +1,22 @@
-import { SimpleExample } from "@/components/SimpleExample";
+import { HightechTip } from "@/components/HightechTip";
 
 export function SarroService() {
   return (
     <section className="section" id="sarro">
-      <div className="container sarro-grid">
-        <div>
+      <div className="container sarro-layout">
+        <div className="sarro-main">
           <p className="eyebrow">Vidrios con sarro</p>
-          <h2>Restauración y protección de vidrios con sarro.</h2>
+          <h2>¿Tu vidrio tiene sarro?</h2>
           <p>
-            No es una limpieza. Primero se descontamina el cristal. Después se instala una película de seguridad que se puede reemplazar
-            y un recubrimiento cerámico que repele el agua. Si el sarro regresa, se cambia la película y el vidrio sigue intacto.
+            Contamos con equipo especializado para retirarlo y proteger tu vidrio; te cotizamos según tu proyecto.
           </p>
-          <SimpleExample>
-            Es el mismo principio que un protector de pantalla en el teléfono: el golpe o la mancha se quedan en la capa de afuera,
-            y el cristal de abajo no se lija ni se raya para quitarla.
-          </SimpleExample>
         </div>
-        <ul className="sarro-uses">
+        <HightechTip>
+          Primero descontaminamos el vidrio para dejarlo limpio. Después colocamos una película de seguridad y encima un recubrimiento
+          cerámico hidrofóbico que repele el agua. Funciona como la mica de tu celular: si con el tiempo el sarro regresa, se cambia la
+          película y tu vidrio queda intacto.
+        </HightechTip>
+        <ul className="sarro-uses sarro-uses-row">
           <li>Canceles de baño</li>
           <li>Fachadas donde el agua deja marca</li>
           <li>Ventanas junto a alberca o riego</li>

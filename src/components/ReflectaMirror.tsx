@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { SimpleExample } from "@/components/SimpleExample";
+import { HightechTip } from "@/components/HightechTip";
 
 export function ReflectaMirror() {
   return (
@@ -43,9 +43,9 @@ export function ReflectaMirror() {
             <figcaption>Noche, con la luz de la sala encendida. La vista hacia adentro regresa.</figcaption>
           </figure>
         </div>
-        <SimpleExample>
+        <HightechTip>
           Es como unos lentes de espejo: de día no se ven los ojos. De noche, si hay luz detrás del lente, sí se alcanza a ver.
-        </SimpleExample>
+        </HightechTip>
       </div>
     </section>
   );

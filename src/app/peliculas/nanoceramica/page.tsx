@@ -13,7 +13,7 @@ export const metadata = { alternates: { canonical: "/peliculas/nanoceramica/" },
 
 const metrics = [
   { metric:"Luz", label:"Cuánta luz deja pasar", meaning:"75 es claro. 5 es muy oscuro. El número más alto se ve más claro.", caution:"El cristal de abajo también cambia un poco cómo se ve." },
-  { metric:"UV", label:"Rayos que decoloran", meaning:"Los cinco tonos bloquean el 99% de esos rayos, también el más claro.", caution:"El sol no es la única causa de que un piso o una tela envejezcan." },
+  { metric:"UV", label:"Rayos que decoloran", meaning:"Los cinco tonos bloquean hasta 99% de esos rayos, también el más claro.", caution:"El sol no es la única causa de que un piso o una tela envejezcan." },
   { metric:"Calor", label:"El que se siente en la piel", meaning:"Todos los tonos cortan casi todo ese calor, el del asiento que quema o la ventana al sol.", caution:"Oscurecer suma un poco más de protección total, menos de lo que parece, y mucha más privacidad." },
 ] as const;
 
@@ -38,7 +38,7 @@ export default function NanoPage() {
           <p className="nano-simple-signature"><strong>La protección no siempre se ve. Se mide. Y se siente.</strong></p>
         </div>
         <aside className="nano-simple-example">
-          <span>Un ejemplo sencillo</span>
+          <span>Hightech Tip</span>
           <h3>Piensa en el protector solar.</h3>
           <p>Puede quedar prácticamente transparente sobre la piel y aun así proteger frente a rayos UV. Con una película ocurre algo parecido: que se vea clara no significa que no esté ofreciendo protección.</p>
           <p><strong>Eso sí:</strong> protección UV y control solar son características distintas. Por eso no elegimos una película solamente por qué tan oscura se ve.</p>
@@ -55,11 +55,11 @@ export default function NanoPage() {
           <LimitationNotice title="La privacidad cambia con la iluminación"><p>Cuando depende del contraste o la reflectividad, puede disminuir o invertirse si el interior está más iluminado que el exterior.</p></LimitationNotice>
         </div>
         <div className="nano-choice-links">
-          <Link href="/peliculas/nanoceramica/ir75/"><strong>IR75</strong><span>Quiero conservar la mayor cantidad de luz</span><Icon name="arrow" size={18}/></Link>
-          <Link href="/peliculas/nanoceramica/ir50/"><strong>IR50</strong><span>Quiero mucha claridad, con un tono un poco más marcado que el 75</span><Icon name="arrow" size={18}/></Link>
-          <Link href="/peliculas/nanoceramica/ir35/"><strong>IR35</strong><span>Busco un punto medio entre luz, apariencia y deslumbramiento</span><Icon name="arrow" size={18}/></Link>
-          <Link href="/peliculas/nanoceramica/ir15/"><strong>IR15</strong><span>Quiero una apariencia más oscura y mayor privacidad visual durante el día</span><Icon name="arrow" size={18}/></Link>
-          <Link href="/peliculas/nanoceramica/ir5/"><strong>IR5</strong><span>Quiero la opción más oscura de la gama</span><Icon name="arrow" size={18}/></Link>
+          <Link href="/peliculas/nanoceramica/ir75/"><strong>75</strong><span>Quiero conservar la mayor cantidad de luz</span><Icon name="arrow" size={18}/></Link>
+          <Link href="/peliculas/nanoceramica/ir50/"><strong>50</strong><span>Quiero mucha claridad, con un tono un poco más marcado que el 75</span><Icon name="arrow" size={18}/></Link>
+          <Link href="/peliculas/nanoceramica/ir35/"><strong>35</strong><span>Busco un punto medio entre luz, apariencia y deslumbramiento</span><Icon name="arrow" size={18}/></Link>
+          <Link href="/peliculas/nanoceramica/ir15/"><strong>15</strong><span>Quiero una apariencia más oscura y mayor privacidad visual durante el día</span><Icon name="arrow" size={18}/></Link>
+          <Link href="/peliculas/nanoceramica/ir5/"><strong>5</strong><span>Quiero la opción más oscura de la gama</span><Icon name="arrow" size={18}/></Link>
         </div>
       </div>
     </section>

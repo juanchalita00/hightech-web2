@@ -1534,10 +1534,11 @@ thead th { background: var(--surface-alt); }
   .pdlc-price .button, .pdlc-top .hero-actions .button { width:100%; }
 }
 
-.simple-example { margin: 1.5rem 0 0; padding: 1.15rem 1.25rem; border: 1px solid var(--line); border-radius: 1rem; background: var(--surface-alt); }
-.simple-example > p { margin: 0 0 .4rem; font-family: var(--font-overpass), sans-serif; font-size: .78rem; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; color: var(--brand); }
-.simple-example div { color: var(--ink); font-size: 1.02rem; line-height: 1.55; }
-.simple-example div p { margin: 0; }
+.hightech-tip { margin: 1.5rem 0 0; padding: 1.15rem 1.25rem; border: 1px solid var(--line); border-radius: 1rem; background: var(--surface-alt); }
+.hightech-tip > p { display:flex; align-items:center; gap:.5rem; margin: 0 0 .5rem; font-family: var(--font-overpass), sans-serif; font-size: .78rem; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; color: var(--brand); }
+.hightech-tip-icon { flex:none; color: var(--brand); }
+.hightech-tip div { color: var(--ink); font-size: 1.02rem; line-height: 1.55; }
+.hightech-tip div p { margin: 0; }
 
 .jalisco-law-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
 .jalisco-law-grid article { display: grid; gap: .45rem; min-height: 12rem; padding: 1.35rem 1.25rem; border: 1px solid var(--line); border-radius: 1.25rem; background: white; }
@@ -1552,16 +1553,16 @@ thead th { background: var(--surface-alt); }
 .install-times td:last-child, .install-times th:last-child { text-align: right; font-variant-numeric: tabular-nums; }
 .install-times-note { max-width: 42rem; margin: 1rem 0 0; color: var(--ink-soft); }
 
-.float-whatsapp { position: fixed; z-index: 45; right: 1rem; bottom: 1rem; display: grid; justify-items: end; gap: .35rem; }
+.float-whatsapp { position: fixed; z-index: 45; right: 1rem; bottom: calc(16px + env(safe-area-inset-bottom)); display: grid; justify-items: end; gap: .35rem; }
 .float-whatsapp a { min-height: 52px; display: inline-flex; align-items: center; gap: .45rem; padding: .8rem 1.05rem; border-radius: 999px; background: #128c7e; color: white; text-decoration: none; font-weight: 750; box-shadow: 0 12px 30px rgba(16, 40, 32, .22); }
 .float-whatsapp a:hover { background: #0e7468; }
-.float-whatsapp small { max-width: 16rem; padding: .35rem .65rem; border-radius: 999px; background: white; color: var(--ink-soft); font-size: .75rem; box-shadow: var(--shadow-card); }
+.float-whatsapp small { max-width: 12rem; padding: .25rem .55rem; border-radius: 999px; background: white; color: var(--ink-soft); font-size: .6875rem; box-shadow: var(--shadow-card); }
 
-.cookie-notice { position: fixed; z-index: 50; left: 1rem; right: 1rem; bottom: 1rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; max-width: 46rem; margin-right: auto; padding: 1rem 1.1rem; border: 1px solid var(--line); border-radius: 1rem; background: white; box-shadow: var(--shadow-soft); }
-.cookie-notice p { margin: 0; color: var(--ink-soft); font-size: .92rem; }
+.cookie-notice { position: fixed; z-index: 50; left: 1rem; right: 1rem; bottom: calc(1rem + env(safe-area-inset-bottom)); display: flex; align-items: center; justify-content: space-between; gap: .75rem; max-width: 40rem; margin-right: auto; padding: .6rem .8rem; border: 1px solid var(--line); border-radius: .85rem; background: white; box-shadow: var(--shadow-soft); }
+.cookie-notice p { margin: 0; color: var(--ink-soft); font-size: .85rem; line-height: 1.4; }
 .cookie-notice p a { color: var(--brand); }
 .cookie-actions { display: flex; gap: .5rem; flex: 0 0 auto; }
-.cookie-actions button { min-height: 42px; border-radius: 999px; padding: .55rem .9rem; font: inherit; font-weight: 750; cursor: pointer; }
+.cookie-actions button { min-height: 40px; border-radius: 999px; padding: .4rem .8rem; font-size: .875rem; font: inherit; font-weight: 750; cursor: pointer; }
 .cookie-actions .cookie-accept { border: 0; background: var(--brand); color: white; }
 .cookie-actions .cookie-reject { border: 1px solid var(--line); background: white; color: var(--ink); }
 
@@ -1595,6 +1596,76 @@ thead th { background: var(--surface-alt); }
 
 @media (max-width: 800px) {
   .jalisco-law-grid, .reflecta-pair, .sarro-grid, .logo-story { grid-template-columns: 1fr; }
-  .cookie-notice, .lead-magnet { flex-direction: column; align-items: stretch; }
-  .float-whatsapp { right: .7rem; bottom: .7rem; }
+  .lead-magnet { flex-direction: column; align-items: stretch; }
+  .cookie-notice { left: .6rem; right: .6rem; bottom: calc(.6rem + env(safe-area-inset-bottom)); gap: .6rem; }
+  .float-whatsapp { right: .7rem; }
 }
+
+/* Reseñas: estrellas del encabezado y nota de traducción */
+.google-review-headline-stars { display:block; margin-bottom:.35rem; color:#b57f00; letter-spacing:.12em; font-size:1.1rem; }
+.google-review-translated { margin:.5rem 0 0; font-size:.8125rem; color:#566078; }
+
+/* Referencia legal Jalisco: bloque informativo discreto */
+.jalisco-info { max-width: 46rem; padding: 1rem 1.25rem; border: 1px solid var(--line); border-radius: .75rem; background: var(--surface-alt); color: var(--ink-soft); font-size: .9rem; line-height: 1.6; }
+.jalisco-info p { margin: 0; }
+.jalisco-info p + p { margin-top: .6rem; }
+.jalisco-info strong { color: var(--ink); }
+
+/* Bloque de precios (reemplaza la línea suelta "Desde $…") */
+.price-block { margin: 1.5rem 0 0; padding: 1.25rem 1.35rem; border: 1px solid var(--line); border-radius: 1rem; background: white; }
+.price-block .eyebrow { margin: 0 0 .75rem; }
+.price-block ul { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 1rem; margin: 0; padding: 0; list-style: none; }
+.price-block li { display: grid; gap: .2rem; align-content: start; }
+.price-block li > span { color: var(--ink-soft); font-size: .92rem; }
+.price-block li > strong { color: var(--ink); font-family: var(--font-overpass), sans-serif; font-size: 1.25rem; letter-spacing: -.02em; }
+.price-block li > small { color: var(--ink-soft); font-size: .875rem; }
+.price-block-note { margin: 1rem 0 0; padding-top: .85rem; border-top: 1px solid var(--line); color: var(--ink-soft); font-size: .9rem; }
+.price-block-wrap { padding: 0 0 clamp(2rem, 4vw, 3rem); }
+
+/* Galería de fotos reales (automotriz) */
+.photo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1rem; margin: 0; padding: 0; list-style: none; }
+.photo-grid figure { margin: 0; }
+.photo-grid img { display: block; width: 100%; height: auto; border-radius: 1rem; }
+.photo-grid figcaption { margin-top: .5rem; color: var(--ink-soft); font-size: .875rem; }
+.photo-split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 3rem); align-items: center; }
+.photo-split img { display: block; width: 100%; height: auto; border-radius: 1rem; }
+@media (max-width: 760px) { .photo-split { grid-template-columns: 1fr; } }
+.tone-cta { margin-top: 1.25rem; }
+
+/* Sarro: texto a la izquierda, Hightech Tip a la derecha (escritorio); usos en fila abajo */
+.sarro-layout { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(1.5rem, 4vw, 3rem); align-items: start; }
+.sarro-layout .hightech-tip { margin: 0; }
+.sarro-uses-row { grid-column: 1 / -1; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 860px) {
+  .sarro-layout { grid-template-columns: 1fr; }
+  .sarro-uses-row { grid-template-columns: 1fr; }
+}
+
+/* WhatsApp sube mientras el aviso de cookies está visible */
+:root[data-cookie-banner] .float-whatsapp { bottom: calc(5.5rem + env(safe-area-inset-bottom)); }
+@media (min-width: 1000px) { :root[data-cookie-banner] .float-whatsapp { bottom: calc(16px + env(safe-area-inset-bottom)); } }
+
+/* Tablas anchas: scroll interno en lugar de desbordar la página */
+.table-scroll { max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.install-times td, .install-times th { overflow-wrap: anywhere; }
+@media (max-width: 640px) { .install-times { width: 100%; } .install-times td, .install-times th { padding-inline: .1rem; font-size: .92rem; } }
+
+/* Foto de auto: se ve el auto completo, sin recorte vertical */
+.application-visual-automotive.application-visual-photo { min-height: 0; aspect-ratio: 4 / 3; }
+@media (max-width: 900px) { .application-visual-automotive.application-visual-photo { min-height: 0; } }
+
+/* Comercial: H1 largo, 2–3 líneas sin huérfanas */
+.application-hero-commercial .application-hero-copy h1 { max-width: 18ch; font-size: clamp(2.1rem, 5vw, 4.2rem); text-wrap: balance; }
+.application-hero-copy h1 { text-wrap: balance; }
+
+/* Etiquetas de tono: píldora clara con texto oscuro (contraste AA sobre cualquier tono) */
+.nano-tone-swatch span, .nano-comparison-swatch span, .auto-tone-glass span { padding: .12rem .5rem; border-radius: 999px; background: rgba(255,255,255,.92); color: #0d1533; text-shadow: none; }
+.nano-tone-swatch span { font-size: .8125rem; }
+.nano-comparison-swatch span { font-size: .8125rem; }
+
+/* Películas: más aire entre título y subtítulo; captions y etiquetas de 14px mínimo */
+.product-hero-copy h1 { margin-bottom: 1.5rem; }
+.product-hero-copy .lede { margin-top: 1.5rem; }
+.product-hero-facts span { font-size: .875rem; color: #566078; }
+.product-hero-photo figcaption { font-size: .875rem; color: #566078; }
+.cookie-notice p, .cookie-actions button { font-size: .875rem; }

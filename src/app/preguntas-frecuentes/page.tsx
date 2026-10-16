@@ -15,6 +15,9 @@ export const metadata: Metadata = {
 
 const autoFrom = new Intl.NumberFormat("es-MX", { style: "currency", currency: "MXN", maximumFractionDigits: 0 }).format(prices.autoFrom);
 const archFrom = new Intl.NumberFormat("es-MX", { style: "currency", currency: "MXN", maximumFractionDigits: 0 }).format(prices.architectureFrom);
+const nanoFrom = new Intl.NumberFormat("es-MX", { style: "currency", currency: "MXN", maximumFractionDigits: 0 }).format(prices.nanoFrom);
+const windshield = new Intl.NumberFormat("es-MX", { style: "currency", currency: "MXN", maximumFractionDigits: 0 }).format(prices.windshieldFrom);
+const minimum = new Intl.NumberFormat("es-MX", { style: "currency", currency: "MXN", maximumFractionDigits: 0 }).format(prices.projectMinimum);
 
 const items = [
   {
@@ -34,12 +37,12 @@ const items = [
     answer: <p>{automotiveOnSiteAnswer} <Link href="/automotriz/">Ver polarizado para auto</Link>.</p>,
   },
   {
-    question: "¿Qué tono es legal en el auto en Jalisco?",
-    answer: <p>Delanteras, solo 75. Traseras y medallón, 35 o más claro. Parabrisas, sin película. El 15 y el 5 son para casa y negocio. <Link href="/guias/polarizado-automotriz-jalisco/">Ver la guía</Link>.</p>,
+    question: "¿Qué tono me conviene en el auto?",
+    answer: <p>Lo más común es 75 al frente y 35 o más claro atrás, para mantener buena visibilidad hacia el interior. También instalamos parabrisas completo. Te asesoramos para elegir. <Link href="/guias/polarizado-automotriz-jalisco/">Ver la guía</Link>.</p>,
   },
   {
     question: "¿Cuánto cuesta?",
-    answer: <p>Auto desde {autoFrom} (laterales y medallón, compacto). Arquitectónico desde {archFrom} por metro cuadrado, con un mínimo de proyecto de $1,500. Película inteligente y seguridad se cotizan sin precio de lista.</p>,
+    answer: <p>Auto desde {autoFrom} (laterales y medallón, compacto); parabrisas completo desde {windshield}. Nanocerámica para casa y negocio desde {nanoFrom} por metro cuadrado; otras películas desde {archFrom}. Mínimo de proyecto {minimum}. Película inteligente y seguridad se cotizan sin precio de lista.</p>,
   },
   {
     question: "¿Qué garantía tiene?",
@@ -67,7 +70,7 @@ export default function Page() {
         eyebrow="Preguntas frecuentes"
         title="Polarizado, en corto."
         description="Calor, luz, auto y tiempos. Si tu cristal tiene una condición rara, la respuesta se cierra en la cotización."
-        points={["Casa, negocio y auto", "Tono legal en Jalisco", "Precios desde"]}
+        points={["Casa, negocio y auto", "Tonos en Jalisco", "Precios desde"]}
       />
       <section className="section">
         <div className="container faq-page-grid">

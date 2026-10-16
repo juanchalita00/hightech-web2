@@ -13,15 +13,15 @@ export const leyPdfUrl =
 export const automotiveLaw = {
   practiceTitle: "Qué tono va en cada cristal",
   practice:
-    "En las ventanas delanteras va el 75. En traseras y medallón, 35 o más claro. En el parabrisas no instalamos película.",
+    "Lo más común: 75 al frente y 35 o más claro atrás. El parabrisas completo también se instala, en el tono que elijas.",
   sideLabel: "Delanteras",
   sideValue: "75",
   windshieldLabel: "Parabrisas",
-  windshieldValue: "Sin película",
+  windshieldValue: "Completo, nanocerámica",
   lawTitle: "Qué publica Movilidad",
   lawIntro: "La Secretaría de Movilidad de Jalisco mide el polarizado como oscuridad. En el taller el número es la luz que deja pasar.",
-  disclaimerTitle: "Vigente 2026",
-  disclaimer: "Fuente: infografía de la Secretaría de Movilidad de Jalisco, vigente 2026.",
+  disclaimerTitle: "Referencia",
+  disclaimer: "Referencia: infografía de la Secretaría de Movilidad de Jalisco.",
 } as const;
 
 export const automotiveQuotes = [

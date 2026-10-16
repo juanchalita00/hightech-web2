@@ -1,6 +1,7 @@
 import type { CSSProperties } from "react";
 import Link from "next/link";
 import { truth } from "@/lib/truth";
+import { toneName } from "@/lib/tones";
 import styles from "@/app/home-v09.module.css";
 
 const toneSamples: Record<string, string> = {
@@ -22,7 +23,7 @@ export function NanoToneTable() {
       <div className={styles.toneTable}>
         {truth.nano.map((film) => (
           <Link className={styles.toneRow} href={"/peliculas/nanoceramica/" + film.id.toLowerCase() + "/"} key={film.id}>
-            <span className={styles.toneName}><strong>{film.id}</strong><span>VLT {film.vlt}%</span></span>
+            <span className={styles.toneName}><strong>{toneName(film.id)}</strong><span>VLT {film.vlt}%</span></span>
             <span
               className={styles.toneSwatch}
               style={{ "--tone-bg": toneSamples[film.id] } as CSSProperties}
@@ -33,7 +34,7 @@ export function NanoToneTable() {
         ))}
       </div>
       <p className={styles.toneNote}>
-        Muestra visual orientativa del tono; la apariencia final depende también del cristal y de la iluminación. IR50 e IR5 son nombres comerciales; sus VLT de ficha son 48% y 3%, respectivamente.
+        Muestra visual orientativa del tono; la apariencia final depende también del cristal y de la iluminación. Los números son nombres comerciales; el VLT es el dato de ficha.
       </p>
     </div>
   );

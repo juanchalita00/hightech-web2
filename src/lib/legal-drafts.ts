@@ -55,7 +55,7 @@ const terms: LegalDraftDocument = {
       id: "instalacion",
       heading: "Instalación",
       paragraphs: [
-        "La instalación automotriz es en taller con cita. A domicilio solo flotillas o autos de agencia. El horario de atención —lunes a sábado de 10:00 a 21:00, domingo cerrado— no es la disponibilidad de instalación.",
+        "La instalación automotriz es en taller con cita. A domicilio solo flotillas o autos de agencia. El horario de atención —lunes a sábado de 10:00 a 21:00, domingo cerrado— no es la disponibilidad de instalación; agendamos según la disponibilidad de la semana.",
         "En arquitectura, la visita técnica es excepcional. En película eléctrica (PDLC), la visita es obligatoria si el cliente quiere avanzar, porque requiere integración eléctrica.",
       ],
     },
@@ -63,7 +63,7 @@ const terms: LegalDraftDocument = {
       id: "tono-automotriz",
       heading: "Elección de tono en el vehículo",
       paragraphs: [
-        "En Jalisco instalamos 75 en las ventanas delanteras, 35 o más claro en traseras y medallón, y nada en el parabrisas. El 15 y el 5 se quedan en casa y negocio.",
+        "En el auto lo más común es 75 al frente y 35 o más claro atrás, para mantener la visibilidad hacia el interior. También instalamos parabrisas completo. Te asesoramos para elegir.",
       ],
     },
     {

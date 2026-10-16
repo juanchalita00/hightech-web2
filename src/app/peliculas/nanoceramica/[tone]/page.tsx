@@ -4,15 +4,16 @@ import { notFound } from "next/navigation";
 import { Icon } from "@/components/Icon";
 import { ProductCTA } from "@/components/ProductCTA";
 import { ProductHero } from "@/components/ProductHero";
-import { SimpleExample } from "@/components/SimpleExample";
+import { HightechTip } from "@/components/HightechTip";
 import { getNanoProduct, release, truth } from "@/lib/truth";
+import { toneName } from "@/lib/tones";
 
 const toneCopy: Record<string, { headline: string; decision: string; light: string; where: string; caution?: string; neighbors: string[] }> = {
   IR75: {
     headline: "El más claro. Deja pasar mucha luz.",
     decision: "Para quien quiere bajar el calor sin que el cristal se vea oscuro.",
     light: "Deja pasar cerca de tres cuartas partes de la luz.",
-    where: "Es el tono de las ventanas delanteras del auto, y también sirve en casa y negocio.",
+    where: "Es el tono más común al frente del auto, y también sirve en casa y negocio.",
     neighbors: ["IR50"],
   },
   IR50: {
@@ -26,21 +27,21 @@ const toneCopy: Record<string, { headline: string; decision: string; light: stri
     headline: "Un punto medio entre luz y privacidad.",
     decision: "Para quien quiere que se note el tono, sin irse al extremo.",
     light: "Deja pasar cerca de un tercio de la luz.",
-    where: "En casa, en negocio y en traseros y medallón. En las delanteras del auto no va: ahí solo el 75.",
+    where: "En casa, en negocio y en traseros y medallón del auto. Para las delanteras te asesoramos según la visibilidad que quieras conservar.",
     neighbors: ["IR50", "IR15"],
   },
   IR15: {
     headline: "Se ve oscuro y da más privacidad de día.",
     decision: "Para casa o negocio, cuando la prioridad es que se vea menos hacia adentro.",
     light: "Deja pasar poca luz.",
-    where: "Solo arquitectónico. En el auto no lo instalamos.",
+    where: "Pensado para casa y negocio. Si lo quieres en el auto, platicamos qué visibilidad necesitas.",
     neighbors: ["IR35", "IR5"],
   },
   IR5: {
     headline: "El más oscuro de la gama.",
     decision: "Para casa o negocio, cuando quieres la mayor privacidad de día.",
     light: "Deja pasar muy poca luz. Aunque se llama 5, en la práctica es aún más cerrado.",
-    where: "Solo arquitectónico. En el auto no lo instalamos.",
+    where: "Pensado para casa y negocio. Si lo quieres en el auto, platicamos qué visibilidad necesitas.",
     caution: "De noche, algunas personas batallan para ver hacia afuera. Es el único tono con este aviso.",
     neighbors: ["IR15"],
   },
@@ -56,8 +57,8 @@ export async function generateMetadata({ params }: { params: Promise<{ tone: str
   if (!film) return {};
   const copy = toneCopy[film.id];
   return {
-    title: { absolute: `Polarizado ${film.id} | HIGHTECH Polarizados` },
-    description: `${film.id}: ${copy.headline} Bloquea los rayos UV y el calor del sol, y deja pasar la luz de este tono.`,
+    title: { absolute: `Polarizado nanocerámico tono ${toneName(film.id)} | HIGHTECH Polarizados` },
+    description: `Tono ${toneName(film.id)}: ${copy.headline} Bloquea los rayos UV y el calor del sol, y deja pasar la luz de este tono.`,
     alternates:{canonical:`/peliculas/nanoceramica/${tone.toLowerCase()}/`},
     robots: release.routes.tonePagesIndexable ? { index: true, follow: true } : { index: false, follow: true },
   };
@@ -73,12 +74,12 @@ export default async function TonePage({ params }: { params: Promise<{ tone: str
       <ProductHero
         variant="nano"
         eyebrow="Nanocerámica"
-        title={`${film.id}. ${copy.headline}`}
+        title={`Tono ${toneName(film.id)}. ${copy.headline}`}
         description={copy.decision}
         context={{ sourcePage: `/peliculas/nanoceramica/${tone}/`, product: film.id, tone: film.id }}
         facts={[
           { label: "Luz", value: copy.light },
-          { label: "Rayos UV", value: "Bloquea el 99%" },
+          { label: "Rayos UV", value: "Bloquea hasta 99%" },
           { label: "Calor del sol", value: "Casi todo, como el resto de la gama" },
         ]}
         secondary={<Link href="/peliculas/nanoceramica/" className="button button-secondary">Ver toda la gama <Icon name="arrow" size={18} /></Link>}
@@ -90,11 +91,11 @@ export default async function TonePage({ params }: { params: Promise<{ tone: str
             La nanocerámica es una capa casi invisible que corta los rayos que calientan y los que decoloran, sin depender de que el cristal se vea negro.
             Oscurecer más no multiplica esa protección: suma privacidad y resta luz.
           </p>
-          <SimpleExample>
+          <HightechTip>
             {film.id === "IR5"
-              ? "Es como manejar con lentes de sol muy oscuros ya de noche: el sol no está, y aun así cuesta ver el camino. Por eso el 5 se queda en casa y negocio."
+              ? "Es como manejar con lentes de sol muy oscuros ya de noche: el sol no está, y aun así cuesta ver el camino. Por eso el 5 se recomienda sobre todo para casa y negocio."
               : "Un bloqueador transparente también protege la piel. Aquí pasa lo mismo: el tono se elige por la luz que quieres, no porque el más oscuro “proteja más”."}
-          </SimpleExample>
+          </HightechTip>
           {copy.caution ? <p><strong>{copy.caution}</strong></p> : null}
         </div>
       </section>
@@ -116,7 +117,7 @@ export default async function TonePage({ params }: { params: Promise<{ tone: str
         </div>
       </section>
       <ProductCTA
-        title={`¿${film.id} encaja en tu cristal?`}
+        title={`¿El tono ${toneName(film.id)} encaja en tu cristal?`}
         text="Cuéntanos si es casa, negocio o auto, y cuánta luz quieres conservar."
         cta="WhatsApp"
         context={{ sourcePage: `/peliculas/nanoceramica/${tone}/`, product: film.id, tone: film.id }}

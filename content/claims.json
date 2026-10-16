@@ -2,7 +2,7 @@
   "approved": [
     {
       "id": "nano_uv_99",
-      "text": "99% de rechazo UV según ficha técnica.",
+      "text": "Hasta 99% de rechazo UV según ficha técnica.",
       "products": ["IR75", "IR50", "IR35", "IR15", "IR5"],
       "status": "APPROVED_WITH_CONTEXT"
     },
@@ -20,7 +20,7 @@
     },
     {
       "id": "security_uv_99",
-      "text": "99% de protección frente a radiación UV.",
+      "text": "Hasta 99% de protección frente a radiación UV.",
       "products": ["SECURITY_ARCH"],
       "status": "APPROVED_WITH_CONTEXT"
     },

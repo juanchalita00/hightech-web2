@@ -17,7 +17,7 @@ Si el espacio se siente como un horno y quieres conservar claridad, suele tener 
 
 Ninguna película impide que entre cualquier calor. El resultado depende de la orientación, del cristal y de la ventilación. Tampoco prometemos un ahorro de energía ni una temperatura exacta.
 
-La protección UV es distinta de la oscuridad. Una película puede cuidar interiores del UV y seguir viéndose clara. El UV de la gama nanocerámica se informa como más del 99%, según la ficha, y no se convierte en una promesa sobre decoloración de cada mueble.
+La protección UV es distinta de la oscuridad. Una película puede cuidar interiores del UV y seguir viéndose clara. El UV de la gama nanocerámica se informa como hasta 99%, según la ficha, y no se convierte en una promesa sobre decoloración de cada mueble.
 
 ## La privacidad de día no es la de noche
 

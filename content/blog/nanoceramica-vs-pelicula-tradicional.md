@@ -27,7 +27,7 @@ En la gama activa hay cinco tonos: 75, 50, 35, 15 y 5. El tono cambia sobre todo
 
 Los tonos se pueden combinar por cristal o por zona. En la protección térmica, la tecnología importa más que qué tan oscuro se ve el cristal. No afirmamos que todos los tonos se comporten igual frente al calor, ni que el más oscuro “caliente menos” solo por verse más oscuro.
 
-Las fichas de la gama reportan un rechazo alto de UV, de más del 99%, y hasta 95% de rechazo de radiación infrarroja. Esa cifra de infrarrojo no significa 95% menos calor dentro de la habitación o del vehículo.
+Las fichas de la gama reportan un rechazo alto de UV, de hasta 99%, y hasta 95% de rechazo de radiación infrarroja. Esa cifra de infrarrojo no significa 95% menos calor dentro de la habitación o del vehículo.
 
 ## Plata Reflecta es otra decisión
 

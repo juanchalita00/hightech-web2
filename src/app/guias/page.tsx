@@ -5,7 +5,7 @@ import { GuideHero } from "@/components/GuideHero";
 export const metadata: Metadata = {
   alternates: { canonical: "/guias/" },
   title: { absolute: "Guías de polarizado | HIGHTECH Polarizados" },
-  description: "Guías en claro sobre calor, rayos UV, luz, privacidad de noche y el tono legal del auto en Jalisco.",
+  description: "Guías en claro sobre calor, rayos UV, luz, privacidad de noche y el tono del auto en Jalisco.",
 };
 
 const guides = [
@@ -15,7 +15,7 @@ const guides = [
   { href: "/guias/que-es-vlt/", category: "Luz", title: "Qué significa 75, 50, 35, 15 y 5", description: "El número es la luz que deja pasar. Un número más alto es un cristal más claro." },
   { href: "/guias/privacidad-ventanas-noche/", category: "Privacidad", title: "Por qué de noche se puede ver hacia adentro", description: "La privacidad sigue a la luz. Si la sala está encendida, el cristal deja de esconder." },
   { href: "/guias/estres-termico-cristal/", category: "El vidrio", title: "Por qué el tipo de vidrio importa", description: "Un cristal grande al sol se calienta de forma dispareja. La película se elige con eso en cuenta." },
-  { href: "/guias/polarizado-automotriz-jalisco/", category: "Auto · Jalisco", title: "Qué tono va en cada cristal del auto", description: "Delanteras en 75, traseras y medallón en 35 o más claro, parabrisas sin película. Vigente 2026." },
+  { href: "/guias/polarizado-automotriz-jalisco/", category: "Auto · Jalisco", title: "Qué tono va en cada cristal del auto", description: "Cómo leer los tonos del auto, qué dice la regla en Jalisco y qué vemos en la práctica en Guadalajara." },
 ] as const;
 
 export default function GuidesPage() {

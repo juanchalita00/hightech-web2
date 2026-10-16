@@ -11,6 +11,7 @@ export function InstallTimes() {
           </div>
           <p>{waitingCopy}</p>
         </div>
+        <div className="table-scroll">
         <table className="install-times">
           <caption className="sr-only">Tiempos de instalación automotriz</caption>
           <thead>
@@ -22,6 +23,7 @@ export function InstallTimes() {
             ))}
           </tbody>
         </table>
+        </div>
         <p className="install-times-note">{installNote} Los primeros días pueden verse burbujas de agua; se van solas. No bajes los vidrios en 48 horas.</p>
       </div>
     </section>

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ProductCTA } from "@/components/ProductCTA";
-import { SimpleExample } from "@/components/SimpleExample";
+import { HightechTip } from "@/components/HightechTip";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/garantias/" },
@@ -23,6 +23,7 @@ export default function Page() {
           <p className="eyebrow">Garantías</p>
           <h1>Plazos de la película instalada.</h1>
           <p>La garantía cubre la película que instalamos, por el plazo de su línea. El cristal, un golpe o un mal uso quedan fuera.</p>
+          <div className="table-scroll">
           <table className="install-times">
             <caption className="sr-only">Plazos de garantía</caption>
             <thead><tr><th>Línea</th><th>Plazo</th></tr></thead>
@@ -30,10 +31,12 @@ export default function Page() {
               {rows.map(([line, term]) => <tr key={line}><td>{line}</td><td>{term}</td></tr>)}
             </tbody>
           </table>
-          <SimpleExample>
+          </div>
+          <HightechTip>
             Es como la garantía de un electrodoméstico: cubre el producto por un plazo, no cualquier cosa que le pase en la casa.
-          </SimpleExample>
-          <p>Película inteligente y otros acabados se confirman en la cotización de ese trabajo. <Link href="/contacto/#cotizar">Cotizar</Link>.</p>
+          </HightechTip>
+          <p>Película inteligente y otros acabados se confirman en la cotización de ese trabajo.</p>
+          <p><Link className="button button-primary" href="/contacto/#cotizar">Cotizar</Link></p>
         </div>
       </section>
       <ProductCTA

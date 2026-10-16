@@ -31,18 +31,18 @@ const names: Record<string, string> = {
 const services: Record<string, { name: string; description: string; minPrice?: number; unitText?: string }> = {
   "/automotriz/": {
     name: "Polarizado automotriz en Zapopan",
-    description: `Delanteras en 75, traseras y medallón en 35 o más claro, parabrisas sin película. Desde $${prices.autoFrom.toLocaleString("es-MX")} en auto compacto. Garantía de 10 años.`,
+    description: `Laterales, medallón y parabrisas completo con nanocerámica. Desde $${prices.autoFrom.toLocaleString("es-MX")} en auto compacto; parabrisas completo desde $${prices.windshieldFrom.toLocaleString("es-MX")}. Garantía de 10 años.`,
     minPrice: prices.autoFrom,
   },
   "/residencial/": {
     name: "Polarizado residencial en Zapopan",
-    description: `Película para casa que baja el calor del sol. Desde $${prices.architectureFrom.toLocaleString("es-MX")} por metro cuadrado. Mínimo de proyecto $${prices.projectMinimum.toLocaleString("es-MX")}.`,
+    description: `Película para casa que baja el calor del sol. Nanocerámica desde $${prices.nanoFrom.toLocaleString("es-MX")} por metro cuadrado; otras películas desde $${prices.architectureFrom.toLocaleString("es-MX")}. Mínimo de proyecto $${prices.projectMinimum.toLocaleString("es-MX")}.`,
     minPrice: prices.architectureFrom,
     unitText: "m²",
   },
   "/comercial/": {
     name: "Polarizado comercial en Guadalajara y Zapopan",
-    description: `Película para oficinas, locales y fachadas. Desde $${prices.architectureFrom.toLocaleString("es-MX")} por metro cuadrado.`,
+    description: `Película para oficinas, locales y fachadas. Nanocerámica desde $${prices.nanoFrom.toLocaleString("es-MX")} por metro cuadrado; otras películas desde $${prices.architectureFrom.toLocaleString("es-MX")}. Mínimo de proyecto $${prices.projectMinimum.toLocaleString("es-MX")}.`,
     minPrice: prices.architectureFrom,
     unitText: "m²",
   },
@@ -52,7 +52,7 @@ const services: Record<string, { name: string; description: string; minPrice?: n
   },
   "/peliculas/seguridad/industria-bpm/": {
     name: "Película de seguridad para plantas",
-    description: "Ayuda a cumplir el punto de control de vidrio que revisan los auditores de alimentos, bebidas y farma. No certifica la planta.",
+    description: "Ayuda a cumplir el punto de control de vidrio que revisan los auditores de alimentos, bebidas y farmacéutica. No certifica la planta.",
   },
   "/pelicula-inteligente-pdlc/": {
     name: "Película inteligente PDLC",

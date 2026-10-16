@@ -1,27 +1,31 @@
 {
-  "note": "Solo reseñas reales del perfil de Google. Sin promedio ni total del perfil. Michael Richards y Marivi AC traen fecha y 5 estrellas tomadas del listado. Valeria Garnica, Christian Chávez y Miguel Tiongson traen el texto verbatim entregado para publicar; el listado público no trajo su fecha ni su calificación, así que no se inventan.",
+  "note": "Solo reseñas reales del perfil de Google, todas de 5 estrellas. La reseña de Michael Richards es una traducción fiel del inglés.",
   "items": [
     {
       "author": "Valeria Garnica",
       "quote": "Me gustó mucho el servicio, me pareció muy buena la asesoría porque tenía una habitación donde pegaba el sol todo el tiempo, pero no quería perder la vista, o bloquearla con persianas y me mostraron una película transparente que me sorprendió mucho, bajó el calor de la habitación y no modifico la vista.\n\nResalto eso porque me asesoraron en una mucho mejor opción y estoy muy contenta, siempre pensé que los polarizados eran negros, pero mejoraron mi expectativa, ¡muchas gracias!",
-      "sourceUrl": "https://www.google.com/maps/place/POLARIZADOS+HIGHTECH+-+Residencial+%2F+Automotriz,+Tomas+Mann+5348,+Jardines+Vallarta,+45027+Zapopan,+Jal./data=!4m2!3m1!1s0x8428af873886e857:0x7dc7c014441b7791"
+      "sourceUrl": "https://www.google.com/maps/place/POLARIZADOS+HIGHTECH+-+Residencial+%2F+Automotriz,+Tomas+Mann+5348,+Jardines+Vallarta,+45027+Zapopan,+Jal./data=!4m2!3m1!1s0x8428af873886e857:0x7dc7c014441b7791",
+      "rating": 5
     },
     {
       "author": "Michael Richards",
-      "quote": "Excellent service and a great product. I hired them to install films on the windows in my apartment because regardless of the outside temperature or the air conditioning, my south facing windows caused my apartment to always be very hot. On some days, it was around 40 degrees by my windows and even in a small closed space with the air conditioning on, the room could be 8 or more degrees higher than what the air conditioning was set to.\n\nAfter installing the films, the area near the windows is at least 10 degrees cooler and if I use the air conditioning in a room, the temperature will be the same or at most 1 degree higher.\n\nI'm very happy with the service and product and highly recommend them to anyone suffering from excessive heat. It is a great investment in your quality of life.",
+      "quote": "Excelente servicio y gran producto. Los contraté para instalar película en las ventanas de mi departamento porque, sin importar la temperatura exterior o el aire acondicionado, las ventanas que dan al sur hacían que mi departamento siempre estuviera muy caliente. Algunos días había unos 40 grados junto a las ventanas y, incluso en un espacio pequeño y cerrado con el aire acondicionado encendido, el cuarto podía estar 8 grados o más por encima de lo que marcaba el aire.\n\nDespués de instalar la película, la zona junto a las ventanas está por lo menos 10 grados más fresca y, si uso el aire acondicionado en un cuarto, la temperatura es la misma o, como mucho, 1 grado más alta.\n\nEstoy muy contento con el servicio y el producto, y se los recomiendo a cualquiera que sufra por el calor excesivo. Es una gran inversión en tu calidad de vida.",
       "publishedAt": "2024-12-28",
       "rating": 5,
-      "sourceUrl": "https://www.google.com/maps/place/POLARIZADOS+HIGHTECH+-+Residencial+%2F+Automotriz,+Tomas+Mann+5348,+Jardines+Vallarta,+45027+Zapopan,+Jal./data=!4m2!3m1!1s0x8428af873886e857:0x7dc7c014441b7791"
+      "sourceUrl": "https://www.google.com/maps/place/POLARIZADOS+HIGHTECH+-+Residencial+%2F+Automotriz,+Tomas+Mann+5348,+Jardines+Vallarta,+45027+Zapopan,+Jal./data=!4m2!3m1!1s0x8428af873886e857:0x7dc7c014441b7791",
+      "translatedFrom": "en"
     },
     {
       "author": "Christian Chávez",
       "quote": "Han pasado algunas semanas desde que el equipo de Hightech Polarizados realizó la instalación de la película protectora en las ventanas de nuestra oficina y debo decir que estamos muy contentos con los resultados. Sin duda, ha sido la mejor opción, ya que ahora el sol no se siente como antes, además ayudó a disminuir la temperatura de la habitación.\n\nUna felicitación al equipo tan profesional. Sobre todo porque al realizar la instalación, una de las ventanas no había quedado bien y decidieron repetir el proceso sin dudar.\n\nGran servicio. Muy recomendado.",
-      "sourceUrl": "https://www.google.com/maps/place/POLARIZADOS+HIGHTECH+-+Residencial+%2F+Automotriz,+Tomas+Mann+5348,+Jardines+Vallarta,+45027+Zapopan,+Jal./data=!4m2!3m1!1s0x8428af873886e857:0x7dc7c014441b7791"
+      "sourceUrl": "https://www.google.com/maps/place/POLARIZADOS+HIGHTECH+-+Residencial+%2F+Automotriz,+Tomas+Mann+5348,+Jardines+Vallarta,+45027+Zapopan,+Jal./data=!4m2!3m1!1s0x8428af873886e857:0x7dc7c014441b7791",
+      "rating": 5
     },
     {
       "author": "Miguel Tiongson",
       "quote": "Excelente asesoría, atención y servicio. Muy buena calidad de trabajo. Fueron muy flexibles y me ofrecieron varias opciones en cuanto a la instalación de polarizado. Altamente recomendado.",
-      "sourceUrl": "https://www.google.com/maps/place/POLARIZADOS+HIGHTECH+-+Residencial+%2F+Automotriz,+Tomas+Mann+5348,+Jardines+Vallarta,+45027+Zapopan,+Jal./data=!4m2!3m1!1s0x8428af873886e857:0x7dc7c014441b7791"
+      "sourceUrl": "https://www.google.com/maps/place/POLARIZADOS+HIGHTECH+-+Residencial+%2F+Automotriz,+Tomas+Mann+5348,+Jardines+Vallarta,+45027+Zapopan,+Jal./data=!4m2!3m1!1s0x8428af873886e857:0x7dc7c014441b7791",
+      "rating": 5
     },
     {
       "author": "Marivi AC",

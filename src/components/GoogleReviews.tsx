@@ -9,7 +9,7 @@ const profileUrl = truth.contact.social.googleMaps;
 
 function Stars({ rating }: { rating: number }) {
   return (
-    <span className="google-review-stars" role="img" aria-label={`${rating} de 5`}>
+    <span className="google-review-stars" role="img" aria-label={`${rating} de 5 estrellas`}>
       {Array.from({ length: 5 }, (_, index) => (
         <svg key={index} viewBox="0 0 20 20" aria-hidden="true" className={index < rating ? "is-on" : undefined}>
           <path d="M10 1.7 12.35 6.9l5.65.5-4.28 3.72 1.32 5.48L10 13.9l-5.04 2.7 1.32-5.48L2 7.4l5.65-.5L10 1.7Z" />
@@ -72,6 +72,7 @@ function ReviewCard({ review }: { review: GoogleReview }) {
         {typeof review.rating === "number" ? <Stars rating={review.rating} /> : null}
       </header>
       <ReviewQuote quote={review.quote} />
+      {review.translatedFrom ? <p className="google-review-translated">Traducida del inglés</p> : null}
       <footer>
         <span>Reseña de Google</span>
         <a href={review.sourceUrl} target="_blank" rel="noopener noreferrer">Ver en Google</a>
@@ -88,7 +89,7 @@ export function GoogleReviews() {
         <div className="section-heading section-heading-split">
           <div>
             <p className="eyebrow">Opiniones en Google</p>
-            <h2 id="resenas-google-titulo">{googleProfile.rating} de 5 en Google, con {googleProfile.count} reseñas.</h2>
+            <h2 id="resenas-google-titulo"><span className="google-review-headline-stars" role="img" aria-label="5 de 5 estrellas">★★★★★</span> +{googleProfile.count} reseñas en Google</h2>
           </div>
           <p>Opiniones públicas del perfil de Google. Aquí van cinco, con el enlace para leerlas en su sitio.</p>
         </div>

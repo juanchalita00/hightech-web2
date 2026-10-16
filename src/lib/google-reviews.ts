@@ -6,6 +6,7 @@ export type GoogleReview = {
   publishedAt?: string;
   sourceUrl: string;
   rating?: number;
+  translatedFrom?: string;
 };
 
 function isReview(value: unknown): value is GoogleReview {

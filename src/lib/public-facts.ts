@@ -18,14 +18,16 @@ export const airportName = "Aeropuerto Internacional de Guadalajara";
 export const ctaQuote = "Cotizar";
 export const ctaWhatsapp = "WhatsApp";
 
-/** Calificación del perfil de Google al 15 de octubre de 2026. No es un promedio calculado en el sitio. */
-export const googleProfile = { rating: 4.9, count: 71 };
+/** Reseñas del perfil de Google al 15 de octubre de 2026. Se publica "+70 reseñas", sin promedio. */
+export const googleProfile = { count: 70 };
 
 export const prices = {
   autoFrom: 3500,
   autoIncludes: "laterales y medallón, auto compacto",
   architectureFrom: 600,
+  nanoFrom: 800,
   projectMinimum: 1500,
+  windshieldFrom: 1500,
 };
 
 export const geo = { latitude: 20.6839, longitude: -103.4262 };

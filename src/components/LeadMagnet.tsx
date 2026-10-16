@@ -3,14 +3,14 @@
 import { track } from "@/lib/analytics";
 import { whatsappUrl } from "@/lib/whatsapp";
 
-const href = whatsappUrl("Hola, quiero el checklist: qué tono es legal en tu auto.");
+const href = whatsappUrl("Hola, quiero el checklist: cómo elegir el tono de tu auto.");
 
 export function LeadMagnet() {
   return (
     <aside className="lead-magnet">
       <div>
-        <strong>Checklist: qué tono es legal en tu auto</strong>
-        <p>Te lo enviamos por WhatsApp. Sirve para ubicar delanteras, traseras y medallón antes de elegir.</p>
+        <strong>Checklist: cómo elegir el tono de tu auto</strong>
+        <p>Te lo enviamos por WhatsApp. Sirve para pensar en delanteras, traseras, medallón y parabrisas antes de elegir.</p>
       </div>
       <a
         className="button button-primary"

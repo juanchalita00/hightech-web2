@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { GuideHero } from "@/components/GuideHero";
 import { ProductCTA } from "@/components/ProductCTA";
-import { SimpleExample } from "@/components/SimpleExample";
+import { HightechTip } from "@/components/HightechTip";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/guias/estres-termico-cristal/" },
@@ -15,7 +15,7 @@ export default function Page() {
       <GuideHero eyebrow="Guía · El vidrio" title="No toda película va en todo cristal." description="Un ventanal, un cancel y un domo no se calientan igual. Por eso preguntamos qué vidrio tienes antes de recomendar." category="El vidrio" ctaHref="/contacto/#cotizar" ctaLabel="Cotizar" />
       <section className="section">
         <div className="container" style={{ display: "grid", gap: "1rem", maxWidth: "46rem" }}>
-          <SimpleExample>Un vaso frío se empaña y, si le echas agua hirviendo de golpe, puede tronar. El cristal de una fachada también sufre cuando una parte está al sol y la sombra le corta la otra. La película se elige para no empeorar ese contraste.</SimpleExample>
+          <HightechTip>Un vaso frío se empaña y, si le echas agua hirviendo de golpe, puede tronar. El cristal de una fachada también sufre cuando una parte está al sol y la sombra le corta la otra. La película se elige para no empeorar ese contraste.</HightechTip>
           <p>Si el vidrio ya tiene una película vieja, un tinte o está en un domo, lo decimos antes de agendar. A veces el paso correcto es no instalar esa opción.</p>
         </div>
       </section>
