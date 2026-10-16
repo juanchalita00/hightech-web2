@@ -1,3 +1,4 @@
+import { prices } from "@/lib/public-facts";
 import { socialSameAs } from "@/lib/social";
 import { truth } from "@/lib/truth";
 
@@ -58,6 +59,22 @@ export function localBusinessSchema() {
     },
     hasMap: truth.contact.mapsUrl,
     priceRange: "$$",
+    makesOffer: [
+      {
+        "@type": "Offer",
+        name: "Polarizado automotriz",
+        description: `Desde, ${prices.autoIncludes}.`,
+        priceCurrency: "MXN",
+        priceSpecification: { "@type": "PriceSpecification", minPrice: prices.autoFrom, priceCurrency: "MXN" },
+      },
+      {
+        "@type": "Offer",
+        name: "Polarizado para casa y negocio",
+        description: "Desde, por metro cuadrado. El proyecto tiene un mínimo.",
+        priceCurrency: "MXN",
+        priceSpecification: { "@type": "PriceSpecification", minPrice: prices.architectureFrom, priceCurrency: "MXN", unitText: "m²" },
+      },
+    ],
     areaServed: [
       { "@type": "City", name: "Zapopan" },
       { "@type": "City", name: "Guadalajara" },

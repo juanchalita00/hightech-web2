@@ -7,6 +7,7 @@ import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { JsonLd } from "@/components/JsonLd";
+import { RouteSchema } from "@/components/RouteSchema";
 import { localBusinessSchema, organizationSchema, websiteSchema } from "@/lib/seo";
 
 const overpass = Overpass({ subsets: ["latin"], variable: "--font-overpass", display: "swap" });
@@ -39,6 +40,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <JsonLd data={organizationSchema()} />
         <JsonLd data={websiteSchema()} />
         <JsonLd data={localBusinessSchema()} />
+        <RouteSchema />
         <a href="#contenido" className="sr-only focus:not-sr-only">Saltar al contenido</a>
         <SiteHeader />
         <main id="contenido">{children}</main>
