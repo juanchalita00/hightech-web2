@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     question: "¿Encendida se ve como un vidrio nuevo?",
-    answer: "En el grado más claro, la ficha indica 91% de transmisión de luz, con un velo ligero. No es un cristal sin película.",
+    answer: "Encendida deja pasar casi toda la luz, con un velo ligero. No es un cristal sin película.",
   },
   {
     question: "¿Apagada oscurece por completo?",
@@ -111,7 +111,7 @@ export default function PdlcPage() {
         <p className="pdlc-oneliner">Con un botón, tu cristal pasa de opaco a transparente.</p>
         <PdlcExamples />
         <div className="hero-actions">
-          <Link className="button button-primary" href={pdlcQuotePath}>Cotizar con visita técnica <Icon name="arrow" size={18} /></Link>
+          <Link className="button button-primary" href={pdlcQuotePath}>Cotizar <Icon name="arrow" size={18} /></Link>
         </div>
       </div>
     </section>
@@ -182,7 +182,7 @@ export default function PdlcPage() {
           <h2>Cotización con visita técnica</h2>
           <p>No publicamos un precio por metro. El alcance depende de los metros, el número de piezas y la conexión eléctrica.</p>
           <p>Hacemos desde piezas pequeñas, incluso una ventana de 1 × 1 m. En proyectos chicos aplica un mínimo de proyecto.</p>
-          <Link className="button button-primary" href={pdlcQuotePath}>Cotizar con visita técnica <Icon name="arrow" size={18} /></Link>
+          <Link className="button button-primary" href={pdlcQuotePath}>Cotizar <Icon name="arrow" size={18} /></Link>
         </div>
       </div>
     </section>
@@ -203,7 +203,7 @@ export default function PdlcPage() {
             <p>En el formulario dejamos escrito que quieres película inteligente PDLC. Si falta una foto o una medida, la pedimos después.</p>
           </div>
           <div className="product-cta-actions">
-            <Link className="button button-primary" href={pdlcQuotePath}>Cotizar con visita técnica <Icon name="arrow" size={18} /></Link>
+            <Link className="button button-primary" href={pdlcQuotePath}>Cotizar <Icon name="arrow" size={18} /></Link>
             <Link className="button button-secondary" href="/guias/privacidad-ventanas-noche/">Privacidad de noche</Link>
           </div>
         </div>

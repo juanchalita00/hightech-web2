@@ -19,7 +19,7 @@ export default function Page() {
           <p>Si el vidrio ya tiene una película vieja, un tinte o está en un domo, lo decimos antes de agendar. A veces el paso correcto es no instalar esa opción.</p>
         </div>
       </section>
-      <ProductCTA title="Una foto del cristal y, si la tienes, la ficha del vidrio." text="Con eso vemos compatibilidad antes de hablar de tono." cta="WhatsApp" context={{ sourcePage: "/guias/estres-termico-cristal/" }} />
+      <ProductCTA title="Una foto del cristal basta para empezar." text="Si tienes el tipo de vidrio, también ayuda. Con eso vemos si la película es compatible antes de hablar de tono." cta="WhatsApp" context={{ sourcePage: "/guias/estres-termico-cristal/" }} />
     </>
   );
 }

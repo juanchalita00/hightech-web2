@@ -23,7 +23,7 @@ export default function GalleryPage() {
       <section className="section section-alt">
         <div className="container">
           <GalleryBrowser items={items} />
-          <p className="gallery-next"><Link className="button button-primary" href="/contacto/#cotizar">Cotizar un proyecto parecido</Link></p>
+          <p className="gallery-next"><Link className="button button-primary" href="/contacto/#cotizar">Cotizar</Link></p>
         </div>
       </section>
     </>

@@ -56,7 +56,7 @@ export default function NanoPage() {
         </div>
         <div className="nano-choice-links">
           <Link href="/peliculas/nanoceramica/ir75/"><strong>IR75</strong><span>Quiero conservar la mayor cantidad de luz</span><Icon name="arrow" size={18}/></Link>
-          <Link href="/peliculas/nanoceramica/ir50/"><strong>IR50</strong><span>Quiero mucha claridad con mayor control solar que IR75 según ficha</span><Icon name="arrow" size={18}/></Link>
+          <Link href="/peliculas/nanoceramica/ir50/"><strong>IR50</strong><span>Quiero mucha claridad, con un tono un poco más marcado que el 75</span><Icon name="arrow" size={18}/></Link>
           <Link href="/peliculas/nanoceramica/ir35/"><strong>IR35</strong><span>Busco un punto medio entre luz, apariencia y deslumbramiento</span><Icon name="arrow" size={18}/></Link>
           <Link href="/peliculas/nanoceramica/ir15/"><strong>IR15</strong><span>Quiero una apariencia más oscura y mayor privacidad visual durante el día</span><Icon name="arrow" size={18}/></Link>
           <Link href="/peliculas/nanoceramica/ir5/"><strong>IR5</strong><span>Quiero la opción más oscura de la gama</span><Icon name="arrow" size={18}/></Link>

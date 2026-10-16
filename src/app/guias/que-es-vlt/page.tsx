@@ -6,7 +6,7 @@ import { SimpleExample } from "@/components/SimpleExample";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/guias/que-es-vlt/" },
-  title: { absolute: "Qué significan 75, 50, 35, 15 y 5 en un polarizado | HIGHTECH" },
+  title: { absolute: "Qué significan 75, 50, 35, 15 y 5 en un polarizado | HIGHTECH Polarizados" },
   description: "El número del tono es la luz que el cristal deja pasar. 75 es claro. 5 es muy oscuro. No mide, por sí solo, el calor.",
 };
 
@@ -23,8 +23,8 @@ export default function Page() {
       />
       <section className="section">
         <div className="container" style={{ display: "grid", gap: "1rem", maxWidth: "46rem" }}>
-          <h2>En las fichas, esa luz se llama transmisión visible.</h2>
-          <p>75 deja pasar cerca de tres cuartas partes de la luz. 50, cerca de la mitad. 35, cerca de un tercio. 15 deja pasar poca. 5, muy poca: en la ficha es todavía más cerrado que el nombre.</p>
+          <h2>El número es la luz que deja pasar.</h2>
+          <p>75 deja pasar cerca de tres cuartas partes de la luz. 50, cerca de la mitad. 35, cerca de un tercio. 15 deja pasar poca. 5, muy poca: en la práctica es todavía más cerrado que el nombre.</p>
           <SimpleExample>
             Una persiana abierta al 75% deja el cuarto iluminado. Al 35%, ya se siente la penumbra. Al 5%, casi la cierras: de noche, algunas personas batallan para ver hacia afuera. Por eso ese aviso vive solo en el 5.
           </SimpleExample>

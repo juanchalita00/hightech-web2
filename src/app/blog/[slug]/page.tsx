@@ -62,7 +62,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         <h1>{post.title}</h1>
         <p className="blog-post-meta"><time dateTime={post.date}>{formatBlogDate(post.date)}</time> · HIGHTECH Polarizados · Zapopan, Jalisco</p>
         {post.slug === "mitos-de-porcentajes-en-el-auto" ? <MythPost body={post.body} /> : <Markdown source={post.body} />}
-        <p className="blog-post-cta"><Link className="button button-primary" href="/contacto/#cotizar">Solicitar cotización</Link></p>
+        <p className="blog-post-cta"><Link className="button button-primary" href="/contacto/#cotizar">Cotizar</Link></p>
         {related.length ? (
           <aside className="blog-related">
             <h2>También puede servirte</h2>

@@ -27,7 +27,7 @@ export function NanoSpectrum() {
         <div className="nano-column-head-main">
           <span>Tono</span>
           <span>Luz que deja pasar</span>
-          <span>Rechazo solar total (TSER)</span>
+          <span>Calor del sol</span>
         </div>
         <span></span>
       </div>
@@ -48,7 +48,7 @@ export function NanoSpectrum() {
               <div className="nano-tone-copy">
                 <strong>{film.id}</strong>
                 <span>Luz {film.vlt}%</span>
-                <small>TSER {film.tser}%</small>
+                <small>Corta el calor del sol</small>
               </div>
               <Icon name="arrow" size={18}/>
             </Link>

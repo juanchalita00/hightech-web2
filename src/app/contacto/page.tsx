@@ -19,7 +19,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ s
   const service = isQuoteService(params.servicio) ? params.servicio : undefined;
   const initialMessage = params.producto === "pdlc" ? "Quiero cotizar película inteligente PDLC." : "";
   return <>
-    <TrustHero eyebrow="Contacto" title="Cuéntanos el espacio o el vehículo. Te ayudamos a aterrizar la cotización." description="Puedes llenar el formulario o escribir por WhatsApp. Atendemos desde Zapopan, Jalisco, la zona metropolitana de Guadalajara y proyectos que se evalúan en otros estados." ctaLabel="Ir al formulario" ctaHref="#cotizar" points={[truth.contact.locationLabel,"Residencial · Comercial · Automotriz","WhatsApp o correo"]}/>
+    <TrustHero eyebrow="Contacto" title="Cuéntanos el espacio o el vehículo. Te ayudamos a aterrizar la cotización." description="Puedes llenar el formulario o escribir por WhatsApp. Atendemos desde Zapopan, Jalisco, la zona metropolitana de Guadalajara y proyectos que se evalúan en otros estados." ctaLabel="Cotizar" ctaHref="#cotizar" points={[truth.contact.locationLabel,"Residencial · Comercial · Automotriz","WhatsApp o correo"]}/>
     <section className="section" id="cotizar">
       <div className="container">
         <div className="section-heading section-heading-split">

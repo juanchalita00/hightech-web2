@@ -46,8 +46,8 @@ const goals: Goal[] = [
     strategy: "Difuminar la visión",
     text: "Si la prioridad es impedir que se distinga claramente lo que hay detrás del cristal, puede ser necesaria una solución que difumine o limite la visión en lugar de depender únicamente de oscuridad o reflectividad.",
     caveat: "La solución correcta depende de cuánto quieres ocultar y de cuánta luz o visibilidad deseas conservar. Si necesitas bloquear la vista por completo, se evalúa una solución opaca distinta.",
-    cta: "Revisar mi caso",
-    href: "/contacto/",
+    cta: "Cotizar",
+    href: "/contacto/#cotizar",
     sceneLabel: "Desde afuera, el cristal se ve translúcido y luminoso: la persona cercana al vidrio es sólo una silueta suave y los objetos se vuelven manchas difusas. Desde adentro, entra luz pero el exterior pierde definición.",
   },
 ];

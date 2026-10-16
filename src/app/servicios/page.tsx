@@ -16,9 +16,9 @@ type IconName = Parameters<typeof Icon>[0]["name"];
 const needs: readonly { icon: IconName; title: string; text: string; cta: string; href: string }[] = [
   { icon: "sun", title: "Entra demasiado calor", text: "Si el sol calienta tus ventanas y el espacio se vuelve incómodo, primero hay que revisar control solar, exposición y cuánta luz quieres conservar.", cta: "Ver cómo reducir el calor", href: "/guias/reducir-calor-ventanas/" },
   { icon: "glare", title: "Hay demasiada luz o reflejos", text: "Para pantallas, áreas de trabajo o espacios con exceso de luz, podemos reducir deslumbramiento sin oscurecer más de lo necesario.", cta: "Revisar opciones de luz", href: "/peliculas/nanoceramica/" },
-  { icon: "privacy", title: "Quiero que se vea menos hacia adentro", text: "La privacidad depende del nivel de luz, el tono y el momento del día. Te ayudamos a elegir cuánto quieres limitar la vista sin prometer un efecto que no existe.", cta: "Encontrar privacidad", href: "/peliculas/privacidad/" },
+  { icon: "privacy", title: "Quiero que se vea menos hacia adentro", text: "La privacidad depende de la luz, el tono y si es de día o de noche. De noche, con las lámparas encendidas, la calle puede verte otra vez.", cta: "Ver privacidad", href: "/peliculas/privacidad/" },
   { icon: "uv", title: "Quiero proteger interiores del sol", text: "Los rayos UV contribuyen al deterioro de superficies, muebles y materiales. La protección UV se evalúa por separado de qué tan oscura se ve una película.", cta: "Entender protección UV", href: "/guias/proteccion-uv-ventanas/" },
-  { icon: "shield", title: "Quiero reforzar el comportamiento del cristal", text: "Una película de seguridad puede ayudar a mantener unidos los fragmentos cuando el cristal se rompe. La solución correcta depende del objetivo y del sistema completo.", cta: "Ver soluciones de seguridad", href: "/peliculas/seguridad/" },
+  { icon: "shield", title: "Quiero que el cristal no se deshaga", text: "Si se rompe, la película de seguridad ayuda a que los pedazos se queden juntos. No es un blindaje.", cta: "Ver seguridad", href: "/peliculas/seguridad/" },
   { icon: "car", title: "Quiero polarizar mi vehículo", text: "Comparamos claridad, apariencia, privacidad y uso nocturno antes de elegir el tono adecuado para los cristales que quieres trabajar.", cta: "Ver línea automotriz", href: "/automotriz/" },
   { icon: "privacy", title: "Quiero privacidad con un botón", text: "La película inteligente PDLC pasa de opaca a transparente en un vidrio interior. No baja el calor: abre o cierra la vista.", cta: "Ver película inteligente", href: "/pelicula-inteligente-pdlc/" },
 ];
@@ -51,8 +51,8 @@ export default function ServicesPage() {
             <h1 className={styles.heroTitle}>Empieza por lo que quieres cambiar en tus cristales.</h1>
             <p className={styles.heroLede}>Calor, exceso de luz, privacidad, protección UV, seguridad o una solución para tu vehículo. No necesitas saber qué película elegir para empezar.</p>
             <div className={styles.heroActions}>
-              <a className="button button-primary" href="#necesidades">Encontrar mi solución <Icon name="arrow" size={18} /></a>
-              <WhatsAppCTA label="Hablar con HIGHTECH" context={{ sourcePage: "/servicios/" }} position="HERO" className={styles.whatsSecondary} />
+              <Link className="button button-primary" href="/contacto/#cotizar">Cotizar</Link>
+              <WhatsAppCTA label="WhatsApp" context={{ sourcePage: "/servicios/" }} position="HERO" className={styles.whatsSecondary} />
             </div>
           </div>
           <div className={styles.heroVisual} aria-hidden="true">

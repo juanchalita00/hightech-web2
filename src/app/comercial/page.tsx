@@ -95,7 +95,7 @@ export default function CommercialPage() {
             <p className="eyebrow">Antes de especificar</p>
             <h2>La película correcta depende también del cristal y del proyecto.</h2>
             <p>Revisamos la información técnica del producto junto con el tipo de vidrio, la exposición y las condiciones de instalación antes de cerrar una recomendación.</p>
-            <Link href="/peliculas/nanoceramica/" className="button button-primary">Consultar nanocerámica</Link>
+            <Link href="/peliculas/nanoceramica/" className="text-link text-link-strong">Ver nanocerámica <Icon name="arrow" size={18}/></Link>
           </div>
           <div className="commercial-spec-checklist">
             <article><span>01</span><div><h3>Objetivo</h3><p>Qué queremos mejorar en esa zona del inmueble.</p></div></article>

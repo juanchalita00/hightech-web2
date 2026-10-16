@@ -30,7 +30,7 @@ const variantIcon = {
   automotive: "car",
 } as const;
 
-export function ApplicationHero({ variant, eyebrow, title, description, ctaLabel, context, secondary, proofItems, imageSrc, imageAlt, imageCaption, imagePosition }: Props) {
+export function ApplicationHero({ variant, eyebrow, title, description, context, secondary, proofItems, imageSrc, imageAlt, imageCaption, imagePosition }: Props) {
   return (
     <section className={`application-hero application-hero-${variant}`}>
       <div className="container application-hero-grid">
@@ -39,7 +39,7 @@ export function ApplicationHero({ variant, eyebrow, title, description, ctaLabel
           <h1>{title}</h1>
           <p className="application-hero-lede">{description}</p>
           <div className="hero-actions">
-            <Link className="button button-primary" href={quotePath(quoteServiceFromContext(context.businessLine))}>{ctaLabel}</Link>
+            <Link className="button button-primary" href={quotePath(quoteServiceFromContext(context.businessLine))}>Cotizar</Link>
             {secondary}
             <WhatsAppCTA label="WhatsApp" context={context} position="HERO" className="button-secondary" />
           </div>
