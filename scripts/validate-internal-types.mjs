@@ -27,12 +27,13 @@ declare module "react" {
 }
 declare module "next" {
   export type Metadata = any;
-  export namespace MetadataRoute { type Robots = any; type Sitemap = any; }
+  export namespace MetadataRoute { type Robots = any; type Sitemap = any; type Manifest = any; }
   export type NextConfig = any;
 }
 declare module "next/link" { const Link: any; export default Link; }
 declare module "next/image" { const Image: any; export default Image; }
 declare module "next/navigation" { export function notFound(): never; export function usePathname(): string; }
+declare module "next/script" { const Script: any; export default Script; }
 `);
 fs.writeFileSync(cfg, JSON.stringify({
   compilerOptions:{

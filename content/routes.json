@@ -37,8 +37,8 @@
   },
   {
     "path": "/garantias/",
-    "status": "BUILD_READY_CONTENT_BLOCKED",
-    "indexable": false,
+    "status": "LAUNCH",
+    "indexable": true,
     "canonical": "/garantias/"
   },
   {
@@ -55,32 +55,32 @@
   },
   {
     "path": "/peliculas/nanoceramica/ir75/",
-    "status": "INDEX_IF_COMPLETE",
-    "indexable": false,
+    "status": "LAUNCH",
+    "indexable": true,
     "canonical": "/peliculas/nanoceramica/ir75/"
   },
   {
     "path": "/peliculas/nanoceramica/ir50/",
-    "status": "INDEX_IF_COMPLETE",
-    "indexable": false,
+    "status": "LAUNCH",
+    "indexable": true,
     "canonical": "/peliculas/nanoceramica/ir50/"
   },
   {
     "path": "/peliculas/nanoceramica/ir35/",
-    "status": "INDEX_IF_COMPLETE",
-    "indexable": false,
+    "status": "LAUNCH",
+    "indexable": true,
     "canonical": "/peliculas/nanoceramica/ir35/"
   },
   {
     "path": "/peliculas/nanoceramica/ir15/",
-    "status": "INDEX_IF_COMPLETE",
-    "indexable": false,
+    "status": "LAUNCH",
+    "indexable": true,
     "canonical": "/peliculas/nanoceramica/ir15/"
   },
   {
     "path": "/peliculas/nanoceramica/ir5/",
-    "status": "INDEX_IF_COMPLETE",
-    "indexable": false,
+    "status": "LAUNCH",
+    "indexable": true,
     "canonical": "/peliculas/nanoceramica/ir5/"
   },
   {
@@ -96,6 +96,12 @@
     "canonical": "/peliculas/seguridad/"
   },
   {
+    "path": "/peliculas/seguridad/industria-bpm/",
+    "status": "LAUNCH",
+    "indexable": true,
+    "canonical": "/peliculas/seguridad/industria-bpm/"
+  },
+  {
     "path": "/peliculas/privacidad/",
     "status": "LAUNCH_WITH_CONTEXT",
     "indexable": true,
@@ -109,8 +115,8 @@
   },
   {
     "path": "/proyectos/",
-    "status": "CONTENT_BLOCKED",
-    "indexable": false,
+    "status": "LAUNCH",
+    "indexable": true,
     "canonical": "/proyectos/"
   },
   {
@@ -157,8 +163,8 @@
   },
   {
     "path": "/guias/polarizado-automotriz-jalisco/",
-    "status": "LEGAL_CONTENT_REVIEW",
-    "indexable": false,
+    "status": "LAUNCH",
+    "indexable": true,
     "canonical": "/guias/polarizado-automotriz-jalisco/"
   },
   {
@@ -170,7 +176,7 @@
   {
     "path": "/blog/",
     "status": "LAUNCH",
-    "indexable": true,
+    "indexable": false,
     "canonical": "/blog/"
   },
   {

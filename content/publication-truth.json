@@ -84,9 +84,9 @@
   ],
   "jaliscoAutomotive": {
     "operationalReference": {
-      "windshield": "70–75%",
-      "frontSide": "35%",
-      "rearSideAndBack": "20%",
+      "windshield": "sin película",
+      "frontSide": "IR75",
+      "rearSideAndBack": "IR35 o más claro",
       "status": "ACTIVE_OPERATIONAL_REFERENCE",
       "sourceType": "AUTHORITY_ORAL_GUIDANCE"
     },

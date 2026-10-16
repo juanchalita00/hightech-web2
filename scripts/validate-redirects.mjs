@@ -18,7 +18,7 @@ for(const item of redirects){
   if(!item.source.startsWith("/")||!item.destination.startsWith("/")) errors.push(`Redirect debe ser path interno: ${item.source}`);
   if(item.source===item.destination) errors.push(`Redirect circular directo: ${item.source}`);
   if(item.code!==301) warnings.push(`${item.source}: code ${item.code}; revisar si debe ser permanente.`);
-  if(item.status==="APPROVED" && item.destination!=="/sitemap.xml" && !routePaths.has(item.destination)) errors.push(`Destino APPROVED no registrado: ${item.source} -> ${item.destination}`);
+  if(item.status==="APPROVED" && !["/sitemap.xml","/rss.xml"].includes(item.destination) && !routePaths.has(item.destination)) errors.push(`Destino APPROVED no registrado: ${item.source} -> ${item.destination}`);
   if(item.status==="PROJECT_ROUTE_GATE" && release.routes.projectsPublic) warnings.push(`${item.source}: projectsPublic=true; revisar si ya puede pasar a APPROVED.`);
 }
 for(const item of redirects.filter(x=>x.status==="APPROVED")){

@@ -1,37 +1,19 @@
 [
-  {
-    "source": "/contact-us/",
-    "expectedStatus": 301,
-    "destination": "/contacto/",
-    "expectedFinalStatus": 200,
-    "expectedCanonical": "/contacto/"
-  },
-  {
-    "source": "/home-residencial/",
-    "expectedStatus": 301,
-    "destination": "/residencial/",
-    "expectedFinalStatus": 200,
-    "expectedCanonical": "/residencial/"
-  },
-  {
-    "source": "/comercial-office/",
-    "expectedStatus": 301,
-    "destination": "/comercial/",
-    "expectedFinalStatus": 200,
-    "expectedCanonical": "/comercial/"
-  },
-  {
-    "source": "/seguridad-proteccion/",
-    "expectedStatus": 301,
-    "destination": "/peliculas/seguridad/",
-    "expectedFinalStatus": 200,
-    "expectedCanonical": "/peliculas/seguridad/"
-  },
-  {
-    "source": "/privacidad-decorativo/",
-    "expectedStatus": 301,
-    "destination": "/peliculas/privacidad/",
-    "expectedFinalStatus": 200,
-    "expectedCanonical": "/peliculas/privacidad/"
-  }
+  { "source": "/contact-us/", "expectedStatus": 301, "destination": "/contacto/", "expectedFinalStatus": 200, "expectedCanonical": "/contacto/" },
+  { "source": "/home-residencial/", "expectedStatus": 301, "destination": "/residencial/", "expectedFinalStatus": 200, "expectedCanonical": "/residencial/" },
+  { "source": "/comercial-office/", "expectedStatus": 301, "destination": "/comercial/", "expectedFinalStatus": 200, "expectedCanonical": "/comercial/" },
+  { "source": "/seguridad-proteccion/", "expectedStatus": 301, "destination": "/peliculas/seguridad/", "expectedFinalStatus": 200, "expectedCanonical": "/peliculas/seguridad/" },
+  { "source": "/privacidad-decorativo/", "expectedStatus": 301, "destination": "/peliculas/privacidad/", "expectedFinalStatus": 200, "expectedCanonical": "/peliculas/privacidad/" },
+  { "source": "/gallery/", "expectedStatus": 301, "destination": "/galeria/", "expectedFinalStatus": 200, "expectedCanonical": "/galeria/" },
+  { "source": "/dano-uv-decoloracion/", "expectedStatus": 301, "destination": "/guias/proteccion-uv-ventanas/", "expectedFinalStatus": 200, "expectedCanonical": "/guias/proteccion-uv-ventanas/" },
+  { "source": "/destello/", "expectedStatus": 301, "destination": "/guias/que-es-vlt/", "expectedFinalStatus": 200, "expectedCanonical": "/guias/que-es-vlt/" },
+  { "source": "/calor-frio-excesivo/", "expectedStatus": 301, "destination": "/guias/reducir-calor-ventanas/", "expectedFinalStatus": 200, "expectedCanonical": "/guias/reducir-calor-ventanas/" },
+  { "source": "/ahorro-energia/", "expectedStatus": 301, "destination": "/guias/reducir-calor-ventanas/", "expectedFinalStatus": 200, "expectedCanonical": "/guias/reducir-calor-ventanas/" },
+  { "source": "/blog/", "expectedStatus": 301, "destination": "/guias/", "expectedFinalStatus": 200, "expectedCanonical": "/guias/" },
+  { "source": "/blog/mitos-de-porcentajes-en-el-auto/", "expectedStatus": 301, "destination": "/guias/polarizado-automotriz-jalisco/", "expectedFinalStatus": 200, "expectedCanonical": "/guias/polarizado-automotriz-jalisco/" },
+  { "source": "/blog/que-es-la-pelicula-inteligente-pdlc/", "expectedStatus": 301, "destination": "/pelicula-inteligente-pdlc/", "expectedFinalStatus": 200, "expectedCanonical": "/pelicula-inteligente-pdlc/" },
+  { "source": "/blog/pelicula-en-casa-confort-y-luz/", "expectedStatus": 301, "destination": "/residencial/", "expectedFinalStatus": 200, "expectedCanonical": "/residencial/" },
+  { "source": "/blog/nanoceramica-vs-pelicula-tradicional/", "expectedStatus": 301, "destination": "/peliculas/nanoceramica/", "expectedFinalStatus": 200, "expectedCanonical": "/peliculas/nanoceramica/" },
+  { "source": "/feed/", "expectedStatus": 301, "destination": "/rss.xml", "expectedFinalStatus": 200, "expectedCanonical": "/rss.xml" },
+  { "source": "/wp-sitemap.xml", "expectedStatus": 301, "destination": "/sitemap.xml", "expectedFinalStatus": 200, "expectedCanonical": "/sitemap.xml" }
 ]
