@@ -183,20 +183,7 @@ export function SignatureGlass() {
         </svg>
       </div>
 
-      {views.map((item) => {
-        const visible = item.id === view.id && ready[item.src] === true;
-        return (
-          <img
-            key={item.src}
-            className={visible ? styles.facadePhotoOn : styles.facadePhoto}
-            src={item.src}
-            alt={item.alt}
-            aria-hidden={item.id === view.id ? undefined : true}
-            onLoad={() => setReady((current) => ({ ...current, [item.src]: true }))}
-            onError={() => setReady((current) => ({ ...current, [item.src]: false }))}
-          />
-        );
-      })}
+      {/* Las fotos por tono aún no existen; se usa el tinte SVG sobre la foto base. */}
 
       <div className={styles.signatureTopline}>
         <span>Vista desde la calle</span>
