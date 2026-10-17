@@ -2,5 +2,17 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "nextjs",
   "buildCommand": "npm run build",
-  "installCommand": "if [ -f package-lock.json ]; then npm ci --no-audit --no-fund; else npm install --no-audit --no-fund; fi"
+  "installCommand": "if [ -f package-lock.json ]; then npm ci --no-audit --no-fund; else npm install --no-audit --no-fund; fi",
+  "redirects": [
+    {
+      "source": "/glass",
+      "destination": "https://wa.me/523322289017?text=Hola%2C%20%C2%BFqu%C3%A9%20tal%3F%20Me%20compartieron%20su%20contacto%20en%20Glass%20Protech%20para%20ver%20si%20me%20pueden%20apoyar%20a%20polarizar%20mi%20veh%C3%ADculo.",
+      "permanent": false
+    },
+    {
+      "source": "/glass/",
+      "destination": "https://wa.me/523322289017?text=Hola%2C%20%C2%BFqu%C3%A9%20tal%3F%20Me%20compartieron%20su%20contacto%20en%20Glass%20Protech%20para%20ver%20si%20me%20pueden%20apoyar%20a%20polarizar%20mi%20veh%C3%ADculo.",
+      "permanent": false
+    }
+  ]
 }

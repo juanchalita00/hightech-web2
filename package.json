@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/sync-afiliados.mjs",
     "build": "npm run validate:all-static && next build",
     "start": "next start",
     "lint": "next lint",
