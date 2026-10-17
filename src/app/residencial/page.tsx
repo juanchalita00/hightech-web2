@@ -7,11 +7,17 @@ import { FAQList } from "@/components/FAQList";
 import { Icon } from "@/components/Icon";
 import { NanoSpectrum } from "@/components/NanoSpectrum";
 import { ProcessRail } from "@/components/ProcessRail";
+import { SarroService } from "@/components/SarroService";
+import { HightechTip } from "@/components/HightechTip";
+import { PriceBlock } from "@/components/PriceBlock";
+import { prices } from "@/lib/public-facts";
+
+const peso = new Intl.NumberFormat("es-MX", { style: "currency", currency: "MXN", maximumFractionDigits: 0 });
 import styles from "./residential-v1.module.css";
 
 export const metadata = { alternates: { canonical: "/residencial/" },
-  title: { absolute: "Polarizado residencial | HIGHTECH Polarizados" },
-  description: "Soluciones para cristales residenciales orientadas a control solar, UV, deslumbramiento y privacidad, seleccionadas según el vidrio y el espacio.",
+  title: { absolute: "Polarizado residencial en Zapopan | HIGHTECH Polarizados" },
+  description: "Polarizado para casa en Zapopan y Guadalajara. Nanocerámica desde $800 por metro cuadrado. Menos calor, con la luz que quieres conservar.",
 };
 
 const decisions = [
@@ -48,15 +54,16 @@ export default function ResidentialPage() {
             <h1>Menos calor.<br/><span className={styles.heroAccent}>Más comodidad en casa.</span></h1>
             <p className="application-hero-lede">Controla el calor y el deslumbramiento con una película elegida para tus ventanas y la luz que quieres conservar.</p>
             <div className="hero-actions">
-              <WhatsAppCTA label="Cotizar mis cristales" context={wa} position="HERO" />
+              <Link className="button button-primary" href="/contacto/?servicio=residencial#cotizar">Cotizar</Link>
               <Link href="/peliculas/" className="button button-secondary">Ver tipos de película <Icon name="arrow" size={18}/></Link>
+              <WhatsAppCTA label="WhatsApp" context={wa} position="HERO" className="button-secondary" />
             </div>
             <p className={styles.heroHelp}>Podemos empezar con fotos y medidas aproximadas.</p>
           </div>
           <figure className={styles.heroScene}>
             <Image
-              src="/images/projects/residential-landmark.webp"
-              alt="Interior residencial con ventanal de piso a techo y vista urbana, proyecto documentado por HIGHTECH."
+              src="/images/galeria/residencial-atardecer-ventanal.webp"
+              alt="Ventanal residencial al atardecer, proyecto documentado por HIGHTECH."
               fill
               preload
               sizes="(max-width: 900px) min(calc(100vw - 2rem), 42rem), 46vw"
@@ -99,6 +106,7 @@ export default function ResidentialPage() {
               <Link href="/peliculas/plata-reflecta/"><span><strong>Plata Reflecta</strong><small>Control solar y privacidad durante el día con una apariencia más reflectiva.</small></span><Icon name="arrow" size={18}/></Link>
               <Link href="/peliculas/privacidad/"><span><strong>Privacidad</strong><small>Para limitar la visibilidad hacia el interior, considerando que el efecto cambia entre día y noche.</small></span><Icon name="arrow" size={18}/></Link>
               <Link href="/peliculas/seguridad/"><span><strong>Seguridad</strong><small>Ayuda a mantener unidos los fragmentos del cristal en caso de rotura.</small></span><Icon name="arrow" size={18}/></Link>
+              <Link href="/pelicula-inteligente-pdlc/"><span><strong>Película inteligente</strong><small>De opaca a transparente en vidrio interior. En baño, solo lejos del agua.</small></span><Icon name="arrow" size={18}/></Link>
             </div>
           </div>
           <div className="compatibility-card">
@@ -117,8 +125,8 @@ export default function ResidentialPage() {
             <p className="eyebrow">Gama nanocerámica</p>
             <h2>Elige cuánta luz quieres conservar.</h2>
             <p className="lede-small">No necesitas oscurecer tu casa para obtener control solar. Hay películas muy claras y otras más oscuras. El tono define principalmente cuánta luz quieres conservar; el desempeño solar se compara por separado.</p>
-            <div className="context-note"><strong>Para comparar:</strong> el <strong>VLT</strong> indica cuánta luz visible atraviesa el cristal y el <strong>TSER</strong> ayuda a comparar cuánta energía solar total se rechaza. En la gama nanocerámica, las fichas indican 99% de rechazo UV y 95% de rechazo IR medido a 950 nm; ese 95% IR no significa 95% menos calor dentro de una habitación.</div>
-            <Link href="/peliculas/nanoceramica/" className="text-link text-link-strong">Entender VLT y TSER <Icon name="arrow" size={17}/></Link>
+            <HightechTip>El calor que sientes en la piel junto a la ventana es el que la película corta, también en el tono más claro. Oscurecer suma privacidad y un poco más de protección total, no el doble de frescura.</HightechTip>
+            <Link href="/guias/que-es-vlt/" className="text-link text-link-strong">Qué significan 75, 50 y 35 <Icon name="arrow" size={17}/></Link>
           </div>
           <NanoSpectrum />
         </div>
@@ -134,8 +142,8 @@ export default function ResidentialPage() {
           <figure className={styles.evidence}>
             <div className={styles.evidenceMedia}>
               <Image
-                src="/images/projects/residential-process.webp"
-                alt="Instalador aplicando película en un ventanal amplio de un proyecto arquitectónico."
+                src="/images/galeria/residencial-instalador-ventanal-ciudad.webp"
+                alt="Instalador aplicando película en un ventanal con vista a la ciudad."
                 fill
                 sizes="(max-width: 900px) calc(100vw - 2rem), 38rem"
                 className={styles.evidencePhoto}
@@ -158,7 +166,20 @@ export default function ResidentialPage() {
         </div>
       </section>
 
-      <ApplicationFinalCTA eyebrow="Tu espacio primero" title="Mándanos fotos o medidas aproximadas y te ayudamos a aterrizar la solución." ctaLabel="Cotizar mis cristales" context={wa} secondaryHref="/peliculas/nanoceramica/" secondaryLabel="Comparar nanocerámica" />
+      <SarroService />
+      <section className="price-block-wrap">
+        <div className="container">
+          <PriceBlock
+            title="Precios desde"
+            rows={[
+              { label: "Nanocerámica", price: `${peso.format(prices.nanoFrom)} por m²` },
+              { label: "Otras películas para casa, incluida plata reflecta", price: `${peso.format(prices.architectureFrom)} por m²` },
+            ]}
+            footnote={`Mínimo de proyecto ${peso.format(prices.projectMinimum)}. Seguridad y película inteligente se cotizan aparte.`}
+          />
+        </div>
+      </section>
+      <ApplicationFinalCTA eyebrow="Tu espacio primero" title="Mándanos fotos o medidas aproximadas." ctaLabel="Cotizar" context={wa} secondaryHref="/peliculas/nanoceramica/" secondaryLabel="Comparar nanocerámica" />
     </div>
   );
 }

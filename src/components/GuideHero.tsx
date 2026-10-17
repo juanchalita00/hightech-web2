@@ -29,7 +29,7 @@ export function GuideHero({ eyebrow, title, description, category, readingTime =
           <span className="guide-ray guide-ray-b"/>
           <span className="guide-ray guide-ray-c"/>
           <span className="guide-glass-plane"/>
-          <small>HIGHTECH / KNOWLEDGE</small>
+          <small>HIGHTECH / Guías</small>
         </div>
       </div>
     </div>

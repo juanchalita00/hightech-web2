@@ -9,7 +9,7 @@ const tmp=fs.mkdtempSync(path.join(os.tmpdir(),'hightech-types-'));
 const stubs=path.join(tmp,'runtime-stubs.d.ts');
 const cfg=path.join(tmp,'tsconfig.json');
 fs.writeFileSync(stubs, `
-declare const process: { env: Record<string, string | undefined> };
+declare const process: { env: Record<string, string | undefined>; cwd(): string };
 declare namespace React {
   type ReactNode = any;
   interface MouseEvent<T = Element> { preventDefault(): void; currentTarget: T; }\n  interface ChangeEvent<T = Element> { currentTarget: T; target: T; }
@@ -23,16 +23,18 @@ declare namespace JSX {
 declare module "react" {
   export type ReactNode = any;
   export type CSSProperties = Record<string, string | number | undefined>;
-  export function useMemo<T>(factory: () => T, deps: readonly unknown[]): T;\n  export function useState<S>(initial: S): [S, (value: S | ((previous: S) => S)) => void];
+  export function useMemo<T>(factory: () => T, deps: readonly unknown[]): T;\n  export function useState<S>(initial: S): [S, (value: S | ((previous: S) => S)) => void];\n  export function useEffect(effect: () => void | (() => void), deps?: readonly unknown[]): void;\n  export function useId(): string;\n  export function useRef<T>(initial: T): { current: T };
 }
 declare module "next" {
   export type Metadata = any;
-  export namespace MetadataRoute { type Robots = any; type Sitemap = any; }
+  export type Viewport = any;
+  export namespace MetadataRoute { type Robots = any; type Sitemap = any; type Manifest = any; }
   export type NextConfig = any;
 }
 declare module "next/link" { const Link: any; export default Link; }
 declare module "next/image" { const Image: any; export default Image; }
-declare module "next/navigation" { export function notFound(): never; }
+declare module "next/navigation" { export function notFound(): never; export function usePathname(): string; }
+declare module "next/script" { const Script: any; export default Script; }
 `);
 fs.writeFileSync(cfg, JSON.stringify({
   compilerOptions:{

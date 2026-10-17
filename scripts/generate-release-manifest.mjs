@@ -34,9 +34,7 @@ const commercialLegalBlockers=pending(categories.commercialLegal);
 
 // Rutas con hard gate (requireReleasedInProduction): 404 en Production mientras su flag sea false.
 const gatedRoutes=[
-  {path:'/garantias/',file:'src/app/garantias/page.tsx',flag:'production.warrantiesApproved'},
   {path:'/legal/terminos-y-condiciones/',file:'src/app/legal/terminos-y-condiciones/page.tsx',flag:'production.termsApproved'},
-  {path:'/legal/aviso-de-privacidad/',file:'src/app/legal/aviso-de-privacidad/page.tsx',flag:'production.privacyApproved'},
   {path:'/proyectos/',file:'src/app/proyectos/page.tsx',flag:'routes.projectsPublic'},
   {path:'/proyectos/[slug]/',file:'src/app/proyectos/[slug]/page.tsx',flag:'routes.projectsPublic'},
 ];

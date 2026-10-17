@@ -1,66 +1,57 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { GoogleReviews } from "@/components/GoogleReviews";
 import { Icon } from "@/components/Icon";
 import { SignatureGlass } from "@/components/SignatureGlass";
-import { NanoToneTable } from "@/components/NanoToneTable";
 import { WhatsAppCTA } from "@/components/WhatsAppCTA";
-import { truth } from "@/lib/truth";
+import { airportName, googleProfile, onSitePolicy } from "@/lib/public-facts";
 import styles from "./home-v09.module.css";
 
 export const metadata: Metadata = {
-  title: { absolute: `Películas para cristales en ${truth.contact.locationLabel.split(",")[0]} | HIGHTECH Polarizados` },
-  description: `Control solar, privacidad y seguridad para cristales de casas, negocios y vehículos en ${truth.contact.locationLabel}. Te ayudamos a elegir según lo que quieres resolver.`,
+  title: { absolute: "Polarizado en Zapopan y Guadalajara | HIGHTECH Polarizados" },
+  description: "Polarizado nanocerámico para casa, negocio y auto en Zapopan. El tono cambia la luz y la privacidad; el calor del sol se corta en todos.",
   alternates: { canonical: "/" },
 };
-
-const problems = [
-  { icon: "sun" as const, title: "Calor", text: "Reducir ganancia solar sin oscurecer más de lo necesario.", href: "/servicios/" },
-  { icon: "uv" as const, title: "UV", text: "Proteger interiores y superficies con una especificación verificable.", href: "/servicios/" },
-  { icon: "glare" as const, title: "Deslumbramiento", text: "Controlar exceso de luz según orientación, VLT y uso del espacio.", href: "/servicios/" },
-  { icon: "privacy" as const, title: "Privacidad", text: "Elegir privacidad entendiendo qué ocurre de día y de noche.", href: "/peliculas/privacidad/" },
-  { icon: "shield" as const, title: "Seguridad", text: "Ayudar a mantener fragmentos unidos con una solución bien especificada.", href: "/peliculas/seguridad/" },
-  { icon: "car" as const, title: "Automotriz", text: "Elegir claridad, tono y desempeño para tu vehículo.", href: "/automotriz/" },
-] as const;
 
 const journeys = [
   {
     icon: "home" as const,
-    label: "Casa / departamento",
+    label: "Casa",
     title: "Residencial",
-    text: "Confort, claridad, privacidad y compatibilidad del cristal sin convertir tu casa en un espacio oscuro.",
+    text: "Menos calor en la sala y en las recámaras, sin cerrar la luz del ventanal.",
     href: "/residencial/",
-    cta: "Ver soluciones residenciales",
+    cta: "Ver polarizado para casa",
   },
   {
     icon: "building" as const,
-    label: "Oficinas / fachadas",
-    title: "Comercial",
-    text: "Proyectos donde importan la imagen del edificio, el acceso, la operación y una especificación consistente.",
+    label: "Oficina o fachada",
+    title: "Negocio",
+    text: "Control solar, privacidad de día y película de seguridad cuando el cristal tiene que aguantar más.",
     href: "/comercial/",
-    cta: "Revisar línea comercial",
+    cta: "Ver polarizado para negocio",
   },
   {
     icon: "car" as const,
-    label: "Instalación en taller",
-    title: "Automotriz",
-    text: "Nanocerámica, tonos y visibilidad con una recomendación según vehículo y alcance de instalación.",
+    label: "Taller con cita",
+    title: "Auto",
+    text: onSitePolicy,
     href: "/automotriz/",
-    cta: "Ver línea automotriz",
+    cta: "Ver polarizado para auto",
   },
 ] as const;
 
-const steps = [
-  ["01", "Entendemos el objetivo", "Calor, UV, privacidad, deslumbramiento, seguridad o apariencia."],
-  ["02", "Revisamos el cristal", "Aplicación, iluminación, medidas y condiciones que pueden cambiar la recomendación."],
-  ["03", "Elegimos la solución", "Tecnología y tono con especificaciones y limitaciones explicadas con claridad."],
-  ["04", "Cotizamos el alcance", "Recibes una propuesta según tu proyecto o vehículo, no una tarifa genérica fuera de contexto."],
+const reasons = [
+  ["01", "El tono no es el calor", "Todos los tonos cortan los rayos UV y el calor que se siente junto al cristal. Oscurecer suma privacidad, no el doble de frescura."],
+  ["02", "Garantía por escrito", "Nanocerámica y automotriz, 10 años. Seguridad, 5 o 10 años según la película."],
+  ["03", "Un solo lugar", "Taller en Jardines Vallarta, Zapopan. Casa y negocio se miden con fotos; el auto, con cita."],
 ] as const;
 
-const proof = [
-  ["01", "Datos de ficha", "La gama nano tiene valores técnicos mapeados y una fuente identificada por tono."],
-  ["02", "Contexto antes que slogans", "95% de rechazo IR a 950 nm no se convierte en “95% menos calor”."],
-  ["03", "Limitaciones visibles", "Privacidad, compatibilidad y legalidad se explican donde realmente afectan la decisión."],
+const steps = [
+  ["01", "Nos dices qué te molesta", "Calor, luz de más, privacidad o un cristal que quieres proteger."],
+  ["02", "Vemos el cristal", "Medidas, orientación y, en auto, qué vidrios se van a trabajar."],
+  ["03", "Elegimos el tono", "Cuánta luz quieres conservar, no un catálogo de siglas."],
+  ["04", "Cotizamos e instalamos", "Precio del trabajo concreto y una fecha."],
 ] as const;
 
 export default function HomePage() {
@@ -70,41 +61,22 @@ export default function HomePage() {
         <div className={styles.shell}>
           <div className={styles.heroGrid}>
             <div className={styles.heroCopy}>
-              <p className={styles.kicker}>Soluciones profesionales para cristales</p>
-              <h1>Confort y protección <span>sin renunciar a la luz.</span></h1>
+              <p className={styles.kicker}>Polarizado en Zapopan</p>
+              <h1>Menos calor, <span>con la luz que elijas.</span></h1>
               <p className={styles.heroDescription}>
-                Para casas, empresas y vehículos. Primero entendemos qué quieres resolver; después recomendamos la película, el tono y la aplicación adecuados.
+                La película corta el calor del sol en todos los tonos. El más oscuro no protege mucho más: cambia cuánta luz entra y cuánta privacidad quieres.
               </p>
-
               <div className={styles.heroActions}>
-                <WhatsAppCTA
-                  label="Cuéntanos qué quieres resolver"
-                  context={{ sourcePage: "/" }}
-                  position="HERO"
-                  className={styles.primaryCta}
-                />
-                <Link className={styles.secondaryCta} href="/peliculas/nanoceramica/">
-                  Comparar nanocerámica <Icon name="arrow" size={18} />
-                </Link>
+                <Link className={styles.primaryCta} href="/contacto/#cotizar">Cotizar</Link>
+                <WhatsAppCTA label="WhatsApp" context={{ sourcePage: "/" }} position="HERO" appearance="plain" className={styles.secondaryCta} />
               </div>
-
-              <div className={styles.heroProof} aria-label="Principios de HIGHTECH">
-                <span><Icon name="check" size={17} /> Datos técnicos con contexto</span>
-                <span><Icon name="check" size={17} /> Cotización según aplicación</span>
+              <div className={styles.heroProof} aria-label="Referencias">
+                <span><Icon name="check" size={17} /> {airportName}</span>
+                <span><Icon name="check" size={17} /> ★★★★★ +{googleProfile.count} reseñas en Google</span>
               </div>
             </div>
-
             <div className={styles.visualWrap}>
               <SignatureGlass />
-            </div>
-          </div>
-
-          <div className={styles.trustLine} aria-label="Qué define la recomendación HIGHTECH">
-            <div className={styles.trustLineInner}>
-              <span><Icon name="glass" size={18} /> Cristal y aplicación</span>
-              <span><Icon name="sun" size={18} /> Control solar</span>
-              <span><Icon name="privacy" size={18} /> Luz y privacidad</span>
-              <span><Icon name="shield" size={18} /> Límites explicados</span>
             </div>
           </div>
         </div>
@@ -114,66 +86,39 @@ export default function HomePage() {
         <div className={styles.shell}>
           <div className={styles.evidenceHead}>
             <div>
-              <p className={styles.eyebrow}>Proyecto documentado</p>
-              <h2 className={styles.evidenceTitle} id="proyecto-documentado">El trabajo real también forma parte de la especificación.</h2>
+              <p className={styles.eyebrow}>Obra instalada</p>
+              <h2 className={styles.evidenceTitle} id="proyecto-documentado">{airportName}.</h2>
             </div>
             <p className={styles.evidenceText}>
-              Esta instalación en el Aeropuerto de Guadalajara muestra una aplicación HIGHTECH en un entorno operativo de mayor escala. Cada proyecto cambia por cristal, acceso, exposición y condiciones de ejecución.
+              Un pasillo de cristal junto a la plataforma, en operación continua. La misma lógica de instalación llega a casa, oficina y auto.
             </p>
           </div>
           <figure className={styles.evidenceFigure}>
             <div className={styles.evidenceMedia}>
               <Image
                 src="/images/projects/airport-authority.webp"
-                alt="Pasillo acristalado junto a la plataforma del Aeropuerto de Guadalajara al atardecer."
+                alt="Pasillo acristalado junto a la plataforma del Aeropuerto Internacional de Guadalajara al atardecer."
                 fill
                 sizes="(max-width: 1248px) calc(100vw - 2rem), 76rem"
                 className={styles.evidencePhoto}
               />
             </div>
-            <figcaption className={styles.evidenceCaption}>Aeropuerto de Guadalajara · Proyecto documentado por HIGHTECH</figcaption>
+            <figcaption className={styles.evidenceCaption}>{airportName} · <Link href="/proyectos/aeropuerto-internacional-de-guadalajara/">Ver el caso</Link></figcaption>
           </figure>
         </div>
       </section>
 
-      <section className={styles.editorialSection}>
-        <div className={styles.shell + " " + styles.problemLayout}>
-          <div>
-            <p className={styles.eyebrow}>Empieza por el problema</p>
-            <h2 className={styles.editorialTitle}>No necesitas saber qué película comprar.</h2>
-            <p className={styles.editorialIntro}>
-              La recomendación cambia según lo que quieras resolver, la cantidad de luz que quieras conservar y las condiciones reales del cristal.
-            </p>
-          </div>
-
-          <div className={styles.problemList}>
-            {problems.map((problem, index) => (
-              <Link className={styles.problemItem} href={problem.href} key={problem.title}>
-                <span className={styles.problemIndex}>0{index + 1}</span>
-                <span className={styles.problemIcon}><Icon name={problem.icon} size={20} /></span>
-                <span className={styles.problemText}>
-                  <h3>{problem.title}</h3>
-                  <p>{problem.text}</p>
-                </span>
-                <Icon className={styles.problemArrow} name="arrow" size={18} />
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+      <GoogleReviews />
 
       <section className={styles.journeySection}>
         <div className={styles.shell}>
           <div className={styles.journeyHeading}>
             <div>
-              <p className={styles.eyebrow}>Tres formas de trabajar con HIGHTECH</p>
-              <h2>Casa, empresa o vehículo. Cada proyecto pide una lógica distinta.</h2>
+              <p className={styles.eyebrow}>Dónde se instala</p>
+              <h2>Casa, negocio o auto.</h2>
             </div>
-            <p>
-              La aplicación define cómo se especifica la solución: una vivienda, una fachada y un vehículo no se deben tratar como si fueran el mismo problema.
-            </p>
+            <p>El cristal no se trata igual en una sala, una fachada y un vehículo. Elige el que es tuyo.</p>
           </div>
-
           <div className={styles.journeyGrid}>
             {journeys.map((journey, index) => (
               <Link className={styles.journeyCard} href={journey.href} key={journey.title}>
@@ -189,40 +134,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className={styles.nanoSection}>
-        <div className={styles.shell + " " + styles.nanoLayout}>
-          <div className={styles.nanoCopy}>
-            <p className={styles.eyebrow}>Nanocerámica HIGHTECH</p>
-            <h2>El tono cambia la luz. La ficha cambia el contexto.</h2>
-            <p>
-              Nuestra gama activa va desde IR75, pensada para conservar mucha claridad, hasta IR5, la opción más oscura. Todos los datos se muestran como especificaciones de ficha, no como promesas universales de temperatura.
-            </p>
-
-            <div className={styles.nanoFacts}>
-              <div className={styles.nanoFact}><strong>99%</strong><span>rechazo UV</span></div>
-              <div className={styles.nanoFact}><strong>95%</strong><span>IR medido a 950 nm</span></div>
-              <div className={styles.nanoFact}><strong>5</strong><span>tonos activos</span></div>
-            </div>
-
-            <Link href="/peliculas/nanoceramica/" className={styles.nanoLink}>
-              Entender la gama completa <Icon name="arrow" size={18} />
-            </Link>
-          </div>
-
-          <NanoToneTable />
-        </div>
-      </section>
-
       <section className={styles.methodSection}>
         <div className={styles.shell}>
           <div className={styles.methodHeading}>
             <div>
-              <p className={styles.eyebrow}>Método HIGHTECH</p>
-              <h2>Primero entendemos. Después recomendamos.</h2>
+              <p className={styles.eyebrow}>Cómo sigue</p>
+              <h2>De la molestia a la instalación.</h2>
             </div>
-            <p>El objetivo es que la solución corresponda al problema real y que sepas qué esperar antes de instalar.</p>
+            <p>No hace falta llegar sabiendo el nombre de la película.</p>
           </div>
-
           <div className={styles.steps}>
             {steps.map(([number, title, text]) => (
               <article className={styles.step} key={number}>
@@ -238,15 +158,11 @@ export default function HomePage() {
       <section className={styles.proofSection}>
         <div className={styles.shell}>
           <div className={styles.proofHeader}>
-            <p className={styles.eyebrow}>Información técnica sin humo</p>
-            <h2>Un porcentaje aislado no cuenta toda la historia.</h2>
-            <p>
-              Por eso distinguimos VLT, rechazo UV, rechazo infrarrojo medido a 950 nm y TSER. También explicamos cuándo la privacidad cambia de noche o cuándo una aplicación requiere revisar compatibilidad.
-            </p>
+            <p className={styles.eyebrow}>Por qué así</p>
+            <h2>Claridad primero. Después, el tono.</h2>
           </div>
-
           <div className={styles.proofGrid}>
-            {proof.map(([number, title, text]) => (
+            {reasons.map(([number, title, text]) => (
               <article className={styles.proofItem} key={number}>
                 <span>{number}</span>
                 <h3>{title}</h3>
@@ -254,27 +170,19 @@ export default function HomePage() {
               </article>
             ))}
           </div>
-
-          <Link className={styles.proofCta} href="/guias/">
-            Explorar guías técnicas <Icon name="arrow" size={18} />
-          </Link>
+          <Link className={styles.proofCta} href="/garantias/">Ver garantías <Icon name="arrow" size={18} /></Link>
         </div>
       </section>
 
       <section className={styles.finalSection}>
         <div className={styles.shell + " " + styles.finalCard}>
           <div>
-            <p className={styles.eyebrow}>¿Qué quieres resolver?</p>
-            <h2>Cuéntanos el espacio o el vehículo. Nosotros te ayudamos a aterrizar la solución.</h2>
+            <p className={styles.eyebrow}>Siguiente paso</p>
+            <h2>Cuéntanos el espacio o el auto.</h2>
           </div>
           <div className={styles.finalActions}>
-            <WhatsAppCTA
-              label="Abrir WhatsApp"
-              context={{ sourcePage: "/" }}
-              position="FINAL_CTA"
-              className={styles.primaryCta}
-            />
-            <Link href="/contacto/" className={styles.secondaryCta}>Ver formas de contacto</Link>
+            <Link href="/contacto/#cotizar" className={styles.primaryCta}>Cotizar</Link>
+            <WhatsAppCTA label="WhatsApp" context={{ sourcePage: "/" }} position="FINAL_CTA" appearance="plain" className={styles.secondaryCta} />
           </div>
         </div>
       </section>

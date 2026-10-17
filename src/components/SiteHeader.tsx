@@ -1,13 +1,14 @@
 import Link from "next/link";
 import { BrandLogo } from "@/components/BrandLogo";
 import { Icon } from "@/components/Icon";
+import { MobileMenu } from "@/components/MobileMenu";
 
 const links = [
-  ["Servicios", "/servicios/"],
-  ["Residencial", "/residencial/"],
-  ["Comercial", "/comercial/"],
-  ["Automotriz", "/automotriz/"],
+  ["Casa", "/residencial/"],
+  ["Negocio", "/comercial/"],
+  ["Auto", "/automotriz/"],
   ["Películas", "/peliculas/"],
+  ["Guías", "/guias/"],
   ["Contacto", "/contacto/"],
 ] as const;
 
@@ -22,16 +23,11 @@ export function SiteHeader() {
         </nav>
 
         <div className="header-actions">
-          <Link className="header-cta" href="/contacto/">
+          <Link className="header-cta" href="/contacto/#cotizar">
             Cotizar <Icon name="arrow" size={17} />
           </Link>
 
-          <details className="mobile-menu">
-            <summary aria-label="Abrir menú"><span></span><span></span><span></span></summary>
-            <nav aria-label="Navegación móvil" className="mobile-nav-panel">
-              {links.map(([label, href]) => <Link key={href} href={href}>{label}<Icon name="arrow" size={17}/></Link>)}
-            </nav>
-          </details>
+          <MobileMenu links={links} />
         </div>
       </div>
     </header>

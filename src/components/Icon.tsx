@@ -10,7 +10,9 @@ type IconName =
   | "arrow"
   | "check"
   | "glass"
-  | "message";
+  | "message"
+  | "drop"
+  | "bolt";
 
 type Props = {
   name: IconName;
@@ -76,5 +78,9 @@ export function Icon({ name, size = 22, className = "" }: Props) {
       return <svg {...common}><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M8 3v18M16 3v18"/></svg>;
     case "message":
       return <svg {...common}><path d="M4 5h16v11H8l-4 4V5Z"/><path d="M8 9h8M8 12h5"/></svg>;
+    case "drop":
+      return <svg {...common}><path d="M12 3.2s5.2 6.1 5.2 9.4a5.2 5.2 0 0 1-10.4 0C6.8 9.3 12 3.2 12 3.2Z"/></svg>;
+    case "bolt":
+      return <svg {...common}><path d="M13 2.8 5.5 13.2h5.2L10.2 21.2 18.5 10h-5.2L13 2.8Z"/></svg>;
   }
 }

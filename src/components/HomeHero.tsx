@@ -3,8 +3,8 @@ import { Icon } from "@/components/Icon";
 import { WhatsAppCTA } from "@/components/WhatsAppCTA";
 
 const specs = [
-  ["99%", "UV", "gama nano"],
-  ["95%", "IR a 950 nm", "según ficha"],
+  ["Hasta 99%", "de los rayos UV", "gama nano"],
+  ["Hasta 95%", "del infrarrojo a 950 nm", "según ficha"],
   ["59–96%", "TSER", "según tono"],
 ] as const;
 

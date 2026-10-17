@@ -1,6 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Icon } from "@/components/Icon";
 import { WhatsAppCTA } from "@/components/WhatsAppCTA";
+import { quotePath, quoteServiceFromContext } from "@/lib/quote";
 import type { WhatsAppContext } from "@/lib/whatsapp";
 
 type Variant = "residential" | "commercial" | "automotive";
@@ -28,7 +30,7 @@ const variantIcon = {
   automotive: "car",
 } as const;
 
-export function ApplicationHero({ variant, eyebrow, title, description, ctaLabel, context, secondary, proofItems, imageSrc, imageAlt, imageCaption, imagePosition }: Props) {
+export function ApplicationHero({ variant, eyebrow, title, description, context, secondary, proofItems, imageSrc, imageAlt, imageCaption, imagePosition }: Props) {
   return (
     <section className={`application-hero application-hero-${variant}`}>
       <div className="container application-hero-grid">
@@ -37,8 +39,9 @@ export function ApplicationHero({ variant, eyebrow, title, description, ctaLabel
           <h1>{title}</h1>
           <p className="application-hero-lede">{description}</p>
           <div className="hero-actions">
-            <WhatsAppCTA label={ctaLabel} context={context} position="HERO" />
+            <Link className="button button-primary" href={quotePath(quoteServiceFromContext(context.businessLine))}>Cotizar</Link>
             {secondary}
+            <WhatsAppCTA label="WhatsApp" context={context} position="HERO" className="button-secondary" />
           </div>
           <div className="application-proof-list" aria-label="Puntos clave">
             {proofItems.map((item) => <span key={item}><Icon name="check" size={16}/>{item}</span>)}
@@ -62,7 +65,7 @@ export function ApplicationHero({ variant, eyebrow, title, description, ctaLabel
         <div className={`application-visual application-visual-${variant}`} aria-hidden="true">
           <div className="application-visual-badge">
             <Icon name={variantIcon[variant]} size={18}/>
-            <span>{variant === "residential" ? "Arquitectura" : variant === "commercial" ? "Proyecto" : "Taller"}</span>
+            <span>{variant === "residential" ? "Arquitectura" : variant === "commercial" ? "Proyecto" : "Automotriz"}</span>
           </div>
           {variant === "residential" && (
             <div className="residential-window">
@@ -87,7 +90,7 @@ export function ApplicationHero({ variant, eyebrow, title, description, ctaLabel
           )}
           <div className="application-visual-caption">
             <strong>{variant === "residential" ? "Luz + confort" : variant === "commercial" ? "Especificación + operación" : "Claridad + tono"}</strong>
-            <span>{variant === "residential" ? "La recomendación cambia por vidrio, orientación y privacidad." : variant === "commercial" ? "El alcance cambia por fachada, acceso y uso del espacio." : "Elige por VLT, uso nocturno, privacidad y desempeño."}</span>
+            <span>{variant === "residential" ? "La recomendación cambia por vidrio, orientación y privacidad." : variant === "commercial" ? "El alcance cambia por fachada, acceso y uso del espacio." : "Más claro para la noche, más oscuro atrás si quieres privacidad."}</span>
           </div>
         </div>
         )}

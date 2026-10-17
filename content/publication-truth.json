@@ -4,8 +4,7 @@
     "cutoff": "2026-09-30"
   },
   "brand": {
-    "name": "HIGHTECH Polarizados",
-    "director": "Fernando Chalita"
+    "name": "HIGHTECH Polarizados"
   },
   "contact": {
     "phoneDisplay": "33 2228 9017",
@@ -20,7 +19,14 @@
       "addressCountry": "MX",
       "countryName": "México"
     },
-    "mapsUrl": "https://maps.app.goo.gl/ZJzR3oAa6FBpijHy5?g_st=ac",
+    "mapsUrl": "https://www.google.com/maps/place/POLARIZADOS+HIGHTECH+-+Residencial+%2F+Automotriz,+Tomas+Mann+5348,+Jardines+Vallarta,+45027+Zapopan,+Jal./data=!4m2!3m1!1s0x8428af873886e857:0x7dc7c014441b7791",
+    "social": {
+      "instagram": "https://www.instagram.com/hightech_polarizados/",
+      "tiktok": "https://www.tiktok.com/@hightech_polarizados",
+      "linkedin": "https://www.linkedin.com/company/hightech-polarizados/",
+      "facebook": "https://www.facebook.com/hightechpolarizados",
+      "googleMaps": "https://www.google.com/maps/place/POLARIZADOS+HIGHTECH+-+Residencial+%2F+Automotriz,+Tomas+Mann+5348,+Jardines+Vallarta,+45027+Zapopan,+Jal./data=!4m2!3m1!1s0x8428af873886e857:0x7dc7c014441b7791"
+    },
     "locationLabel": "Zapopan, Jalisco",
     "napStatus": "APPROVED"
   },
@@ -78,9 +84,9 @@
   ],
   "jaliscoAutomotive": {
     "operationalReference": {
-      "windshield": "70–75%",
-      "frontSide": "35%",
-      "rearSideAndBack": "20%",
+      "windshield": "sin película",
+      "frontSide": "IR75",
+      "rearSideAndBack": "IR35 o más claro",
       "status": "ACTIVE_OPERATIONAL_REFERENCE",
       "sourceType": "AUTHORITY_ORAL_GUIDANCE"
     },
@@ -103,7 +109,7 @@
   },
   "servicePolicy": {
     "automotive": {
-      "installationMode": "WORKSHOP_ONLY",
+      "installationMode": "WORKSHOP_OR_REVIEWED_ON_SITE",
       "status": "APPROVED"
     },
     "quoteIntake": {

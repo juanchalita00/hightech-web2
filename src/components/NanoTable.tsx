@@ -19,7 +19,7 @@ export function NanoTable() {
           ))}
         </tbody>
       </table>
-      <p className="fine-print">Los valores son especificaciones de ficha. 95% a 950 nm no significa 95% menos calor interior.</p>
+      <p className="fine-print">Los valores son especificaciones de ficha. Bloquea hasta 95% del infrarrojo a 950 nm; eso no significa 95% menos calor interior.</p>
     </div>
   );
 }

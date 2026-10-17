@@ -18,13 +18,13 @@
     "smokeTestPassed": false
   },
   "routes": {
-    "projectsPublic": false,
+    "projectsPublic": true,
     "reviewsPublic": false,
-    "tonePagesIndexable": false,
+    "tonePagesIndexable": true,
     "reflectiveStrongClaims": false,
     "securityStrongClaims": false,
-    "jaliscoGuideIndexable": false,
-    "warrantyPageIndexable": false
+    "jaliscoGuideIndexable": true,
+    "warrantyPageIndexable": true
   },
   "infrastructure": {
     "canonicalPolicyReady": true,

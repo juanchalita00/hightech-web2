@@ -1,0 +1,356 @@
+{
+  "instructions": "Solo fotos reales de trabajos de HIGHTECH. Nada generado, de stock ni del fabricante. Guarda el archivo en public/images/ y añade un objeto en items. category solo puede ser residencial, comercial o automotriz. Deja items vacío en una categoría y la página muestra el estado vacío de ese filtro.",
+  "items": [
+    {
+      "id": "residencial-ventanal",
+      "src": "/images/projects/residential-landmark.webp",
+      "alt": "Interior de una casa con ventanal de piso a techo y vista urbana, en un proyecto residencial de HIGHTECH.",
+      "title": "Ventanal residencial",
+      "caption": "Proyecto residencial documentado por HIGHTECH.",
+      "category": "residencial",
+      "location": "Zona metropolitana de Guadalajara"
+    },
+    {
+      "id": "residencial-instalacion",
+      "src": "/images/projects/residential-process.webp",
+      "alt": "Instalador aplicando película sobre un ventanal amplio en un proyecto arquitectónico.",
+      "title": "Aplicación en ventanal",
+      "caption": "Instalación HIGHTECH en un proyecto arquitectónico.",
+      "category": "residencial",
+      "location": "Zona metropolitana de Guadalajara"
+    },
+    {
+      "id": "comercial-oficina",
+      "src": "/images/projects/commercial-office.webp",
+      "alt": "Oficina con divisiones de cristal y ventanales en un proyecto comercial documentado por HIGHTECH.",
+      "title": "Oficina con cristal",
+      "caption": "Proyecto comercial documentado por HIGHTECH.",
+      "category": "comercial",
+      "location": "Zona metropolitana de Guadalajara"
+    },
+    {
+      "id": "comercial-fachada",
+      "src": "/images/projects/commercial-facade.webp",
+      "alt": "Fachada de un edificio con cristal de apariencia reflejante.",
+      "title": "Fachada de cristal",
+      "caption": "Fachada con cristal reflejante.",
+      "category": "comercial",
+      "location": "Zona metropolitana de Guadalajara"
+    },
+    {
+      "id": "comercial-aeropuerto",
+      "src": "/images/projects/airport-authority.webp",
+      "alt": "Pasillo acristalado junto a la plataforma del Aeropuerto Internacional de Guadalajara al atardecer.",
+      "title": "Aeropuerto Internacional de Guadalajara",
+      "caption": "Proyecto documentado por HIGHTECH en el Aeropuerto Internacional de Guadalajara.",
+      "category": "comercial",
+      "location": "Guadalajara, Jalisco"
+    },
+    {
+      "id": "automotriz-sedan-rojo",
+      "src": "/images/fotos/auto-sedan-rojo-lateral-2-1600.webp",
+      "alt": "Sedán rojo con polarizado en laterales y medallón, vista lateral.",
+      "title": "Sedán rojo",
+      "caption": "Polarizado en laterales y medallón.",
+      "category": "automotriz",
+      "location": "Zona metropolitana de Guadalajara"
+    },
+    {
+      "id": "automotriz-suv-azul",
+      "src": "/images/fotos/auto-suv-azul-lateral-1-1600.webp",
+      "alt": "SUV azul con polarizado en ventanas laterales.",
+      "title": "SUV azul",
+      "caption": "Polarizado en laterales.",
+      "category": "automotriz",
+      "location": "Zona metropolitana de Guadalajara"
+    },
+    {
+      "id": "automotriz-suv-negra-taller",
+      "src": "/images/fotos/auto-suv-negra-taller-1600.webp",
+      "alt": "Camioneta negra en el taller de HIGHTECH durante la instalación de polarizado.",
+      "title": "Instalación en taller",
+      "caption": "Camioneta durante la instalación en el taller de HIGHTECH.",
+      "category": "automotriz",
+      "location": "Zapopan, Jalisco"
+    },
+    {
+      "id": "auto-sedan-rojo-lateral-1",
+      "src": "/images/galeria/auto-sedan-rojo-lateral-1.webp",
+      "alt": "Sedán rojo con película aplicada en los cristales laterales, trabajo documentado por HIGHTECH.",
+      "title": "Sedán rojo, vista lateral",
+      "caption": "Sedán rojo con película aplicada en los cristales laterales.",
+      "category": "automotriz",
+      "location": "Zona metropolitana de Guadalajara"
+    },
+    {
+      "id": "auto-suv-azul-lateral-2",
+      "src": "/images/galeria/auto-suv-azul-lateral-2.webp",
+      "alt": "Segunda vista lateral de la SUV azul con película en los cristales, trabajo documentado por HIGHTECH.",
+      "title": "SUV azul, segunda vista lateral",
+      "caption": "Segunda vista lateral de la SUV azul con película en los cristales.",
+      "category": "automotriz",
+      "location": "Zona metropolitana de Guadalajara"
+    },
+    {
+      "id": "comercial-7eleven-obra",
+      "src": "/images/galeria/comercial-7eleven-obra.webp",
+      "alt": "Cristales de una tienda de conveniencia durante los trabajos, trabajo documentado por HIGHTECH.",
+      "title": "Tienda de conveniencia en obra",
+      "caption": "Cristales de una tienda de conveniencia durante los trabajos.",
+      "category": "comercial",
+      "location": "Zona metropolitana de Guadalajara"
+    },
+    {
+      "id": "comercial-aeropuerto-pasarela-1",
+      "src": "/images/galeria/comercial-aeropuerto-pasarela-1.webp",
+      "alt": "Pasarela acristalada del aeropuerto, trabajo documentado por HIGHTECH.",
+      "title": "Pasarela del aeropuerto",
+      "caption": "Pasarela acristalada del aeropuerto.",
+      "category": "comercial",
+      "location": "Aeropuerto Internacional de Guadalajara"
+    },
+    {
+      "id": "comercial-aeropuerto-pasarela-2",
+      "src": "/images/galeria/comercial-aeropuerto-pasarela-2.webp",
+      "alt": "Segunda vista de la pasarela acristalada del aeropuerto, trabajo documentado por HIGHTECH.",
+      "title": "Pasarela del aeropuerto, segunda vista",
+      "caption": "Segunda vista de la pasarela acristalada del aeropuerto.",
+      "category": "comercial",
+      "location": "Aeropuerto Internacional de Guadalajara"
+    },
+    {
+      "id": "comercial-aeropuerto-pasarela-interior",
+      "src": "/images/galeria/comercial-aeropuerto-pasarela-interior.webp",
+      "alt": "Interior de la pasarela acristalada del aeropuerto, trabajo documentado por HIGHTECH.",
+      "title": "Interior de la pasarela",
+      "caption": "Interior de la pasarela acristalada del aeropuerto.",
+      "category": "comercial",
+      "location": "Aeropuerto Internacional de Guadalajara"
+    },
+    {
+      "id": "comercial-aeropuerto-pasarela-plataforma",
+      "src": "/images/galeria/comercial-aeropuerto-pasarela-plataforma.webp",
+      "alt": "Pasarela acristalada con vista a la plataforma del aeropuerto, trabajo documentado por HIGHTECH.",
+      "title": "Pasarela frente a la plataforma",
+      "caption": "Pasarela acristalada con vista a la plataforma del aeropuerto.",
+      "category": "comercial",
+      "location": "Aeropuerto Internacional de Guadalajara"
+    },
+    {
+      "id": "comercial-terraza-fachada",
+      "src": "/images/galeria/comercial-terraza-fachada.webp",
+      "alt": "Fachada acristalada con terraza en un inmueble comercial, trabajo documentado por HIGHTECH.",
+      "title": "Fachada con terraza",
+      "caption": "Fachada acristalada con terraza en un inmueble comercial.",
+      "category": "comercial",
+      "location": "Zona metropolitana de Guadalajara"
+    },
+    {
+      "id": "comercial-tesla-instalacion",
+      "src": "/images/galeria/comercial-tesla-instalacion.webp",
+      "alt": "Instalación de película en los cristales de un showroom automotriz, trabajo documentado por HIGHTECH.",
+      "title": "Instalación en showroom",
+      "caption": "Instalación de película en los cristales de un showroom automotriz.",
+      "category": "comercial",
+      "location": "Zona metropolitana de Guadalajara"
+    },
+    {
+      "id": "comercial-tesla-ventanal-terminado",
+      "src": "/images/galeria/comercial-tesla-ventanal-terminado.webp",
+      "alt": "Ventanal de un showroom automotriz con la película ya instalada, trabajo documentado por HIGHTECH.",
+      "title": "Ventanal de showroom terminado",
+      "caption": "Ventanal de un showroom automotriz con la película ya instalada.",
+      "category": "comercial",
+      "location": "Zona metropolitana de Guadalajara"
+    },
+    {
+      "id": "comercial-ventanal-panoramico",
+      "src": "/images/galeria/comercial-ventanal-panoramico.webp",
+      "alt": "Ventanal panorámico en un espacio comercial, trabajo documentado por HIGHTECH.",
+      "title": "Ventanal panorámico",
+      "caption": "Ventanal panorámico en un espacio comercial.",
+      "category": "comercial",
+      "location": "Zona metropolitana de Guadalajara"
+    },
+    {
+      "id": "residencial-aplicacion-pelicula",
+      "src": "/images/galeria/residencial-aplicacion-pelicula.webp",
+      "alt": "Aplicación de película sobre un cristal residencial, trabajo documentado por HIGHTECH.",
+      "title": "Aplicación de película",
+      "caption": "Aplicación de película sobre un cristal residencial.",
+      "category": "residencial",
+      "location": "Zona metropolitana de Guadalajara"
+    },
+    {
+      "id": "residencial-atardecer-ventanal",
+      "src": "/images/galeria/residencial-atardecer-ventanal.webp",
+      "alt": "Ventanal residencial al atardecer, trabajo documentado por HIGHTECH.",
+      "title": "Ventanal al atardecer",
+      "caption": "Ventanal residencial al atardecer.",
+      "category": "residencial",
+      "location": "Zona metropolitana de Guadalajara"
+    },
+    {
+      "id": "residencial-bano-esmerilado",
+      "src": "/images/galeria/residencial-bano-esmerilado.webp",
+      "alt": "Cristal con acabado esmerilado en un baño residencial, trabajo documentado por HIGHTECH.",
+      "title": "Baño con cristal esmerilado",
+      "caption": "Cristal con acabado esmerilado en un baño residencial.",
+      "category": "residencial",
+      "location": "Zona metropolitana de Guadalajara"
+    },
+    {
+      "id": "residencial-cancel-jardin",
+      "src": "/images/galeria/residencial-cancel-jardin.webp",
+      "alt": "Cancel de cristal con vista al jardín, trabajo documentado por HIGHTECH.",
+      "title": "Cancel hacia el jardín",
+      "caption": "Cancel de cristal con vista al jardín.",
+      "category": "residencial",
+      "location": "Zona metropolitana de Guadalajara"
+    },
+    {
+      "id": "residencial-cancel-terraza",
+      "src": "/images/galeria/residencial-cancel-terraza.webp",
+      "alt": "Cancel de cristal en una terraza residencial, trabajo documentado por HIGHTECH.",
+      "title": "Cancel de terraza",
+      "caption": "Cancel de cristal en una terraza residencial.",
+      "category": "residencial",
+      "location": "Zona metropolitana de Guadalajara"
+    },
+    {
+      "id": "residencial-depa-instalacion",
+      "src": "/images/galeria/residencial-depa-instalacion.webp",
+      "alt": "Instalación de película en las ventanas de un departamento, trabajo documentado por HIGHTECH.",
+      "title": "Instalación en departamento",
+      "caption": "Instalación de película en las ventanas de un departamento.",
+      "category": "residencial",
+      "location": "Zona metropolitana de Guadalajara"
+    },
+    {
+      "id": "residencial-fachada-casa",
+      "src": "/images/galeria/residencial-fachada-casa.webp",
+      "alt": "Fachada de una casa con ventanales, trabajo documentado por HIGHTECH.",
+      "title": "Fachada de casa",
+      "caption": "Fachada de una casa con ventanales.",
+      "category": "residencial",
+      "location": "Zona metropolitana de Guadalajara"
+    },
+    {
+      "id": "residencial-instalacion-1",
+      "src": "/images/galeria/residencial-instalacion-1.webp",
+      "alt": "Instalación de película en un cristal residencial, trabajo documentado por HIGHTECH.",
+      "title": "Instalación residencial",
+      "caption": "Instalación de película en un cristal residencial.",
+      "category": "residencial",
+      "location": "Zona metropolitana de Guadalajara"
+    },
+    {
+      "id": "residencial-instalacion-2",
+      "src": "/images/galeria/residencial-instalacion-2.webp",
+      "alt": "Segunda vista de una instalación de película residencial, trabajo documentado por HIGHTECH.",
+      "title": "Instalación residencial, segunda vista",
+      "caption": "Segunda vista de una instalación de película residencial.",
+      "category": "residencial",
+      "location": "Zona metropolitana de Guadalajara"
+    },
+    {
+      "id": "residencial-instalacion-escalera",
+      "src": "/images/galeria/residencial-instalacion-escalera.webp",
+      "alt": "Instalación de película en un cristal de gran altura, trabajo documentado por HIGHTECH.",
+      "title": "Instalación con escalera",
+      "caption": "Instalación de película en un cristal de gran altura.",
+      "category": "residencial",
+      "location": "Zona metropolitana de Guadalajara"
+    },
+    {
+      "id": "residencial-instalacion-vertical",
+      "src": "/images/galeria/residencial-instalacion-vertical.webp",
+      "alt": "Instalación de película sobre un cristal en vertical, trabajo documentado por HIGHTECH.",
+      "title": "Instalación vertical",
+      "caption": "Instalación de película sobre un cristal en vertical.",
+      "category": "residencial",
+      "location": "Zona metropolitana de Guadalajara"
+    },
+    {
+      "id": "residencial-instalador-torre",
+      "src": "/images/galeria/residencial-instalador-torre.webp",
+      "alt": "Instalador aplicando película en una torre residencial, trabajo documentado por HIGHTECH.",
+      "title": "Instalador en torre",
+      "caption": "Instalador aplicando película en una torre residencial.",
+      "category": "residencial",
+      "location": "Zona metropolitana de Guadalajara"
+    },
+    {
+      "id": "residencial-instalador-ventanal-ciudad",
+      "src": "/images/galeria/residencial-instalador-ventanal-ciudad.webp",
+      "alt": "Instalador aplicando película en un ventanal con vista a la ciudad, trabajo documentado por HIGHTECH.",
+      "title": "Instalador en ventanal",
+      "caption": "Instalador aplicando película en un ventanal con vista a la ciudad.",
+      "category": "residencial",
+      "location": "Zona metropolitana de Guadalajara"
+    },
+    {
+      "id": "residencial-ventanal-vista",
+      "src": "/images/galeria/residencial-ventanal-vista.webp",
+      "alt": "Ventanal residencial con vista al exterior, trabajo documentado por HIGHTECH.",
+      "title": "Ventanal con vista",
+      "caption": "Ventanal residencial con vista al exterior.",
+      "category": "residencial",
+      "location": "Zona metropolitana de Guadalajara"
+    },
+    {
+      "id": "automotriz-suv-taller-puerta-abierta",
+      "src": "/images/galeria/automotriz-suv-taller-puerta-abierta.webp",
+      "alt": "SUV negra con la puerta abierta durante la instalación de polarizado en el taller de HIGHTECH.",
+      "title": "Instalación en taller",
+      "caption": "Polarizado automotriz en proceso dentro del taller.",
+      "category": "automotriz",
+      "location": "Zona metropolitana de Guadalajara"
+    },
+    {
+      "id": "automotriz-interior-polarizado",
+      "src": "/images/galeria/automotriz-interior-polarizado.webp",
+      "alt": "Interior de un auto con asientos blancos y cristales polarizados vistos desde dentro.",
+      "title": "Interior con polarizado",
+      "caption": "Vista interior de cristales polarizados por HIGHTECH.",
+      "category": "automotriz",
+      "location": "Zona metropolitana de Guadalajara"
+    },
+    {
+      "id": "comercial-oficina-pelicula-decorativa",
+      "src": "/images/galeria/comercial-oficina-pelicula-decorativa.webp",
+      "alt": "Pasillo de oficina con divisiones de cristal y película decorativa con franjas esmeriladas.",
+      "title": "Película decorativa en oficina",
+      "caption": "Divisiones de cristal con película decorativa esmerilada.",
+      "category": "comercial",
+      "location": "Zona metropolitana de Guadalajara"
+    },
+    {
+      "id": "residencial-instalacion-balcon-depa",
+      "src": "/images/galeria/residencial-instalacion-balcon-depa.webp",
+      "alt": "Instalador de espaldas aplicando película en el cancel de balcón de un departamento con vista urbana.",
+      "title": "Instalación en departamento",
+      "caption": "Aplicación de película en cancel de balcón.",
+      "category": "residencial",
+      "location": "Zona metropolitana de Guadalajara"
+    },
+    {
+      "id": "muestra-pelicula-nano-50",
+      "src": "/images/galeria/muestra-pelicula-nano-50.webp",
+      "alt": "Muestra de película arquitectónica Nano+ 50 de HIGHTECH sobre su ficha técnica.",
+      "title": "Muestra Nano+ 50",
+      "caption": "Muestrario de películas arquitectónicas HIGHTECH.",
+      "category": "residencial",
+      "location": "Zona metropolitana de Guadalajara"
+    },
+    {
+      "id": "muestras-pelicula-hightech",
+      "src": "/images/galeria/muestras-pelicula-hightech.webp",
+      "alt": "Muestrario de películas para ventana HIGHTECH con una muestra oscura sobre las fichas técnicas.",
+      "title": "Muestrario de películas",
+      "caption": "Muestras físicas que llevamos a cada visita.",
+      "category": "residencial",
+      "location": "Zona metropolitana de Guadalajara"
+    }
+  ]
+}

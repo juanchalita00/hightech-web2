@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-01T19:27:35.378Z",
+  "generatedAt": "2026-10-16T05:50:39.958Z",
   "manifestVersion": 2,
   "sourceOfTruthVersion": "0.19",
   "canonicalBaseUrl": "https://polarizadoshightech.com",
@@ -59,33 +59,23 @@
   },
   "hardGatedRoutes": [
     {
-      "path": "/garantias/",
-      "flag": "production.warrantiesApproved",
-      "enabledInProduction": false
-    },
-    {
       "path": "/legal/terminos-y-condiciones/",
       "flag": "production.termsApproved",
       "enabledInProduction": false
     },
     {
-      "path": "/legal/aviso-de-privacidad/",
-      "flag": "production.privacyApproved",
-      "enabledInProduction": false
-    },
-    {
       "path": "/proyectos/",
       "flag": "routes.projectsPublic",
-      "enabledInProduction": false
+      "enabledInProduction": true
     },
     {
       "path": "/proyectos/[slug]/",
       "flag": "routes.projectsPublic",
-      "enabledInProduction": false
+      "enabledInProduction": true
     }
   ],
-  "indexableRouteCount": 20,
-  "approvedRedirectCount": 5,
+  "indexableRouteCount": 33,
+  "approvedRedirectCount": 17,
   "enabledThirdParties": [],
   "dnsEmailStatus": "UNVERIFIED_PRE_CUTOVER",
   "infrastructure": {

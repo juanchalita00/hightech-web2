@@ -6,7 +6,7 @@ import { release, truth } from "@/lib/truth";
 function routeAllowed(path: string, defaultIndexable: boolean) {
   if (path.startsWith("/peliculas/nanoceramica/ir")) return release.routes.tonePagesIndexable;
   if (path === "/proyectos/") return release.routes.projectsPublic;
-  if (path === "/garantias/") return release.production.warrantiesApproved && release.routes.warrantyPageIndexable;
+  if (path === "/garantias/") return release.routes.warrantyPageIndexable;
   if (path === "/guias/polarizado-automotriz-jalisco/") return release.routes.jaliscoGuideIndexable;
   return defaultIndexable;
 }
