@@ -38,7 +38,7 @@ const items = [
   },
   {
     question: "¿Qué tono me conviene en el auto?",
-    answer: <p>Lo más común es 75 al frente y 35 o más claro atrás, para mantener buena visibilidad hacia el interior. También instalamos parabrisas completo. Te asesoramos para elegir. <Link href="/guias/polarizado-automotriz-jalisco/">Ver la guía</Link>.</p>,
+    answer: <p>Lo más común es 75 al frente y 35 o más claro en los cristales traseros, para mantener buena visibilidad hacia el interior. También instalamos parabrisas completo. Te asesoramos para elegir. <Link href="/guias/polarizado-automotriz-jalisco/">Ver la guía</Link>.</p>,
   },
   {
     question: "¿Cuánto cuesta?",

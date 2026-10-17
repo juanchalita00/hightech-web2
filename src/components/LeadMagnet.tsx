@@ -10,7 +10,7 @@ export function LeadMagnet() {
     <aside className="lead-magnet">
       <div>
         <strong>Checklist: cómo elegir el tono de tu auto</strong>
-        <p>Te lo enviamos por WhatsApp. Sirve para pensar en delanteras, traseras, medallón y parabrisas antes de elegir.</p>
+        <p>Te lo enviamos por WhatsApp. Sirve para pensar en cristales delanteros, cristales traseros, medallón y parabrisas antes de elegir.</p>
       </div>
       <a
         className="button button-primary"

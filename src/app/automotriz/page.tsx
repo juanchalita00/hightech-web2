@@ -71,7 +71,7 @@ export default function AutomotivePage() {
         variant="automotive"
         eyebrow="Polarizado automotriz · Zapopan"
         title="Polarizado para tu auto, a tu gusto."
-        description="Te ayudamos a elegir el tono: más claro para ver de noche, o un poco más oscuro atrás para más privacidad. Todos bajan el calor del sol. Instalamos laterales, medallón y parabrisas completo."
+        description="Te ayudamos a elegir el tono: más claro para ver de noche, o un poco más oscuro en los cristales traseros para más privacidad. Todos bajan el calor del sol. Instalamos laterales, medallón y parabrisas completo."
         ctaLabel="Cotizar"
         context={{ sourcePage: "/automotriz/", businessLine: "automotive", product: "Nanocerámica" }}
         proofItems={["Laterales, medallón y parabrisas", "Garantía de 10 años", onSitePolicy]}

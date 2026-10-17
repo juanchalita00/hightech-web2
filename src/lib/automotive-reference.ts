@@ -13,7 +13,7 @@ export const leyPdfUrl =
 export const automotiveLaw = {
   practiceTitle: "Qué tono va en cada cristal",
   practice:
-    "Lo más común: 75 al frente y 35 o más claro atrás. El parabrisas completo también se instala, en el tono que elijas.",
+    "Lo más común: 75 al frente y 35 o más claro en los cristales traseros. El parabrisas completo también se instala, en el tono que elijas.",
   sideLabel: "Delanteras",
   sideValue: "75",
   windshieldLabel: "Parabrisas",

@@ -4,7 +4,7 @@ export function JaliscoLaw() {
       <div className="container">
         <aside className="jalisco-info" aria-label="Referencia sobre tonos en Jalisco">
           <p>
-            <strong>Lo que dice la ley en Jalisco:</strong> cristales delanteros IR75, traseros IR35 o más claro; parabrisas sin película.
+            <strong>Lo que dice la ley en Jalisco:</strong> cristales delanteros IR75, cristales traseros IR35 o más claro; parabrisas sin película.
           </p>
           <p>
             <strong>Lo que vemos en la práctica:</strong> en Guadalajara es común ver parabrisas con película clara (75) y laterales en 35,

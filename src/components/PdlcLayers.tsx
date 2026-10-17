@@ -1,6 +1,6 @@
 const layers = [
   { name: "Vidrio", note: "El que ya está." },
-  { name: "Adhesivo", note: "La pega por dentro." },
+  { name: "Adhesivo", note: "La que fija la película al vidrio por dentro." },
   { name: "PET", note: "Lleva la corriente." },
   { name: "PDLC", note: "De opaco a transparente." },
   { name: "PET", note: "Cierra la película." },

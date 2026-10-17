@@ -24,7 +24,7 @@ export default function Page() {
         <div className="container" style={{ display: "grid", gap: "1rem", maxWidth: "46rem" }}>
           <h2>Dos calores, no uno.</h2>
           <p>Está el calor que se siente en la piel y en un asiento de piel que quema. Ese, la gama lo corta casi por completo, en el claro y en el oscuro.</p>
-          <p>Y está el calor total que el sol mete al cuarto, que también incluye la luz que ves. Ahí el tono más oscuro ayuda un poco más, porque deja pasar menos luz. La diferencia existe, y es menor de lo que la gente espera.</p>
+          <p>Y está el calor total que el sol hace entrar al cuarto, que también incluye la luz que ves. Ahí el tono más oscuro ayuda un poco más, porque deja pasar menos luz. La diferencia existe, y es menor de lo que la gente espera.</p>
           <HightechTip>
             Unos lentes de sol oscuros quitan el brillo, pero no protegen tu piel. El bloqueador solar es transparente y sí te protege. Con la película pasa igual: corta el calor por tecnología, no por qué tan oscura es.
           </HightechTip>

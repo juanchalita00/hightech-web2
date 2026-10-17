@@ -32,7 +32,7 @@ const toneCopy: Record<string, { headline: string; decision: string; light: stri
     decision: "Para quien quiere que se note el tono, sin irse al extremo.",
     light: "Deja pasar cerca de un tercio de la luz.",
     where: "En casa, en negocio y en auto.",
-    whereNote: "En el auto, va en traseros y medallón. Para las delanteras te asesoramos según la visibilidad que quieras conservar.",
+    whereNote: "En el auto, va en los cristales traseros y el medallón. Para los cristales delanteros te asesoramos según la visibilidad que quieras conservar.",
     neighbors: ["IR50", "IR15"],
   },
   IR15: {
@@ -77,7 +77,7 @@ const toneExtra: Record<string, ToneExtra> = {
   IR35: {
     uses: [
       "Casa y negocio, cuando buscas equilibrio entre luz, apariencia y privacidad de día.",
-      "Auto: cristales traseros y medallón. Para las delanteras te asesoramos según la visibilidad que quieras conservar.",
+      "Auto: cristales traseros y medallón. Para los cristales delanteros te asesoramos según la visibilidad que quieras conservar.",
     ],
     look: "Es un tono equilibrado: se nota, sin irse al extremo.",
     faq: { question: "¿El 35 sirve si quiero privacidad?", answer: "Da algo de privacidad de día, sin cerrar tanto la luz. Si la privacidad es la prioridad, compara con el 15 y el 5." },

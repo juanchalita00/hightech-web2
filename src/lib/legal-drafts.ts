@@ -63,7 +63,7 @@ const terms: LegalDraftDocument = {
       id: "tono-automotriz",
       heading: "Elección de tono en el vehículo",
       paragraphs: [
-        "En el auto lo más común es 75 al frente y 35 o más claro atrás, para mantener la visibilidad hacia el interior. También instalamos parabrisas completo. Te asesoramos para elegir.",
+        "En el auto lo más común es 75 al frente y 35 o más claro en los cristales traseros, para mantener la visibilidad hacia el interior. También instalamos parabrisas completo. Te asesoramos para elegir.",
       ],
     },
     {
