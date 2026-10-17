@@ -216,7 +216,7 @@ export default async function TonePage({ params }: { params: Promise<{ tone: str
           <p className="eyebrow">Ficha</p>
           <h2>Datos del tono {name}.</h2>
           <div className="table-scroll">
-            <table className="install-times">
+            <table className="install-times install-times--specs">
               <caption className="sr-only">Datos técnicos del tono {name}</caption>
               <thead><tr><th>Dato</th><th>Valor</th></tr></thead>
               <tbody>

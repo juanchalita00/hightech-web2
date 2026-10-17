@@ -1673,3 +1673,5 @@ thead th { background: var(--surface-alt); }
 .product-hero-facts span { font-size: .875rem; color: #566078; }
 .product-hero-photo figcaption { font-size: .875rem; color: #566078; }
 .cookie-notice p, .cookie-actions button { font-size: .875rem; }
+.install-times--specs { min-width: 0; }
+.install-times--specs td:first-child { width: 60%; }
