@@ -105,9 +105,9 @@ const sharedFaq = [
 
 const toneImages: Record<string, { src: string; width: number; height: number; natural?: boolean; alt?: string; caption?: string }> = {
   IR75: {
-    src: "/images/nanoceramica/nano-proyecto-ir75-aeropuerto.webp", width: 459, height: 612,
-    alt: "Puentes de abordaje del Aeropuerto de Guadalajara con película nanocerámica HIGHTECH en tono 75.",
-    caption: "Proyecto real · Aeropuerto de Guadalajara (puentes de abordaje)",
+    src: "/images/nanoceramica/nano-proyecto-ir75-local.webp", width: 1106, height: 1600,
+    alt: "Fachada de una tienda de conveniencia con cristal de tono azulado por la película nanocerámica HIGHTECH en tono 75.",
+    caption: "Proyecto real · tono 75 · local comercial",
   },
   IR50: { src: "/images/nanoceramica/nano-proyecto-ir50-torre-v3.webp", width: 1600, height: 1549, natural: true },
   IR35: { src: "/images/nanoceramica/nano-proyecto-ir35-v2.webp", width: 1115, height: 1544 },
