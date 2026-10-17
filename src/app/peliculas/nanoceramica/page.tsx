@@ -25,6 +25,7 @@ export default function NanoPage() {
       title="Control solar con la luz que quieres conservar."
       description="Hay opciones muy claras y otras más oscuras. La diferencia está en cuánta luz quieres conservar, la privacidad que buscas y las condiciones de tu espacio."
       ctaLabel="Ayúdame a elegir"
+      image={{ src:"/images/comparador/referencia-fachada-exterior-nanoceramica.webp", alt:"Fachada de una casa con ventanas marcadas 75%, 50%, 35%, 15% y 5% para comparar los tonos de nanocerámica HIGHTECH.", caption:"Referencia real de tonos: 75, 50, 35, 15 y 5.", width:1440, height:960 }}
       context={{sourcePage:"/peliculas/nanoceramica/", product:"Nanocerámica HIGHTECH"}}
       secondary={<Link href="#comparar" className="button button-secondary">Comparar tonos <Icon name="arrow" size={18}/></Link>}
     />

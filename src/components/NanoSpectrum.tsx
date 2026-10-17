@@ -2,7 +2,7 @@ import Link from "next/link";
 import { truth } from "@/lib/truth";
 import type { CSSProperties } from "react";
 import { Icon } from "@/components/Icon";
-import { toneName, tone80, toneSamples } from "@/lib/tones";
+import { toneName, toneSamples } from "@/lib/tones";
 
 export function NanoSpectrum() {
   return (
@@ -26,16 +26,6 @@ export function NanoSpectrum() {
       </div>
 
       <div className="nano-tone-grid">
-        <div className="nano-tone-card" aria-label={`Tono ${tone80.name}`}>
-          <div className="nano-tone-swatch" style={{ "--tone-bg": toneSamples.IR80, "--tone-opacity": 0 } as CSSProperties}>
-            <span>{tone80.name}</span>
-          </div>
-          <div className="nano-tone-copy">
-            <strong>{tone80.name}</strong>
-            <span>VLT {tone80.vlt}</span>
-            <small>—</small>
-          </div>
-        </div>
         {truth.nano.map((film) => {
           return (
             <Link href={`/peliculas/nanoceramica/${film.id.toLowerCase()}/`} className="nano-tone-card" key={film.id}>
@@ -58,7 +48,7 @@ export function NanoSpectrum() {
           );
         })}
       </div>
-      <p className="nano-spectrum-footnote">Los números 80, 75, 50, 35, 15 y 5 son los nombres comerciales del tono; el VLT es el dato de ficha. El 50 deja pasar cerca de la mitad de la luz. El 5 deja pasar muy poca y, de noche, algunas personas batallan.</p>
+      <p className="nano-spectrum-footnote">Los números 75, 50, 35, 15 y 5 son los nombres comerciales del tono; el VLT es el dato de ficha. El 50 deja pasar cerca de la mitad de la luz. El 5 deja pasar muy poca y, de noche, algunas personas batallan.</p>
     </div>
   );
 }

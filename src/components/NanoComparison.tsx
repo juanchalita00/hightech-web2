@@ -15,10 +15,6 @@ const useCopy: Record<string, string> = {
 export function NanoComparison() {
   return (
     <div className="nano-comparison">
-      <figure className="nano-comparison-photo">
-        <img src="/images/comparador/referencia-fachada-exterior-nanoceramica.webp" alt="Fachada de una casa con ventanas marcadas 75%, 50%, 35%, 15% y 5%, para comparar el tono de la gama nanocerámica." loading="lazy" decoding="async" />
-        <figcaption>Referencia real de tonos: 75, 50, 35, 15 y 5.</figcaption>
-      </figure>
       <div className="nano-comparison-guide" aria-label="Comparación visual de tonos nanocerámicos">
         {truth.nano.map((film) => (
           <Link className="nano-comparison-card" href={`/peliculas/nanoceramica/${film.id.toLowerCase()}/`} key={film.id}>

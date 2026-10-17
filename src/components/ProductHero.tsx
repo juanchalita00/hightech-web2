@@ -17,7 +17,7 @@ type Props = {
   ctaLabel?: string;
   context?: WhatsAppContext;
   secondary?: ReactNode;
-  image?: { src: string; alt: string; caption?: string };
+  image?: { src: string; alt: string; caption?: string; width?: number; height?: number; portrait?: boolean };
 };
 
 export function ProductHero({ variant, eyebrow, title, description, facts = [], context, secondary, image }: Props) {
@@ -42,8 +42,8 @@ export function ProductHero({ variant, eyebrow, title, description, facts = [], 
           ) : null}
         </div>
         {image ? (
-          <figure className="product-hero-photo">
-            <Image src={image.src} alt={image.alt} width={900} height={600} />
+          <figure className={`product-hero-photo${image.portrait ? " product-hero-photo-portrait" : ""}`}>
+            <Image src={image.src} alt={image.alt} width={image.width ?? 900} height={image.height ?? 600} sizes={image.portrait ? "(max-width: 760px) 90vw, 420px" : "(max-width: 760px) 100vw, 560px"} priority />
             {image.caption ? <figcaption>{image.caption}</figcaption> : null}
           </figure>
         ) : (

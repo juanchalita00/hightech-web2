@@ -47,6 +47,14 @@ const toneCopy: Record<string, { headline: string; decision: string; light: stri
   },
 };
 
+const toneImages: Record<string, { src: string; width: number; height: number; project: boolean }> = {
+  IR75: { src: "/images/nanoceramica/nano-proyecto-ir75.webp", width: 1200, height: 1600, project: true },
+  IR50: { src: "/images/nanoceramica/nano-proyecto-ir50.webp", width: 900, height: 1600, project: true },
+  IR35: { src: "/images/nanoceramica/nano-proyecto-ir35.webp", width: 1200, height: 1600, project: true },
+  IR15: { src: "/images/nanoceramica/nano-proyecto-ir15.webp", width: 1200, height: 1600, project: true },
+  IR5: { src: "/images/comparador/referencia-fachada-exterior-nanoceramica.webp", width: 1440, height: 960, project: false },
+};
+
 export function generateStaticParams() {
   return truth.nano.map((film) => ({ tone: film.id.toLowerCase() }));
 }
@@ -69,6 +77,7 @@ export default async function TonePage({ params }: { params: Promise<{ tone: str
   const film = getNanoProduct(tone);
   if (!film) notFound();
   const copy = toneCopy[film.id];
+  const img = toneImages[film.id];
   return (
     <>
       <ProductHero
@@ -82,6 +91,14 @@ export default async function TonePage({ params }: { params: Promise<{ tone: str
           { label: "Rayos UV", value: "Bloquea hasta 99%" },
           { label: "Calor del sol", value: "Casi todo, como el resto de la gama" },
         ]}
+        image={img ? {
+          src: img.src,
+          width: img.width,
+          height: img.height,
+          portrait: img.project,
+          alt: img.project ? `Proyecto real con película nanocerámica HIGHTECH en tono ${toneName(film.id)}.` : "Fachada de una casa con ventanas marcadas 75%, 50%, 35%, 15% y 5%, para comparar el tono 5 con el resto de la gama.",
+          caption: img.project ? `Proyecto real · tono ${toneName(film.id)}` : "Referencia de tonos de la gama · el 5 es el más oscuro",
+        } : undefined}
         secondary={<Link href="/peliculas/nanoceramica/" className="button button-secondary">Ver toda la gama <Icon name="arrow" size={18} /></Link>}
       />
       <section className="section">
