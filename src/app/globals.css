@@ -703,6 +703,8 @@ thead th { background: var(--surface-alt); }
 .product-hero-photo img { display:block; width:100%; height:auto; aspect-ratio:3 / 2; object-fit:cover; }
 .product-hero-photo-portrait { width:min(100%,24rem); justify-self:center; }
 .product-hero-photo-portrait img { aspect-ratio:4 / 5; }
+.product-hero-photo-natural { width:100%; }
+.product-hero-photo-natural img { aspect-ratio:auto; object-fit:contain; }
 .product-hero-photo figcaption { padding:.72rem .9rem .78rem; color:#727c8e; background:#fff; font-size:.7rem; line-height:1.45; }
 .product-glass-frame { position:relative; width:min(100%,31rem); aspect-ratio:1.05; overflow:hidden; border:1px solid rgba(255,255,255,.75); border-radius:2.2rem; background:linear-gradient(180deg,#bde0f4 0 46%,#e8ddd0 46% 100%); box-shadow:0 34px 75px rgba(24,42,84,.18); transform:perspective(900px) rotateY(-6deg) rotateX(1deg); }
 .product-glass-frame::before,.product-glass-frame::after { content:""; position:absolute; z-index:4; background:rgba(255,255,255,.62); box-shadow:0 0 0 1px rgba(22,39,75,.09); }

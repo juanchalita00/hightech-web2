@@ -47,9 +47,9 @@ const toneCopy: Record<string, { headline: string; decision: string; light: stri
   },
 };
 
-const toneImages: Record<string, { src: string; width: number; height: number; project: boolean }> = {
+const toneImages: Record<string, { src: string; width: number; height: number; project: boolean; natural?: boolean }> = {
   IR75: { src: "/images/nanoceramica/nano-proyecto-ir75.webp", width: 1200, height: 1600, project: true },
-  IR50: { src: "/images/nanoceramica/nano-proyecto-ir50-torre.webp", width: 1200, height: 1600, project: true },
+  IR50: { src: "/images/nanoceramica/nano-proyecto-ir50-torre-crop.webp", width: 1600, height: 1425, project: true, natural: true },
   IR35: { src: "/images/nanoceramica/nano-proyecto-ir35.webp", width: 1200, height: 1600, project: true },
   IR15: { src: "/images/nanoceramica/nano-proyecto-ir15.webp", width: 1200, height: 1600, project: true },
   IR5: { src: "/images/comparador/referencia-fachada-exterior-nanoceramica.webp", width: 1440, height: 960, project: false },
@@ -95,7 +95,8 @@ export default async function TonePage({ params }: { params: Promise<{ tone: str
           src: img.src,
           width: img.width,
           height: img.height,
-          portrait: img.project,
+          portrait: img.project && !img.natural,
+          natural: img.natural,
           alt: img.project ? `Proyecto real con película nanocerámica HIGHTECH en tono ${toneName(film.id)}.` : "Fachada de una casa con ventanas marcadas 75%, 50%, 35%, 15% y 5%, para comparar el tono 5 con el resto de la gama.",
           caption: img.project ? `Proyecto real · tono ${toneName(film.id)}` : "Referencia de tonos de la gama · el 5 es el más oscuro",
         } : undefined}
