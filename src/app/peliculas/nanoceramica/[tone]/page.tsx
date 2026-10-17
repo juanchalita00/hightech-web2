@@ -160,6 +160,7 @@ export default async function TonePage({ params }: { params: Promise<{ tone: str
     <>
       <ProductHero
         variant="nano"
+        compact
         eyebrow="Nanocerámica"
         title={`Tono ${toneName(film.id)}. ${copy.headline}`}
         description={copy.decision}

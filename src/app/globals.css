@@ -1675,3 +1675,9 @@ thead th { background: var(--surface-alt); }
 .cookie-notice p, .cookie-actions button { font-size: .875rem; }
 .install-times--specs { min-width: 0; }
 .install-times--specs td:first-child { width: 60%; }
+
+/* Tone pages: tighter hero → first section rhythm on mobile (was ~149px of dead space) */
+@media (max-width: 760px) {
+  .product-hero-compact { padding-bottom:2.25rem; }
+  .product-hero-compact + .section { padding-top:2.5rem; }
+}

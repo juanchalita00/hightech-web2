@@ -17,12 +17,13 @@ type Props = {
   ctaLabel?: string;
   context?: WhatsAppContext;
   secondary?: ReactNode;
+  compact?: boolean;
   image?: { src: string; alt: string; caption?: string; width?: number; height?: number; portrait?: boolean; natural?: boolean };
 };
 
-export function ProductHero({ variant, eyebrow, title, description, facts = [], context, secondary, image }: Props) {
+export function ProductHero({ variant, eyebrow, title, description, facts = [], context, secondary, image, compact }: Props) {
   return (
-    <section className={`product-hero product-hero-${variant}`}>
+    <section className={`product-hero product-hero-${variant}${compact ? " product-hero-compact" : ""}`}>
       <div className="container product-hero-grid">
         <div className="product-hero-copy">
           <p className="eyebrow">{eyebrow}</p>
