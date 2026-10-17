@@ -297,6 +297,60 @@
       "caption": "Ventanal residencial con vista al exterior.",
       "category": "residencial",
       "location": "Zona metropolitana de Guadalajara"
+    },
+    {
+      "id": "automotriz-suv-taller-puerta-abierta",
+      "src": "/images/galeria/automotriz-suv-taller-puerta-abierta.webp",
+      "alt": "SUV negra con la puerta abierta durante la instalación de polarizado en el taller de HIGHTECH.",
+      "title": "Instalación en taller",
+      "caption": "Polarizado automotriz en proceso dentro del taller.",
+      "category": "automotriz",
+      "location": "Zona metropolitana de Guadalajara"
+    },
+    {
+      "id": "automotriz-interior-polarizado",
+      "src": "/images/galeria/automotriz-interior-polarizado.webp",
+      "alt": "Interior de un auto con asientos blancos y cristales polarizados vistos desde dentro.",
+      "title": "Interior con polarizado",
+      "caption": "Vista interior de cristales polarizados por HIGHTECH.",
+      "category": "automotriz",
+      "location": "Zona metropolitana de Guadalajara"
+    },
+    {
+      "id": "comercial-oficina-pelicula-decorativa",
+      "src": "/images/galeria/comercial-oficina-pelicula-decorativa.webp",
+      "alt": "Pasillo de oficina con divisiones de cristal y película decorativa con franjas esmeriladas.",
+      "title": "Película decorativa en oficina",
+      "caption": "Divisiones de cristal con película decorativa esmerilada.",
+      "category": "comercial",
+      "location": "Zona metropolitana de Guadalajara"
+    },
+    {
+      "id": "residencial-instalacion-balcon-depa",
+      "src": "/images/galeria/residencial-instalacion-balcon-depa.webp",
+      "alt": "Instalador de espaldas aplicando película en el cancel de balcón de un departamento con vista urbana.",
+      "title": "Instalación en departamento",
+      "caption": "Aplicación de película en cancel de balcón.",
+      "category": "residencial",
+      "location": "Zona metropolitana de Guadalajara"
+    },
+    {
+      "id": "muestra-pelicula-nano-50",
+      "src": "/images/galeria/muestra-pelicula-nano-50.webp",
+      "alt": "Muestra de película arquitectónica Nano+ 50 de HIGHTECH sobre su ficha técnica.",
+      "title": "Muestra Nano+ 50",
+      "caption": "Muestrario de películas arquitectónicas HIGHTECH.",
+      "category": "residencial",
+      "location": "Zona metropolitana de Guadalajara"
+    },
+    {
+      "id": "muestras-pelicula-hightech",
+      "src": "/images/galeria/muestras-pelicula-hightech.webp",
+      "alt": "Muestrario de películas para ventana HIGHTECH con una muestra oscura sobre las fichas técnicas.",
+      "title": "Muestrario de películas",
+      "caption": "Muestras físicas que llevamos a cada visita.",
+      "category": "residencial",
+      "location": "Zona metropolitana de Guadalajara"
     }
   ]
 }
