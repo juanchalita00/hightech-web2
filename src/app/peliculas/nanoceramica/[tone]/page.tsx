@@ -10,40 +10,45 @@ import { JsonLd } from "@/components/JsonLd";
 import { getNanoProduct, release, truth } from "@/lib/truth";
 import { toneName } from "@/lib/tones";
 
-const toneCopy: Record<string, { headline: string; decision: string; light: string; where: string; caution?: string; neighbors: string[] }> = {
+const toneCopy: Record<string, { headline: string; decision: string; light: string; where: string; whereNote: string; caution?: string; neighbors: string[] }> = {
   IR75: {
     headline: "El más claro. Deja pasar mucha luz.",
     decision: "Para quien quiere bajar el calor sin que el cristal se vea oscuro.",
     light: "Deja pasar cerca de tres cuartas partes de la luz.",
-    where: "Es el tono más común al frente del auto, y también sirve en casa y negocio.",
+    where: "En casa, en negocio y en auto.",
+    whereNote: "Es el tono más común al frente del auto.",
     neighbors: ["IR50"],
   },
   IR50: {
     headline: "Mucha luz, un paso más marcado que el 75.",
     decision: "Para quien quiere seguir viendo claro y notar un poco más el tono.",
     light: "Deja pasar cerca de la mitad de la luz.",
-    where: "En casa, en negocio y en los cristales traseros del auto.",
+    where: "En casa, en negocio y en auto.",
+    whereNote: "En el auto, va en los cristales traseros.",
     neighbors: ["IR75", "IR35"],
   },
   IR35: {
     headline: "Un punto medio entre luz y privacidad.",
     decision: "Para quien quiere que se note el tono, sin irse al extremo.",
     light: "Deja pasar cerca de un tercio de la luz.",
-    where: "En casa, en negocio y en traseros y medallón del auto. Para las delanteras te asesoramos según la visibilidad que quieras conservar.",
+    where: "En casa, en negocio y en auto.",
+    whereNote: "En el auto, va en traseros y medallón. Para las delanteras te asesoramos según la visibilidad que quieras conservar.",
     neighbors: ["IR50", "IR15"],
   },
   IR15: {
     headline: "Se ve oscuro y da más privacidad de día.",
     decision: "Para casa o negocio, cuando la prioridad es que se vea menos hacia adentro.",
     light: "Deja pasar poca luz.",
-    where: "Pensado para casa y negocio. Si lo quieres en el auto, platicamos qué visibilidad necesitas.",
+    where: "En casa y en negocio.",
+    whereNote: "Si lo quieres en el auto, platicamos qué visibilidad necesitas.",
     neighbors: ["IR35", "IR5"],
   },
   IR5: {
     headline: "El más oscuro de la gama.",
     decision: "Para casa o negocio, cuando quieres la mayor privacidad de día.",
     light: "Deja pasar muy poca luz. Aunque se llama 5, en la práctica es aún más cerrado.",
-    where: "Pensado para casa y negocio. Si lo quieres en el auto, platicamos qué visibilidad necesitas.",
+    where: "En casa y en negocio.",
+    whereNote: "Si lo quieres en el auto, platicamos qué visibilidad necesitas.",
     caution: "De noche, algunas personas batallan para ver hacia afuera. Es el único tono con este aviso.",
     neighbors: ["IR15"],
   },
@@ -184,6 +189,7 @@ export default async function TonePage({ params }: { params: Promise<{ tone: str
       <section className="section">
         <div className="container" style={{ display: "grid", gap: "1rem", maxWidth: "46rem" }}>
           <h2>{copy.where}</h2>
+          <p>{copy.whereNote}</p>
           <p>
             La nanocerámica es una capa casi invisible que corta los rayos que calientan y los que decoloran, sin depender de que el cristal se vea negro.
             Oscurecer más no multiplica esa protección: suma privacidad y resta luz.
