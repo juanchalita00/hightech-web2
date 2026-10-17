@@ -2,7 +2,7 @@
 
 export const brandName = "HIGHTECH Polarizados";
 
-export const hoursLabel = "Lunes a sábado, de 10:00 a 21:00. Domingo cerrado.";
+export const hoursLabel = "Lunes a sábado, de 10:00 a 19:00, con cita. Domingo cerrado.";
 
 export const addressLine = "Tomás Mann 5348, Jardines Vallarta, 45027 Zapopan, Jal.";
 

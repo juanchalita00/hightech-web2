@@ -55,7 +55,7 @@ const terms: LegalDraftDocument = {
       id: "instalacion",
       heading: "Instalación",
       paragraphs: [
-        "La instalación automotriz es en taller con cita. A domicilio solo flotillas o autos de agencia. El horario de atención —lunes a sábado de 10:00 a 21:00, domingo cerrado— no es la disponibilidad de instalación; agendamos según la disponibilidad de la semana.",
+        "La instalación automotriz es en taller con cita. A domicilio solo flotillas o autos de agencia. El horario de atención —lunes a sábado de 10:00 a 19:00, con cita; domingo cerrado— no es la disponibilidad de instalación; agendamos según la disponibilidad de la semana.",
         "En arquitectura, la visita técnica es excepcional. En película eléctrica (PDLC), la visita es obligatoria si el cliente quiere avanzar, porque requiere integración eléctrica.",
       ],
     },

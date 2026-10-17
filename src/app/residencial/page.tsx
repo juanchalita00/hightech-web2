@@ -62,8 +62,8 @@ export default function ResidentialPage() {
           </div>
           <figure className={styles.heroScene}>
             <Image
-              src="/images/projects/residential-landmark.webp"
-              alt="Interior residencial con ventanal de piso a techo y vista urbana, proyecto documentado por HIGHTECH."
+              src="/images/galeria/residencial-atardecer-ventanal.webp"
+              alt="Ventanal residencial al atardecer, proyecto documentado por HIGHTECH."
               fill
               preload
               sizes="(max-width: 900px) min(calc(100vw - 2rem), 42rem), 46vw"
@@ -142,8 +142,8 @@ export default function ResidentialPage() {
           <figure className={styles.evidence}>
             <div className={styles.evidenceMedia}>
               <Image
-                src="/images/projects/residential-process.webp"
-                alt="Instalador aplicando película en un ventanal amplio de un proyecto arquitectónico."
+                src="/images/galeria/residencial-instalador-ventanal-ciudad.webp"
+                alt="Instalador aplicando película en un ventanal con vista a la ciudad."
                 fill
                 sizes="(max-width: 900px) calc(100vw - 2rem), 38rem"
                 className={styles.evidencePhoto}
