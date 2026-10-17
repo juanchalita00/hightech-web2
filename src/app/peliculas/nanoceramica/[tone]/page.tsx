@@ -5,6 +5,8 @@ import { Icon } from "@/components/Icon";
 import { ProductCTA } from "@/components/ProductCTA";
 import { ProductHero } from "@/components/ProductHero";
 import { HightechTip } from "@/components/HightechTip";
+import { FAQList } from "@/components/FAQList";
+import { JsonLd } from "@/components/JsonLd";
 import { getNanoProduct, release, truth } from "@/lib/truth";
 import { toneName } from "@/lib/tones";
 
@@ -47,6 +49,60 @@ const toneCopy: Record<string, { headline: string; decision: string; light: stri
   },
 };
 
+type ToneExtra = { uses: string[]; look: string; vltNote?: string; faq: { question: string; answer: string };  };
+
+const toneExtra: Record<string, ToneExtra> = {
+  IR75: {
+    uses: [
+      "Casa y negocio, donde quieres conservar la claridad y una apariencia natural del cristal. Va bien en fachadas y torres.",
+      "Auto: es el tono más común al frente.",
+    ],
+    look: "Es muy claro y puede verse ligeramente azulado, según el cristal y la luz.",
+    faq: { question: "¿Cómo se ve el tono 75?", answer: "Es muy claro y prioriza la luz y una apariencia natural. Según el cristal y la luz, puede verse ligeramente azulado. Es el tono con menos privacidad de día de la gama." },
+  },
+  IR50: {
+    uses: [
+      "Casa y negocio, cuando quieres seguir viendo claro pero que el cristal tenga un tono más marcado que el 75.",
+      "Auto: cristales traseros.",
+    ],
+    look: "Es claro y ligeramente entonado.",
+    vltNote: "El número 50 es el nombre comercial; la ficha técnica marca 48%.",
+    faq: { question: "¿Qué cambia del 50 al 75?", answer: "El 50 deja pasar menos luz y se nota más el tono. La protección contra rayos UV e infrarrojos que indica la ficha es la misma; lo que cambia es la luz y la privacidad de día." },
+  },
+  IR35: {
+    uses: [
+      "Casa y negocio, cuando buscas equilibrio entre luz, apariencia y privacidad de día.",
+      "Auto: cristales traseros y medallón. Para las delanteras te asesoramos según la visibilidad que quieras conservar.",
+    ],
+    look: "Es un tono equilibrado: se nota, sin irse al extremo.",
+    faq: { question: "¿El 35 sirve si quiero privacidad?", answer: "Da algo de privacidad de día, sin cerrar tanto la luz. Si la privacidad es la prioridad, compara con el 15 y el 5." },
+  },
+  IR15: {
+    uses: [
+      "Casa y negocio, cuando la prioridad es que se vea menos hacia adentro durante el día.",
+      "Auto: platicamos qué visibilidad necesitas antes de recomendarlo.",
+    ],
+    look: "Es oscuro y da una privacidad de día marcada.",
+    faq: { question: "¿El 15 oscurece mucho el espacio?", answer: "Deja pasar poca luz, así que el espacio se siente más cerrado. Si quieres conservar luz natural, te conviene comparar con el 35 o el 50." },
+  },
+  IR5: {
+    uses: [
+      "Casa y negocio, cuando quieres la mayor privacidad de día de la gama.",
+      "Auto: platicamos qué visibilidad necesitas antes de recomendarlo.",
+    ],
+    look: "Es el más oscuro y da la máxima privacidad de día. No lo recomendamos donde quieras luz natural.",
+    vltNote: "El número 5 es el nombre comercial; la ficha marca 3%.",
+    faq: { question: "¿Para qué cristales no recomiendan el 5?", answer: "Para donde quieras luz natural, porque deja pasar muy poca. Tampoco es lo más cómodo para ver hacia afuera de noche. En esos casos te sugerimos un tono más claro." },
+  },
+};
+
+const sharedFaq = [
+  { question: "¿Me da privacidad de noche?", answer: "No. La privacidad depende de qué lado tiene más luz. De día se dificulta ver hacia adentro, pero de noche, con las luces interiores encendidas, el efecto se invierte y se ve desde afuera. En casa se complementa con cortinas." },
+  { question: "¿Interfiere con el celular, el GPS o el wifi?", answer: "No. La nanocerámica no lleva metales, así que no interfiere con las señales de celular, GPS ni wifi." },
+  { question: "¿Se decolora o se pone morada?", answer: "No. La nanocerámica no se decolora ni se pone morada con el tiempo." },
+  { question: "¿Qué garantía tiene?", answer: "10 años por escrito en instalaciones interiores. Las instalaciones exteriores y los casos especiales se evalúan caso por caso y pueden tener otras condiciones." },
+];
+
 const toneImages: Record<string, { src: string; width: number; height: number; project: boolean; natural?: boolean }> = {
   IR75: { src: "/images/nanoceramica/nano-proyecto-ir75.webp", width: 1200, height: 1600, project: true },
   IR50: { src: "/images/nanoceramica/nano-proyecto-ir50-torre-v3.webp", width: 1600, height: 1549, project: true, natural: true },
@@ -78,6 +134,20 @@ export default async function TonePage({ params }: { params: Promise<{ tone: str
   if (!film) notFound();
   const copy = toneCopy[film.id];
   const img = toneImages[film.id];
+  const extra = toneExtra[film.id];
+  const name = toneName(film.id);
+  const faqs = [extra.faq, ...sharedFaq];
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    inLanguage: "es-MX",
+    mainEntity: faqs.map((item) => ({ "@type": "Question", name: item.question, acceptedAnswer: { "@type": "Answer", text: item.answer } })),
+  };
+  const specs: [string, string][] = [
+    ["Luz visible que pasa (VLT)", `${film.vlt}%`],
+    ["Rechazo infrarrojo", `${film.infraredRejection}%, medido a ${film.infraredWavelengthNm} nm, según ficha técnica`],
+    ["Rayos UV", `Hasta ${film.uv}% de rechazo, según ficha técnica`],
+  ];
   return (
     <>
       <ProductHero
@@ -116,6 +186,78 @@ export default async function TonePage({ params }: { params: Promise<{ tone: str
           </HightechTip>
           {copy.caution ? <p><strong>{copy.caution}</strong></p> : null}
         </div>
+      </section>
+      <section className="section section-alt">
+        <div className="container" style={{ display: "grid", gap: "1rem", maxWidth: "46rem" }}>
+          <p className="eyebrow">Recomendado para</p>
+          <h2>Dónde funciona mejor el tono {name}.</h2>
+          <p>{extra.look}</p>
+          <ul style={{ display: "grid", gap: ".6rem", paddingLeft: "1.2rem", margin: 0 }}>
+            {extra.uses.map((use) => <li key={use}>{use}</li>)}
+          </ul>
+          <HightechTip>
+            De día se dificulta ver hacia adentro. De noche, con las luces interiores encendidas, el efecto se invierte: la película no da privacidad nocturna.
+          </HightechTip>
+        </div>
+      </section>
+      <section className="section">
+        <div className="container" style={{ display: "grid", gap: "1rem", maxWidth: "46rem" }}>
+          <p className="eyebrow">Cómo funciona</p>
+          <h2>Cómo funciona la nanocerámica.</h2>
+          <ul style={{ display: "grid", gap: ".6rem", paddingLeft: "1.2rem", margin: 0 }}>
+            <li>Rechaza la radiación infrarroja, que es parte de lo que calienta al pasar por el cristal.</li>
+            <li>No lleva metales, así que no interfiere con las señales de celular, GPS ni wifi.</li>
+            <li>No se decolora ni se pone morada con el tiempo.</li>
+          </ul>
+        </div>
+      </section>
+      <section className="section section-alt">
+        <div className="container" style={{ display: "grid", gap: "1rem", maxWidth: "46rem" }}>
+          <p className="eyebrow">Ficha</p>
+          <h2>Datos del tono {name}.</h2>
+          <div className="table-scroll">
+            <table className="install-times">
+              <caption className="sr-only">Datos técnicos del tono {name}</caption>
+              <thead><tr><th>Dato</th><th>Valor</th></tr></thead>
+              <tbody>
+                {specs.map(([label, value]) => <tr key={label}><td>{label}</td><td>{value}</td></tr>)}
+              </tbody>
+            </table>
+          </div>
+          {extra.vltNote ? <p className="install-times-note">{extra.vltNote}</p> : null}
+        </div>
+      </section>
+      <section className="section">
+        <div className="container" style={{ display: "grid", gap: "1rem", maxWidth: "46rem" }}>
+          <p className="eyebrow">Durabilidad y garantía</p>
+          <h2>10 años por escrito en instalación interior.</h2>
+          <p>
+            La garantía escrita de la nanocerámica es de 10 años cuando se instala por el interior del cristal.
+            Las instalaciones exteriores y los casos especiales se evalúan caso por caso y pueden tener otras condiciones.
+            Consulta el detalle en <Link href="/garantias/">garantías</Link>.
+          </p>
+        </div>
+      </section>
+      <section className="section section-alt">
+        <div className="container" style={{ display: "grid", gap: "1rem", maxWidth: "46rem" }}>
+          <p className="eyebrow">Cuidados</p>
+          <h2>Después de instalar, espera antes de limpiar.</h2>
+          <ul style={{ display: "grid", gap: ".6rem", paddingLeft: "1.2rem", margin: 0 }}>
+            <li>En el auto, no bajes los cristales durante 48 horas.</li>
+            <li>El secado tarda de 15 a 30 días. Al inicio son normales las burbujas de agua y un aspecto opaco.</li>
+            <li>Para limpiar usa un paño suave, sin amoníaco ni abrasivos.</li>
+          </ul>
+        </div>
+      </section>
+      <section className="section">
+        <div className="container faq-layout">
+          <div>
+            <p className="eyebrow">Preguntas</p>
+            <h2>Dudas sobre el tono {name}.</h2>
+          </div>
+          <FAQList items={faqs.map((f) => ({ question: f.question, answer: <p>{f.answer}</p> }))} />
+        </div>
+        <JsonLd data={faqSchema} />
       </section>
       <section className="section section-alt">
         <div className="container tone-neighbors">
