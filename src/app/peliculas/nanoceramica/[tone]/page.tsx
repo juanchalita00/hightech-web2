@@ -103,12 +103,20 @@ const sharedFaq = [
   { question: "¿Qué garantía tiene?", answer: "10 años por escrito en instalaciones interiores. Las instalaciones exteriores y los casos especiales se evalúan caso por caso y pueden tener otras condiciones." },
 ];
 
-const toneImages: Record<string, { src: string; width: number; height: number; project: boolean; natural?: boolean }> = {
-  IR75: { src: "/images/nanoceramica/nano-proyecto-ir75.webp", width: 1200, height: 1600, project: true },
-  IR50: { src: "/images/nanoceramica/nano-proyecto-ir50-torre-v3.webp", width: 1600, height: 1549, project: true, natural: true },
-  IR35: { src: "/images/nanoceramica/nano-proyecto-ir35.webp", width: 1200, height: 1600, project: true },
-  IR15: { src: "/images/nanoceramica/nano-proyecto-ir15.webp", width: 1200, height: 1600, project: true },
-  IR5: { src: "/images/comparador/referencia-fachada-exterior-nanoceramica.webp", width: 1440, height: 960, project: false },
+const toneImages: Record<string, { src: string; width: number; height: number; natural?: boolean; alt?: string; caption?: string }> = {
+  IR75: {
+    src: "/images/nanoceramica/nano-proyecto-ir75-aeropuerto.webp", width: 459, height: 612,
+    alt: "Puentes de abordaje del Aeropuerto de Guadalajara con película nanocerámica HIGHTECH en tono 75.",
+    caption: "Proyecto real · Aeropuerto de Guadalajara (puentes de abordaje)",
+  },
+  IR50: { src: "/images/nanoceramica/nano-proyecto-ir50-torre-v3.webp", width: 1600, height: 1549, natural: true },
+  IR35: { src: "/images/nanoceramica/nano-proyecto-ir35-v2.webp", width: 1115, height: 1544 },
+  IR15: { src: "/images/nanoceramica/nano-proyecto-ir15.webp", width: 1200, height: 1600 },
+  IR5: {
+    src: "/images/nanoceramica/nano-proyecto-ir5-tesla.webp", width: 683, height: 910,
+    alt: "Exterior de la agencia Tesla en Guadalajara con película nanocerámica HIGHTECH en tono 5.",
+    caption: "Proyecto real · tono 5 · Agencia Tesla",
+  },
 };
 
 export function generateStaticParams() {
@@ -165,10 +173,10 @@ export default async function TonePage({ params }: { params: Promise<{ tone: str
           src: img.src,
           width: img.width,
           height: img.height,
-          portrait: img.project && !img.natural,
+          portrait: !img.natural,
           natural: img.natural,
-          alt: img.project ? `Proyecto real con película nanocerámica HIGHTECH en tono ${toneName(film.id)}.` : "Fachada de una casa con ventanas marcadas 75%, 50%, 35%, 15% y 5%, para comparar el tono 5 con el resto de la gama.",
-          caption: img.project ? `Proyecto real · tono ${toneName(film.id)}` : "Referencia de tonos de la gama · el 5 es el más oscuro",
+          alt: img.alt ?? `Proyecto real con película nanocerámica HIGHTECH en tono ${toneName(film.id)}.`,
+          caption: img.caption ?? `Proyecto real · tono ${toneName(film.id)}`,
         } : undefined}
         secondary={<Link href="/peliculas/nanoceramica/" className="button button-secondary">Ver toda la gama <Icon name="arrow" size={18} /></Link>}
       />
