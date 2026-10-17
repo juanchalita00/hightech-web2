@@ -1766,3 +1766,50 @@
     display: none;
   }
 }
+
+/* Móvil: el comparador fluye en columna (foto, tonos, estado, nota) sin alto mínimo vacío. */
+@media (max-width: 720px) {
+  .visualWrap {
+    min-height: 0;
+  }
+
+  .signatureGlass {
+    position: relative;
+    inset: auto;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: .7rem;
+  }
+
+  .referenceFrame,
+  .referenceFrameHidden {
+    position: relative;
+    opacity: 1;
+  }
+
+  .toneDock,
+  .signatureStatus,
+  .signatureFootnote {
+    position: static;
+  }
+
+  .toneDock {
+    margin: .6rem .6rem 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: .2rem;
+  }
+
+  .toneButton,
+  .toneButtonActive {
+    min-height: 2.3rem;
+  }
+
+  .signatureStatus {
+    margin: .55rem .85rem 0;
+  }
+
+  .signatureFootnote {
+    margin: .25rem .85rem 0;
+  }
+}
