@@ -23,9 +23,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_MX",
     siteName: "HIGHTECH Polarizados",
-    images: [{ url: "/og/hightech-og.png", width: 1200, height: 630, alt: "HIGHTECH Polarizados. Polarizado en Zapopan y Guadalajara." }],
+    images: [{ url: "/og/hightech-og.jpg", width: 1200, height: 630, alt: "HIGHTECH Polarizados · Polarizado nanocerámico para casa, negocio y auto" }],
   },
-  twitter: { card: "summary_large_image", images: ["/og/hightech-og.png"] },
+  twitter: { card: "summary_large_image", images: ["/og/hightech-og.jpg"] },
   icons: {
     icon: [
       { url: "/favicon.ico" },
