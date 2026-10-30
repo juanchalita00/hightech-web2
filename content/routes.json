@@ -214,5 +214,11 @@
     "status": "BUILD_READY_CONTENT_BLOCKED",
     "indexable": false,
     "canonical": "/legal/aviso-de-privacidad/"
+  },
+  {
+    "path": "/terminos-y-condiciones/",
+    "status": "LAUNCH_CORE",
+    "indexable": true,
+    "canonical": "/terminos-y-condiciones/"
   }
 ]

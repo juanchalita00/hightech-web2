@@ -23,7 +23,13 @@ const nextConfig: NextConfig = {
       .filter((item) => item.status === "APPROVED")
       .map((item) => ({ source: item.source, destination: item.destination, statusCode: item.code as 301 | 302 | 303 | 307 | 308 }));
     // Los redirects de afiliados viven en vercel.json (scripts/sync-afiliados.mjs).
-    return base;
+    const wwwToApex = {
+      source: "/:path*",
+      has: [{ type: "host" as const, value: "www.polarizadoshightech.com" }],
+      destination: "https://polarizadoshightech.com/:path*",
+      statusCode: 301 as const,
+    };
+    return [wwwToApex, ...base];
   },
   async headers() { return [{ source: "/(.*)", headers: securityHeaders }]; },
 };
