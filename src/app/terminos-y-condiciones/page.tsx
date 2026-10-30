@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   alternates: { canonical: "/terminos-y-condiciones/" },
   title: { absolute: "Términos y Condiciones | High Tech Polarizados" },
-  description: "Términos y Condiciones de High Tech Polarizados en Zapopan: pago, medidas, reprogramación, curado y garantía de la película.",
+  description: "Términos y Condiciones de High Tech Polarizados en Zapopan: pago, medidas, fecha de instalación, curado y garantía de la película.",
 };
 
 const SECCIONES: { t: string; p: string[] }[] = [
@@ -23,19 +23,19 @@ const SECCIONES: { t: string; p: string[] }[] = [
   {
     "t": "3. Medidas",
     "p": [
-      "Las medidas de la cotización son estimadas y se confirman en sitio. Si la superficie real cambia, el precio puede ajustarse hasta un 10% del total del trabajo, con un tope de $2,500 + IVA. Cualquier ajuste se avisa antes de iniciar."
+      "Las medidas de la cotización son estimadas y se confirman en sitio. Si la diferencia con la superficie real es de hasta el 10% del trabajo (con un tope de $2,500 + IVA), no se hace ningún ajuste. Si la diferencia es mayor, se ajusta la diferencia completa, hacia arriba o hacia abajo. Cualquier ajuste se avisa antes de iniciar."
     ]
   },
   {
-    "t": "4. Reprogramación",
+    "t": "4. Fecha de instalación",
     "p": [
-      "Puedes reprogramar tu cita avisando con al menos 24 horas de anticipación, o solicitar la devolución de tu anticipo."
+      "La fecha de instalación es una cita estimada. Si High Tech Polarizados necesita moverla, te avisará con al menos 24 horas de anticipación y te ofrecerá una nueva fecha o la devolución de tu anticipo."
     ]
   },
   {
     "t": "5. Causas de fuerza mayor",
     "p": [
-      "Podemos reprogramar la instalación por causas ajenas a nosotros, como lluvia, polvo o viento, falta de película con el proveedor, o que el lugar no esté listo para trabajar."
+      "La lluvia, el polvo o el viento, la falta de película con el proveedor, o que el lugar no esté listo para trabajar no se consideran incumplimiento. En esos casos reprogramamos la instalación."
     ]
   },
   {
@@ -45,10 +45,16 @@ const SECCIONES: { t: string; p: string[] }[] = [
     ]
   },
   {
-    "t": "7. Garantía (película nanocerámica)",
+    "t": "7. Garantía",
     "p": [
-      "10 años en el material y 5 años en la instalación.",
-      "No cubre: golpes, rayones posteriores a la instalación, daños por limpiadores con amoniaco, ni choque térmico del vidrio."
+      "La garantía que aplica a tu trabajo se indica en tu cotización:",
+      "Nanocerámica: 10 años en el material y 10 años en la instalación.",
+      "Plata Reflecta: 5 o 10 años, según la línea.",
+      "Película de seguridad: 5 o 10 años, según la película.",
+      "Esmerilado y cualquier película instalada por el exterior del vidrio: 1 año.",
+      "Otras películas: la garantía indicada en la cotización.",
+      "Los defectos visibles (rayones, basura o burbujas que sigan después del curado) deben reportarse dentro de los 15 días siguientes a la instalación.",
+      "La garantía no cubre golpes, rayones posteriores a la instalación, daños por limpiadores con amoniaco ni choque térmico del vidrio."
     ]
   }
 ];
