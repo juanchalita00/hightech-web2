@@ -1,0 +1,145 @@
+.banner {
+  background: var(--brand-deep);
+  color: #fff;
+  border-bottom: 1px solid var(--line-dark);
+}
+
+.inner {
+  width: min(calc(100% - 2rem), var(--max));
+  margin-inline: auto;
+  padding: .6rem 0;
+  min-height: 44px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: .75rem;
+}
+
+.logo {
+  flex: 0 0 auto;
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+
+.copy {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .15rem;
+}
+
+.hint {
+  font-size: .9rem;
+  font-weight: 760;
+  line-height: 1.2;
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.text {
+  margin: 0;
+  font-size: .98rem;
+  line-height: 1.45;
+  color: #fff;
+}
+
+.text strong {
+  font-weight: 760;
+}
+
+.actions {
+  display: none;
+  gap: .6rem;
+  flex-shrink: 0;
+}
+
+/* Móvil: enlace que cubre toda la franja; su texto es solo para lectores de pantalla. */
+.mobileLink {
+  position: absolute;
+  inset: 0 -1rem;
+  font-size: 0;
+  color: transparent;
+  overflow: hidden;
+}
+
+.mobileLink:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: -4px;
+}
+
+.primary,
+.secondary {
+  flex: 1 1 0;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .5rem 1.15rem;
+  border-radius: 999px;
+  font-size: .9rem;
+  font-weight: 760;
+  text-decoration: none;
+  border: 1px solid #fff;
+  transition: background .18s ease, color .18s ease;
+}
+
+.primary {
+  background: #fff;
+  color: var(--brand-deep);
+}
+
+.primary:hover {
+  background: var(--accent-soft);
+}
+
+.secondary {
+  background: transparent;
+  color: #fff;
+}
+
+.secondary:hover {
+  background: rgba(255, 255, 255, .12);
+}
+
+.primary:focus-visible,
+.secondary:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+
+@media (min-width: 48rem) {
+  .mobileLink {
+    display: none;
+  }
+
+  .actions {
+    display: flex;
+  }
+
+  .hint {
+    display: none;
+  }
+
+  .logo {
+    width: 80px;
+    height: 80px;
+  }
+
+  .copy {
+    flex: 1 1 auto;
+  }
+
+  .inner {
+    padding: .5rem 0;
+    gap: 1.25rem;
+  }
+
+  .primary,
+  .secondary {
+    flex: 0 0 auto;
+  }
+}
