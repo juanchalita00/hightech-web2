@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { BuenFinBanner } from "@/components/BuenFinBanner";
 import { GoogleReviews } from "@/components/GoogleReviews";
 import { Icon } from "@/components/Icon";
 import { SignatureGlass } from "@/components/SignatureGlass";
@@ -57,6 +58,7 @@ const steps = [
 export default function HomePage() {
   return (
     <div className={styles.page}>
+      <BuenFinBanner />
       <section className={styles.hero}>
         <div className={styles.shell}>
           <div className={styles.heroGrid}>
