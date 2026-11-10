@@ -9,7 +9,7 @@ import styles from "./BuenFinBanner.module.css";
 export const BUEN_FIN_BANNER_ENABLED = true;
 export const BUEN_FIN_BANNER_EXPIRES_AT = "2026-12-01T00:00:00-06:00";
 
-const whatsappContext = { sourcePage: "/", product: "la promoción del Buen Fin" };
+const whatsappContext = { sourcePage: "/", product: "la promoción del Buen Fin, hasta 15% menos" };
 
 export function isBuenFinBannerActive(now: Date = new Date()): boolean {
   if (!BUEN_FIN_BANNER_ENABLED) return false;
@@ -23,8 +23,16 @@ export function BuenFinBanner() {
     <aside className={styles.banner} aria-label="Promoción Buen Fin">
       <div className={styles.inner}>
         <p className={styles.text}>
-          <strong>Buen Fin:</strong> 15% menos agendando antes del 17 de noviembre. Instalas cuando quieras, hasta el 30.
+          <strong>Buen Fin:</strong> hasta 15% menos agendando antes del 17 de noviembre. Instalas cuando quieras, hasta el 30.
         </p>
+        {/* Solo móvil: el bloque entero es el enlace (overlay), sin botones duplicados. */}
+        <WhatsAppCTA
+          label="Buen Fin: hasta 15% menos. Escríbenos por WhatsApp"
+          context={whatsappContext}
+          position="BUEN_FIN_BANNER"
+          appearance="plain"
+          className={styles.mobileLink}
+        />
         <div className={styles.actions}>
           <Link className={styles.primary} href="/contacto/#cotizar">Cotizar</Link>
           <WhatsAppCTA
