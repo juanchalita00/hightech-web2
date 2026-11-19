@@ -46,7 +46,7 @@ export default function BocetoPortadaPage() {
             <p className={styles.heroText}>
               ¿Tu cuarto parece horno? ¿El aire no enfría? Le ponemos película a tus cristales para que entre menos calor. Tú eliges qué tan claro queda.
             </p>
-            <p className={styles.brandLine}>Distribuidores en México de las películas Hightech</p>
+            <p className={styles.brandLine}>Instalamos películas Hightech, nuestra marca, línea IR nanocerámica.</p>
             <div className={styles.ctaRow}>
               <CotizaWhatsApp message={mensaje} />
             </div>
@@ -125,7 +125,7 @@ export default function BocetoPortadaPage() {
               <span className={styles.bigCaption}>del calor del sol lo bloquea la película nanocerámica, según el tono.</span>
             </p>
             <p className={styles.context}>
-              Dato de laboratorio de la ficha del fabricante. Ya instalada puede cambiar según el cristal.
+              Dato de laboratorio de la ficha técnica. Ya instalada puede cambiar según el cristal.
             </p>
           </div>
           <ul className={styles.benefitList}>
@@ -204,9 +204,13 @@ export default function BocetoPortadaPage() {
         <div className={`${styles.shell} ${styles.aboutGrid}`}>
           <div>
             <p className={styles.kicker}>Quiénes somos</p>
-            <h2 id="nosotros-titulo">Fernando Chalita, fundador y director.</h2>
-            <Pendiente>por qué empezó Fernando (una o dos frases suyas).</Pendiente>
-            <Pendiente>fotos reales del equipo y del taller.</Pendiente>
+            <h2 id="nosotros-titulo">High Tech Polarizados.</h2>
+            <p>High Tech Polarizados es la empresa de Zapopan que instala películas Hightech, nuestra marca, línea IR nanocerámica, en casa, negocio y auto.</p>
+            <Pendiente>años de experiencia, con fuente.</Pendiente>
+            <p>Se especializa en películas para casa, negocio y auto. Primero revisa qué te molesta y el cristal; después recomienda el tono y la película, y te pasa la cotización. El auto se instala en el taller, con cita. Te contestamos el mismo día, de lunes a sábado.</p>
+            <p>El taller está en Tomás Mann 5348, Jardines Vallarta, Zapopan.</p>
+            <p>Entre sus proyectos está el {airportName}: un pasillo de cristal junto a la plataforma, en operación continua.</p>
+            <p>Tiene +{googleProfile.count} reseñas en Google, al 15 de octubre de 2026.</p>
           </div>
           <dl className={styles.facts}>
             <div>
@@ -222,7 +226,7 @@ export default function BocetoPortadaPage() {
           </dl>
         </div>
         <div className={styles.shell}>
-          <Fuente>base de conocimiento §1 y §2 ({addressLine}).</Fuente>
+          <Fuente>taller y horario: base de conocimiento §1 y §2 ({addressLine}); aeropuerto: Fer, 19 nov 2026; reseñas: public-facts.ts; respuesta el mismo día: Fer, 19 nov 2026. Años de experiencia: PENDIENTE (SoT v0.19, sin evidencia aprobada).</Fuente>
         </div>
       </section>
 
@@ -268,7 +272,7 @@ export default function BocetoPortadaPage() {
             <div className={styles.priceBlock}>
               <h3><Icon name="car" size={22} /> Auto</h3>
               <span className={styles.from}>Desde $4,000</span>
-              <p>Laterales y medallón. Parabrisas desde $1,500.</p>
+              <p>Película IR nanocerámica Hightech. Laterales y medallón. Parabrisas desde $1,500.</p>
               <p className={styles.small}>
                 Precio en efectivo. Con tarjeta o transferencia se suma el IVA (16%). Hasta 3 meses sin intereses (6 en promociones); los meses sin intereses no se combinan con descuentos.
               </p>
@@ -281,7 +285,7 @@ export default function BocetoPortadaPage() {
             </div>
           </div>
 
-          <h3 style={{ marginTop: "2.5rem" }}>Garantía de la película</h3>
+          <h3 style={{ marginTop: "2.5rem" }}>Garantía de la película Hightech</h3>
           <ul className={styles.warranty}>
             <li><span>Nanocerámica, auto y casa</span><strong>10 años</strong></li>
             <li><span>Película instalada por fuera del cristal</span><strong>1 año</strong></li>
@@ -316,8 +320,8 @@ export default function BocetoPortadaPage() {
               <p>El auto se trabaja en el taller, con cita. A domicilio solo flotillas o autos de agencia.</p>
             </details>
             <details>
-              <summary>¿Quién fabrica la película?</summary>
-              <p>Son películas Hightech, línea IR nanocerámica. High Tech Polarizados es distribuidor en México de Hightech y de 3M.</p>
+              <summary>¿Qué marca instalan?</summary>
+              <p>Instalamos películas Hightech, nuestra marca, línea IR nanocerámica.</p>
             </details>
           </div>
           <Fuente>base de conocimiento §7 y §9; domicilio: texto de la web actual (public-facts.ts).</Fuente>

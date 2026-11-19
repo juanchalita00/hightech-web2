@@ -123,7 +123,7 @@ export function PdlcExamples() {
         </div>
         <figcaption>
           <p className="pdlc-status" aria-live="polite">{scene.label}. {stateLabel}</p>
-          <p className="pdlc-caption">Fotos de referencia del fabricante. No son proyectos de HIGHTECH.</p>
+          <p className="pdlc-caption">Fotos de referencia. No son proyectos de HIGHTECH.</p>
         </figcaption>
       </figure>
       {scene.id === "bano" ? <p className="pdlc-caption">En baño no la pegamos donde el cristal recibe agua.</p> : null}

@@ -253,6 +253,7 @@
 
 /* QUIÉNES SOMOS */
 .aboutGrid { display: grid; gap: 1.5rem; }
+.aboutGrid p { margin: .75rem 0 0; max-width: 44rem; }
 .facts { margin: 0; display: grid; gap: 1rem; }
 .facts dt { font-size: .8125rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--navy-soft); }
 .facts dd { margin: .2rem 0 0; font-size: 1.05rem; }

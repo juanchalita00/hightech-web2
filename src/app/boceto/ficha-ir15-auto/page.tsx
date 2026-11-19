@@ -39,10 +39,10 @@ export default function BocetoFichaIr15AutoPage() {
             <span className={styles.sunRule} aria-hidden="true" />
             <h1 id="ficha-titulo">
               <span className={styles.toneName}>IR15</span>
-              <span className={styles.toneSub}>Película IR nanocerámica Hightech para auto</span>
+              <span className={styles.toneSub}>Película IR15 Hightech, línea IR nanocerámica, para auto</span>
             </h1>
             <p className={styles.lead}>Para los cristales traseros de tu auto: se ve oscuro, de día cuesta ver hacia adentro y entra menos calor.</p>
-            <p className={styles.brandLine}>High Tech Polarizados, distribuidor de Hightech en México</p>
+            <p className={styles.brandLine}>Instalamos películas Hightech, nuestra marca.</p>
             <div className={styles.ctaRow}>
               <CotizaWhatsApp message={mensaje} />
             </div>
@@ -53,7 +53,7 @@ export default function BocetoFichaIr15AutoPage() {
               <span className={styles.bigCaption}>Bloquea hasta {ir15.tser}% del calor.</span>
             </p>
             <p className={styles.context}>
-              De toda la energía del sol que llega al cristal, la película rechaza hasta {ir15.tser}%, según la ficha del fabricante. Es un dato de laboratorio: en tu auto puede variar según el cristal. No es una promesa de grados.
+              De toda la energía del sol que llega al cristal, la película rechaza hasta {ir15.tser}%, según la ficha técnica. Es un dato de laboratorio: en tu auto puede variar según el cristal. No es una promesa de grados.
             </p>
           </div>
         </div>
@@ -84,7 +84,7 @@ export default function BocetoFichaIr15AutoPage() {
               </dd>
             </div>
           </dl>
-          <Fuente>ficha técnica del fabricante SRC-TECH-SEP19 (System of Truth v0.19, §7). Grosor: no se publica.</Fuente>
+          <Fuente>ficha técnica SRC-TECH-SEP19 (System of Truth v0.19, §7). Grosor: no se publica.</Fuente>
         </div>
       </section>
 
@@ -175,8 +175,8 @@ export default function BocetoFichaIr15AutoPage() {
           <div className={styles.fitGrid}>
             <div>
               <p className={styles.kicker}>Garantía</p>
-              <h2 id="garantia-titulo">10 años en la película.</h2>
-              <p>La instalación se cubre en tu certificado de garantía HIGHTECH.</p>
+              <h2 id="garantia-titulo">10 años en la película Hightech.</h2>
+              <p>La instalación se cubre en tu certificado de garantía Hightech.</p>
               <Pendiente>póliza revisada por abogado.</Pendiente>
             </div>
             <div>
@@ -201,7 +201,7 @@ export default function BocetoFichaIr15AutoPage() {
           <h2 id="precio-titulo">Cuánto cuesta en tu auto.</h2>
           <div className={styles.priceBlock}>
             <span className={styles.from}>Desde $4,000</span>
-            <p>Laterales y medallón. Parabrisas desde $1,500.</p>
+            <p>Película IR nanocerámica Hightech. Laterales y medallón. Parabrisas desde $1,500.</p>
             <p className={styles.small}>
               Precio en efectivo; con tarjeta o transferencia se suma el IVA (16%). Hasta 3 meses sin intereses (6 en promociones), sin combinar con descuentos.
             </p>
