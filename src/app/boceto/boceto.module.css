@@ -186,6 +186,30 @@
   border-left: 4px solid var(--rule);
 }
 
+/* Testimonio anónimo de casa (WhatsApp), no es reseña de Google */
+.waTestimonio {
+  margin: 2rem 0 0;
+  max-width: 38rem;
+}
+.waTestimonio blockquote {
+  margin: 0;
+  padding: 0 0 0 .9rem;
+  border-left: 4px solid var(--rule);
+}
+.waTestimonio p {
+  margin: 0;
+  font-size: 1.125rem;
+  line-height: 1.45;
+  font-weight: 600;
+}
+.waTestimonio figcaption {
+  margin: .4rem 0 0;
+  font-size: .8125rem;
+  line-height: 1.45;
+  color: #4a5a69;
+}
+
+
 /* ESPECIALISTAS POR ÁREA */
 .specialties { display: grid; gap: 1.5rem; margin: 1.5rem 0; }
 .specialties h3 { display: flex; align-items: center; gap: .5rem; font-size: 1.15rem; }

@@ -44,7 +44,7 @@ export default function BocetoPortadaPage() {
             <p className={styles.kicker}>Casa, negocio y auto · Zapopan y Guadalajara</p>
             <h1 id="hero-titulo">Menos calor, sin quedarte a oscuras.</h1>
             <p className={styles.heroText}>
-              ¿Tu cuarto parece horno? ¿El aire no enfría? Le ponemos película a tus cristales para que entre menos calor. Tú eliges qué tan claro queda.
+              ¿Tu casa parece horno? ¿El aire no enfría? Le ponemos película a tus cristales para que entre menos calor. Tú eliges qué tan claro queda.
             </p>
             <p className={styles.brandLine}>Distribuidores en todo México de las películas Hightech, nuestra marca, línea IR nanocerámica.</p>
             <div className={styles.ctaRow}>
@@ -67,12 +67,13 @@ export default function BocetoPortadaPage() {
             <div className={styles.quoteGroup}>
               <h3><Icon name="home" size={20} /> En casa o en el negocio</h3>
               <ul className={styles.quoteList}>
-                <li>«Parece horno.»</li>
-                <li>«El aire no enfría.»</li>
-                <li>«Mi vecino me ve.»</li>
-                <li>«Reflejo en la pantalla.»</li>
+                <li>«Es una recámara que tiene vista al sur, y se calienta que parece invernadero.»</li>
+                <li>«Es para una terraza que se siente como horno.»</li>
+                <li>«Busco que el vecino no me vea incluso con toda la cortina arriba.»</li>
+                <li>«…cuenta con aire acondicionado pero aún así.»</li>
+                <li>«Me da mucho calor en la noche y no puedo dormir.»</li>
               </ul>
-              <Fuente>frases del mapa de diagnóstico (base de conocimiento, línea 127).</Fuente>
+              <Fuente>frases de clientes de casa y negocio en chats de WhatsApp, sin datos personales.</Fuente>
             </div>
             <div className={styles.quoteGroup}>
               <h3><Icon name="car" size={20} /> En el auto</h3>
@@ -86,6 +87,12 @@ export default function BocetoPortadaPage() {
               <Fuente>frases de clientes de auto en chats de WhatsApp 2024–2026, sin datos personales.</Fuente>
             </div>
           </div>
+          <figure className={styles.waTestimonio}>
+            <blockquote>
+              <p>«Todo excelente muchas gracias, sí redujo bastante el calor en el depa.»</p>
+            </blockquote>
+            <figcaption>Cliente de casa, por WhatsApp</figcaption>
+          </figure>
         </div>
       </section>
 
