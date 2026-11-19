@@ -36,7 +36,7 @@ export default function Page() {
           </div>
           <p>High Tech Polarizados es la empresa de Zapopan que instala películas Hightech, nuestra marca, línea IR nanocerámica, en casa, negocio y auto.</p>
           <p><strong>PENDIENTE:</strong> años de experiencia, con fuente.</p>
-          <p>Se especializa en películas para casa, negocio y auto. Primero revisa qué te molesta y el cristal; después recomienda el tono y la película, y te pasa la cotización. El auto se instala en el taller, con cita. Te contestamos el mismo día, de lunes a sábado.</p>
+          <p>Se especializa en películas para casa, negocio y auto. Primero revisa qué te molesta y el cristal; después recomienda el tono y la película, y te pasa la cotización. El auto se instala en el taller, con cita. Te contestamos el mismo día.</p>
           <p>El taller está en Tomás Mann 5348, Jardines Vallarta, Zapopan.</p>
           <p>Entre sus proyectos está el {airportName}: un pasillo de cristal junto a la plataforma, en operación continua.</p>
           <p>Tiene +{googleProfile.count} reseñas en Google, al 15 de octubre de 2026.</p>

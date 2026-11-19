@@ -11,7 +11,7 @@ export const phoneDisplay = "33 2228 9017";
 export const onSitePolicy =
   "En taller con cita. A domicilio solo flotillas o autos de agencia.";
 
-export const responsePromise = "Te respondemos el mismo día, de lunes a sábado.";
+export const responsePromise = "Te contestamos el mismo día.";
 
 export const airportName = "Aeropuerto Internacional de Guadalajara";
 

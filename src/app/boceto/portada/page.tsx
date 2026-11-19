@@ -207,7 +207,7 @@ export default function BocetoPortadaPage() {
             <h2 id="nosotros-titulo">High Tech Polarizados.</h2>
             <p>High Tech Polarizados es la empresa de Zapopan que instala películas Hightech, nuestra marca, línea IR nanocerámica, en casa, negocio y auto.</p>
             <Pendiente>años de experiencia, con fuente.</Pendiente>
-            <p>Se especializa en películas para casa, negocio y auto. Primero revisa qué te molesta y el cristal; después recomienda el tono y la película, y te pasa la cotización. El auto se instala en el taller, con cita. Te contestamos el mismo día, de lunes a sábado.</p>
+            <p>Se especializa en películas para casa, negocio y auto. Primero revisa qué te molesta y el cristal; después recomienda el tono y la película, y te pasa la cotización. El auto se instala en el taller, con cita. Te contestamos el mismo día.</p>
             <p>El taller está en Tomás Mann 5348, Jardines Vallarta, Zapopan.</p>
             <p>Entre sus proyectos está el {airportName}: un pasillo de cristal junto a la plataforma, en operación continua.</p>
             <p>Tiene +{googleProfile.count} reseñas en Google, al 15 de octubre de 2026.</p>
@@ -249,7 +249,7 @@ export default function BocetoPortadaPage() {
                 El <a href={leyes.reglamento}>Reglamento de Movilidad de Jalisco</a> pide que los cristales dejen ver hacia el interior y señala que el parabrisas no debe ir polarizado (art. 59, fr. VIII). La <a href={leyes.ley}>Ley de Movilidad</a> lo considera infracción con multa de 1 a 5 UMA (art. 360, fr. IX).
               </p>
             </div>
-            <p>En el parabrisas lo más común es el IR75. Si quieres privacidad, en High Tech recomendamos máximo IR35, para que te sientas cómodo y conserves la visibilidad. Es lo que suele hacerse; no es una regla.</p>
+            <p>En el parabrisas lo más común es el IR75. Si quieres privacidad, en High Tech recomendamos máximo IR35, para que te sientas cómodo y conserves la visibilidad. Es lo que suele hacerse.</p>
             <p>El tono de cada cristal lo platicamos contigo.</p>
             <Pendiente>revisión del abogado de este texto.</Pendiente>
           </div>
@@ -336,7 +336,7 @@ export default function BocetoPortadaPage() {
           <p>Mándanos fotos de tus cristales o el modelo de tu auto.</p>
           <div className={styles.ctaRow}>
             <CotizaWhatsApp message={mensaje} variant="light" />
-            <p className={styles.ctaNote} style={{ color: "#fff" }}>Te contestamos el mismo día, de lunes a sábado.</p>
+            <p className={styles.ctaNote} style={{ color: "#fff" }}>Te contestamos el mismo día.</p>
           </div>
         </div>
       </section>

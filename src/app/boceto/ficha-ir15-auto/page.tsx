@@ -163,7 +163,7 @@ export default function BocetoFichaIr15AutoPage() {
               <strong>La norma en Jalisco:</strong> el <a href={leyes.reglamento}>Reglamento de Movilidad</a> pide que los cristales dejen ver hacia el interior y que el parabrisas no vaya polarizado (art. 59, fr. VIII). La <a href={leyes.ley}>Ley de Movilidad</a> lo considera infracción con multa de 1 a 5 UMA (art. 360, fr. IX).
             </p>
           </div>
-          <p>En el parabrisas lo más común es el IR75. Si quieres privacidad, en High Tech recomendamos máximo IR35, para que te sientas cómodo y conserves la visibilidad. Es lo que suele hacerse; no es una regla.</p>
+          <p>En el parabrisas lo más común es el IR75. Si quieres privacidad, en High Tech recomendamos máximo IR35, para que te sientas cómodo y conserves la visibilidad. Es lo que suele hacerse.</p>
           <Pendiente>revisión del abogado de este texto.</Pendiente>
           <Fuente>base de conocimiento §4 (tono 15); norma: PDF oficiales del Congreso de Jalisco.</Fuente>
         </div>
@@ -218,7 +218,7 @@ export default function BocetoFichaIr15AutoPage() {
           <p>Marca, modelo y año. Con eso cotizamos.</p>
           <div className={styles.ctaRow}>
             <CotizaWhatsApp message={mensaje} variant="light" />
-            <p className={styles.ctaNote} style={{ color: "#fff" }}>Te contestamos el mismo día, de lunes a sábado.</p>
+            <p className={styles.ctaNote} style={{ color: "#fff" }}>Te contestamos el mismo día.</p>
           </div>
         </div>
       </section>
