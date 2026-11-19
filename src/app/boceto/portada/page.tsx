@@ -61,30 +61,26 @@ export default function BocetoPortadaPage() {
       {/* 2. EL PROBLEMA */}
       <section className={styles.sectionAlt} aria-labelledby="problema-titulo">
         <div className={styles.shell}>
-          <p className={styles.kicker}>Lo que nos cuentan</p>
-          <h2 id="problema-titulo">¿Te suena?</h2>
+          <h2 id="problema-titulo">¿Te pasa esto?</h2>
           <div className={styles.quotes}>
             <div className={styles.quoteGroup}>
               <h3><Icon name="home" size={20} /> En casa o en el negocio</h3>
               <ul className={styles.quoteList}>
-                <li>«Es una recámara que tiene vista al sur, y se calienta que parece invernadero.»</li>
-                <li>«Es para una terraza que se siente como horno.»</li>
-                <li>«Busco que el vecino no me vea incluso con toda la cortina arriba.»</li>
-                <li>«…cuenta con aire acondicionado pero aún así.»</li>
-                <li>«Me da mucho calor en la noche y no puedo dormir.»</li>
+                <li>Mi casa parece horno</li>
+                <li>El aire no alcanza</li>
+                <li>El vecino me ve</li>
+                <li>El sol daña mis muebles</li>
+                <li>Reflejo en la tele</li>
               </ul>
-              <Fuente>frases de clientes de casa y negocio en chats de WhatsApp, sin datos personales.</Fuente>
             </div>
             <div className={styles.quoteGroup}>
               <h3><Icon name="car" size={20} /> En el auto</h3>
               <ul className={styles.quoteList}>
-                <li>«Lo quiero para disminuir el calor.»</li>
-                <li>«Al manejar entra el sol y me quema.»</li>
-                <li>«Lo necesito más para darle privacidad que para el calor.»</li>
-                <li>«Para no tener multas.»</li>
-                <li>«Me interesa más reducir calor y la exposición a los rayos UV.»</li>
+                <li>Mi carro se calienta mucho</li>
+                <li>El sol me quema al manejar</li>
+                <li>Quiero privacidad</li>
+                <li>No quiero multas</li>
               </ul>
-              <Fuente>frases de clientes de auto en chats de WhatsApp 2024–2026, sin datos personales.</Fuente>
             </div>
           </div>
           <figure className={styles.waTestimonio}>
