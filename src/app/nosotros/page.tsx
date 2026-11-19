@@ -9,7 +9,7 @@ import { addressLine, airportName, googleProfile, hoursLabel } from "@/lib/publi
 export const metadata: Metadata = {
   alternates: { canonical: "/nosotros/" },
   title: { absolute: "Nosotros | HIGHTECH Polarizados en Zapopan" },
-  description: "HIGHTECH Polarizados instala en Zapopan desde Tomás Mann 5348. Casa, negocio y auto, con garantía de 10 años en nanocerámica.",
+  description: "High Tech Polarizados México instala en Zapopan desde Tomás Mann 5348. Casa, negocio y auto, con garantía de 10 años en nanocerámica.",
 };
 
 const process = [
@@ -23,7 +23,7 @@ export default function Page() {
   return (
     <>
       <TrustHero
-        eyebrow="HIGHTECH Polarizados"
+        eyebrow="High Tech Polarizados México"
         title="Polarizado en Zapopan, con el cristal como punto de partida."
         description="Primero vemos qué te molesta. Después elegimos la película y el tono."
         points={["Taller en Jardines Vallarta", "Casa y negocio en la zona", "Auto en taller con cita"]}
@@ -32,12 +32,12 @@ export default function Page() {
         <div className="container" style={{ display: "grid", gap: "1rem", maxWidth: "46rem" }}>
           <div className="section-heading">
             <p className="eyebrow">Quiénes somos</p>
-            <h2 id="quienes-somos-titulo">High Tech Polarizados.</h2>
+            <h2 id="quienes-somos-titulo">High Tech Polarizados México.</h2>
           </div>
-          <p>High Tech Polarizados es la empresa de Zapopan que instala películas Hightech, nuestra marca, línea IR nanocerámica, en casa, negocio y auto.</p>
+          <p>High Tech Polarizados México es el distribuidor en todo México de las películas Hightech, nuestra marca, línea IR nanocerámica, para casa, negocio y auto.</p>
           <p><strong>PENDIENTE:</strong> años de experiencia, con fuente.</p>
-          <p>Se especializa en películas para casa, negocio y auto. Primero revisa qué te molesta y el cristal; después recomienda el tono y la película, y te pasa la cotización. El auto se instala en el taller, con cita. Te contestamos el mismo día.</p>
-          <p>El taller está en Tomás Mann 5348, Jardines Vallarta, Zapopan.</p>
+          <p>Primero revisa qué te molesta y el cristal; después recomienda el tono y la película, y te pasa la cotización. El auto se instala en el taller, con cita. Te contestamos el mismo día.</p>
+          <p>Nuestro taller está en Tomás Mann 5348, Jardines Vallarta, Zapopan.</p>
           <p>Entre sus proyectos está el {airportName}: un pasillo de cristal junto a la plataforma, en operación continua.</p>
           <p>Tiene +{googleProfile.count} reseñas en Google, al 15 de octubre de 2026.</p>
         </div>

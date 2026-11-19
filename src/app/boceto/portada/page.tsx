@@ -4,7 +4,7 @@ import { Icon } from "@/components/Icon";
 import { getGoogleReviews } from "@/lib/google-reviews";
 import { addressLine, airportName, googleProfile } from "@/lib/public-facts";
 import { truth } from "@/lib/truth";
-import { BocetoBanner, CotizaWhatsApp, Fuente, MobileBar, Pendiente, leyes, mensajes } from "../_components/Boceto";
+import { BocetoBanner, CotizaWhatsApp, Estrellas, Fuente, MobileBar, Pendiente, leyes, mensajes } from "../_components/Boceto";
 import styles from "../boceto.module.css";
 
 export const metadata: Metadata = {
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 const mensaje = mensajes.portada;
 
 /** Tres reseñas reales de content/google-reviews.json, texto y nombre tal cual. Se omite la de Michael Richards («10 grados más fresca», sin método). */
-const autoresDestacados = ["Valeria Garnica", "Christian Chávez", "Marivi AC"] as const;
+const autoresDestacados = ["Valeria Garnica", "Christian Chávez", "Miguel Tiongson"] as const;
 
 function fechaResena(iso: string) {
   const [y, m, d] = iso.split("-").map(Number);
@@ -46,7 +46,7 @@ export default function BocetoPortadaPage() {
             <p className={styles.heroText}>
               ¿Tu cuarto parece horno? ¿El aire no enfría? Le ponemos película a tus cristales para que entre menos calor. Tú eliges qué tan claro queda.
             </p>
-            <p className={styles.brandLine}>Instalamos películas Hightech, nuestra marca, línea IR nanocerámica.</p>
+            <p className={styles.brandLine}>Distribuidores en todo México de las películas Hightech, nuestra marca, línea IR nanocerámica.</p>
             <div className={styles.ctaRow}>
               <CotizaWhatsApp message={mensaje} />
             </div>
@@ -72,16 +72,42 @@ export default function BocetoPortadaPage() {
                 <li>«Mi vecino me ve.»</li>
                 <li>«Reflejo en la pantalla.»</li>
               </ul>
+              <Fuente>frases del mapa de diagnóstico (base de conocimiento, línea 127).</Fuente>
             </div>
             <div className={styles.quoteGroup}>
               <h3><Icon name="car" size={20} /> En el auto</h3>
               <ul className={styles.quoteList}>
-                <li>«Ya tengo polarizado y no sirve.»</li>
+                <li>«Lo quiero para disminuir el calor.»</li>
+                <li>«Al manejar entra el sol y me quema.»</li>
+                <li>«Lo necesito más para darle privacidad que para el calor.»</li>
+                <li>«Para no tener multas.»</li>
+                <li>«Me interesa más reducir calor y la exposición a los rayos UV.»</li>
               </ul>
-              <Pendiente>más frases reales de clientes de auto, tomadas de los chats de WhatsApp (no se inventan).</Pendiente>
+              <Fuente>frases de clientes de auto en chats de WhatsApp 2024–2026, sin datos personales.</Fuente>
             </div>
           </div>
-          <Fuente>frases del mapa de diagnóstico (base de conocimiento, línea 127).</Fuente>
+        </div>
+      </section>
+
+      {/* ESPECIALISTAS POR ÁREA */}
+      <section className={styles.section} aria-labelledby="especialistas-titulo">
+        <div className={styles.shell}>
+          <p className={styles.kicker}>Especialistas por área</p>
+          <h2 id="especialistas-titulo">Casa, negocio y auto, cada uno con su especialidad.</h2>
+          <p className={styles.lead}>Hay empresas que se dedican a un solo ramo, o que tienen mucha rotación de instaladores, y por eso no se especializan.</p>
+          <p>En High Tech formamos a los instaladores según las especificaciones de la película de cada área.</p>
+          <div className={styles.specialties}>
+            <div className={styles.specialty}>
+              <h3><Icon name="home" size={20} /> Casa y negocio</h3>
+              <p>Instaladores de residencial, formados para la película de esa área.</p>
+            </div>
+            <div className={styles.specialty}>
+              <h3><Icon name="car" size={20} /> Auto</h3>
+              <p>Instaladores de automotriz, formados para la película de auto.</p>
+            </div>
+          </div>
+          <p>No se mezclan. Un solo instalador no puede ser experto en todo; cada quien se especializa donde tiene más potencial.</p>
+          <Fuente>Fer, 19 nov 2026.</Fuente>
         </div>
       </section>
 
@@ -176,6 +202,7 @@ export default function BocetoPortadaPage() {
             </figure>
             <div>
               <div className={styles.reviewCount}>
+                <span className="google-review-headline-stars" role="img" aria-label="5 de 5 estrellas">★★★★★</span>
                 <strong>+{googleProfile.count}</strong>
                 <span>reseñas en Google, al 15 de octubre de 2026.</span>
               </div>
@@ -187,9 +214,11 @@ export default function BocetoPortadaPage() {
               <figure className={styles.review} key={r.author}>
                 <blockquote>{r.quote}</blockquote>
                 <figcaption>
-                  <strong>{r.author}</strong>
-                  {typeof r.rating === "number" ? <span> · {r.rating} de 5 estrellas en Google</span> : <span> · reseña en Google</span>}
-                  {r.publishedAt ? <span> · {fechaResena(r.publishedAt)}</span> : null}
+                  <div className={styles.reviewHead}>
+                    <strong>{r.author}</strong>
+                    {typeof r.rating === "number" ? <Estrellas rating={r.rating} /> : null}
+                  </div>
+                  {r.publishedAt ? <span>{fechaResena(r.publishedAt)}</span> : null}
                   {" "}<a href={r.sourceUrl} target="_blank" rel="noopener noreferrer">Ver en Google</a>
                 </figcaption>
               </figure>
@@ -204,11 +233,11 @@ export default function BocetoPortadaPage() {
         <div className={`${styles.shell} ${styles.aboutGrid}`}>
           <div>
             <p className={styles.kicker}>Quiénes somos</p>
-            <h2 id="nosotros-titulo">High Tech Polarizados.</h2>
-            <p>High Tech Polarizados es la empresa de Zapopan que instala películas Hightech, nuestra marca, línea IR nanocerámica, en casa, negocio y auto.</p>
+            <h2 id="nosotros-titulo">High Tech Polarizados México.</h2>
+            <p>High Tech Polarizados México es el distribuidor en todo México de las películas Hightech, nuestra marca, línea IR nanocerámica, para casa, negocio y auto.</p>
             <Pendiente>años de experiencia, con fuente.</Pendiente>
-            <p>Se especializa en películas para casa, negocio y auto. Primero revisa qué te molesta y el cristal; después recomienda el tono y la película, y te pasa la cotización. El auto se instala en el taller, con cita. Te contestamos el mismo día.</p>
-            <p>El taller está en Tomás Mann 5348, Jardines Vallarta, Zapopan.</p>
+            <p>Primero revisa qué te molesta y el cristal; después recomienda el tono y la película, y te pasa la cotización. El auto se instala en el taller, con cita. Te contestamos el mismo día.</p>
+            <p>Nuestro taller está en Tomás Mann 5348, Jardines Vallarta, Zapopan.</p>
             <p>Entre sus proyectos está el {airportName}: un pasillo de cristal junto a la plataforma, en operación continua.</p>
             <p>Tiene +{googleProfile.count} reseñas en Google, al 15 de octubre de 2026.</p>
           </div>
@@ -271,11 +300,9 @@ export default function BocetoPortadaPage() {
           <div className={styles.priceGrid}>
             <div className={styles.priceBlock}>
               <h3><Icon name="car" size={22} /> Auto</h3>
-              <span className={styles.from}>Desde $4,000</span>
-              <p>Película IR nanocerámica Hightech. Laterales y medallón. Parabrisas desde $1,500.</p>
-              <p className={styles.small}>
-                Precio en efectivo. Con tarjeta o transferencia se suma el IVA (16%). Hasta 3 meses sin intereses (6 en promociones); los meses sin intereses no se combinan con descuentos.
-              </p>
+              <span className={styles.from}>Desde $4,000 <span className={styles.plusIva}>+ IVA</span></span>
+              <p>Película IR nanocerámica Hightech. Laterales y medallón. Parabrisas desde $1,500 <span className={styles.plusIva}>+ IVA</span>.</p>
+              <p className={styles.small}>Aceptamos todos los métodos de pago. Hasta 3 meses sin intereses.</p>
             </div>
             <div className={styles.priceBlock}>
               <h3><Icon name="home" size={22} /> Casa y negocio</h3>
@@ -293,7 +320,7 @@ export default function BocetoPortadaPage() {
           </ul>
           <p style={{ marginTop: "1rem" }}>La instalación se cubre en el certificado de garantía HIGHTECH que te entregamos.</p>
           <Pendiente>póliza escrita revisada por abogado.</Pendiente>
-          <Fuente>precio auto: Fer, 19 nov 2026 (el estándar es el piso; ya no hay categoría de auto chico); reglas de pago de Fer; mínimo: config minimo_pedido; garantías: base de conocimiento §6 y brief.</Fuente>
+          <Fuente>precio auto: Fer, 19 nov 2026 (el estándar es el piso; + IVA; pagos: todos los métodos, hasta 3 MSI); mínimo: config minimo_pedido; garantías: base de conocimiento §6 y brief.</Fuente>
         </div>
       </section>
 
@@ -320,11 +347,15 @@ export default function BocetoPortadaPage() {
               <p>El auto se trabaja en el taller, con cita. A domicilio solo flotillas o autos de agencia.</p>
             </details>
             <details>
+              <summary>¿Son especialistas en casa o solo en autos?</summary>
+              <p>En las dos. En High Tech hay instaladores de residencial y de automotriz, y no se mezclan. Formamos a cada quien según las especificaciones de la película de su área, porque un solo instalador no puede ser experto en todo.</p>
+            </details>
+            <details>
               <summary>¿Qué marca instalan?</summary>
-              <p>Instalamos películas Hightech, nuestra marca, línea IR nanocerámica.</p>
+              <p>Instalamos películas Hightech, nuestra marca, línea IR nanocerámica. Son películas importadas, fabricadas bajo especificaciones Hightech.</p>
             </details>
           </div>
-          <Fuente>base de conocimiento §7 y §9; domicilio: texto de la web actual (public-facts.ts).</Fuente>
+          <Fuente>base de conocimiento §7 y §9; domicilio: texto de la web actual (public-facts.ts); especialistas: Fer, 19 nov 2026.</Fuente>
         </div>
       </section>
 

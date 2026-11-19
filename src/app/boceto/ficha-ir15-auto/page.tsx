@@ -200,13 +200,11 @@ export default function BocetoFichaIr15AutoPage() {
           <p className={styles.kicker}>Precio</p>
           <h2 id="precio-titulo">Cuánto cuesta en tu auto.</h2>
           <div className={styles.priceBlock}>
-            <span className={styles.from}>Desde $4,000</span>
-            <p>Película IR nanocerámica Hightech. Laterales y medallón. Parabrisas desde $1,500.</p>
-            <p className={styles.small}>
-              Precio en efectivo; con tarjeta o transferencia se suma el IVA (16%). Hasta 3 meses sin intereses (6 en promociones), sin combinar con descuentos.
-            </p>
+            <span className={styles.from}>Desde $4,000 <span className={styles.plusIva}>+ IVA</span></span>
+            <p>Película IR nanocerámica Hightech. Laterales y medallón. Parabrisas desde $1,500 <span className={styles.plusIva}>+ IVA</span>.</p>
+            <p className={styles.small}>Aceptamos todos los métodos de pago. Hasta 3 meses sin intereses.</p>
           </div>
-          <Fuente>precio auto: Fer, 19 nov 2026 (el estándar es el piso; ya no hay categoría de auto chico); reglas de pago de Fer.</Fuente>
+          <Fuente>precio auto: Fer, 19 nov 2026 (el estándar es el piso; + IVA; pagos: todos los métodos, hasta 3 MSI).</Fuente>
         </div>
       </section>
 

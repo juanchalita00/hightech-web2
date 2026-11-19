@@ -28,11 +28,12 @@ const names: Record<string, string> = {
   "/guadalajara/": "Polarizado en Guadalajara",
 };
 
-const services: Record<string, { name: string; description: string; minPrice?: number; unitText?: string }> = {
+const services: Record<string, { name: string; description: string; minPrice?: number; unitText?: string; vatIncluded?: boolean }> = {
   "/automotriz/": {
     name: "Polarizado automotriz en Zapopan",
-    description: `Laterales, medallón y parabrisas completo con nanocerámica. Desde $${prices.autoFrom.toLocaleString("es-MX")}; parabrisas completo desde $${prices.windshieldFrom.toLocaleString("es-MX")}. Garantía de 10 años.`,
+    description: `Laterales, medallón y parabrisas completo con nanocerámica. Desde $${prices.autoFrom.toLocaleString("es-MX")} + IVA; parabrisas completo desde $${prices.windshieldFrom.toLocaleString("es-MX")} + IVA. Garantía de 10 años.`,
     minPrice: prices.autoFrom,
+    vatIncluded: false,
   },
   "/residencial/": {
     name: "Polarizado residencial en Zapopan",
@@ -107,6 +108,7 @@ export function RouteSchema() {
                   minPrice: service.minPrice,
                   priceCurrency: "MXN",
                   ...(service.unitText ? { unitText: service.unitText } : {}),
+                  ...(service.vatIncluded === false ? { valueAddedTaxIncluded: false } : {}),
                 },
               },
             }

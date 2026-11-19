@@ -186,6 +186,12 @@
   border-left: 4px solid var(--rule);
 }
 
+/* ESPECIALISTAS POR ÁREA */
+.specialties { display: grid; gap: 1.5rem; margin: 1.5rem 0; }
+.specialties h3 { display: flex; align-items: center; gap: .5rem; font-size: 1.15rem; }
+.specialties p { margin: .45rem 0 0; }
+.specialty { padding: 0 0 0 1rem; border-left: 4px solid #ff8a1f; }
+
 /* DIAGNÓSTICO: riel de pasos */
 .steps { list-style: none; margin: 1.5rem 0 0; padding: 0; counter-reset: paso; display: grid; gap: 0; }
 .steps li {
@@ -247,9 +253,11 @@
 .review { margin: 0; padding: 0 0 0 1rem; border-left: 4px solid #ff8a1f; }
 .review blockquote { margin: 0; font-size: 1.05rem; line-height: 1.55; white-space: pre-line; overflow-wrap: break-word; }
 .review figcaption { margin-top: .55rem; font-size: .9rem; font-weight: 700; color: var(--navy-soft); }
+.reviewHead { display: flex; flex-wrap: wrap; align-items: center; gap: .35rem .65rem; }
 .review figcaption a { display: inline-block; margin-top: .25rem; font-weight: 700; }
 .reviewCount { display: flex; flex-wrap: wrap; align-items: baseline; gap: .25rem .75rem; margin-top: 2rem; }
 .reviewCount strong { font-family: var(--font-overpass), Inter, sans-serif; font-size: 2.25rem; line-height: 1; }
+.reviewCount :global(.google-review-headline-stars) { display: block; width: 100%; margin: 0 0 .15rem; font-size: 1.2rem; color: #b57f00; letter-spacing: .12em; }
 
 /* QUIÉNES SOMOS */
 .aboutGrid { display: grid; gap: 1.5rem; }
@@ -277,7 +285,8 @@
 /* OFERTA */
 .priceGrid { display: grid; gap: 1.25rem; margin-top: 1.5rem; }
 .priceBlock { padding: 1.35rem; border: 1px solid var(--rule); border-radius: .9rem; background: #fff; }
-.priceBlock .from { display: block; font-family: var(--font-overpass), Inter, sans-serif; font-size: clamp(2rem, 10vw, 3.5rem); line-height: 1; font-weight: 800; letter-spacing: -.03em; margin: .4rem 0 .5rem; }
+.priceBlock .from { display: flex; flex-wrap: wrap; align-items: baseline; gap: .4rem; font-family: var(--font-overpass), Inter, sans-serif; font-size: clamp(2rem, 10vw, 3.5rem); line-height: 1; font-weight: 800; letter-spacing: -.03em; margin: .4rem 0 .5rem; }
+.plusIva { font-size: .9rem; font-weight: 600; letter-spacing: 0; color: #6d788f; }
 .priceBlock p { margin: .35rem 0 0; }
 .small { font-size: .925rem; color: var(--navy-soft); }
 .warranty { margin: 2rem 0 0; padding: 0; list-style: none; border-top: 1px solid var(--rule); }
@@ -359,6 +368,7 @@
   .sectionDark { padding: 5.5rem 0; }
   .hero { padding: 4.5rem 0 5rem; }
   .quotes { grid-template-columns: 1fr 1fr; gap: 3rem; }
+  .specialties { grid-template-columns: 1fr 1fr; gap: 3rem; }
   .reviews { grid-template-columns: repeat(3, 1fr); }
   .aboutGrid { grid-template-columns: 1.1fr .9fr; gap: 3rem; }
   .priceGrid { grid-template-columns: 1.15fr .85fr; }

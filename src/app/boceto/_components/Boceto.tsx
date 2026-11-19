@@ -61,6 +61,19 @@ export function Pendiente({ children }: { children: ReactNode }) {
 }
 
 /** Nota de fuente para la revisión de Fer. */
+/** Estrellas de reseña: mismo SVG y color que GoogleReviews (globals.css, #e0a106). */
+export function Estrellas({ rating }: { rating: number }) {
+  return (
+    <span className="google-review-stars" role="img" aria-label={`${rating} de 5 estrellas`}>
+      {Array.from({ length: 5 }, (_, index) => (
+        <svg key={index} viewBox="0 0 20 20" aria-hidden="true" className={index < rating ? "is-on" : undefined}>
+          <path d="M10 1.7 12.35 6.9l5.65.5-4.28 3.72 1.32 5.48L10 13.9l-5.04 2.7 1.32-5.48L2 7.4l5.65-.5L10 1.7Z" />
+        </svg>
+      ))}
+    </span>
+  );
+}
+
 export function Fuente({ children }: { children: ReactNode }) {
   return <p className={styles.fuente}>Fuente: {children}</p>;
 }

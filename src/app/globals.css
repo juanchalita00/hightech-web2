@@ -1623,6 +1623,7 @@ thead th { background: var(--surface-alt); }
 .price-block li { display: grid; gap: .2rem; align-content: start; }
 .price-block li > span { color: var(--ink-soft); font-size: .92rem; }
 .price-block li > strong { color: var(--ink); font-family: var(--font-overpass), sans-serif; font-size: 1.25rem; letter-spacing: -.02em; }
+.price-vat { font-size: .7em; font-weight: 600; letter-spacing: 0; color: var(--ink-soft); }
 .price-block li > small { color: var(--ink-soft); font-size: .875rem; }
 .price-block-note { margin: 1rem 0 0; padding-top: .85rem; border-top: 1px solid var(--line); color: var(--ink-soft); font-size: .9rem; }
 .price-block-wrap { padding: 0 0 clamp(2rem, 4vw, 3rem); }

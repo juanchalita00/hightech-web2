@@ -65,14 +65,14 @@ export function localBusinessSchema() {
         name: "Polarizado automotriz",
         description: `Desde, ${prices.autoIncludes}.`,
         priceCurrency: "MXN",
-        priceSpecification: { "@type": "PriceSpecification", minPrice: prices.autoFrom, priceCurrency: "MXN" },
+        priceSpecification: { "@type": "PriceSpecification", minPrice: prices.autoFrom, priceCurrency: "MXN", valueAddedTaxIncluded: false },
       },
       {
         "@type": "Offer",
         name: "Parabrisas completo, nanocerámica",
         description: "Desde, parabrisas completo.",
         priceCurrency: "MXN",
-        priceSpecification: { "@type": "PriceSpecification", minPrice: prices.windshieldFrom, priceCurrency: "MXN" },
+        priceSpecification: { "@type": "PriceSpecification", minPrice: prices.windshieldFrom, priceCurrency: "MXN", valueAddedTaxIncluded: false },
       },
       {
         "@type": "Offer",

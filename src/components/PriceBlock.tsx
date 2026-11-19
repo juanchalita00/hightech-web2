@@ -1,4 +1,4 @@
-type Row = { label: string; price: string; note?: string };
+type Row = { label: string; price: string; note?: string; vat?: boolean };
 
 export function PriceBlock({ rows, footnote, title = "Precios de referencia" }: { rows: readonly Row[]; footnote?: string; title?: string }) {
   return (
@@ -8,7 +8,7 @@ export function PriceBlock({ rows, footnote, title = "Precios de referencia" }: 
         {rows.map((row) => (
           <li key={row.label}>
             <span>{row.label}</span>
-            <strong>{row.price}</strong>
+            <strong>{row.price}{row.vat ? <> <span className="price-vat">+ IVA</span></> : null}</strong>
             {row.note ? <small>{row.note}</small> : null}
           </li>
         ))}
