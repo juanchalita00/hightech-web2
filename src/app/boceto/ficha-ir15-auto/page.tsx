@@ -4,7 +4,7 @@ import { BocetoBanner, CotizaWhatsApp, Fuente, MobileBar, Pendiente, leyes, mens
 import styles from "../boceto.module.css";
 
 export const metadata: Metadata = {
-  title: { absolute: "BOCETO ficha IR15 auto | HIGHTECH Polarizados" },
+  title: { absolute: "BOCETO ficha IR15 auto | High Tech Polarizados México" },
   description: "Boceto de ficha de producto para revisión interna. No es la web publicada.",
   robots: { index: false, follow: false },
 };

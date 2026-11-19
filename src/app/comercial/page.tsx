@@ -12,8 +12,8 @@ import { prices } from "@/lib/public-facts";
 const peso = new Intl.NumberFormat("es-MX", { style: "currency", currency: "MXN", maximumFractionDigits: 0 });
 
 export const metadata = { alternates: { canonical: "/comercial/" },
-  title: { absolute: "Polarizado comercial en Guadalajara y Zapopan | HIGHTECH Polarizados" },
-  description: "Polarizado para oficinas, fachadas y plantas en Zapopan y Guadalajara. Nanocerámica desde $800 por metro cuadrado. Seguridad y control solar según el cristal.",
+  title: { absolute: "Polarizado comercial | High Tech Polarizados México" },
+  description: "Polarizado para oficinas, fachadas y plantas. Nanocerámica desde $800 por metro cuadrado. Seguridad y control solar según el cristal. Instalamos en Zapopan y Guadalajara.",
 };
 
 const decisions = [

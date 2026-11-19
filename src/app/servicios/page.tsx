@@ -7,7 +7,7 @@ import styles from "./servicios.module.css";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/servicios/" },
-  title: { absolute: "Soluciones para cristales | HIGHTECH Polarizados" },
+  title: { absolute: "Soluciones para cristales | High Tech Polarizados México" },
   description: "Encuentra soluciones para reducir calor y deslumbramiento, mejorar privacidad, protección UV o seguridad en cristales residenciales, comerciales y automotrices.",
 };
 

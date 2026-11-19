@@ -5,7 +5,7 @@ import { HightechTip } from "@/components/HightechTip";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/peliculas/seguridad/industria-bpm/" },
-  title: { absolute: "Película de seguridad para plantas y BPM | HIGHTECH Polarizados" },
+  title: { absolute: "Película de seguridad para plantas y BPM | High Tech Polarizados México" },
   description: "En plantas de alimento, bebida y farmacéutica, la película de seguridad ayuda a cumplir el punto de control de vidrio que revisan los auditores. No certifica la planta.",
 };
 

@@ -6,7 +6,7 @@ import { HightechTip } from "@/components/HightechTip";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/guias/que-es-vlt/" },
-  title: { absolute: "Qué significan 75, 50, 35, 15 y 5 en un polarizado | HIGHTECH Polarizados" },
+  title: { absolute: "Qué significan 75, 50, 35, 15 y 5 en un polarizado | High Tech Polarizados México" },
   description: "El número del tono es la luz que el cristal deja pasar. 75 es claro. 5 es muy oscuro. No mide, por sí solo, el calor.",
 };
 

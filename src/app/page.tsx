@@ -10,8 +10,8 @@ import { airportName, googleProfile, onSitePolicy } from "@/lib/public-facts";
 import styles from "./home-v09.module.css";
 
 export const metadata: Metadata = {
-  title: { absolute: "Polarizado en Zapopan y Guadalajara | HIGHTECH Polarizados" },
-  description: "Polarizado nanocerámico para casa, negocio y auto en Zapopan. El tono cambia la luz y la privacidad; el calor del sol se corta en todos.",
+  title: { absolute: "High Tech Polarizados México | Películas Hightech para casa, negocio y auto" },
+  description: "High Tech Polarizados México. Películas Hightech nanocerámicas para casa, negocio y auto. El tono cambia la luz y la privacidad; el calor del sol se corta en todos. Instalamos en Zapopan y Guadalajara.",
   alternates: { canonical: "/" },
 };
 
@@ -63,7 +63,7 @@ export default function HomePage() {
         <div className={styles.shell}>
           <div className={styles.heroGrid}>
             <div className={styles.heroCopy}>
-              <p className={styles.kicker}>Polarizado en Zapopan</p>
+              <p className={styles.kicker}>High Tech Polarizados México</p>
               <h1>Menos calor, <span>con la luz que elijas.</span></h1>
               <p className={styles.heroDescription}>
                 La película corta el calor del sol en todos los tonos. El más oscuro no protege mucho más: cambia cuánta luz entra y cuánta privacidad quieres.

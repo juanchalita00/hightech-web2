@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/terminos-y-condiciones/" },
-  title: { absolute: "Términos y Condiciones | High Tech Polarizados" },
-  description: "Términos y Condiciones de High Tech Polarizados en Zapopan: pago, medidas, fecha de instalación, curado y garantía de la película.",
+  title: { absolute: "Términos y Condiciones | High Tech Polarizados México" },
+  description: "Términos y Condiciones de High Tech Polarizados México: pago, medidas, fecha de instalación, curado y garantía de la película. Instalamos en Zapopan y Guadalajara.",
 };
 
 const SECCIONES: { t: string; p: string[] }[] = [

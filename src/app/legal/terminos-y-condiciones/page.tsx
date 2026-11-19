@@ -6,8 +6,8 @@ import { release } from "@/lib/truth";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/legal/terminos-y-condiciones/" },
-  title: { absolute: "Términos y condiciones | HIGHTECH Polarizados" },
-  description: "Borrador no vigente de los términos de HIGHTECH Polarizados. Cuando se publique, aceptar la cotización incluirá estas condiciones y las obligaciones de pago.",
+  title: { absolute: "Términos y condiciones | High Tech Polarizados México" },
+  description: "Borrador no vigente de los términos de High Tech Polarizados México. Cuando se publique, aceptar la cotización incluirá estas condiciones y las obligaciones de pago.",
   robots: { index: false, follow: false },
 };
 

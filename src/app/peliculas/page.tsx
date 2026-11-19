@@ -5,7 +5,7 @@ import { ProductHero } from "@/components/ProductHero";
 import { TechnologyMatrix } from "@/components/TechnologyMatrix";
 
 export const metadata = { alternates: { canonical: "/peliculas/" },
-  title: { absolute: "Películas para cristales | HIGHTECH Polarizados" },
+  title: { absolute: "Películas para cristales | High Tech Polarizados México" },
   description: "Compara nanocerámica, película reflectiva, seguridad, privacidad y película inteligente PDLC según el problema, la apariencia y la aplicación.",
 };
 

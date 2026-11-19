@@ -7,7 +7,7 @@ import { ReflectaMirror } from "@/components/ReflectaMirror";
 import { HightechTip } from "@/components/HightechTip";
 
 export const metadata = { alternates: { canonical: "/peliculas/plata-reflecta/" },
-  title: { absolute: "Película Plata Reflecta | HIGHTECH Polarizados" },
+  title: { absolute: "Película Plata Reflecta | High Tech Polarizados México" },
   description: "Solución arquitectónica reflectiva para control solar y privacidad principalmente diurna, evaluada según cristal y proyecto.",
 };
 

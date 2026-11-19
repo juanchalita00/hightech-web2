@@ -17,13 +17,13 @@ export const viewport: Viewport = { width: "device-width", initialScale: 1, view
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://polarizadoshightech.com"),
-  title: { default: "HIGHTECH Polarizados", template: "%s | HIGHTECH Polarizados" },
-  description: "Polarizado en Zapopan y Guadalajara para casa, negocio y auto. HIGHTECH Polarizados instala películas que bajan el calor y dejan pasar la luz que eliges.",
+  title: { default: "High Tech Polarizados México", template: "%s | High Tech Polarizados México" },
+  description: "High Tech Polarizados México. Películas Hightech para casa, negocio y auto, que bajan el calor y dejan pasar la luz que eliges. Instalamos en Zapopan y Guadalajara.",
   openGraph: {
     type: "website",
     locale: "es_MX",
-    siteName: "HIGHTECH Polarizados",
-    images: [{ url: "/og/hightech-og.jpg", width: 1200, height: 630, alt: "HIGHTECH Polarizados · Polarizado nanocerámico para casa, negocio y auto" }],
+    siteName: "High Tech Polarizados México",
+    images: [{ url: "/og/hightech-og.jpg", width: 1200, height: 630, alt: "High Tech Polarizados México · Películas Hightech para casa, negocio y auto" }],
   },
   twitter: { card: "summary_large_image", images: ["/og/hightech-og.jpg"] },
   icons: {

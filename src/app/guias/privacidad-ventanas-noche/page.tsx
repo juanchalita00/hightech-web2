@@ -5,7 +5,7 @@ import { HightechTip } from "@/components/HightechTip";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/guias/privacidad-ventanas-noche/" },
-  title: { absolute: "Privacidad de noche en las ventanas | HIGHTECH Polarizados" },
+  title: { absolute: "Privacidad de noche en las ventanas | High Tech Polarizados México" },
   description: "De día un tono o un espejo esconden la sala. De noche, si la luz está adentro, se vuelve a ver. Así funciona el contraste.",
 };
 

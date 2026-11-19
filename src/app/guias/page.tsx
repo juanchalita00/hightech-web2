@@ -4,7 +4,7 @@ import { GuideHero } from "@/components/GuideHero";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/guias/" },
-  title: { absolute: "Guías de polarizado | HIGHTECH Polarizados" },
+  title: { absolute: "Guías de polarizado | High Tech Polarizados México" },
   description: "Guías en claro sobre calor, rayos UV, luz, privacidad de noche y el tono del auto en Jalisco.",
 };
 

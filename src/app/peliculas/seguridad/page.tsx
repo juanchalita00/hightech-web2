@@ -7,7 +7,7 @@ import { HightechTip } from "@/components/HightechTip";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/peliculas/seguridad/" },
-  title: { absolute: "Película de seguridad para cristal | HIGHTECH Polarizados" },
+  title: { absolute: "Película de seguridad para cristal | High Tech Polarizados México" },
   description: "Película de seguridad que retiene los fragmentos si el cristal se rompe. Garantía de 5 o 10 años según la película. Para casa, negocio y plantas.",
 };
 

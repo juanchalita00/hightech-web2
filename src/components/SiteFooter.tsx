@@ -10,7 +10,7 @@ export function SiteFooter() {
       <div className="container footer-main">
         <div className="footer-brand">
           <BrandLogo className="brand-logo-footer" variant="white" />
-          <p>Polarizado en Zapopan y Guadalajara para casa, negocio y auto.</p>
+          <p>High Tech Polarizados México. Películas Hightech para casa, negocio y auto. Instalamos en Zapopan y Guadalajara.</p>
           <span>{addressLine}</span>
           <span>{hoursLabel}</span>
           <SocialLinks />
@@ -48,8 +48,8 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="container footer-bottom">
-        <span>© 2026 HIGHTECH Polarizados</span>
-        <span>Polarizado en Zapopan, Jalisco</span>
+        <span>© 2026 High Tech Polarizados México</span>
+        <span>Instalamos en Zapopan y Guadalajara</span>
       </div>
     </footer>
   );

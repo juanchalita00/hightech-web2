@@ -5,7 +5,7 @@ import { HightechTip } from "@/components/HightechTip";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/guias/reducir-calor-ventanas/" },
-  title: { absolute: "Cómo bajar el calor de las ventanas | HIGHTECH Polarizados" },
+  title: { absolute: "Cómo bajar el calor de las ventanas | High Tech Polarizados México" },
   description: "El calor entra con el sol, no solo con el tono oscuro. Una película nanocerámica lo corta y deja la luz que elijas.",
 };
 

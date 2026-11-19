@@ -9,8 +9,8 @@ import { hoursLabel, prices } from "@/lib/public-facts";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/preguntas-frecuentes/" },
-  title: { absolute: "Preguntas frecuentes de polarizado | HIGHTECH Polarizados" },
-  description: "Respuestas claras sobre polarizado en Zapopan: calor, luz, auto en Jalisco, tiempos, garantía y precios desde.",
+  title: { absolute: "Preguntas frecuentes de polarizado | High Tech Polarizados México" },
+  description: "Respuestas claras sobre polarizado: calor, luz, auto en Jalisco, tiempos, garantía y precios desde. High Tech Polarizados México instala en Zapopan y Guadalajara.",
 };
 
 const autoFrom = new Intl.NumberFormat("es-MX", { style: "currency", currency: "MXN", maximumFractionDigits: 0 }).format(prices.autoFrom);

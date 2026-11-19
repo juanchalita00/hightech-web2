@@ -5,8 +5,8 @@ import { HightechTip } from "@/components/HightechTip";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/garantias/" },
-  title: { absolute: "Garantías de polarizado | HIGHTECH Polarizados" },
-  description: "Nanocerámica y automotriz, 10 años. Películas de seguridad, 5 o 10 años según la película. HIGHTECH Polarizados, Zapopan.",
+  title: { absolute: "Garantías de polarizado | High Tech Polarizados México" },
+  description: "Nanocerámica y automotriz, 10 años. Películas de seguridad, 5 o 10 años según la película. High Tech Polarizados México. Instalamos en Zapopan y Guadalajara.",
 };
 
 const rows = [

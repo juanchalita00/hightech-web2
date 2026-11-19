@@ -3,8 +3,8 @@ import { LocationLanding } from "@/components/LocationLanding";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/zapopan/" },
-  title: { absolute: "Polarizado en Zapopan, Jalisco | HIGHTECH Polarizados" },
-  description: "HIGHTECH Polarizados tiene su base en Zapopan. Instalación de películas residenciales, comerciales y automotrices, con cobertura en la zona metropolitana de Guadalajara.",
+  title: { absolute: "Polarizado en Zapopan, Jalisco | High Tech Polarizados México" },
+  description: "Polarizado en Zapopan: películas para casa, negocio y auto. High Tech Polarizados México instala en Zapopan y la zona metropolitana de Guadalajara, con taller en Tomás Mann 5348.",
 };
 
 export default function Page() {

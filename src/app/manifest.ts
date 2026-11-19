@@ -2,9 +2,9 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "HIGHTECH Polarizados",
+    name: "High Tech Polarizados México",
     short_name: "HIGHTECH",
-    description: "Polarizado en Zapopan y Guadalajara para casa, negocio y auto.",
+    description: "High Tech Polarizados México. Películas Hightech para casa, negocio y auto. Instalamos en Zapopan y Guadalajara.",
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",

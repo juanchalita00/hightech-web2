@@ -4,8 +4,8 @@ import { formatBlogDate, getBlogPosts } from "@/lib/blog";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/blog/" },
-  title: { absolute: "Blog de películas para cristales | HIGHTECH Polarizados" },
-  description: "Artículos de HIGHTECH Polarizados sobre nanocerámica, confort en casa y porcentajes automotrices, escritos para Zapopan y Guadalajara.",
+  title: { absolute: "Blog de películas para cristales | High Tech Polarizados México" },
+  description: "Artículos de High Tech Polarizados México sobre nanocerámica, confort en casa y porcentajes automotrices. Instalamos en Zapopan y Guadalajara.",
 };
 
 export default function BlogIndexPage() {

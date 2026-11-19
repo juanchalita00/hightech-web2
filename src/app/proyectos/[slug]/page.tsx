@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const project = getPublicProject(slug);
   if (!project) return { robots: { index: false, follow: false } };
   return {
-    title: { absolute: `Polarizado: ${project.internalTitle} | HIGHTECH Polarizados` },
+    title: { absolute: `Polarizado: ${project.internalTitle} | High Tech Polarizados México` },
     alternates:{canonical:`/proyectos/${slug}/`},
     robots: release.routes.projectsPublic ? { index: true, follow: true } : { index: false, follow: true },
   };

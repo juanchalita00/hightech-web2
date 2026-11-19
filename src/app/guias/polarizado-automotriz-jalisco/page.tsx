@@ -8,7 +8,7 @@ import { HightechTip } from "@/components/HightechTip";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/guias/polarizado-automotriz-jalisco/" },
-  title: { absolute: "Polarizado automotriz en Jalisco: qué tono va en cada cristal | HIGHTECH Polarizados" },
+  title: { absolute: "Polarizado automotriz en Jalisco: qué tono va en cada cristal | High Tech Polarizados México" },
   description: "Qué tono se usa en cada cristal del auto en Jalisco, qué dice la regla y qué vemos en la práctica en Guadalajara. Te asesoramos para elegir con buena visibilidad.",
 };
 

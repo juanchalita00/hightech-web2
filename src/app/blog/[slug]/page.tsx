@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const post = getBlogPost(slug);
   if (!post) return { robots: { index: false, follow: false } };
   return {
-    title: { absolute: `${post.title} | HIGHTECH Polarizados` },
+    title: { absolute: `${post.title} | High Tech Polarizados México` },
     description: post.description,
     alternates: { canonical: `/blog/${post.slug}/` },
     openGraph: { type: "article", title: post.title, description: post.description, publishedTime: post.date, modifiedTime: post.updated },
@@ -60,7 +60,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       <div className="container blog-post-layout">
         <p className="eyebrow">{post.category}</p>
         <h1>{post.title}</h1>
-        <p className="blog-post-meta"><time dateTime={post.date}>{formatBlogDate(post.date)}</time> · HIGHTECH Polarizados · Zapopan, Jalisco</p>
+        <p className="blog-post-meta"><time dateTime={post.date}>{formatBlogDate(post.date)}</time> · High Tech Polarizados México</p>
         {post.slug === "mitos-de-porcentajes-en-el-auto" ? <MythPost body={post.body} /> : <Markdown source={post.body} />}
         <p className="blog-post-cta"><Link className="button button-primary" href="/contacto/#cotizar">Cotizar</Link></p>
         {related.length ? (

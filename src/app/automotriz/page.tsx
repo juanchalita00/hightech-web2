@@ -16,8 +16,8 @@ import { onSitePolicy, prices } from "@/lib/public-facts";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/automotriz/" },
-  title: { absolute: "Polarizado para auto en Zapopan | HIGHTECH Polarizados" },
-  description: "Polarizado nanocerámico para auto en Zapopan: laterales, medallón y parabrisas completo. Desde $4,000 + IVA; parabrisas completo desde $1,500 + IVA.",
+  title: { absolute: "Polarizado para auto | High Tech Polarizados México" },
+  description: "Polarizado nanocerámico para auto: laterales, medallón y parabrisas completo. Desde $4,000 + IVA; parabrisas completo desde $1,500 + IVA. Instalamos en Zapopan y Guadalajara.",
 };
 
 const peso = new Intl.NumberFormat("es-MX", { style: "currency", currency: "MXN", maximumFractionDigits: 0 });

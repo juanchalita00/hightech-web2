@@ -5,7 +5,7 @@ import { HightechTip } from "@/components/HightechTip";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/guias/estres-termico-cristal/" },
-  title: { absolute: "Por qué el tipo de vidrio importa | HIGHTECH Polarizados" },
+  title: { absolute: "Por qué el tipo de vidrio importa | High Tech Polarizados México" },
   description: "Un cristal grande al sol se calienta de forma dispareja. Antes de instalar, vemos qué vidrio es para no forzarlo.",
 };
 

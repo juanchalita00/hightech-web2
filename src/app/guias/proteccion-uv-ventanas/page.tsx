@@ -5,7 +5,7 @@ import { HightechTip } from "@/components/HightechTip";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/guias/proteccion-uv-ventanas/" },
-  title: { absolute: "Rayos UV en las ventanas | HIGHTECH Polarizados" },
+  title: { absolute: "Rayos UV en las ventanas | High Tech Polarizados México" },
   description: "Los rayos UV decoloran pisos y muebles junto a la ventana. La nanocerámica los bloquea en todos los tonos, también en el más claro.",
 };
 

@@ -5,7 +5,7 @@ import { HightechTip } from "@/components/HightechTip";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/guias/irr-vs-tser/" },
-  title: { absolute: "Calor del sol y tono del polarizado | HIGHTECH Polarizados" },
+  title: { absolute: "Calor del sol y tono del polarizado | High Tech Polarizados México" },
   description: "Todos los tonos cortan el calor que se siente en la piel junto a la ventana. La protección total varía un poco con el tono, menos de lo que suele pensarse.",
 };
 

@@ -134,7 +134,7 @@ export async function generateMetadata({ params }: { params: Promise<{ tone: str
   if (!film) return {};
   const copy = toneCopy[film.id];
   return {
-    title: { absolute: `Polarizado nanocerámico tono ${toneName(film.id)} | HIGHTECH Polarizados` },
+    title: { absolute: `Polarizado nanocerámico tono ${toneName(film.id)} | High Tech Polarizados México` },
     description: `Tono ${toneName(film.id)}: ${copy.headline} Bloquea los rayos UV y el calor del sol, y deja pasar la luz de este tono.`,
     alternates:{canonical:`/peliculas/nanoceramica/${tone.toLowerCase()}/`},
     robots: release.routes.tonePagesIndexable ? { index: true, follow: true } : { index: false, follow: true },

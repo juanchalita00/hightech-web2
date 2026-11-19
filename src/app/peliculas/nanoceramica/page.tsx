@@ -7,7 +7,7 @@ import { ProductCTA } from "@/components/ProductCTA";
 import { ProductHero } from "@/components/ProductHero";
 
 export const metadata = { alternates: { canonical: "/peliculas/nanoceramica/" },
-  title: { absolute: "Película nanocerámica | HIGHTECH Polarizados" },
+  title: { absolute: "Película nanocerámica | High Tech Polarizados México" },
   description: "Cinco tonos de nanocerámica. Todos cortan los rayos UV y el calor del sol. El número es la luz que quieres dejar pasar.",
 };
 

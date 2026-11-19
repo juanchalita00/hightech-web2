@@ -9,8 +9,8 @@ import { release } from "@/lib/truth";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/proyectos/" },
-  title: { absolute: "Proyectos documentados | HIGHTECH Polarizados" },
-  description: "Casos de HIGHTECH Polarizados con el problema, la película instalada y el resultado que se puede mostrar. Las fotos sueltas están en la galería.",
+  title: { absolute: "Proyectos documentados | High Tech Polarizados México" },
+  description: "Casos de High Tech Polarizados México con el problema, la película instalada y el resultado que se puede mostrar. Las fotos sueltas están en la galería.",
   robots: release.routes.projectsPublic ? { index: true, follow: true } : { index: false, follow: true },
 };
 

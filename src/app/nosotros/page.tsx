@@ -8,8 +8,8 @@ import { addressLine, airportName, googleProfile, hoursLabel } from "@/lib/publi
 
 export const metadata: Metadata = {
   alternates: { canonical: "/nosotros/" },
-  title: { absolute: "Nosotros | HIGHTECH Polarizados en Zapopan" },
-  description: "High Tech Polarizados México instala en Zapopan desde Tomás Mann 5348. Casa, negocio y auto, con garantía de 10 años en nanocerámica.",
+  title: { absolute: "Nosotros | High Tech Polarizados México" },
+  description: "High Tech Polarizados México es el distribuidor en todo México de las películas Hightech. Instalamos en Zapopan y Guadalajara, con taller en Tomás Mann 5348. Casa, negocio y auto, con garantía de 10 años en nanocerámica.",
 };
 
 const process = [
@@ -24,7 +24,7 @@ export default function Page() {
     <>
       <TrustHero
         eyebrow="High Tech Polarizados México"
-        title="Polarizado en Zapopan, con el cristal como punto de partida."
+        title="Polarizado para casa, negocio y auto, con el cristal como punto de partida."
         description="Primero vemos qué te molesta. Después elegimos la película y el tono."
         points={["Taller en Jardines Vallarta", "Casa y negocio en la zona", "Auto en taller con cita"]}
       />

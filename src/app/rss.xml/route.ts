@@ -18,9 +18,9 @@ export function GET() {
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
   <channel>
-    <title>Blog de HIGHTECH Polarizados</title>
+    <title>Blog de High Tech Polarizados México</title>
     <link>${base}/blog/</link>
-    <description>Artículos sobre películas para cristales en Zapopan y Guadalajara.</description>
+    <description>Artículos sobre películas para cristales de High Tech Polarizados México. Instalamos en Zapopan y Guadalajara.</description>
     <language>es-mx</language>${items}
   </channel>
 </rss>`;

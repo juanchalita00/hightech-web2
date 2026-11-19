@@ -9,8 +9,8 @@ import { pdlcQuotePath } from "@/lib/quote";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/pelicula-inteligente-pdlc/" },
-  title: { absolute: "Película inteligente PDLC | HIGHTECH Polarizados" },
-  description: "Película inteligente PDLC, también llamada vidrio inteligente: el cristal pasa de opaco a transparente. Cotización con visita técnica en Zapopan y Guadalajara.",
+  title: { absolute: "Película inteligente PDLC | High Tech Polarizados México" },
+  description: "Película inteligente PDLC, también llamada vidrio inteligente: el cristal pasa de opaco a transparente. Cotización con visita técnica. Instalamos en Zapopan y Guadalajara.",
 };
 
 const faqs = [

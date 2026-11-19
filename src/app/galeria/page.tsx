@@ -5,8 +5,8 @@ import { getGalleryItems } from "@/lib/gallery";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/galeria/" },
-  title: { absolute: "Galería de proyectos de polarizado | HIGHTECH Polarizados" },
-  description: "Fotos reales de instalaciones residenciales y comerciales de HIGHTECH Polarizados en Zapopan y la zona metropolitana de Guadalajara.",
+  title: { absolute: "Galería de proyectos de polarizado | High Tech Polarizados México" },
+  description: "Fotos reales de instalaciones residenciales y comerciales de High Tech Polarizados México. Instalamos en Zapopan y la zona metropolitana de Guadalajara.",
 };
 
 export default function GalleryPage() {

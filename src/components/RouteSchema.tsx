@@ -30,19 +30,19 @@ const names: Record<string, string> = {
 
 const services: Record<string, { name: string; description: string; minPrice?: number; unitText?: string; vatIncluded?: boolean }> = {
   "/automotriz/": {
-    name: "Polarizado automotriz en Zapopan",
+    name: "Polarizado automotriz",
     description: `Laterales, medallón y parabrisas completo con nanocerámica. Desde $${prices.autoFrom.toLocaleString("es-MX")} + IVA; parabrisas completo desde $${prices.windshieldFrom.toLocaleString("es-MX")} + IVA. Garantía de 10 años.`,
     minPrice: prices.autoFrom,
     vatIncluded: false,
   },
   "/residencial/": {
-    name: "Polarizado residencial en Zapopan",
+    name: "Polarizado residencial",
     description: `Película para casa que baja el calor del sol. Nanocerámica desde $${prices.nanoFrom.toLocaleString("es-MX")} por metro cuadrado; otras películas desde $${prices.architectureFrom.toLocaleString("es-MX")}. Mínimo de proyecto $${prices.projectMinimum.toLocaleString("es-MX")}.`,
     minPrice: prices.architectureFrom,
     unitText: "m²",
   },
   "/comercial/": {
-    name: "Polarizado comercial en Guadalajara y Zapopan",
+    name: "Polarizado comercial",
     description: `Película para oficinas, locales y fachadas. Nanocerámica desde $${prices.nanoFrom.toLocaleString("es-MX")} por metro cuadrado; otras películas desde $${prices.architectureFrom.toLocaleString("es-MX")}. Mínimo de proyecto $${prices.projectMinimum.toLocaleString("es-MX")}.`,
     minPrice: prices.architectureFrom,
     unitText: "m²",

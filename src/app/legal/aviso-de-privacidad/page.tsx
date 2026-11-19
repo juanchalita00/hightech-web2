@@ -4,8 +4,8 @@ import { truth } from "@/lib/truth";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/legal/aviso-de-privacidad/" },
-  title: { absolute: "Aviso de privacidad | HIGHTECH Polarizados" },
-  description: "Aviso de privacidad de HIGHTECH Polarizados para los datos del formulario de cotización y de WhatsApp.",
+  title: { absolute: "Aviso de privacidad | High Tech Polarizados México" },
+  description: "Aviso de privacidad de High Tech Polarizados México para los datos del formulario de cotización y de WhatsApp.",
   robots: { index: false, follow: false },
 };
 

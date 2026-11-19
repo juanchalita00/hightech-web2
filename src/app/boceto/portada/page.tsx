@@ -8,7 +8,7 @@ import { BocetoBanner, CotizaWhatsApp, Estrellas, Fuente, MobileBar, Pendiente, 
 import styles from "../boceto.module.css";
 
 export const metadata: Metadata = {
-  title: { absolute: "BOCETO portada | HIGHTECH Polarizados" },
+  title: { absolute: "BOCETO portada | High Tech Polarizados México" },
   description: "Boceto de portada para revisión interna. No es la web publicada.",
   robots: { index: false, follow: false },
 };
@@ -41,7 +41,7 @@ export default function BocetoPortadaPage() {
         <div className={`${styles.shell} ${styles.heroGrid}`}>
           <div>
             <span className={styles.sunRule} aria-hidden="true" />
-            <p className={styles.kicker}>Casa, negocio y auto · Zapopan y Guadalajara</p>
+            <p className={styles.kicker}>Casa, negocio y auto · Instalamos en Zapopan y Guadalajara</p>
             <h1 id="hero-titulo">Menos calor, sin quedarte a oscuras.</h1>
             <p className={styles.heroText}>
               ¿Tu casa parece horno? ¿El aire no enfría? Le ponemos película a tus cristales para que entre menos calor. Tú eliges qué tan claro queda.
