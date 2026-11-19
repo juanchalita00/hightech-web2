@@ -78,6 +78,8 @@ export default function BocetoPortadaPage() {
               <ul className={styles.quoteList}>
                 <li>Mi carro se calienta mucho</li>
                 <li>El sol me quema al manejar</li>
+                <li>Se me quema el brazo manejando</li>
+                <li>El volante me quema las manos</li>
                 <li>Quiero privacidad</li>
                 <li>No quiero multas</li>
               </ul>
