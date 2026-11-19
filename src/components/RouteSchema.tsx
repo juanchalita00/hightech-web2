@@ -31,7 +31,7 @@ const names: Record<string, string> = {
 const services: Record<string, { name: string; description: string; minPrice?: number; unitText?: string }> = {
   "/automotriz/": {
     name: "Polarizado automotriz en Zapopan",
-    description: `Laterales, medallón y parabrisas completo con nanocerámica. Desde $${prices.autoFrom.toLocaleString("es-MX")} en auto compacto; parabrisas completo desde $${prices.windshieldFrom.toLocaleString("es-MX")}. Garantía de 10 años.`,
+    description: `Laterales, medallón y parabrisas completo con nanocerámica. Desde $${prices.autoFrom.toLocaleString("es-MX")}; parabrisas completo desde $${prices.windshieldFrom.toLocaleString("es-MX")}. Garantía de 10 años.`,
     minPrice: prices.autoFrom,
   },
   "/residencial/": {

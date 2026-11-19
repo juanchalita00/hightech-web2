@@ -17,7 +17,7 @@ import { onSitePolicy, prices } from "@/lib/public-facts";
 export const metadata: Metadata = {
   alternates: { canonical: "/automotriz/" },
   title: { absolute: "Polarizado para auto en Zapopan | HIGHTECH Polarizados" },
-  description: "Polarizado nanocerámico para auto en Zapopan: laterales, medallón y parabrisas completo. Desde $3,500 en auto compacto; parabrisas completo desde $1,500.",
+  description: "Polarizado nanocerámico para auto en Zapopan: laterales, medallón y parabrisas completo. Desde $4,000; parabrisas completo desde $1,500.",
 };
 
 const peso = new Intl.NumberFormat("es-MX", { style: "currency", currency: "MXN", maximumFractionDigits: 0 });
@@ -55,7 +55,7 @@ const faqs = [
   },
   {
     question: "¿Cuánto cuesta?",
-    answer: <p>Desde {money}, laterales y medallón de un auto compacto. El parabrisas completo, desde {windshieldMoney}. Un vehículo más grande se cotiza aparte.</p>,
+    answer: <p>Desde {money}, laterales y medallón. El parabrisas completo, desde {windshieldMoney}. Un vehículo más grande se cotiza aparte.</p>,
   },
   {
     question: "¿Qué garantía tiene?",
@@ -100,7 +100,7 @@ export default function AutomotivePage() {
           <PriceBlock
             title="Desde"
             rows={[
-              { label: "Laterales y medallón", price: money, note: "Auto compacto." },
+              { label: "Laterales y medallón", price: money },
               { label: "Parabrisas completo, nanocerámica", price: windshieldMoney, note: "Claro o en el tono que elijas." },
             ]}
             footnote="Un vehículo más grande se cotiza aparte. Garantía de 10 años."

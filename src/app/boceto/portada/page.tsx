@@ -15,26 +15,22 @@ export const metadata: Metadata = {
 
 const mensaje = mensajes.portada;
 
-// Fragmentos textuales de reseñas reales del perfil de Google (content/google-reviews.json).
-const reseñasElegidas = [
-  {
-    author: "Valeria Garnica",
-    excerpt:
-      "Tenía una habitación donde pegaba el sol todo el tiempo, pero no quería perder la vista […] me mostraron una película transparente que me sorprendió mucho, bajó el calor de la habitación.",
-  },
-  {
-    author: "Christian Chávez",
-    excerpt:
-      "Ahora el sol no se siente como antes […] una de las ventanas no había quedado bien y decidieron repetir el proceso sin dudar.",
-  },
-  {
-    author: "Marivi AC",
-    excerpt: "Ofrecen los productos adecuados para cada ubicación.",
-  },
-] as const;
+/** Tres reseñas reales de content/google-reviews.json, texto y nombre tal cual. Se omite la de Michael Richards («10 grados más fresca», sin método). */
+const autoresDestacados = ["Valeria Garnica", "Christian Chávez", "Marivi AC"] as const;
+
+function fechaResena(iso: string) {
+  const [y, m, d] = iso.split("-").map(Number);
+  return new Date(Date.UTC(y, m - 1, d)).toLocaleDateString("es-MX", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
+}
 
 export default function BocetoPortadaPage() {
-  const perfilGoogle = getGoogleReviews()[0]?.sourceUrl ?? truth.contact.mapsUrl;
+  const todas = getGoogleReviews();
+  const perfilGoogle = todas[0]?.sourceUrl ?? truth.contact.mapsUrl;
+  const reseñasElegidas = autoresDestacados.map((nombre) => {
+    const found = todas.find((r) => r.author === nombre);
+    if (!found) throw new Error(`Falta la reseña de ${nombre} en content/google-reviews.json`);
+    return found;
+  });
 
   return (
     <div className={styles.page}>
@@ -189,13 +185,17 @@ export default function BocetoPortadaPage() {
           <div className={styles.reviews}>
             {reseñasElegidas.map((r) => (
               <figure className={styles.review} key={r.author}>
-                <blockquote>«{r.excerpt}»</blockquote>
-                <figcaption>{r.author} · reseña en Google</figcaption>
+                <blockquote>{r.quote}</blockquote>
+                <figcaption>
+                  <strong>{r.author}</strong>
+                  {typeof r.rating === "number" ? <span> · {r.rating} de 5 estrellas en Google</span> : <span> · reseña en Google</span>}
+                  {r.publishedAt ? <span> · {fechaResena(r.publishedAt)}</span> : null}
+                  {" "}<a href={r.sourceUrl} target="_blank" rel="noopener noreferrer">Ver en Google</a>
+                </figcaption>
               </figure>
             ))}
           </div>
-          <Pendiente>Fer confirma el permiso de estas 3 personas para usar su nombre y su reseña (son públicas en Google y ya salen en la web actual).</Pendiente>
-          <Fuente>aeropuerto: Fer, 19 nov 2026, y texto de la web actual; reseñas: perfil de Google (content/google-reviews.json); conteo: public-facts.ts.</Fuente>
+          <Fuente>aeropuerto: Fer, 19 nov 2026, y texto de la web actual; reseñas: perfil de Google (content/google-reviews.json), texto literal; conteo: public-facts.ts.</Fuente>
         </div>
       </section>
 
@@ -245,8 +245,8 @@ export default function BocetoPortadaPage() {
                 El <a href={leyes.reglamento}>Reglamento de Movilidad de Jalisco</a> pide que los cristales dejen ver hacia el interior y señala que el parabrisas no debe ir polarizado (art. 59, fr. VIII). La <a href={leyes.ley}>Ley de Movilidad</a> lo considera infracción con multa de 1 a 5 UMA (art. 360, fr. IX).
               </p>
             </div>
-            <p>En Jalisco es común ver el parabrisas con película clara (75 o 70) y los laterales en 35. Es costumbre, no una regla.</p>
-            <p>El tono de cada cristal lo platicamos contigo; en parabrisas el más común es el IR75.</p>
+            <p>En el parabrisas lo más común es el IR75. Si quieres privacidad, en High Tech recomendamos máximo IR35, para que te sientas cómodo y conserves la visibilidad. Es lo que suele hacerse; no es una regla.</p>
+            <p>El tono de cada cristal lo platicamos contigo.</p>
             <Pendiente>revisión del abogado de este texto.</Pendiente>
           </div>
 
@@ -267,8 +267,8 @@ export default function BocetoPortadaPage() {
           <div className={styles.priceGrid}>
             <div className={styles.priceBlock}>
               <h3><Icon name="car" size={22} /> Auto</h3>
-              <span className={styles.from}>Desde $3,500</span>
-              <p>Laterales y medallón de un auto compacto. Parabrisas desde $1,500.</p>
+              <span className={styles.from}>Desde $4,000</span>
+              <p>Laterales y medallón. Parabrisas desde $1,500.</p>
               <p className={styles.small}>
                 Precio en efectivo. Con tarjeta o transferencia se suma el IVA (16%). Hasta 3 meses sin intereses (6 en promociones); los meses sin intereses no se combinan con descuentos.
               </p>
@@ -289,7 +289,7 @@ export default function BocetoPortadaPage() {
           </ul>
           <p style={{ marginTop: "1rem" }}>La instalación se cubre en el certificado de garantía HIGHTECH que te entregamos.</p>
           <Pendiente>póliza escrita revisada por abogado.</Pendiente>
-          <Fuente>tarifa CHICO (precios_auto_live_20261109.json); reglas de pago de Fer; mínimo: config minimo_pedido; garantías: base de conocimiento §6 y brief.</Fuente>
+          <Fuente>precio auto: Fer, 19 nov 2026 (el estándar es el piso; ya no hay categoría de auto chico); reglas de pago de Fer; mínimo: config minimo_pedido; garantías: base de conocimiento §6 y brief.</Fuente>
         </div>
       </section>
 

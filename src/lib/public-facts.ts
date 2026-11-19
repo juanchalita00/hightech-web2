@@ -22,8 +22,8 @@ export const ctaWhatsapp = "WhatsApp";
 export const googleProfile = { count: 70 };
 
 export const prices = {
-  autoFrom: 3500,
-  autoIncludes: "laterales y medallón, auto compacto",
+  autoFrom: 4000,
+  autoIncludes: "laterales y medallón",
   architectureFrom: 600,
   nanoFrom: 800,
   projectMinimum: 1500,

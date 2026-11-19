@@ -92,7 +92,7 @@ export default function BocetoFichaIr15AutoPage() {
       <section className={styles.section} aria-labelledby="compara-titulo">
         <div className={styles.shell}>
           <p className={styles.kicker}>Compárala</p>
-          <h2 id="compara-titulo">Más oscuro no siempre es más fresco.</h2>
+          <h2 id="compara-titulo">Lo que cuenta es el calor que bloquea, no solo el tono.</h2>
           <p className={styles.lead}>Mira el número del calor, no solo el tono.</p>
           <div className={styles.compare}>
             {comparar.map((p) => (
@@ -112,7 +112,7 @@ export default function BocetoFichaIr15AutoPage() {
           <div className={styles.tip}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/boceto/glazy-profe-tips.svg" alt="" width={72} height={72} />
-            <p>Más oscuro no siempre es más fresco: mira el número del calor.</p>
+            <p>Lo que cuenta es el calor que bloquea, no solo el tono: mira el número del calor.</p>
           </div>
           <Fuente>VLT y TSER de la ficha SRC-TECH-SEP19 (System of Truth v0.19, §7).</Fuente>
         </div>
@@ -154,7 +154,6 @@ export default function BocetoFichaIr15AutoPage() {
             <div>
               <h3>Mejor otro tono</h3>
               <ul>
-                <li>En el parabrisas. El tono del parabrisas lo platicamos; el más común es el IR75.</li>
                 <li>Si quieres ver bien hacia afuera de noche sin luz adentro.</li>
               </ul>
             </div>
@@ -164,6 +163,7 @@ export default function BocetoFichaIr15AutoPage() {
               <strong>La norma en Jalisco:</strong> el <a href={leyes.reglamento}>Reglamento de Movilidad</a> pide que los cristales dejen ver hacia el interior y que el parabrisas no vaya polarizado (art. 59, fr. VIII). La <a href={leyes.ley}>Ley de Movilidad</a> lo considera infracción con multa de 1 a 5 UMA (art. 360, fr. IX).
             </p>
           </div>
+          <p>En el parabrisas lo más común es el IR75. Si quieres privacidad, en High Tech recomendamos máximo IR35, para que te sientas cómodo y conserves la visibilidad. Es lo que suele hacerse; no es una regla.</p>
           <Pendiente>revisión del abogado de este texto.</Pendiente>
           <Fuente>base de conocimiento §4 (tono 15); norma: PDF oficiales del Congreso de Jalisco.</Fuente>
         </div>
@@ -200,13 +200,13 @@ export default function BocetoFichaIr15AutoPage() {
           <p className={styles.kicker}>Precio</p>
           <h2 id="precio-titulo">Cuánto cuesta en tu auto.</h2>
           <div className={styles.priceBlock}>
-            <span className={styles.from}>Desde $3,500</span>
-            <p>Laterales y medallón (auto compacto). Parabrisas desde $1,500.</p>
+            <span className={styles.from}>Desde $4,000</span>
+            <p>Laterales y medallón. Parabrisas desde $1,500.</p>
             <p className={styles.small}>
               Precio en efectivo; con tarjeta o transferencia se suma el IVA (16%). Hasta 3 meses sin intereses (6 en promociones), sin combinar con descuentos.
             </p>
           </div>
-          <Fuente>tarifa CHICO (precios_auto_live_20261109.json); reglas de pago de Fer.</Fuente>
+          <Fuente>precio auto: Fer, 19 nov 2026 (el estándar es el piso; ya no hay categoría de auto chico); reglas de pago de Fer.</Fuente>
         </div>
       </section>
 
