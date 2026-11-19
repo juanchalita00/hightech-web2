@@ -10,7 +10,7 @@ import { airportName, googleProfile, onSitePolicy } from "@/lib/public-facts";
 import styles from "./home-v09.module.css";
 
 export const metadata: Metadata = {
-  title: { absolute: "High Tech Polarizados México | Películas Hightech para casa, negocio y auto" },
+  title: { absolute: "High Tech Polarizados México | Polarizado en Zapopan y Guadalajara" },
   description: "High Tech Polarizados México. Películas Hightech nanocerámicas para casa, negocio y auto. El tono cambia la luz y la privacidad; el calor del sol se corta en todos. Instalamos en Zapopan y Guadalajara.",
   alternates: { canonical: "/" },
 };

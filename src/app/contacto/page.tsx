@@ -10,7 +10,7 @@ import { truth } from "@/lib/truth";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/contacto/" },
-  title: { absolute: "Cotizar polarizado | High Tech Polarizados México" },
+  title: { absolute: "Cotizar polarizado en Zapopan y Guadalajara | High Tech México" },
   description: "Pide una cotización de polarizado residencial, comercial o automotriz. Instalamos en Zapopan y la zona metropolitana de Guadalajara. Elige si te contactamos por WhatsApp o por correo.",
 };
 
