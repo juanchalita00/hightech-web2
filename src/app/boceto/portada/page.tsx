@@ -328,7 +328,7 @@ export default function BocetoPortadaPage() {
         </div>
       </section>
 
-      {/* 8. OFERTA, GARANTÍA Y PRECIOS. Auto: Fer, 19 nov 2026. Casa/negocio $850 y $600 + IVA: Fer, 20 nov 2026. Mínimo $1,500: config minimo_pedido. Garantía de la película: Fer, 20 nov 2026. */}
+      {/* 8. OFERTA, GARANTÍA Y PRECIOS. Auto: Fer, 19–20 nov 2026 (piso $4,000 y parabrisas $1,500 en efectivo, sin IVA; con tarjeta o transferencia se suma IVA). Casa/negocio $850 y $600 + IVA: Fer, 20 nov 2026. Mínimo $1,500 + IVA: config minimo_pedido, Fer 20 nov 2026. Garantía de la película: Fer, 20 nov 2026. */}
       <section className={styles.sectionAlt} aria-labelledby="precios-titulo" id="precios">
         <div className={styles.shell}>
           <p className={styles.kicker}>Precios y garantía</p>
@@ -336,15 +336,16 @@ export default function BocetoPortadaPage() {
           <div className={styles.priceGrid}>
             <div className={styles.priceBlock}>
               <h3><Icon name="car" size={22} /> Auto</h3>
-              <span className={styles.from}>Desde $4,000 <span className={styles.plusIva}>+ IVA</span></span>
-              <p>Película IR nanocerámica Hightech. Laterales y medallón. Parabrisas desde $1,500 <span className={styles.plusIva}>+ IVA</span>.</p>
+              <span className={styles.from}>Desde $4,000</span>
+              <p>Película IR nanocerámica Hightech. Laterales y medallón. Parabrisas desde $1,500.</p>
+              <p className={styles.small}>Con tarjeta o transferencia se suma IVA.</p>
               <p className={styles.small}>Aceptamos todos los métodos de pago. Hasta 3 meses sin intereses.</p>
             </div>
             <div className={styles.priceBlock}>
               <h3><Icon name="home" size={22} /> Casa y negocio</h3>
               <p>Nanocerámica desde $850 <span className={styles.plusIva}>+ IVA</span> por m².</p>
               <p>Soluciones desde $600 <span className={styles.plusIva}>+ IVA</span> por m² (esmerilado y Reflecta).</p>
-              <p className={styles.small}>Mínimo por proyecto: $1,500.</p>
+              <p className={styles.small}>Mínimo por proyecto: $1,500 <span className={styles.plusIva}>+ IVA</span>.</p>
             </div>
           </div>
 

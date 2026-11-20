@@ -22,12 +22,12 @@ export const ctaWhatsapp = "WhatsApp";
 export const googleProfile = { count: 70 };
 
 export const prices = {
-  autoFrom: 4000,
+  autoFrom: 4000, // efectivo sin IVA; con tarjeta o transferencia se suma IVA
   autoIncludes: "laterales y medallón",
   architectureFrom: 600, // + IVA, esmerilado y Reflecta
   nanoFrom: 850, // + IVA
-  projectMinimum: 1500, // mínimo de proyecto casa/negocio (config minimo_pedido); no es el piso del parabrisas
-  windshieldFrom: 1500,
+  projectMinimum: 1500, // mínimo de proyecto casa/negocio (config minimo_pedido) + IVA; no es el piso del parabrisas
+  windshieldFrom: 1500, // efectivo sin IVA; con tarjeta o transferencia se suma IVA
 };
 
 export const geo = { latitude: 20.6839, longitude: -103.4262 };

@@ -175,7 +175,7 @@ export default function ResidentialPage() {
               { label: "Nanocerámica", price: `${peso.format(prices.nanoFrom)} por m²`, vat: true },
               { label: "Otras películas para casa, incluida plata reflecta", price: `${peso.format(prices.architectureFrom)} por m²`, vat: true },
             ]}
-            footnote={`Mínimo de proyecto ${peso.format(prices.projectMinimum)}. Seguridad y película inteligente se cotizan aparte.`}
+            footnote={<>Mínimo de proyecto {peso.format(prices.projectMinimum)} <span className="price-vat">+ IVA</span>. Seguridad y película inteligente se cotizan aparte.</>}
           />
         </div>
       </section>

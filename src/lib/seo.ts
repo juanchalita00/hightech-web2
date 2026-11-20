@@ -81,14 +81,14 @@ export function localBusinessSchema() {
       {
         "@type": "Offer",
         name: "Nanocerámica para casa y negocio",
-        description: "Desde, por metro cuadrado, más IVA. El proyecto tiene un mínimo de $1,500.",
+        description: "Desde, por metro cuadrado, más IVA. El proyecto tiene un mínimo de $1,500 + IVA.",
         priceCurrency: "MXN",
         priceSpecification: { "@type": "PriceSpecification", minPrice: prices.nanoFrom, priceCurrency: "MXN", unitText: "m²", valueAddedTaxIncluded: false },
       },
       {
         "@type": "Offer",
         name: "Otras películas para casa y negocio",
-        description: "Desde, por metro cuadrado, más IVA. El proyecto tiene un mínimo de $1,500.",
+        description: "Desde, por metro cuadrado, más IVA. El proyecto tiene un mínimo de $1,500 + IVA.",
         priceCurrency: "MXN",
         priceSpecification: { "@type": "PriceSpecification", minPrice: prices.architectureFrom, priceCurrency: "MXN", unitText: "m²", valueAddedTaxIncluded: false },
       },

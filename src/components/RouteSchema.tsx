@@ -31,20 +31,20 @@ const names: Record<string, string> = {
 const services: Record<string, { name: string; description: string; minPrice?: number; unitText?: string; vatIncluded?: boolean }> = {
   "/automotriz/": {
     name: "Polarizado automotriz",
-    description: `Laterales, medallón y parabrisas completo con nanocerámica. Desde $${prices.autoFrom.toLocaleString("es-MX")} + IVA; parabrisas completo desde $${prices.windshieldFrom.toLocaleString("es-MX")} + IVA. Garantía de 10 años.`,
+    description: `Laterales, medallón y parabrisas completo con nanocerámica. Desde $${prices.autoFrom.toLocaleString("es-MX")}; parabrisas completo desde $${prices.windshieldFrom.toLocaleString("es-MX")}. Con tarjeta o transferencia se suma IVA. Garantía de 10 años.`,
     minPrice: prices.autoFrom,
     vatIncluded: false,
   },
   "/residencial/": {
     name: "Polarizado residencial",
-    description: `Película para casa que baja el calor del sol. Nanocerámica desde $${prices.nanoFrom.toLocaleString("es-MX")} + IVA por metro cuadrado; otras películas desde $${prices.architectureFrom.toLocaleString("es-MX")} + IVA. Mínimo de proyecto $${prices.projectMinimum.toLocaleString("es-MX")}.`,
+    description: `Película para casa que baja el calor del sol. Nanocerámica desde $${prices.nanoFrom.toLocaleString("es-MX")} + IVA por metro cuadrado; otras películas desde $${prices.architectureFrom.toLocaleString("es-MX")} + IVA. Mínimo de proyecto $${prices.projectMinimum.toLocaleString("es-MX")} + IVA.`,
     minPrice: prices.architectureFrom,
     unitText: "m²",
     vatIncluded: false,
   },
   "/comercial/": {
     name: "Polarizado comercial",
-    description: `Película para oficinas, locales y fachadas. Nanocerámica desde $${prices.nanoFrom.toLocaleString("es-MX")} + IVA por metro cuadrado; otras películas desde $${prices.architectureFrom.toLocaleString("es-MX")} + IVA. Mínimo de proyecto $${prices.projectMinimum.toLocaleString("es-MX")}.`,
+    description: `Película para oficinas, locales y fachadas. Nanocerámica desde $${prices.nanoFrom.toLocaleString("es-MX")} + IVA por metro cuadrado; otras películas desde $${prices.architectureFrom.toLocaleString("es-MX")} + IVA. Mínimo de proyecto $${prices.projectMinimum.toLocaleString("es-MX")} + IVA.`,
     minPrice: prices.architectureFrom,
     unitText: "m²",
     vatIncluded: false,
