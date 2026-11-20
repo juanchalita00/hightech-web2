@@ -37,15 +37,17 @@ const services: Record<string, { name: string; description: string; minPrice?: n
   },
   "/residencial/": {
     name: "Polarizado residencial",
-    description: `Película para casa que baja el calor del sol. Nanocerámica desde $${prices.nanoFrom.toLocaleString("es-MX")} por metro cuadrado; otras películas desde $${prices.architectureFrom.toLocaleString("es-MX")}. Mínimo de proyecto $${prices.projectMinimum.toLocaleString("es-MX")}.`,
+    description: `Película para casa que baja el calor del sol. Nanocerámica desde $${prices.nanoFrom.toLocaleString("es-MX")} + IVA por metro cuadrado; otras películas desde $${prices.architectureFrom.toLocaleString("es-MX")} + IVA. Mínimo de proyecto $${prices.projectMinimum.toLocaleString("es-MX")}.`,
     minPrice: prices.architectureFrom,
     unitText: "m²",
+    vatIncluded: false,
   },
   "/comercial/": {
     name: "Polarizado comercial",
-    description: `Película para oficinas, locales y fachadas. Nanocerámica desde $${prices.nanoFrom.toLocaleString("es-MX")} por metro cuadrado; otras películas desde $${prices.architectureFrom.toLocaleString("es-MX")}. Mínimo de proyecto $${prices.projectMinimum.toLocaleString("es-MX")}.`,
+    description: `Película para oficinas, locales y fachadas. Nanocerámica desde $${prices.nanoFrom.toLocaleString("es-MX")} + IVA por metro cuadrado; otras películas desde $${prices.architectureFrom.toLocaleString("es-MX")} + IVA. Mínimo de proyecto $${prices.projectMinimum.toLocaleString("es-MX")}.`,
     minPrice: prices.architectureFrom,
     unitText: "m²",
+    vatIncluded: false,
   },
   "/peliculas/seguridad/": {
     name: "Película de seguridad para cristal",

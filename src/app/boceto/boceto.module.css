@@ -272,6 +272,9 @@
 .photo { position: relative; aspect-ratio: 4 / 3; border-radius: .9rem; overflow: hidden; background: #0d1a28; }
 .photo img { object-fit: cover; }
 .photoPortrait { aspect-ratio: 4 / 5; }
+/* Prueba de calor residencial: no usar object-fit: cover, para no recortar los números del termómetro. */
+.photoHeat { border-radius: .9rem; overflow: hidden; background: #fff; line-height: 0; }
+.photoHeat img { width: 100%; height: auto; display: block; object-fit: contain; }
 .figure { margin: 1.25rem 0 0; }
 .figure figcaption { margin-top: .6rem; font-size: .95rem; color: var(--navy-soft); }
 .reviews { display: grid; gap: 1.25rem; margin-top: 2rem; }
@@ -306,6 +309,7 @@
 }
 .lawNote p { margin: 0; }
 .lawNote p + p { margin-top: .5rem; }
+.lawCite { margin-top: .65rem !important; font-size: .8125rem; line-height: 1.45; color: #4a5a69; }
 
 /* OFERTA */
 .priceGrid { display: grid; gap: 1.25rem; margin-top: 1.5rem; }

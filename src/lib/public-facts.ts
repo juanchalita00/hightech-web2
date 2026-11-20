@@ -24,9 +24,9 @@ export const googleProfile = { count: 70 };
 export const prices = {
   autoFrom: 4000,
   autoIncludes: "laterales y medallón",
-  architectureFrom: 600,
-  nanoFrom: 800,
-  projectMinimum: 1500,
+  architectureFrom: 600, // + IVA, esmerilado y Reflecta
+  nanoFrom: 850, // + IVA
+  projectMinimum: 1500, // mínimo de proyecto casa/negocio (config minimo_pedido); no es el piso del parabrisas
   windshieldFrom: 1500,
 };
 

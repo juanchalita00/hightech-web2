@@ -13,7 +13,7 @@ const peso = new Intl.NumberFormat("es-MX", { style: "currency", currency: "MXN"
 
 export const metadata = { alternates: { canonical: "/comercial/" },
   title: { absolute: "Polarizado comercial en Guadalajara y Zapopan | High Tech México" },
-  description: "Polarizado para oficinas, fachadas y plantas. Nanocerámica desde $800 por metro cuadrado. Seguridad y control solar según el cristal. Instalamos en Zapopan y Guadalajara.",
+  description: "Polarizado para oficinas, fachadas y plantas. Nanocerámica desde $850 + IVA por metro cuadrado. Seguridad y control solar según el cristal. Instalamos en Zapopan y Guadalajara.",
 };
 
 const decisions = [
@@ -33,7 +33,7 @@ const steps = [
 const faqs = [
   { question: "¿Trabajan sólo oficinas?", answer: <p>No. La línea comercial puede aplicarse a oficinas, fachadas, locales e instalaciones institucionales, siempre según el vidrio y el objetivo del proyecto.</p> },
   { question: "¿Pueden cotizar con planos o medidas?", answer: <p>Podemos empezar con la información que ya tengas disponible, como medidas, planos o fotografías del proyecto. Según el alcance, puede hacer falta una revisión adicional antes de cerrar la especificación.</p> },
-  { question: "¿Publican precio por m²?", answer: <p>Publicamos precios desde: nanocerámica desde $800 por m² y otras películas desde $600 por m², con mínimo de proyecto de $1,500. El precio final cambia con el material, el metraje, el acceso, el retiro de película previa, los horarios y las condiciones del vidrio.</p> },
+  { question: "¿Publican precio por m²?", answer: <p>Publicamos precios desde: nanocerámica desde $850 + IVA por m² y otras películas desde $600 + IVA por m², con mínimo de proyecto de $1,500. El precio final cambia con el material, el metraje, el acceso, el retiro de película previa, los horarios y las condiciones del vidrio.</p> },
   { question: "¿La película reflectiva da privacidad de noche?", answer: <p>No debe prometerse así. La privacidad reflectiva depende del contraste de iluminación y puede invertirse cuando el interior está más iluminado que el exterior. <Link href="/guias/privacidad-ventanas-noche/">Entender privacidad de noche</Link>.</p> },
 ] as const;
 
@@ -132,8 +132,8 @@ export default function CommercialPage() {
           <PriceBlock
             title="Precios desde"
             rows={[
-              { label: "Nanocerámica", price: `${peso.format(prices.nanoFrom)} por m²` },
-              { label: "Otras películas para negocio, incluida plata reflecta", price: `${peso.format(prices.architectureFrom)} por m²` },
+              { label: "Nanocerámica", price: `${peso.format(prices.nanoFrom)} por m²`, vat: true },
+              { label: "Otras películas para negocio, incluida plata reflecta", price: `${peso.format(prices.architectureFrom)} por m²`, vat: true },
             ]}
             footnote={`Mínimo de proyecto ${peso.format(prices.projectMinimum)}. Seguridad y película inteligente se cotizan aparte.`}
           />

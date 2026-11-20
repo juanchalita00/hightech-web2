@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Icon } from "@/components/Icon";
 import { getGoogleReviews } from "@/lib/google-reviews";
-import { addressLine, airportName, googleProfile } from "@/lib/public-facts";
+import { airportName, googleProfile } from "@/lib/public-facts";
 import { truth } from "@/lib/truth";
-import { BocetoBanner, CotizaWhatsApp, Estrellas, Fuente, MobileBar, Pendiente, leyes, mensajes } from "../_components/Boceto";
+import { BocetoBanner, CotizaWhatsApp, Estrellas, MobileBar, Pendiente, leyes, mensajes } from "../_components/Boceto";
 import styles from "../boceto.module.css";
 
 export const metadata: Metadata = {
@@ -17,6 +17,16 @@ const mensaje = mensajes.portada;
 
 /** Tres reseñas reales de content/google-reviews.json, texto y nombre tal cual. Se omite la de Michael Richards («10 grados más fresca», sin método). */
 const autoresDestacados = ["Valeria Garnica", "Christian Chávez", "Miguel Tiongson"] as const;
+
+/** Fragmentos literales de content/google-reviews.json (1 o 2 frases). Si se corta a mitad, se usa «…». */
+const reseñaExtracto: Record<(typeof autoresDestacados)[number], string> = {
+  "Valeria Garnica":
+    "Me gustó mucho el servicio, me pareció muy buena la asesoría… …bajó el calor de la habitación y no modifico la vista.",
+  "Christian Chávez":
+    "…estamos muy contentos con los resultados. Sin duda, ha sido la mejor opción, ya que ahora el sol no se siente como antes, además ayudó a disminuir la temperatura de la habitación.",
+  "Miguel Tiongson":
+    "Excelente asesoría, atención y servicio. Muy buena calidad de trabajo.",
+};
 
 function fechaResena(iso: string) {
   const [y, m, d] = iso.split("-").map(Number);
@@ -94,7 +104,7 @@ export default function BocetoPortadaPage() {
         </div>
       </section>
 
-      {/* ESPECIALISTAS POR ÁREA */}
+      {/* ESPECIALISTAS POR ÁREA. Fuente: Fer, 19 nov 2026. */}
       <section className={styles.section} aria-labelledby="especialistas-titulo">
         <div className={styles.shell}>
           <p className={styles.kicker}>Especialistas por área</p>
@@ -116,6 +126,19 @@ export default function BocetoPortadaPage() {
                 </div>
                 <figcaption>Trabajo residencial con película IR50.</figcaption>
               </figure>
+              {/* Foto de un cliente, enviada por Fer el 20 nov 2026. HT Nanocerámico IR75 en ventana de casa: 39.2 °C antes y 29.6 °C después. Recorte de fotos/cliente-ir75-casa-antes-despues.jpg: solo se quitó el fondo y la interfaz de WhatsApp; los números no se retocaron. No se usa en secciones de auto. */}
+              <figure className={styles.figure} id="prueba-calor-casa">
+                <div className={styles.photoHeat}>
+                  <Image
+                    src="/boceto/casa-ir75-antes-despues.webp"
+                    alt="Ventana de casa con película nanocerámica IR75: termómetro en el cristal, 39.2 °C antes de la instalación y 29.6 °C después."
+                    width={557}
+                    height={231}
+                    sizes="(min-width: 900px) 28rem, calc(100vw - 2rem)"
+                  />
+                </div>
+                <figcaption>Antes 39.2 °C. Después 29.6 °C. Foto real de un cliente.</figcaption>
+              </figure>
             </div>
             <div className={styles.specialty}>
               <h3><Icon name="car" size={20} /> Auto</h3>
@@ -124,11 +147,10 @@ export default function BocetoPortadaPage() {
             </div>
           </div>
           <p>No se mezclan. Un solo instalador no puede ser experto en todo; cada quien se especializa donde tiene más potencial.</p>
-          <Fuente>Fer, 19 nov 2026.</Fuente>
         </div>
       </section>
 
-      {/* 3. EL DIAGNÓSTICO */}
+      {/* 3. EL DIAGNÓSTICO. Nombre: Fer, 20 nov 2026. Posicionamiento: base de conocimiento §1 y §7. */}
       <section className={styles.section} aria-labelledby="diagnostico-titulo">
         <div className={styles.shell}>
           <p className={styles.kicker}>Diagnóstico Hightech del Cristal</p>
@@ -152,11 +174,10 @@ export default function BocetoPortadaPage() {
               <p>En tu casa o negocio. El auto, en el taller con cita.</p>
             </li>
           </ol>
-          <Fuente>nombre del diagnóstico: Fer, 20 nov 2026; posicionamiento y ruta de venta (base de conocimiento §1 y §7).</Fuente>
         </div>
       </section>
 
-      {/* 4. BENEFICIOS */}
+      {/* 4. BENEFICIOS. TSER y UV: ficha SRC-TECH-SEP19 (SoT v0.19 §7). Señal: base de conocimiento §4. */}
       <section className={styles.sectionAlt} aria-labelledby="beneficios-titulo">
         <div className={`${styles.shell} ${styles.benefitsGrid}`}>
           <div>
@@ -194,12 +215,9 @@ export default function BocetoPortadaPage() {
             </li>
           </ul>
         </div>
-        <div className={styles.shell}>
-          <Fuente>TSER y UV de la ficha SRC-TECH-SEP19 (System of Truth v0.19 §7); señal: base de conocimiento §4.</Fuente>
-        </div>
       </section>
 
-      {/* 5. PRUEBA */}
+      {/* 5. PRUEBA. Aeropuerto: Fer, 19 nov 2026, y web actual. Reseñas: content/google-reviews.json, fragmentos literales. Conteo: public-facts.ts. */}
       <section className={styles.section} aria-labelledby="prueba-titulo">
         <div className={styles.shell}>
           <p className={styles.kicker}>Dónde ya está instalada</p>
@@ -228,7 +246,7 @@ export default function BocetoPortadaPage() {
           <div className={styles.reviews}>
             {reseñasElegidas.map((r) => (
               <figure className={styles.review} key={r.author}>
-                <blockquote>{r.quote}</blockquote>
+                <blockquote>{reseñaExtracto[r.author as (typeof autoresDestacados)[number]]}</blockquote>
                 <figcaption>
                   <div className={styles.reviewHead}>
                     <strong>{r.author}</strong>
@@ -240,22 +258,29 @@ export default function BocetoPortadaPage() {
               </figure>
             ))}
           </div>
-          <Fuente>aeropuerto: Fer, 19 nov 2026, y texto de la web actual; reseñas: perfil de Google (content/google-reviews.json), texto literal; conteo: public-facts.ts.</Fuente>
         </div>
       </section>
 
-      {/* 6. QUIÉNES SOMOS */}
+      {/* 6. QUIÉNES SOMOS. Taller y horario: base §1 y §2 / public-facts.ts. Experiencia de instaladores y respuesta el mismo día: Fer, 19-20 nov 2026. Aeropuerto: Fer, 19 nov 2026. */}
       <section className={styles.sectionAlt} aria-labelledby="nosotros-titulo">
         <div className={`${styles.shell} ${styles.aboutGrid}`}>
           <div>
             <p className={styles.kicker}>Quiénes somos</p>
             <h2 id="nosotros-titulo">High Tech Polarizados México.</h2>
-            <p>High Tech Polarizados México es el distribuidor en todo México de las películas Hightech, nuestra marca, línea IR nanocerámica, para casa, negocio y auto.</p>
-            <p>Contamos con instaladores con más de 15 años de experiencia.</p>
-            <p>Primero revisa qué te molesta y el cristal; después recomienda el tono y la película, y te pasa la cotización. El auto se instala en el taller, con cita. Te contestamos el mismo día.</p>
+            <p>High Tech Polarizados México lleva las películas Hightech a todo el país.</p>
+            <p>Hightech es nuestra marca.</p>
+            <p>Se instalan en los cristales de casa, de negocio y de auto.</p>
+            <p>Esa línea de películas se llama IR nanocerámica.</p>
+            <p>Nuestros instaladores tienen más de 15 años de experiencia.</p>
+            <p>Primero vemos qué te molesta y vemos tu cristal.</p>
+            <p>Después te decimos qué película y qué tono te conviene, y te damos el precio.</p>
+            <p>Si es para un auto, lo instalamos en el taller, con cita.</p>
+            <p>Te contestamos el mismo día.</p>
             <p>Nuestro taller está en Tomás Mann 5348, Jardines Vallarta, Zapopan.</p>
-            <p>Entre sus proyectos está el {airportName}: un pasillo de cristal junto a la plataforma, en operación continua.</p>
-            <p>Tiene +{googleProfile.count} reseñas en Google, al 15 de octubre de 2026.</p>
+            <p>Uno de nuestros trabajos está en el {airportName}.</p>
+            <p>Es un pasillo de cristal junto a donde se mueven los aviones.</p>
+            <p>Ese pasillo sigue en uso todos los días.</p>
+            <p>En Google hay +{googleProfile.count} reseñas, al 15 de octubre de 2026.</p>
           </div>
           <dl className={styles.facts}>
             <div>
@@ -270,12 +295,9 @@ export default function BocetoPortadaPage() {
             </div>
           </dl>
         </div>
-        <div className={styles.shell}>
-          <Fuente>taller y horario: base de conocimiento §1 y §2 ({addressLine}); aeropuerto: Fer, 19 nov 2026; reseñas: public-facts.ts; respuesta el mismo día: Fer, 19 nov 2026; instaladores con más de 15 años de experiencia: Fer, 20 nov 2026.</Fuente>
-        </div>
       </section>
 
-      {/* 7. OBJECIONES */}
+      {/* 7. OBJECIONES. Base de conocimiento §10. Norma: PDF del Congreso de Jalisco, Reglamento art. 59 fr. VIII y Ley art. 360 fr. IX. */}
       <section className={styles.section} aria-labelledby="objeciones-titulo">
         <div className={styles.shell}>
           <p className={styles.kicker}>Lo que nos preguntan antes de decidir</p>
@@ -290,12 +312,9 @@ export default function BocetoPortadaPage() {
           <div className={styles.objection} id="multa">
             <h3>«¿Y si me multan?»</h3>
             <div className={styles.lawNote}>
-              <p>
-                El <a href={leyes.reglamento}>Reglamento de la Ley de Movilidad, Seguridad Vial y Transporte del Estado de Jalisco</a>, artículo 59, fracción VIII, dice: «Parabrisas, medallones y vidrios en buen estado que permitan la visibilidad hacia el interior del vehículo; bajo ninguna circunstancia el parabrisas estará polarizado;»
-              </p>
-              <p>
-                La <a href={leyes.ley}>Ley de Movilidad, Seguridad Vial y Transporte del Estado de Jalisco</a>, artículo 360, fracción IX, sanciona con multa de una a cinco UMA: «Usar cristales polarizados u otros elementos que impidan totalmente la visibilidad hacia el interior del vehículo, o polarizado de cualquier intensidad en el parabrisas del vehículo;»
-              </p>
+              <p>«Parabrisas, medallones y vidrios en buen estado que permitan la visibilidad hacia el interior del vehículo; bajo ninguna circunstancia el parabrisas estará polarizado;»</p>
+              <p>«Usar cristales polarizados u otros elementos que impidan totalmente la visibilidad hacia el interior del vehículo, o polarizado de cualquier intensidad en el parabrisas del vehículo;»</p>
+              <p className={styles.lawCite}><a href={leyes.reglamento}>Reglamento art. 59 fr. VIII</a> / <a href={leyes.ley}>Ley art. 360 fr. IX</a></p>
             </div>
             <p>En el parabrisas lo más común es el IR75. Si quieres privacidad, en High Tech recomendamos máximo IR35, para que te sientas cómodo y conserves la visibilidad. Es lo que suele hacerse.</p>
             <p>El tono de cada cristal lo platicamos contigo.</p>
@@ -306,11 +325,10 @@ export default function BocetoPortadaPage() {
             <p>Pregunta qué película y qué garantía te ofrecen. No todos los nanocerámicos rinden igual.</p>
             <p>Compara dos cosas: el número de calor en la ficha (TSER) y la garantía por escrito.</p>
           </div>
-          <Fuente>objeciones: base de conocimiento §10; norma: texto literal de los PDF de la biblioteca del Congreso de Jalisco, Reglamento art. 59 fr. VIII y Ley art. 360 fr. IX.</Fuente>
         </div>
       </section>
 
-      {/* 8. OFERTA, GARANTÍA Y PRECIOS */}
+      {/* 8. OFERTA, GARANTÍA Y PRECIOS. Auto: Fer, 19 nov 2026. Casa/negocio $850 y $600 + IVA: Fer, 20 nov 2026. Mínimo $1,500: config minimo_pedido. Garantía de la película: Fer, 20 nov 2026. */}
       <section className={styles.sectionAlt} aria-labelledby="precios-titulo" id="precios">
         <div className={styles.shell}>
           <p className={styles.kicker}>Precios y garantía</p>
@@ -324,7 +342,8 @@ export default function BocetoPortadaPage() {
             </div>
             <div className={styles.priceBlock}>
               <h3><Icon name="home" size={22} /> Casa y negocio</h3>
-              <Pendiente>precio por m² e IVA por confirmar con Fer</Pendiente>
+              <p>Nanocerámica desde $850 <span className={styles.plusIva}>+ IVA</span> por m².</p>
+              <p>Soluciones desde $600 <span className={styles.plusIva}>+ IVA</span> por m² (esmerilado y Reflecta).</p>
               <p className={styles.small}>Mínimo por proyecto: $1,500.</p>
             </div>
           </div>
@@ -336,11 +355,10 @@ export default function BocetoPortadaPage() {
             <li><span>Esmerilado</span><strong>1 año</strong></li>
             <li><span>Plata Reflecta</span><strong>5 o 10 años, según la línea</strong></li>
           </ul>
-          <Fuente>precio auto: Fer, 19 nov 2026 (el estándar es el piso; + IVA; pagos: todos los métodos, hasta 3 MSI); mínimo: config minimo_pedido; precio de casa y negocio: PENDIENTE (Fer, 20 nov 2026); garantía de la película: Fer, 20 nov 2026.</Fuente>
         </div>
       </section>
 
-      {/* 9. FAQ */}
+      {/* 9. FAQ. Base §7 y §9; domicilio: public-facts.ts; especialistas y marca: Fer, 19 nov 2026. Andamio: Fer, 20 nov 2026 (solo doble o triple altura; sin precio). */}
       <section className={styles.section} aria-labelledby="faq-titulo">
         <div className={`${styles.shell} ${styles.narrow}`}>
           <p className={styles.kicker}>Preguntas frecuentes</p>
@@ -348,30 +366,45 @@ export default function BocetoPortadaPage() {
           <div className={styles.faq}>
             <details>
               <summary>¿Se ve hacia adentro de noche?</summary>
-              <p>Sí, si adentro hay más luz que afuera. De día cuesta ver hacia adentro; de noche, con la luz prendida, se invierte.</p>
+              <p>De día, desde afuera cuesta ver hacia adentro.</p>
+              <p>De noche, si prendes la luz de adentro, sí se puede ver hacia adentro.</p>
             </details>
             <details>
               <summary>¿Interfiere con el celular?</summary>
-              <p>No. La película no corta la señal.</p>
+              <p>No.</p>
+              <p>Tu celular sigue con señal.</p>
             </details>
             <details>
               <summary>¿Cuánto tarda en mi auto?</summary>
-              <p>Laterales y medallón, de 2 a 3 horas. El auto completo, de 3 a 4 horas.</p>
+              <p>Los cristales de los lados y el de atrás tardan de 2 a 3 horas.</p>
+              <p>El auto completo tarda de 3 a 4 horas.</p>
             </details>
             <details>
               <summary>¿Van a domicilio?</summary>
-              <p>El auto se trabaja en el taller, con cita. A domicilio solo flotillas o autos de agencia.</p>
+              <p>El auto se trabaja en el taller, con cita.</p>
+              <p>Solo vamos a otro lugar si son muchos autos juntos (una flotilla) o si el auto es de una agencia, o sea, de un lote de venta.</p>
             </details>
             <details>
               <summary>¿Son especialistas en casa o solo en autos?</summary>
-              <p>En las dos. En High Tech hay instaladores de residencial y de automotriz, y no se mezclan. Formamos a cada quien según las especificaciones de la película de su área, porque un solo instalador no puede ser experto en todo.</p>
+              <p>En las dos.</p>
+              <p>Hay instaladores para casa y negocio, y otros para autos.</p>
+              <p>No se mezclan.</p>
+              <p>Cada uno se forma para la película de su área.</p>
+              <p>Un solo instalador no puede ser experto en todo.</p>
             </details>
             <details>
               <summary>¿Qué marca instalan?</summary>
-              <p>Instalamos películas Hightech, nuestra marca, línea IR nanocerámica. Son películas importadas, fabricadas bajo especificaciones Hightech.</p>
+              <p>Instalamos películas Hightech, nuestra marca.</p>
+              <p>Es la línea IR nanocerámica.</p>
+              <p>Son películas que vienen de otro país.</p>
+              <p>Se fabrican siguiendo lo que pide Hightech.</p>
+            </details>
+            <details>
+              <summary>¿Cobran andamio en casa o negocio?</summary>
+              <p>El andamio solo se cobra en lugares de doble o triple altura.</p>
+              <p>Eso quiere decir ventanas muy altas, como de dos o tres pisos.</p>
             </details>
           </div>
-          <Fuente>base de conocimiento §7 y §9; domicilio: texto de la web actual (public-facts.ts); especialistas: Fer, 19 nov 2026.</Fuente>
         </div>
       </section>
 

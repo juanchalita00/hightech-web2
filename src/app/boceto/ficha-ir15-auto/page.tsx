@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getNanoProduct, type NanoProduct } from "@/lib/truth";
-import { BocetoBanner, CotizaWhatsApp, Fuente, MobileBar, Pendiente, leyes, mensajes } from "../_components/Boceto";
+import { BocetoBanner, CotizaWhatsApp, MobileBar, Pendiente, leyes, mensajes } from "../_components/Boceto";
 import styles from "../boceto.module.css";
 
 export const metadata: Metadata = {
@@ -59,7 +59,7 @@ export default function BocetoFichaIr15AutoPage() {
         </div>
       </section>
 
-      {/* DATOS */}
+      {/* DATOS. Números: ficha SRC-TECH-SEP19 (SoT v0.19 §7). Grosor: no se publica. */}
       <section className={styles.sectionAlt} aria-labelledby="datos-titulo">
         <div className={styles.shell}>
           <p className={styles.kicker}>Los números</p>
@@ -84,11 +84,10 @@ export default function BocetoFichaIr15AutoPage() {
               </dd>
             </div>
           </dl>
-          <Fuente>ficha técnica SRC-TECH-SEP19 (System of Truth v0.19, §7). Grosor: no se publica.</Fuente>
         </div>
       </section>
 
-      {/* COMPARA */}
+      {/* COMPARA. VLT y TSER: ficha SRC-TECH-SEP19 (SoT v0.19 §7). */}
       <section className={styles.section} aria-labelledby="compara-titulo">
         <div className={styles.shell}>
           <p className={styles.kicker}>Compárala</p>
@@ -114,7 +113,6 @@ export default function BocetoFichaIr15AutoPage() {
             <img src="/boceto/glazy-profe-tips.svg" alt="" width={72} height={72} />
             <p>Lo que cuenta es el calor que bloquea, no solo el tono: mira el número del calor.</p>
           </div>
-          <Fuente>VLT y TSER de la ficha SRC-TECH-SEP19 (System of Truth v0.19, §7).</Fuente>
         </div>
       </section>
 
@@ -138,7 +136,7 @@ export default function BocetoFichaIr15AutoPage() {
         </div>
       </section>
 
-      {/* PARA QUIÉN */}
+      {/* PARA QUIÉN. Tono 15: base de conocimiento §4. Norma: PDF del Congreso de Jalisco, Reglamento art. 59 fr. VIII y Ley art. 360 fr. IX. */}
       <section className={styles.section} aria-labelledby="quien-titulo">
         <div className={styles.shell}>
           <p className={styles.kicker}>¿Es para ti?</p>
@@ -159,19 +157,15 @@ export default function BocetoFichaIr15AutoPage() {
             </div>
           </div>
           <div className={styles.lawNote} style={{ marginTop: "1.5rem" }}>
-            <p>
-              <strong>La norma en Jalisco.</strong> El <a href={leyes.reglamento}>Reglamento de la Ley de Movilidad, Seguridad Vial y Transporte del Estado de Jalisco</a>, artículo 59, fracción VIII, dice: «Parabrisas, medallones y vidrios en buen estado que permitan la visibilidad hacia el interior del vehículo; bajo ninguna circunstancia el parabrisas estará polarizado;»
-            </p>
-            <p>
-              La <a href={leyes.ley}>Ley de Movilidad, Seguridad Vial y Transporte del Estado de Jalisco</a>, artículo 360, fracción IX, sanciona con multa de una a cinco UMA: «Usar cristales polarizados u otros elementos que impidan totalmente la visibilidad hacia el interior del vehículo, o polarizado de cualquier intensidad en el parabrisas del vehículo;»
-            </p>
+            <p>«Parabrisas, medallones y vidrios en buen estado que permitan la visibilidad hacia el interior del vehículo; bajo ninguna circunstancia el parabrisas estará polarizado;»</p>
+            <p>«Usar cristales polarizados u otros elementos que impidan totalmente la visibilidad hacia el interior del vehículo, o polarizado de cualquier intensidad en el parabrisas del vehículo;»</p>
+            <p className={styles.lawCite}><a href={leyes.reglamento}>Reglamento art. 59 fr. VIII</a> / <a href={leyes.ley}>Ley art. 360 fr. IX</a></p>
           </div>
           <p>En el parabrisas lo más común es el IR75. Si quieres privacidad, en High Tech recomendamos máximo IR35, para que te sientas cómodo y conserves la visibilidad. Es lo que suele hacerse.</p>
-          <Fuente>base de conocimiento §4 (tono 15); norma: texto literal de los PDF de la biblioteca del Congreso de Jalisco, Reglamento art. 59 fr. VIII y Ley art. 360 fr. IX.</Fuente>
         </div>
       </section>
 
-      {/* GARANTÍA Y CUIDADOS */}
+      {/* GARANTÍA Y CUIDADOS. Garantía de la película: Fer, 20 nov 2026. Cuidados: Fer, 26 oct 2026 (base §6). */}
       <section className={styles.sectionAlt} aria-labelledby="garantia-titulo">
         <div className={styles.shell}>
           <div className={styles.fitGrid}>
@@ -190,11 +184,10 @@ export default function BocetoFichaIr15AutoPage() {
               </ol>
             </div>
           </div>
-          <Fuente>garantía de la película: Fer, 20 nov 2026; cuidados: Fer, 26 oct 2026 (base de conocimiento §6).</Fuente>
         </div>
       </section>
 
-      {/* PRECIO */}
+      {/* PRECIO. Auto: Fer, 19 nov 2026 (piso $4,000 + IVA; parabrisas desde $1,500 + IVA; todos los métodos, hasta 3 MSI). */}
       <section className={styles.section} aria-labelledby="precio-titulo">
         <div className={styles.shell}>
           <p className={styles.kicker}>Precio</p>
@@ -204,7 +197,6 @@ export default function BocetoFichaIr15AutoPage() {
             <p>Película IR nanocerámica Hightech. Laterales y medallón. Parabrisas desde $1,500 <span className={styles.plusIva}>+ IVA</span>.</p>
             <p className={styles.small}>Aceptamos todos los métodos de pago. Hasta 3 meses sin intereses.</p>
           </div>
-          <Fuente>precio auto: Fer, 19 nov 2026 (el estándar es el piso; + IVA; pagos: todos los métodos, hasta 3 MSI).</Fuente>
         </div>
       </section>
 
