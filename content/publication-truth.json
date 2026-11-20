@@ -44,7 +44,7 @@
     {
       "id": "IR50",
       "sheet": "NANO-50",
-      "vlt": 48,
+      "vlt": 50,
       "uv": 99,
       "infraredRejection": 95,
       "infraredWavelengthNm": 950,

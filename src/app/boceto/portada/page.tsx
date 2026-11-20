@@ -79,7 +79,7 @@ export default function BocetoPortadaPage() {
                 <li>Mi carro se calienta mucho</li>
                 <li>El sol me quema al manejar</li>
                 <li>Se me quema el brazo manejando</li>
-                <li>Los asientos hierven cuando me subo</li>
+                <li>Los asientos hierven</li>
                 <li>Quiero privacidad</li>
                 <li>No quiero multas</li>
               </ul>
@@ -105,10 +105,22 @@ export default function BocetoPortadaPage() {
             <div className={styles.specialty}>
               <h3><Icon name="home" size={20} /> Casa y negocio</h3>
               <p>Instaladores de residencial, formados para la película de esa área.</p>
+              <figure className={styles.figure}>
+                <div className={`${styles.photo} ${styles.photoPortrait}`}>
+                  <Image
+                    src="/boceto/casa-ir50.webp"
+                    alt="Interior de una casa o departamento con película nanocerámica IR50 en las ventanas, junto a plantas."
+                    fill
+                    sizes="(min-width: 900px) 28rem, calc(100vw - 2rem)"
+                  />
+                </div>
+                <figcaption>Trabajo residencial con película IR50.</figcaption>
+              </figure>
             </div>
             <div className={styles.specialty}>
               <h3><Icon name="car" size={20} /> Auto</h3>
               <p>Instaladores de automotriz, formados para la película de auto.</p>
+              <Pendiente>foto real de un Tesla con película instalada.</Pendiente>
             </div>
           </div>
           <p>No se mezclan. Un solo instalador no puede ser experto en todo; cada quien se especializa donde tiene más potencial.</p>
@@ -119,10 +131,9 @@ export default function BocetoPortadaPage() {
       {/* 3. EL DIAGNÓSTICO */}
       <section className={styles.section} aria-labelledby="diagnostico-titulo">
         <div className={styles.shell}>
-          <p className={styles.kicker}>Cómo trabajamos</p>
+          <p className={styles.kicker}>Diagnóstico Hightech del Cristal</p>
           <h2 id="diagnostico-titulo">Primero vemos qué te molesta. Después, la película.</h2>
-          <p className={styles.lead}>No vendemos polarizado por catálogo. Revisamos tu caso y te decimos qué sí te sirve.</p>
-          <Pendiente>nombre del diagnóstico, lo define Fer.</Pendiente>
+          <p className={styles.lead}>El Diagnóstico Hightech del Cristal no empieza por el catálogo: empieza por tu molestia y por el vidrio. Luego sale el tono y la película.</p>
           <ol className={styles.steps}>
             <li>
               <h3>Nos cuentas</h3>
@@ -141,7 +152,7 @@ export default function BocetoPortadaPage() {
               <p>En tu casa o negocio. El auto, en el taller con cita.</p>
             </li>
           </ol>
-          <Fuente>posicionamiento y ruta de venta (base de conocimiento §1 y §7).</Fuente>
+          <Fuente>nombre del diagnóstico: Fer, 20 nov 2026; posicionamiento y ruta de venta (base de conocimiento §1 y §7).</Fuente>
         </div>
       </section>
 
@@ -240,7 +251,7 @@ export default function BocetoPortadaPage() {
             <p className={styles.kicker}>Quiénes somos</p>
             <h2 id="nosotros-titulo">High Tech Polarizados México.</h2>
             <p>High Tech Polarizados México es el distribuidor en todo México de las películas Hightech, nuestra marca, línea IR nanocerámica, para casa, negocio y auto.</p>
-            <Pendiente>años de experiencia, con fuente.</Pendiente>
+            <p>Contamos con instaladores con más de 15 años de experiencia.</p>
             <p>Primero revisa qué te molesta y el cristal; después recomienda el tono y la película, y te pasa la cotización. El auto se instala en el taller, con cita. Te contestamos el mismo día.</p>
             <p>Nuestro taller está en Tomás Mann 5348, Jardines Vallarta, Zapopan.</p>
             <p>Entre sus proyectos está el {airportName}: un pasillo de cristal junto a la plataforma, en operación continua.</p>
@@ -260,7 +271,7 @@ export default function BocetoPortadaPage() {
           </dl>
         </div>
         <div className={styles.shell}>
-          <Fuente>taller y horario: base de conocimiento §1 y §2 ({addressLine}); aeropuerto: Fer, 19 nov 2026; reseñas: public-facts.ts; respuesta el mismo día: Fer, 19 nov 2026. Años de experiencia: PENDIENTE (SoT v0.19, sin evidencia aprobada).</Fuente>
+          <Fuente>taller y horario: base de conocimiento §1 y §2 ({addressLine}); aeropuerto: Fer, 19 nov 2026; reseñas: public-facts.ts; respuesta el mismo día: Fer, 19 nov 2026; instaladores con más de 15 años de experiencia: Fer, 20 nov 2026.</Fuente>
         </div>
       </section>
 
@@ -280,12 +291,14 @@ export default function BocetoPortadaPage() {
             <h3>«¿Y si me multan?»</h3>
             <div className={styles.lawNote}>
               <p>
-                El <a href={leyes.reglamento}>Reglamento de Movilidad de Jalisco</a> pide que los cristales dejen ver hacia el interior y señala que el parabrisas no debe ir polarizado (art. 59, fr. VIII). La <a href={leyes.ley}>Ley de Movilidad</a> lo considera infracción con multa de 1 a 5 UMA (art. 360, fr. IX).
+                El <a href={leyes.reglamento}>Reglamento de la Ley de Movilidad, Seguridad Vial y Transporte del Estado de Jalisco</a>, artículo 59, fracción VIII, dice: «Parabrisas, medallones y vidrios en buen estado que permitan la visibilidad hacia el interior del vehículo; bajo ninguna circunstancia el parabrisas estará polarizado;»
+              </p>
+              <p>
+                La <a href={leyes.ley}>Ley de Movilidad, Seguridad Vial y Transporte del Estado de Jalisco</a>, artículo 360, fracción IX, sanciona con multa de una a cinco UMA: «Usar cristales polarizados u otros elementos que impidan totalmente la visibilidad hacia el interior del vehículo, o polarizado de cualquier intensidad en el parabrisas del vehículo;»
               </p>
             </div>
             <p>En el parabrisas lo más común es el IR75. Si quieres privacidad, en High Tech recomendamos máximo IR35, para que te sientas cómodo y conserves la visibilidad. Es lo que suele hacerse.</p>
             <p>El tono de cada cristal lo platicamos contigo.</p>
-            <Pendiente>revisión del abogado de este texto.</Pendiente>
           </div>
 
           <div className={styles.objection}>
@@ -293,7 +306,7 @@ export default function BocetoPortadaPage() {
             <p>Pregunta qué película y qué garantía te ofrecen. No todos los nanocerámicos rinden igual.</p>
             <p>Compara dos cosas: el número de calor en la ficha (TSER) y la garantía por escrito.</p>
           </div>
-          <Fuente>objeciones: base de conocimiento §10; norma: PDF oficiales del Congreso de Jalisco.</Fuente>
+          <Fuente>objeciones: base de conocimiento §10; norma: texto literal de los PDF de la biblioteca del Congreso de Jalisco, Reglamento art. 59 fr. VIII y Ley art. 360 fr. IX.</Fuente>
         </div>
       </section>
 
@@ -311,21 +324,19 @@ export default function BocetoPortadaPage() {
             </div>
             <div className={styles.priceBlock}>
               <h3><Icon name="home" size={22} /> Casa y negocio</h3>
-              <p>Nanocerámica para casa y negocio: precio por m² con IVA incluido.</p>
-              <Pendiente>Fer confirma la cifra con IVA (tarifa de lista $850/m² + IVA).</Pendiente>
+              <Pendiente>precio por m² e IVA por confirmar con Fer</Pendiente>
               <p className={styles.small}>Mínimo por proyecto: $1,500.</p>
             </div>
           </div>
 
           <h3 style={{ marginTop: "2.5rem" }}>Garantía de la película Hightech</h3>
           <ul className={styles.warranty}>
-            <li><span>Nanocerámica, auto y casa</span><strong>10 años</strong></li>
-            <li><span>Película instalada por fuera del cristal</span><strong>1 año</strong></li>
-            <li><span>Plata Reflecta</span><strong>5 o 10 años según la línea</strong></li>
+            <li><span>Nanocerámica interior</span><strong>10 años</strong></li>
+            <li><span>Zonas con película exterior</span><strong>1 año</strong></li>
+            <li><span>Esmerilado</span><strong>1 año</strong></li>
+            <li><span>Plata Reflecta</span><strong>5 o 10 años, según la línea</strong></li>
           </ul>
-          <p style={{ marginTop: "1rem" }}>La instalación se cubre en el certificado de garantía HIGHTECH que te entregamos.</p>
-          <Pendiente>póliza escrita revisada por abogado.</Pendiente>
-          <Fuente>precio auto: Fer, 19 nov 2026 (el estándar es el piso; + IVA; pagos: todos los métodos, hasta 3 MSI); mínimo: config minimo_pedido; garantías: base de conocimiento §6 y brief.</Fuente>
+          <Fuente>precio auto: Fer, 19 nov 2026 (el estándar es el piso; + IVA; pagos: todos los métodos, hasta 3 MSI); mínimo: config minimo_pedido; precio de casa y negocio: PENDIENTE (Fer, 20 nov 2026); garantía de la película: Fer, 20 nov 2026.</Fuente>
         </div>
       </section>
 

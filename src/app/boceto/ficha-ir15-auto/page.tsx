@@ -160,12 +160,14 @@ export default function BocetoFichaIr15AutoPage() {
           </div>
           <div className={styles.lawNote} style={{ marginTop: "1.5rem" }}>
             <p>
-              <strong>La norma en Jalisco:</strong> el <a href={leyes.reglamento}>Reglamento de Movilidad</a> pide que los cristales dejen ver hacia el interior y que el parabrisas no vaya polarizado (art. 59, fr. VIII). La <a href={leyes.ley}>Ley de Movilidad</a> lo considera infracción con multa de 1 a 5 UMA (art. 360, fr. IX).
+              <strong>La norma en Jalisco.</strong> El <a href={leyes.reglamento}>Reglamento de la Ley de Movilidad, Seguridad Vial y Transporte del Estado de Jalisco</a>, artículo 59, fracción VIII, dice: «Parabrisas, medallones y vidrios en buen estado que permitan la visibilidad hacia el interior del vehículo; bajo ninguna circunstancia el parabrisas estará polarizado;»
+            </p>
+            <p>
+              La <a href={leyes.ley}>Ley de Movilidad, Seguridad Vial y Transporte del Estado de Jalisco</a>, artículo 360, fracción IX, sanciona con multa de una a cinco UMA: «Usar cristales polarizados u otros elementos que impidan totalmente la visibilidad hacia el interior del vehículo, o polarizado de cualquier intensidad en el parabrisas del vehículo;»
             </p>
           </div>
           <p>En el parabrisas lo más común es el IR75. Si quieres privacidad, en High Tech recomendamos máximo IR35, para que te sientas cómodo y conserves la visibilidad. Es lo que suele hacerse.</p>
-          <Pendiente>revisión del abogado de este texto.</Pendiente>
-          <Fuente>base de conocimiento §4 (tono 15); norma: PDF oficiales del Congreso de Jalisco.</Fuente>
+          <Fuente>base de conocimiento §4 (tono 15); norma: texto literal de los PDF de la biblioteca del Congreso de Jalisco, Reglamento art. 59 fr. VIII y Ley art. 360 fr. IX.</Fuente>
         </div>
       </section>
 
@@ -175,9 +177,7 @@ export default function BocetoFichaIr15AutoPage() {
           <div className={styles.fitGrid}>
             <div>
               <p className={styles.kicker}>Garantía</p>
-              <h2 id="garantia-titulo">10 años en la película Hightech.</h2>
-              <p>La instalación se cubre en tu certificado de garantía Hightech.</p>
-              <Pendiente>póliza revisada por abogado.</Pendiente>
+              <h2 id="garantia-titulo">10 años en la película nanocerámica interior.</h2>
             </div>
             <div>
               <p className={styles.kicker}>Después de instalar</p>
@@ -190,7 +190,7 @@ export default function BocetoFichaIr15AutoPage() {
               </ol>
             </div>
           </div>
-          <Fuente>garantía: base de conocimiento §6; cuidados: Fer, 26 oct 2026 (base de conocimiento §6).</Fuente>
+          <Fuente>garantía de la película: Fer, 20 nov 2026; cuidados: Fer, 26 oct 2026 (base de conocimiento §6).</Fuente>
         </div>
       </section>
 

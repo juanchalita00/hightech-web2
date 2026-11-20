@@ -71,7 +71,6 @@ const toneExtra: Record<string, ToneExtra> = {
       "Auto: cristales traseros.",
     ],
     look: "Es claro y ligeramente entonado.",
-    vltNote: "El número 50 es el nombre comercial; la ficha técnica marca 48%.",
     faq: { question: "¿Qué cambia del 50 al 75?", answer: "El 50 deja pasar menos luz y se nota más el tono. La protección contra rayos UV e infrarrojos que indica la ficha es la misma; lo que cambia es la luz y la privacidad de día." },
   },
   IR35: {

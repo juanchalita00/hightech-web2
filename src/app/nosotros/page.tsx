@@ -35,7 +35,7 @@ export default function Page() {
             <h2 id="quienes-somos-titulo">High Tech Polarizados México.</h2>
           </div>
           <p>High Tech Polarizados México es el distribuidor en todo México de las películas Hightech, nuestra marca, línea IR nanocerámica, para casa, negocio y auto.</p>
-          <p><strong>PENDIENTE:</strong> años de experiencia, con fuente.</p>
+          <p>Contamos con instaladores con más de 15 años de experiencia.</p>
           <p>Primero revisa qué te molesta y el cristal; después recomienda el tono y la película, y te pasa la cotización. El auto se instala en el taller, con cita. Te contestamos el mismo día.</p>
           <p>Nuestro taller está en Tomás Mann 5348, Jardines Vallarta, Zapopan.</p>
           <p>Entre sus proyectos está el {airportName}: un pasillo de cristal junto a la plataforma, en operación continua.</p>

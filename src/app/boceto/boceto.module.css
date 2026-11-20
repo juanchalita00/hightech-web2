@@ -271,6 +271,7 @@
 /* PRUEBA */
 .photo { position: relative; aspect-ratio: 4 / 3; border-radius: .9rem; overflow: hidden; background: #0d1a28; }
 .photo img { object-fit: cover; }
+.photoPortrait { aspect-ratio: 4 / 5; }
 .figure { margin: 1.25rem 0 0; }
 .figure figcaption { margin-top: .6rem; font-size: .95rem; color: var(--navy-soft); }
 .reviews { display: grid; gap: 1.25rem; margin-top: 2rem; }
