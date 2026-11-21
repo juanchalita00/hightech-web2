@@ -137,7 +137,11 @@ export default function BocetoPortadaPage() {
                     sizes="(min-width: 900px) 28rem, calc(100vw - 2rem)"
                   />
                 </div>
-                <figcaption>Antes 39.2 °C. Después 29.6 °C. Foto real de un cliente.</figcaption>
+                <figcaption>
+                  Antes 39.2 °C. Después 29.6 °C, con Nanocerámica IR75. Foto real de un cliente.
+                  {/* Aviso pedido por Fer (20 nov 2026, 21:04): el resultado no es una promesa. */}
+                  <small className={styles.heatNote}>Cada lugar es distinto. El resultado cambia según hacia dónde da el sol, la zona y el tipo de vidrio.</small>
+                </figcaption>
               </figure>
             </div>
             <div className={styles.specialty}>
