@@ -39,9 +39,9 @@ export default function BocetoFichaIr15AutoPage() {
             <span className={styles.sunRule} aria-hidden="true" />
             <h1 id="ficha-titulo">
               <span className={styles.toneName}>IR15</span>
-              <span className={styles.toneSub}>Película IR15 Hightech, línea IR nanocerámica, para auto</span>
+              <span className={styles.toneSub}>Tono IR15 de la Línea IR, película nanocerámica Hightech, para auto</span>
             </h1>
-            <p className={styles.lead}>Para los cristales traseros de tu auto: se ve oscuro, de día cuesta ver hacia adentro y entra menos calor.</p>
+            <p className={styles.lead}>Para los cristales traseros de tu auto: se ve oscuro, de día cuesta ver hacia adentro y entra menos calor. IR es el calor invisible del sol.</p>
             <p className={styles.brandLine}>Instalamos películas Hightech.</p>
             <div className={styles.ctaRow}>
               <CotizaWhatsApp message={mensaje} />
@@ -78,9 +78,9 @@ export default function BocetoFichaIr15AutoPage() {
               <dd>Igual que en todos los tonos de la gama, del más claro al más oscuro.</dd>
             </div>
             <div className={styles.spec}>
-              <dt><span>{ir15.infraredRejection}%</span>de rechazo infrarrojo, medido a {ir15.infraredWavelengthNm} nm</dt>
+              <dt><span>{ir15.infraredRejection}%</span>de rechazo del calor invisible (IR), medido a {ir15.infraredWavelengthNm} nm</dt>
               <dd>
-                Es una medida en un solo punto del infrarrojo ({ir15.infraredWavelengthNm} nanómetros), no en toda la banda. Por eso no mide el calor total: el número del calor es el de arriba, {ir15.tser}%.
+                IR es el calor invisible del sol. Esta cifra se mide en un solo punto ({ir15.infraredWavelengthNm} nanómetros), no en toda la banda. Por eso no mide el calor total: el número del calor es el de arriba, {ir15.tser}%.
               </dd>
             </div>
           </dl>
@@ -140,19 +140,20 @@ export default function BocetoFichaIr15AutoPage() {
       <section className={styles.section} aria-labelledby="quien-titulo">
         <div className={styles.shell}>
           <p className={styles.kicker}>¿Es para ti?</p>
-          <h2 id="quien-titulo">Dónde sí y dónde no.</h2>
+          <h2 id="quien-titulo">¿El tono IR15 te conviene?</h2>
+          <p className={styles.lead}>El IR15 se ve oscuro. Aquí va en los cristales de atrás del auto.</p>
           <div className={styles.fitGrid}>
             <div>
-              <h3>Sí, si quieres</h3>
+              <h3>Este tono te conviene si…</h3>
               <ul>
-                <li>Un tono oscuro en los cristales traseros.</li>
-                <li>Más privacidad de día: desde afuera cuesta ver hacia adentro.</li>
+                <li>Quieres un tono oscuro en los cristales de atrás.</li>
+                <li>De día, quieres que desde afuera cueste ver hacia adentro.</li>
               </ul>
             </div>
             <div>
-              <h3>Mejor otro tono</h3>
+              <h3>Mejor elige uno más claro si…</h3>
               <ul>
-                <li>Si quieres ver bien hacia afuera de noche sin luz adentro.</li>
+                <li>Quieres ver bien hacia afuera de noche, cuando no hay luz adentro del auto.</li>
               </ul>
             </div>
           </div>
@@ -175,7 +176,7 @@ export default function BocetoFichaIr15AutoPage() {
             </div>
             <div>
               <p className={styles.kicker}>Después de instalar</p>
-              <h2>Cuidados.</h2>
+              <h2>Qué cuidar después de instalar.</h2>
               <ol className={styles.care}>
                 <li><span>No bajes los vidrios en 48 horas.</span></li>
                 <li><span>Deja el desempañador trasero apagado 3 días.</span></li>
@@ -194,7 +195,7 @@ export default function BocetoFichaIr15AutoPage() {
           <h2 id="precio-titulo">Cuánto cuesta en tu auto.</h2>
           <div className={styles.priceBlock}>
             <span className={styles.from}>Desde $4,000 <span className={styles.plusIva}>+ IVA</span></span>
-            <p>Película IR nanocerámica Hightech. Laterales y medallón. Parabrisas desde $1,500 <span className={styles.plusIva}>+ IVA</span>.</p>
+            <p>Línea IR, película nanocerámica Hightech. Laterales y medallón. Parabrisas desde $1,500 <span className={styles.plusIva}>+ IVA</span>.</p>
             <p className={styles.small}>Aceptamos todos los métodos de pago.</p>
           </div>
         </div>

@@ -5,6 +5,8 @@ import { Icon } from "@/components/Icon";
 import { getGoogleReviews } from "@/lib/google-reviews";
 import { airportName, googleProfile } from "@/lib/public-facts";
 import { truth } from "@/lib/truth";
+import { ClientTicker } from "@/components/ClientTicker";
+import { whereAlreadyItems } from "@/lib/client-proof";
 import { BocetoBanner, CotizaWhatsApp, Estrellas, MobileBar, Pendiente, mensajes } from "../_components/Boceto";
 import styles from "../boceto.module.css";
 
@@ -57,7 +59,7 @@ export default function BocetoPortadaPage() {
             <p className={styles.heroText}>
               ¿Tu casa parece horno? ¿El aire no enfría? Le ponemos película a tus cristales para que entre menos calor. Tú eliges qué tan claro queda.
             </p>
-            <p className={styles.brandLine}>Películas Hightech, línea IR nanocerámica, en todo el país.</p>
+            <p className={styles.brandLine}>Películas Hightech de la Línea IR, que corta el calor invisible del sol, en todo el país.</p>
             <div className={styles.ctaRow}>
               <CotizaWhatsApp message={mensaje} />
             </div>
@@ -72,7 +74,7 @@ export default function BocetoPortadaPage() {
       {/* 2. EL PROBLEMA */}
       <section className={styles.sectionAlt} aria-labelledby="problema-titulo">
         <div className={styles.shell}>
-          <h2 id="problema-titulo">¿Te pasa esto?</h2>
+          <h2 id="problema-titulo">¿Te pasa alguna de estas molestias?</h2>
           <div className={styles.quotes}>
             <div className={styles.quoteGroup}>
               <h3><Icon name="home" size={20} /> En casa o en el negocio</h3>
@@ -186,7 +188,7 @@ export default function BocetoPortadaPage() {
         <div className={`${styles.shell} ${styles.benefitsGrid}`}>
           <div>
             <p className={styles.kicker}>En qué se nota</p>
-            <h2 id="beneficios-titulo">Entra menos calor.</h2>
+            <h2 id="beneficios-titulo">La película deja entrar menos calor.</h2>
             <p className={styles.bigFigure}>
               <span className={styles.bigNumber}>59 a 96%</span>
               <span className={styles.bigCaption}>del calor del sol lo bloquea la película nanocerámica, según el tono.</span>
@@ -200,7 +202,7 @@ export default function BocetoPortadaPage() {
               <Icon name="sun" size={24} />
               <div>
                 <h3>99% de los rayos UV, en todos los tonos</h3>
-                <p>Del más claro al más oscuro.</p>
+                <p>Son los rayos que queman la piel y decoloran los muebles. Del más claro al más oscuro.</p>
               </div>
             </li>
             <li>
@@ -225,7 +227,7 @@ export default function BocetoPortadaPage() {
       <section className={styles.section} aria-labelledby="prueba-titulo">
         <div className={styles.shell}>
           <p className={styles.kicker}>Dónde ya está instalada</p>
-          <h2 id="prueba-titulo">{airportName}</h2>
+          <h2 id="prueba-titulo">Ya está en el {airportName}.</h2>
           <div className={styles.proofGrid}>
             <figure className={styles.figure}>
               <div className={styles.photo}>
@@ -265,6 +267,11 @@ export default function BocetoPortadaPage() {
         </div>
       </section>
 
+      {/* Logos reales pendientes de permiso de cada marca. */}
+      <div id="tira-clientes">
+        <ClientTicker />
+      </div>
+
       {/* 6. QUIÉNES SOMOS. Taller y horario: public-facts.ts. Bloque corto actualizado: Fer, 23 nov 2026. */}
       <section className={styles.sectionAlt} aria-labelledby="nosotros-titulo">
         <div className={`${styles.shell} ${styles.aboutGrid}`}>
@@ -280,9 +287,15 @@ export default function BocetoPortadaPage() {
                 <span className={styles.aboutCardTitle}>Experiencia en campo</span>
                 <p>Instaladores con más de 15 años de experiencia.</p>
               </div>
-              <div className={styles.aboutCard}>
+              <div className={styles.aboutCard} id="donde-ya-esta">
                 <span className={styles.aboutCardTitle}>Dónde ya está</span>
-                <p>Trabajos en hoteles y en el {airportName}, además de +{googleProfile.count} reseñas en Google.</p>
+                {/* Nombres confirmados por Fer, 23 nov 2026, 11:22. No nombrar Tierra y Armonía. */}
+                <ul className={styles.aboutPlaces}>
+                  {whereAlreadyItems.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+                <p className={styles.aboutReviews}>+{googleProfile.count} reseñas en Google.</p>
               </div>
             </div>
             <p className={styles.aboutMore}>
@@ -333,7 +346,7 @@ export default function BocetoPortadaPage() {
           <div className={styles.objection}>
             <h3>«Me cotizaron la mitad»</h3>
             <p>Pregunta qué película y qué garantía te ofrecen. No todos los nanocerámicos rinden igual.</p>
-            <p>Compara dos cosas: el número de calor en la ficha (TSER) y la garantía por escrito.</p>
+            <p>Compara dos cosas: el número de calor en la ficha (cuánto calor bloquea la película) y la garantía por escrito.</p>
           </div>
         </div>
       </section>
@@ -353,7 +366,7 @@ export default function BocetoPortadaPage() {
             <div className={styles.priceBlock}>
               <h3><Icon name="car" size={22} /> Auto</h3>
               <span className={styles.from}>Desde $4,000 <span className={styles.plusIva}>+ IVA</span></span>
-              <p>Película IR nanocerámica Hightech. Laterales y medallón. Parabrisas desde $1,500 <span className={styles.plusIva}>+ IVA</span>.</p>
+              <p>Línea IR, película nanocerámica Hightech. Laterales y medallón. Parabrisas desde $1,500 <span className={styles.plusIva}>+ IVA</span>.</p>
               <p className={styles.small}>Aceptamos todos los métodos de pago.</p>
             </div>
           </div>
@@ -392,7 +405,7 @@ export default function BocetoPortadaPage() {
             <details>
               <summary>¿Qué película instalan?</summary>
               <p>Instalamos películas Hightech.</p>
-              <p>Trabajamos la línea IR nanocerámica y otras soluciones para ventanas de casa, negocio y auto.</p>
+              <p>Trabajamos la Línea IR, una película nanocerámica, y otras soluciones para ventanas de casa, negocio y auto.</p>
             </details>
             <details>
               <summary>¿Interfiere con el celular?</summary>

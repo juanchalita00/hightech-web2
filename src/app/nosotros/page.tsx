@@ -4,6 +4,8 @@ import Link from "next/link";
 import { GoogleReviews } from "@/components/GoogleReviews";
 import { Icon } from "@/components/Icon";
 import { WhatsAppCTA } from "@/components/WhatsAppCTA";
+import { ClientTicker } from "@/components/ClientTicker";
+import { whereAlreadyItems } from "@/lib/client-proof";
 import { addressLine, airportName, googleProfile, hoursLabel } from "@/lib/public-facts";
 import { truth } from "@/lib/truth";
 import styles from "./nosotros.module.css";
@@ -79,7 +81,7 @@ export default function Page() {
                 Cada instalador domina primero el oficio completo y luego observamos en qué tipo de cristal destaca más.
               </p>
               <p>
-                En esa etapa completa su formación técnica para espacios o para vehículos. Por eso, quien instala en tu casa no polariza autos, y viceversa.
+                En esa etapa completa su formación técnica para espacios o para vehículos. Por eso, quien instala en tu casa no polariza autos, y al revés.
               </p>
             </div>
           </div>
@@ -134,17 +136,20 @@ export default function Page() {
       </section>
 
       {/* PRUEBA REAL */}
-      <section className={styles.section} aria-labelledby="prueba-nosotros-titulo">
+      <section className={styles.section} id="nosotros-prueba" aria-labelledby="prueba-nosotros-titulo">
         <div className={`${styles.shell} ${styles.proofGrid}`}>
           <div>
             <p className={styles.eyebrow}>Dónde ya está instalado</p>
-            <h2 id="prueba-nosotros-titulo">De una sala en casa hasta un aeropuerto.</h2>
+            <h2 id="prueba-nosotros-titulo">Trabajos que ya puedes ver.</h2>
             <div className={styles.copyStack}>
+              {/* Nombres confirmados por Fer, 23 nov 2026, 11:22. No nombrar Tierra y Armonía. */}
+              <ul className={styles.places}>
+                {whereAlreadyItems.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
               <p>
-                Hemos trabajado en hoteles y en el {airportName}, además de casas, oficinas y autos en Zapopan y Guadalajara.
-              </p>
-              <p>
-                En el aeropuerto instalamos en un pasillo de cristal junto a la plataforma, que sigue en uso todos los días.
+                En el {airportName} instalamos en un pasillo de cristal junto a la plataforma, que sigue en uso todos los días.
               </p>
             </div>
             <div className={styles.proofStat}>
@@ -165,6 +170,9 @@ export default function Page() {
           </figure>
         </div>
       </section>
+
+      {/* Logos reales pendientes de permiso de cada marca. */}
+      <ClientTicker />
 
       {/* DETRÁS DEL LOGO */}
       <section className={styles.sectionAlt} id="logo" aria-labelledby="logo-titulo">

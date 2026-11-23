@@ -1,0 +1,75 @@
+/* Logos reales pendientes de permiso de cada marca. Solo texto, sin logotipos. */
+.band {
+  overflow-x: clip;
+  overflow-y: hidden;
+  max-width: 100%;
+  border-top: 1px solid #d9e0e8;
+  border-bottom: 1px solid #d9e0e8;
+  background: #f7f8fa;
+}
+
+.viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  animation: ticker 55s linear infinite;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin: 0;
+  padding: .7rem 1.5rem;
+  list-style: none;
+  white-space: nowrap;
+}
+
+.list li {
+  color: #6d788f;
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  line-height: 1.3;
+}
+
+.list li:not(:last-child)::after {
+  content: "·";
+  margin: 0 1.15rem;
+  color: #b3bbc6;
+  font-weight: 400;
+}
+
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (hover: hover) {
+  .band:hover .track { animation-play-state: paused; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .list {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .35rem 1.15rem;
+    padding: .7rem 1rem;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .list li:not(:last-child)::after { display: none; }
+
+  .listDuplicate { display: none; }
+}

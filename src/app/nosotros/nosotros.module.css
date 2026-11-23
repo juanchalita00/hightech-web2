@@ -346,3 +346,21 @@
     gap: 2rem;
   }
 }
+
+
+.places {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: .4rem;
+}
+
+.places li {
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.45;
+  color: var(--ink);
+  padding-left: .85rem;
+  border-left: 3px solid var(--ink);
+}

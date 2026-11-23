@@ -297,6 +297,9 @@
 .aboutCard { padding: 1.1rem 1.2rem; background: #fff; border: 1px solid var(--rule); border-top: 3px solid var(--navy); border-radius: .9rem; }
 .aboutCardTitle { display: block; font-size: .78rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--navy-soft); margin-bottom: .35rem; }
 .aboutCard p { margin: 0; font-size: .98rem; line-height: 1.5; color: var(--navy); }
+.aboutPlaces { list-style: none; margin: .15rem 0 0; padding: 0; display: grid; gap: .35rem; }
+.aboutPlaces li { margin: 0; font-size: .95rem; line-height: 1.4; color: var(--navy); }
+.aboutReviews { margin-top: .7rem !important; font-size: .9rem !important; color: var(--navy-soft) !important; }
 .aboutMore { margin-top: 1.25rem; }
 .aboutMoreLink { display: inline-flex; align-items: center; gap: .4rem; font-weight: 800; font-size: .98rem; }
 .factsCard { padding: 1.35rem; background: #fff; border: 1px solid var(--rule); border-radius: .9rem; box-shadow: 0 10px 26px rgba(20, 48, 74, .05); }
