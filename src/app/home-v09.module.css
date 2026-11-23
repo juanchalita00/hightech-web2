@@ -960,6 +960,20 @@
   font-weight: 730;
 }
 
+
+.citiesSection {
+  padding: 0 0 3rem;
+  overflow-x: clip;
+}
+.citiesHeading {
+  margin: 0 0 .7rem;
+  font-size: clamp(1.45rem, 5.5vw, 2.1rem);
+  line-height: 1.15;
+  letter-spacing: -.03em;
+  overflow-wrap: break-word;
+  max-width: 18ch;
+}
+
 .finalSection {
   padding: clamp(5rem, 8vw, 8rem) 0;
   background: #fff;

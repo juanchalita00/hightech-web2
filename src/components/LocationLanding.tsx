@@ -1,49 +1,93 @@
 import Link from "next/link";
 import { Icon } from "@/components/Icon";
+import { JsonLd } from "@/components/JsonLd";
+import { PriceBlock } from "@/components/PriceBlock";
 import { WhatsAppCTA } from "@/components/WhatsAppCTA";
-import { addressLine, airportName, hoursLabel, onSitePolicy, phoneDisplay } from "@/lib/public-facts";
+import { getGoogleReviews } from "@/lib/google-reviews";
+import {
+  locationBusinessSchema,
+  locationFaqSchema,
+  locationFaqs,
+  type ServiceCity,
+} from "@/lib/location-pages";
+import { addressLine, airportName, googleProfile, hoursLabel, phoneDisplay, prices } from "@/lib/public-facts";
 import { truth } from "@/lib/truth";
 
-type City = "Zapopan" | "Guadalajara";
+const money = new Intl.NumberFormat("es-MX", { style: "currency", currency: "MXN", maximumFractionDigits: 0 });
 
-const copy: Record<City, {
+const copy: Record<ServiceCity, {
+  title: string;
   lede: string;
-  colonias: string[];
-  note: string;
-  faqs: { q: string; a: string }[];
+  servicesIntro: string;
+  services: { href: string; title: string; text: string }[];
+  irTitle: string;
+  irText: string[];
+  priceTitle: string;
+  priceLead: string;
+  reviewAuthor: string;
+  reviewLead: string;
+  other: { href: string; label: string };
 }> = {
   Zapopan: {
-    lede: "El taller está en Jardines Vallarta. Desde aquí instalamos polarizado en casa, negocio y auto, y salimos a la zona de Andares, Puerta de Hierro y Valle Real.",
-    colonias: ["Jardines Vallarta", "Puerta de Hierro", "Andares", "Valle Real", "Colinas de San Javier", "Puerta Plata"],
-    note: "Si tu colonia no está en la lista y sigue en Zapopan, también la atendemos. El traslado dentro del municipio se ve en la cotización.",
-    faqs: [
-      { q: "¿El taller está en Zapopan?", a: `${addressLine} ${hoursLabel}` },
-      { q: "¿Instalan el auto en mi casa?", a: onSitePolicy },
-      { q: "¿Atienden Providencia?", a: "Providencia la cubrimos desde esta base. Si el cristal está del lado de Guadalajara, la página de esa ciudad tiene el mismo servicio." },
+    title: "Polarizado en Zapopan.",
+    lede: "El taller está en Jardines Vallarta. Desde aquí instalamos película para casa, negocio y auto en Zapopan.",
+    servicesIntro: "Empezamos por tu casa o tu negocio. El auto se trabaja en el taller, con cita.",
+    services: [
+      { href: "/residencial/", title: "Casa", text: "Bajamos el calor del sol en ventanas de casa. Tú eliges qué tan claro queda el cristal." },
+      { href: "/comercial/", title: "Negocio", text: "Oficinas, fachadas y locales. La misma Línea IR, con el cuidado de cada cristal." },
+      { href: "/automotriz/", title: "Auto", text: "El auto se trabaja en el taller de Jardines Vallarta, con cita." },
     ],
+    irTitle: "Línea IR, también en el tono claro.",
+    irText: [
+      "Trabajamos la Línea IR, una película nanocerámica Hightech.",
+      "Según la ficha técnica, rechaza 95% del infrarrojo (el calor invisible del sol), medido a 950 nm.",
+      "Ese dato no significa 95% menos calor dentro del cuarto o del auto.",
+    ],
+    priceTitle: "Precios desde, en Zapopan",
+    priceLead: "Estos son los precios desde. El IVA va aparte. El precio final sale en la cotización.",
+    reviewAuthor: "Valeria Garnica",
+    reviewLead: "Hay +70 reseñas en Google. Esta es una de ellas, del perfil público.",
+    other: { href: "/guadalajara/", label: "También instalamos en Guadalajara" },
   },
   Guadalajara: {
-    lede: `Instalamos polarizado en Guadalajara desde el taller de Zapopan. Hay obra en el ${airportName} y atendemos casas y oficinas en el centro y el poniente de la ciudad.`,
-    colonias: ["Americana", "Lafayette", "Country Club", "Monraz", "Colomos", "Chapultepec"],
-    note: "El auto se trabaja en el taller de Zapopan, con cita. Casa y negocio se miden con fotos y, si hace falta, una visita.",
-    faqs: [
-      { q: "¿Tienen obra en Guadalajara?", a: `Sí. El caso público es el ${airportName}: un pasillo de cristal junto a la plataforma.` },
-      { q: "¿Hay que ir a Zapopan para cotizar una casa?", a: "No. Con fotos y medidas aproximadas empezamos. La instalación se agenda en la dirección del inmueble." },
-      { q: "¿El auto se polariza en Guadalajara?", a: onSitePolicy },
+    title: "Polarizado en Guadalajara.",
+    lede: "Instalamos en casas, negocios y autos de Guadalajara. El taller está en Zapopan, en Tomás Mann 5348.",
+    servicesIntro: "Vamos a tu casa o a tu negocio en Guadalajara. El auto se trabaja en el taller de Zapopan.",
+    services: [
+      { href: "/residencial/", title: "Casa", text: "Para cotizar una casa en Guadalajara nos bastan fotos y medidas. La instalación se agenda en tu domicilio." },
+      { href: "/comercial/", title: "Negocio", text: `Oficinas y locales en Guadalajara. Hay obra pública en el ${airportName}.` },
+      { href: "/automotriz/", title: "Auto", text: "El auto se polariza en el taller de Zapopan, con cita. A domicilio solo flotillas o autos de agencia." },
     ],
+    irTitle: "La misma Línea IR, en tu cristal de Guadalajara.",
+    irText: [
+      "En casa, negocio y auto usamos la Línea IR.",
+      "La ficha técnica reporta 95% de rechazo infrarrojo, medido a 950 nm.",
+      "El tono lo eliges tú, según la luz que quieres dejar pasar.",
+    ],
+    priceTitle: "Precios desde, para Guadalajara",
+    priceLead: "Casa y negocio primero, luego el auto. Todos los precios son más IVA.",
+    reviewAuthor: "Christian Chávez",
+    reviewLead: "En Google hay +70 reseñas. Aquí va una, de una oficina que ya instalamos.",
+    other: { href: "/zapopan/", label: "Ver el taller en Zapopan" },
   },
 };
 
-export function LocationLanding({ city }: { city: City }) {
+export function LocationLanding({ city }: { city: ServiceCity }) {
   const page = copy[city];
-  const other = city === "Zapopan" ? { href: "/guadalajara/", label: "Polarizado en Guadalajara" } : { href: "/zapopan/", label: "Polarizado en Zapopan" };
+  const faqs = locationFaqs[city];
+  const reviews = getGoogleReviews();
+  const review = reviews.find((item) => item.author === page.reviewAuthor) ?? reviews[0];
+
   return (
     <>
+      <JsonLd data={locationBusinessSchema()} />
+      <JsonLd data={locationFaqSchema(city)} />
+
       <section className="section location-hero">
         <div className="container location-hero-grid">
           <div>
             <p className="eyebrow">{city}, Jalisco</p>
-            <h1>Polarizado en {city}.</h1>
+            <h1>{page.title}</h1>
             <p>{page.lede}</p>
             <div className="hero-actions">
               <Link className="button button-primary" href="/contacto/#cotizar">Cotizar</Link>
@@ -53,38 +97,106 @@ export function LocationLanding({ city }: { city: City }) {
               <strong>{addressLine}</strong>
               <span>{hoursLabel}</span>
               <a href={`tel:${truth.contact.phoneE164}`}>{phoneDisplay}</a>
-              <a href={truth.contact.mapsUrl}>Cómo llegar</a>
+              <a href={truth.contact.mapsUrl} target="_blank" rel="noopener noreferrer">Cómo llegar en Google Maps</a>
             </div>
           </div>
           <ul className="location-points">
-            {page.colonias.map((colonia) => <li key={colonia}><Icon name="check" size={16} />{colonia}</li>)}
+            <li><Icon name="home" size={16} />Casa y negocio se instalan en el inmueble.</li>
+            <li><Icon name="car" size={16} />El auto, en el taller de Zapopan, con cita.</li>
+            <li><Icon name="check" size={16} />+{googleProfile.count} reseñas en Google.</li>
           </ul>
         </div>
       </section>
+
       <section className="section section-alt">
         <div className="container">
           <div className="section-heading">
-            <p className="eyebrow">Colonias</p>
-            <h2>Dónde instalamos en {city}.</h2>
+            <p className="eyebrow">Qué instalamos</p>
+            <h2>Casa, negocio y auto.</h2>
           </div>
-          <p>{page.note}</p>
-          <div className="location-links">
-            <Link href="/residencial/"><strong>Casa</strong><span>Calor, luz y privacidad.</span></Link>
-            <Link href="/comercial/"><strong>Negocio</strong><span>Oficinas, fachadas y plantas.</span></Link>
-            <Link href="/automotriz/"><strong>Auto</strong><span>{onSitePolicy}</span></Link>
-            <Link href="/guias/"><strong>Guías</strong><span>Calor, luz y el tono del auto en Jalisco.</span></Link>
+          <p>{page.servicesIntro}</p>
+          <div className="location-links location-links-three">
+            {page.services.map((item) => (
+              <Link href={item.href} key={item.title}>
+                <strong>{item.title}</strong>
+                <span>{item.text}</span>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
+
       <section className="section">
+        <div className="container location-ir">
+          <div className="section-heading">
+            <p className="eyebrow">Línea IR</p>
+            <h2>{page.irTitle}</h2>
+          </div>
+          {page.irText.map((text) => <p key={text}>{text}</p>)}
+        </div>
+      </section>
+
+      <section className="section section-alt">
         <div className="container">
-          <div className="section-heading"><p className="eyebrow">Preguntas de {city}</p><h2>Antes de pedir la cotización.</h2></div>
+          <div className="section-heading">
+            <p className="eyebrow">Precios</p>
+            <h2>Cuánto cuesta.</h2>
+          </div>
+          <p>{page.priceLead}</p>
+          <PriceBlock
+            title={page.priceTitle}
+            rows={[
+              { label: "Casa y negocio, Línea IR", price: `${money.format(prices.nanoFrom)}`, vat: true, note: "Por metro cuadrado." },
+              { label: "Otras películas para casa y negocio", price: `${money.format(prices.architectureFrom)}`, vat: true, note: "Por metro cuadrado. Esmerilado y Reflecta." },
+              { label: "Mínimo de proyecto", price: `${money.format(prices.projectMinimum)}`, vat: true, note: "Casa y negocio." },
+              { label: "Auto, laterales y medallón", price: `${money.format(prices.autoFrom)}`, vat: true },
+              { label: "Parabrisas completo", price: `${money.format(prices.windshieldFrom)}`, vat: true },
+            ]}
+            footnote="Aceptamos todos los métodos de pago. Película inteligente y seguridad se cotizan sin precio de lista."
+          />
+        </div>
+      </section>
+
+      {review ? (
+        <section className="section">
+          <div className="container location-review">
+            <div className="section-heading">
+              <p className="eyebrow">Reseñas</p>
+              <h2>+{googleProfile.count} reseñas en Google.</h2>
+            </div>
+            <p>{page.reviewLead}</p>
+            <blockquote>
+              <p>{review.quote}</p>
+              <footer>
+                <cite>{review.author}</cite>
+                {review.translatedFrom ? <span>Traducida del {review.translatedFrom}.</span> : null}
+                {" "}
+                <a href={review.sourceUrl} target="_blank" rel="noopener noreferrer">Ver en Google</a>
+              </footer>
+            </blockquote>
+          </div>
+        </section>
+      ) : null}
+
+      <section className="section section-alt">
+        <div className="container">
+          <div className="section-heading">
+            <p className="eyebrow">Preguntas de {city}</p>
+            <h2>Antes de pedir la cotización.</h2>
+          </div>
           <div className="city-faq">
-            {page.faqs.map((item) => (
-              <article key={item.q}><h3>{item.q}</h3><p>{item.a}</p></article>
+            {faqs.map((item) => (
+              <article key={item.q}>
+                <h3>{item.q}</h3>
+                <p>{item.a}</p>
+              </article>
             ))}
           </div>
-          <p className="location-sibling"><Link className="text-link text-link-strong" href={other.href}>{other.label} <Icon name="arrow" size={17} /></Link></p>
+          <p className="location-sibling">
+            <Link className="text-link text-link-strong" href={page.other.href}>
+              {page.other.label} <Icon name="arrow" size={17} />
+            </Link>
+          </p>
         </div>
       </section>
     </>

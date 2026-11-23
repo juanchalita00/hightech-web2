@@ -1596,6 +1596,62 @@ thead th { background: var(--surface-alt); }
 .nap-block { display: grid; gap: .35rem; margin-top: 1.2rem; color: var(--ink-soft); }
 .nap-block strong { color: var(--ink); }
 
+.location-hero { overflow-x: clip; }
+.location-hero h1 {
+  overflow-wrap: break-word;
+  font-size: clamp(2.15rem, 9vw, 4.4rem);
+  line-height: 1.02;
+  letter-spacing: -.05em;
+  max-width: 14ch;
+}
+.location-hero-grid,
+.location-ir,
+.location-review,
+.location-points,
+.location-links,
+.city-faq,
+.nap-block,
+.service-area-links,
+.service-area-block { min-width: 0; }
+.location-links-three { grid-template-columns: repeat(3, 1fr); }
+.location-ir p { max-width: 40rem; color: var(--ink-soft); }
+.location-review blockquote {
+  margin: 1.25rem 0 0;
+  padding: 1.15rem 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: 1.1rem;
+  background: white;
+}
+.location-review blockquote p { margin: 0; color: var(--ink); overflow-wrap: break-word; }
+.location-review footer { margin: .75rem 0 0; color: var(--ink-soft); }
+.location-review cite { font-style: normal; font-weight: 700; color: var(--ink); }
+.service-area-block { margin-top: 1.15rem; min-width: 0; }
+.service-area-title,
+.service-area-links-title {
+  margin: 0 0 .55rem;
+  font-weight: 700;
+  overflow-wrap: break-word;
+}
+.service-area-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem 1rem;
+  min-width: 0;
+}
+.service-area-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+@media (max-width: 900px) {
+  .location-links-three { grid-template-columns: 1fr; }
+}
+
 .price-line { margin: 1rem 0 0; color: var(--ink); font-weight: 700; }
 .lead-magnet { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1.2rem 1.3rem; border: 1px solid var(--line); border-radius: 1.15rem; background: white; }
 .lead-magnet p { margin: .35rem 0 0; color: var(--ink-soft); }

@@ -5,6 +5,7 @@ import { BuenFinBanner } from "@/components/BuenFinBanner";
 import { GoogleReviews } from "@/components/GoogleReviews";
 import { Icon } from "@/components/Icon";
 import { SignatureGlass } from "@/components/SignatureGlass";
+import { ServiceAreaLinks } from "@/components/ServiceAreaLinks";
 import { WhatsAppCTA } from "@/components/WhatsAppCTA";
 import { airportName, googleProfile, onSitePolicy } from "@/lib/public-facts";
 import styles from "./home-v09.module.css";
@@ -173,6 +174,13 @@ export default function HomePage() {
             ))}
           </div>
           <Link className={styles.proofCta} href="/garantias/">Ver garantías <Icon name="arrow" size={18} /></Link>
+        </div>
+      </section>
+
+      <section className={styles.citiesSection} aria-labelledby="ciudades-titulo">
+        <div className={styles.shell}>
+          <h2 id="ciudades-titulo" className={styles.citiesHeading}>Atendemos en Zapopan y Guadalajara</h2>
+          <ServiceAreaLinks />
         </div>
       </section>
 

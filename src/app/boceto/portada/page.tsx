@@ -6,6 +6,7 @@ import { getGoogleReviews } from "@/lib/google-reviews";
 import { airportName, googleProfile } from "@/lib/public-facts";
 import { truth } from "@/lib/truth";
 import { ClientTicker } from "@/components/ClientTicker";
+import { ServiceAreaLinks } from "@/components/ServiceAreaLinks";
 import { workScalePhotos } from "@/lib/work-scale-photos";
 import { BocetoBanner, CotizaWhatsApp, Estrellas, MobileBar, Pendiente, mensajes } from "../_components/Boceto";
 import styles from "../boceto.module.css";
@@ -306,6 +307,14 @@ export default function BocetoPortadaPage() {
               </div>
             </dl>
           </div>
+        </div>
+      </section>
+
+      {/* Enlaces a páginas locales. Fer, 23 nov 2026, 13:01. */}
+      <section className={styles.section} aria-labelledby="ciudades-titulo">
+        <div className={styles.shell}>
+          <h2 id="ciudades-titulo">Atendemos en Zapopan y Guadalajara</h2>
+          <ServiceAreaLinks />
         </div>
       </section>
 

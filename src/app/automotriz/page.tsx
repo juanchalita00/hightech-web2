@@ -8,6 +8,7 @@ import { JaliscoLaw } from "@/components/JaliscoLaw";
 import { JsonLd } from "@/components/JsonLd";
 import { LeadMagnet } from "@/components/LeadMagnet";
 import { PriceBlock } from "@/components/PriceBlock";
+import { ServiceAreaLinks } from "@/components/ServiceAreaLinks";
 import { ProductCTA } from "@/components/ProductCTA";
 import { HightechTip } from "@/components/HightechTip";
 import { Icon } from "@/components/Icon";
@@ -123,6 +124,10 @@ export default function AutomotivePage() {
             <p className="eyebrow">Cómo trabajamos</p>
             <h2>En el taller, con cita.</h2>
             <p>{onSitePolicy} Te confirmamos fecha por WhatsApp según la disponibilidad de la semana.</p>
+            <div className="service-area-block">
+              <p className="service-area-title">Atendemos en Zapopan y Guadalajara</p>
+              <ServiceAreaLinks />
+            </div>
           </div>
           <Image
             src="/images/fotos/auto-suv-negra-taller-800.webp"

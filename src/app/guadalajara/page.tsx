@@ -4,7 +4,7 @@ import { LocationLanding } from "@/components/LocationLanding";
 export const metadata: Metadata = {
   alternates: { canonical: "/guadalajara/" },
   title: { absolute: "Polarizado en Guadalajara | High Tech Polarizados México" },
-  description: "Polarizado en Guadalajara: películas para casa, negocio y auto. High Tech Polarizados México instala en Guadalajara y Zapopan, con taller en Tomás Mann 5348, Zapopan.",
+  description: "Películas Hightech Línea IR para casa, negocio y auto en Guadalajara. Instalamos desde el taller en Zapopan. 95% IR según ficha técnica. +70 reseñas.",
 };
 
 export default function Page() {
