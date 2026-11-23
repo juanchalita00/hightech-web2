@@ -11,7 +11,7 @@ import styles from "./home-v09.module.css";
 
 export const metadata: Metadata = {
   title: { absolute: "High Tech Polarizados México | Polarizado en Zapopan y Guadalajara" },
-  description: "High Tech Polarizados México. Películas Hightech nanocerámicas para casa, negocio y auto. El tono cambia la luz y la privacidad; el calor del sol se corta en todos. Instalamos en Zapopan y Guadalajara.",
+  description: "Películas Hightech Línea IR para casa, negocio y auto en Zapopan y Guadalajara. Menos calor, tú eliges qué tan claro queda. +70 reseñas.",
   alternates: { canonical: "/" },
 };
 
