@@ -156,7 +156,7 @@ export default function BocetoFichaIr15AutoPage() {
               </ul>
             </div>
           </div>
-          <div className={styles.lawNote} style={{ marginTop: "1.5rem" }}>
+          <div className={styles.lawNote} id="ley" style={{ marginTop: "1.5rem" }}>
             <p>«Parabrisas, medallones y vidrios en buen estado que permitan la visibilidad hacia el interior del vehículo; bajo ninguna circunstancia el parabrisas estará polarizado;»</p>
             <p>«Usar cristales polarizados u otros elementos que impidan totalmente la visibilidad hacia el interior del vehículo, o polarizado de cualquier intensidad en el parabrisas del vehículo;»</p>
             <p className={styles.lawCite}><a href={leyes.reglamento}>Reglamento art. 59 fr. VIII</a> / <a href={leyes.ley}>Ley art. 360 fr. IX</a></p>

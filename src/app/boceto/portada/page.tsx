@@ -5,7 +5,7 @@ import { Icon } from "@/components/Icon";
 import { getGoogleReviews } from "@/lib/google-reviews";
 import { airportName, googleProfile } from "@/lib/public-facts";
 import { truth } from "@/lib/truth";
-import { BocetoBanner, CotizaWhatsApp, Estrellas, MobileBar, Pendiente, leyes, mensajes } from "../_components/Boceto";
+import { BocetoBanner, CotizaWhatsApp, Estrellas, MobileBar, Pendiente, mensajes } from "../_components/Boceto";
 import styles from "../boceto.module.css";
 
 export const metadata: Metadata = {
@@ -89,7 +89,6 @@ export default function BocetoPortadaPage() {
               <ul className={styles.quoteList}>
                 <li>Mi carro se calienta mucho</li>
                 <li>El sol me quema al manejar</li>
-                <li>Se me quema el brazo manejando</li>
                 <li>Los asientos hierven cuando me subo</li>
                 <li>Quiero privacidad</li>
                 <li>No quiero multas</li>
@@ -313,7 +312,7 @@ export default function BocetoPortadaPage() {
         </div>
       </section>
 
-      {/* 7. OBJECIONES. Base de conocimiento §10. Norma: PDF del Congreso de Jalisco, Reglamento art. 59 fr. VIII y Ley art. 360 fr. IX. */}
+      {/* 7. OBJECIONES. Base de conocimiento §10. El texto de la ley vive en la ficha de auto (#ley). */}
       <section className={styles.section} aria-labelledby="objeciones-titulo">
         <div className={styles.shell}>
           <p className={styles.kicker}>Lo que nos preguntan antes de decidir</p>
@@ -327,13 +326,8 @@ export default function BocetoPortadaPage() {
 
           <div className={styles.objection} id="multa">
             <h3>«¿Y si me multan?»</h3>
-            <div className={styles.lawNote}>
-              <p>«Parabrisas, medallones y vidrios en buen estado que permitan la visibilidad hacia el interior del vehículo; bajo ninguna circunstancia el parabrisas estará polarizado;»</p>
-              <p>«Usar cristales polarizados u otros elementos que impidan totalmente la visibilidad hacia el interior del vehículo, o polarizado de cualquier intensidad en el parabrisas del vehículo;»</p>
-              <p className={styles.lawCite}><a href={leyes.reglamento}>Reglamento art. 59 fr. VIII</a> / <a href={leyes.ley}>Ley art. 360 fr. IX</a></p>
-            </div>
-            <p>En el parabrisas lo más común es el IR75. Si quieres privacidad, en High Tech recomendamos máximo IR35, para que te sientas cómodo y conserves la visibilidad. Es lo que suele hacerse.</p>
-            <p>El tono de cada cristal lo platicamos contigo.</p>
+            <p>En el parabrisas recomendamos un tono claro, dentro de lo que pide la ley.</p>
+            <p>El detalle y el texto de la norma están en la <a href="/boceto/ficha-ir15-auto/#ley">ficha de auto</a>.</p>
           </div>
 
           <div className={styles.objection}>
@@ -386,6 +380,21 @@ export default function BocetoPortadaPage() {
               <p>De noche, si prendes la luz de adentro, sí se puede ver hacia adentro.</p>
             </details>
             <details>
+              <summary>¿Cobran andamio en casa o negocio?</summary>
+              <p>El andamio solo se cobra en lugares de doble o triple altura.</p>
+              <p>Eso quiere decir ventanas muy altas, como de dos o tres pisos.</p>
+            </details>
+            <details>
+              <summary>¿Su fuerte es casa o auto?</summary>
+              <p>Los dos. Tenemos un equipo especializado para casa y negocio, y otro distinto para autos.</p>
+              <p>Cada quien se forma y trabaja solo en su área.</p>
+            </details>
+            <details>
+              <summary>¿Qué película instalan?</summary>
+              <p>Instalamos películas Hightech.</p>
+              <p>Trabajamos la línea IR nanocerámica y otras soluciones para ventanas de casa, negocio y auto.</p>
+            </details>
+            <details>
               <summary>¿Interfiere con el celular?</summary>
               <p>No.</p>
               <p>Tu celular sigue con señal.</p>
@@ -399,21 +408,6 @@ export default function BocetoPortadaPage() {
               <summary>¿Van a domicilio?</summary>
               <p>El auto se trabaja en el taller, con cita.</p>
               <p>Solo vamos a otro lugar si son muchos autos juntos (una flotilla) o si el auto es de una agencia, o sea, de un lote de venta.</p>
-            </details>
-            <details>
-              <summary>¿Su fuerte es casa o auto?</summary>
-              <p>Los dos. Tenemos un equipo especializado para casa y negocio, y otro distinto para autos.</p>
-              <p>Cada quien se forma y trabaja solo en su área.</p>
-            </details>
-            <details>
-              <summary>¿Qué película instalan?</summary>
-              <p>Instalamos películas Hightech.</p>
-              <p>Trabajamos la línea IR nanocerámica y otras soluciones para ventanas de casa, negocio y auto.</p>
-            </details>
-            <details>
-              <summary>¿Cobran andamio en casa o negocio?</summary>
-              <p>El andamio solo se cobra en lugares de doble o triple altura.</p>
-              <p>Eso quiere decir ventanas muy altas, como de dos o tres pisos.</p>
             </details>
           </div>
         </div>

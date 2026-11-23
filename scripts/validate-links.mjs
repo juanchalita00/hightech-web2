@@ -6,6 +6,20 @@ const root=path.resolve(path.dirname(url.fileURLToPath(import.meta.url)),"..");
 const routes=JSON.parse(fs.readFileSync(path.join(root,"content/routes.json"),"utf8"));
 const known=new Set(routes.map(r=>r.path));
 known.add("/sitemap.xml");known.add("/robots.txt");known.add("/rss.xml");
+// Páginas reales en src/app, incluidas las de boceto (noindex, fuera del registry público).
+function addAppPaths(dir, prefix=""){
+  for(const entry of fs.readdirSync(dir,{withFileTypes:true})){
+    if(entry.name.startsWith(".") || entry.name.startsWith("_")) continue;
+    const full=path.join(dir,entry.name);
+    if(entry.isDirectory()){
+      if(entry.name.startsWith("[")) continue;
+      addAppPaths(full, `${prefix}/${entry.name}`);
+    } else if(/^page\.(tsx|ts|jsx|js)$/.test(entry.name)){
+      known.add(prefix ? `${prefix}/` : "/");
+    }
+  }
+}
+addAppPaths(path.join(root,"src/app"));
 function blogPostExists(clean){
   const match=clean.match(/^\/blog\/([^/]+)\/$/);
   if(!match) return false;

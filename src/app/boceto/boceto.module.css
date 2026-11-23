@@ -318,6 +318,7 @@
   background: var(--paper-alt);
   font-size: .95rem;
   max-width: 44rem;
+  scroll-margin-top: 5.5rem;
 }
 .lawNote p { margin: 0; }
 .lawNote p + p { margin-top: .5rem; }
