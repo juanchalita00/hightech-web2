@@ -1,5 +1,5 @@
 /**
- * Fotos reales del repo para la sección «De una ventana de tu casa a un aeropuerto».
+ * Fotos reales del repo para la sección de proyectos (de un trabajo chico en casa a uno grande).
  * Pies: ubicación o nombre de lugar solo si está confirmado en gallery.json, alt o nombre de archivo.
  * Sin caras. Fer, 23 nov 2026, 11:37.
  */
@@ -21,7 +21,7 @@ export const workScalePhotos = [
   },
   {
     src: "/images/projects/airport-authority.webp",
-    alt: "Pasillo acristalado junto a la plataforma del Aeropuerto Internacional de Guadalajara al atardecer.",
-    caption: "Aeropuerto Internacional de Guadalajara",
+    alt: "Proyecto grande con película en cristales",
+    caption: "Proyecto grande",
   },
 ] as const;

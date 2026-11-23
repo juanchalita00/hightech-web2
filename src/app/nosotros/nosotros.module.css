@@ -123,6 +123,7 @@
   line-height: 1.08;
   letter-spacing: -.03em;
   color: var(--ink);
+  overflow-wrap: break-word;
 }
 
 .sectionAlt h2 {
@@ -132,6 +133,7 @@
   line-height: 1.08;
   letter-spacing: -.03em;
   color: var(--ink);
+  overflow-wrap: break-word;
 }
 
 .twoCol {

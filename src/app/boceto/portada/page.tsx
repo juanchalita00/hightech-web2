@@ -312,8 +312,8 @@ export default function BocetoPortadaPage() {
       {/* Trabajos reales: de una recámara a un aeropuerto. Fotos del repo; nombres de clientes solo en la tira. Fer, 23 nov 2026, 11:37. */}
       <section className={styles.section} id="ventana-aeropuerto" aria-labelledby="escala-titulo">
         <div className={styles.shell}>
-          <h2 id="escala-titulo">De una ventana de tu casa a un aeropuerto</h2>
-          <p className={styles.scaleLead}>Hacemos desde una recámara hasta proyectos grandes, con el mismo cuidado.</p>
+          <h2 id="escala-titulo">Desde un proyecto chico en tu casa hasta proyectos grandes</h2>
+          <p className={styles.scaleLead}>Cada proyecto con el mismo cuidado.</p>
           <ul className={styles.workPhotos}>
             {workScalePhotos.map((photo) => (
               <li key={photo.src}>
