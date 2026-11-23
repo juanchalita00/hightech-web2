@@ -380,7 +380,7 @@ export default function BocetoPortadaPage() {
         </div>
       </section>
 
-      {/* 9. FAQ. Base §7 y §9; domicilio: public-facts.ts; especialistas y marca: Fer, 19 nov 2026. Andamio: Fer, 20 nov 2026 (solo doble o triple altura; sin precio). */}
+      {/* 9. FAQ. Base §7 y §9; domicilio: public-facts.ts; especialistas y marca: Fer, 19 nov 2026. Andamio: Fer, 20 nov 2026 (solo doble o triple altura; sin precio). Preguntas de casa (personas, limpieza, muebles, cristal, factura): textos de Fer, 23 nov 2026, 11:32. */}
       <section className={styles.section} aria-labelledby="faq-titulo">
         <div className={`${styles.shell} ${styles.narrow}`}>
           <p className={styles.kicker}>Preguntas frecuentes</p>
@@ -390,6 +390,28 @@ export default function BocetoPortadaPage() {
               <summary>¿Se ve hacia adentro de noche?</summary>
               <p>De día, desde afuera cuesta ver hacia adentro.</p>
               <p>De noche, si prendes la luz de adentro, sí se puede ver hacia adentro.</p>
+            </details>
+            <details>
+              <summary>¿Cuántas personas van a mi casa?</summary>
+              <p>Tu casa es tu espacio. Mandamos el menor número de instaladores que pida el trabajo, normalmente de 2 a 4 según el tamaño.</p>
+              <p>Cada uno se queda en los cristales que le tocan, para que no tengas que vigilar ni sentir que te invaden.</p>
+              <p>Si el proyecto es grande o urgente, podemos mandar más instaladores para terminar a tiempo.</p>
+            </details>
+            <details>
+              <summary>¿Tengo que limpiar mis ventanas antes?</summary>
+              <p>No. Nosotros limpiamos y preparamos cada cristal. El polvo normal no es problema.</p>
+              <p>Avísanos si algún cristal tiene un daño o sarro muy marcado, porque cambia la preparación.</p>
+            </details>
+            <details>
+              <summary>¿Tengo que mover muebles?</summary>
+              <p>No es obligatorio. Si dejas libre el espacio frente a las ventanas, se instala más rápido.</p>
+              <p>Si no se puede, te ayudamos a mover lo necesario.</p>
+            </details>
+            <details>
+              <summary>¿Qué pasa si se rompe un cristal?</summary>
+              <p>Si uno de nuestros instaladores rompe un cristal al instalar, lo cubrimos.</p>
+              <p>No cubrimos un cristal que ya traía un daño, por ejemplo estrellado o despostillado, y que el calor terminó de extender.</p>
+              <p>Por eso pedimos que nos avises de cualquier daño antes de empezar.</p>
             </details>
             <details>
               <summary>¿Cobran andamio en casa o negocio?</summary>
@@ -405,6 +427,11 @@ export default function BocetoPortadaPage() {
               <summary>¿Qué película instalan?</summary>
               <p>Instalamos películas Hightech.</p>
               <p>Trabajamos la Línea IR, una película nanocerámica, y otras soluciones para ventanas de casa, negocio y auto.</p>
+            </details>
+            <details>
+              <summary>¿Facturan?</summary>
+              <p>Sí, facturamos todos nuestros trabajos.</p>
+              <p>Pídela al cotizar.</p>
             </details>
             <details>
               <summary>¿Interfiere con el celular?</summary>
