@@ -8,6 +8,8 @@ import {
   locationBusinessSchema,
   locationFaqSchema,
   locationFaqs,
+  metroAreaPhrase,
+  zoneExamples,
   type ServiceCity,
 } from "@/lib/location-pages";
 import { addressLine, airportName, googleProfile, hoursLabel, phoneDisplay, prices } from "@/lib/public-facts";
@@ -89,6 +91,10 @@ export function LocationLanding({ city }: { city: ServiceCity }) {
             <p className="eyebrow">{city}, Jalisco</p>
             <h1>{page.title}</h1>
             <p>{page.lede}</p>
+            <div className="location-zone">
+              <p>{metroAreaPhrase}</p>
+              <p>{zoneExamples[city]}</p>
+            </div>
             <div className="hero-actions">
               <Link className="button button-primary" href="/contacto/#cotizar">Cotizar</Link>
               <WhatsAppCTA label="WhatsApp" context={{ sourcePage: `/${city.toLowerCase()}/` }} position="HERO" className="button-secondary" />

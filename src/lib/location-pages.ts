@@ -2,19 +2,18 @@ import { localBusinessSchema } from "@/lib/seo";
 import { addressLine, airportName, hoursLabel, onSitePolicy } from "@/lib/public-facts";
 
 /**
- * PENDIENTE — colonias y zonas atendidas, además de las ciudades.
- * No hay una lista confirmada en public-facts.ts, publication-truth.json,
- * claims.json, gallery.json ni projects.json, ni en los docs del proyecto.
- * Lo único con fuente es: el taller está en Jardines Vallarta, Zapopan;
- * y se atiende Zapopan, Guadalajara y la zona metropolitana de Guadalajara.
- *
- * Se retiraron de la vista, por no tener fuente, estas colonias que solo
- * vivían en LocationLanding:
- * - Zapopan: Puerta de Hierro, Andares, Valle Real, Colinas de San Javier,
- *   Puerta Plata, Providencia.
- * - Guadalajara: Americana, Lafayette, Country Club, Monraz, Colomos,
- *   Chapultepec.
+ * Zona de atención, confirmada por Fer, 23 nov 2026, 16:26.
+ * Se atiende toda la zona metropolitana de Guadalajara.
+ * Ejemplos de donde más se trabaja: en Zapopan, Puerta de Hierro, Valle Real y Andares;
+ * en Guadalajara, Providencia. No es una lista cerrada ni una promesa de exclusividad.
+ * El areaServed del schema sigue siendo solo las ciudades Zapopan y Guadalajara.
  */
+export const metroAreaPhrase = "Atendemos toda la zona metropolitana de Guadalajara.";
+
+export const zoneExamples = {
+  Zapopan: "En Zapopan, donde más trabajamos es en Puerta de Hierro, Valle Real y Andares.",
+  Guadalajara: "En Guadalajara, donde más trabajamos es en Providencia.",
+} as const;
 
 export type ServiceCity = "Zapopan" | "Guadalajara";
 
@@ -57,10 +56,9 @@ export const locationFaqs = {
   ],
 } as const;
 
-/** LocalBusiness igual al del sitio, sin openingHours: el horario no se agrega al schema de estas páginas hasta que Fer lo confirme otra vez. */
+/** LocalBusiness del sitio, con openingHoursSpecification de public-facts / seo.ts. */
 export function locationBusinessSchema() {
-  const { openingHoursSpecification: _hours, ...business } = localBusinessSchema();
-  return business;
+  return localBusinessSchema();
 }
 
 export function locationFaqSchema(city: ServiceCity) {

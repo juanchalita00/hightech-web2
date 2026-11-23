@@ -1,4 +1,4 @@
-import { prices } from "@/lib/public-facts";
+import { attentionHours, prices } from "@/lib/public-facts";
 import { socialSameAs } from "@/lib/social";
 import { truth } from "@/lib/truth";
 
@@ -100,9 +100,9 @@ export function localBusinessSchema() {
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-        opens: "10:00",
-        closes: "19:00",
+        dayOfWeek: [...attentionHours.dayOfWeek],
+        opens: attentionHours.opens,
+        closes: attentionHours.closes,
       },
     ],
   };

@@ -4,6 +4,13 @@ export const brandName = "HIGHTECH Polarizados";
 
 export const hoursLabel = "Lunes a sábado, de 10:00 a 19:00, con cita. Domingo cerrado.";
 
+/** Horario de atención para schema. Misma fuente que hoursLabel. Confirmado por Fer, 23 nov 2026. */
+export const attentionHours = {
+  dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] as const,
+  opens: "10:00",
+  closes: "19:00",
+} as const;
+
 export const addressLine = "Tomás Mann 5348, Jardines Vallarta, 45027 Zapopan, Jal.";
 
 export const phoneDisplay = "33 2228 9017";

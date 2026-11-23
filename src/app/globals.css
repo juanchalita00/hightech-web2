@@ -1612,7 +1612,11 @@ thead th { background: var(--surface-alt); }
 .city-faq,
 .nap-block,
 .service-area-links,
-.service-area-block { min-width: 0; }
+.service-area-block,
+.location-zone { min-width: 0; }
+.location-zone { margin: .85rem 0 0; max-width: 36rem; }
+.location-zone p { margin: 0 0 .4rem; overflow-wrap: break-word; }
+.location-zone p:last-child { margin-bottom: 0; }
 .location-links-three { grid-template-columns: repeat(3, 1fr); }
 .location-ir p { max-width: 40rem; color: var(--ink-soft); }
 .location-review blockquote {
