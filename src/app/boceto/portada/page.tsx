@@ -59,7 +59,7 @@ export default function BocetoPortadaPage() {
             <p className={styles.heroText}>
               ¿Tu casa parece horno? ¿El aire no enfría? Le ponemos película a tus cristales para que entre menos calor. Tú eliges qué tan claro queda.
             </p>
-            <p className={styles.brandLine}>Películas Hightech de la Línea IR, que corta el calor invisible del sol, en todo el país.</p>
+            <p className={styles.brandLine}>Películas Hightech, Línea IR: frenan el calor del sol que no se ve.</p>
             <div className={styles.ctaRow}>
               <CotizaWhatsApp message={mensaje} />
             </div>
