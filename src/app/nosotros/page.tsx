@@ -5,8 +5,8 @@ import { GoogleReviews } from "@/components/GoogleReviews";
 import { Icon } from "@/components/Icon";
 import { WhatsAppCTA } from "@/components/WhatsAppCTA";
 import { ClientTicker } from "@/components/ClientTicker";
-import { whereAlreadyItems } from "@/lib/client-proof";
-import { addressLine, airportName, googleProfile, hoursLabel } from "@/lib/public-facts";
+import { workScalePhotos } from "@/lib/work-scale-photos";
+import { addressLine, googleProfile, hoursLabel } from "@/lib/public-facts";
 import { truth } from "@/lib/truth";
 import styles from "./nosotros.module.css";
 
@@ -136,43 +136,38 @@ export default function Page() {
       </section>
 
       {/* PRUEBA REAL */}
+      {/* Trabajos reales: de una recámara a un aeropuerto. Fotos del repo; nombres de clientes solo en la tira. Fer, 23 nov 2026, 11:37. */}
       <section className={styles.section} id="nosotros-prueba" aria-labelledby="prueba-nosotros-titulo">
-        <div className={`${styles.shell} ${styles.proofGrid}`}>
-          <div>
-            <p className={styles.eyebrow}>Dónde ya está instalado</p>
-            <h2 id="prueba-nosotros-titulo">Trabajos que ya puedes ver.</h2>
-            <div className={styles.copyStack}>
-              {/* Nombres confirmados por Fer, 23 nov 2026, 11:22. No nombrar Tierra y Armonía. */}
-              <ul className={styles.places}>
-                {whereAlreadyItems.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-              <p>
-                En el {airportName} instalamos en un pasillo de cristal junto a la plataforma, que sigue en uso todos los días.
-              </p>
-            </div>
-            <div className={styles.proofStat}>
-              <strong>★★★★★ +{googleProfile.count} reseñas en Google</strong>
-              <span>Opiniones reales verificadas al 15 de octubre de 2026.</span>
-            </div>
+        <div className={styles.shell}>
+          <h2 id="prueba-nosotros-titulo">De una ventana de tu casa a un aeropuerto</h2>
+          <p className={styles.scaleLead}>Hacemos desde una recámara hasta proyectos grandes, con el mismo cuidado.</p>
+          <ul className={styles.workPhotos}>
+            {workScalePhotos.map((photo) => (
+              <li key={photo.src}>
+                <figure>
+                  <div className={styles.photoWrap}>
+                    <Image
+                      src={photo.src}
+                      alt={photo.alt}
+                      fill
+                      sizes="(min-width: 800px) 22rem, 46vw"
+                    />
+                  </div>
+                  <figcaption className={styles.photoCaption}>{photo.caption}</figcaption>
+                </figure>
+              </li>
+            ))}
+          </ul>
+          {/* Logos reales pendientes de permiso de cada marca. Nombres confirmados por Fer, 23 nov 2026, 11:22 y 11:37. */}
+          <div className={styles.workTicker}>
+            <ClientTicker />
           </div>
-          <figure className={styles.heroMedia}>
-            <div className={styles.photoWrap}>
-              <Image
-                src="/images/projects/airport-authority.webp"
-                alt="Pasillo de cristal junto a la plataforma del Aeropuerto Internacional de Guadalajara."
-                fill
-                sizes="(min-width: 768px) 44vw, calc(100vw - 2rem)"
-              />
-            </div>
-            <figcaption className={styles.photoCaption}>{airportName}.</figcaption>
-          </figure>
+          <div className={styles.proofStat}>
+            <strong>★★★★★ +{googleProfile.count} reseñas en Google</strong>
+            <span>Opiniones reales verificadas al 15 de octubre de 2026.</span>
+          </div>
         </div>
       </section>
-
-      {/* Logos reales pendientes de permiso de cada marca. */}
-      <ClientTicker />
 
       {/* DETRÁS DEL LOGO */}
       <section className={styles.sectionAlt} id="logo" aria-labelledby="logo-titulo">

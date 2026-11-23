@@ -364,3 +364,33 @@
   padding-left: .85rem;
   border-left: 3px solid var(--ink);
 }
+
+.scaleLead {
+  margin: .65rem 0 0;
+  max-width: 38rem;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: var(--ink-soft, var(--ink));
+}
+.workPhotos {
+  list-style: none;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .65rem .7rem;
+}
+.workPhotos figure { margin: 0; min-width: 0; }
+.workPhotos .photoWrap {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: .9rem;
+  overflow: hidden;
+}
+.workPhotos .photoCaption {
+  margin-top: .35rem;
+  font-size: .78rem;
+  line-height: 1.3;
+}
+.workTicker { margin-top: 1.15rem; max-width: 100%; overflow-x: clip; }
+.workTicker + .proofStat { margin-top: 1.5rem; }

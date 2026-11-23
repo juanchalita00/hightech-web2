@@ -416,6 +416,7 @@
   .specialties { grid-template-columns: 1fr 1fr; gap: 3rem; }
   .reviews { grid-template-columns: repeat(3, 1fr); }
   .aboutCards { grid-template-columns: 1fr 1fr; }
+  .aboutCards:has(:only-child) { grid-template-columns: minmax(0, 22rem); }
   .aboutGrid { grid-template-columns: 1.25fr .75fr; gap: 2.5rem; }
   .priceGrid { grid-template-columns: 1fr 1fr; }
   .compare { grid-template-columns: repeat(3, 1fr); }
@@ -439,3 +440,41 @@
 @media (prefers-reduced-motion: reduce) {
   .page * { scroll-behavior: auto; }
 }
+
+/* Trabajos: de una recámara a un aeropuerto */
+.scaleLead {
+  margin: .65rem 0 0;
+  max-width: 38rem;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: var(--navy-soft);
+}
+.workPhotos {
+  list-style: none;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .65rem .7rem;
+}
+.workPhotos figure { margin: 0; min-width: 0; }
+.workPhotos figcaption {
+  margin-top: .35rem;
+  font-size: .78rem;
+  line-height: 1.3;
+  color: var(--navy-soft);
+}
+.workTicker { margin-top: 1.15rem; max-width: 100%; overflow-x: clip; }
+
+/* Galería boceto */
+.galleryFilters { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.25rem; }
+.galleryFilters a {
+  display: inline-flex; align-items: center; min-height: 2.5rem; padding: 0 1rem;
+  border: 1px solid var(--rule); border-radius: 999px;
+  font-size: .9rem; font-weight: 700; color: var(--navy); text-decoration: none; background: #fff;
+}
+.galleryGroup { margin-top: 2.25rem; scroll-margin-top: 5.5rem; }
+.galleryGroup h2 { font-size: 1.35rem; }
+.galleryGroup figcaption { display: grid; gap: .15rem; }
+.galleryGroup figcaption strong { color: var(--navy); font-weight: 700; }
+.galleryPending { color: #8a6d1f; }

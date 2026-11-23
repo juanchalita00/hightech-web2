@@ -16,4 +16,5 @@ export const clientTickerNames = [
   "Constructoras en desarrollos y torres",
   "Agencias de autos",
   "Hoteles",
+  "Y muchos más",
 ] as const;

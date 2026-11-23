@@ -6,7 +6,7 @@ import { getGoogleReviews } from "@/lib/google-reviews";
 import { airportName, googleProfile } from "@/lib/public-facts";
 import { truth } from "@/lib/truth";
 import { ClientTicker } from "@/components/ClientTicker";
-import { whereAlreadyItems } from "@/lib/client-proof";
+import { workScalePhotos } from "@/lib/work-scale-photos";
 import { BocetoBanner, CotizaWhatsApp, Estrellas, MobileBar, Pendiente, mensajes } from "../_components/Boceto";
 import styles from "../boceto.module.css";
 
@@ -266,11 +266,6 @@ export default function BocetoPortadaPage() {
         </div>
       </section>
 
-      {/* Logos reales pendientes de permiso de cada marca. */}
-      <div id="tira-clientes">
-        <ClientTicker />
-      </div>
-
       {/* 6. QUIÉNES SOMOS. Taller y horario: public-facts.ts. Bloque corto actualizado: Fer, 23 nov 2026. */}
       <section className={styles.sectionAlt} aria-labelledby="nosotros-titulo">
         <div className={`${styles.shell} ${styles.aboutGrid}`}>
@@ -285,16 +280,6 @@ export default function BocetoPortadaPage() {
               <div className={styles.aboutCard}>
                 <span className={styles.aboutCardTitle}>Experiencia en campo</span>
                 <p>Instaladores con más de 15 años de experiencia.</p>
-              </div>
-              <div className={styles.aboutCard} id="donde-ya-esta">
-                <span className={styles.aboutCardTitle}>Dónde ya está</span>
-                {/* Nombres confirmados por Fer, 23 nov 2026, 11:22. No nombrar Tierra y Armonía. */}
-                <ul className={styles.aboutPlaces}>
-                  {whereAlreadyItems.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-                <p className={styles.aboutReviews}>+{googleProfile.count} reseñas en Google.</p>
               </div>
             </div>
             <p className={styles.aboutMore}>
@@ -320,6 +305,40 @@ export default function BocetoPortadaPage() {
                 <dd>Te contestamos el mismo día.</dd>
               </div>
             </dl>
+          </div>
+        </div>
+      </section>
+
+      {/* Trabajos reales: de una recámara a un aeropuerto. Fotos del repo; nombres de clientes solo en la tira. Fer, 23 nov 2026, 11:37. */}
+      <section className={styles.section} id="ventana-aeropuerto" aria-labelledby="escala-titulo">
+        <div className={styles.shell}>
+          <h2 id="escala-titulo">De una ventana de tu casa a un aeropuerto</h2>
+          <p className={styles.scaleLead}>Hacemos desde una recámara hasta proyectos grandes, con el mismo cuidado.</p>
+          <ul className={styles.workPhotos}>
+            {workScalePhotos.map((photo) => (
+              <li key={photo.src}>
+                <figure>
+                  <div className={styles.photo}>
+                    <Image
+                      src={photo.src}
+                      alt={photo.alt}
+                      fill
+                      sizes="(min-width: 800px) 22rem, 46vw"
+                    />
+                  </div>
+                  <figcaption>{photo.caption}</figcaption>
+                </figure>
+              </li>
+            ))}
+          </ul>
+          <p className={styles.aboutMore}>
+            <Link href="/boceto/galeria/" className={styles.aboutMoreLink}>
+              Ver proyectos terminados <Icon name="arrow" size={16} />
+            </Link>
+          </p>
+          {/* Logos reales pendientes de permiso de cada marca. Nombres confirmados por Fer, 23 nov 2026, 11:22 y 11:37. */}
+          <div id="tira-clientes" className={styles.workTicker}>
+            <ClientTicker />
           </div>
         </div>
       </section>
@@ -410,8 +429,8 @@ export default function BocetoPortadaPage() {
             <details>
               <summary>¿Qué pasa si se rompe un cristal?</summary>
               <p>Si uno de nuestros instaladores rompe un cristal al instalar, lo cubrimos.</p>
-              <p>No cubrimos un cristal que ya traía un daño, por ejemplo estrellado o despostillado, y que el calor terminó de extender.</p>
-              <p>Por eso pedimos que nos avises de cualquier daño antes de empezar.</p>
+              <p>Avísanos si algún cristal está estrellado o tiene un daño, porque eso puede cambiar si conviene ponerle película.</p>
+              <p>Siempre te explicamos qué puede pasar al instalar sobre ese cristal, y tú decides si seguimos.</p>
             </details>
             <details>
               <summary>¿Cobran andamio en casa o negocio?</summary>
@@ -432,16 +451,6 @@ export default function BocetoPortadaPage() {
               <summary>¿Facturan?</summary>
               <p>Sí, facturamos todos nuestros trabajos.</p>
               <p>Pídela al cotizar.</p>
-            </details>
-            <details>
-              <summary>¿Interfiere con el celular?</summary>
-              <p>No.</p>
-              <p>Tu celular sigue con señal.</p>
-            </details>
-            <details>
-              <summary>¿Cuánto tarda en mi auto?</summary>
-              <p>Los cristales de los lados y el de atrás tardan de 2 a 3 horas.</p>
-              <p>El auto completo tarda de 3 a 4 horas.</p>
             </details>
             <details>
               <summary>¿Van a domicilio?</summary>

@@ -49,6 +49,15 @@ const items = [
     answer: <p>Nanocerámica y automotriz, 10 años. Seguridad, 5 o 10 años según la película. <Link href="/garantias/">Ver garantías</Link>.</p>,
   },
   {
+    question: "¿Interfiere con el celular?",
+    answer: (
+      <>
+        <p>No.</p>
+        <p>Tu celular sigue con señal.</p>
+      </>
+    ),
+  },
+  {
     question: "¿Cuánto tarda el auto?",
     answer: <p>Dos laterales, 40 a 60 minutos. El auto completo, cerca de 3 horas. Calculamos de 20 a 30 minutos por ventana. <Link href="/automotriz/#tiempos">Ver tiempos y espera</Link>.</p>,
   },
