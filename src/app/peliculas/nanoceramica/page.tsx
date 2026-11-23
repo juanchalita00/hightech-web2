@@ -8,7 +8,7 @@ import { ProductHero } from "@/components/ProductHero";
 
 export const metadata = { alternates: { canonical: "/peliculas/nanoceramica/" },
   title: { absolute: "Película nanocerámica | High Tech Polarizados México" },
-  description: "Cinco tonos de nanocerámica. Todos cortan los rayos UV y el calor del sol. El número es la luz que quieres dejar pasar.",
+  description: "Cinco tonos de nanocerámica. Todos cortan los rayos UV y el calor infrarrojo. Entre más oscuro, más calor bloquea en total.",
 };
 
 const metrics = [
@@ -69,7 +69,7 @@ export default function NanoPage() {
       <div className="container">
         <div className="section-heading section-heading-split">
           <div><p className="eyebrow">Comparador de gama</p><h2>Primero decide cuánta luz quieres conservar.</h2></div>
-          <p>Elige primero cuánta luz quieres. El calor del sol se corta en todos. El tono más oscuro suma privacidad y más protección total.</p>
+          <p>Elige primero cuánta luz quieres. Todos los tonos frenan el calor infrarrojo (el calor invisible del sol). Entre más oscuro, más calor bloquea en total.</p>
         </div>
         <NanoComparison/>
       </div>

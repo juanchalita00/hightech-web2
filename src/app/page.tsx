@@ -66,7 +66,7 @@ export default function HomePage() {
               <p className={styles.kicker}>High Tech Polarizados México</p>
               <h1>Menos calor, <span>con la luz que elijas.</span></h1>
               <p className={styles.heroDescription}>
-                La película corta el calor del sol en todos los tonos. El tono cambia cuánta luz entra y cuánta privacidad tienes.
+                Todos los tonos frenan el calor infrarrojo (el calor invisible del sol). Entre más oscuro, más calor bloquea en total. El tono cambia cuánta luz entra y cuánta privacidad tienes.
               </p>
               <div className={styles.heroActions}>
                 <Link className={styles.primaryCta} href="/contacto/#cotizar">Cotizar</Link>
