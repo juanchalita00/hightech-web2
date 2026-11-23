@@ -326,7 +326,7 @@ export default function BocetoPortadaPage() {
 
           <div className={styles.objection} id="multa">
             <h3>«¿Y si me multan?»</h3>
-            <p>En el parabrisas recomendamos un tono claro, dentro de lo que pide la ley.</p>
+            <p>En el parabrisas lo más común es el IR75, que es muy claro.</p>
             <p>El detalle y el texto de la norma están en la <a href="/boceto/ficha-ir15-auto/#ley">ficha de auto</a>.</p>
           </div>
 
