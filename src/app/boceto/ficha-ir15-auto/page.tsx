@@ -42,7 +42,7 @@ export default function BocetoFichaIr15AutoPage() {
               <span className={styles.toneSub}>Película IR15 Hightech, línea IR nanocerámica, para auto</span>
             </h1>
             <p className={styles.lead}>Para los cristales traseros de tu auto: se ve oscuro, de día cuesta ver hacia adentro y entra menos calor.</p>
-            <p className={styles.brandLine}>Instalamos películas Hightech, nuestra marca.</p>
+            <p className={styles.brandLine}>Instalamos películas Hightech.</p>
             <div className={styles.ctaRow}>
               <CotizaWhatsApp message={mensaje} />
             </div>
@@ -187,16 +187,15 @@ export default function BocetoFichaIr15AutoPage() {
         </div>
       </section>
 
-      {/* PRECIO. Auto: Fer, 19–20 nov 2026 (piso $4,000 y parabrisas $1,500 en efectivo, sin IVA; con tarjeta o transferencia se suma IVA; todos los métodos, hasta 3 MSI). */}
+      {/* PRECIO. Auto: Fer, 23 nov 2026 (Desde $4,000 + IVA; parabrisas desde $1,500 + IVA; todos los métodos de pago). */}
       <section className={styles.section} aria-labelledby="precio-titulo" id="precio">
         <div className={styles.shell}>
           <p className={styles.kicker}>Precio</p>
           <h2 id="precio-titulo">Cuánto cuesta en tu auto.</h2>
           <div className={styles.priceBlock}>
-            <span className={styles.from}>Desde $4,000</span>
-            <p>Película IR nanocerámica Hightech. Laterales y medallón. Parabrisas desde $1,500.</p>
-            <p className={styles.small}>Con tarjeta o transferencia se suma IVA.</p>
-            <p className={styles.small}>Aceptamos todos los métodos de pago. Hasta 3 meses sin intereses.</p>
+            <span className={styles.from}>Desde $4,000 <span className={styles.plusIva}>+ IVA</span></span>
+            <p>Película IR nanocerámica Hightech. Laterales y medallón. Parabrisas desde $1,500 <span className={styles.plusIva}>+ IVA</span>.</p>
+            <p className={styles.small}>Aceptamos todos los métodos de pago.</p>
           </div>
         </div>
       </section>

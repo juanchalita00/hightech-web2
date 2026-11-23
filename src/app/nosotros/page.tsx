@@ -1,89 +1,241 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { GoogleReviews } from "@/components/GoogleReviews";
-import { ProcessRail } from "@/components/ProcessRail";
-import { TrustHero } from "@/components/TrustHero";
+import { Icon } from "@/components/Icon";
 import { WhatsAppCTA } from "@/components/WhatsAppCTA";
 import { addressLine, airportName, googleProfile, hoursLabel } from "@/lib/public-facts";
+import { truth } from "@/lib/truth";
+import styles from "./nosotros.module.css";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/nosotros/" },
-  title: { absolute: "Nosotros | High Tech Polarizados México" },
-  description: "High Tech Polarizados México es el distribuidor en todo México de las películas Hightech. Instalamos en Zapopan y Guadalajara, con taller en Tomás Mann 5348. Casa, negocio y auto, con garantía de 10 años en nanocerámica.",
+  title: { absolute: "Quiénes somos | High Tech Polarizados México" },
+  description:
+    "High Tech Polarizados México lleva las películas Hightech a todo el país. Soluciones para ventanas de casa, negocio y auto. Instaladores con más de 15 años de experiencia. Taller en Zapopan.",
 };
-
-const process = [
-  { number: "01", title: "Entendemos qué te molesta", text: "Calor, luz de más, privacidad o un cristal que quieres proteger." },
-  { number: "02", title: "Vemos el vidrio", text: "Casa, negocio o auto. Medidas, orientación y cuánta luz quieres conservar." },
-  { number: "03", title: "Elegimos la película", text: "El tono cambia la luz y la privacidad. El calor del sol se corta en todos." },
-  { number: "04", title: "Cotizamos e instalamos", text: "Precio del trabajo concreto y una fecha. En auto, con cita en el taller." },
-] as const;
 
 export default function Page() {
   return (
-    <>
-      <TrustHero
-        eyebrow="High Tech Polarizados México"
-        title="Polarizado para casa, negocio y auto, con el cristal como punto de partida."
-        description="Primero vemos qué te molesta. Después elegimos la película y el tono."
-        points={["Taller en Jardines Vallarta", "Casa y negocio en la zona", "Auto en taller con cita"]}
-      />
-      <section className="section" aria-labelledby="quienes-somos-titulo">
-        <div className="container" style={{ display: "grid", gap: "1rem", maxWidth: "46rem" }}>
-          <div className="section-heading">
-            <p className="eyebrow">Quiénes somos</p>
-            <h2 id="quienes-somos-titulo">High Tech Polarizados México.</h2>
+    <div className={styles.page}>
+      {/* HERO */}
+      <section className={styles.hero} aria-labelledby="nosotros-hero-titulo">
+        <div className={`${styles.shell} ${styles.heroGrid}`}>
+          <div>
+            <span className={styles.sunRule} aria-hidden="true" />
+            <p className={styles.eyebrow}>Quiénes somos</p>
+            <h1 id="nosotros-hero-titulo">High Tech Polarizados México lleva las películas Hightech a todo el país.</h1>
+            <p className={styles.heroLead}>
+              Soluciones para ventanas de casa, negocio y auto. Te escuchamos primero, vemos tu cristal y elegimos contigo el tono que más te sirve.
+            </p>
+            <ul className={styles.pills} aria-label="Puntos clave">
+              <li>Casa y negocio</li>
+              <li>Auto en taller con cita</li>
+              <li>Instaladores con más de 15 años de experiencia</li>
+            </ul>
           </div>
-          <p>High Tech Polarizados México es el distribuidor en todo México de las películas Hightech, nuestra marca, línea IR nanocerámica, para casa, negocio y auto.</p>
-          <p>Contamos con instaladores con más de 15 años de experiencia.</p>
-          <p>Primero revisa qué te molesta y el cristal; después recomienda el tono y la película, y te pasa la cotización. El auto se instala en el taller, con cita. Te contestamos el mismo día.</p>
-          <p>Nuestro taller está en Tomás Mann 5348, Jardines Vallarta, Zapopan.</p>
-          <p>Entre sus proyectos está el {airportName}: un pasillo de cristal junto a la plataforma, en operación continua.</p>
-          <p>Tiene +{googleProfile.count} reseñas en Google, al 15 de octubre de 2026.</p>
+          <figure className={styles.heroMedia}>
+            <div className={styles.photoWrap}>
+              <Image
+                src="/images/galeria/residencial-atardecer-ventanal-800.webp"
+                alt="Ventanal instalado con película Hightech, conservando la vista al atardecer."
+                fill
+                priority
+                sizes="(min-width: 768px) 42vw, calc(100vw - 2rem)"
+              />
+            </div>
+            <figcaption className={styles.photoCaption}>Trabajo real en cristal residencial.</figcaption>
+          </figure>
         </div>
       </section>
-      <section className="section" id="logo">
-        <div className="container logo-story">
-          <div>
-            <p className="eyebrow">Detrás de nuestro logo</p>
-            <h2>Una línea, un cristal, los rayos.</h2>
-            <p>La frase de la marca es protección para una mejor calidad de vida.</p>
+
+      {/* QUÉ HACEMOS + CÓMO TRABAJAMOS */}
+      <section className={styles.section} aria-labelledby="forma-trabajo-titulo">
+        <div className={`${styles.shell} ${styles.twoCol}`}>
+          <div className={styles.card}>
+            <p className={styles.eyebrow}>Qué hacemos</p>
+            <h2 id="forma-trabajo-titulo">Cristales más frescos, sin complicarte.</h2>
+            <div className={styles.copyStack}>
+              <p>
+                <strong>High Tech Polarizados México</strong> lleva las películas Hightech a todo el país, para ventanas de casa, negocio y auto.
+              </p>
+              <p>
+                Primero nos cuentas qué te molesta: el calor, el brillo del sol o la falta de privacidad. Después vemos el cristal y te recomendamos la película y el tono.
+              </p>
+              <p>
+                En casa y negocio instalamos en tu espacio. En auto trabajamos en nuestro taller de Zapopan, con cita. Te contestamos el mismo día.
+              </p>
+            </div>
           </div>
-          <ul>
+
+          <div className={styles.cardAccent} id="como-trabajamos">
+            <p className={styles.eyebrow}>Cómo trabajamos</p>
+            <h3>Primero la base. Luego, una especialidad.</h3>
+            <div className={styles.copyStack}>
+              <p>
+                Un médico primero aprende la base y después elige una rama. Aquí trabajamos igual.
+              </p>
+              <p>
+                Cada instalador domina primero el oficio completo y luego observamos en qué tipo de cristal destaca más.
+              </p>
+              <p>
+                En esa etapa completa su formación técnica para espacios o para vehículos. Por eso, quien instala en tu casa no polariza autos, y viceversa.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ESPECIALISTAS POR ÁREA */}
+      <section className={styles.sectionAlt} aria-labelledby="especialidades-titulo">
+        <div className={styles.shell}>
+          <p className={styles.eyebrow}>Especialistas por área</p>
+          <h2 id="especialidades-titulo">Casa y negocio por un lado. Auto por otro.</h2>
+          <div className={styles.areaGrid}>
+            <article className={styles.areaCard}>
+              <div className={styles.photoWrap}>
+                <Image
+                  src="/images/galeria/residencial-fachada-casa-800.webp"
+                  alt="Fachada de casa con ventanas protegidas con película Hightech."
+                  fill
+                  sizes="(min-width: 768px) 44vw, calc(100vw - 2rem)"
+                />
+              </div>
+              <h3 className={styles.areaHead}>
+                <Icon name="home" size={20} />
+                <span>Casa y negocio</span>
+              </h3>
+              <p>
+                Especialistas en ventanas de casas, oficinas y fachadas. Cuidan pisos, muebles y acabados en cada cristal.
+              </p>
+              <p>Instaladores con más de 15 años de experiencia en obra residencial y comercial.</p>
+            </article>
+
+            <article className={styles.areaCard}>
+              <div className={styles.photoWrap}>
+                <Image
+                  src="/images/galeria/automotriz-suv-taller-puerta-abierta-800.webp"
+                  alt="Camioneta en el taller de High Tech Polarizados en Zapopan lista para instalación."
+                  fill
+                  sizes="(min-width: 768px) 44vw, calc(100vw - 2rem)"
+                />
+              </div>
+              <h3 className={styles.areaHead}>
+                <Icon name="car" size={20} />
+                <span>Auto</span>
+              </h3>
+              <p>
+                Especialistas dedicados solo a autos. Trabajan en un taller cerrado y limpio, con cita para cuidar cada vidrio.
+              </p>
+              <p>Instaladores con más de 15 años de experiencia en cristales automotrices.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      {/* PRUEBA REAL */}
+      <section className={styles.section} aria-labelledby="prueba-nosotros-titulo">
+        <div className={`${styles.shell} ${styles.proofGrid}`}>
+          <div>
+            <p className={styles.eyebrow}>Dónde ya está instalado</p>
+            <h2 id="prueba-nosotros-titulo">De una sala en casa hasta un aeropuerto.</h2>
+            <div className={styles.copyStack}>
+              <p>
+                Hemos trabajado en hoteles y en el {airportName}, además de casas, oficinas y autos en Zapopan y Guadalajara.
+              </p>
+              <p>
+                En el aeropuerto instalamos en un pasillo de cristal junto a la plataforma, que sigue en uso todos los días.
+              </p>
+            </div>
+            <div className={styles.proofStat}>
+              <strong>★★★★★ +{googleProfile.count} reseñas en Google</strong>
+              <span>Opiniones reales verificadas al 15 de octubre de 2026.</span>
+            </div>
+          </div>
+          <figure className={styles.heroMedia}>
+            <div className={styles.photoWrap}>
+              <Image
+                src="/images/projects/airport-authority.webp"
+                alt="Pasillo de cristal junto a la plataforma del Aeropuerto Internacional de Guadalajara."
+                fill
+                sizes="(min-width: 768px) 44vw, calc(100vw - 2rem)"
+              />
+            </div>
+            <figcaption className={styles.photoCaption}>{airportName}.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      {/* DETRÁS DEL LOGO */}
+      <section className={styles.sectionAlt} id="logo" aria-labelledby="logo-titulo">
+        <div className={`${styles.shell} ${styles.logoGrid}`}>
+          <div>
+            <p className={styles.eyebrow}>Nuestro símbolo</p>
+            <h2 id="logo-titulo">Una línea, un cristal y los rayos del sol.</h2>
+            <div className={styles.copyStack}>
+              <p>Protección para una mejor calidad de vida.</p>
+              <p>Cada parte del logotipo recuerda para qué sirve una película bien instalada.</p>
+            </div>
+          </div>
+          <ul className={styles.logoList}>
             <li>Las dos palabras van juntas, en una sola línea de horizonte.</li>
             <li>La i no lleva punto: el círculo se quitó a propósito.</li>
-            <li>La letra capital tiene un trazo propio, para que se reconozca de lejos.</li>
+            <li>La letra inicial tiene un trazo propio para reconocerse de lejos.</li>
             <li>Los rayos del sol intentan cruzar un cristal ya protegido.</li>
           </ul>
         </div>
       </section>
-      <section className="section section-alt">
-        <div className="container">
-          <div className="section-heading">
-            <p className="eyebrow">El taller</p>
-            <h2>Dónde estamos.</h2>
+
+      {/* TALLER Y GARANTÍAS */}
+      <section className={styles.section} aria-labelledby="taller-titulo">
+        <div className={`${styles.shell} ${styles.twoCol}`}>
+          <div className={styles.card}>
+            <p className={styles.eyebrow}>Dónde estamos</p>
+            <h2 id="taller-titulo">Taller y horario.</h2>
+            <dl className={styles.infoList}>
+              <div>
+                <dt>Dirección</dt>
+                <dd>{addressLine}</dd>
+                <dd><a href={truth.contact.mapsUrl} target="_blank" rel="noopener noreferrer">Ver en Google Maps</a></dd>
+              </div>
+              <div>
+                <dt>Horario</dt>
+                <dd>{hoursLabel}</dd>
+              </div>
+              <div>
+                <dt>Pagos</dt>
+                <dd>Aceptamos todos los métodos de pago.</dd>
+              </div>
+            </dl>
           </div>
-          <p>{addressLine}</p>
-          <p>{hoursLabel}</p>
-          <p>La nanocerámica, en casa y en auto, tiene 10 años de garantía. La película de seguridad, 5 o 10 según cuál se instale.</p>
+
+          <div className={styles.card}>
+            <p className={styles.eyebrow}>Garantía por escrito</p>
+            <h2>Respaldo claro por película.</h2>
+            <ul className={styles.warrantyList}>
+              <li><span>Nanocerámica interior (casa, negocio y auto)</span><strong>10 años</strong></li>
+              <li><span>Plata Reflecta</span><strong>5 años</strong></li>
+              <li><span>Película de seguridad</span><strong>5 o 10 años, según la película</strong></li>
+              <li><span>Esmerilado y película exterior</span><strong>1 año</strong></li>
+            </ul>
+          </div>
         </div>
       </section>
-      <section className="section">
-        <div className="container">
-          <div className="section-heading"><p className="eyebrow">Proceso</p><h2>Una conversación antes de instalar.</h2></div>
-          <ProcessRail steps={process} />
-        </div>
-      </section>
+
       <GoogleReviews />
+
       <section className="section final-cta-section">
         <div className="container final-cta-card">
-          <div><p className="eyebrow eyebrow-light">Siguiente paso</p><h2>Cuéntanos el cristal.</h2></div>
+          <div>
+            <p className="eyebrow eyebrow-light">Siguiente paso</p>
+            <h2>Cuéntanos qué cristal quieres proteger.</h2>
+          </div>
           <div className="final-cta-actions">
             <Link href="/contacto/#cotizar" className="button button-light">Cotizar</Link>
             <WhatsAppCTA label="WhatsApp" context={{ sourcePage: "/nosotros/" }} position="FINAL_CTA" className="button-ghost-light" />
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

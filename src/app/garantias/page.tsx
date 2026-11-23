@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 const rows = [
   ["Nanocerámica en casa o negocio", "10 años"],
   ["Nanocerámica automotriz", "10 años"],
+  ["Plata Reflecta", "5 años"],
   ["Película de seguridad", "5 o 10 años, según la película"],
 ];
 

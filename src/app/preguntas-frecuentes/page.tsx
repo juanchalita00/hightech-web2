@@ -42,7 +42,7 @@ const items = [
   },
   {
     question: "¿Cuánto cuesta?",
-    answer: <p>Auto desde {autoFrom} (laterales y medallón); parabrisas completo desde {windshield}. Con tarjeta o transferencia se suma IVA. Nanocerámica para casa y negocio desde {nanoFrom} + IVA por metro cuadrado; otras películas desde {archFrom} + IVA. Mínimo de proyecto {minimum} <span className="price-vat">+ IVA</span>. Película inteligente y seguridad se cotizan sin precio de lista.</p>,
+    answer: <p>Auto desde {autoFrom} <span className="price-vat">+ IVA</span> (laterales y medallón); parabrisas completo desde {windshield} <span className="price-vat">+ IVA</span>. Aceptamos todos los métodos de pago. Nanocerámica para casa y negocio desde {nanoFrom} <span className="price-vat">+ IVA</span> por metro cuadrado; otras películas desde {archFrom} <span className="price-vat">+ IVA</span>. Mínimo de proyecto {minimum} <span className="price-vat">+ IVA</span>. Película inteligente y seguridad se cotizan sin precio de lista.</p>,
   },
   {
     question: "¿Qué garantía tiene?",

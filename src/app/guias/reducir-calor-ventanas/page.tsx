@@ -17,7 +17,7 @@ export default function Page() {
         <div className="container" style={{ display: "grid", gap: "1rem", maxWidth: "46rem" }}>
           <HightechTip>Es el calor que sientes en la piel junto a una ventana con sol, o el asiento de piel que quema cuando dejas el auto estacionado. La película trabaja sobre ese calor.</HightechTip>
           <p>Miramos hacia dónde da la ventana, el tipo de vidrio y si quieres seguir viendo el jardín. Un tono 75 ya baja ese calor. Uno más oscuro suma privacidad y un poco más de protección total.</p>
-          <p>En casa, la nanocerámica parte de $850 + IVA por metro cuadrado y otras películas, de $600 + IVA. El mínimo de proyecto es de $1,500 <span className="price-vat">+ IVA</span>.</p>
+          <p>En casa, la nanocerámica parte de $800 + IVA por metro cuadrado y otras películas, de $600 + IVA. El mínimo de proyecto es de $1,500 <span className="price-vat">+ IVA</span>.</p>
         </div>
       </section>
       <ProductCTA title="Mándanos una foto de la ventana que más calienta." text="Con eso vemos si el siguiente paso es nanocerámica, un tono o también seguridad." cta="WhatsApp" context={{ sourcePage: "/guias/reducir-calor-ventanas/", problem: "heat" }} secondaryHref="/peliculas/nanoceramica/" secondaryLabel="Ver nanocerámica" />

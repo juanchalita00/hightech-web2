@@ -31,7 +31,7 @@ const names: Record<string, string> = {
 const services: Record<string, { name: string; description: string; minPrice?: number; unitText?: string; vatIncluded?: boolean }> = {
   "/automotriz/": {
     name: "Polarizado automotriz",
-    description: `Laterales, medallón y parabrisas completo con nanocerámica. Desde $${prices.autoFrom.toLocaleString("es-MX")}; parabrisas completo desde $${prices.windshieldFrom.toLocaleString("es-MX")}. Con tarjeta o transferencia se suma IVA. Garantía de 10 años.`,
+    description: `Laterales, medallón y parabrisas completo con nanocerámica. Desde ${prices.autoFrom.toLocaleString("es-MX")} + IVA; parabrisas completo desde ${prices.windshieldFrom.toLocaleString("es-MX")} + IVA. Aceptamos todos los métodos de pago. Garantía de 10 años.`,
     minPrice: prices.autoFrom,
     vatIncluded: false,
   },

@@ -17,7 +17,7 @@ import { onSitePolicy, prices } from "@/lib/public-facts";
 export const metadata: Metadata = {
   alternates: { canonical: "/automotriz/" },
   title: { absolute: "Polarizado para auto en Zapopan y Guadalajara | High Tech México" },
-  description: "Polarizado nanocerámico para auto: laterales, medallón y parabrisas completo. Desde $4,000; parabrisas completo desde $1,500. Con tarjeta o transferencia se suma IVA. Instalamos en Zapopan y Guadalajara.",
+  description: "Polarizado nanocerámico para auto: laterales, medallón y parabrisas completo. Desde $4,000 + IVA; parabrisas completo desde $1,500 + IVA. Aceptamos todos los métodos de pago. Instalamos en Zapopan y Guadalajara.",
 };
 
 const peso = new Intl.NumberFormat("es-MX", { style: "currency", currency: "MXN", maximumFractionDigits: 0 });
@@ -44,7 +44,7 @@ const faqs = [
     question: "¿Puedo polarizar el parabrisas?",
     answer: (
       <p>
-        Sí. Instalamos parabrisas completo con nanocerámica, en claro o en el tono que prefieras. Desde {windshieldMoney}.
+        Sí. Instalamos parabrisas completo con nanocerámica, en claro o en el tono que prefieras. Desde {windshieldMoney} <span className="price-vat">+ IVA</span>.
         Te asesoramos en persona o por WhatsApp para elegir con buena visibilidad. <Link href="/guias/polarizado-automotriz-jalisco/">Ver la guía de Jalisco</Link>.
       </p>
     ),
@@ -55,7 +55,7 @@ const faqs = [
   },
   {
     question: "¿Cuánto cuesta?",
-    answer: <p>Desde {money}, laterales y medallón. El parabrisas completo, desde {windshieldMoney}. Con tarjeta o transferencia se suma IVA. Un vehículo más grande se cotiza aparte.</p>,
+    answer: <p>Desde {money} <span className="price-vat">+ IVA</span>, laterales y medallón. El parabrisas completo, desde {windshieldMoney} <span className="price-vat">+ IVA</span>. Aceptamos todos los métodos de pago. Un vehículo más grande se cotiza aparte.</p>,
   },
   {
     question: "¿Qué garantía tiene?",
@@ -100,10 +100,10 @@ export default function AutomotivePage() {
           <PriceBlock
             title="Desde"
             rows={[
-              { label: "Laterales y medallón", price: money },
-              { label: "Parabrisas completo, nanocerámica", price: windshieldMoney, note: "Claro o en el tono que elijas." },
+              { label: "Laterales y medallón", price: money, vat: true },
+              { label: "Parabrisas completo, nanocerámica", price: windshieldMoney, vat: true, note: "Claro o en el tono que elijas." },
             ]}
-            footnote="Con tarjeta o transferencia se suma IVA. Aceptamos todos los métodos de pago. Hasta 3 meses sin intereses. Un vehículo más grande se cotiza aparte. Garantía de 10 años."
+            footnote="Aceptamos todos los métodos de pago. Un vehículo más grande se cotiza aparte. Garantía de 10 años."
           />
           <p className="tone-cta"><Link className="button button-secondary" href="/peliculas/nanoceramica/">¿Cuál tono me conviene? <Icon name="arrow" size={18} /></Link></p>
         </div>

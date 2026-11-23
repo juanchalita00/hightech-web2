@@ -17,7 +17,7 @@ const SECCIONES: { t: string; p: string[] }[] = [
     "t": "2. Pago",
     "p": [
       "30% de anticipo para agendar el trabajo y 70% restante al terminar la instalación.",
-      "Aceptamos pago con tarjeta y Mercado Pago."
+      "Aceptamos todos los métodos de pago."
     ]
   },
   {
@@ -49,7 +49,7 @@ const SECCIONES: { t: string; p: string[] }[] = [
     "p": [
       "La garantía que aplica a tu trabajo se indica en tu cotización:",
       "Nanocerámica: 10 años en el material y 10 años en la instalación.",
-      "Plata Reflecta: 5 o 10 años, según la línea.",
+      "Plata Reflecta: 5 años.",
       "Película de seguridad: 5 o 10 años, según la película.",
       "Esmerilado y cualquier película instalada por el exterior del vidrio: 1 año.",
       "Otras películas: la garantía indicada en la cotización.",

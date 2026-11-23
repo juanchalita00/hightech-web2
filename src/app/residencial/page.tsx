@@ -17,7 +17,7 @@ import styles from "./residential-v1.module.css";
 
 export const metadata = { alternates: { canonical: "/residencial/" },
   title: { absolute: "Polarizado residencial en Zapopan y Guadalajara | High Tech México" },
-  description: "Polarizado para casa. Nanocerámica desde $850 + IVA por metro cuadrado. Menos calor, con la luz que quieres conservar. Instalamos en Zapopan y Guadalajara.",
+  description: "Polarizado para casa. Nanocerámica desde $800 + IVA por metro cuadrado. Menos calor, con la luz que quieres conservar. Instalamos en Zapopan y Guadalajara.",
 };
 
 const decisions = [

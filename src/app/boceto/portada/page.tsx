@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { Icon } from "@/components/Icon";
 import { getGoogleReviews } from "@/lib/google-reviews";
 import { airportName, googleProfile } from "@/lib/public-facts";
@@ -56,7 +57,7 @@ export default function BocetoPortadaPage() {
             <p className={styles.heroText}>
               ¿Tu casa parece horno? ¿El aire no enfría? Le ponemos película a tus cristales para que entre menos calor. Tú eliges qué tan claro queda.
             </p>
-            <p className={styles.brandLine}>Distribuidores en todo México de las películas Hightech, nuestra marca, línea IR nanocerámica.</p>
+            <p className={styles.brandLine}>Películas Hightech, línea IR nanocerámica, en todo el país.</p>
             <div className={styles.ctaRow}>
               <CotizaWhatsApp message={mensaje} />
             </div>
@@ -89,7 +90,7 @@ export default function BocetoPortadaPage() {
                 <li>Mi carro se calienta mucho</li>
                 <li>El sol me quema al manejar</li>
                 <li>Se me quema el brazo manejando</li>
-                <li>Los asientos hierven</li>
+                <li>Los asientos hierven cuando me subo</li>
                 <li>Quiero privacidad</li>
                 <li>No quiero multas</li>
               </ul>
@@ -104,7 +105,7 @@ export default function BocetoPortadaPage() {
         </div>
       </section>
 
-      {/* ESPECIALISTAS POR ÁREA. Fuente: Fer, 19 nov 2026. */}
+      {/* ESPECIALISTAS POR ÁREA. Confirmado por Fer, 19 y 23 nov 2026. */}
       <section className={styles.section} aria-labelledby="especialistas-titulo">
         <div className={styles.shell}>
           <p className={styles.kicker}>Especialistas por área</p>
@@ -265,39 +266,50 @@ export default function BocetoPortadaPage() {
         </div>
       </section>
 
-      {/* 6. QUIÉNES SOMOS. Taller y horario: base §1 y §2 / public-facts.ts. Experiencia de instaladores y respuesta el mismo día: Fer, 19-20 nov 2026. Aeropuerto: Fer, 19 nov 2026. */}
+      {/* 6. QUIÉNES SOMOS. Taller y horario: public-facts.ts. Bloque corto actualizado: Fer, 23 nov 2026. */}
       <section className={styles.sectionAlt} aria-labelledby="nosotros-titulo">
         <div className={`${styles.shell} ${styles.aboutGrid}`}>
           <div>
             <p className={styles.kicker}>Quiénes somos</p>
             <h2 id="nosotros-titulo">High Tech Polarizados México.</h2>
-            <p>High Tech Polarizados México lleva las películas Hightech a todo el país.</p>
-            <p>Hightech es nuestra marca.</p>
-            <p>Se instalan en los cristales de casa, de negocio y de auto.</p>
-            <p>Esa línea de películas se llama IR nanocerámica.</p>
-            <p>Nuestros instaladores tienen más de 15 años de experiencia.</p>
-            <p>Primero vemos qué te molesta y vemos tu cristal.</p>
-            <p>Después te decimos qué película y qué tono te conviene, y te damos el precio.</p>
-            <p>Si es para un auto, lo instalamos en el taller, con cita.</p>
-            <p>Te contestamos el mismo día.</p>
-            <p>Nuestro taller está en Tomás Mann 5348, Jardines Vallarta, Zapopan.</p>
-            <p>Uno de nuestros trabajos está en el {airportName}.</p>
-            <p>Es un pasillo de cristal junto a donde se mueven los aviones.</p>
-            <p>Ese pasillo sigue en uso todos los días.</p>
-            <p>En Google hay +{googleProfile.count} reseñas, al 15 de octubre de 2026.</p>
+            <p className={styles.aboutLead}>High Tech Polarizados México lleva las películas Hightech a todo el país.</p>
+            <p className={styles.aboutText}>
+              Soluciones para ventanas de casa, negocio y auto. Tenemos especialistas en casa y negocio, y especialistas en auto.
+            </p>
+            <div className={styles.aboutCards}>
+              <div className={styles.aboutCard}>
+                <span className={styles.aboutCardTitle}>Experiencia en campo</span>
+                <p>Instaladores con más de 15 años de experiencia.</p>
+              </div>
+              <div className={styles.aboutCard}>
+                <span className={styles.aboutCardTitle}>Dónde ya está</span>
+                <p>Trabajos en hoteles y en el {airportName}, además de +{googleProfile.count} reseñas en Google.</p>
+              </div>
+            </div>
+            <p className={styles.aboutMore}>
+              <Link href="/nosotros/" className={styles.aboutMoreLink}>
+                Conoce más sobre nosotros <Icon name="arrow" size={16} />
+              </Link>
+            </p>
           </div>
-          <dl className={styles.facts}>
-            <div>
-              <dt>Taller</dt>
-              <dd>Tomás Mann 5348, Jardines Vallarta, Zapopan</dd>
-              <dd><a href={truth.contact.mapsUrl}>Ver en Google Maps</a></dd>
-            </div>
-            <div>
-              <dt>Horario</dt>
-              <dd>Lunes a sábado, de 10:00 a 19:00</dd>
-              <dd>Domingo cerrado</dd>
-            </div>
-          </dl>
+          <div className={styles.factsCard}>
+            <dl className={styles.facts}>
+              <div>
+                <dt>Taller</dt>
+                <dd>Tomás Mann 5348, Jardines Vallarta, Zapopan</dd>
+                <dd><a href={truth.contact.mapsUrl}>Ver en Google Maps</a></dd>
+              </div>
+              <div>
+                <dt>Horario</dt>
+                <dd>Lunes a sábado, de 10:00 a 19:00</dd>
+                <dd>Domingo cerrado</dd>
+              </div>
+              <div>
+                <dt>Atención</dt>
+                <dd>Te contestamos el mismo día.</dd>
+              </div>
+            </dl>
+          </div>
         </div>
       </section>
 
@@ -332,33 +344,32 @@ export default function BocetoPortadaPage() {
         </div>
       </section>
 
-      {/* 8. OFERTA, GARANTÍA Y PRECIOS. Auto: Fer, 19–20 nov 2026 (piso $4,000 y parabrisas $1,500 en efectivo, sin IVA; con tarjeta o transferencia se suma IVA). Casa/negocio $850 y $600 + IVA: Fer, 20 nov 2026. Mínimo $1,500 + IVA: config minimo_pedido, Fer 20 nov 2026. Garantía de la película: Fer, 20 nov 2026. */}
+      {/* 8. OFERTA, GARANTÍA Y PRECIOS. Actualizado por Fer, 23 nov 2026: casa nanocerámica desde $800 + IVA; auto desde $4,000 + IVA y parabrisas desde $1,500 + IVA; todos los métodos de pago; Plata Reflecta 5 años. */}
       <section className={styles.sectionAlt} aria-labelledby="precios-titulo" id="precios">
         <div className={styles.shell}>
           <p className={styles.kicker}>Precios y garantía</p>
           <h2 id="precios-titulo">Cuánto cuesta.</h2>
           <div className={styles.priceGrid}>
             <div className={styles.priceBlock}>
-              <h3><Icon name="car" size={22} /> Auto</h3>
-              <span className={styles.from}>Desde $4,000</span>
-              <p>Película IR nanocerámica Hightech. Laterales y medallón. Parabrisas desde $1,500.</p>
-              <p className={styles.small}>Con tarjeta o transferencia se suma IVA.</p>
-              <p className={styles.small}>Aceptamos todos los métodos de pago. Hasta 3 meses sin intereses.</p>
+              <h3><Icon name="home" size={22} /> Casa y negocio</h3>
+              <span className={styles.from}>Desde $800 <span className={styles.plusIva}>+ IVA</span></span>
+              <p>Nanocerámica por m². Otras soluciones desde $600 <span className={styles.plusIva}>+ IVA</span> por m² (esmerilado y Reflecta).</p>
+              <p className={styles.small}>Mínimo por proyecto: $1,500 <span className={styles.plusIva}>+ IVA</span>.</p>
             </div>
             <div className={styles.priceBlock}>
-              <h3><Icon name="home" size={22} /> Casa y negocio</h3>
-              <p>Nanocerámica desde $850 <span className={styles.plusIva}>+ IVA</span> por m².</p>
-              <p>Soluciones desde $600 <span className={styles.plusIva}>+ IVA</span> por m² (esmerilado y Reflecta).</p>
-              <p className={styles.small}>Mínimo por proyecto: $1,500 <span className={styles.plusIva}>+ IVA</span>.</p>
+              <h3><Icon name="car" size={22} /> Auto</h3>
+              <span className={styles.from}>Desde $4,000 <span className={styles.plusIva}>+ IVA</span></span>
+              <p>Película IR nanocerámica Hightech. Laterales y medallón. Parabrisas desde $1,500 <span className={styles.plusIva}>+ IVA</span>.</p>
+              <p className={styles.small}>Aceptamos todos los métodos de pago.</p>
             </div>
           </div>
 
           <h3 style={{ marginTop: "2.5rem" }}>Garantía de la película Hightech</h3>
           <ul className={styles.warranty}>
             <li><span>Nanocerámica interior</span><strong>10 años</strong></li>
+            <li><span>Plata Reflecta</span><strong>5 años</strong></li>
             <li><span>Zonas con película exterior</span><strong>1 año</strong></li>
             <li><span>Esmerilado</span><strong>1 año</strong></li>
-            <li><span>Plata Reflecta</span><strong>5 o 10 años, según la línea</strong></li>
           </ul>
         </div>
       </section>
@@ -390,19 +401,14 @@ export default function BocetoPortadaPage() {
               <p>Solo vamos a otro lugar si son muchos autos juntos (una flotilla) o si el auto es de una agencia, o sea, de un lote de venta.</p>
             </details>
             <details>
-              <summary>¿Son especialistas en casa o solo en autos?</summary>
-              <p>En las dos.</p>
-              <p>Hay instaladores para casa y negocio, y otros para autos.</p>
-              <p>No se mezclan.</p>
-              <p>Cada uno se forma para la película de su área.</p>
-              <p>Un solo instalador no puede ser experto en todo.</p>
+              <summary>¿Su fuerte es casa o auto?</summary>
+              <p>Los dos. Tenemos un equipo especializado para casa y negocio, y otro distinto para autos.</p>
+              <p>Cada quien se forma y trabaja solo en su área.</p>
             </details>
             <details>
-              <summary>¿Qué marca instalan?</summary>
-              <p>Instalamos películas Hightech, nuestra marca.</p>
-              <p>Es la línea IR nanocerámica.</p>
-              <p>Son películas que vienen de otro país.</p>
-              <p>Se fabrican siguiendo lo que pide Hightech.</p>
+              <summary>¿Qué película instalan?</summary>
+              <p>Instalamos películas Hightech.</p>
+              <p>Trabajamos la línea IR nanocerámica y otras soluciones para ventanas de casa, negocio y auto.</p>
             </details>
             <details>
               <summary>¿Cobran andamio en casa o negocio?</summary>
