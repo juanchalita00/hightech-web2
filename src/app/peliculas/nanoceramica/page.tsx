@@ -69,7 +69,7 @@ export default function NanoPage() {
       <div className="container">
         <div className="section-heading section-heading-split">
           <div><p className="eyebrow">Comparador de gama</p><h2>Primero decide cuánta luz quieres conservar.</h2></div>
-          <p>Elige primero cuánta luz quieres. El calor del sol se corta en todos. El tono más oscuro suma privacidad y un poco más de protección total.</p>
+          <p>Elige primero cuánta luz quieres. El calor del sol se corta en todos. El tono más oscuro suma privacidad y más protección total.</p>
         </div>
         <NanoComparison/>
       </div>

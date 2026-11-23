@@ -36,7 +36,7 @@ const faqs = [
     answer: (
       <p>
         No de la forma en que suele pensarse. Todos los tonos bloquean hasta 99% de los rayos UV y el calor que se siente en la piel junto a un cristal con sol.
-        El más oscuro gana un poco más de protección total y mucha más privacidad, y de noche se ve menos. El 5 es el único que a algunas personas les cuesta de noche.
+        El más oscuro gana más protección total y mucha más privacidad, y de noche se ve menos. El 5 es el único que a algunas personas les cuesta de noche.
       </p>
     ),
   },

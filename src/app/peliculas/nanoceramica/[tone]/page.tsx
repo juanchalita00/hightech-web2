@@ -196,7 +196,7 @@ export default async function TonePage({ params }: { params: Promise<{ tone: str
           <HightechTip>
             {film.id === "IR5"
               ? "Es como manejar con lentes de sol muy oscuros ya de noche: el sol no está, y aun así cuesta ver el camino. Por eso el 5 se recomienda sobre todo para casa y negocio."
-              : "Un bloqueador transparente también protege la piel. Aquí pasa lo mismo: el tono se elige por la luz que quieres, no porque el más oscuro “proteja más”."}
+              : "Un bloqueador transparente también protege la piel. Aquí pasa lo mismo: el tono se elige sobre todo por la luz y la privacidad que quieres."}
           </HightechTip>
           {copy.caution ? <p><strong>{copy.caution}</strong></p> : null}
         </div>

@@ -10,7 +10,7 @@ export const metadata = { alternates: { canonical: "/peliculas/" },
 };
 
 const families = [
-  { href:"/peliculas/nanoceramica/", icon:"sun" as const, label:"Control solar", title:"Nanocerámica", text:"Cinco tonos de luz. Todos cortan los rayos UV y el calor del sol. El más oscuro cambia la privacidad, no duplica la frescura." },
+  { href:"/peliculas/nanoceramica/", icon:"sun" as const, label:"Control solar", title:"Nanocerámica", text:"Cinco tonos de luz. Todos cortan los rayos UV y el calor del sol. El tono cambia la luz y la privacidad." },
   { href:"/peliculas/plata-reflecta/", icon:"privacy" as const, label:"Arquitectura", title:"Plata Reflecta", text:"Apariencia reflectiva y privacidad principalmente diurna. El efecto depende de la diferencia de iluminación entre ambos lados del cristal." },
   { href:"/peliculas/seguridad/", icon:"shield" as const, label:"Protección del cristal", title:"Seguridad", text:"Si el cristal se rompe, los pedazos se quedan en la película. También dificulta que un golpe abra el hueco de inmediato." },
   { href:"/peliculas/privacidad/", icon:"glass" as const, label:"Control visual", title:"Privacidad", text:"La estrategia cambia según quieras privacidad diurna, mayor oscuridad o una solución que bloquee/difumine la visión." },

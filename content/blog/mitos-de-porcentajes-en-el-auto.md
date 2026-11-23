@@ -9,7 +9,7 @@ slug: "mitos-de-porcentajes-en-el-auto"
 
 Elegir el tono de un auto es una decisión de claridad, apariencia y uso, sobre todo si manejas de noche. No es una tabla que alguien pueda cerrar por ti.
 
-## Más oscuro no es, por sí solo, menos calor
+## El calor depende de la tecnología, no solo del tono
 
 - La protección térmica depende de la tecnología, no solo de qué tan oscuro se ve el cristal.
 - La gama activa es 75, 50, 35, 15 y 5. Los nombres 20, 70 y 80 son históricos, o una película que el vehículo ya trae.
