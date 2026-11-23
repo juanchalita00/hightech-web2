@@ -66,7 +66,6 @@ export default function BocetoPortadaPage() {
           </div>
           <ul className={styles.trust} aria-label="Datos de confianza">
             <li><Icon name="check" size={18} /> +{googleProfile.count} reseñas en Google</li>
-            <li><Icon name="check" size={18} /> {airportName}</li>
           </ul>
         </div>
       </section>
