@@ -47,18 +47,18 @@ for (const review of googleReviews.items ?? []) {
 if (release.sourceOfTruthVersion !== "0.19") errors.push("release-state no apunta a System of Truth v0.19.");
 if (truth.meta?.source !== "HIGHTECH_Web2_System_of_Truth_v0.19") errors.push("publication-truth no apunta a System of Truth v0.19.");
 const expected = {
-  IR75: [75, 99, 95, 950, 59],
-  IR50: [48, 99, 95, 950, 72],
-  IR35: [35, 99, 95, 950, 79],
-  IR15: [15, 99, 95, 950, 87],
-  IR5: [3, 99, 95, 950, 96],
+  IR75: [75, 99, 95, 950, 59, 0.48],
+  IR50: [48, 99, 95, 950, 72, 0.32],
+  IR35: [35, 99, 95, 950, 79, 0.25],
+  IR15: [15, 99, 95, 950, 87, 0.15],
+  IR5: [3, 99, 95, 950, 96, 0.09],
 };
 
 for (const product of truth.nano) {
   const canonical = expected[product.id];
   if (!canonical) errors.push(`Producto nano inesperado: ${product.id}`);
   else {
-    const actual = [product.vlt, product.uv, product.infraredRejection, product.infraredWavelengthNm, product.tser];
+    const actual = [product.vlt, product.uv, product.infraredRejection, product.infraredWavelengthNm, product.tser, product.shadingCoefficient];
     if (JSON.stringify(actual) !== JSON.stringify(canonical)) errors.push(`Specs alteradas para ${product.id}: ${actual.join("/")}`);
   }
 }

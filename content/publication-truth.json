@@ -39,7 +39,8 @@
       "infraredRejection": 95,
       "infraredWavelengthNm": 950,
       "tser": 59,
-      "status": "APPROVED_WITH_CONTEXT"
+      "status": "APPROVED_WITH_CONTEXT",
+      "shadingCoefficient": 0.48
     },
     {
       "id": "IR50",
@@ -49,7 +50,8 @@
       "infraredRejection": 95,
       "infraredWavelengthNm": 950,
       "tser": 72,
-      "status": "APPROVED_WITH_CONTEXT"
+      "status": "APPROVED_WITH_CONTEXT",
+      "shadingCoefficient": 0.32
     },
     {
       "id": "IR35",
@@ -59,7 +61,8 @@
       "infraredRejection": 95,
       "infraredWavelengthNm": 950,
       "tser": 79,
-      "status": "APPROVED_WITH_CONTEXT"
+      "status": "APPROVED_WITH_CONTEXT",
+      "shadingCoefficient": 0.25
     },
     {
       "id": "IR15",
@@ -69,7 +72,8 @@
       "infraredRejection": 95,
       "infraredWavelengthNm": 950,
       "tser": 87,
-      "status": "APPROVED_WITH_CONTEXT"
+      "status": "APPROVED_WITH_CONTEXT",
+      "shadingCoefficient": 0.15
     },
     {
       "id": "IR5",
@@ -79,7 +83,8 @@
       "infraredRejection": 95,
       "infraredWavelengthNm": 950,
       "tser": 96,
-      "status": "APPROVED_WITH_CONTEXT"
+      "status": "APPROVED_WITH_CONTEXT",
+      "shadingCoefficient": 0.09
     }
   ],
   "jaliscoAutomotive": {

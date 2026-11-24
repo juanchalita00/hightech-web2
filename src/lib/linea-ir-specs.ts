@@ -7,10 +7,10 @@
  * publication-truth.json, la ficha, SoT §6–§7 y fichas_v3 coinciden en
  * VLT 48% para IR50 (el 50 es el nombre del tono, como el 5 que en ficha es 3%).
  *
- * Coeficiente de sombreado: no está en publication-truth.json. SoT v0.19 §8
- * lo listaba en TECHNICAL_REVIEW. Los valores de abajo salen de las fichas
- * PDF aprobadas para descarga (mismas cifras en fichas_v3). Fer pidió esta
- * columna el 23 nov 2026.
+ * Coeficiente de sombreado: Fer lo dio por publicado el 23 nov 2026 (22:23).
+ * Ya no queda «en revisión». Los valores salen de las fichas (SRC-TECH-SEP19)
+ * y quedaron también en publication-truth.json (shadingCoefficient).
+ * El rechazo UV publicado es 99% en los cinco tonos, no 99.9%.
  *
  * Garantía: «10 años en todos los tonos» es la del material, según la ficha.
  * No se muestra una línea «Fuente:» en la vista.
