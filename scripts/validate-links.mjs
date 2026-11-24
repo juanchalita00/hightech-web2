@@ -25,10 +25,14 @@ function blogPostExists(clean){
   if(!match) return false;
   return ["md","mdx"].some((ext)=>fs.existsSync(path.join(root,"content/blog",`${match[1]}.${ext}`)));
 }
+function publicFileExists(clean){
+  if(clean.includes("..")) return false;
+  return fs.existsSync(path.join(root,"public",clean.replace(/^\//,"")));
+}
 const files=[];
 function walk(dir){for(const entry of fs.readdirSync(dir,{withFileTypes:true})){const full=path.join(dir,entry.name);if(entry.isDirectory())walk(full);else if(/\.(tsx|ts)$/.test(entry.name))files.push(full);}}
 walk(path.join(root,"src"));
 const errors=[];let count=0;
-for(const file of files){const text=fs.readFileSync(file,"utf8");const rx=/(?:href|sourcePage)=[{]?\s*["'`]([^"'`$]+)["'`]/g;let m;while((m=rx.exec(text))){const href=m[1];if(!href.startsWith("/"))continue;count++;const clean=href.split(/[?#]/)[0];if(clean.includes("["))continue;if(!known.has(clean) && !clean.startsWith("/proyectos/") && !blogPostExists(clean)) errors.push(`${path.relative(root,file)} -> ${clean}`);}}
+for(const file of files){const text=fs.readFileSync(file,"utf8");const rx=/(?:href|sourcePage)=[{]?\s*["'`]([^"'`$]+)["'`]/g;let m;while((m=rx.exec(text))){const href=m[1];if(!href.startsWith("/"))continue;count++;const clean=href.split(/[?#]/)[0];if(clean.includes("["))continue;if(!known.has(clean) && !clean.startsWith("/proyectos/") && !blogPostExists(clean) && !publicFileExists(clean)) errors.push(`${path.relative(root,file)} -> ${clean}`);}}
 if(errors.length){console.error("\nLINK GATE FAILED\n");errors.forEach(e=>console.error(`- ${e}`));process.exit(1);}
 console.log(`Link gate OK: ${count} rutas internas literales comprobadas.`);

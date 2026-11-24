@@ -1743,3 +1743,85 @@ thead th { background: var(--surface-alt); }
   .product-hero-compact { padding-bottom:2.25rem; }
   .product-hero-compact + .section { padding-top:2.5rem; }
 }
+
+
+/* Fichas Línea IR: tabla de datos y botones de descarga. */
+.datasheet-downloads {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .7rem;
+  margin-top: 1.15rem;
+  min-width: 0;
+  max-width: 100%;
+}
+.datasheet-downloads .button {
+  white-space: normal;
+  text-align: center;
+  max-width: 100%;
+  line-height: 1.25;
+}
+.linea-ir-specs-wrap {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.linea-ir-specs {
+  min-width: 40rem;
+  width: 100%;
+}
+.linea-ir-specs th,
+.linea-ir-specs td {
+  vertical-align: top;
+  overflow-wrap: break-word;
+}
+.linea-ir-specs th[scope="row"] {
+  font-weight: 700;
+  min-width: 9.5rem;
+}
+.linea-ir-specs-cards {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: .7rem;
+}
+.linea-ir-specs-cards li {
+  margin: 0;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: white;
+  min-width: 0;
+}
+.linea-ir-specs-cards h3 {
+  margin: 0 0 .65rem;
+  font-size: 1.15rem;
+}
+.linea-ir-specs-cards dl,
+.linea-ir-specs-cards div { margin: 0; }
+.linea-ir-specs-cards div {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: .35rem .75rem;
+  padding: .4rem 0;
+  border-bottom: 1px solid var(--line);
+}
+.linea-ir-specs-cards div:last-child { border-bottom: 0; }
+.linea-ir-specs-cards dt { color: var(--ink-soft); font-weight: 600; overflow-wrap: break-word; }
+.linea-ir-specs-cards dd { margin: 0; font-weight: 700; text-align: right; }
+.linea-ir-warranty {
+  margin: .85rem 0 0;
+  font-weight: 700;
+}
+.linea-ir-note {
+  margin: .85rem 0 0;
+  max-width: 42rem;
+  color: var(--ink-soft);
+}
+@media (max-width: 800px) {
+  .linea-ir-specs-wrap { display: none; }
+  .linea-ir-specs-cards { display: grid; }
+}
+@media (min-width: 801px) {
+  .linea-ir-warranty { display: none; }
+}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { DatasheetDownloads } from "@/components/DatasheetDownloads";
 import { ProductCTA } from "@/components/ProductCTA";
 import { ProductHero } from "@/components/ProductHero";
 import { HightechTip } from "@/components/HightechTip";
@@ -61,6 +62,8 @@ export default function SecurityPage() {
             Piensa en un parabrisas estrellado: se rompe en mil líneas y, aun así, se queda en el marco. La película de seguridad busca ese efecto en una ventana, un cancel o una fachada.
           </HightechTip>
           <p>No es blindaje y no vuelve el cristal irrompible. El espesor se elige según el vidrio y lo que quieres proteger. El precio se cotiza por proyecto; no hay una tarifa de lista.</p>
+          {/* Ultra Safe sigue en corrección: securityPdf es null y no se pinta enlace. */}
+          <DatasheetDownloads items={[{ kind: "security" }]} />
         </div>
       </section>
 

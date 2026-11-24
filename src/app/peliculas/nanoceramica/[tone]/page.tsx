@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Icon } from "@/components/Icon";
+import { DatasheetDownloads } from "@/components/DatasheetDownloads";
 import { ProductCTA } from "@/components/ProductCTA";
 import { ProductHero } from "@/components/ProductHero";
 import { HightechTip } from "@/components/HightechTip";
@@ -239,6 +240,7 @@ export default async function TonePage({ params }: { params: Promise<{ tone: str
             </table>
           </div>
           {extra.vltNote ? <p className="install-times-note">{extra.vltNote}</p> : null}
+          <DatasheetDownloads items={[{ kind: "casa" }, { kind: "auto" }]} />
         </div>
       </section>
       <section className="section">

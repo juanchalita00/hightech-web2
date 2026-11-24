@@ -9,6 +9,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { LeadMagnet } from "@/components/LeadMagnet";
 import { PriceBlock } from "@/components/PriceBlock";
 import { ServiceAreaLinks } from "@/components/ServiceAreaLinks";
+import { DatasheetDownloads } from "@/components/DatasheetDownloads";
 import { ProductCTA } from "@/components/ProductCTA";
 import { HightechTip } from "@/components/HightechTip";
 import { Icon } from "@/components/Icon";
@@ -107,6 +108,7 @@ export default function AutomotivePage() {
             footnote="Aceptamos todos los métodos de pago. Un vehículo más grande se cotiza aparte. Garantía de 10 años."
           />
           <p className="tone-cta"><Link className="button button-secondary" href="/peliculas/nanoceramica/">¿Cuál tono me conviene? <Icon name="arrow" size={18} /></Link></p>
+          <DatasheetDownloads items={[{ kind: "auto", label: "Descarga la ficha técnica (PDF)" }]} />
         </div>
       </section>
 

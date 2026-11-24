@@ -2,6 +2,8 @@ import Link from "next/link";
 import { Icon } from "@/components/Icon";
 import { LimitationNotice } from "@/components/LimitationNotice";
 import { MetricExplainer } from "@/components/MetricExplainer";
+import { DatasheetDownloads } from "@/components/DatasheetDownloads";
+import { LineaIrSpecsTable } from "@/components/LineaIrSpecsTable";
 import { NanoComparison } from "@/components/NanoComparison";
 import { ProductCTA } from "@/components/ProductCTA";
 import { ProductHero } from "@/components/ProductHero";
@@ -72,6 +74,18 @@ export default function NanoPage() {
           <p>Elige primero cuánta luz quieres. Todos los tonos frenan el calor infrarrojo (el calor invisible del sol). Entre más oscuro, más calor bloquea en total.</p>
         </div>
         <NanoComparison/>
+      </div>
+    </section>
+
+    <section className="section">
+      <div className="container">
+        <div className="section-heading section-heading-split">
+          <div><p className="eyebrow">Datos de la Línea IR</p><h2>Los cinco tonos, en una tabla.</h2></div>
+          <p>Luz, calor total, infrarrojo, UV y sombreado. El 50 y el 5 son el nombre del tono: en la ficha, el 50 deja pasar 48% de la luz y el 5 deja pasar 3%.</p>
+        </div>
+        <LineaIrSpecsTable/>
+        <p className="linea-ir-note">El coeficiente de sombreado, entre más bajo, menos energía entra. La garantía de la tabla es la del material.</p>
+        <DatasheetDownloads items={[{ kind: "casa" }, { kind: "auto" }]} />
       </div>
     </section>
 
