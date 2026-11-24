@@ -103,7 +103,7 @@ export function AutomotiveToneSimulator() {
                 key={id}
                 src={item.src}
                 srcSet={`${item.mobileSrc} 800w, ${item.src} 2400w`}
-                sizes="(max-width: 720px) 108vw, min(76rem, calc(100vw - 2rem))"
+                sizes="(max-width: 720px) calc(100vw - 1rem), min(76rem, calc(100vw - 2rem))"
                 width={FRAME.width}
                 height={FRAME.height}
                 alt={visible ? item.alt : ""}
