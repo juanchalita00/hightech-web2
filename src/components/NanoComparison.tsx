@@ -38,6 +38,7 @@ export function NanoComparison() {
         </table>
       </div>
       <p className="fine-print">Los números son los nombres comerciales del tono: el 50 deja pasar 48% de la luz y el 5, 3%.</p>
+      <p className="fine-print">Estos porcentajes no prometen cuántos grados baja un cuarto.</p>
     </div>
   );
 }
