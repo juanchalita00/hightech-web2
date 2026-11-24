@@ -1,0 +1,210 @@
+.simulator {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.carDock,
+.toneDock {
+  display: grid;
+  gap: 0.3rem;
+  min-width: 0;
+}
+
+.carDock {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 20rem;
+  padding: 0.25rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface-alt);
+}
+
+.toneDock {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  padding: 0.25rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface-alt);
+}
+
+.carButton,
+.carButtonActive,
+.toneButton,
+.toneButtonActive {
+  min-width: 0;
+  min-height: 44px;
+  display: grid;
+  place-items: center;
+  gap: 0.05rem;
+  padding: 0.35rem 0.3rem;
+  border: 1px solid transparent;
+  border-radius: 0.45rem;
+  color: var(--ink);
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  text-align: center;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.carButton:hover,
+.toneButton:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.carButtonActive,
+.toneButtonActive {
+  color: white;
+  background: var(--brand-deep);
+  border-color: var(--brand-deep);
+}
+
+.toneButton strong,
+.toneButtonActive strong,
+.carButton,
+.carButtonActive {
+  font-size: 0.82rem;
+  font-weight: 750;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+}
+
+.toneButton span,
+.toneButtonActive span {
+  font-size: 0.62rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  line-height: 1.1;
+}
+
+.toneButtonActive span {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.carButton:focus-visible,
+.carButtonActive:focus-visible,
+.toneButton:focus-visible,
+.toneButtonActive:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2400 / 948;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background: #bcd6ef;
+}
+
+.photo,
+.photoHidden {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center center;
+}
+
+.photoHidden {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.glassTint {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.tintShade {
+  transition: opacity 0.22s ease;
+}
+
+.visualLabel {
+  position: absolute;
+  z-index: 3;
+  top: 0.55rem;
+  left: 0.55rem;
+  margin: 0;
+  padding: 0.2rem 0.45rem;
+  border-radius: 0.3rem;
+  background: rgba(16, 21, 40, 0.72);
+  color: white;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.status {
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.95rem;
+  font-weight: 650;
+}
+
+.footnote,
+.lawNote {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.lawNote {
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+}
+
+.lawNote p {
+  margin: 0;
+}
+
+.lawNote p + p {
+  margin-top: 0.55rem;
+}
+
+.lawNote a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+}
+
+@media (max-width: 420px) {
+  .toneButton strong,
+  .toneButtonActive strong,
+  .carButton,
+  .carButtonActive {
+    font-size: 0.74rem;
+  }
+
+  .toneButton span,
+  .toneButtonActive span {
+    font-size: 0.58rem;
+  }
+
+  .toneDock {
+    gap: 0.18rem;
+    padding: 0.2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carButton,
+  .carButtonActive,
+  .toneButton,
+  .toneButtonActive,
+  .tintShade {
+    transition: none;
+  }
+}

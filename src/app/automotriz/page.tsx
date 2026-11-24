@@ -10,6 +10,8 @@ import { LeadMagnet } from "@/components/LeadMagnet";
 import { PriceBlock } from "@/components/PriceBlock";
 import { ServiceAreaLinks } from "@/components/ServiceAreaLinks";
 import { DatasheetDownloads } from "@/components/DatasheetDownloads";
+import { AutomotiveToneGuide } from "@/components/AutomotiveToneGuide";
+import { AutomotiveToneSimulator } from "@/components/AutomotiveToneSimulator";
 import { ProductCTA } from "@/components/ProductCTA";
 import { HightechTip } from "@/components/HightechTip";
 import { Icon } from "@/components/Icon";
@@ -109,6 +111,19 @@ export default function AutomotivePage() {
           />
           <p className="tone-cta"><Link className="button button-secondary" href="/peliculas/nanoceramica/">¿Cuál tono me conviene? <Icon name="arrow" size={18} /></Link></p>
           <DatasheetDownloads items={[{ kind: "auto", label: "Descarga la ficha técnica (PDF)" }]} />
+        </div>
+      </section>
+
+      <section className="section section-alt" id="tonos" style={{ scrollMarginTop: "6rem" }}>
+        <div className="container">
+          <div className="section-heading">
+            <p className="eyebrow">Tonos en el cristal</p>
+            <h2>Prueba cómo se ve el tono.</h2>
+          </div>
+          <AutomotiveToneSimulator />
+          <div style={{ marginTop: "1.8rem" }}>
+            <AutomotiveToneGuide />
+          </div>
         </div>
       </section>
 
