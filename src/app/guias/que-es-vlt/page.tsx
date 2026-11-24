@@ -24,7 +24,7 @@ export default function Page() {
       <section className="section">
         <div className="container" style={{ display: "grid", gap: "1rem", maxWidth: "46rem" }}>
           <h2>El número es la luz que deja pasar.</h2>
-          <p>75 deja pasar cerca de tres cuartas partes de la luz. 50, cerca de la mitad. 35, cerca de un tercio. 15 deja pasar poca. 5, muy poca: en la práctica es todavía más cerrado que el nombre.</p>
+          <p>75 deja pasar cerca de tres cuartas partes de la luz. El 50 deja pasar 48%, según la ficha (el 50 es el nombre del tono). 35, cerca de un tercio. 15 deja pasar poca. El 5 deja pasar 3%, según la ficha: en la práctica es todavía más cerrado que el nombre.</p>
           <HightechTip>
             Unos lentes de sol claros casi no cambian lo que ves; unos muy oscuros sí, sobre todo al caer la tarde. Con la película es igual: el 75 es el más claro y el 5 el más oscuro, y de noche algunas personas batallan con el 5.
           </HightechTip>

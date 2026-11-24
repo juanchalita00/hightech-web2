@@ -48,7 +48,7 @@ if (release.sourceOfTruthVersion !== "0.19") errors.push("release-state no apunt
 if (truth.meta?.source !== "HIGHTECH_Web2_System_of_Truth_v0.19") errors.push("publication-truth no apunta a System of Truth v0.19.");
 const expected = {
   IR75: [75, 99, 95, 950, 59],
-  IR50: [50, 99, 95, 950, 72],
+  IR50: [48, 99, 95, 950, 72],
   IR35: [35, 99, 95, 950, 79],
   IR15: [15, 99, 95, 950, 87],
   IR5: [3, 99, 95, 950, 96],

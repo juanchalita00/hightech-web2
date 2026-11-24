@@ -24,7 +24,7 @@ export function NanoComparison() {
               <p>{useCopy[film.id]}</p>
             </div>
             <dl>
-              <div><dt>Calor del sol</dt><dd>Casi todo</dd></div>
+              <div><dt>Calor del sol</dt><dd>Bloquea hasta {film.tser}% del calor</dd></div>
             </dl>
             <span className="nano-comparison-arrow" aria-hidden="true"><Icon name="arrow" size={18}/></span>
           </Link>
@@ -34,10 +34,10 @@ export function NanoComparison() {
       <div className="table-wrap nano-comparison-table" tabIndex={0} aria-label="Tabla comparativa de nanocerámica HIGHTECH">
         <table>
           <thead><tr><th>Tono</th><th>Rayos UV</th><th>Calor del sol</th><th>Dónde encaja</th></tr></thead>
-          <tbody>{truth.nano.map((film) => <tr key={film.id}><th scope="row"><Link href={`/peliculas/nanoceramica/${film.id.toLowerCase()}/`}>{toneName(film.id)}</Link></th><td>Hasta {film.uv}%</td><td>Casi todo</td><td>{useCopy[film.id]}</td></tr>)}</tbody>
+          <tbody>{truth.nano.map((film) => <tr key={film.id}><th scope="row"><Link href={`/peliculas/nanoceramica/${film.id.toLowerCase()}/`}>{toneName(film.id)}</Link></th><td>Hasta {film.uv}%</td><td>Bloquea hasta {film.tser}% del calor</td><td>{useCopy[film.id]}</td></tr>)}</tbody>
         </table>
       </div>
-      <p className="fine-print">Los números son los nombres comerciales del tono. El 50 deja pasar cerca de la mitad de la luz y el 5, muy poca. Esos números no prometen cuántos grados bajará un cuarto.</p>
+      <p className="fine-print">Los números son los nombres comerciales del tono. El 50 deja pasar 48% de la luz y el 5 deja pasar 3%, según la ficha. Esos números no prometen cuántos grados bajará un cuarto.</p>
     </div>
   );
 }

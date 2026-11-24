@@ -23,7 +23,7 @@ const toneCopy: Record<string, { headline: string; decision: string; light: stri
   IR50: {
     headline: "Mucha luz, un paso más marcado que el 75.",
     decision: "Para quien quiere seguir viendo claro y notar un poco más el tono.",
-    light: "Deja pasar cerca de la mitad de la luz.",
+    light: "Deja pasar 48% de la luz, según la ficha.",
     where: "En casa, en negocio y en auto.",
     whereNote: "En el auto, va en los cristales traseros.",
     neighbors: ["IR75", "IR35"],
@@ -72,7 +72,8 @@ const toneExtra: Record<string, ToneExtra> = {
       "Auto: cristales traseros.",
     ],
     look: "Es claro y ligeramente entonado.",
-    faq: { question: "¿Qué cambia del 50 al 75?", answer: "El 50 deja pasar menos luz y se nota más el tono. La protección contra rayos UV e infrarrojos que indica la ficha es la misma; lo que cambia es la luz y la privacidad de día." },
+    vltNote: "El número 50 es el nombre comercial; la ficha marca 48%.",
+    faq: { question: "¿Qué cambia del 50 al 75?", answer: "El 50 deja pasar 48% de la luz, según la ficha; el 75 deja pasar 75%. Se nota más el tono. La protección contra rayos UV e infrarrojos que indica la ficha es la misma; lo que cambia es la luz y la privacidad de día." },
   },
   IR35: {
     uses: [
@@ -173,7 +174,7 @@ export default async function TonePage({ params }: { params: Promise<{ tone: str
         facts={[
           { label: "Luz", value: copy.light },
           { label: "Rayos UV", value: "Bloquea hasta 99%" },
-          { label: "Calor del sol", value: "Casi todo, como el resto de la gama" },
+          { label: "Calor del sol", value: `Bloquea hasta ${film.tser}% del calor` },
         ]}
         image={img ? {
           src: img.src,

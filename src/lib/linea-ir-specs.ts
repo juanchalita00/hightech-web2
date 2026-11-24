@@ -4,9 +4,8 @@
  * ficha-linea-ir-auto.pdf), que citan SRC-TECH-SEP19, cruzadas con
  * docs/source/HIGHTECH_Web2_System_of_Truth_v0.19.md §6–§7 y fichas_v3.
  *
- * publication-truth.json trae VLT 50 para IR50; la ficha, SoT §6–§7 y
- * fichas_v3 traen 48%. En la tabla se publica el 48% de la ficha (el 50 es
- * el nombre del tono, como el 5 que en ficha es 3%).
+ * publication-truth.json, la ficha, SoT §6–§7 y fichas_v3 coinciden en
+ * VLT 48% para IR50 (el 50 es el nombre del tono, como el 5 que en ficha es 3%).
  *
  * Coeficiente de sombreado: no está en publication-truth.json. SoT v0.19 §8
  * lo listaba en TECHNICAL_REVIEW. Los valores de abajo salen de las fichas

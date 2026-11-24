@@ -16,7 +16,7 @@ export const metadata = { alternates: { canonical: "/peliculas/nanoceramica/" },
 const metrics = [
   { metric:"Luz", label:"Cuánta luz deja pasar", meaning:"75 es claro. 5 es muy oscuro. El número más alto se ve más claro.", caution:"El cristal de abajo también cambia un poco cómo se ve." },
   { metric:"UV", label:"Rayos que decoloran", meaning:"Los cinco tonos bloquean hasta 99% de esos rayos, también el más claro.", caution:"El sol no es la única causa de que un piso o una tela envejezcan." },
-  { metric:"Calor", label:"El que se siente en la piel", meaning:"Todos los tonos cortan casi todo ese calor, el del asiento que quema o la ventana al sol.", caution:"Oscurecer suma un poco más de protección total, menos de lo que parece, y mucha más privacidad." },
+  { metric:"Calor", label:"El que se siente en la piel", meaning:"Todos los tonos frenan el calor infrarrojo (el calor invisible del sol). Entre más oscuro, más calor bloquea en total.", caution:"Oscurecer suma un poco más de protección total, menos de lo que parece, y mucha más privacidad." },
 ] as const;
 
 export default function NanoPage() {

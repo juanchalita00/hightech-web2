@@ -48,7 +48,7 @@ export function NanoSpectrum() {
           );
         })}
       </div>
-      <p className="nano-spectrum-footnote">Los números 75, 50, 35, 15 y 5 son los nombres comerciales del tono; el VLT es el dato de ficha. El 50 deja pasar cerca de la mitad de la luz. El 5 deja pasar muy poca y, de noche, algunas personas batallan.</p>
+      <p className="nano-spectrum-footnote">Los números 75, 50, 35, 15 y 5 son los nombres comerciales del tono; el VLT es el dato de ficha. El 50 deja pasar 48% de la luz y el 5 deja pasar 3%, según la ficha. De noche, algunas personas batallan con el 5.</p>
     </div>
   );
 }
