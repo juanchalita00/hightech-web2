@@ -42,7 +42,7 @@ const copy: Record<ServiceCity, {
     irTitle: "Línea IR, también en el tono claro.",
     irText: [
       "Trabajamos la Línea IR, una película nanocerámica Hightech.",
-      "Según la ficha técnica, rechaza 95% del infrarrojo (el calor invisible del sol), medido a 950 nm.",
+      "Rechaza 95% del infrarrojo (el calor invisible del sol), medido a 950 nm.",
       "Ese dato no significa 95% menos calor dentro del cuarto o del auto.",
     ],
     priceTitle: "Precios desde, en Zapopan",

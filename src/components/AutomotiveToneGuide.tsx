@@ -27,7 +27,6 @@ export function AutomotiveToneGuide() {
           </Link>
         );
       })}
-      <p className="auto-tone-note">Los números son nombres comerciales del tono. Los valores técnicos son especificaciones de ficha.</p>
     </div>
   );
 }

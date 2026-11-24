@@ -23,7 +23,7 @@ const toneCopy: Record<string, { headline: string; decision: string; light: stri
   IR50: {
     headline: "Mucha luz, un paso más marcado que el 75.",
     decision: "Para quien quiere seguir viendo claro y notar un poco más el tono.",
-    light: "Deja pasar 48% de la luz, según la ficha.",
+    light: "Deja pasar 48% de la luz.",
     where: "En casa, en negocio y en auto.",
     whereNote: "En el auto, va en los cristales traseros.",
     neighbors: ["IR75", "IR35"],
@@ -47,7 +47,7 @@ const toneCopy: Record<string, { headline: string; decision: string; light: stri
   IR5: {
     headline: "El más oscuro de la gama.",
     decision: "Para casa o negocio, cuando quieres la mayor privacidad de día.",
-    light: "Deja pasar muy poca luz. Aunque se llama 5, en la práctica es aún más cerrado.",
+    light: "Deja pasar 3% de la luz.",
     where: "En casa y en negocio.",
     whereNote: "Si lo quieres en el auto, platicamos qué visibilidad necesitas.",
     caution: "De noche, algunas personas batallan para ver hacia afuera. Es el único tono con este aviso.",
@@ -55,7 +55,7 @@ const toneCopy: Record<string, { headline: string; decision: string; light: stri
   },
 };
 
-type ToneExtra = { uses: string[]; look: string; vltNote?: string; faq: { question: string; answer: string };  };
+type ToneExtra = { uses: string[]; look: string; faq: { question: string; answer: string };  };
 
 const toneExtra: Record<string, ToneExtra> = {
   IR75: {
@@ -72,8 +72,7 @@ const toneExtra: Record<string, ToneExtra> = {
       "Auto: cristales traseros.",
     ],
     look: "Es claro y ligeramente entonado.",
-    vltNote: "El número 50 es el nombre comercial; la ficha marca 48%.",
-    faq: { question: "¿Qué cambia del 50 al 75?", answer: "El 50 deja pasar 48% de la luz, según la ficha; el 75 deja pasar 75%. Se nota más el tono. La protección contra rayos UV e infrarrojos que indica la ficha es la misma; lo que cambia es la luz y la privacidad de día." },
+    faq: { question: "¿Qué cambia del 50 al 75?", answer: "El 50 deja pasar 48% de la luz; el 75 deja pasar 75%. Se nota más el tono. La protección contra rayos UV e infrarrojos es la misma; lo que cambia es la luz y la privacidad de día." },
   },
   IR35: {
     uses: [
@@ -97,7 +96,6 @@ const toneExtra: Record<string, ToneExtra> = {
       "Auto: platicamos qué visibilidad necesitas antes de recomendarlo.",
     ],
     look: "Es el más oscuro y da la máxima privacidad de día. No lo recomendamos donde quieras luz natural.",
-    vltNote: "El número 5 es el nombre comercial; la ficha marca 3%.",
     faq: { question: "¿Para qué cristales no recomiendan el 5?", answer: "Para donde quieras luz natural, porque deja pasar muy poca. Tampoco es lo más cómodo para ver hacia afuera de noche. En esos casos te sugerimos un tono más claro." },
   },
 };
@@ -159,8 +157,8 @@ export default async function TonePage({ params }: { params: Promise<{ tone: str
   };
   const specs: [string, string][] = [
     ["Luz visible que pasa (VLT)", `${film.vlt}%`],
-    ["Rechazo infrarrojo", `${film.infraredRejection}%, medido a ${film.infraredWavelengthNm} nm, según ficha técnica`],
-    ["Rayos UV", `Hasta ${film.uv}% de rechazo, según ficha técnica`],
+    ["Rechazo infrarrojo", `${film.infraredRejection}%, medido a ${film.infraredWavelengthNm} nm`],
+    ["Rayos UV", `Hasta ${film.uv}% de rechazo`],
   ];
   return (
     <>
@@ -240,7 +238,6 @@ export default async function TonePage({ params }: { params: Promise<{ tone: str
               </tbody>
             </table>
           </div>
-          {extra.vltNote ? <p className="install-times-note">{extra.vltNote}</p> : null}
           <DatasheetDownloads items={[{ kind: "casa" }, { kind: "auto" }]} />
         </div>
       </section>

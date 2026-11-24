@@ -2,13 +2,13 @@
   "approved": [
     {
       "id": "nano_uv_99",
-      "text": "Hasta 99% de rechazo UV según ficha técnica.",
+      "text": "Hasta 99% de rechazo UV.",
       "products": ["IR75", "IR50", "IR35", "IR15", "IR5"],
       "status": "APPROVED_WITH_CONTEXT"
     },
     {
       "id": "nano_ir_950",
-      "text": "95% de rechazo infrarrojo medido a 950 nm, según ficha técnica.",
+      "text": "95% de rechazo infrarrojo medido a 950 nm.",
       "products": ["IR75", "IR50", "IR35", "IR15", "IR5"],
       "status": "APPROVED_WITH_CONTEXT"
     },

@@ -29,12 +29,12 @@ export function NanoToneTable() {
               style={{ "--tone-bg": toneSamples[film.id] } as CSSProperties}
               aria-hidden="true"
             />
-            <span className={styles.toneMeta}><strong>TSER {film.tser}%</strong><span>según ficha</span></span>
+            <span className={styles.toneMeta}><strong>TSER {film.tser}%</strong></span>
           </Link>
         ))}
       </div>
       <p className={styles.toneNote}>
-        Muestra visual orientativa del tono; la apariencia final depende también del cristal y de la iluminación. Los números son nombres comerciales; el VLT es el dato de ficha.
+        Muestra visual orientativa del tono; la apariencia final depende también del cristal y de la iluminación.
       </p>
     </div>
   );

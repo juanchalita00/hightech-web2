@@ -81,7 +81,7 @@ export default function NanoPage() {
       <div className="container">
         <div className="section-heading section-heading-split">
           <div><p className="eyebrow">Datos de la Línea IR</p><h2>Los cinco tonos, en una tabla.</h2></div>
-          <p>Luz, calor total, infrarrojo, UV y sombreado. El 50 y el 5 son el nombre del tono: en la ficha, el 50 deja pasar 48% de la luz y el 5 deja pasar 3%.</p>
+          <p>Luz, calor total, infrarrojo, UV y sombreado.</p>
         </div>
         <LineaIrSpecsTable/>
         <p className="linea-ir-note">El coeficiente de sombreado, entre más bajo, menos energía entra. La garantía de la tabla es la del material.</p>

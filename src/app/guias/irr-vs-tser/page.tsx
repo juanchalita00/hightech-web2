@@ -26,7 +26,7 @@ export default function Page() {
           <p>Está el calor que se siente en la piel y en un asiento de piel que quema. Ese, la gama lo corta casi por completo, en el claro y en el oscuro.</p>
           <p>Y está el calor total que el sol hace entrar al cuarto, que también incluye la luz que ves. Ahí el tono más oscuro ayuda un poco más, porque deja pasar menos luz. La diferencia existe, y es menor de lo que la gente espera.</p>
           <HightechTip>
-            Unos lentes de sol oscuros quitan el brillo, pero no protegen tu piel. El bloqueador solar es transparente y sí te protege. Con la película pasa igual: corta el calor por tecnología, no por qué tan oscura es.
+            Unos lentes de sol oscuros quitan el brillo, pero no protegen tu piel. El bloqueador solar es transparente y sí te protege. Con la película pasa igual: frena el calor por tecnología, no por qué tan oscura es.
           </HightechTip>
           <p>No decimos que todos los tonos protejan igual del calor. Decimos que el salto grande está en poner la película, no en irte al tono más negro.</p>
         </div>

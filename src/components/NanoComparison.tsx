@@ -37,7 +37,7 @@ export function NanoComparison() {
           <tbody>{truth.nano.map((film) => <tr key={film.id}><th scope="row"><Link href={`/peliculas/nanoceramica/${film.id.toLowerCase()}/`}>{toneName(film.id)}</Link></th><td>Hasta {film.uv}%</td><td>Bloquea hasta {film.tser}% del calor</td><td>{useCopy[film.id]}</td></tr>)}</tbody>
         </table>
       </div>
-      <p className="fine-print">Los números son los nombres comerciales del tono. El 50 deja pasar 48% de la luz y el 5 deja pasar 3%, según la ficha. Esos números no prometen cuántos grados bajará un cuarto.</p>
+      <p className="fine-print">Los números son los nombres comerciales del tono: el 50 deja pasar 48% de la luz y el 5, 3%.</p>
     </div>
   );
 }

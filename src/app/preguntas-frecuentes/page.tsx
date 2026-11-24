@@ -22,7 +22,7 @@ const minimum = new Intl.NumberFormat("es-MX", { style: "currency", currency: "M
 const items = [
   {
     question: "¿Nanocerámica significa más oscuro?",
-    answer: <p>No. Es la tecnología que corta el calor y los rayos UV. El tono, del 75 al 5, es cuánta luz quieres dejar pasar. <Link href="/guias/que-es-vlt/">Ver cómo se lee la luz</Link>.</p>,
+    answer: <p>No. Es la tecnología que frena el calor y los rayos UV. El tono, del 75 al 5, es cuánta luz quieres dejar pasar. <Link href="/guias/que-es-vlt/">Ver cómo se lee la luz</Link>.</p>,
   },
   {
     question: "¿Un tono más oscuro quita más calor?",

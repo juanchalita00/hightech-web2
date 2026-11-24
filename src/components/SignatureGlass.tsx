@@ -72,7 +72,7 @@ const views = [
     shade: 0.3,
     mirror: false,
     src: "/images/comparador/fachada-exterior-50.webp",
-    alt: "Fachada moderna vista desde la calle, con película nanocerámica tono 50 (48% de luz visible, según ficha).",
+    alt: "Fachada moderna vista desde la calle, con película nanocerámica tono 50 (48% de luz visible).",
   },
   {
     id: "v35",

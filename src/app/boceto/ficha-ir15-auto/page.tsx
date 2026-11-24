@@ -53,7 +53,7 @@ export default function BocetoFichaIr15AutoPage() {
               <span className={styles.bigCaption}>Bloquea hasta {ir15.tser}% del calor.</span>
             </p>
             <p className={styles.context}>
-              De toda la energía del sol que llega al cristal, la película rechaza hasta {ir15.tser}%, según la ficha técnica. Es un dato de laboratorio: en tu auto puede variar según el cristal. No es una promesa de grados.
+              De toda la energía del sol que llega al cristal, la película rechaza hasta {ir15.tser}%. Es un dato de laboratorio: en tu auto puede variar según el cristal. No es una promesa de grados.
             </p>
           </div>
         </div>

@@ -41,14 +41,14 @@ export function NanoSpectrum() {
               <div className="nano-tone-copy">
                 <strong>{toneName(film.id)}</strong>
                 <span>VLT {film.vlt}%</span>
-                <small>Corta el calor del sol</small>
+                <small>Frena el calor del sol</small>
               </div>
               <Icon name="arrow" size={18}/>
             </Link>
           );
         })}
       </div>
-      <p className="nano-spectrum-footnote">Los números 75, 50, 35, 15 y 5 son los nombres comerciales del tono; el VLT es el dato de ficha. El 50 deja pasar 48% de la luz y el 5 deja pasar 3%, según la ficha. De noche, algunas personas batallan con el 5.</p>
+      <p className="nano-spectrum-footnote">De noche, algunas personas batallan con el 5.</p>
     </div>
   );
 }
