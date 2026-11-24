@@ -56,11 +56,16 @@ const tones = [
 
 type ToneId = (typeof tones)[number]["id"];
 
-const jaliscoNote: Record<"IR15" | "IR5", string> = {
+/**
+ * Nota para los tonos oscuros. IR15: texto literal de la ficha IR15 (nota de uso).
+ * IR5: frase publicada en la guía de Jalisco. La regla legal vive en JaliscoLaw,
+ * que ya aparece debajo del comparador en /automotriz; no se repite aquí.
+ */
+const darkToneNote: Record<"IR15" | "IR5", string> = {
   IR15:
-    "El IR15 se ve oscuro. En High Tech este tono va en los cristales de atrás del auto. Lo que dice la ley en Jalisco: cristales delanteros IR75, cristales traseros IR35 o más claro; parabrisas sin película. En el parabrisas lo más común es el IR75. Si quieres privacidad, en High Tech recomendamos máximo IR35, para que te sientas cómodo y conserves la visibilidad.",
+    "El IR15 se ve oscuro. Aquí va en los cristales de atrás del auto. En el parabrisas lo más común es el IR75. Si quieres privacidad, en High Tech recomendamos máximo IR35, para que te sientas cómodo y conserves la visibilidad. Es lo que suele hacerse.",
   IR5:
-    "El IR5 se ve muy oscuro. En High Tech este tono va en los cristales de atrás del auto. Lo que dice la ley en Jalisco: cristales delanteros IR75, cristales traseros IR35 o más claro; parabrisas sin película. En el parabrisas lo más común es el IR75. Si quieres privacidad, en High Tech recomendamos máximo IR35, para que te sientas cómodo y conserves la visibilidad.",
+    "El IR5 se ve muy oscuro. Lo más común en el auto son los tonos 75, 50 y 35. El 15 y el 5 son más oscuros y se usan sobre todo en casa y negocio; si te interesan para el auto, lo platicamos.",
 };
 
 export function AutomotiveToneSimulator() {
@@ -69,7 +74,7 @@ export function AutomotiveToneSimulator() {
   const clipId = useId().replace(/:/g, "");
   const car = cars[carId];
   const tone = tones.find((item) => item.id === toneId) ?? tones[2];
-  const law = tone.id === "IR15" || tone.id === "IR5" ? jaliscoNote[tone.id] : null;
+  const note = tone.id === "IR15" || tone.id === "IR5" ? darkToneNote[tone.id] : null;
   const status = `${car.label}, tono ${tone.label}, ${tone.vlt}% de luz visible, ${tone.description}.`;
 
   return (
@@ -89,65 +94,67 @@ export function AutomotiveToneSimulator() {
       </div>
 
       <div className={styles.frame}>
-        {(Object.keys(cars) as CarId[]).map((id) => {
-          const item = cars[id];
-          const visible = id === carId;
-          return (
-            <img
-              key={id}
-              src={item.src}
-              srcSet={`${item.mobileSrc} 800w, ${item.src} 2400w`}
-              sizes="(max-width: 720px) calc(100vw - 2rem), min(76rem, calc(100vw - 2rem))"
-              width={FRAME.width}
-              height={FRAME.height}
-              alt={visible ? item.alt : ""}
-              className={visible ? styles.photo : styles.photoHidden}
-              loading="lazy"
-              decoding="async"
-              aria-hidden={visible ? undefined : true}
-            />
-          );
-        })}
-        <svg
-          className={styles.glassTint}
-          viewBox={`0 0 ${FRAME.width} ${FRAME.height}`}
-          preserveAspectRatio="xMidYMid meet"
-          aria-hidden="true"
-        >
-          <defs>
-            <clipPath id={clipId}>
-              {car.panels.map((points) => (
-                <polygon key={points} points={points} />
-              ))}
-            </clipPath>
-            <linearGradient id={`${clipId}-glass`} x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stopColor="#ffffff" stopOpacity="0.22" />
-              <stop offset="0.2" stopColor="#ffffff" stopOpacity="0.05" />
-              <stop offset="0.7" stopColor="#ffffff" stopOpacity="0" />
-              <stop offset="1" stopColor="#d7e4ee" stopOpacity="0.12" />
-            </linearGradient>
-          </defs>
-          <g clipPath={`url(#${clipId})`}>
-            <rect
-              className={styles.tintShade}
-              x="0"
-              y="0"
-              width={FRAME.width}
-              height={FRAME.height}
-              fill="#07090c"
-              style={{ opacity: tone.shade }}
-            />
-            <rect
-              className={styles.tintShade}
-              x="0"
-              y="0"
-              width={FRAME.width}
-              height={FRAME.height}
-              fill={`url(#${clipId}-glass)`}
-              style={{ opacity: tone.shade === 0 ? 0 : 0.45 }}
-            />
-          </g>
-        </svg>
+        <div className={styles.stage}>
+          {(Object.keys(cars) as CarId[]).map((id) => {
+            const item = cars[id];
+            const visible = id === carId;
+            return (
+              <img
+                key={id}
+                src={item.src}
+                srcSet={`${item.mobileSrc} 800w, ${item.src} 2400w`}
+                sizes="(max-width: 720px) 108vw, min(76rem, calc(100vw - 2rem))"
+                width={FRAME.width}
+                height={FRAME.height}
+                alt={visible ? item.alt : ""}
+                className={visible ? styles.photo : styles.photoHidden}
+                loading="lazy"
+                decoding="async"
+                aria-hidden={visible ? undefined : true}
+              />
+            );
+          })}
+          <svg
+            className={styles.glassTint}
+            viewBox={`0 0 ${FRAME.width} ${FRAME.height}`}
+            preserveAspectRatio="xMidYMid meet"
+            aria-hidden="true"
+          >
+            <defs>
+              <clipPath id={clipId}>
+                {car.panels.map((points) => (
+                  <polygon key={points} points={points} />
+                ))}
+              </clipPath>
+              <linearGradient id={`${clipId}-glass`} x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stopColor="#ffffff" stopOpacity="0.22" />
+                <stop offset="0.2" stopColor="#ffffff" stopOpacity="0.05" />
+                <stop offset="0.7" stopColor="#ffffff" stopOpacity="0" />
+                <stop offset="1" stopColor="#d7e4ee" stopOpacity="0.12" />
+              </linearGradient>
+            </defs>
+            <g clipPath={`url(#${clipId})`}>
+              <rect
+                className={styles.tintShade}
+                x="0"
+                y="0"
+                width={FRAME.width}
+                height={FRAME.height}
+                fill="#07090c"
+                style={{ opacity: tone.shade }}
+              />
+              <rect
+                className={styles.tintShade}
+                x="0"
+                y="0"
+                width={FRAME.width}
+                height={FRAME.height}
+                fill={`url(#${clipId}-glass)`}
+                style={{ opacity: tone.shade === 0 ? 0 : 0.45 }}
+              />
+            </g>
+          </svg>
+        </div>
         <p className={styles.visualLabel}>Visualización</p>
       </div>
 
@@ -174,9 +181,9 @@ export function AutomotiveToneSimulator() {
         Aproximación de cómo se ve el tono en el cristal. Es un render de visualización, no la foto de un auto instalado.
       </p>
 
-      {law ? (
+      {note ? (
         <aside className={styles.lawNote} aria-live="polite">
-          <p>{law}</p>
+          <p>{note}</p>
           <p>
             <Link href="/guias/polarizado-automotriz-jalisco/">Ver la guía de Jalisco</Link>.
           </p>

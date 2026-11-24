@@ -101,6 +101,13 @@
   background: #bcd6ef;
 }
 
+/* Contenedor interno: foto + SVG juntos. Cualquier zoom/recorte se aplica aquí,
+   nunca solo a la imagen, para que los polígonos sigan alineados. */
+.stage {
+  position: absolute;
+  inset: 0;
+}
+
 .photo,
 .photoHidden {
   position: absolute;
@@ -178,6 +185,27 @@
 .lawNote a {
   color: var(--accent);
   text-decoration-thickness: 1px;
+}
+
+/* Móvil: sangrado completo y zoom estático 1.08 del stage (foto + SVG).
+   Recorta solo aire de estudio: ~89 px por lado, ~39 px de cielo, ~32 px de piso
+   (en px del encuadre 2400×948). No subir de 1.08: 1.10 roza faros/defensas del SUV. */
+@media (max-width: 720px) {
+  .frame {
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    border-radius: 0;
+  }
+
+  .stage {
+    inset: auto;
+    left: -4%;
+    top: -4.4%;
+    width: 108%;
+    height: 108%;
+  }
 }
 
 @media (max-width: 420px) {

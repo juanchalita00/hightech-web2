@@ -114,7 +114,7 @@ export default function AutomotivePage() {
         </div>
       </section>
 
-      <section className="section section-alt" id="tonos" style={{ scrollMarginTop: "6rem" }}>
+      <section className="section section-alt" id="tonos" style={{ scrollMarginTop: "6rem", overflowX: "clip" }}>
         <div className="container">
           <div className="section-heading">
             <p className="eyebrow">Tonos en el cristal</p>
