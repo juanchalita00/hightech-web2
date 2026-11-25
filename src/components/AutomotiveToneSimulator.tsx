@@ -241,9 +241,10 @@ function chipTone(_carId: CarId, _zone: ZoneId, toneId: ToneId) {
   return "De fábrica";
 }
 
-/** Punto de partida: SUV, vista exterior, las 3 zonas en IR35, «Traseros y medallón» marcada. */
-const START: Selection = { rear: "IR35", front: "IR35", windshield: "IR35" };
-const START_MESSAGE = "Punto de partida: SUV, vista exterior, todas las zonas en IR35. Marca una o varias y elige el tono.";
+/** Punto de partida: SUV, vista exterior, las 3 zonas sin película, «Traseros y medallón» marcada. */
+const START: Selection = { rear: "none", front: "none", windshield: "none" };
+const START_MESSAGE =
+  "Punto de partida: SUV, vista exterior, todas las zonas sin película (vidrio de fábrica). Marca una o varias y elige el tono.";
 
 const allZones = (toneId: ToneId): Selection => ({ rear: toneId, front: toneId, windshield: toneId });
 
