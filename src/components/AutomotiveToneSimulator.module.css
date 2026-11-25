@@ -1,4 +1,4 @@
-/* Simulador automotriz v6: coche sticky + controles compactos. Mobile-first (390×844). */
+/* Simulador automotriz v7: coche sticky + controles compactos. Mobile-first (390×844). */
 .simulator {
   --sim-top: 4.5rem; /* alto del encabezado fijo del sitio en móvil */
   display: flex;
@@ -26,9 +26,9 @@
 .pickers {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.45rem;
+  gap: 0.35rem;
   min-width: 0;
-  max-width: 28rem;
+  max-width: 32rem;
 }
 
 .segment {
@@ -46,8 +46,6 @@
 .segmentActive,
 .segmentPending,
 .shortcut,
-.toneButton,
-.toneButtonActive,
 .zoneChip,
 .zoneChipActive {
   min-width: 0;
@@ -66,9 +64,9 @@
 .segmentActive,
 .segmentPending {
   min-height: 40px;
-  padding: 0.3rem 0.5rem;
+  padding: 0.3rem 0.2rem;
   border-radius: 999px;
-  font-size: 0.86rem;
+  font-size: 0.8rem;
   font-weight: 750;
 }
 
@@ -234,65 +232,10 @@
   stroke-width: 1.5;
 }
 
-/* Tonos: 6 en una fila, siempre a la vista. */
-.toneDock {
-  display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 0.25rem;
-  min-width: 0;
-  padding: 0.22rem;
-  border: 1px solid var(--line);
-  border-radius: 0.9rem;
-  background: var(--surface);
-  box-shadow: 0 1px 2px rgba(16, 21, 40, 0.06);
-}
-
-.toneButton,
-.toneButtonActive {
-  display: grid;
-  place-items: center;
-  align-content: center;
-  gap: 0.08rem;
-  min-height: 46px;
-  padding: 0.25rem 0.1rem;
-  border-radius: 0.65rem;
-}
-
-.toneButton strong,
-.toneButtonActive strong {
-  font-size: 0.8rem;
-  font-weight: 800;
-  line-height: 1.05;
-}
-
-.toneButton span,
-.toneButtonActive span {
-  font-size: 0.6rem;
-  font-weight: 600;
-  color: var(--ink-soft);
-  line-height: 1.05;
-}
-
-.toneButton:hover {
-  background: var(--accent-soft);
-}
-
-.toneButtonActive {
-  color: #fff;
-  background: linear-gradient(180deg, #2b3a74, var(--brand-deep));
-  box-shadow: 0 4px 10px rgba(27, 36, 74, 0.28);
-}
-
-.toneButtonActive span {
-  color: rgba(255, 255, 255, 0.88);
-}
-
 .segmentButton:focus-visible,
 .segmentActive:focus-visible,
 .segmentPending:focus-visible,
 .shortcut:focus-visible,
-.toneButton:focus-visible,
-.toneButtonActive:focus-visible,
 .zoneChip:focus-visible,
 .zoneChipActive:focus-visible,
 .lawNote a:focus-visible {
@@ -301,6 +244,7 @@
 }
 
 .frame,
+.frameFrente,
 .frameInterior {
   position: relative;
   width: 100%;
@@ -310,6 +254,7 @@
 }
 
 .frame[data-loading],
+.frameFrente[data-loading],
 .frameInterior[data-loading] {
   opacity: 0.8;
 }
@@ -319,12 +264,25 @@
   background: #bcd6ef;
 }
 
+/* Frente 3/4 (2:1): mismo fondo de estudio que el perfil. */
+.frameFrente {
+  /* Ancho acotado (no alto): la caja conserva la proporción exacta de la foto, sin bandas. */
+  width: min(100%, 52rem, calc(36svh * 2));
+  margin-inline: auto;
+  aspect-ratio: 1840 / 920;
+  background: #aacbe6;
+  touch-action: pan-y;
+}
+
+.frame {
+  touch-action: pan-y;
+}
+
 /* Interior 4:3: el recuadro declara su proporción por CSS (sin salto al cargar la foto). */
 .frameInterior {
-  max-width: 46rem;
+  width: min(100%, 46rem, calc(40svh * 1152 / 864));
   margin-inline: auto;
   aspect-ratio: 1152 / 864;
-  max-height: 42svh;
   background: #aab6c4;
 }
 
@@ -366,10 +324,6 @@
   pointer-events: none;
 }
 
-.tintShade {
-  transition: opacity 0.22s ease;
-}
-
 .hit,
 .hitActive {
   fill: transparent;
@@ -382,14 +336,14 @@
 .visualLabel {
   position: absolute;
   z-index: 3;
-  top: 0.4rem;
-  right: 0.4rem;
+  bottom: 0.35rem;
+  right: 0.35rem;
   margin: 0;
   padding: 0.15rem 0.4rem;
   border-radius: 0.3rem;
   background: rgba(16, 21, 40, 0.7);
   color: #fff;
-  font-size: 0.62rem;
+  font-size: 0.56rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -400,6 +354,13 @@
   color: var(--ink);
   font-size: 0.9rem;
   font-weight: 650;
+  line-height: 1.4;
+}
+
+.factoryNote {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.8rem;
   line-height: 1.4;
 }
 
@@ -436,6 +397,340 @@
   text-align: center;
 }
 
+/* ── Tomas del exterior: flechas sobre la foto + puntitos con nombre ─────────── */
+.shotArrow {
+  position: absolute;
+  z-index: 4;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  margin-top: -17px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  color: #fff;
+  background: rgba(16, 21, 40, 0.42);
+  font: 700 1.35rem/1 inherit;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.shotArrow:hover {
+  background: rgba(16, 21, 40, 0.65);
+}
+
+.shotPrev {
+  left: 0.3rem;
+}
+
+.shotNext {
+  right: 0.3rem;
+}
+
+.shotDots {
+  display: flex;
+  justify-content: center;
+  gap: 0.2rem;
+  min-width: 0;
+  margin-top: -0.1rem;
+}
+
+.shotDot,
+.shotDotActive,
+.shotDotPending {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  min-height: 28px;
+  padding: 0.1rem 0.45rem;
+  border: 0;
+  border-radius: 999px;
+  color: var(--ink-soft);
+  background: transparent;
+  font: inherit;
+  font-size: 0.7rem;
+  font-weight: 700;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.shotDot span,
+.shotDotActive span,
+.shotDotPending span {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #b7c0d6;
+}
+
+.shotDot em,
+.shotDotActive em,
+.shotDotPending em {
+  font-style: normal;
+}
+
+.shotDotActive {
+  color: var(--brand-deep);
+}
+
+.shotDotActive span {
+  width: 18px;
+  background: var(--brand-deep);
+}
+
+.shotDotPending span {
+  background: var(--accent);
+  animation: simPulse 0.9s ease-in-out infinite;
+}
+
+/* ── Etiquetas sobre la foto (esquinas inferiores, fuera de los cristales) ──── */
+.toneTag,
+.toneTagRight {
+  position: absolute;
+  z-index: 4;
+  bottom: 0.35rem;
+  max-width: calc(50% - 0.6rem);
+  margin: 0;
+  padding: 0.18rem 0.45rem;
+  border-radius: 0.35rem;
+  background: rgba(16, 21, 40, 0.74);
+  color: #fff;
+  font-size: 0.64rem;
+  font-weight: 700;
+  line-height: 1.2;
+  pointer-events: none;
+}
+
+.toneTag {
+  left: 0.35rem;
+  max-width: calc(100% - 0.7rem);
+}
+
+.toneTagRight {
+  right: 0.35rem;
+  bottom: 1.55rem;
+  text-align: right;
+}
+
+.frameInterior .toneTag,
+.frameFrente .toneTag {
+  max-width: 62%;
+}
+
+/* ── Antes / después ──────────────────────────────────────────────────────── */
+.compareToggle,
+.compareToggleOn {
+  position: absolute;
+  z-index: 6;
+  top: 0.35rem;
+  right: 0.35rem;
+  min-height: 30px;
+  padding: 0.2rem 0.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 999px;
+  color: var(--brand-deep);
+  background: rgba(255, 255, 255, 0.9);
+  font: inherit;
+  font-size: 0.7rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(16, 21, 40, 0.18);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.compareToggleOn {
+  color: #fff;
+  background: var(--brand-deep);
+}
+
+/* En la toma 3/4 de atrás el cielo libre queda a la izquierda (a la derecha está el medallón). */
+.compareToggle[data-side="left"],
+.compareToggleOn[data-side="left"] {
+  right: auto;
+  left: 0.35rem;
+}
+
+.compareLayer {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  cursor: ew-resize;
+  touch-action: pan-y;
+}
+
+.compareHandle {
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  margin-left: -1px;
+  background: #fff;
+  box-shadow: 0 0 0 1px rgba(16, 21, 40, 0.35);
+  pointer-events: none;
+}
+
+.compareHandle span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  transform: translate(-50%, -50%);
+  border-radius: 999px;
+  color: var(--brand-deep);
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(16, 21, 40, 0.35);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+}
+
+.compareHandle:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ── Resplandor del sol en interior (se atenúa con el tono del parabrisas) ─── */
+.glare {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  transition: opacity 0.18s linear;
+}
+
+.glare[data-car="suv"] {
+  background:
+    radial-gradient(circle at 58% 34%, rgba(255, 246, 222, 0.95) 0, rgba(255, 240, 205, 0.55) 4%, rgba(255, 232, 190, 0.18) 14%, transparent 30%),
+    radial-gradient(ellipse 38% 9% at 66% 72%, rgba(255, 236, 205, 0.42), transparent 100%),
+    radial-gradient(ellipse 16% 6% at 50% 66%, rgba(255, 238, 210, 0.3), transparent 100%);
+}
+
+.glare[data-car="sedan"] {
+  background:
+    radial-gradient(circle at 57% 30%, rgba(255, 246, 222, 0.95) 0, rgba(255, 240, 205, 0.55) 4%, rgba(255, 232, 190, 0.18) 14%, transparent 30%),
+    radial-gradient(ellipse 36% 8% at 66% 60%, rgba(255, 236, 205, 0.42), transparent 100%),
+    radial-gradient(ellipse 16% 6% at 34% 54%, rgba(255, 238, 210, 0.3), transparent 100%);
+}
+
+/* ── Slider de tono: 6 paradas, de claro a oscuro ─────────────────────────── */
+.toneSlider {
+  --thumb: 30px;
+  display: grid;
+  gap: 0.1rem;
+  min-width: 0;
+  padding: 0.35rem 0.25rem 0.2rem;
+  border: 1px solid var(--line);
+  border-radius: 0.9rem;
+  background: var(--surface);
+  box-shadow: 0 1px 2px rgba(16, 21, 40, 0.06);
+}
+
+.range {
+  /* Las paradas caen en el centro de cada columna de etiquetas (6 columnas iguales). */
+  width: calc(100% * 5 / 6 + var(--thumb));
+  margin: 0 calc(100% / 12 - var(--thumb) / 2);
+  height: var(--thumb);
+  background: transparent;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  touch-action: pan-y;
+}
+
+.range::-webkit-slider-runnable-track {
+  height: 10px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #dfe9f2, #b9cfe2 22%, #8a9db0 45%, #5b6675 62%, #2c323c 82%, #111419);
+}
+
+.range::-moz-range-track {
+  height: 10px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #dfe9f2, #b9cfe2 22%, #8a9db0 45%, #5b6675 62%, #2c323c 82%, #111419);
+}
+
+.range::-webkit-slider-thumb {
+  width: var(--thumb);
+  height: var(--thumb);
+  margin-top: calc(5px - var(--thumb) / 2);
+  border: 3px solid var(--brand-deep);
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(16, 21, 40, 0.3);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.range::-moz-range-thumb {
+  width: calc(var(--thumb) - 6px);
+  height: calc(var(--thumb) - 6px);
+  border: 3px solid var(--brand-deep);
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(16, 21, 40, 0.3);
+}
+
+.range:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 999px;
+}
+
+.ticks {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  min-width: 0;
+}
+
+.tick,
+.tickActive {
+  display: grid;
+  justify-items: center;
+  gap: 0.05rem;
+  min-width: 0;
+  min-height: 34px;
+  padding: 0.1rem 0;
+  border: 0;
+  border-radius: 0.5rem;
+  color: var(--ink);
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.tick strong,
+.tickActive strong {
+  font-size: 0.74rem;
+  font-weight: 800;
+  line-height: 1.05;
+}
+
+.tick span,
+.tickActive span {
+  font-size: 0.56rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  line-height: 1.05;
+  white-space: nowrap;
+}
+
+.tickActive {
+  color: var(--brand-deep);
+  background: var(--accent-soft);
+}
+
+.tickActive span {
+  color: var(--brand-deep);
+}
+
 @keyframes simPulse {
   50% {
     opacity: 0.55;
@@ -443,15 +738,7 @@
 }
 
 @media (max-width: 420px) {
-  .toneButton span,
-  .toneButtonActive span {
-    font-size: 0.56rem;
-  }
 
-  .toneButton strong,
-  .toneButtonActive strong {
-    font-size: 0.74rem;
-  }
 
   .zoneChip strong,
   .zoneChipActive strong {
@@ -483,7 +770,18 @@
   }
 
   .frameInterior {
-    max-height: none;
+    width: min(100%, 46rem);
+  }
+
+  .frameFrente {
+    width: min(100%, 52rem);
+  }
+
+  .segmentButton,
+  .segmentActive,
+  .segmentPending {
+    padding-inline: 0.6rem;
+    font-size: 0.86rem;
   }
 
   .zoneDock {
@@ -494,19 +792,21 @@
     grid-template-columns: repeat(3, minmax(0, 11rem));
   }
 
-  .toneDock {
+  .toneSlider {
     max-width: 40rem;
   }
 
-  .toneButton span,
-  .toneButtonActive span {
-    font-size: 0.7rem;
+  .tick strong,
+  .tickActive strong {
+    font-size: 0.88rem;
   }
 
-  .toneButton strong,
-  .toneButtonActive strong {
-    font-size: 0.9rem;
+  .tick span,
+  .tickActive span {
+    font-size: 0.68rem;
   }
+
+
 
   .zoneChip strong,
   .zoneChipActive strong {
@@ -542,17 +842,17 @@
   .segmentActive,
   .segmentPending,
   .shortcut,
-  .toneButton,
-  .toneButtonActive,
   .zoneChip,
   .zoneChipActive,
-  .tintShade,
+  .glare,
   .frame,
+  .frameFrente,
   .frameInterior {
     transition: none;
   }
 
-  .segmentPending {
+  .segmentPending,
+  .shotDotPending span {
     animation: none;
   }
 }
