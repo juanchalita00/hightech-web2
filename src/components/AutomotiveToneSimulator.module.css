@@ -45,7 +45,6 @@
 .segmentButton,
 .segmentActive,
 .segmentPending,
-.shortcut,
 .zoneChip,
 .zoneChipActive {
   min-width: 0;
@@ -89,29 +88,6 @@
   display: grid;
   gap: 0.6rem;
   min-width: 0;
-}
-
-.shortcuts {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.35rem;
-  min-width: 0;
-}
-
-.shortcut {
-  min-height: 40px;
-  padding: 0.3rem 0.35rem;
-  border-color: var(--line);
-  border-radius: 999px;
-  background: var(--surface);
-  font-size: 0.78rem;
-  font-weight: 750;
-  line-height: 1.1;
-}
-
-.shortcut:hover {
-  border-color: var(--accent);
-  background: var(--accent-soft);
 }
 
 .step {
@@ -235,7 +211,6 @@
 .segmentButton:focus-visible,
 .segmentActive:focus-visible,
 .segmentPending:focus-visible,
-.shortcut:focus-visible,
 .zoneChip:focus-visible,
 .zoneChipActive:focus-visible,
 .lawNote a:focus-visible {
@@ -788,10 +763,6 @@
     max-width: 40rem;
   }
 
-  .shortcuts {
-    grid-template-columns: repeat(3, minmax(0, 11rem));
-  }
-
   .toneSlider {
     max-width: 40rem;
   }
@@ -841,7 +812,6 @@
   .segmentButton,
   .segmentActive,
   .segmentPending,
-  .shortcut,
   .zoneChip,
   .zoneChipActive,
   .glare,

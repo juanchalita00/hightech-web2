@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Icon } from "@/components/Icon";
 import { track } from "@/lib/analytics";
 import { generateLeadRef } from "@/lib/lead-ref";
+import { FILM_VLT, filmLook } from "@/lib/automotive-tone-look";
 import { whatsappUrl } from "@/lib/whatsapp";
 import {
   FRAME,
@@ -36,16 +37,11 @@ import styles from "./AutomotiveToneSimulator.module.css";
  * Una zona «se ve» en una escena si esa escena tiene polígonos para ella.
  *
  * ── Vidrio de fábrica (v7) ───────────────────────────────────────────────────
- * «Sin película» ya no es un hueco transparente: se ve el vidrio de fábrica.
- *   - SUV, traseros y medallón: oscurecido de fábrica tipo privacy, ~25% de luz (aprox.).
- *   - Resto (SUV delanteros, todo el sedán, parabrisas): tinte ligero ~75–80% de luz,
- *     levemente verdoso/gris. La foto base ya representa ese vidrio claro (la fórmula
- *     exterior toma la foto como 75%), así que solo se le da un velo visible mínimo.
- * Película sobre vidrio de fábrica = se suman: T_total ≈ T_fábrica × T_película.
- *   - Sobre el vidrio claro, el ~78% de fábrica ya está dentro de la referencia: cada
- *     película usa su VLT tal cual, con el velo de fábrica como piso (nunca más clara).
- *   - Sobre el privacy del SUV: VLT efectivo = 25 × VLT película / 100 (IR75 → ~19%,
- *     IR50 → 12%, IR35 → ~9%, IR15 → ~4%, IR5 → ~1%). Nunca más claro que «sin película».
+ * «Sin película» ya no es un hueco transparente: se ve un velo neutro de fábrica
+ * (~75–80% de luz, sin matiz de color) en todas las zonas y en ambos autos.
+ * La foto base ya representa ese vidrio claro (la fórmula exterior toma la foto
+ * como 75%), así que solo se le da un velo visible mínimo. Cada película usa su
+ * VLT tal cual, con el velo de fábrica como piso (nunca más clara que «sin película»).
  * Es una aproximación visual: el vidrio de fábrica varía por vehículo.
  *
  * ── Tinte exterior / frente ──────────────────────────────────────────────────
@@ -215,12 +211,12 @@ const sceneKeys = Object.keys(scenes) as SceneKey[];
 const zoneSeen = (key: SceneKey, zone: ZoneId) => scenes[key].glass[zone].length > 0;
 
 const tones = [
-  { id: "none", label: "Sin película", sub: "sin tono", vlt: null, description: "sin película" },
-  { id: "IR75", label: "IR75", sub: "75% luz", vlt: 75, description: "muy claro" },
-  { id: "IR50", label: "IR50", sub: "48% luz", vlt: 48, description: "claro" },
-  { id: "IR35", label: "IR35", sub: "35% luz", vlt: 35, description: "intermedio" },
-  { id: "IR15", label: "IR15", sub: "15% luz", vlt: 15, description: "oscuro" },
-  { id: "IR5", label: "IR5", sub: "3% luz", vlt: 3, description: "muy oscuro" },
+  { id: "none", label: "Sin película", sub: "sin tono", vlt: FILM_VLT.none, description: "sin película" },
+  { id: "IR75", label: "IR75", sub: "75% luz", vlt: FILM_VLT.IR75, description: "muy claro" },
+  { id: "IR50", label: "IR50", sub: "48% luz", vlt: FILM_VLT.IR50, description: "claro" },
+  { id: "IR35", label: "IR35", sub: "35% luz", vlt: FILM_VLT.IR35, description: "intermedio" },
+  { id: "IR15", label: "IR15", sub: "15% luz", vlt: FILM_VLT.IR15, description: "oscuro" },
+  { id: "IR5", label: "IR5", sub: "3% luz", vlt: FILM_VLT.IR5, description: "muy oscuro" },
 ] as const;
 
 type ToneId = (typeof tones)[number]["id"];
@@ -228,82 +224,21 @@ type Selection = Record<ZoneId, ToneId>;
 
 const toneById = (id: ToneId) => tones.find((item) => item.id === id) ?? tones[0];
 
-/** Vidrio de fábrica que se ve con «Sin película» (aproximado; varía por vehículo). */
-type Factory = { kind: "privacy" | "light"; vlt: number };
-const factoryGlass = (carId: CarId, zone: ZoneId): Factory =>
-  carId === "suv" && zone === "rear" ? { kind: "privacy", vlt: 25 } : { kind: "light", vlt: 78 };
-
-/** Exterior / frente: 1 − VLT/75 (IR50 = 0.36, IR35 = 0.533, IR15 = 0.8, IR5 = 0.96), tope 0.975. */
-const exteriorShade = (vlt: number) => Math.min(0.975, Math.max(0, 1 - vlt / 75));
-
-/** Interior: curva de apariencia (VLT → opacidad), interpolada para VLT combinados. */
-const INTERIOR_CURVE: ReadonlyArray<readonly [number, number]> = [
-  [100, 0],
-  [75, 0.11],
-  [48, 0.18],
-  [35, 0.26],
-  [15, 0.4],
-  [3, 0.53],
-  [0, 0.6],
-];
-function interiorShade(vlt: number) {
-  for (let i = 1; i < INTERIOR_CURVE.length; i += 1) {
-    const [v0, s0] = INTERIOR_CURVE[i - 1];
-    const [v1, s1] = INTERIOR_CURVE[i];
-    if (vlt >= v1) return s0 + ((v0 - vlt) / (v0 - v1)) * (s1 - s0);
-  }
-  return INTERIOR_CURVE[INTERIOR_CURVE.length - 1][1];
-}
-
-/** Velo mínimo del vidrio de fábrica claro: nunca se ve como un hueco transparente. */
-const LIGHT_FACTORY_FLOOR = { outside: 0.1, interior: 0.05 } as const;
-/** IR75 queda apenas por encima del vidrio de fábrica claro (y se distingue por su matiz azul). */
-const IR75_FLOOR = { outside: 0.15, interior: 0.11 } as const;
-
-/** Capas de color encima del sombreado (opacidad por lado). */
-const TINT = {
-  /** IR75: azul/cian frío, sutil. */
-  ir75: { color: "#4f93c9", outside: 0.13, interior: 0.11 },
-  /** Vidrio de fábrica: verdoso/gris ligero. */
-  factory: { color: "#7f9a88", outside: 0.14, interior: 0.08 },
-} as const;
-
-type Look = { shade: number; tint: string | null; tintOpacity: number };
-
-/** Apariencia de una zona: sombreado (negro) + capa de color opcional. */
-function lookFor(view: ViewId, carId: CarId, zone: ZoneId, toneId: ToneId): Look {
-  const side = view === "interior" ? "interior" : "outside";
-  const factory = factoryGlass(carId, zone);
-  const film = toneById(toneId).vlt;
-  const shadeOf = (vlt: number) => (side === "interior" ? interiorShade(vlt) : exteriorShade(vlt));
-  let shade: number;
-  if (factory.kind === "privacy") {
-    // Película encima del privacy: T_total ≈ T_fábrica × T_película.
-    shade = shadeOf((factory.vlt * (film ?? 100)) / 100);
-  } else {
-    // El vidrio claro ya está en la referencia: la película usa su VLT, con el velo de fábrica como piso.
-    shade = Math.max(
-      film === null ? 0 : shadeOf(film),
-      toneId === "IR75" ? IR75_FLOOR[side] : LIGHT_FACTORY_FLOOR[side],
-    );
-  }
-  if (toneId === "IR75") return { shade, tint: TINT.ir75.color, tintOpacity: TINT.ir75[side] };
-  if (film === null) return { shade, tint: TINT.factory.color, tintOpacity: TINT.factory[side] };
-  return { shade, tint: null, tintOpacity: 0 };
+/** Apariencia de una zona: misma fórmula que las muestras de /automotriz (`filmLook`). */
+function lookFor(view: ViewId, _carId: CarId, _zone: ZoneId, toneId: ToneId) {
+  return filmLook(view === "interior" ? "interior" : "outside", toneId);
 }
 
 /** Texto del tono por zona: «sin película» dice qué vidrio de fábrica se ve. */
-function toneName(carId: CarId, zone: ZoneId, toneId: ToneId) {
+function toneName(_carId: CarId, _zone: ZoneId, toneId: ToneId) {
   if (toneId !== "none") return toneById(toneId).label;
-  return factoryGlass(carId, zone).kind === "privacy"
-    ? "sin película (vidrio de fábrica, ~25%)"
-    : "sin película (vidrio de fábrica)";
+  return "sin película (vidrio de fábrica)";
 }
 
 /** Texto corto del chip. */
-function chipTone(carId: CarId, zone: ZoneId, toneId: ToneId) {
+function chipTone(_carId: CarId, _zone: ZoneId, toneId: ToneId) {
   if (toneId !== "none") return toneById(toneId).label;
-  return factoryGlass(carId, zone).kind === "privacy" ? "De fábrica (~25%)" : "De fábrica";
+  return "De fábrica";
 }
 
 /** Punto de partida: SUV, vista exterior, las 3 zonas en IR35, «Traseros y medallón» marcada. */
@@ -376,10 +311,10 @@ const TONE_WORD: Record<ToneId, string> = {
   IR5: "Muy oscuro",
 };
 
-function tagText(carId: CarId, zone: ZoneId, toneId: ToneId) {
+function tagText(_carId: CarId, zone: ZoneId, toneId: ToneId) {
   const name = zoneInfo(zone).short;
   if (toneId === "none")
-    return `${name}: sin película · vidrio de fábrica${factoryGlass(carId, zone).kind === "privacy" ? " ~25%" : ""}`;
+    return `${name}: sin película · vidrio de fábrica`;
   const tone = toneById(toneId);
   return `${name}: ${tone.label} · ${tone.vlt}% luz · ${TONE_WORD[toneId]}`;
 }
@@ -426,7 +361,6 @@ export function AutomotiveToneSimulator() {
   const [near, setNear] = useState(false);
   const [selection, setSelection] = useState<Selection>(START);
   const [marked, setMarked] = useState<ZoneId[]>(["rear"]);
-  const [lastTone, setLastTone] = useState<ToneId>("IR35");
   const [message, setMessage] = useState(START_MESSAGE);
   const uid = useId().replace(/:/g, "");
   const rootRef = useRef<HTMLDivElement | null>(null);
@@ -560,7 +494,6 @@ export function AutomotiveToneSimulator() {
       for (const zone of marked) next[zone] = toneId;
       return next;
     });
-    if (toneId !== "none") setLastTone(toneId);
     setMessage(capital(`${markedLabels}: ${describeTone(toneId)}.`) + visibilityNote(marked));
   }
 
@@ -589,27 +522,6 @@ export function AutomotiveToneSimulator() {
     swipe.current = null;
     setMarked([zone]);
     setMessage(`${zoneInfo(zone).label} marcada, ahora en ${describeTone(selection[zone])}.${visibilityNote([zone])}`);
-  }
-
-  function sameEverywhere() {
-    const toneId = selection[primary];
-    setSelection(allZones(toneId));
-    if (toneId !== "none") setLastTone(toneId);
-    setMessage(toneId === "none" ? "Todas las zonas sin película." : `Todas las zonas en ${describeTone(toneId)}.`);
-  }
-
-  function onlyRear() {
-    const toneId = selection[primary] === "none" ? lastTone : selection[primary];
-    setSelection({ ...allZones("none"), rear: toneId });
-    setLastTone(toneId);
-    setMessage(
-      `Solo atrás: laterales traseros y medallón en ${describeTone(toneId)}. Delanteros y parabrisas sin película.`,
-    );
-  }
-
-  function clearAll() {
-    setSelection(allZones("none"));
-    setMessage("Todas las zonas sin película.");
   }
 
   function startWhatsApp() {
@@ -999,17 +911,6 @@ export function AutomotiveToneSimulator() {
           </div>
         </div>
 
-        <div className={styles.shortcuts} role="group" aria-label="Atajos">
-          <button type="button" className={styles.shortcut} onClick={sameEverywhere}>
-            Todo igual
-          </button>
-          <button type="button" className={styles.shortcut} onClick={onlyRear}>
-            Solo atrás
-          </button>
-          <button type="button" className={styles.shortcut} onClick={clearAll}>
-            Quitar todo
-          </button>
-        </div>
       </div>
 
       <p className={styles.status} role="status" aria-live="polite">
@@ -1017,9 +918,8 @@ export function AutomotiveToneSimulator() {
       </p>
 
       <p className={styles.factoryNote}>
-        «Sin película» muestra un vidrio de fábrica aproximado
-        {carId === "suv" ? " (en esta SUV, traseros ~25%)" : " (tinte ligero)"}: varía por vehículo; High Tech no lo vende
-        ni lo garantiza.
+        «Sin película» muestra un vidrio de fábrica aproximado (tinte ligero): varía por vehículo; High Tech no lo
+        vende ni lo garantiza.
       </p>
 
       <p className={styles.lawNote}>

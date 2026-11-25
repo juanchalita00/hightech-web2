@@ -415,8 +415,9 @@ thead th { background: var(--surface-alt); }
 .auto-tone-row { display:grid; grid-template-columns:4.7rem 1fr 4.8rem auto; gap:1rem; align-items:center; padding:.78rem; border-radius:1rem; text-decoration:none; }
 .auto-tone-row:hover { background:var(--surface-alt); }
 .auto-tone-row:not(:last-of-type) { border-bottom:1px solid #edf0f5; }
-.auto-tone-glass { position:relative; height:3.5rem; display:grid; place-items:center; overflow:hidden; border-radius:.78rem; background:linear-gradient(135deg,#d9f0fc,#96c7df); }
-.auto-tone-glass::after { content:""; position:absolute; inset:0; background:#071337; opacity:var(--tone-opacity); }
+.auto-tone-glass { position:relative; height:3.5rem; display:grid; place-items:center; overflow:hidden; border-radius:.78rem; background-color:#e4e8ed; }
+.auto-tone-glass::before { content:""; position:absolute; inset:0; background:var(--film-tint, transparent); opacity:var(--film-tint-opacity, 0); }
+.auto-tone-glass::after { content:""; position:absolute; inset:0; background:#000; opacity:var(--film-shade, 0); }
 .auto-tone-glass span { position:relative; z-index:2; color:white; font-size:.75rem; font-weight:830; text-shadow:0 1px 4px rgba(0,0,0,.4); }
 .auto-tone-main { display:grid; }
 .auto-tone-main strong { font-size:1.06rem; }
