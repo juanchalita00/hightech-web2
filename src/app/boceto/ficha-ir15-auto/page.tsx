@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { getNanoProduct, type NanoProduct } from "@/lib/truth";
 import { BocetoBanner, CotizaWhatsApp, MobileBar, Pendiente, leyes, mensajes } from "../_components/Boceto";
 import styles from "../boceto.module.css";
@@ -141,12 +142,12 @@ export default function BocetoFichaIr15AutoPage() {
         <div className={styles.shell}>
           <p className={styles.kicker}>¿Es para ti?</p>
           <h2 id="quien-titulo">¿El tono IR15 te conviene?</h2>
-          <p className={styles.lead}>El IR15 se ve oscuro. Aquí va en los cristales de atrás del auto.</p>
+          <p className={styles.lead}>El IR15 se ve oscuro. Cada quien lo pone en las ventanas que prefiere; muchos lo eligen atrás para más privacidad.</p>
           <div className={styles.fitGrid}>
             <div>
               <h3>Este tono te conviene si…</h3>
               <ul>
-                <li>Quieres un tono oscuro en los cristales de atrás.</li>
+                <li>Quieres un tono oscuro en las ventanas que tú elijas; muchos lo ponen atrás.</li>
                 <li>De día, quieres que desde afuera cueste ver hacia adentro.</li>
               </ul>
             </div>
@@ -162,7 +163,7 @@ export default function BocetoFichaIr15AutoPage() {
             <p>«Usar cristales polarizados u otros elementos que impidan totalmente la visibilidad hacia el interior del vehículo, o polarizado de cualquier intensidad en el parabrisas del vehículo;»</p>
             <p className={styles.lawCite}><a href={leyes.reglamento}>Reglamento art. 59 fr. VIII</a> / <a href={leyes.ley}>Ley art. 360 fr. IX</a></p>
           </div>
-          <p>En el parabrisas lo más común es el IR75. Si quieres privacidad, en High Tech recomendamos máximo IR35, para que te sientas cómodo y conserves la visibilidad. Es lo que suele hacerse.</p>
+          <p>Si quieres privacidad, el IR15 se ve más oscuro. Tú eliges en qué ventanas lo quieres; en el parabrisas hay reglas que conviene revisar en <Link href="/guias/polarizado-automotriz-jalisco/">la guía</Link>.</p>
         </div>
       </section>
 

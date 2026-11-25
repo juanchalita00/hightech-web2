@@ -32,7 +32,7 @@ export default function Page() {
             Por eso un número más alto es un tono más claro. Lo que importa en los dos casos es que se pueda ver hacia el interior.
           </p>
           <p>
-            Lo más común en el auto son los tonos 75, 50 y 35. El 15 y el 5 son más oscuros y se usan sobre todo en casa y negocio; si te interesan para el auto, lo platicamos.
+            Lo más común en el auto son los tonos 75, 50 y 35. El 15 y el 5 son más oscuros; también se usan en auto, según lo que cada quien busque. Escríbenos y vemos qué ventanas te convienen.
           </p>
           <HightechTip>
             Unos lentes de sol claros dejan pasar casi toda la luz; unos muy oscuros te dejan ver menos, sobre todo de noche.
