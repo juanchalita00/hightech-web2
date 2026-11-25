@@ -38,18 +38,18 @@ const toneCopy: Record<string, { headline: string; decision: string; light: stri
   },
   IR15: {
     headline: "Se ve oscuro y da más privacidad de día.",
-    decision: "Para casa o negocio, cuando la prioridad es que se vea menos hacia adentro.",
+    decision: "Para quien prioriza que se vea menos hacia adentro.",
     light: "Deja pasar poca luz.",
-    where: "En casa y en negocio.",
-    whereNote: "Si lo quieres en el auto, platicamos qué visibilidad necesitas.",
+    where: "En casa, en negocio y en auto.",
+    whereNote: "Tú eliges en qué cristales lo quieres; en la guía de Jalisco encuentras las reglas para decidir con información.",
     neighbors: ["IR35", "IR5"],
   },
   IR5: {
     headline: "El más oscuro de la gama.",
-    decision: "Para casa o negocio, cuando quieres la mayor privacidad de día.",
+    decision: "Para quien quiere la mayor privacidad de día.",
     light: "Deja pasar 3% de la luz.",
-    where: "En casa y en negocio.",
-    whereNote: "Si lo quieres en el auto, platicamos qué visibilidad necesitas.",
+    where: "En casa, en negocio y en auto.",
+    whereNote: "Tú eliges en qué cristales lo quieres; en la guía de Jalisco encuentras las reglas para decidir con información.",
     caution: "De noche, algunas personas batallan para ver hacia afuera. Es el único tono con este aviso.",
     neighbors: ["IR15"],
   },
@@ -85,7 +85,7 @@ const toneExtra: Record<string, ToneExtra> = {
   IR15: {
     uses: [
       "Casa y negocio, cuando la prioridad es que se vea menos hacia adentro durante el día.",
-      "Auto: platicamos qué visibilidad necesitas antes de recomendarlo.",
+      "Auto: tú eliges en qué ventanas lo quieres; ve cómo se ve en el simulador.",
     ],
     look: "Es oscuro y da una privacidad de día marcada.",
     faq: { question: "¿El 15 oscurece mucho el espacio?", answer: "Deja pasar poca luz, así que el espacio se siente más cerrado. Si quieres conservar luz natural, te conviene comparar con el 35 o el 50." },
@@ -93,7 +93,7 @@ const toneExtra: Record<string, ToneExtra> = {
   IR5: {
     uses: [
       "Casa y negocio, cuando quieres la mayor privacidad de día de la gama.",
-      "Auto: platicamos qué visibilidad necesitas antes de recomendarlo.",
+      "Auto: tú eliges en qué ventanas lo quieres; ve cómo se ve en el simulador.",
     ],
     look: "Es el más oscuro y da la máxima privacidad de día. No lo recomendamos donde quieras luz natural.",
     faq: { question: "¿Para qué cristales no recomiendan el 5?", answer: "Para donde quieras luz natural, porque deja pasar muy poca. Tampoco es lo más cómodo para ver hacia afuera de noche. En esos casos te sugerimos un tono más claro." },
@@ -195,7 +195,7 @@ export default async function TonePage({ params }: { params: Promise<{ tone: str
           </p>
           <HightechTip>
             {film.id === "IR5"
-              ? "Es como manejar con lentes de sol muy oscuros ya de noche: el sol no está, y aun así cuesta ver el camino. Por eso el 5 se recomienda sobre todo para casa y negocio."
+              ? "Es como manejar con lentes de sol muy oscuros ya de noche: el sol no está, y aun así cuesta ver el camino. Por eso conviene elegirlo sabiendo cuánta visibilidad quieres de noche."
               : "Un bloqueador transparente también protege la piel. Aquí pasa lo mismo: el tono se elige sobre todo por la luz y la privacidad que quieres."}
           </HightechTip>
           {copy.caution ? <p><strong>{copy.caution}</strong></p> : null}

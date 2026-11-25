@@ -1709,6 +1709,9 @@ thead th { background: var(--surface-alt); }
 }
 
 /* WhatsApp sube mientras el aviso de cookies está visible */
+/* Simulador automotriz: en móvil, mientras está en pantalla, el flotante no tapa los tonos (el simulador trae su propio CTA de WhatsApp). */
+@media (max-width: 720px) { :root[data-simulator-in-view] .float-whatsapp { opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .2s ease, visibility .2s; } }
+
 :root[data-cookie-banner] .float-whatsapp { bottom: calc(5.5rem + env(safe-area-inset-bottom)); }
 @media (min-width: 1000px) { :root[data-cookie-banner] .float-whatsapp { bottom: calc(16px + env(safe-area-inset-bottom)); } }
 

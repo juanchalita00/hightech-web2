@@ -8,8 +8,8 @@ const useCopy: Record<string, string> = {
   IR75: "Conserva casi toda la luz de la gama.",
   IR50: "Mucha claridad, con un tono un poco más marcado que el 75.",
   IR35: "Punto medio entre luz, apariencia y deslumbramiento.",
-  IR15: "Más oscuro y más privacidad de día. Solo casa y negocio.",
-  IR5: "La más oscura. Solo casa y negocio: de noche, algunas personas batallan.",
+  IR15: "Más oscuro y más privacidad de día.",
+  IR5: "La más oscura. De noche, algunas personas batallan para ver hacia afuera.",
 };
 
 export function NanoComparison() {
