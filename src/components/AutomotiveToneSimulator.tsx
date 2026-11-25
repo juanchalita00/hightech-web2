@@ -28,12 +28,15 @@ import styles from "./AutomotiveToneSimulator.module.css";
  *   Exterior = carrusel de tomas (deslizar, puntitos o flechas): 3/4 de frente, 3/4 de atrás
  *   y perfil. Interior = asiento del conductor. Cada toma × auto es UNA escena.
  *
- * ── Zonas (3, cualquiera con cualquier tono; nada se bloquea) ────────────────
- *   1. Laterales traseros y medallón  → una sola zona, mismo tono.
- *      3/4 de atrás: medallón + laterales traseros. 3/4 de frente y perfil: laterales
- *      traseros (el medallón no se ve). Interior: no se ve.
- *   2. Laterales delanteros           → en todas las tomas.
- *   3. Parabrisas                     → 3/4 de frente e Interior (de perfil y desde atrás no se ve).
+ * ── Paquetes (4, selección única) ────────────────────────────────────────────
+ *   Completo          → laterales delanteros + laterales traseros y medallón (sin parabrisas).
+ *   Solo atrás        → laterales traseros y medallón.
+ *   Piloto y copiloto → laterales delanteros.
+ *   Parabrisas        → solo el parabrisas.
+ * El slider aplica el tono a las zonas del paquete elegido. Elegir Completo e IR35
+ * y luego Solo atrás e IR15 deja adelante en 35 y atrás en 15. Tocar el cristal
+ * selecciona el paquete simple de esa zona (no Completo). WhatsApp sigue listando
+ * las 3 zonas. Nada se bloquea: el cliente decide.
  * Una zona «se ve» en una escena si esa escena tiene polígonos para ella.
  *
  * ── Vidrio de fábrica (v7) ───────────────────────────────────────────────────
@@ -82,6 +85,29 @@ const zones: ReadonlyArray<{
 
 const zoneInfo = (id: ZoneId) => zones.find((zone) => zone.id === id) ?? zones[0];
 const lower = (text: string) => text.charAt(0).toLowerCase() + text.slice(1);
+
+/** Opciones del dock: una sola a la vez; el slider pinta las zonas que cubre. */
+type PackageId = "completo" | ZoneId;
+
+const packages: ReadonlyArray<{
+  id: PackageId;
+  label: string;
+  short: string;
+  zones: readonly ZoneId[];
+}> = [
+  {
+    id: "completo",
+    label: "Laterales delanteros, laterales traseros y medallón",
+    short: "Completo",
+    zones: ["front", "rear"],
+  },
+  { id: "rear", label: "Laterales traseros y medallón", short: "Solo atrás", zones: ["rear"] },
+  { id: "front", label: "Laterales delanteros (piloto y copiloto)", short: "Piloto y copiloto", zones: ["front"] },
+  { id: "windshield", label: "Parabrisas", short: "Parabrisas", zones: ["windshield"] },
+];
+
+const packageInfo = (id: PackageId) => packages.find((item) => item.id === id) ?? packages[0];
+const START_PACK: PackageId = "completo";
 
 const cars = {
   suv: {
@@ -241,10 +267,17 @@ function chipTone(_carId: CarId, _zone: ZoneId, toneId: ToneId) {
   return "De fábrica";
 }
 
-/** Punto de partida: SUV, vista exterior, las 3 zonas sin película, «Traseros y medallón» marcada. */
+/** Tono que muestra un paquete: uno solo, o «Mixto» si sus zonas no coinciden. */
+function packageChipTone(carId: CarId, selection: Selection, pack: (typeof packages)[number]) {
+  const first = selection[pack.zones[0]];
+  if (pack.zones.every((zone) => selection[zone] === first)) return chipTone(carId, pack.zones[0], first);
+  return "Mixto";
+}
+
+/** Punto de partida: SUV, vista exterior, las 3 zonas sin película, paquete «Completo» elegido. */
 const START: Selection = { rear: "none", front: "none", windshield: "none" };
 const START_MESSAGE =
-  "Punto de partida: SUV, vista exterior, todas las zonas sin película (vidrio de fábrica). Marca una o varias y elige el tono.";
+  "Punto de partida: SUV, vista exterior, todas las zonas sin película (vidrio de fábrica). Elige una opción y el tono.";
 
 const allZones = (toneId: ToneId): Selection => ({ rear: toneId, front: toneId, windshield: toneId });
 
@@ -255,7 +288,7 @@ function describeTone(id: ToneId) {
     : `${tone.label}, ${tone.vlt}% de luz visible, ${tone.description}`;
 }
 
-function listLabels(ids: ZoneId[]) {
+function listLabels(ids: readonly ZoneId[]) {
   const labels = ids.map((id) => lower(zoneInfo(id).label));
   if (labels.length <= 1) return labels.join("");
   return `${labels.slice(0, -1).join(", ")} y ${labels[labels.length - 1]}`;
@@ -273,18 +306,23 @@ const panes: Record<ZoneId, string[]> = {
   windshield: ["M37.4 8.1 H38.8 L45.4 13 H37.4 Z"],
 };
 
-function ZoneGlyph({ zone, on }: { zone: ZoneId; on: boolean }) {
-  const others = (Object.keys(panes) as ZoneId[]).filter((id) => id !== zone);
+function ZoneGlyph({ zones, on }: { zones: readonly ZoneId[]; on: boolean }) {
+  const active = new Set(zones);
   return (
     <svg className={styles.glyph} viewBox="0 0 58 28" aria-hidden="true" focusable="false">
       <path
         className={styles.glyphBody}
         d="M3 21 V18 Q3 15.6 6 15 L14 13.4 L19 7.2 Q20.2 6 22.2 6 H35.6 Q37.6 6 39 7.2 L45.6 13.6 L51.4 15.2 Q55 16.2 55 19 V21 Z"
       />
-      {others.map((id) => panes[id].map((d) => <path key={`${id}-${d}`} className={styles.glyphPane} d={d} />))}
-      {panes[zone].map((d) => (
-        <path key={`on-${d}`} className={on ? styles.glyphPaneOn : styles.glyphPaneFocus} d={d} />
-      ))}
+      {(Object.keys(panes) as ZoneId[]).map((id) =>
+        panes[id].map((d) => (
+          <path
+            key={`${id}-${d}`}
+            className={active.has(id) ? (on ? styles.glyphPaneOn : styles.glyphPaneFocus) : styles.glyphPane}
+            d={d}
+          />
+        )),
+      )}
       <circle className={styles.glyphWheel} cx="15" cy="21.2" r="3.7" />
       <circle className={styles.glyphWheel} cx="43.4" cy="21.2" r="3.7" />
     </svg>
@@ -318,6 +356,12 @@ function tagText(_carId: CarId, zone: ZoneId, toneId: ToneId) {
     return `${name}: sin película · vidrio de fábrica`;
   const tone = toneById(toneId);
   return `${name}: ${tone.label} · ${tone.vlt}% luz · ${TONE_WORD[toneId]}`;
+}
+
+function packTagText(pack: (typeof packages)[number], toneId: ToneId) {
+  if (toneId === "none") return `${pack.short}: sin película · vidrio de fábrica`;
+  const tone = toneById(toneId);
+  return `${pack.short}: ${tone.label} · ${tone.vlt}% luz · ${TONE_WORD[toneId]}`;
 }
 
 /**
@@ -361,7 +405,7 @@ export function AutomotiveToneSimulator() {
   const [split, setSplit] = useState(0.5);
   const [near, setNear] = useState(false);
   const [selection, setSelection] = useState<Selection>(START);
-  const [marked, setMarked] = useState<ZoneId[]>(["rear"]);
+  const [packId, setPackId] = useState<PackageId>(START_PACK);
   const [message, setMessage] = useState(START_MESSAGE);
   const uid = useId().replace(/:/g, "");
   const rootRef = useRef<HTMLDivElement | null>(null);
@@ -373,9 +417,8 @@ export function AutomotiveToneSimulator() {
   const current = scenes[sceneKey];
   const requestedKey = sceneKeyOf(requested.view, requested.carId);
   const loading = requestedKey !== sceneKey;
-  const primary = marked[marked.length - 1] ?? "rear";
-  const markedTone = (id: ToneId) => marked.length > 0 && marked.every((zone) => selection[zone] === id);
-  const markedLabels = listLabels(marked);
+  const pack = packageInfo(packId);
+  const covered = pack.zones;
   const whatsappHref = useMemo(() => whatsappUrl(configMessage(carId, selection)), [carId, selection]);
 
   function markReady(key: SceneKey) {
@@ -430,7 +473,7 @@ export function AutomotiveToneSimulator() {
   }, []);
 
   /** Aviso corto cuando una zona elegida no se ve en la vista actual (se conserva y se anuncia). */
-  function visibilityNote(ids: ZoneId[]) {
+  function visibilityNote(ids: readonly ZoneId[]) {
     const hidden = ids.filter((id) => !zoneSeen(sceneKey, id));
     const notes: string[] = [];
     if (hidden.length > 0) {
@@ -489,31 +532,27 @@ export function AutomotiveToneSimulator() {
   }
 
   function chooseTone(toneId: ToneId) {
-    if (marked.length === 0) return;
+    if (covered.length === 0) return;
     setSelection((prev) => {
       const next = { ...prev };
-      for (const zone of marked) next[zone] = toneId;
+      for (const zone of covered) next[zone] = toneId;
       return next;
     });
-    setMessage(capital(`${markedLabels}: ${describeTone(toneId)}.`) + visibilityNote(marked));
+    setMessage(capital(`${pack.short}: ${describeTone(toneId)}.`) + visibilityNote(covered));
   }
 
-  function toggleZone(zone: ZoneId) {
-    const isOn = marked.includes(zone);
-    if (isOn && marked.length === 1) {
-      setMessage(`${zoneInfo(zone).label} sigue marcada: deja al menos una zona marcada para cambiar su tono.`);
-      return;
-    }
-    const next = isOn ? marked.filter((id) => id !== zone) : [...marked, zone];
-    setMarked(next);
+  function choosePackage(id: PackageId) {
+    const next = packageInfo(id);
+    setPackId(id);
+    const same = next.zones.every((zone) => selection[zone] === selection[next.zones[0]]);
     setMessage(
-      isOn
-        ? `${zoneInfo(zone).label} desmarcada. Marcadas: ${listLabels(next)}.`
-        : `${zoneInfo(zone).label} marcada, ahora en ${describeTone(selection[zone])}.${visibilityNote([zone])}`,
+      same
+        ? `${next.short} seleccionado. ${capital(listLabels(next.zones))} en ${describeTone(selection[next.zones[0]])}.${visibilityNote(next.zones)}`
+        : `${next.short} seleccionado, mixto: las zonas de esta opción tienen tonos distintos.${visibilityNote(next.zones)}`,
     );
   }
 
-  /** Tocar el cristal marca solo esa zona (los chips sirven para marcar varias). */
+  /** Tocar el cristal elige el paquete simple de esa zona (no Completo). */
   function pickGlass(zone: ZoneId) {
     // Un deslizamiento del carrusel no cuenta como toque en el cristal.
     if (swipe.current?.moved) {
@@ -521,8 +560,10 @@ export function AutomotiveToneSimulator() {
       return;
     }
     swipe.current = null;
-    setMarked([zone]);
-    setMessage(`${zoneInfo(zone).label} marcada, ahora en ${describeTone(selection[zone])}.${visibilityNote([zone])}`);
+    choosePackage(zone);
+    setMessage(
+      `${zoneInfo(zone).label} (${packageInfo(zone).short}): ahora en ${describeTone(selection[zone])}.${visibilityNote([zone])}`,
+    );
   }
 
   function startWhatsApp() {
@@ -542,13 +583,14 @@ export function AutomotiveToneSimulator() {
   const polygons = (zone: ZoneId): readonly string[] => current.glass[zone];
   const side = view === "interior" ? "interior" : "outside";
   // Etiqueta: la zona marcada que se ve en esta toma (si la última tocada no se ve aquí, la primera visible).
-  const tagZone = ids.includes(primary) ? primary : (marked.find((zone) => ids.includes(zone)) ?? ids[0] ?? primary);
+  const tagZone =
+    covered.find((zone) => ids.includes(zone)) ?? ids[0] ?? covered[0] ?? "rear";
+  const mixed = covered.some((zone) => selection[zone] !== selection[covered[0]]);
   const sliderIndex = Math.max(
     0,
-    tones.findIndex((tone) => tone.id === selection[primary]),
+    tones.findIndex((tone) => tone.id === selection[covered[0] ?? "rear"]),
   );
   const sliderTone = tones[sliderIndex];
-  const mixed = marked.some((zone) => selection[zone] !== selection[primary]);
   const glareFilm = glareFor(carId, selection);
   const glareFactory = glareFor(carId, allZones("none"));
   const pct = Math.round(split * 100);
@@ -623,7 +665,7 @@ export function AutomotiveToneSimulator() {
     <div
       ref={rootRef}
       className={styles.simulator}
-      aria-label="Simulador de tonos por zona de un auto. Marcas una o varias zonas y eliges el tono que quieres en ellas."
+      aria-label="Simulador de tonos por zona de un auto. Eliges una opción (completo, solo atrás, piloto y copiloto, o parabrisas) y el tono que quieres en ella."
       aria-busy={loading}
     >
       <div className={styles.sticky}>
@@ -730,7 +772,7 @@ export function AutomotiveToneSimulator() {
                           <polygon
                             key={points}
                             points={points}
-                            className={marked.includes(zone) ? styles.hitActive : styles.hit}
+                            className={covered.includes(zone) ? styles.hitActive : styles.hit}
                             onClick={() => pickGlass(zone)}
                           />
                         ))}
@@ -773,7 +815,11 @@ export function AutomotiveToneSimulator() {
           <p className={styles.toneTag} aria-hidden="true">
             {comparing
               ? `Con película · ${selection[tagZone] === "none" ? "sin película" : toneById(selection[tagZone]).label}`
-              : tagText(carId, tagZone, selection[tagZone])}
+              : mixed
+                ? `${pack.short}: mixto`
+                : covered.length > 1
+                  ? packTagText(pack, selection[covered[0]])
+                  : tagText(carId, tagZone, selection[tagZone])}
           </p>
           {comparing ? (
             <>
@@ -847,28 +893,32 @@ export function AutomotiveToneSimulator() {
       </div>
 
       <div className={styles.controls}>
-        <div className={styles.step} role="group" aria-labelledby={`${uid}-zones`}>
+        <div className={styles.step}>
           <p className={styles.stepLabel} id={`${uid}-zones`}>
-            Zonas <span>(una o varias, o toca el cristal)</span>
+            Qué parte del auto <span>(o toca el cristal)</span>
           </p>
-          <div className={styles.zoneDock}>
-            {zones.map((zone) => {
-              const on = marked.includes(zone.id);
-              const seen = zoneSeen(sceneKey, zone.id);
-              const toneText = chipTone(carId, zone.id, selection[zone.id]);
+          <div className={styles.zoneDock} role="radiogroup" aria-labelledby={`${uid}-zones`}>
+            {packages.map((item) => {
+              const on = packId === item.id;
+              const seen = item.zones.some((zone) => zoneSeen(sceneKey, zone));
+              const toneText = packageChipTone(carId, selection, item);
+              const hidden = item.zones.filter((zone) => !zoneSeen(sceneKey, zone));
+              const unseenNote =
+                !seen ? " (no se ve en esta vista)" : hidden.length ? ` (${listLabels(hidden)}: no se ve en esta vista)` : "";
               return (
                 <button
-                  key={zone.id}
+                  key={item.id}
                   type="button"
+                  role="radio"
                   className={on ? styles.zoneChipActive : styles.zoneChip}
                   data-unseen={seen ? undefined : ""}
-                  onClick={() => toggleZone(zone.id)}
-                  aria-pressed={on}
-                  aria-label={`${zone.short} ${toneText}${seen ? "" : " (no se ve en esta vista)"}`}
-                  title={`${zone.label}: ${toneName(carId, zone.id, selection[zone.id])}`}
+                  onClick={() => choosePackage(item.id)}
+                  aria-checked={on}
+                  aria-label={`${item.short}, ${toneText}.${unseenNote}`}
+                  title={`${item.label}: ${toneText}`}
                 >
-                  <ZoneGlyph zone={zone.id} on={on} />
-                  <strong>{zone.short}</strong>
+                  <ZoneGlyph zones={item.zones} on={on} />
+                  <strong>{item.short}</strong>
                   <span>{toneText}</span>
                 </button>
               );
@@ -878,7 +928,11 @@ export function AutomotiveToneSimulator() {
 
         <div className={styles.step}>
           <p className={styles.stepLabel} id={`${uid}-tones`}>
-            Tono para: <span className={styles.stepZone}>{markedLabels}</span>
+            Tono para:{" "}
+            <span className={styles.stepZone}>
+              {pack.short.toLowerCase()}
+              {mixed ? " (mixto)" : ""}
+            </span>
           </p>
           <div className={styles.toneSlider}>
             <input
@@ -892,7 +946,7 @@ export function AutomotiveToneSimulator() {
               aria-labelledby={`${uid}-tones`}
               aria-valuetext={
                 (sliderTone.vlt === null ? "Sin película, vidrio de fábrica" : `${sliderTone.label}, ${sliderTone.vlt}% de luz`) +
-                (mixed ? " (las zonas marcadas tenían tonos distintos)" : "")
+                (mixed ? " (mixto: esta opción tiene tonos distintos)" : "")
               }
             />
             <div className={styles.ticks} aria-hidden="true">
@@ -901,7 +955,7 @@ export function AutomotiveToneSimulator() {
                   key={tone.id}
                   type="button"
                   tabIndex={-1}
-                  className={index === sliderIndex ? styles.tickActive : styles.tick}
+                  className={!mixed && index === sliderIndex ? styles.tickActive : styles.tick}
                   onClick={() => chooseTone(tone.id)}
                 >
                   <strong>{tone.vlt === null ? "Fábrica" : tone.label}</strong>

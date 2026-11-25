@@ -114,10 +114,10 @@
   font-weight: 800;
 }
 
-/* Zonas: 3 chips compactos con pictograma simple de perfil. */
+/* Paquetes: 4 chips de selección única, 2×2 en móvil para que quepan cómodos a 390px. */
 .zoneDock {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.35rem;
   min-width: 0;
 }
@@ -128,8 +128,8 @@
   justify-items: center;
   align-content: start;
   gap: 0.08rem;
-  min-height: 4.1rem;
-  padding: 0.35rem 0.2rem 0.4rem;
+  min-height: 4.35rem;
+  padding: 0.35rem 0.35rem 0.4rem;
   border-color: var(--line);
   border-radius: 0.8rem;
   background: var(--surface);
@@ -139,8 +139,10 @@
 .zoneChipActive strong {
   font-size: 0.7rem;
   font-weight: 800;
-  line-height: 1.1;
-  overflow-wrap: anywhere;
+  line-height: 1.15;
+  text-align: center;
+  text-wrap: balance;
+  overflow-wrap: break-word;
 }
 
 .zoneChip span,
@@ -760,7 +762,8 @@
   }
 
   .zoneDock {
-    max-width: 40rem;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    max-width: 48rem;
   }
 
   .toneSlider {
